@@ -1,0 +1,34 @@
+name: Yarn
+on: pull_request
+jobs:
+  yarn:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+          submodules: true
+      - uses: actions/setup-node@v2.1.1
+        with:
+          node-version: "14.4.0"
+      - uses: actions/cache@v2.1.1
+        with:
+          path: |
+            **/node_modules
+          key: |
+            yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-v1-${{ runner.os }}-
+      - run: |
+          yarn install --frozen-lockfile
+      - run: |
+          yarn run check
+      - if: failure()
+        run: |
+          yarn run fix
+          git config --local user.name 'github-actions[bot]'
+          git config --local user.email 'github-actions[bot]@users.noreply.github.com'
+          git commit -am "chore: [sentrei-auto-fix]"
+          git push
