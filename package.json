@@ -10,7 +10,9 @@
   "license": "AGPL-3.0-or-later",
   "author": "Shun Kakinoki",
   "scripts": {
+    "build": "next build",
     "check": "yarn run depcheck && yarn run lint && yarn run release:check",
+    "dev": "next dev",
     "eslint:check": "eslint . -c .eslintrc.json --ext .js,.ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
     "eslint:fix": "eslint --fix . -c .eslintrc.json --ext .js,.ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
     "fix": "yarn run jsonsort:fix && yarn run sort-package-json:fix && yarn run eslint:fix && yarn run prettier:fix",
@@ -25,7 +27,8 @@
     "release": "semantic-release",
     "release:check": "semantic-release -d",
     "sort-package-json:check": "sort-package-json 'package.json' --check",
-    "sort-package-json:fix": "sort-package-json 'package.json'"
+    "sort-package-json:fix": "sort-package-json 'package.json'",
+    "start": "next start"
   },
   "husky": {
     "hooks": {
@@ -33,6 +36,14 @@
     }
   },
   "dependencies": {
+    "@types/node": "^14.11.10",
+    "@types/react": "^16.9.53",
+    "autoprefixer": "^10.0.1",
+    "next": "^9.5.5",
+    "postcss-import": "^12.0.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "tailwindcss": "^1.9.4",
     "typescript": "^4.0.3"
   },
   "devDependencies": {
