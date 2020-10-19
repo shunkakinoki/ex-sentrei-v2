@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function LandingBanner(): JSX.Element {
   return (
     <div className="relative overflow-hidden bg-white">
@@ -28,13 +30,11 @@ export default function LandingBanner(): JSX.Element {
                   </a>
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
-                  {/*  eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                  <a
-                    href="#"
-                    className="flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 text-pink-800 transition duration-150 ease-in-out bg-pink-100 border border-transparent rounded-md hover:text-pink-500 hover:bg-pink-50 focus:outline-none focus:shadow-outline-pink focus:border-pink-300 md:py-4 md:text-lg md:px-10"
-                  >
-                    Live demo
-                  </a>
+                  <Link href="/demo">
+                    <a className="flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 text-pink-800 transition duration-150 ease-in-out bg-pink-100 border border-transparent rounded-md hover:text-pink-500 hover:bg-pink-50 focus:outline-none focus:shadow-outline-pink focus:border-pink-300 md:py-4 md:text-lg md:px-10">
+                      Live demo
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
