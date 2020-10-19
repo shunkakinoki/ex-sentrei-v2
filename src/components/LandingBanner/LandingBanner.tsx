@@ -7,7 +7,7 @@ export default function LandingBanner(): JSX.Element {
             <div className="sm:text-center lg:text-left">
               <h2 className="text-4xl font-extrabold leading-10 tracking-tight text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
                 The most{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-300 to-pink-600">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ">
                   delightful
                 </span>{" "}
                 way to start your own newsletter.
