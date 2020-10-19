@@ -20,12 +20,12 @@ export default function LandingHeader(): JSX.Element {
           </div>
           <nav className="hidden space-x-10 md:flex">
             <Link href="/demo">
-              <a className="text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out hover:text-gray-900 focus:outline-none focus:text-gray-900">
+              <a className="text-base font-medium leading-6 text-gray-600 transition duration-150 ease-in-out hover:text-gray-900 focus:outline-none focus:text-gray-900">
                 Demo
               </a>
             </Link>
             <Link href="/pricing">
-              <a className="text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out hover:text-gray-900 focus:outline-none focus:text-gray-900">
+              <a className="text-base font-medium leading-6 text-gray-600 transition duration-150 ease-in-out hover:text-gray-900 focus:outline-none focus:text-gray-900">
                 Pricing
               </a>
             </Link>
@@ -34,7 +34,7 @@ export default function LandingHeader(): JSX.Element {
             {/*  eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a
               href="#"
-              className="text-base font-medium leading-6 text-gray-500 whitespace-no-wrap hover:text-gray-900 focus:outline-none focus:text-gray-900"
+              className="text-base font-medium leading-6 text-gray-600 whitespace-no-wrap hover:text-gray-900 focus:outline-none focus:text-gray-900"
             >
               Sign in
             </a>
