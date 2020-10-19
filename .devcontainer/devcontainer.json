@@ -2,13 +2,13 @@
   "dockerComposeFile": "docker-compose.yml",
   "extensions": [
     "antfu.i18n-ally",
+    "bradlc.vscode-tailwindcss",
     "dbaeumer.vscode-eslint",
     "eamodio.gitlens",
     "editorconfig.editorconfig",
     "GitHub.vscode-pull-request-github",
     "oderwat.indent-rainbow",
-    "VisualStudioExptTeam.vscodeintellicode",
-    "bradlc.vscode-tailwindcss"
+    "VisualStudioExptTeam.vscodeintellicode"
   ],
   "name": "sentrei",
   "postCreateCommand": "uname -a",
