@@ -22,7 +22,7 @@ export default function LandingBanner(): JSX.Element {
                   {/*  eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                   <a
                     href="#"
-                    className="px-8 py-3 text-base font-semibold leading-6 text-white rounded bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 md:py-4 md:text-lg md:px-10"
+                    className="flex items-center justify-center w-full px-8 py-3 font-medium text-white rounded-md bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 md:py-4 md:text-lg md:px-10"
                   >
                     Get started now.
                   </a>
