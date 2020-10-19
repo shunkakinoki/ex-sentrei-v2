@@ -4,11 +4,13 @@ import clsx from "clsx";
 
 export interface Props {
   title: string;
+  subtitle?: string;
   variant?: "small" | "middle" | "large";
 }
 
 export default function BlogStoryPreview({
   title,
+  subtitle,
   variant = "small",
 }: Props): JSX.Element {
   return (
@@ -23,7 +25,7 @@ export default function BlogStoryPreview({
           title={title}
         />
       </div>
-      <BlogStoryBanner title={title} />
+      <BlogStoryBanner title={title} subtitle={subtitle} />
     </div>
   );
 }
