@@ -1,3 +1,9 @@
+## [1.0.1](https://github.com/sentrei/sentrei/compare/v1.0.0...v1.0.1) (2020-10-19)
+
+### Bug Fixes
+
+- 🐛 remove private field ([e8fa1dd](https://github.com/sentrei/sentrei/commit/e8fa1dd3020a8a1431d5e80d660265d58f29445f))
+
 # 1.0.0 (2020-10-19)
 
 ### Bug Fixes
