@@ -5,7 +5,7 @@ export interface Props {
 
 export default function BlogAuthor({bio, image}: Props): JSX.Element {
   return (
-    <div className="flex justify-start mt-6 align-middle ">
+    <div className="flex justify-start mt-3 align-middle sm:mt-6 ">
       <div className="flex-shrink-0 px-4 py-2 m-2 text-center ">
         <img
           className="inline object-cover w-12 h-12 mr-2 rounded-full"

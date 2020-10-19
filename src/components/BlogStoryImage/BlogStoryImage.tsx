@@ -9,7 +9,7 @@ export default function BlogStoryImage({src, title}: Props): JSX.Element {
       <img
         alt={`Story Cover for ${title}`}
         src={src}
-        className="object-cover w-full h-64 rounded-sm"
+        className="object-cover w-full h-40 rounded-sm sm:h-64"
       />
     </div>
   );
