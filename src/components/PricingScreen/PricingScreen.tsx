@@ -1,11 +1,12 @@
 import LandingHeader from "@/components/LandingHeader";
 import PricingBanner from "@/components/PricingBanner";
+import RootContainer from "@/components/RootContainer";
 
 export default function PricingScreen(): JSX.Element {
   return (
-    <div className="container min-h-screen px-5 mx-auto">
+    <RootContainer>
       <LandingHeader />
       <PricingBanner />
-    </div>
+    </RootContainer>
   );
 }

@@ -1,9 +1,10 @@
 import LandingHeader from "@/components/LandingHeader";
+import RootContainer from "@/components/RootContainer";
 
 export default function DemoScreen(): JSX.Element {
   return (
-    <div className="container min-h-screen px-5 mx-auto">
+    <RootContainer>
       <LandingHeader />
-    </div>
+    </RootContainer>
   );
 }
