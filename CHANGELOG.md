@@ -1,3 +1,9 @@
+# [1.5.0](https://github.com/sentrei/sentrei/compare/v1.4.0...v1.5.0) (2020-10-19)
+
+### Features
+
+- 🎸 ini story card ([2c92e5a](https://github.com/sentrei/sentrei/commit/2c92e5a0de5670136756dc86303159cad6c45f23))
+
 # [1.4.0](https://github.com/sentrei/sentrei/compare/v1.3.0...v1.4.0) (2020-10-19)
 
 ### Features
