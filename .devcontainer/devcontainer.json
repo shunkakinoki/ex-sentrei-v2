@@ -2,6 +2,7 @@
   "dockerComposeFile": "docker-compose.yml",
   "extensions": [
     "antfu.i18n-ally",
+    "bradlc.vscode-tailwindcss",
     "dbaeumer.vscode-eslint",
     "eamodio.gitlens",
     "editorconfig.editorconfig",
