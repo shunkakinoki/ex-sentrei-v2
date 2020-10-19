@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "baseUrl": "./",
     "declaration": true,
     "declarationMap": true,
     "esModuleInterop": true,
@@ -17,12 +18,12 @@
     "sourceMap": true,
     "strict": true,
     "target": "ES2018",
-    "noEmit": true
+    "noEmit": true,
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "compileOnSave": true,
-  "paths": {
-    "@styles": "src/styles/*"
-  },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "next-env.d.ts"],
+  "include": ["pages/**/*", "src/**/*", "next-env.d.ts"],
   "exclude": ["node_modules"]
 }
