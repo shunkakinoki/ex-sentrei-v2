@@ -1,20 +1,24 @@
 import BlogStoryCard from "@/components/BlogStoryCard";
+import Article from "@/types/Article";
 
-export default function BlogStoryGrid(): JSX.Element {
+export interface Props {
+  articles: Article[];
+}
+
+export default function BlogStoryGrid({articles}: Props): JSX.Element {
   return (
     <section className="mt-8 mb-16 sm:mt-16 md:mb-12 lg:mb-20">
       <div className="flex flex-wrap mb-8 -mx-2">
-        <BlogStoryCard
-          title="First newsletter post"
-          subtitle="My first newsletter post in my life"
-          variant="small"
-        />
-        <BlogStoryCard title="Second newsletter post" variant="medium" />
-        <BlogStoryCard
-          title="Third newsletter post"
-          subtitle="My third newsletter post in my life"
-          variant="medium"
-        />
+        {articles.map((article, index) => {
+          return (
+            <BlogStoryCard
+              key={article.slug}
+              title={article.title}
+              subtitle={article.subtitle}
+              variant={index % 4 === 1 || index % 4 === 0 ? "small" : "medium"}
+            />
+          );
+        })}
       </div>
     </section>
   );
