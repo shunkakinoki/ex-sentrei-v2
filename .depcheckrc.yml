@@ -1,0 +1,15 @@
+ignores:
+  [
+    "@types/*",
+    "autoprefixer",
+    "postcss-import",
+    "tailwindcss",
+    "typescript",
+    "nodemon",
+    "vercel",
+    "@semantic-release/*",
+    "commitizen",
+    "git-cz",
+  ]
+ignore-path: .gitignore
+skip-missing: true

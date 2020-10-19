@@ -1,0 +1,21 @@
+{
+  "dockerComposeFile": "docker-compose.yml",
+  "extensions": [
+    "antfu.i18n-ally",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "editorconfig.editorconfig",
+    "GitHub.vscode-pull-request-github",
+    "oderwat.indent-rainbow",
+    "VisualStudioExptTeam.vscodeintellicode"
+  ],
+  "name": "sentrei",
+  "postCreateCommand": "uname -a",
+  "runServices": [],
+  "service": "sentrei",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/zsh"
+  },
+  "shutdownAction": "none",
+  "workspaceFolder": "/workspace"
+}
