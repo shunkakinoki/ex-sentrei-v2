@@ -6,7 +6,11 @@ export interface Props {
 export default function BlogStoryImage({src, title}: Props): JSX.Element {
   return (
     <div className="transition duration-300 ease-in-out transform shadow-sm sm:shadow-md md:shadow-md lg:shadow-lg xl:shadow-lg group-hover:shadow-2xl hover:-translate-y-1">
-      <img alt={`Story Cover for ${title}`} src={src} />
+      <img
+        alt={`Story Cover for ${title}`}
+        src={src}
+        className="object-cover w-full h-64 rounded-sm"
+      />
     </div>
   );
 }

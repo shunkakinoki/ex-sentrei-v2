@@ -2,15 +2,18 @@ import BlogStoryPreview from "@/components/BlogStoryPreview";
 
 export default function BlogStoryGrid(): JSX.Element {
   return (
-    <section className="mt-16 mb-16md:mb-12 lg:mt-24 lg:mb-20">
-      <div className="grid grid-cols-1 row-gap-20 mb-32 md:grid-cols-2 md:col-gap-16 lg:col-gap-32 md:row-gap-32">
+    <section className="mt-16 mb-16 md:mb-12 lg:mb-20">
+      <div className="flex flex-wrap mb-8 -mx-2">
         <BlogStoryPreview
-          title="First Post"
-          subtitle="This is my first newsletter post on this platform."
+          title="First newsletter post"
+          subtitle="My first newsletter post in my life"
+          variant="small"
         />
+        <BlogStoryPreview title="Second newsletter post" variant="medium" />
         <BlogStoryPreview
-          title="First Post"
-          subtitle="This is my first newsletter post on this platform."
+          title="Third newsletter post"
+          subtitle="My third newsletter post in my life"
+          variant="medium"
         />
       </div>
     </section>
