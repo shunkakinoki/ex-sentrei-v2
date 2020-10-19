@@ -1,3 +1,27 @@
+# [1.3.0](https://github.com/sentrei/sentrei/compare/v1.2.0...v1.3.0) (2020-10-19)
+
+### Features
+
+- 🎸 ini blog author w/ demo screen ([1130fae](https://github.com/sentrei/sentrei/commit/1130fae3ce36ef15a422276f1dd2dfff3795e34c))
+- 🎸 ini blog banner ([92112cc](https://github.com/sentrei/sentrei/commit/92112cc77debb0e9ad95a842aed88e8cdd0b6344))
+- 🎸 ini blog story ([e428621](https://github.com/sentrei/sentrei/commit/e428621010b2c89e4abd678dd5874332b88a7032))
+- 🎸 ini blog story group hover ([873b926](https://github.com/sentrei/sentrei/commit/873b92665d09cc9e30297fd4275f2d41b930f35d))
+- 🎸 ini blog story hover animation ([606d80c](https://github.com/sentrei/sentrei/commit/606d80c94f8449afb36073090f364d080a436771))
+- 🎸 ini clsx w/ blog story group ([a44f3ec](https://github.com/sentrei/sentrei/commit/a44f3ec8682c743079a025ed974cf97c26e9ea27))
+- 🎸 ini demo screen ([a6c326f](https://github.com/sentrei/sentrei/commit/a6c326f0110a2ec33a751040db58e3181dae3332))
+- 🎸 ini pricing banner ([a4cb563](https://github.com/sentrei/sentrei/commit/a4cb5638b83ce343b3a739d436c5a021e0525e28))
+- 🎸 ini pricing screen ([5ce7582](https://github.com/sentrei/sentrei/commit/5ce7582a2d276138d7ee292dc2cad27a48473508))
+- 🎸 ini tailwind truncate plugin css ([f3952b3](https://github.com/sentrei/sentrei/commit/f3952b394257dbe56109189b544b3d6182b94a4e))
+- 🎸 responsive chores for blog components + header ([bb188e7](https://github.com/sentrei/sentrei/commit/bb188e721808f27d3cdbeca4dde2b1b0367a0283))
+
+### Performance Improvements
+
+- ⚡️ disable npm publish ([4aeea24](https://github.com/sentrei/sentrei/commit/4aeea24425c8c859e528e02804c4549cad739f31))
+- ⚡️ ini next link to pricing page ([39c7008](https://github.com/sentrei/sentrei/commit/39c70083a992b8c2f2617ea36189fc7c772601a7))
+- ⚡️ ini root container w/ migration ([049ce8d](https://github.com/sentrei/sentrei/commit/049ce8dd036a2c688d195aecb40d9eac4efd0d31))
+- ⚡️ ini sentry release ([968df1b](https://github.com/sentrei/sentrei/commit/968df1b15bf75a1d6a684106c1644e161c5b82e4))
+- ⚡️ refactor blog banner ([a29550a](https://github.com/sentrei/sentrei/commit/a29550a35b7ce36ea933482727d1118646e1708a))
+
 # [1.2.0](https://github.com/sentrei/sentrei/compare/v1.1.0...v1.2.0) (2020-10-19)
 
 ### Features
