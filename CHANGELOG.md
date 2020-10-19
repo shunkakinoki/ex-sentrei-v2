@@ -1,3 +1,9 @@
+# [1.1.0](https://github.com/sentrei/sentrei/compare/v1.0.1...v1.1.0) (2020-10-19)
+
+### Features
+
+- 🎸 ini src components ([e406ba7](https://github.com/sentrei/sentrei/commit/e406ba7b9437619c402a368267d656dabcfb6f38))
+
 ## [1.0.1](https://github.com/sentrei/sentrei/compare/v1.0.0...v1.0.1) (2020-10-19)
 
 ### Bug Fixes
