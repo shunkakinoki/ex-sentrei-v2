@@ -1,8 +1,8 @@
 import {NextPage} from "next";
-import IndexScreen from "@/components/IndexScreen";
+import LandingScreen from "@/components/LandingScreen";
 
 const Index: NextPage = () => {
-  return <IndexScreen />;
+  return <LandingScreen />;
 };
 
 export default Index;
