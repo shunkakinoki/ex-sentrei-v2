@@ -18,13 +18,11 @@ export default function LandingHeader(): JSX.Element {
               </a>
             </Link>
           </div>
-          {/*  eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <a
-            href="#"
-            className="text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out hover:text-gray-900 focus:outline-none focus:text-gray-900"
-          >
-            Demo
-          </a>
+          <Link href="/demo">
+            <a className="text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out hover:text-gray-900 focus:outline-none focus:text-gray-900">
+              Demo
+            </a>
+          </Link>
           <Link href="/pricing">
             <a className="text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out hover:text-gray-900 focus:outline-none focus:text-gray-900">
               Pricing
