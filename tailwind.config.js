@@ -4,7 +4,8 @@ module.exports = {
     extend: {},
   },
   variants: {
-    textColor: ["responsive", "hover", "focus", "group-hover"],
+    boxShadow: ["responsive", "hover", "focus", "active", "group-hover"],
+    textColor: ["responsive", "hover", "focus", "active", "group-hover"],
   },
   plugins: [],
 };
