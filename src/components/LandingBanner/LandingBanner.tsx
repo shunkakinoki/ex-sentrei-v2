@@ -17,14 +17,23 @@ export default function LandingBanner(): JSX.Element {
                 Substack&copy; charges too much for its offering. <br />
                 We aim to much better, like the world deserves in 2020.
               </p>
-              <div className="mt-10 sm:mt-15 sm:flex sm:justify-center lg:justify-start">
+              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
                   {/*  eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                   <a
                     href="#"
-                    className="flex items-center justify-center w-full px-8 py-3 font-medium text-white rounded-md bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 md:py-4 md:text-lg md:px-10"
+                    className="flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-pink-600 border border-transparent rounded-md hover:bg-pink-500 focus:outline-none focus:border-pink-400 focus:shadow-outline-pink md:py-4 md:text-lg md:px-10"
                   >
-                    Get started now.
+                    Get started
+                  </a>
+                </div>
+                <div className="mt-3 sm:mt-0 sm:ml-3">
+                  {/*  eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                  <a
+                    href="#"
+                    className="flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 text-pink-700 transition duration-150 ease-in-out bg-pink-100 border border-transparent rounded-md hover:text-pink-600 hover:bg-pink-50 focus:outline-none focus:shadow-outline-pink focus:border-pink-300 md:py-4 md:text-lg md:px-10"
+                  >
+                    Live demo
                   </a>
                 </div>
               </div>
