@@ -8,7 +8,7 @@ The most delightful way to start a newsletter
 
 - Delightful UI/UX (Inspired by Novela from narrative)]
 - Lead to curated medium with no ads (No more popups for subscriptions!)
-- Only costs to $25 /writer/month
+- Only costs to \$25 /writer/month
 
 ### Techstack
 
