@@ -1,3 +1,14 @@
+# [1.4.0](https://github.com/sentrei/sentrei/compare/v1.3.0...v1.4.0) (2020-10-19)
+
+### Features
+
+- 🎸 ini blog story preview component ([f6b5ad4](https://github.com/sentrei/sentrei/commit/f6b5ad4f4335de353e46744712a7da28c58bc3b2))
+
+### Performance Improvements
+
+- ⚡️ ini gha label ([a24592f](https://github.com/sentrei/sentrei/commit/a24592f556ab09d3b3867fb1812b8938585c16ed))
+- ⚡️ refactor blog components ([bc29857](https://github.com/sentrei/sentrei/commit/bc29857312c8a9ce9de48b798b8a32905bec4b7f))
+
 # [1.3.0](https://github.com/sentrei/sentrei/compare/v1.2.0...v1.3.0) (2020-10-19)
 
 ### Features
