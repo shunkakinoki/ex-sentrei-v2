@@ -1,3 +1,22 @@
+# [1.2.0](https://github.com/sentrei/sentrei/compare/v1.1.0...v1.2.0) (2020-10-19)
+
+### Features
+
+- 🎸 ini landing banner ([d631160](https://github.com/sentrei/sentrei/commit/d631160d397dc04651128d461b75f2a6519a2100))
+- 🎸 ini landing banner newsletter svg ([a0249f8](https://github.com/sentrei/sentrei/commit/a0249f8c8f2e0d22a349e75a847905e30cc03f48))
+- 🎸 ini landing components ([c467aa0](https://github.com/sentrei/sentrei/commit/c467aa0ef91d5befb3664f354904a8190f173998))
+- 🎸 ini landing cta ([62d5670](https://github.com/sentrei/sentrei/commit/62d56700838c26d8ad27e0e74623e66a1634a6f8))
+- 🎸 ini landing feature ([6c50b87](https://github.com/sentrei/sentrei/commit/6c50b874157e853cbf32939e31c4ce6c23dd3236))
+- 🎸 ini landing footer ([1221682](https://github.com/sentrei/sentrei/commit/1221682f65697a63fd201facd95a9f819df22161))
+- 🎸 ini landing header ([e68d1f6](https://github.com/sentrei/sentrei/commit/e68d1f6fd9d0f40c47ea35ec4064ca3ab387091b))
+- 🎸 ini live demo banner component ([eff7141](https://github.com/sentrei/sentrei/commit/eff71418a780744955488fa36e87f2239858db3e))
+
+### Performance Improvements
+
+- ⚡️ improve cta button ([67bfb68](https://github.com/sentrei/sentrei/commit/67bfb6809f26f137a9c255d5b1310d387cea561e))
+- ⚡️ ini footer border ([2ee0b70](https://github.com/sentrei/sentrei/commit/2ee0b706538a3d57ca497454401bef64e5950c4d))
+- ⚡️ upgrade banner gradient component ([5e256fc](https://github.com/sentrei/sentrei/commit/5e256fc7ee14d64397da2ca4b9a8a8e8f99e83f8))
+
 # [1.1.0](https://github.com/sentrei/sentrei/compare/v1.0.1...v1.1.0) (2020-10-19)
 
 ### Features
