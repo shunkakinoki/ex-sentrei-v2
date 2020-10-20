@@ -1,3 +1,18 @@
+# [1.8.0](https://github.com/sentrei/sentrei/compare/v1.7.0...v1.8.0) (2020-10-20)
+
+### Features
+
+- 🎸 ini blog pagination ([4099e01](https://github.com/sentrei/sentrei/commit/4099e01b2733a69a9999e1ad2a5f477e0f2b009b))
+- 🎸 ini demo pages ([fbe123f](https://github.com/sentrei/sentrei/commit/fbe123f02712a400e7050cd9cad339a4c08df547))
+- 🎸 ini static paths build totalPages ([9104f33](https://github.com/sentrei/sentrei/commit/9104f33b7cef72a058a2a401b1325a7d533357e1))
+
+### Performance Improvements
+
+- ⚡️ convert to integer on num path ([c4bb870](https://github.com/sentrei/sentrei/commit/c4bb870fc149235c439d7a2454127cc3bd4c435c))
+- ⚡️ ini landing footer w/ support screen ([ebb8238](https://github.com/sentrei/sentrei/commit/ebb8238038d636884edb4cc6e9b3daacf41b81ed))
+- ⚡️ ini pagination ellipsis ([0ba6764](https://github.com/sentrei/sentrei/commit/0ba6764202acad6e78e9289e1efbea060c1d0a50))
+- ⚡️ migrate pages to page ([1b7108d](https://github.com/sentrei/sentrei/commit/1b7108dd8bc6e7f0bd587da3bb982db6f24432e9))
+
 # [1.7.0](https://github.com/sentrei/sentrei/compare/v1.6.0...v1.7.0) (2020-10-20)
 
 ### Features
