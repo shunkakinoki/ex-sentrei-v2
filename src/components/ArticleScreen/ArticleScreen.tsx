@@ -4,6 +4,7 @@ import LandingFooter from "@/components/LandingFooter";
 import ArticleBanner from "@/components/ArticleBanner";
 import ArticleAuthor from "@/components/ArticleAuthor";
 import ArticleImage from "@/components/ArticleImage";
+import ArticleBody from "@/components/ArticleBody";
 import Author from "@/types/Author";
 import Article from "@/types/Article";
 
@@ -23,6 +24,7 @@ export default function ArticleScreen({authors, article}: Props): JSX.Element {
         time={article.time}
       />
       <ArticleImage title={article.title} image={article.image} />
+      <ArticleBody body={article.body} />
       <LandingFooter />
     </RootContainer>
   );

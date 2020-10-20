@@ -4,7 +4,7 @@ import clsx from "clsx";
 import Article from "@/types/Article";
 import Link from "next/link";
 
-export interface Props extends Article {
+export interface Props extends Omit<Article, "body"> {
   namespace: string;
   variant: "small" | "medium" | "large";
 }
