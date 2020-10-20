@@ -13,6 +13,7 @@ export default function BlogStoryGrid({articles}: Props): JSX.Element {
           return (
             <BlogStoryCard
               key={article.slug}
+              date={article.date}
               image={article.image}
               title={article.title}
               slug={article.slug}

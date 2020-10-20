@@ -1,14 +1,19 @@
 import {GetStaticProps, InferGetStaticPropsType} from "next";
-import DemoScreen, {Props} from "@/components/DemoScreen";
+import DemoScreen, {Props as DemoScreenProps} from "@/components/DemoScreen";
 import faker from "faker";
 import Article from "@/types/Article";
 import Blog from "@/types/Blog";
 import Author from "@/types/Author";
 
+export type Props = Omit<DemoScreenProps, "articles"> & {
+  articles: string;
+};
+
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const createArticle = (): Article => {
     return {
+      date: faker.date.past(3),
       image: `${faker.image.image()}?random=${Date.now()}`,
       slug: faker.lorem.slug(),
       title: faker.lorem.lines(Math.floor(Math.random() * 3 + 1)),
@@ -39,7 +44,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
   return {
     props: {
-      articles,
+      articles: JSON.stringify(articles),
       author,
       blog,
     },
@@ -51,7 +56,13 @@ const Demo = ({
   author,
   blog,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  return <DemoScreen articles={articles} author={author} blog={blog} />;
+  return (
+    <DemoScreen
+      articles={JSON.parse(articles) as Article[]}
+      author={author}
+      blog={blog}
+    />
+  );
 };
 
 export default Demo;
