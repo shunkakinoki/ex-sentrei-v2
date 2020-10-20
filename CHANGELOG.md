@@ -1,3 +1,14 @@
+# [1.9.0](https://github.com/sentrei/sentrei/compare/v1.8.1...v1.9.0) (2020-10-20)
+
+### Features
+
+- 🎸 ini article screen ([0f05370](https://github.com/sentrei/sentrei/commit/0f0537028599f1c9d315487425a36821e25a6391))
+- 🎸 ini revamp slug article screen ([5900eb2](https://github.com/sentrei/sentrei/commit/5900eb271eed9a97a1f4874e61e752d2bc53acda))
+
+### Performance Improvements
+
+- ⚡️ ini isr slug ([351eca1](https://github.com/sentrei/sentrei/commit/351eca166b53de8b1d35d65fad06c389bfc90a01))
+
 ## [1.8.1](https://github.com/sentrei/sentrei/compare/v1.8.0...v1.8.1) (2020-10-20)
 
 ### Performance Improvements
