@@ -11,7 +11,7 @@ export default function ArticleAuthor({
   time,
 }: Props): JSX.Element {
   return (
-    <div className="px-4 mx-auto mt-1 mb-16 md:max-w-screen-sm sm:px-6 lg:px-8 md:mt-3 md:mb-12 xl:mt-6 lg:mb-20">
+    <div className="px-4 mx-auto mt-1 mb-8 md:max-w-screen-sm sm:px-6 lg:px-8 md:mt-3 md:mb-12 xl:mt-6 lg:mb-16">
       <section className="px-4 py-2 mt-2">
         <div className="flex items-center justify-between">
           <div className="flex items-center flex-1">

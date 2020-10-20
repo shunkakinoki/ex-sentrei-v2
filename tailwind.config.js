@@ -4,7 +4,13 @@ module.exports = {
   },
   purge: ["./src/components/**/*.tsx", "./pages/**/*.tsx"],
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        96: "24rem",
+        128: "32rem",
+        192: "48rem",
+      },
+    },
     truncate: {
       lines: {
         2: "2",
