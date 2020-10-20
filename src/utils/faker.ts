@@ -10,15 +10,18 @@ export const createMdHeader = (num = 3): string => {
 };
 
 export const createMdEmphasis = (num = 3): string => {
-  const types = ["_", "~", "*", "**"];
-  const word = faker.lorem.words(num);
+  const types = ["_", "~", "*", "**", ">"];
+  const word = faker.lorem.sentence(num);
   const type = types[Math.floor(Math.random() * (types.length - 1))];
+  if (type === ">") {
+    return `${type + word}\n`;
+  }
   return `${type + word + type}\n`;
 };
 
 export const createMdTable = (num = 3): string => {
   const table = [
-    "| header1 | header2 | header3 |",
+    `| ${faker.lorem.word()} | ${faker.lorem.word()} | ${faker.lorem.word()} |`,
     "|:-----:|:-----:|:-----:|",
   ];
   for (let i = 0; num > i; i += 1) {
@@ -61,11 +64,12 @@ export const createMdBlock = (num = 3): string => {
 export const createMarkdown = (num = 3): string => {
   const blocks: string[] = [];
   for (let i = 0; num > i; i += 1) {
-    const flag = Math.floor(Math.random() * 9 + 1);
+    const flag = Math.floor(Math.random() * 18);
     switch (flag) {
-      case 1:
+      case 0:
         blocks.push(createMdTable());
         break;
+      case 1:
       case 2:
         blocks.push(createMdList(Math.floor(Math.random() * 3 + 3)));
         break;
@@ -74,7 +78,7 @@ export const createMarkdown = (num = 3): string => {
         break;
       default: {
         blocks.push(createMdHeader(Math.floor(Math.random() * 5 + 1)));
-        blocks.push(createMdEmphasis(1));
+        blocks.push(createMdEmphasis(Math.floor(Math.random() * 9 + 6)));
         blocks.push(
           faker.lorem.paragraphs(Math.floor(Math.random() * 3 + 3)),
           "\n",

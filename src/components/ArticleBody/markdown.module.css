@@ -1,3 +1,111 @@
 .markdown {
   @apply leading-relaxed;
 }
+
+.markdown p {
+  @apply my-3;
+}
+
+.markdown h1 {
+  @apply text-6xl;
+  @apply font-semibold;
+  @apply my-8;
+  @apply tracking-tight;
+  @apply leading-none;
+}
+
+.markdown h2 {
+  @apply text-5xl;
+  @apply font-semibold;
+  @apply leading-tight;
+  @apply my-6;
+}
+
+.markdown h3 {
+  @apply text-4xl;
+  @apply font-medium;
+  @apply leading-snug;
+  @apply my-5;
+}
+
+.markdown h4 {
+  @apply text-3xl;
+  @apply font-serif;
+  @apply leading-snug;
+  @apply my-4;
+}
+
+.markdown h5 {
+  @apply text-3xl;
+  @apply font-light;
+  @apply leading-snug;
+  @apply my-3;
+}
+
+.markdown h6 {
+  @apply text-3xl;
+  @apply font-thin;
+  @apply leading-snug;
+  @apply my-3;
+}
+
+.markdown ul {
+  @apply font-serif;
+  @apply text-2xl;
+  @apply text-gray-900;
+  @apply list-disc;
+  @apply mx-4;
+  @apply my-3;
+}
+
+.markdown ol {
+  @apply font-sans;
+  @apply text-2xl;
+  @apply text-gray-800;
+  @apply list-inside;
+  @apply list-decimal;
+  @apply mx-4;
+  @apply my-3;
+}
+
+.markdown table {
+  @apply w-full;
+  @apply max-w-screen-lg;
+  @apply table-auto;
+  @apply table-caption;
+  @apply overflow-hidden;
+}
+
+.markdown th {
+  @apply relative;
+  @apply border-collapse;
+  @apply font-serif;
+  @apply text-2xl;
+  @apply leading-relaxed;
+  @apply font-semibold;
+  @apply text-left;
+}
+
+.markdown td {
+  @apply font-serif;
+  @apply leading-relaxed;
+  @apply px-4;
+  @apply py-2;
+}
+
+.markdown blockquote {
+  @apply font-serif;
+  @apply italic;
+  @apply p-3;
+  @apply mx-16;
+  @apply my-auto;
+}
+
+.markdown blockquote > p {
+  @apply max-w-screen-md;
+  @apply text-4xl;
+  @apply leading-snug;
+  @apply font-bold;
+  @apply mx-0;
+  @apply my-auto;
+}
