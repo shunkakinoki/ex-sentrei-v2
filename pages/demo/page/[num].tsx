@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
   };
 };
 
-const Demo = ({
+const Num = ({
   articles,
   author,
   blog,
@@ -57,4 +57,4 @@ const Demo = ({
   );
 };
 
-export default Demo;
+export default Num;
