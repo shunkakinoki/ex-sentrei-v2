@@ -2,6 +2,7 @@ import {GetStaticProps, InferGetStaticPropsType, GetStaticPaths} from "next";
 import DemoScreen, {Props as DemoScreenProps} from "@/components/DemoScreen";
 import Article from "@/types/Article";
 import {createArticles, createAuthor, createBlog} from "@/utils/faker";
+import {totalPages} from "@/const/demo";
 
 export type Props = Omit<DemoScreenProps, "articles" | "current"> & {
   articles: string;
@@ -10,11 +11,14 @@ export type Props = Omit<DemoScreenProps, "articles" | "current"> & {
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = [
-    {params: {num: "1"}},
-    {params: {num: "2"}},
-    {params: {num: "3"}},
-  ];
+  const paths = new Array(totalPages).fill(undefined).map((_, i) => {
+    return {
+      params: {
+        num: (i + 1).toString(),
+      },
+    };
+  });
+
   return {paths, fallback: false};
 };
 
