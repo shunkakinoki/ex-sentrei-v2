@@ -1,3 +1,15 @@
+# [1.7.0](https://github.com/sentrei/sentrei/compare/v1.6.0...v1.7.0) (2020-10-20)
+
+### Features
+
+- 🎸 ini blog story banner date ([fc85d3a](https://github.com/sentrei/sentrei/commit/fc85d3a4edc596ea370d7f436e90be72994c6dec))
+- 🎸 ini date time for article ([a5e0b50](https://github.com/sentrei/sentrei/commit/a5e0b506a544730163926a1b328f327139cbe9f6))
+- 🎸 ini time read for banner ([fd11dd6](https://github.com/sentrei/sentrei/commit/fd11dd62ea6ba21840ce7d8f79305b307b3d0d97))
+
+### Performance Improvements
+
+- ⚡️ ini demo generate 6 articles ([ec32109](https://github.com/sentrei/sentrei/commit/ec321092e56493b6055f0583a82a46e673ac4abd))
+
 # [1.6.0](https://github.com/sentrei/sentrei/compare/v1.5.0...v1.6.0) (2020-10-20)
 
 ### Features
