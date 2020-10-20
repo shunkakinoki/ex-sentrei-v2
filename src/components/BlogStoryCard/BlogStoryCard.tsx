@@ -8,7 +8,9 @@ export interface Props extends Article {
 }
 
 export default function BlogStoryCard({
+  date,
   image,
+  time,
   title,
   subtitle,
   variant,
@@ -25,7 +27,12 @@ export default function BlogStoryCard({
     >
       <div className="rounded sm:rounded-2xl md:rounded-lg group">
         <BlogStoryImage image={image} title={title} />
-        <BlogStoryBanner title={title} subtitle={subtitle} />
+        <BlogStoryBanner
+          date={date}
+          time={time}
+          title={title}
+          subtitle={subtitle}
+        />
       </div>
     </div>
   );
