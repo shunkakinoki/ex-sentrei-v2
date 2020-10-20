@@ -7,6 +7,7 @@ import BlogStoryGrid, {
 } from "@/components/BlogStoryGrid";
 import BlogPagination from "@/components/BlogPagination";
 import {totalPages} from "@/const/demo";
+import LandingFooter from "@/components/LandingFooter";
 
 export interface Props extends BlogStoryGridProps {
   author: BlogAuthorProps;
@@ -27,6 +28,7 @@ export default function DemoScreen({
       <BlogAuthor bio={author.bio} image={author.image} name={author.name} />
       <BlogStoryGrid articles={articles} />
       <BlogPagination current={current} total={totalPages} namespace="demo" />
+      <LandingFooter />
     </RootContainer>
   );
 }
