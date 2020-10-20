@@ -1,3 +1,18 @@
+# [1.10.0](https://github.com/sentrei/sentrei/compare/v1.9.1...v1.10.0) (2020-10-20)
+
+### Bug Fixes
+
+- 🐛 faker sufficient naming ([c2a9916](https://github.com/sentrei/sentrei/commit/c2a991636f95b3416c07cbe5f03f0e0aa79248ef))
+
+### Features
+
+- 🎸 ini article head ([b6976fc](https://github.com/sentrei/sentrei/commit/b6976fcec99787b24dae8c84372534c6d8642fe8))
+- 🎸 ini article image ([7c67a5c](https://github.com/sentrei/sentrei/commit/7c67a5c7bee704fc573d8bfa323eba412a8b9d1a))
+
+### Performance Improvements
+
+- ⚡️ refaactor article styling ([6de058f](https://github.com/sentrei/sentrei/commit/6de058f71dcdf431a34afc92a50cf40735b1db62))
+
 ## [1.9.1](https://github.com/sentrei/sentrei/compare/v1.9.0...v1.9.1) (2020-10-20)
 
 ### Performance Improvements
