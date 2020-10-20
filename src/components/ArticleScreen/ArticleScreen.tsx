@@ -4,9 +4,14 @@ import LandingFooter from "@/components/LandingFooter";
 import ArticleBanner from "@/components/ArticleBanner";
 import ArticleAuthor from "@/components/ArticleAuthor";
 import ArticleImage from "@/components/ArticleImage";
-import ArticleBody from "@/components/ArticleBody";
+// import ArticleBody from "@/components/ArticleBody";
 import Author from "@/types/Author";
 import Article from "@/types/Article";
+import dynamic from "next/dynamic";
+
+const ArticleBody = dynamic(() => import("@/components/ArticleBody"), {
+  ssr: false,
+});
 
 export interface Props {
   article: Article;

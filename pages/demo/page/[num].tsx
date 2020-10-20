@@ -22,8 +22,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {paths, fallback: false};
 };
 
+// eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
-  const articles = await createArticles();
+  const articles = createArticles();
   const author = createAuthor();
   const blog = createBlog();
 
