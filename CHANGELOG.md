@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/sentrei/sentrei/compare/v1.10.1...v1.11.0) (2020-10-20)
+
+### Features
+
+- 🎸 ini article body w/ markdown function ([541bc9a](https://github.com/sentrei/sentrei/commit/541bc9a4898d5aa6393f12e7ff11ff14cff79bce))
+- 🎸 ini faker markdown ([ab2369f](https://github.com/sentrei/sentrei/commit/ab2369f30155bbf222eea6e1b6933708a3c07d4d))
+
 ## [1.10.1](https://github.com/sentrei/sentrei/compare/v1.10.0...v1.10.1) (2020-10-20)
 
 ### Performance Improvements
