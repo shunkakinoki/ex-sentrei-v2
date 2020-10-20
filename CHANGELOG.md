@@ -1,3 +1,9 @@
+# [1.13.0](https://github.com/sentrei/sentrei/compare/v1.12.0...v1.13.0) (2020-10-20)
+
+### Features
+
+- 🎸 ini body style ([a4173aa](https://github.com/sentrei/sentrei/commit/a4173aae92faa2cd8a95555c1f03d4beff0f9e8b))
+
 # [1.12.0](https://github.com/sentrei/sentrei/compare/v1.11.0...v1.12.0) (2020-10-20)
 
 ### Features
