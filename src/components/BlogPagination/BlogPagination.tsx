@@ -7,6 +7,14 @@ export interface Props {
   namespace: string;
 }
 
+function PaginationEllipsis(): JSX.Element {
+  return (
+    <a className="items-center justify-center hidden w-8 leading-5 transition duration-150 ease-in border-t-2 border-transparent cursor-pointer md:flex">
+      ...
+    </a>
+  );
+}
+
 export default function BlogPagination({
   current,
   total,
@@ -67,7 +75,7 @@ export default function BlogPagination({
         )}
         <div className="flex h-8 font-medium">
           <PaginationNumber border={current === 1} num={1} />
-          {current > 3 && <PaginationNumber num={0} />}
+          {current > 3 && <PaginationEllipsis />}
           {current === total && total > 3 && (
             <PaginationNumber num={current - 2} />
           )}
@@ -77,7 +85,7 @@ export default function BlogPagination({
           )}
           {current < total - 1 && <PaginationNumber num={current + 1} />}
           {current === 1 && total > 3 && <PaginationNumber num={current + 2} />}
-          {current < total - 2 && <PaginationNumber num={0} />}
+          {current < total - 2 && <PaginationEllipsis />}
           <PaginationNumber border={current === total} num={total} />
         </div>
         {current !== total && (
