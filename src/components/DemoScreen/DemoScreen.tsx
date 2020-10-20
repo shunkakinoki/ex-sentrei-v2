@@ -10,12 +10,14 @@ import BlogPagination from "@/components/BlogPagination";
 export interface Props extends BlogStoryGridProps {
   author: BlogAuthorProps;
   blog: BlogBannerProps;
+  current: number;
 }
 
 export default function DemoScreen({
   articles,
   author,
   blog,
+  current,
 }: Props): JSX.Element {
   return (
     <RootContainer>
@@ -23,7 +25,7 @@ export default function DemoScreen({
       <BlogBanner title={blog.title} subtitle={blog.subtitle} />
       <BlogAuthor bio={author.bio} image={author.image} name={author.name} />
       <BlogStoryGrid articles={articles} />
-      <BlogPagination current={1} total={3} />
+      <BlogPagination current={current} total={30} namespace="demo" />
     </RootContainer>
   );
 }
