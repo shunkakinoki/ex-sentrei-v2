@@ -18,7 +18,7 @@ export const createAuthor = (): Author => {
   return {
     image: faker.image.avatar(),
     bio: faker.lorem.sentences(3),
-    name: faker.name.title(),
+    name: faker.name.findName(),
   };
 };
 
