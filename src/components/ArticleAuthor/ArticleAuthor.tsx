@@ -29,7 +29,7 @@ export default function ArticleAuthor({
               </span>
             </div>
           </div>
-          <h3 className="pr-1 mt-1 text-xs text-gray-600 md:pr-3 md:text-md">
+          <h3 className="pr-1 mt-1 text-xs text-gray-600 md:pr-2 md:text-md">
             {time} min read
           </h3>
         </div>
