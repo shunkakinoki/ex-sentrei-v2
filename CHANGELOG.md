@@ -1,3 +1,17 @@
+# [1.6.0](https://github.com/sentrei/sentrei/compare/v1.5.0...v1.6.0) (2020-10-20)
+
+### Features
+
+- 🎸 ini faker data with types ([86d30dd](https://github.com/sentrei/sentrei/commit/86d30dda64acc99bc5432765bf10fe3008d0b39d))
+
+### Performance Improvements
+
+- ⚡️ ini blog card image skeleton ([20d9659](https://github.com/sentrei/sentrei/commit/20d9659ab1044e78d026e607eeaf7bcd627d2c81))
+- ⚡️ ini blog story initial screen ([39579c4](https://github.com/sentrei/sentrei/commit/39579c445bf3c22fa0858480621801841efe6eac))
+- ⚡️ ini plan for 3 days ([42a278c](https://github.com/sentrei/sentrei/commit/42a278cfc9626023384ab9b607d0c247f0c9d695))
+- ⚡️ refactor story image shadow transition ([d8803cc](https://github.com/sentrei/sentrei/commit/d8803cc93ed8a351e8672f9847d888a5cb97da3a))
+- ⚡️ refactor transition for blog story image ([ce5d734](https://github.com/sentrei/sentrei/commit/ce5d73455c9d0aac2c55822dcc85506a49c79011))
+
 # [1.5.0](https://github.com/sentrei/sentrei/compare/v1.4.0...v1.5.0) (2020-10-19)
 
 ### Features
