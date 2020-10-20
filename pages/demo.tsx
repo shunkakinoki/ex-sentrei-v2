@@ -9,9 +9,10 @@ import Author from "@/types/Author";
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const createArticle = (): Article => {
     return {
+      image: `${faker.image.image()}?random=${Date.now()}`,
       slug: faker.lorem.slug(),
-      title: faker.lorem.lines(1),
-      subtitle: faker.lorem.sentence(),
+      title: faker.lorem.lines(Math.floor(Math.random() * 3 + 1)),
+      subtitle: faker.lorem.sentences(Math.floor(Math.random() * 11)),
     };
   };
   const createAuthor = (): Author => {

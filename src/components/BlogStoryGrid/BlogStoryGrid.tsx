@@ -13,9 +13,11 @@ export default function BlogStoryGrid({articles}: Props): JSX.Element {
           return (
             <BlogStoryCard
               key={article.slug}
+              image={article.image}
               title={article.title}
+              slug={article.slug}
               subtitle={article.subtitle}
-              variant={index % 4 === 1 || index % 4 === 0 ? "small" : "medium"}
+              variant={index % 4 === 0 || index % 4 === 3 ? "small" : "medium"}
             />
           );
         })}

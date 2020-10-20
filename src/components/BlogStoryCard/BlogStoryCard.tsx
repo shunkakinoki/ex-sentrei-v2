@@ -1,14 +1,14 @@
 import BlogStoryImage from "@/components/BlogStoryImage";
 import BlogStoryBanner from "@/components/BlogStoryBanner";
 import clsx from "clsx";
+import Article from "@/types/Article";
 
-export interface Props {
-  title: string;
-  subtitle?: string;
+export interface Props extends Article {
   variant: "small" | "medium" | "large";
 }
 
 export default function BlogStoryCard({
+  image,
   title,
   subtitle,
   variant,
@@ -23,14 +23,9 @@ export default function BlogStoryCard({
         },
       )}
     >
-      <div className="flex items-center justify-center">
-        <div className="rounded-3xl sm:rounded-md group">
-          <BlogStoryImage
-            src="https://source.unsplash.com/WLUHO9A_xik/1600x900"
-            title={title}
-          />
-          <BlogStoryBanner title={title} subtitle={subtitle} />
-        </div>
+      <div className="rounded sm:rounded-2xl md:rounded-lg group">
+        <BlogStoryImage image={image} title={title} />
+        <BlogStoryBanner title={title} subtitle={subtitle} />
       </div>
     </div>
   );
