@@ -16,7 +16,11 @@ export default function ArticleScreen({authors, article}: Props): JSX.Element {
     <RootContainer>
       <LandingHeader />
       <ArticleBanner title={article.title} subtitle={article?.subtitle} />
-      <ArticleAuthor authors={authors} />
+      <ArticleAuthor
+        authors={authors}
+        date={article.date}
+        time={article.time}
+      />
       <LandingFooter />
     </RootContainer>
   );
