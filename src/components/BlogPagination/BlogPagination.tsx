@@ -32,9 +32,9 @@ export default function BlogPagination({
       <Link href={num !== 1 ? `/${namespace}/page/${num}` : `/${namespace}`}>
         <a
           className={clsx(
-            "items-center justify-center hidden w-8 leading-5 transition duration-150 ease-in border-t-2 border-transparent cursor-pointer md:flex",
+            "items-center justify-center hidden w-8 leading-5 transition duration-150 ease-in border-t-2 border-transparent cursor-pointer md:flex hover:text-pink-400",
             {
-              "border-pink-600": border,
+              "border-pink-600 ": border,
             },
           )}
         >
@@ -55,7 +55,7 @@ export default function BlogPagination({
                 : `/${namespace}`
             }
           >
-            <a className="flex items-center justify-center w-8 h-8 mr-1 cursor-pointer">
+            <a className="flex items-center justify-center w-8 h-8 mr-1 cursor-pointer hover:text-pink-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="100%"
@@ -90,7 +90,7 @@ export default function BlogPagination({
         </div>
         {current !== total && (
           <Link href={`/${namespace}/page/${current + 1}`}>
-            <a className="flex items-center justify-center w-8 h-8 ml-1 cursor-pointer">
+            <a className="flex items-center justify-center w-8 h-8 ml-1 cursor-pointer hover:text-pink-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="100%"

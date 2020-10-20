@@ -41,9 +41,9 @@ export default function LandingBanner(): JSX.Element {
           </main>
         </div>
       </div>
-      <div className="p-3 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+      <div className="z-10 p-3 lg:object-none lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <img
-          className="w-full h-full p-3 lg:p-20"
+          className="w-full h-64 p-3 sm:h-96 lg:h-full md:p-8 lg:p-16"
           src="/images/newsletter.svg"
           alt="Newsletter"
         />
