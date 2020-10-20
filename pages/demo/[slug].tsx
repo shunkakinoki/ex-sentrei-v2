@@ -15,7 +15,7 @@ export type Props = Omit<ArticleScreenProps, "article" | "authors"> & {
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
-    fallback: true,
+    fallback: "unstable_blocking",
   };
 };
 
