@@ -21,7 +21,7 @@ export default function BlogPagination({
     border?: boolean;
   }): JSX.Element {
     return (
-      <Link href={`/${namespace}/pages/${num}`}>
+      <Link href={num !== 1 ? `/${namespace}/page/${num}` : `/${namespace}`}>
         <a
           className={clsx(
             "items-center justify-center hidden w-8 leading-5 transition duration-150 ease-in border-t-2 border-transparent cursor-pointer md:flex",
@@ -30,7 +30,7 @@ export default function BlogPagination({
             },
           )}
         >
-          {num !== 0 ? num : "..."}
+          {num}
         </a>
       </Link>
     );
@@ -40,7 +40,13 @@ export default function BlogPagination({
     <div className="flex flex-col items-center my-12">
       <div className="flex text-gray-700">
         {current !== 1 && (
-          <Link href={`/${namespace}/pages/${current - 1}`}>
+          <Link
+            href={
+              current - 1 !== 0
+                ? `/${namespace}/page/${current - 1}`
+                : `/${namespace}`
+            }
+          >
             <a className="flex items-center justify-center w-8 h-8 mr-1 cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +81,7 @@ export default function BlogPagination({
           <PaginationNumber border={current === total} num={total} />
         </div>
         {current !== total && (
-          <Link href={`/${namespace}/pages/${current + 1}`}>
+          <Link href={`/${namespace}/page/${current + 1}`}>
             <a className="flex items-center justify-center w-8 h-8 ml-1 cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
