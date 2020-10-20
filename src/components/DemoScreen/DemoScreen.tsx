@@ -26,7 +26,7 @@ export default function DemoScreen({
       <LandingHeader />
       <BlogBanner title={blog.title} subtitle={blog.subtitle} />
       <BlogAuthor bio={author.bio} image={author.image} name={author.name} />
-      <BlogStoryGrid articles={articles} />
+      <BlogStoryGrid articles={articles} namespace="demo" />
       <BlogPagination current={current} total={totalPages} namespace="demo" />
       <LandingFooter />
     </RootContainer>
