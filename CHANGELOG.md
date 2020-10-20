@@ -1,3 +1,9 @@
+# [1.12.0](https://github.com/sentrei/sentrei/compare/v1.11.0...v1.12.0) (2020-10-20)
+
+### Features
+
+- 🎸 ini markdown formatter ([fac9375](https://github.com/sentrei/sentrei/commit/fac9375d307657d79c22faff9f4893c4f22b7ee4))
+
 # [1.11.0](https://github.com/sentrei/sentrei/compare/v1.10.1...v1.11.0) (2020-10-20)
 
 ### Features
