@@ -1,9 +1,10 @@
 import Article from "@/types/Article";
 
-export type Props = Pick<Article, "date" | "title" | "subtitle">;
+export type Props = Pick<Article, "date" | "time" | "title" | "subtitle">;
 
 export default function BlogStoryBanner({
   date,
+  time,
   title,
   subtitle,
 }: Props): JSX.Element {
@@ -14,13 +15,13 @@ export default function BlogStoryBanner({
           {title}
         </h3>
       </div>
-      <h6 className="text-gray-700 sm:pb-0 truncate-2-lines md:text-left">
+      <h6 className="h-12 font-light text-gray-700 sm:pb-0 truncate-2-lines md:text-left">
         {subtitle}
       </h6>
-      {!subtitle && <br />}
-      <p className="mt-1 font-medium text-left text-gray-400 truncate">
+      <p className="mt-1 font-medium text-left text-gray-500 truncate">
         {new Date(date).toDateString()}
         &nbsp;&middot;&nbsp;
+        {time} min read
       </p>
     </div>
   );

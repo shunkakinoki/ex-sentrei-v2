@@ -16,6 +16,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       date: faker.date.past(3),
       image: `${faker.image.image()}?random=${Date.now()}`,
       slug: faker.lorem.slug(),
+      time: Math.floor(Math.random() * 10 + 3),
       title: faker.lorem.lines(Math.floor(Math.random() * 3 + 1)),
       subtitle: faker.lorem.sentences(Math.floor(Math.random() * 11)),
     };
