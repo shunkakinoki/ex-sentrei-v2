@@ -1,3 +1,11 @@
+## [1.8.1](https://github.com/sentrei/sentrei/compare/v1.8.0...v1.8.1) (2020-10-20)
+
+### Performance Improvements
+
+- ⚡️ ini sharp package ([aef2846](https://github.com/sentrei/sentrei/commit/aef284689a4991fb23b694b391cbdf712abf0dd1))
+- ⚡️ upgrade next canary ([3f9c87f](https://github.com/sentrei/sentrei/commit/3f9c87f3bda5e2c55e23e9d35e0da9697f6c349b))
+- ⚡️ upgrade w/ ncu ([12baaec](https://github.com/sentrei/sentrei/commit/12baaec5265bb44e02baeb7afc6d283e098a96ff))
+
 # [1.8.0](https://github.com/sentrei/sentrei/compare/v1.7.0...v1.8.0) (2020-10-20)
 
 ### Features
