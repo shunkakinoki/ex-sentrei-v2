@@ -34,7 +34,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     };
   };
 
-  const createArticles = (numUsers = 5) => {
+  const createArticles = (numUsers = 6) => {
     return new Array(numUsers).fill(undefined).map(createArticle);
   };
 
