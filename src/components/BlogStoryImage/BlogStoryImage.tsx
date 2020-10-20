@@ -1,15 +1,14 @@
-export interface Props {
-  src: string;
-  title: string;
-}
+import Article from "@/types/Article";
 
-export default function BlogStoryImage({src, title}: Props): JSX.Element {
+export type Props = Pick<Article, "image" | "title">;
+
+export default function BlogStoryImage({image, title}: Props): JSX.Element {
   return (
-    <div className="transition duration-300 ease-in-out transform shadow-sm sm:shadow-md md:shadow-md lg:shadow-lg xl:shadow-lg group-hover:shadow-2xl hover:-translate-y-1">
+    <div className="transition duration-300 ease-in-out transform shadow-none md:hover:-translate-y-1 md:shadow-lg xl:shadow-xl group-hover:shadow-none md:group-hover:shadow-2xl">
       <img
         alt={`Story Cover for ${title}`}
-        src={src}
-        className="object-cover w-full h-40 rounded-sm sm:h-64"
+        src={image}
+        className="object-cover w-full h-40 bg-gray-400 sm:h-64"
       />
     </div>
   );

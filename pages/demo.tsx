@@ -1,8 +1,57 @@
-import {NextPage} from "next";
-import DemoScreen from "@/components/DemoScreen";
+import {GetStaticProps, InferGetStaticPropsType} from "next";
+import DemoScreen, {Props} from "@/components/DemoScreen";
+import faker from "faker";
+import Article from "@/types/Article";
+import Blog from "@/types/Blog";
+import Author from "@/types/Author";
 
-const Demo: NextPage = () => {
-  return <DemoScreen />;
+// eslint-disable-next-line @typescript-eslint/require-await
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const createArticle = (): Article => {
+    return {
+      image: `${faker.image.image()}?random=${Date.now()}`,
+      slug: faker.lorem.slug(),
+      title: faker.lorem.lines(Math.floor(Math.random() * 3 + 1)),
+      subtitle: faker.lorem.sentences(Math.floor(Math.random() * 11)),
+    };
+  };
+  const createAuthor = (): Author => {
+    return {
+      image: faker.image.avatar(),
+      bio: faker.lorem.sentences(3),
+      name: faker.name.title(),
+    };
+  };
+  const createBlog = (): Blog => {
+    return {
+      title: "My awesome newsletter",
+      subtitle: faker.lorem.sentence(),
+    };
+  };
+
+  const createArticles = (numUsers = 5) => {
+    return new Array(numUsers).fill(undefined).map(createArticle);
+  };
+
+  const articles = createArticles();
+  const author = createAuthor();
+  const blog = createBlog();
+
+  return {
+    props: {
+      articles,
+      author,
+      blog,
+    },
+  };
+};
+
+const Demo = ({
+  articles,
+  author,
+  blog,
+}: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
+  return <DemoScreen articles={articles} author={author} blog={blog} />;
 };
 
 export default Demo;
