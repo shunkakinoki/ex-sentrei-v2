@@ -7,8 +7,9 @@ export type Props = Omit<DemoScreenProps, "articles"> & {
   articles: string;
 };
 
+// eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const articles = await createArticles();
+  const articles = createArticles();
   const author = createAuthor();
   const blog = createBlog();
 
