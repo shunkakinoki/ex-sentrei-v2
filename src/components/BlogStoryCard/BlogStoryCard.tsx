@@ -16,7 +16,7 @@ export default function BlogStoryCard({
   return (
     <div
       className={clsx(
-        "w-full my-4 px-0 sm:px-2 md:px-3 xl:px-4 shadow-lg sm:shadow-none sm:my-2 md:w-1/2",
+        "w-full my-4 px-0 sm:px-2 md:px-3 xl:px-4 shadow-lg sm:shadow-none sm:my-2 md:w-1/2 ",
         {
           "lg:w-1/3": variant === "small",
           "lg:w-2/3": variant === "medium",
