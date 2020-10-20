@@ -32,7 +32,7 @@ export default function ArticleBody({body}: Props): JSX.Element {
   });
 
   return (
-    <div className="mx-auto">
+    <div className="max-w-sm mx-auto mt-4 sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl sm:mt-8 md:mt-12 lg:mt-24 xl:mt-32">
       <div className={Markdown.markdown}>
         <ReactMarkdown renderers={renderers} plugins={[gfm]}>
           {body}
