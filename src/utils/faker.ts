@@ -29,6 +29,10 @@ export const createBlog = (): Blog => {
   };
 };
 
-export const createArticles = (numUsers = 6): Article[] => {
-  return new Array(numUsers).fill(undefined).map(createArticle);
+export const createArticles = (num = 6): Article[] => {
+  return new Array(num).fill(undefined).map(createArticle);
+};
+
+export const createAuthors = (num = 3): Author[] => {
+  return new Array(num).fill(undefined).map(createAuthor);
 };
