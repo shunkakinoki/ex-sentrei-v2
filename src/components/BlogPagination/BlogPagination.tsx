@@ -50,7 +50,7 @@ export default function BlogPagination({
         {current !== 1 && (
           <Link
             href={
-              current - 1 !== 0
+              current - 1 !== 1
                 ? `/${namespace}/page/${current - 1}`
                 : `/${namespace}`
             }

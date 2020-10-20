@@ -49,7 +49,10 @@ const Demo = ({
       articles={JSON.parse(articles) as Article[]}
       author={author}
       blog={blog}
-      current={JSON.parse(current) as number}
+      current={
+        /* Multiply one to convert to integer */
+        (JSON.parse(current) as number) * 1
+      }
     />
   );
 };
