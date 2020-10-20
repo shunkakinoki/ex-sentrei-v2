@@ -9,7 +9,7 @@ import BlogPagination from "@/components/BlogPagination";
 import {totalPages} from "@/const/demo";
 import LandingFooter from "@/components/LandingFooter";
 
-export interface Props extends BlogStoryGridProps {
+export interface Props extends Omit<BlogStoryGridProps, "namespace"> {
   author: BlogAuthorProps;
   blog: BlogBannerProps;
   current: number;
