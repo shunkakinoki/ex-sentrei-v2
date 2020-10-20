@@ -29,6 +29,11 @@ export default function LandingHeader(): JSX.Element {
                 Pricing
               </a>
             </Link>
+            <Link href="/support">
+              <a className="text-base font-medium leading-6 text-gray-600 transition duration-150 ease-in-out hover:text-gray-900 focus:outline-none focus:text-gray-900">
+                Support
+              </a>
+            </Link>
           </nav>
           <div className="items-center justify-end hidden space-x-8 md:flex md:flex-1 lg:w-0">
             {/*  eslint-disable-next-line jsx-a11y/anchor-is-valid */}
