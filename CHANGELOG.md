@@ -1,3 +1,9 @@
+# [1.14.0](https://github.com/sentrei/sentrei/compare/v1.13.0...v1.14.0) (2020-10-21)
+
+### Features
+
+- 🎸 ini subscription component ([3b8b6d5](https://github.com/sentrei/sentrei/commit/3b8b6d5e6eea2c54eb47aa80debe0d7c6df74083))
+
 # [1.13.0](https://github.com/sentrei/sentrei/compare/v1.12.0...v1.13.0) (2020-10-20)
 
 ### Features
