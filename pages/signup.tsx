@@ -1,8 +1,8 @@
 import {NextPage} from "next";
 import AuthScreen from "@/components/SubscribeScreen";
 
-const Auth: NextPage = () => {
+const Signup: NextPage = () => {
   return <AuthScreen />;
 };
 
-export default Auth;
+export default Signup;

@@ -7,7 +7,7 @@ export default function LandingHeader(): JSX.Element {
         <div className="flex items-center justify-between py-6 border-b-2 border-gray-100 md:justify-start md:space-x-10">
           <div className="lg:w-0 lg:flex-1">
             <Link href="/">
-              <a className="flex-none">
+              <a className="inline-block">
                 <img
                   className="w-auto h-12 sm:h-10"
                   src="/images/logo.png"
