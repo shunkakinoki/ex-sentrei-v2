@@ -12,6 +12,8 @@ import ArticleStoryGrid from "@/components/ArticleStoryGrid";
 
 const ArticleBody = dynamic(() => import("@/components/ArticleBody"), {
   ssr: false,
+  // eslint-disable-next-line react/display-name
+  loading: () => <div className="p-8 md:p-12 lg:p-16" />,
 });
 
 export interface Props {
