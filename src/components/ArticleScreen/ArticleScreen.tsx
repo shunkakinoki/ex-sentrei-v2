@@ -8,6 +8,7 @@ import Author from "@/types/Author";
 import Article from "@/types/Article";
 import dynamic from "next/dynamic";
 import ArticleSubscription from "@/components/ArticleSubscription";
+import ArticleStoryGrid from "@/components/ArticleStoryGrid";
 
 const ArticleBody = dynamic(() => import("@/components/ArticleBody"), {
   ssr: false,
@@ -16,9 +17,14 @@ const ArticleBody = dynamic(() => import("@/components/ArticleBody"), {
 export interface Props {
   article: Article;
   authors: Author[];
+  more: Article[];
 }
 
-export default function ArticleScreen({authors, article}: Props): JSX.Element {
+export default function ArticleScreen({
+  authors,
+  article,
+  more,
+}: Props): JSX.Element {
   return (
     <RootContainer>
       <LandingHeader />
@@ -38,6 +44,7 @@ export default function ArticleScreen({authors, article}: Props): JSX.Element {
         <ArticleBody excerpt body={article.excerpt} />
       )}
       {article.pricing === "subscription" && <ArticleSubscription />}
+      <ArticleStoryGrid articles={more} namespace="demo" />
       <LandingFooter />
     </RootContainer>
   );
