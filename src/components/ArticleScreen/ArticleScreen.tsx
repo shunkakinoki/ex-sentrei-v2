@@ -1,5 +1,5 @@
 import LandingHeader from "@/components/LandingHeader";
-import RootContainer from "@/components/RootContainer";
+import ContainerRoot from "@/components/ContainerRoot";
 import LandingFooter from "@/components/LandingFooter";
 import ArticleBanner from "@/components/ArticleBanner";
 import ArticleAuthor from "@/components/ArticleAuthor";
@@ -28,7 +28,7 @@ export default function ArticleScreen({
   more,
 }: Props): JSX.Element {
   return (
-    <RootContainer>
+    <ContainerRoot>
       <LandingHeader />
       <ArticleBanner title={article.title} subtitle={article?.subtitle} />
       <ArticleAuthor
@@ -48,6 +48,6 @@ export default function ArticleScreen({
       {article.pricing === "subscription" && <ArticleSubscription />}
       <ArticleStoryGrid articles={more} namespace="demo" />
       <LandingFooter />
-    </RootContainer>
+    </ContainerRoot>
   );
 }

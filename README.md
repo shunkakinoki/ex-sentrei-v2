@@ -20,18 +20,34 @@ The most delightful way to start a newsletter
 
 Day 1
 
-- Morning -> Ini sentrei repo
-- Noon -> Complete landing page
-- Night -> Complete editor
+- Ini sentrei repo
+- Complete landing page
+- Complete editor
 
 Day 2
 
-- Morning -> Complete faker blog w/ tailwind
-- Noon -> Integrate backend w/ firebase (profile, signup, editor)
-- Night -> Finish WYSIWYG Editor
+- Complete faker blog w/ tailwind
 
 Day 3
 
-- Morning -> Connect Stripe & Sendgrid
-- Noon -> Connect Cloudinary for images
-- Night -> Integrate analytics
+- Complete article
+- Integrate essential packages
+- Complete landing + onboarding pages
+
+Day 4
+
+- Finish WYSIWYG Editor
+
+Day 5
+
+- Integrate backend w/ firebase (profile, signup, editor)
+
+Day 6
+
+- Connect Stripe & Sendgrid
+- Connect Cloudinary for images
+- Integrate analytics
+
+Day 7
+
+Marketing & Refactoring + Launch

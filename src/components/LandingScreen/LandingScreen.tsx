@@ -3,16 +3,16 @@ import LandingHeader from "@/components/LandingHeader";
 import LandingFeature from "@/components/LandingFeature";
 import LandingCta from "@/components/LandingCta";
 import LandingFooter from "@/components/LandingFooter";
-import RootContainer from "@/components/RootContainer";
+import ContainerRoot from "@/components/ContainerRoot";
 
 export default function LandingScreen(): JSX.Element {
   return (
-    <RootContainer>
+    <ContainerRoot>
       <LandingHeader />
       <LandingBanner />
       <LandingFeature />
       <LandingCta />
       <LandingFooter />
-    </RootContainer>
+    </ContainerRoot>
   );
 }
