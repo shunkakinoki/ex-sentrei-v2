@@ -1,8 +1,8 @@
 .excerpt:after {
-  position: absolute;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
+  @apply absolute;
+  @apply bottom-0;
+  @apply h-full;
+  @apply w-full;
   content: "";
   background: linear-gradient(
     to top,
