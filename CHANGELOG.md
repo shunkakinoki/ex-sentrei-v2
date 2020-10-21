@@ -1,3 +1,13 @@
+# [1.16.0](https://github.com/sentrei/sentrei/compare/v1.15.1...v1.16.0) (2020-10-21)
+
+### Features
+
+- 🎸 ini essential packages ([1d2078d](https://github.com/sentrei/sentrei/commit/1d2078db6f559b631cb021493426c18876cd0662))
+
+### Performance Improvements
+
+- ⚡️ ini favicon ico ([e674ea6](https://github.com/sentrei/sentrei/commit/e674ea6a8b1100001dc5ab63287e364b704538b7))
+
 ## [1.15.1](https://github.com/sentrei/sentrei/compare/v1.15.0...v1.15.1) (2020-10-21)
 
 ### Performance Improvements
