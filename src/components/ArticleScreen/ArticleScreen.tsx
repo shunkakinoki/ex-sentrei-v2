@@ -4,10 +4,10 @@ import LandingFooter from "@/components/LandingFooter";
 import ArticleBanner from "@/components/ArticleBanner";
 import ArticleAuthor from "@/components/ArticleAuthor";
 import ArticleImage from "@/components/ArticleImage";
-// import ArticleBody from "@/components/ArticleBody";
 import Author from "@/types/Author";
 import Article from "@/types/Article";
 import dynamic from "next/dynamic";
+import ArticleSubscription from "@/components/ArticleSubscription";
 
 const ArticleBody = dynamic(() => import("@/components/ArticleBody"), {
   ssr: false,
@@ -28,8 +28,16 @@ export default function ArticleScreen({authors, article}: Props): JSX.Element {
         date={article.date}
         time={article.time}
       />
-      <ArticleImage title={article.title} image={article.image} />
-      <ArticleBody body={article.body} />
+      {article.image && (
+        <ArticleImage title={article.title} image={article.image} />
+      )}
+      {article.pricing === "free" && article.body && (
+        <ArticleBody body={article.body} />
+      )}
+      {article.pricing === "subscription" && article.excerpt && (
+        <ArticleBody excerpt body={article.excerpt} />
+      )}
+      {article.pricing === "subscription" && <ArticleSubscription />}
       <LandingFooter />
     </RootContainer>
   );

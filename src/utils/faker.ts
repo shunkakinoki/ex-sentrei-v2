@@ -1,7 +1,7 @@
 import Blog from "@/types/Blog";
 import Author from "@/types/Author";
 import faker from "faker";
-import Article from "@/types/Article";
+import Article, {Pricing} from "@/types/Article";
 
 // Inspired by: https://github.com/Marak/faker.js/blob/4bd0935460ab62b72593b42471699d2044c7a53a/lib/markdown.js
 export const createMdHeader = (num = 3): string => {
@@ -89,11 +89,23 @@ export const createMarkdown = (num = 3): string => {
   return blocks.join("\n");
 };
 
+export const createPricing = (): Pricing => {
+  const flag = Math.floor(Math.random() * 2);
+  switch (flag) {
+    case 0:
+      return "subscription";
+    default:
+      return "free";
+  }
+};
+
 export const createArticle = (): Article => {
   return {
     body: createMarkdown(30),
+    excerpt: createMarkdown(1),
     date: faker.date.past(Math.floor(Math.random() * 30)),
     image: `${faker.image.image()}?random=${Date.now()}`,
+    pricing: createPricing(),
     slug: faker.lorem.slug(),
     time: Math.floor(Math.random() * 10 + 3),
     title: faker.lorem.lines(Math.floor(Math.random() * 3 + 1)),
