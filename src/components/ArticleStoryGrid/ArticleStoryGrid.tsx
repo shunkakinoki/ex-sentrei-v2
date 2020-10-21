@@ -6,13 +6,21 @@ export interface Props {
   namespace: string;
 }
 
-export default function BlogStoryGrid({
+export default function ArticleStoryGrid({
   articles,
   namespace,
 }: Props): JSX.Element {
   return (
-    <section className="mt-8 mb-16 sm:mt-16 md:mb-12 lg:mb-20">
-      <div className="flex flex-wrap mb-8 -mx-2">
+    <section className="mt-4 mb-8 sm:mt-8 md:mt-16 lg:mt-24 xl:mt-32 ">
+      <div className="flex items-center mb-6 md:mb-8 lg:mb-12">
+        <div className="flex-grow-0 px-4 py-2 m-2 font-semibold text-center text-gray-600">
+          Other articles from {namespace}
+        </div>
+        <div className="flex-grow px-4 py-2 m-2 border-gray-300">
+          <div className="flex justify-between border-b-2 md:justify-start md:space-x-10" />
+        </div>
+      </div>
+      <div className="flex flex-wrap mt-4 sm:mt-8 md:mt-12 lg:mt-16">
         {articles.map((article, index) => {
           return (
             <BlogStoryCard

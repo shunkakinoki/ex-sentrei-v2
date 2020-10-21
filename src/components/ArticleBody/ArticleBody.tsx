@@ -4,9 +4,14 @@ import gfm from "remark-gfm";
 import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
 import {ReactNode, useEffect} from "react";
 import dracula from "react-syntax-highlighter/dist/esm/styles/prism/dracula";
-import Markdown from "./markdown.module.css";
+import Markdown from "@/styles/markdown.module.css";
+import Excerpt from "@/styles/excerpt.module.css";
+import clsx from "clsx";
 
-export type Props = Pick<Article, "body">;
+export interface Props extends Pick<Article, "body"> {
+  excerpt?: boolean;
+}
+
 const renderers = {
   // eslint-disable-next-line react/display-name
   code: ({
@@ -25,14 +30,20 @@ const renderers = {
   },
 };
 
-export default function ArticleBody({body}: Props): JSX.Element {
+export default function ArticleBody({body, excerpt}: Props): JSX.Element {
   useEffect(() => {
     // eslint-disable-next-line no-console
     console.log(body);
   });
 
   return (
-    <div className="max-w-sm mx-auto mt-4 sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl sm:mt-8 md:mt-12 lg:mt-24 xl:mt-32">
+    <div
+      className={clsx(
+        "max-w-sm mx-auto mt-4 sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl sm:mt-8 md:mt-12 lg:mt-24 xl:mt-32",
+        excerpt &&
+          `overflow-hidden relative block text-gray-900 ${Excerpt.excerpt}`,
+      )}
+    >
       <div className={Markdown.markdown}>
         <ReactMarkdown renderers={renderers} plugins={[gfm]}>
           {body}
