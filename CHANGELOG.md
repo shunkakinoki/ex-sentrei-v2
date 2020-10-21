@@ -1,3 +1,15 @@
+# [1.15.0](https://github.com/sentrei/sentrei/compare/v1.14.0...v1.15.0) (2020-10-21)
+
+### Features
+
+- 🎸 ini article story grid w/ refactoring ([499eaa5](https://github.com/sentrei/sentrei/commit/499eaa583851a4f111fcc03db928b7f6c657546d))
+- 🎸 ini article subscription ([ab60df4](https://github.com/sentrei/sentrei/commit/ab60df40625c833eddc6f7067e49830f0f545c76))
+
+### Performance Improvements
+
+- ⚡️ refactor article image bg gray color ([30631b3](https://github.com/sentrei/sentrei/commit/30631b31ad50c532a7dad4592668bb854a7fab1d))
+- ⚡️ remove bg color for landing cta ([70b07f9](https://github.com/sentrei/sentrei/commit/70b07f90ce0f23eb6ef77c1526006f6515d8242e))
+
 # [1.14.0](https://github.com/sentrei/sentrei/compare/v1.13.0...v1.14.0) (2020-10-21)
 
 ### Features
