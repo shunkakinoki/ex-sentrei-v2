@@ -1,12 +1,9 @@
 ignores:
   [
-    "@types/*",
     "autoprefixer",
     "postcss-import",
     "sharp",
     "tailwindcss",
-    "typescript",
-    "nodemon",
     "vercel",
     "@semantic-release/*",
     "commitizen",
