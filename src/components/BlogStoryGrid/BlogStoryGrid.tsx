@@ -19,6 +19,7 @@ export default function BlogStoryGrid({
               key={article.slug}
               date={article.date}
               image={article.image}
+              pricing={article.pricing}
               time={article.time}
               title={article.title}
               slug={article.slug}
