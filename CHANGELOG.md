@@ -1,3 +1,10 @@
+## [1.15.1](https://github.com/sentrei/sentrei/compare/v1.15.0...v1.15.1) (2020-10-21)
+
+### Performance Improvements
+
+- ⚡️ ini dynamic loading div component ([ebd97f2](https://github.com/sentrei/sentrei/commit/ebd97f2ff635050f9ad5e0ad3605f706eb00e160))
+- ⚡️ ini excerpt tailwind ([0251c06](https://github.com/sentrei/sentrei/commit/0251c06f436ce6bcbf1f798ffea07e37e197b544))
+
 # [1.15.0](https://github.com/sentrei/sentrei/compare/v1.14.0...v1.15.0) (2020-10-21)
 
 ### Features
