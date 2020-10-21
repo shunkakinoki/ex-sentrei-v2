@@ -6,8 +6,6 @@ export interface Props {
 
 export default function ContainerRoot({children}: Props): JSX.Element {
   return (
-    <div className="container min-h-screen px-4 mx-auto sm:px-5 md:px-6">
-      {children}
-    </div>
+    <div className="container px-4 mx-auto sm:px-5 md:px-6">{children}</div>
   );
 }

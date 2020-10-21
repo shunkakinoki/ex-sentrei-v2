@@ -1,8 +1,13 @@
 import Blog from "@/types/Blog";
+import Link from "next/link";
 
-export type Props = Blog;
+export type Props = Blog & {namespace: string};
 
-export default function BlogBanner({title, subtitle}: Props): JSX.Element {
+export default function BlogBanner({
+  namespace,
+  title,
+  subtitle,
+}: Props): JSX.Element {
   return (
     <section className="flex flex-col items-center mt-16 mb-16 md:flex-row md:justify-between md:mb-12 lg:mt-24 lg:mb-20">
       <div className="md:w-1/2 lg:w-2/3">
@@ -15,13 +20,11 @@ export default function BlogBanner({title, subtitle}: Props): JSX.Element {
       </div>
       <div className="mt-10 sm:mt-15 sm:flex sm:justify-center md:w-1/2 lg:w-1/3 lg:flex-shrink-0 lg:mt-0">
         <div className="rounded-md shadow">
-          {/*  eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <a
-            href="#"
-            className="flex items-center justify-center w-full px-8 py-3 font-medium text-white rounded-md bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 md:py-4 md:text-lg md:px-20"
-          >
-            Subscribe now.
-          </a>
+          <Link href={`/${namespace}/subscribe`}>
+            <a className="flex items-center justify-center w-full px-8 py-3 font-medium text-white rounded-md hover:from-purple-300 hover:via-pink-400 hover:to-red-400 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 md:py-4 md:text-lg md:px-20">
+              Subscribe now.
+            </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -7,7 +7,7 @@ import ArticleImage from "@/components/ArticleImage";
 import Author from "@/types/Author";
 import Article from "@/types/Article";
 import dynamic from "next/dynamic";
-import ArticleSubscription from "@/components/ArticleSubscription";
+import ArticleSubscribe from "@/components/ArticleSubscribe";
 import ArticleStoryGrid from "@/components/ArticleStoryGrid";
 
 const ArticleBody = dynamic(() => import("@/components/ArticleBody"), {
@@ -45,7 +45,7 @@ export default function ArticleScreen({
       {article.pricing === "subscription" && article.excerpt && (
         <ArticleBody excerpt body={article.excerpt} />
       )}
-      {article.pricing === "subscription" && <ArticleSubscription />}
+      {article.pricing === "subscription" && <ArticleSubscribe />}
       <ArticleStoryGrid articles={more} namespace="demo" />
       <LandingFooter />
     </ContainerRoot>
