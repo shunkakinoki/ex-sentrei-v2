@@ -20,12 +20,14 @@ export interface Props {
   article: Article;
   authors: Author[];
   more: Article[];
+  namespace: string;
 }
 
 export default function ArticleScreen({
   authors,
   article,
   more,
+  namespace,
 }: Props): JSX.Element {
   return (
     <ContainerRoot>
@@ -45,7 +47,9 @@ export default function ArticleScreen({
       {article.pricing === "subscription" && article.excerpt && (
         <ArticleBody excerpt body={article.excerpt} />
       )}
-      {article.pricing === "subscription" && <ArticleSubscribe />}
+      {article.pricing === "subscription" && (
+        <ArticleSubscribe namespace={namespace} />
+      )}
       <ArticleStoryGrid articles={more} namespace="demo" />
       <LandingFooter />
     </ContainerRoot>

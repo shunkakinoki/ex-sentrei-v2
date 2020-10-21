@@ -6,7 +6,10 @@ import Article from "@/types/Article";
 import Author from "@/types/Author";
 import {createArticle, createAuthors, createArticles} from "@/utils/faker";
 
-export type Props = Omit<ArticleScreenProps, "article" | "authors" | "more"> & {
+export type Props = Omit<
+  ArticleScreenProps,
+  "article" | "authors" | "more" | "namespace"
+> & {
   article: string;
   authors: string;
   more: string;
@@ -46,6 +49,7 @@ const Slug = ({
       article={JSON.parse(article) as Article}
       authors={JSON.parse(authors) as Author[]}
       more={JSON.parse(more) as Article[]}
+      namespace="demo"
     />
   );
 };
