@@ -1,3 +1,15 @@
+# [1.17.0](https://github.com/sentrei/sentrei/compare/v1.16.0...v1.17.0) (2020-10-21)
+
+### Features
+
+- 🎸 ini login signup w/ header refactor ([32d0bdb](https://github.com/sentrei/sentrei/commit/32d0bdb8590b3fbd71e93a634b8f7eaf920f9bc6))
+- 🎸 ini subscribe screen w/ container refinements ([51b049e](https://github.com/sentrei/sentrei/commit/51b049e9b7d16d119d9171d1d2c1cdc22b6ae99a))
+
+### Performance Improvements
+
+- ⚡️ ini auth screen ([de6ec7d](https://github.com/sentrei/sentrei/commit/de6ec7dffe2490fe08e6527d9e3d316f77d71582))
+- ⚡️ refactor subscribe components ([09a5f63](https://github.com/sentrei/sentrei/commit/09a5f6377f6bc180ade4a3acd6b76e1c5fffd9ef))
+
 # [1.16.0](https://github.com/sentrei/sentrei/compare/v1.15.1...v1.16.0) (2020-10-21)
 
 ### Features
