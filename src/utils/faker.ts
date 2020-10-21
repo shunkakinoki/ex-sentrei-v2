@@ -104,7 +104,7 @@ export const createArticle = (): Article => {
 export const createAuthor = (): Author => {
   return {
     image: faker.image.avatar(),
-    bio: faker.lorem.sentences(Math.floor(Math.random() * 3)),
+    bio: faker.lorem.sentences(Math.floor(Math.random() * 3) + 1),
     name: faker.name.findName(),
   };
 };
