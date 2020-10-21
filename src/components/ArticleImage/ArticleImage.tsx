@@ -8,7 +8,7 @@ export default function ArticleImage({image, title}: Props): JSX.Element {
       <img
         alt={`Story Cover for ${title}`}
         src={image}
-        className="object-cover w-full h-64 bg-gray-400 md:h-96 lg:h-128 xl:h-192"
+        className="object-cover w-full h-64 bg-gray-300 md:h-96 lg:h-128 xl:h-192"
       />
     </div>
   );
