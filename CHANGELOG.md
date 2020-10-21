@@ -1,3 +1,9 @@
+## [1.17.1](https://github.com/sentrei/sentrei/compare/v1.17.0...v1.17.1) (2020-10-21)
+
+### Performance Improvements
+
+- ⚡️ refactor subscribe components ([1f6f3f1](https://github.com/sentrei/sentrei/commit/1f6f3f115b087ad3bcff713865add99cf3619ccd))
+
 # [1.17.0](https://github.com/sentrei/sentrei/compare/v1.16.0...v1.17.0) (2020-10-21)
 
 ### Features
