@@ -17,6 +17,7 @@ export default function BlogStoryCard({
   time,
   title,
   subtitle,
+  pricing,
   variant,
 }: Props): JSX.Element {
   return (
@@ -37,6 +38,7 @@ export default function BlogStoryCard({
             time={time}
             title={title}
             subtitle={subtitle}
+            pricing={pricing}
           />
         </div>
       </a>
