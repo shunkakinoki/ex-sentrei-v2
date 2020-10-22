@@ -5,8 +5,8 @@ export type Props = Pick<Article, "title" | "subtitle">;
 export default function ArticleBanner({title, subtitle}: Props): JSX.Element {
   return (
     <div className="px-4 pb-1 mx-auto mt-10 md:pb-2 sm:mt-6 sm:px-6 md:mt-8 lg:mt-12 lg:px-8 xl:mt-16">
-      <div className="relative overflow-hidden bg-white">
-        <div className="relative z-10 flex justify-center max-w-screen-xl mx-auto bg-white md:max-w-2xl lg:max-w-3xl ">
+      <div className="relative overflow-hidden ">
+        <div className="relative z-10 flex justify-center max-w-screen-xl mx-auto md:max-w-2xl lg:max-w-3xl ">
           <div className="text-center">
             <h1 className="text-4xl font-extrabold leading-10 tracking-tight text-center text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
               {title}

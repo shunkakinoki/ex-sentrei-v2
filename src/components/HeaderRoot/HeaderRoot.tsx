@@ -5,7 +5,7 @@ import {Menu} from "@headlessui/react";
 
 export default function HeaderRoot(): JSX.Element {
   return (
-    <div className="relative bg-white">
+    <div className="relative z-20">
       <div className="px-4 mx-auto sm:px-6">
         <div className="flex items-center justify-between py-6 border-b-2 border-gray-100 md:justify-start md:space-x-10">
           <div className="lg:w-0 lg:flex-1">
