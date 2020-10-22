@@ -10,9 +10,8 @@ export default function LandingFeature(): JSX.Element {
             Engage with your audience like it&apos;s 2020.
           </h3>
           <p className="max-w-2xl mt-4 text-xl leading-7 text-gray-500 lg:mx-auto">
-            Host your own content in the cloud. Import from your favorite
-            platform, and publish it to your audience. Focus on the content, not
-            the distribution channel.
+            No more annnoying pop-ups to go through content for readers. No more
+            absurd margins for writers. Readers and writers deserve much more.
           </p>
         </div>
         <div className="mt-10">
@@ -23,15 +22,15 @@ export default function LandingFeature(): JSX.Element {
                   <div className="flex items-center justify-center w-12 h-12 text-white bg-pink-500 rounded-md">
                     <svg
                       className="w-6 h-6"
-                      xmlns="http://www.w3.org/2000/svg"
                       fill="none"
-                      viewBox="0 0 24 24"
                       stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth="2"
+                        strokeWidth={2}
                         d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
                       />
                     </svg>
@@ -42,8 +41,7 @@ export default function LandingFeature(): JSX.Element {
                     Custom domains
                   </h4>
                   <p className="mt-2 text-base leading-6 text-gray-500">
-                    No vendor lockdowns. Host your medium at a fraction of the
-                    cost. Say goodbye to your entire infrastructure.
+                    Host your content at a domain of your choice.
                   </p>
                 </div>
               </div>
@@ -54,27 +52,27 @@ export default function LandingFeature(): JSX.Element {
                   <div className="flex items-center justify-center w-12 h-12 text-white bg-pink-500 rounded-md">
                     <svg
                       className="w-6 h-6"
-                      xmlns="http://www.w3.org/2000/svg"
                       fill="none"
-                      viewBox="0 0 24 24"
                       stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
+                        strokeWidth={2}
+                        d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
                       />
                     </svg>
                   </div>
                 </div>
                 <div className="ml-4">
                   <h4 className="text-lg font-medium leading-6 text-gray-900">
-                    Competitive pricing
+                    Zero margin
                   </h4>
                   <p className="mt-2 text-base leading-6 text-gray-500">
-                    Start free. Grow your audience. We will never charge over
-                    $25 per month (30% margin until then.)
+                    You get all of the revenue, excluding the fixed monthly
+                    subscription.
                   </p>
                 </div>
               </div>
@@ -85,15 +83,15 @@ export default function LandingFeature(): JSX.Element {
                   <div className="flex items-center justify-center w-12 h-12 text-white bg-pink-500 rounded-md">
                     <svg
                       className="w-6 h-6"
-                      xmlns="http://www.w3.org/2000/svg"
                       fill="none"
-                      viewBox="0 0 24 24"
                       stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth="2"
+                        strokeWidth={2}
                         d="M13 10V3L4 14h7v7l9-11h-7z"
                       />
                     </svg>
@@ -101,11 +99,10 @@ export default function LandingFeature(): JSX.Element {
                 </div>
                 <div className="ml-4">
                   <h4 className="text-lg font-medium leading-6 text-gray-900">
-                    Charge your customers
+                    Blazing fast
                   </h4>
                   <p className="mt-2 text-base leading-6 text-gray-500">
-                    All batteries included. Host your own premium newsletter in
-                    seconds. Powered by Stripe&copy;
+                    Delight your audience with the blazing-edge web technology.
                   </p>
                 </div>
               </div>
@@ -116,27 +113,27 @@ export default function LandingFeature(): JSX.Element {
                   <div className="flex items-center justify-center w-12 h-12 text-white bg-pink-500 rounded-md">
                     <svg
                       className="w-6 h-6"
-                      xmlns="http://www.w3.org/2000/svg"
                       fill="none"
-                      viewBox="0 0 24 24"
                       stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                        strokeWidth={2}
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                       />
                     </svg>
                   </div>
                 </div>
                 <div className="ml-4">
                   <h4 className="text-lg font-medium leading-6 text-gray-900">
-                    Dedicated analytics
+                    Built-in newsletter
                   </h4>
                   <p className="mt-2 text-base leading-6 text-gray-500">
-                    Produce your content with confidence. See what your
-                    audiences like. No additional cost.
+                    Produce your content. Deliver to your audience. No
+                    additional cost.
                   </p>
                 </div>
               </div>
