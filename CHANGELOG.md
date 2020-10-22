@@ -1,3 +1,10 @@
+## [1.18.1](https://github.com/sentrei/sentrei/compare/v1.18.0...v1.18.1) (2020-10-22)
+
+### Bug Fixes
+
+- 🐛 next image typings ([b606b67](https://github.com/sentrei/sentrei/commit/b606b67bcd081b876d41cd69a536c03eaa95e8f0))
+- 🐛 yarn depcheck config ([39b4bd1](https://github.com/sentrei/sentrei/commit/39b4bd1d80b8f71ce0d60c2b80779e7b3e6f0e4b))
+
 # [1.18.0](https://github.com/sentrei/sentrei/compare/v1.17.1...v1.18.0) (2020-10-22)
 
 ### Features
