@@ -1,3 +1,9 @@
+# [1.21.0](https://github.com/sentrei/sentrei/compare/v1.20.0...v1.21.0) (2020-10-22)
+
+### Features
+
+- 🎸 ini demo dashboard ([1e2b1ed](https://github.com/sentrei/sentrei/commit/1e2b1ed002310950af2e60acd0f929448229fdaa))
+
 # [1.20.0](https://github.com/sentrei/sentrei/compare/v1.19.0...v1.20.0) (2020-10-22)
 
 ### Features
