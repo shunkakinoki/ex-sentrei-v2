@@ -1,3 +1,9 @@
+# [1.20.0](https://github.com/sentrei/sentrei/compare/v1.19.0...v1.20.0) (2020-10-22)
+
+### Features
+
+- 🎸 ini dashboard screen ([cb7e8c5](https://github.com/sentrei/sentrei/commit/cb7e8c5a48726d713a5856661c26f878954741f8))
+
 # [1.19.0](https://github.com/sentrei/sentrei/compare/v1.18.1...v1.19.0) (2020-10-22)
 
 ### Features
