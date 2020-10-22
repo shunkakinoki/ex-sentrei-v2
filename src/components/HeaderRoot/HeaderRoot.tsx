@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function LandingHeader(): JSX.Element {
+export default function HeaderRoot(): JSX.Element {
   return (
     <div className="px-4 mx-auto sm:px-6">
       <div className="flex items-center justify-between py-6 border-b-2 border-gray-100 md:justify-start">

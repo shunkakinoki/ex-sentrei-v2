@@ -1,4 +1,4 @@
-import LandingHeader from "@/components/LandingHeader";
+import HeaderRoot from "@/components/HeaderRoot";
 import ContainerRoot from "@/components/ContainerRoot";
 import ContainerDashboard, {
   Props as ContainerDashboardProps,
@@ -13,7 +13,7 @@ export default function DashboardSettingsScreen({
 }: Props): JSX.Element {
   return (
     <ContainerRoot>
-      <LandingHeader />
+      <HeaderRoot />
       <ContainerDashboard type="settings" namespace={namespace}>
         <DashbaordStats />
         <DashbaordTable />

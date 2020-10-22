@@ -1,6 +1,6 @@
-import LandingHeader from "@/components/LandingHeader";
+import HeaderRoot from "@/components/HeaderRoot";
 import ContainerRoot from "@/components/ContainerRoot";
-import LandingFooter from "@/components/LandingFooter";
+import FooterRoot from "@/components/FooterRoot";
 import ArticleBanner from "@/components/ArticleBanner";
 import ArticleAuthor from "@/components/ArticleAuthor";
 import ArticleImage from "@/components/ArticleImage";
@@ -31,7 +31,7 @@ export default function ArticleScreen({
 }: Props): JSX.Element {
   return (
     <ContainerRoot>
-      <LandingHeader />
+      <HeaderRoot />
       <ArticleBanner title={article.title} subtitle={article?.subtitle} />
       <ArticleAuthor
         authors={authors}
@@ -51,7 +51,7 @@ export default function ArticleScreen({
         <ArticleSubscribe namespace={namespace} />
       )}
       <ArticleStoryGrid articles={more} namespace="demo" />
-      <LandingFooter />
+      <FooterRoot />
     </ContainerRoot>
   );
 }

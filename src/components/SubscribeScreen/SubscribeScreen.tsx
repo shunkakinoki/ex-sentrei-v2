@@ -1,12 +1,12 @@
 import ContainerCenter from "@/components/ContainerCenter";
 import SubscribeForm from "@/components/SubscribeForm";
 import ContainerRoot from "@/components/ContainerRoot";
-import LandingHeader from "@/components/LandingHeader";
+import HeaderRoot from "@/components/HeaderRoot";
 
 export default function SubscribeScreen(): JSX.Element {
   return (
     <ContainerRoot>
-      <LandingHeader />
+      <HeaderRoot />
       <ContainerCenter>
         <SubscribeForm />
       </ContainerCenter>
