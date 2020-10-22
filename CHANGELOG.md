@@ -1,3 +1,9 @@
+# [1.24.0](https://github.com/sentrei/sentrei/compare/v1.23.1...v1.24.0) (2020-10-22)
+
+### Features
+
+- 🎸 ini pricing table ([a0f8e28](https://github.com/sentrei/sentrei/commit/a0f8e2873249dfa470806144c752a38fa6b408af))
+
 ## [1.23.1](https://github.com/sentrei/sentrei/compare/v1.23.0...v1.23.1) (2020-10-22)
 
 ### Performance Improvements
