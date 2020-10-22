@@ -46,7 +46,7 @@ export default function LandingBanner(): JSX.Element {
           priority
           unoptimized
           unsized
-          src="/newsletter.svg"
+          src="/assets/newsletter.svg"
           alt="Newsletter"
         />
       </div>
