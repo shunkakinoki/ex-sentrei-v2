@@ -1,3 +1,14 @@
+# [1.23.0](https://github.com/sentrei/sentrei/compare/v1.22.0...v1.23.0) (2020-10-22)
+
+### Features
+
+- 🎸 ini sales screen ([e164612](https://github.com/sentrei/sentrei/commit/e164612b462c2faa860c4f671df59af5824dd7d6))
+
+### Performance Improvements
+
+- ⚡️ complete refactor svg ([fa2e35f](https://github.com/sentrei/sentrei/commit/fa2e35ff27b867f3c5bf753c9f672570484f59ac))
+- ⚡️ migrate suppport sales ([9586ffc](https://github.com/sentrei/sentrei/commit/9586ffcb4033b4426fa80b25470bb38258ca15e0))
+
 # [1.22.0](https://github.com/sentrei/sentrei/compare/v1.21.0...v1.22.0) (2020-10-22)
 
 ### Features
