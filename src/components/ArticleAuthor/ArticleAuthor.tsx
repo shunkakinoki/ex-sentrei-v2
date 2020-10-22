@@ -18,7 +18,6 @@ export default function ArticleAuthor({
           <div className="flex items-center flex-1">
             <Image
               className="inline object-cover w-12 h-12 mr-2 rounded-full"
-              priority
               unoptimized
               unsized
               src={authors[0].image ?? ""}

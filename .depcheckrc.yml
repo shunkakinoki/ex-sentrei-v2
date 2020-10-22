@@ -8,6 +8,7 @@ ignores:
     "@semantic-release/*",
     "commitizen",
     "git-cz",
+    "typescript",
   ]
 ignore-path: .gitignore
 skip-missing: true

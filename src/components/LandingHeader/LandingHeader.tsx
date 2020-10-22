@@ -11,7 +11,6 @@ export default function LandingHeader(): JSX.Element {
               <a className="inline-block">
                 <Image
                   src="/assets/logo.png"
-                  unoptimized
                   unsized
                   alt="Logo"
                   className="w-auto h-12 sm:h-10"
