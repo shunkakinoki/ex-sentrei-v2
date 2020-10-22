@@ -40,7 +40,7 @@ export default function AuthForm({type}: Props): JSX.Element {
               type="email"
               required
               className={clsx(
-                "relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5",
+                "relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none focus:outline-none focus:shadow-outline-pink focus:border-pink-300 focus:z-10 sm:text-sm sm:leading-5",
                 type !== "reset-password" && "rounded-t-md",
                 type === "reset-password" && "rounded-md",
               )}
@@ -54,7 +54,7 @@ export default function AuthForm({type}: Props): JSX.Element {
                 name="password"
                 type="password"
                 required
-                className="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+                className="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none rounded-b-md focus:outline-none focus:shadow-outline-pink focus:border-pink-300 focus:z-10 sm:text-sm sm:leading-5"
                 placeholder="Password"
               />
             </div>
