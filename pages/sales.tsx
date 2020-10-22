@@ -1,8 +1,8 @@
 import {NextPage} from "next";
-import SupportScreen from "@/components/SupportScreen";
+import SalesScreen from "@/components/SalesScreen";
 
-const Support: NextPage = () => {
-  return <SupportScreen />;
+const Sales: NextPage = () => {
+  return <SalesScreen />;
 };
 
-export default Support;
+export default Sales;
