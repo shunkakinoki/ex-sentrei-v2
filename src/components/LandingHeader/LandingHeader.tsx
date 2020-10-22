@@ -19,24 +19,24 @@ export default function LandingHeader(): JSX.Element {
         </div>
         <nav className="hidden space-x-10 md:flex">
           <Link href="/demo">
-            <a className="text-base font-medium leading-6 text-gray-600 transition duration-150 ease-in-out hover:text-gray-900 focus:outline-none focus:text-gray-900">
+            <a className="text-base font-medium leading-6 text-gray-600 transition duration-150 ease-in-out hover:text-pink-400">
               Demo
             </a>
           </Link>
           <Link href="/pricing">
-            <a className="text-base font-medium leading-6 text-gray-600 transition duration-150 ease-in-out hover:text-gray-900 focus:outline-none focus:text-gray-900">
+            <a className="text-base font-medium leading-6 text-gray-600 transition duration-150 ease-in-out hover:text-pink-400">
               Pricing
             </a>
           </Link>
           <Link href="/support">
-            <a className="text-base font-medium leading-6 text-gray-600 transition duration-150 ease-in-out hover:text-gray-900 focus:outline-none focus:text-gray-900">
+            <a className="text-base font-medium leading-6 text-gray-600 transition duration-150 ease-in-out hover:text-pink-400">
               Support
             </a>
           </Link>
         </nav>
         <div className="items-center justify-end hidden space-x-8 md:flex md:flex-1 lg:w-0">
           <Link href="/login">
-            <a className="text-base font-medium leading-6 text-gray-600 whitespace-no-wrap hover:text-gray-900 focus:outline-none focus:text-gray-900">
+            <a className="text-base font-medium leading-6 text-gray-600 whitespace-no-wrap hover:text-pink-400">
               Log in
             </a>
           </Link>
