@@ -1,6 +1,7 @@
 /* eslint-disable react/button-has-type */
 
 import Author from "@/types/Author";
+import Image from "next/image";
 
 export type Props = Author;
 
@@ -8,9 +9,11 @@ export default function BlogAuthor({bio, image, name}: Props): JSX.Element {
   return (
     <div className="flex justify-start w-full mt-3 align-middle sm:mt-6">
       <div className="flex-shrink-0 px-4 py-2 m-2 text-center ">
-        <img
+        <Image
+          unoptimized
+          unsized
           className="inline object-cover w-12 h-12 mr-2 rounded-full"
-          src={image}
+          src={image ?? ""}
           alt={`Author ${name}`}
         />
       </div>
