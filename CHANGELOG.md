@@ -1,3 +1,13 @@
+# [1.18.0](https://github.com/sentrei/sentrei/compare/v1.17.1...v1.18.0) (2020-10-22)
+
+### Features
+
+- 🎸 ini next image ([891aeb7](https://github.com/sentrei/sentrei/commit/891aeb7c10f6684412ade6555f330de4d56b5164))
+
+### Performance Improvements
+
+- ⚡️ refactor to assets ([733f228](https://github.com/sentrei/sentrei/commit/733f228e1c71cdc23913a0885104e2a19d7e899c))
+
 ## [1.17.1](https://github.com/sentrei/sentrei/compare/v1.17.0...v1.17.1) (2020-10-21)
 
 ### Performance Improvements
