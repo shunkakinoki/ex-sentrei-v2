@@ -7,7 +7,7 @@ export default function SeoDefault(): JSX.Element {
       noindex={false}
       nofollow={false}
       titleTemplate="Sentrei | %s"
-      description="The most delightful way to start your own newsletter."
+      description="The most delightful way to start your own blog, media, or a newsletter."
       openGraph={{
         type: "website",
         locale: "en_US",

@@ -30,7 +30,39 @@ export default function AuthForm({type}: Props): JSX.Element {
           {type === "reset-password" && "We've got you covered."}
         </p>
       </div>
-      <form className="mt-8" action="#" method="POST">
+      {type !== "reset-password" && (
+        <div className="mt-2 md:mt-4">
+          <div className="flex items-center justify-between py-2 md:py-3 md:justify-start">
+            <div className="relative flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-pink-500 transition duration-150 ease-in-out bg-transparent border border-transparent border-pink-300 rounded hover:bg-pink-100 focus:border-pink-300 group focus:outline-none focus:shadow-md ">
+              <span className="absolute inset-y-0 left-0 flex items-center pl-3">
+                <svg
+                  className="w-5 h-5 text-indigo-500 transition duration-150 ease-in-out group-hover:text-indigo-400"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  fill="none"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M17.788 5.108a9 9 0 1 0 3.212 6.892h-8"
+                    clipRule=" evenodd"
+                  />
+                </svg>
+              </span>
+              {type === "login" && "Login with Google"}
+              {type === "signup" && "Sign up with Google"}
+            </div>
+          </div>
+          <div className="flex items-center">
+            <div className="flex-grow w-full m-2 border border-gray-300" />
+            <div className="flex-shrink px-4 py-2 m-2 text-center text-gray-500 ">
+              or
+            </div>
+            <div className="flex-grow w-full m-2 border border-gray-300" />
+          </div>
+        </div>
+      )}
+      <form className="mt-2 md:mt-3 lg:mt-4" action="#" method="POST">
         <input type="hidden" name="remember" value="true" />
         <div className="rounded-md shadow-sm">
           <div>
@@ -79,9 +111,7 @@ export default function AuthForm({type}: Props): JSX.Element {
             )}
           </div>
           <div className="text-sm leading-5">
-            <Link
-              href={type !== "reset-password" ? "/reset-password" : "/login"}
-            >
+            <Link href={type === "login" ? "/reset-password" : "/login"}>
               <a className="font-medium text-indigo-600 transition duration-150 ease-in-out hover:text-indigo-500 focus:outline-none focus:underline">
                 {type === "login" && "Forgot password?"}
                 {type === "signup" && "Already have an account?"}
