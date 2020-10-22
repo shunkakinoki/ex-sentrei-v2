@@ -1,3 +1,15 @@
+# [1.22.0](https://github.com/sentrei/sentrei/compare/v1.21.0...v1.22.0) (2020-10-22)
+
+### Features
+
+- 🎸 ini header root w/ demo menu ([fe7f3a5](https://github.com/sentrei/sentrei/commit/fe7f3a548f8c48cd521ff1b4d2d50444f4d192c2))
+
+### Performance Improvements
+
+- ⚡️ ini headless ui w/ refactor pricing-banner ([92b9a2d](https://github.com/sentrei/sentrei/commit/92b9a2d994d9ab21605105205d3b290c85eb088c))
+- ⚡️ migrate root components ([38feb9b](https://github.com/sentrei/sentrei/commit/38feb9b9a925e3b392cdb4f87a305a6e9dbbeb57))
+- ⚡️ refactor auth form h3 banner font ([4636f31](https://github.com/sentrei/sentrei/commit/4636f31545d39d3f91395c5a0385a77899481b9a))
+
 # [1.21.0](https://github.com/sentrei/sentrei/compare/v1.20.0...v1.21.0) (2020-10-22)
 
 ### Features
