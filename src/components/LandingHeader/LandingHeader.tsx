@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function LandingHeader(): JSX.Element {
   return (
@@ -8,12 +9,12 @@ export default function LandingHeader(): JSX.Element {
           <div className="lg:w-0 lg:flex-1">
             <Link href="/">
               <a className="inline-block">
-                <img
-                  className="w-auto h-12 sm:h-10"
-                  src="/images/logo.png"
-                  height="300"
-                  width="300"
+                <Image
+                  src="/assets/logo.png"
+                  unoptimized
+                  unsized
                   alt="Logo"
+                  className="w-auto h-12 sm:h-10"
                 />
               </a>
             </Link>

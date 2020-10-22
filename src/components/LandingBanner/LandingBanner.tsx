@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function LandingBanner(): JSX.Element {
   return (
@@ -40,9 +41,12 @@ export default function LandingBanner(): JSX.Element {
         </div>
       </div>
       <div className="z-10 p-3 lg:object-none lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <img
-          className="w-full h-64 p-3 sm:h-96 lg:h-full md:p-8 lg:p-16"
-          src="/images/newsletter.svg"
+        <Image
+          className="w-full h-64 p-4 sm:h-96 md:h-128 md:p-8 lg:p-16 xl:p-24 xl:pb-4"
+          priority
+          unoptimized
+          unsized
+          src="/assets/newsletter.svg"
           alt="Newsletter"
         />
       </div>

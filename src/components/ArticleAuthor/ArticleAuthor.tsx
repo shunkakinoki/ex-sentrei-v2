@@ -1,5 +1,6 @@
 import Author from "@/types/Author";
 import Article from "@/types/Article";
+import Image from "next/image";
 
 export interface Props extends Pick<Article, "date" | "time"> {
   authors: Author[];
@@ -15,9 +16,12 @@ export default function ArticleAuthor({
       <section className="px-4 py-2 mt-2">
         <div className="flex items-center justify-between">
           <div className="flex items-center flex-1">
-            <img
+            <Image
               className="inline object-cover w-12 h-12 mr-2 rounded-full"
-              src={authors[0].image}
+              priority
+              unoptimized
+              unsized
+              src={authors[0].image ?? ""}
               alt={`Author ${authors[0].name}`}
             />
             <div className="flex flex-col mx-2">
