@@ -57,18 +57,18 @@ export default function BlogPagination({
           >
             <a className="flex items-center justify-center w-8 h-8 mr-1 cursor-pointer hover:text-pink-300">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="100%"
-                height="100%"
+                className="w-5 h-5"
                 fill="none"
-                viewBox="0 0 24 24"
                 stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-4 h-4 feather feather-chevron-left"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <polyline points="15 18 9 12 15 6" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
               </svg>
             </a>
           </Link>
@@ -92,18 +92,18 @@ export default function BlogPagination({
           <Link href={`/${namespace}/page/${current + 1}`}>
             <a className="flex items-center justify-center w-8 h-8 ml-1 cursor-pointer hover:text-pink-300">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="100%"
-                height="100%"
+                className="w-5 h-5"
                 fill="none"
-                viewBox="0 0 24 24"
                 stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-4 h-4 feather feather-chevron-right"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <polyline points="9 18 15 12 9 6" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </a>
           </Link>

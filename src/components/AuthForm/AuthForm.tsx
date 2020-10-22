@@ -125,14 +125,17 @@ export default function AuthForm({type}: Props): JSX.Element {
             <a className="relative flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-pink-400 border border-transparent rounded-md group focus:outline-none focus:border-pink-500 focus:shadow-md active:text-pink-200">
               <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                 <svg
-                  className="w-5 h-5 text-indigo-500 transition duration-150 ease-in-out group-hover:text-indigo-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
+                  className="w-6 h-6 transition duration-150 ease-in-out "
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fillRule="evenodd"
-                    d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                    clipRule="evenodd"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
                   />
                 </svg>
               </span>

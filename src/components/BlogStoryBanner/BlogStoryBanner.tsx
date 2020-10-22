@@ -29,11 +29,18 @@ export default function BlogStoryBanner({
         {pricing === "subscription" && <>&nbsp;&middot;&nbsp;</>}
         {pricing === "subscription" && (
           <svg
-            className="w-3 h-3 mr-2 text-gray-500 fill-current"
+            className="w-4 h-4 mr-2 text-gray-600 fill-current"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
           >
-            <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+            />
           </svg>
         )}
       </p>
