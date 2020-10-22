@@ -17,13 +17,13 @@ export default function AuthForm({type}: Props): JSX.Element {
           priority
           unsized
           alt="Logo"
-          className="w-auto h-12 mx-auto sm:h-18 md:h-24"
+          className="w-auto h-8 mx-auto sm:h-12 md:h-20"
         />
-        <h2 className="mt-6 text-3xl font-extrabold leading-9 text-center text-gray-900">
+        <h3 className="mt-6 text-3xl font-extrabold leading-9 text-center text-gray-900 md:text-4xl">
           {type === "login" && "Login to your account"}
           {type === "signup" && "Sign up now"}
           {type === "reset-password" && "Reset password"}
-        </h2>
+        </h3>
         <p className="mt-2 text-sm leading-5 text-center text-gray-600">
           {type === "login" && "Welcome back."}
           {type === "signup" && "Completely free forever."}
