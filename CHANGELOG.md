@@ -1,3 +1,14 @@
+# [1.19.0](https://github.com/sentrei/sentrei/compare/v1.18.1...v1.19.0) (2020-10-22)
+
+### Features
+
+- 🎸 ini auth screen ([5574f05](https://github.com/sentrei/sentrei/commit/5574f05d720773f13d5b9eea5d9d6c05e45ad57d))
+
+### Performance Improvements
+
+- ⚡️ ini border pink ([c2b44b2](https://github.com/sentrei/sentrei/commit/c2b44b20d2789e12235686a0682ebeb48508e88d))
+- ⚡️ ini google svg w/ seo description ([51b0ce7](https://github.com/sentrei/sentrei/commit/51b0ce7bd3dad22b2b37dd59062744a93c693aff))
+
 ## [1.18.1](https://github.com/sentrei/sentrei/compare/v1.18.0...v1.18.1) (2020-10-22)
 
 ### Bug Fixes
