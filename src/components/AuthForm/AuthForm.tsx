@@ -33,7 +33,7 @@ export default function AuthForm({type}: Props): JSX.Element {
       {type !== "reset-password" && (
         <div className="mt-2 md:mt-4">
           <div className="flex items-center justify-between py-2 md:py-3 md:justify-start">
-            <Link href="/dashboard">
+            <Link href="/demo/dashboard">
               <a className="relative flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-pink-500 transition duration-150 ease-in-out bg-transparent border border-transparent border-pink-300 rounded hover:bg-pink-100 focus:border-pink-300 group focus:outline-none focus:shadow-md ">
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                   <svg
@@ -42,12 +42,10 @@ export default function AuthForm({type}: Props): JSX.Element {
                     stroke="currentColor"
                     strokeWidth="3"
                     fill="none"
+                    strokeLinecap="round"
                   >
-                    <path
-                      fillRule="evenodd"
-                      d="M17.788 5.108a9 9 0 1 0 3.212 6.892h-8"
-                      clipRule=" evenodd"
-                    />
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M17.788 5.108a9 9 0 1 0 3.212 6.892h-8" />
                   </svg>
                 </span>
                 {type === "login" && "Login with Google"}
@@ -123,7 +121,7 @@ export default function AuthForm({type}: Props): JSX.Element {
           </div>
         </div>
         <div className="mt-6">
-          <Link href="/dashboard">
+          <Link href="/demo/dashboard">
             <a className="relative flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-pink-400 border border-transparent rounded-md group focus:outline-none focus:border-pink-500 focus:shadow-md active:text-pink-200">
               <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                 <svg

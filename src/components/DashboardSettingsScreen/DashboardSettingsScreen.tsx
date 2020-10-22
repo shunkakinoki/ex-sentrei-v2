@@ -8,11 +8,13 @@ import DashbaordTable from "@/components/DashboardTable";
 
 export type Props = Pick<ContainerDashboardProps, "namespace">;
 
-export default function DashboardScreen({namespace}: Props): JSX.Element {
+export default function DashboardSettingsScreen({
+  namespace,
+}: Props): JSX.Element {
   return (
     <ContainerRoot>
       <LandingHeader />
-      <ContainerDashboard type="articles" namespace={namespace}>
+      <ContainerDashboard type="settings" namespace={namespace}>
         <DashbaordStats />
         <DashbaordTable />
       </ContainerDashboard>

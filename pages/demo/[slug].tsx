@@ -1,14 +1,14 @@
 import {GetStaticProps, InferGetStaticPropsType, GetStaticPaths} from "next";
-import ArticleScreen, {
-  Props as ArticleScreenProps,
-} from "@/components/ArticleScreen";
+import DemoArticleScreen, {
+  Props as DemoArticleScreenProps,
+} from "@/components/DemoArticleScreen";
 import Article from "@/types/Article";
 import Author from "@/types/Author";
 import {createArticle, createAuthors, createArticles} from "@/utils/faker";
 
 export type Props = Omit<
-  ArticleScreenProps,
-  "article" | "authors" | "more" | "namespace"
+  DemoArticleScreenProps,
+  "article" | "authors" | "more"
 > & {
   article: string;
   authors: string;
@@ -45,11 +45,10 @@ const Slug = ({
   more,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
-    <ArticleScreen
+    <DemoArticleScreen
       article={JSON.parse(article) as Article}
       authors={JSON.parse(authors) as Author[]}
       more={JSON.parse(more) as Article[]}
-      namespace="demo"
     />
   );
 };

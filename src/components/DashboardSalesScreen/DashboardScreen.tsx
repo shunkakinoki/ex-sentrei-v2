@@ -8,11 +8,11 @@ import DashbaordTable from "@/components/DashboardTable";
 
 export type Props = Pick<ContainerDashboardProps, "namespace">;
 
-export default function DashboardScreen({namespace}: Props): JSX.Element {
+export default function DashboardSalesScreen({namespace}: Props): JSX.Element {
   return (
     <ContainerRoot>
       <LandingHeader />
-      <ContainerDashboard type="articles" namespace={namespace}>
+      <ContainerDashboard type="sales" namespace={namespace}>
         <DashbaordStats />
         <DashbaordTable />
       </ContainerDashboard>
