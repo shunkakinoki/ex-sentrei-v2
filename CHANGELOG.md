@@ -1,3 +1,9 @@
+## [1.23.1](https://github.com/sentrei/sentrei/compare/v1.23.0...v1.23.1) (2020-10-22)
+
+### Performance Improvements
+
+- ⚡️ upgrade next image ([e3327a9](https://github.com/sentrei/sentrei/commit/e3327a9c304643a32de30b5b12c9ded35158959d))
+
 # [1.23.0](https://github.com/sentrei/sentrei/compare/v1.22.0...v1.23.0) (2020-10-22)
 
 ### Features
