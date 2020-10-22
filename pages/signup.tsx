@@ -1,8 +1,8 @@
 import {NextPage} from "next";
-import AuthScreen from "@/components/SubscribeScreen";
+import AuthScreen from "@/components/AuthScreen";
 
 const Signup: NextPage = () => {
-  return <AuthScreen />;
+  return <AuthScreen type="signup" />;
 };
 
 export default Signup;
