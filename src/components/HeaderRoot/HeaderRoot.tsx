@@ -13,6 +13,7 @@ export default function HeaderRoot(): JSX.Element {
               <a className="inline-block">
                 <Image
                   src="/assets/logo.png"
+                  priority
                   unsized
                   alt="Logo"
                   className="w-auto h-12 sm:h-10"
