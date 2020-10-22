@@ -1,14 +1,14 @@
-import LandingHeader from "@/components/LandingHeader";
+import HeaderRoot from "@/components/HeaderRoot";
 import PricingBanner from "@/components/PricingBanner";
 import ContainerRoot from "@/components/ContainerRoot";
-import LandingFooter from "@/components/LandingFooter";
+import FooterRoot from "@/components/FooterRoot";
 
 export default function PricingScreen(): JSX.Element {
   return (
     <ContainerRoot>
-      <LandingHeader />
+      <HeaderRoot />
       <PricingBanner />
-      <LandingFooter />
+      <FooterRoot />
     </ContainerRoot>
   );
 }

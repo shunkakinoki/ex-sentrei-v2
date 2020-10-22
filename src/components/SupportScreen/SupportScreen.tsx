@@ -1,10 +1,10 @@
-import LandingHeader from "@/components/LandingHeader";
+import HeaderRoot from "@/components/HeaderRoot";
 import ContainerRoot from "@/components/ContainerRoot";
 
 export default function SupportScreen(): JSX.Element {
   return (
     <ContainerRoot>
-      <LandingHeader />
+      <HeaderRoot />
     </ContainerRoot>
   );
 }

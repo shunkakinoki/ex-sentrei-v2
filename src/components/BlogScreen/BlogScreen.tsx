@@ -1,4 +1,4 @@
-import LandingHeader from "@/components/LandingHeader";
+import HeaderRoot from "@/components/HeaderRoot";
 import BlogBanner, {Props as BlogBannerProps} from "@/components/BlogBanner";
 import ContainerRoot from "@/components/ContainerRoot";
 import BlogAuthor, {Props as BlogAuthorProps} from "@/components/BlogAuthor";
@@ -7,7 +7,7 @@ import BlogStoryGrid, {
 } from "@/components/BlogStoryGrid";
 import BlogPagination from "@/components/BlogPagination";
 import {totalPages} from "@/const/demo";
-import LandingFooter from "@/components/LandingFooter";
+import FooterRoot from "@/components/FooterRoot";
 
 export interface Props extends BlogStoryGridProps {
   author: BlogAuthorProps;
@@ -25,7 +25,7 @@ export default function BlogScreen({
 }: Props): JSX.Element {
   return (
     <ContainerRoot>
-      <LandingHeader />
+      <HeaderRoot />
       <BlogBanner
         title={blog.title}
         subtitle={blog.subtitle}
@@ -38,7 +38,7 @@ export default function BlogScreen({
         total={totalPages}
         namespace={namespace}
       />
-      <LandingFooter />
+      <FooterRoot />
     </ContainerRoot>
   );
 }
