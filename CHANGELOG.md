@@ -1,3 +1,10 @@
+# [1.25.0](https://github.com/sentrei/sentrei/compare/v1.24.1...v1.25.0) (2020-10-23)
+
+### Features
+
+- 🎸 completely revamp banner ([84a1259](https://github.com/sentrei/sentrei/commit/84a1259f6617dd8934a30dfe47aab5f055395d14))
+- 🎸 revamp landing banner w/ xl breakingpoint ([c50b755](https://github.com/sentrei/sentrei/commit/c50b755f6b57f3c63053271941bb5f8d942f598e))
+
 ## [1.24.1](https://github.com/sentrei/sentrei/compare/v1.24.0...v1.24.1) (2020-10-23)
 
 ### Performance Improvements
