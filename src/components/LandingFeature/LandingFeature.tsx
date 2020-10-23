@@ -193,8 +193,8 @@ export default function LandingFeature(): JSX.Element {
                     Zero margin
                   </h4>
                   <p className="mt-2 text-base leading-6 text-gray-500">
-                    You get all of the revenue, excluding the fixed monthly
-                    subscription.
+                    You get all of the revenue, excluding the standard Stripe
+                    fee.
                   </p>
                 </div>
               </div>
