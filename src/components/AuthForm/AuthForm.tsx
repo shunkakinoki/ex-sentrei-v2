@@ -19,19 +19,20 @@ export default function AuthForm({type}: Props): JSX.Element {
           alt="Logo"
           className="w-auto h-12 mx-auto sm:h-16 md:h-20"
         />
-        <h3 className="mt-6 text-3xl font-extrabold leading-9 text-center text-gray-900 md:text-4xl">
-          {type === "login" && "Login now"}
+        <h3 className="mt-6 text-5xl font-extrabold text-center text-gray-600 md:leading-9 md:text-6xl">
+          {type === "login" && "Login"}
           {type === "signup" && "Sign up now"}
           {type === "reset-password" && "Reset password"}
         </h3>
-        <p className="mt-2 text-sm leading-5 text-center text-gray-600">
+        <p className="mt-2 text-sm leading-5 text-center text-gray-600 md:mt-4">
           {type === "login" && "Welcome back."}
           {type === "signup" && "Completely free forever."}
           {type === "reset-password" && "We've got you covered."}
         </p>
       </div>
+      <div className="mt-2 sm:mt-4 md:mt-6" />
       {type !== "reset-password" && (
-        <div className="mt-2 sm:mt-4 md:mt-6">
+        <div>
           <div className="flex items-center justify-between py-2 md:py-3 md:justify-start">
             <Link href="/demo/dashboard">
               <a className="relative flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-pink-500 transition duration-150 ease-in-out bg-transparent border border-transparent border-pink-300 rounded hover:bg-pink-100 focus:border-pink-300 group focus:outline-none focus:shadow-md ">
@@ -165,13 +166,13 @@ export default function AuthForm({type}: Props): JSX.Element {
               <a className="text-xs font-normal text-center">
                 By signing up you agree to our{" "}
                 <Link href="/terms">
-                  <a className="transition duration-150 ease-in-out hover:text-pink-500 focus:outline-none focus:underline">
+                  <a className="text-pink-400 transition duration-150 ease-in-out hover:text-pink-500 focus:outline-none focus:underline">
                     Terms and Conditions
                   </a>
                 </Link>{" "}
                 and{" "}
                 <Link href="/privacy">
-                  <a className="transition duration-150 ease-in-out hover:text-pink-500 focus:outline-none focus:underline">
+                  <a className="text-pink-400 transition duration-150 ease-in-out hover:text-pink-500 focus:outline-none focus:underline">
                     Privacy Policy
                   </a>
                 </Link>
