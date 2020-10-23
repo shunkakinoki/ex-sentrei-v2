@@ -20,17 +20,17 @@ export default function AuthForm({type}: Props): JSX.Element {
           className="w-auto h-12 mx-auto sm:h-16 md:h-20"
         />
         <h3 className="mt-6 text-5xl font-extrabold text-center text-gray-600 md:leading-9 md:text-6xl">
-          {type === "login" && "Login"}
+          {type === "login" && "Log in"}
           {type === "signup" && "Sign up now"}
           {type === "reset-password" && "Reset password"}
         </h3>
-        <p className="mt-2 text-sm leading-5 text-center text-gray-600 md:mt-4">
+        <p className="mt-4 text-sm leading-5 text-center text-gray-600 sm:mt-5 md:mt-6">
           {type === "login" && "Welcome back."}
           {type === "signup" && "Completely free forever."}
           {type === "reset-password" && "We've got you covered."}
         </p>
       </div>
-      <div className="mt-2 sm:mt-4 md:mt-6" />
+      <div className="mt-3 sm:mt-4 md:mt-5" />
       {type !== "reset-password" && (
         <div>
           <div className="flex items-center justify-between py-2 md:py-3 md:justify-start">
@@ -56,14 +56,14 @@ export default function AuthForm({type}: Props): JSX.Element {
           </div>
           <div className="flex items-center">
             <div className="flex-grow w-full m-2 border-t border-gray-300" />
-            <div className="flex-shrink px-4 py-2 m-2 text-center text-gray-500 ">
+            <div className="flex-shrink px-4 py-1 m-2 text-center text-gray-500 ">
               or
             </div>
             <div className="flex-grow w-full m-2 border-t border-gray-300" />
           </div>
         </div>
       )}
-      <form className="mt-2 md:mt-3 lg:mt-4" action="#" method="POST">
+      <form className="py-2 mt-2" action="#" method="POST">
         <input type="hidden" name="remember" value="true" />
         <div className="rounded-md shadow-sm">
           <div>
