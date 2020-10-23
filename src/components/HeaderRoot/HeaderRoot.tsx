@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import HeaderDemoMenu from "@/components/HeaderDemoMenu";
 import HeaderMobileMenu from "@/components/HeaderMobileMenu";
+import HeaderProfileMenu from "@/components/HeaderProfileMenu";
 import {Menu} from "@headlessui/react";
 
 export default function HeaderRoot(): JSX.Element {
@@ -98,6 +99,30 @@ export default function HeaderRoot(): JSX.Element {
                 </a>
               </Link>
             </span>
+            <div className="relative ml-3">
+              <Menu>
+                {({open}) => (
+                  <>
+                    <Menu.Button
+                      className="flex text-sm transition duration-150 ease-in-out border-2 border-transparent rounded-full focus:outline-none focus:border-white"
+                      aria-label="Profile menu"
+                      aria-haspopup="true"
+                    >
+                      <Image
+                        src="/assets/logo.png"
+                        priority
+                        unsized
+                        alt="Profile"
+                        className="w-8 h-8 rounded-full"
+                      />
+                    </Menu.Button>
+                    <span className="z-30 ">
+                      <HeaderProfileMenu open={open} />
+                    </span>
+                  </>
+                )}
+              </Menu>
+            </div>
           </div>
         </div>
       </div>
