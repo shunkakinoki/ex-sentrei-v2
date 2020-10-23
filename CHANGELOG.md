@@ -1,3 +1,11 @@
+## [1.26.1](https://github.com/sentrei/sentrei/compare/v1.26.0...v1.26.1) (2020-10-23)
+
+### Performance Improvements
+
+- ⚡️ refactor auth form font style ([3825ca9](https://github.com/sentrei/sentrei/commit/3825ca9817e9413106647c62398ad3dcbf689dd3))
+- ⚡️ refactor header demo ([7bada1e](https://github.com/sentrei/sentrei/commit/7bada1edcaa7084de98c00c456961d1010b4e85a))
+- ⚡️ refactor header mobile menu custom component ([23a0316](https://github.com/sentrei/sentrei/commit/23a0316737746bf3cd661e384f112da7fadd6cdc))
+
 # [1.26.0](https://github.com/sentrei/sentrei/compare/v1.25.0...v1.26.0) (2020-10-23)
 
 ### Features
