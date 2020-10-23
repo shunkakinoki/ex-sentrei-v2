@@ -1,3 +1,9 @@
+## [1.28.1](https://github.com/sentrei/sentrei/compare/v1.28.0...v1.28.1) (2020-10-23)
+
+### Bug Fixes
+
+- 🐛 auth form reset password text ([7fd39f6](https://github.com/sentrei/sentrei/commit/7fd39f69147fd99194580d1f61588eabea1005fe))
+
 # [1.28.0](https://github.com/sentrei/sentrei/compare/v1.27.3...v1.28.0) (2020-10-23)
 
 ### Features
