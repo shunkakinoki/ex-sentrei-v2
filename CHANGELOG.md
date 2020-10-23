@@ -1,3 +1,16 @@
+# [1.28.0](https://github.com/sentrei/sentrei/compare/v1.27.3...v1.28.0) (2020-10-23)
+
+### Features
+
+- 🎸 ini header profile custom menu component ([2960321](https://github.com/sentrei/sentrei/commit/2960321790a915df10a8c1fa03611c0349f89818))
+
+### Performance Improvements
+
+- ⚡️ ini setting sprofile section ([a6a6fa2](https://github.com/sentrei/sentrei/commit/a6a6fa2d21e4c2e8463e02e82e29c8ef152ed27f))
+- ⚡️ ini settings page ([55d1f89](https://github.com/sentrei/sentrei/commit/55d1f89e3c8b17f2d2174f2b12fbc90e7c2574a2))
+- ⚡️ ini settings section for notifications component ([3d4bbeb](https://github.com/sentrei/sentrei/commit/3d4bbeb5bd481c59006950b53e3a9690e5190209))
+- ⚡️ refactor tab dashboard ([467d623](https://github.com/sentrei/sentrei/commit/467d6236071015f2f60e67cd26274eeca644ad5f))
+
 ## [1.27.3](https://github.com/sentrei/sentrei/compare/v1.27.2...v1.27.3) (2020-10-23)
 
 ### Performance Improvements
