@@ -1,3 +1,10 @@
+## [1.27.2](https://github.com/sentrei/sentrei/compare/v1.27.1...v1.27.2) (2020-10-23)
+
+### Performance Improvements
+
+- ⚡️ ini demo banner for dashboard demo screens ([cea187c](https://github.com/sentrei/sentrei/commit/cea187cb0a6ab59278818570a05c5d08cff1044d))
+- ⚡️ refactor pricing table w/ highlight icon ([b3312e2](https://github.com/sentrei/sentrei/commit/b3312e2fd262baa37eed1666f2ca5ee8709e0e90))
+
 ## [1.27.1](https://github.com/sentrei/sentrei/compare/v1.27.0...v1.27.1) (2020-10-23)
 
 ### Performance Improvements
