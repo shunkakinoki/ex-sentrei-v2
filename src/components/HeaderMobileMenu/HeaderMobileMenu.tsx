@@ -179,7 +179,7 @@ export default function HeaderMobileMenu({open}: Props): JSX.Element {
               <div className="space-y-6">
                 <span className="flex w-full rounded-md shadow-sm">
                   <Link href="/signup">
-                    <a className="flex items-center justify-center w-full px-4 py-2 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-pink-400 border border-transparent rounded-md hover:bg-pink-500 focus:outline-none focus:border-pink-700 focus:shadow-outline-pink active:bg-pink-700">
+                    <a className="flex items-center justify-center w-full px-4 py-2 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-pink-500 border border-transparent rounded-md hover:bg-pink-400 focus:outline-none focus:border-pink-700 focus:shadow-outline-pink active:bg-pink-700">
                       Sign up
                     </a>
                   </Link>

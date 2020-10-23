@@ -1,4 +1,5 @@
 import BlogScreen, {Props as BlogScreenProps} from "@/components/BlogScreen";
+import DemoBanner from "@/components/DemoBanner";
 
 export type Props = Omit<BlogScreenProps, "namespace">;
 
@@ -9,12 +10,15 @@ export default function DemoScreen({
   current,
 }: Props): JSX.Element {
   return (
-    <BlogScreen
-      articles={articles}
-      author={author}
-      blog={blog}
-      current={current}
-      namespace="demo"
-    />
+    <>
+      <DemoBanner />
+      <BlogScreen
+        articles={articles}
+        author={author}
+        blog={blog}
+        current={current}
+        namespace="demo"
+      />
+    </>
   );
 }
