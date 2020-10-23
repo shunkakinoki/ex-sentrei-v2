@@ -2,7 +2,7 @@ import Article from "@/types/Article";
 
 export type Props = Pick<Article, "title" | "subtitle">;
 
-export default function ArticleBanner({title, subtitle}: Props): JSX.Element {
+export default function ArticleHero({title, subtitle}: Props): JSX.Element {
   return (
     <div className="px-4 pb-1 mx-auto mt-10 md:pb-2 sm:mt-6 sm:px-6 md:mt-8 lg:mt-12 lg:px-8 xl:mt-16">
       <div className="relative overflow-hidden ">

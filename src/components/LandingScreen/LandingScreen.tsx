@@ -1,4 +1,4 @@
-import LandingBanner from "@/components/LandingBanner";
+import LandingHero from "@/components/LandingHero";
 import HeaderRoot from "@/components/HeaderRoot";
 import LandingFeature from "@/components/LandingFeature";
 import LandingCta from "@/components/LandingCta";
@@ -9,7 +9,7 @@ export default function LandingScreen(): JSX.Element {
   return (
     <ContainerRoot>
       <HeaderRoot />
-      <LandingBanner />
+      <LandingHero />
       <LandingFeature />
       <LandingCta />
       <FooterRoot />

@@ -1,7 +1,7 @@
 import HeaderRoot from "@/components/HeaderRoot";
 import ContainerRoot from "@/components/ContainerRoot";
 import FooterRoot from "@/components/FooterRoot";
-import ArticleBanner from "@/components/ArticleBanner";
+import ArticleHero from "@/components/ArticleHero";
 import ArticleAuthor from "@/components/ArticleAuthor";
 import ArticleImage from "@/components/ArticleImage";
 import Author from "@/types/Author";
@@ -32,7 +32,7 @@ export default function ArticleScreen({
   return (
     <ContainerRoot>
       <HeaderRoot />
-      <ArticleBanner title={article.title} subtitle={article?.subtitle} />
+      <ArticleHero title={article.title} subtitle={article?.subtitle} />
       <ArticleAuthor
         authors={authors}
         date={article.date}

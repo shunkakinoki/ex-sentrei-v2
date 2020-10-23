@@ -4,7 +4,8 @@ import {useEffect} from "react";
 export interface Props {
   text: string[];
 }
-export default function LandingBannerTyped({text}: Props): JSX.Element {
+
+export default function LandingHeroTyped({text}: Props): JSX.Element {
   useEffect(() => {
     const options = {
       strings: text,

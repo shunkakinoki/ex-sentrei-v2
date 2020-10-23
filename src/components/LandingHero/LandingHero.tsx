@@ -1,7 +1,7 @@
 import Link from "next/link";
-import LandingBannerTyped from "@/components/LandingBannerTyped";
+import LandingHeroTyped from "@/components/LandingHeroTyped";
 
-export default function LandingBanner(): JSX.Element {
+export default function LandingHero(): JSX.Element {
   return (
     <div className="relative overflow-hidden">
       <div className="max-w-screen-xl mx-2">
@@ -14,7 +14,7 @@ export default function LandingBanner(): JSX.Element {
                   delightful
                 </span>{" "}
                 way to start your own{" "}
-                <LandingBannerTyped text={["blog", "media", "newsletter"]} />.
+                <LandingHeroTyped text={["blog", "media", "newsletter"]} />.
               </h2>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl xl:mx-0">
                 Managing a CMS is a lot of work. <br />

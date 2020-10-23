@@ -5,7 +5,7 @@ export type Props = Pick<
   "date" | "time" | "title" | "subtitle" | "pricing"
 >;
 
-export default function BlogStoryBanner({
+export default function BlogStoryHero({
   date,
   time,
   title,
