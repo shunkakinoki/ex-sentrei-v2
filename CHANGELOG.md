@@ -1,3 +1,9 @@
+## [1.27.1](https://github.com/sentrei/sentrei/compare/v1.27.0...v1.27.1) (2020-10-23)
+
+### Performance Improvements
+
+- ⚡️ refactor banner hero ([4bdb7b3](https://github.com/sentrei/sentrei/commit/4bdb7b32e5fb7ed9f030303680d3d78bd7e89d6d))
+
 # [1.27.0](https://github.com/sentrei/sentrei/compare/v1.26.1...v1.27.0) (2020-10-23)
 
 ### Features
