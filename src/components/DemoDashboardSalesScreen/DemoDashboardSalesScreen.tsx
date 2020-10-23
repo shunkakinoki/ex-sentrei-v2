@@ -1,5 +1,11 @@
 import DashboardSalesScreen from "@/components/DashboardSalesScreen";
+import DemoBanner from "@/components/DemoBanner";
 
 export default function DemoDashboardSalesScreen(): JSX.Element {
-  return <DashboardSalesScreen namespace="demo" />;
+  return (
+    <>
+      <DemoBanner />
+      <DashboardSalesScreen namespace="demo" />
+    </>
+  );
 }

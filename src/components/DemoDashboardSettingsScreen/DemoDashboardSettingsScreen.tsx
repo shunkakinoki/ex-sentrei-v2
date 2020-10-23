@@ -1,5 +1,11 @@
 import DashboardSettingsScreen from "@/components/DashboardSettingsScreen";
+import DemoBanner from "@/components/DemoBanner";
 
 export default function DemoDashboardSettingsScreen(): JSX.Element {
-  return <DashboardSettingsScreen namespace="demo" />;
+  return (
+    <>
+      <DemoBanner />
+      <DashboardSettingsScreen namespace="demo" />
+    </>
+  );
 }
