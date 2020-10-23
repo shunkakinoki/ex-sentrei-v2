@@ -1,3 +1,5 @@
+/* eslint-disable react/require-default-props */
+
 import clsx from "clsx";
 import Plan from "@/types/Plan";
 import Link from "next/link";
@@ -6,7 +8,13 @@ export interface Props {
   plan: Plan;
 }
 
-export function CheckIconItem({children}: {children: string}): JSX.Element {
+export function CheckIconItem({
+  children,
+  highlight = false,
+}: {
+  children: string;
+  highlight?: boolean;
+}): JSX.Element {
   return (
     <li className="flex items-start mt-4">
       <div className="flex-shrink-0">
@@ -24,7 +32,14 @@ export function CheckIconItem({children}: {children: string}): JSX.Element {
           />
         </svg>
       </div>
-      <p className="ml-3 text-base font-medium leading-6 text-gray-500">
+      <p
+        className={clsx(
+          "ml-3 text-base font-medium leading-6",
+          highlight &&
+            "text-transparent text-lg font-extrabold bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ",
+          !highlight && " text-gray-500",
+        )}
+      >
         {children}
       </p>
     </li>
@@ -93,16 +108,16 @@ export default function PricingTableCard({plan}: Props): JSX.Element {
               <CheckIconItem>Custom analytics</CheckIconItem>
               <CheckIconItem>Custom editor</CheckIconItem>
               {(plan === "pro" || plan === "premium") && (
-                <CheckIconItem>Cusom domains</CheckIconItem>
+                <CheckIconItem highlight>Cusom domains</CheckIconItem>
               )}
               {(plan === "pro" || plan === "premium") && (
-                <CheckIconItem>Dedicated support</CheckIconItem>
+                <CheckIconItem highlight>Dedicated support</CheckIconItem>
               )}
               {plan === "premium" && (
-                <CheckIconItem>Premium subscription w/ Stripe</CheckIconItem>
-              )}
-              {plan === "premium" && (
-                <CheckIconItem>Same price forever</CheckIconItem>
+                <CheckIconItem highlight>
+                  Premium subscription w/ Stripe (Zero margins excluding Stripe
+                  fee)
+                </CheckIconItem>
               )}
             </ul>
             <div className="mt-8 md:mt-10 lg:mt-12">
