@@ -1,4 +1,5 @@
 import Link from "next/link";
+import LandingBannerTyped from "@/components/LandingBannerTyped";
 
 export default function LandingBanner(): JSX.Element {
   return (
@@ -12,7 +13,8 @@ export default function LandingBanner(): JSX.Element {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ">
                   delightful
                 </span>{" "}
-                way to start your own newsletter.
+                way to start your own{" "}
+                <LandingBannerTyped text={["blog", "media", "newsletter"]} />.
               </h2>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl xl:mx-0">
                 Managing a CMS is hard and tiring. <br />
