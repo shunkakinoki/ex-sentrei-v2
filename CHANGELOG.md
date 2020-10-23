@@ -1,3 +1,15 @@
+# [1.27.0](https://github.com/sentrei/sentrei/compare/v1.26.1...v1.27.0) (2020-10-23)
+
+### Features
+
+- 🎸 ini demo banner ([6212b6d](https://github.com/sentrei/sentrei/commit/6212b6db109bff88c6abaea59f0402a74a8d81a4))
+
+### Performance Improvements
+
+- ⚡️ refactor bg pink header mobile menu ([da9c002](https://github.com/sentrei/sentrei/commit/da9c002b83b550c7b23293ab50b7b1f62826b917))
+- ⚡️ refactor demo banner height ([8283ab3](https://github.com/sentrei/sentrei/commit/8283ab304d14d8c8d7adc5ae00254319d3b2d333))
+- ⚡️ refactor landing banner ([ea279bd](https://github.com/sentrei/sentrei/commit/ea279bdcbd3c99ee99e5b4317f84a76f35d8de50))
+
 ## [1.26.1](https://github.com/sentrei/sentrei/compare/v1.26.0...v1.26.1) (2020-10-23)
 
 ### Performance Improvements
