@@ -1,3 +1,9 @@
+## [1.24.1](https://github.com/sentrei/sentrei/compare/v1.24.0...v1.24.1) (2020-10-23)
+
+### Performance Improvements
+
+- ⚡️ refactor auth form ([5f81258](https://github.com/sentrei/sentrei/commit/5f8125851ab7970a3735612454d6671d739fc44b))
+
 # [1.24.0](https://github.com/sentrei/sentrei/compare/v1.23.1...v1.24.0) (2020-10-22)
 
 ### Features
