@@ -1,3 +1,9 @@
+## [1.27.3](https://github.com/sentrei/sentrei/compare/v1.27.2...v1.27.3) (2020-10-23)
+
+### Performance Improvements
+
+- ⚡️ refactor landing feature ([2b824d0](https://github.com/sentrei/sentrei/commit/2b824d0668428bdbcc34a00580accbee2148eafe))
+
 ## [1.27.2](https://github.com/sentrei/sentrei/compare/v1.27.1...v1.27.2) (2020-10-23)
 
 ### Performance Improvements
