@@ -17,10 +17,10 @@ export default function AuthForm({type}: Props): JSX.Element {
           priority
           unsized
           alt="Logo"
-          className="w-auto h-8 mx-auto sm:h-12 md:h-20"
+          className="w-auto h-12 mx-auto sm:h-16 md:h-20"
         />
         <h3 className="mt-6 text-3xl font-extrabold leading-9 text-center text-gray-900 md:text-4xl">
-          {type === "login" && "Login to your account"}
+          {type === "login" && "Login now"}
           {type === "signup" && "Sign up now"}
           {type === "reset-password" && "Reset password"}
         </h3>
@@ -31,13 +31,13 @@ export default function AuthForm({type}: Props): JSX.Element {
         </p>
       </div>
       {type !== "reset-password" && (
-        <div className="mt-2 md:mt-4">
+        <div className="mt-2 sm:mt-4 md:mt-6">
           <div className="flex items-center justify-between py-2 md:py-3 md:justify-start">
             <Link href="/demo/dashboard">
               <a className="relative flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-pink-500 transition duration-150 ease-in-out bg-transparent border border-transparent border-pink-300 rounded hover:bg-pink-100 focus:border-pink-300 group focus:outline-none focus:shadow-md ">
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                   <svg
-                    className="w-5 h-5 text-indigo-500 transition duration-150 ease-in-out group-hover:text-indigo-400"
+                    className="w-5 h-5 text-pink-500 transition duration-150 ease-in-out group-hover:text-pink-400"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                     strokeWidth="3"
@@ -99,7 +99,7 @@ export default function AuthForm({type}: Props): JSX.Element {
                 <input
                   id="remember_me"
                   type="checkbox"
-                  className="w-4 h-4 text-indigo-600 transition duration-150 ease-in-out form-checkbox"
+                  className="w-4 h-4 text-pink-600 transition duration-150 ease-in-out form-checkbox"
                 />
                 <label
                   htmlFor="remember_me"
@@ -111,11 +111,16 @@ export default function AuthForm({type}: Props): JSX.Element {
             )}
           </div>
           <div className="text-sm leading-5">
-            <Link href={type === "login" ? "/reset-password" : "/login"}>
-              <a className="font-medium text-indigo-600 transition duration-150 ease-in-out hover:text-indigo-500 focus:outline-none focus:underline">
-                {type === "login" && "Forgot password?"}
+            <Link href={type === "login" ? "/signup" : "/login"}>
+              <a className="font-normal">
+                {type === "login" && "Don't have an account? "}
                 {type === "signup" && "Already have an account?"}
                 {type === "reset-password" && "Remembered password?"}
+                {type === "login" && (
+                  <span className="text-pink-500 hover:underline">
+                    Register
+                  </span>
+                )}
               </a>
             </Link>
           </div>
@@ -144,6 +149,35 @@ export default function AuthForm({type}: Props): JSX.Element {
               {type === "reset-password" && "Reset password"}
             </a>
           </Link>
+        </div>
+        <div className="text-sm leading-5 text-center">
+          {type === "login" && (
+            <div className="flex items-center justify-start mt-3 md:mt-4">
+              <Link href="/reset-password">
+                <a className="font-normal transition duration-150 ease-in-out hover:text-pink-500 focus:outline-none focus:underline">
+                  Forgot password?
+                </a>
+              </Link>
+            </div>
+          )}
+          {type === "signup" && (
+            <div className="flex items-center justify-center mt-3 md:mt-4">
+              <a className="text-xs font-normal text-center">
+                By signing up you agree to our{" "}
+                <Link href="/terms">
+                  <a className="transition duration-150 ease-in-out hover:text-pink-500 focus:outline-none focus:underline">
+                    Terms and Conditions
+                  </a>
+                </Link>{" "}
+                and{" "}
+                <Link href="/privacy">
+                  <a className="transition duration-150 ease-in-out hover:text-pink-500 focus:outline-none focus:underline">
+                    Privacy Policy
+                  </a>
+                </Link>
+              </a>{" "}
+            </div>
+          )}
         </div>
       </form>
     </div>
