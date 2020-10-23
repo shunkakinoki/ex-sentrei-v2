@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import HeaderDemoMenu from "@/components/HeaderDemoMenu";
+import HeaderMobileMenu from "@/components/HeaderMobileMenu";
 import {Menu} from "@headlessui/react";
 
 export default function HeaderRoot(): JSX.Element {
@@ -22,25 +23,31 @@ export default function HeaderRoot(): JSX.Element {
             </Link>
           </div>
           <div className="-my-2 -mr-2 md:hidden">
-            <button
-              type="button"
-              className="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
+            <Menu>
+              {({open}) => (
+                <>
+                  <Menu.Button className="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500">
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4 6h16M4 12h16M4 18h16"
+                      />
+                    </svg>
+                  </Menu.Button>
+                  <span className="z-30 ">
+                    <HeaderMobileMenu open={open} />
+                  </span>
+                </>
+              )}
+            </Menu>
           </div>
           <nav className="hidden md:flex">
             <Menu>
