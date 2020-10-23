@@ -1,3 +1,10 @@
+# [1.26.0](https://github.com/sentrei/sentrei/compare/v1.25.0...v1.26.0) (2020-10-23)
+
+### Features
+
+- 🎸 complete refactor lp ([2101f77](https://github.com/sentrei/sentrei/commit/2101f773962f76505cfc23f3e44ce94cb4eb3b13))
+- 🎸 ini landing banner typed custom component ([2cbd673](https://github.com/sentrei/sentrei/commit/2cbd6733ee66384fad34dae957675cd4d095e721))
+
 # [1.25.0](https://github.com/sentrei/sentrei/compare/v1.24.1...v1.25.0) (2020-10-23)
 
 ### Features
