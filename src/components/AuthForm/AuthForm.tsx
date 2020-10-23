@@ -19,7 +19,7 @@ export default function AuthForm({type}: Props): JSX.Element {
           alt="Logo"
           className="w-auto h-12 mx-auto sm:h-16 md:h-20"
         />
-        <h3 className="mt-6 text-5xl font-extrabold text-center text-gray-600 md:leading-9 md:text-6xl">
+        <h3 className="mt-6 text-5xl font-extrabold text-center text-gray-600 md:text-6xl">
           {type === "login" && "Log in"}
           {type === "signup" && "Sign up now"}
           {type === "reset-password" && "Reset password"}
