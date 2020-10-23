@@ -1,7 +1,7 @@
 export default function DemoBanner(): JSX.Element {
   return (
     <div className="bg-gradient-to-r from-pink-500 to-pink-400">
-      <div className="max-w-screen-xl px-3 py-3 mx-auto sm:px-6 lg:px-8">
+      <div className="max-w-screen-xl py-1 mx-auto sm:py-2 md:py-3 ">
         <div className="flex flex-wrap items-center justify-between">
           <div className="flex items-center flex-1 ">
             <span className="items-center flex-1 font-medium text-center text-white truncate">
