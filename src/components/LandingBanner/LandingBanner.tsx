@@ -43,7 +43,7 @@ export default function LandingBanner(): JSX.Element {
         </div>
       </div>
       <div className="pb-3 mx-2 mt-6 mb-5 shadow-lg md:mx-4 md:mb-6 lg:mx-6 xl:mx-8 md:mt-6 lg:mt-8 xl:object-cover xl:absolute xl:inset-y-0 xl:right-0 xl:w-2/5 2xl:w-1/2">
-        <div className="flex px-5 pt-4 pb-4 mb-4 bg-gray-300 rounded-t">
+        <div className="flex px-5 pt-4 pb-4 bg-gray-300 rounded-t">
           <span className="w-3 h-3 bg-red-500 rounded-full" />
           <span className="w-3 h-3 ml-2 bg-yellow-300 rounded-full" />
           <span className="w-3 h-3 ml-2 bg-green-500 rounded-full" />
