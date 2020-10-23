@@ -1,4 +1,5 @@
 import Link from "next/link";
+import LandingBannerTyped from "@/components/LandingBannerTyped";
 
 export default function LandingBanner(): JSX.Element {
   return (
@@ -12,12 +13,14 @@ export default function LandingBanner(): JSX.Element {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ">
                   delightful
                 </span>{" "}
-                way to start your own newsletter.
+                way to start your own{" "}
+                <LandingBannerTyped text={["blog", "media", "newsletter"]} />.
               </h2>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl xl:mx-0">
-                Managing a CMS is hard and tiring. <br />
-                Substack&copy; charges too much for its offering. <br />
-                We aim to much better, like the world deserves in 2020.
+                Managing a CMS is a lot of work. <br />
+                Medium&copy;&nbsp;&amp;&nbsp;Substack&copy; have their own
+                shortcomings. <br />
+                We aim to much better, how the world deserves in 2020.
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center xl:justify-start">
                 <div className="rounded-md shadow">
