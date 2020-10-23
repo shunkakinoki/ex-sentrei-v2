@@ -1,5 +1,5 @@
 import BlogStoryImage from "@/components/BlogStoryImage";
-import BlogStoryBanner from "@/components/BlogStoryBanner";
+import BlogStoryHero from "@/components/BlogStoryHero";
 import clsx from "clsx";
 import Article from "@/types/Article";
 import Link from "next/link";
@@ -33,7 +33,7 @@ export default function BlogStoryCard({
       >
         <div className="rounded sm:rounded-2xl md:rounded-lg group">
           <BlogStoryImage image={image} title={title} />
-          <BlogStoryBanner
+          <BlogStoryHero
             date={date}
             time={time}
             title={title}
