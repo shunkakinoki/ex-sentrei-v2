@@ -1,6 +1,7 @@
 import HeaderRoot from "@/components/HeaderRoot";
 import ContainerRoot from "@/components/ContainerRoot";
 import SettingsProfileSection from "@/components/SettingsProfileSection";
+import SettingsNotificationsSection from "@/components/SettingsNotificationsSection";
 
 export default function SettingsScreen(): JSX.Element {
   return (
@@ -12,14 +13,13 @@ export default function SettingsScreen(): JSX.Element {
             Settings
           </h3>
         </div>
-        <div className="px-3 md:grid md:grid-cols-3 md:gap-6">
-          <SettingsProfileSection />
+        <SettingsProfileSection />
+        <div className="hidden sm:block">
+          <div className="py-5 sm:py-8 md:py-12 lg:py-16 xl:py-20">
+            <div className="border-t border-gray-200" />
+          </div>
         </div>
-      </div>
-      <div className="hidden sm:block">
-        <div className="py-5">
-          <div className="border-t border-gray-200" />
-        </div>
+        <SettingsNotificationsSection />
       </div>
     </ContainerRoot>
   );
