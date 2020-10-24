@@ -1,13 +1,13 @@
-import HeaderRoot from "@/components/HeaderRoot";
-import BlogBanner, {Props as BlogBannerProps} from "@/components/BlogBanner";
-import ContainerRoot from "@/components/ContainerRoot";
 import BlogAuthor, {Props as BlogAuthorProps} from "@/components/BlogAuthor";
+import BlogBanner, {Props as BlogBannerProps} from "@/components/BlogBanner";
+import BlogPagination from "@/components/BlogPagination";
 import BlogStoryGrid, {
   Props as BlogStoryGridProps,
 } from "@/components/BlogStoryGrid";
-import BlogPagination from "@/components/BlogPagination";
-import {totalPages} from "@/const/demo";
+import ContainerRoot from "@/components/ContainerRoot";
 import FooterRoot from "@/components/FooterRoot";
+import HeaderRoot from "@/components/HeaderRoot";
+import {totalPages} from "@/const/demo";
 
 export interface Props extends BlogStoryGridProps {
   author: BlogAuthorProps;

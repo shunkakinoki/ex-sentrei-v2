@@ -1,7 +1,8 @@
 /* eslint-disable react/button-has-type */
 
-import Author from "@/types/Author";
 import Image from "next/image";
+
+import Author from "@/types/Author";
 
 export type Props = Author;
 

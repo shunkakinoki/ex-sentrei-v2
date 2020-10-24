@@ -1,4 +1,5 @@
 import {NextPage} from "next";
+
 import AuthScreen from "@/components/AuthScreen";
 
 const ResetPassword: NextPage = () => {

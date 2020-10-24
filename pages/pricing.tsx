@@ -1,4 +1,5 @@
 import {NextPage} from "next";
+
 import PricingScreen from "@/components/PricingScreen";
 
 const Pricing: NextPage = () => {

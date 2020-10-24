@@ -2,6 +2,8 @@
   "extends": [
     "airbnb-typescript",
     "plugin:prettier/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
     "plugin:import/typescript",
     "plugin:jsx-a11y/recommended",
     "plugin:react/recommended",
@@ -20,10 +22,39 @@
   },
   "root": true,
   "rules": {
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "caseInsensitive": true,
+          "order": "asc"
+        },
+        "groups": [
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "builtin",
+          "index"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "external",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "newlines-between": "always"
+      }
+    ],
     "jsx-a11y/anchor-is-valid": 0,
     "react/react-in-jsx-scope": 0
   },
   "settings": {
+    "import/resolver": {
+      "typescript": {}
+    },
     "react": {
       "version": "detect"
     }

@@ -1,4 +1,5 @@
 import {NextPage} from "next";
+
 import SupportScreen from "@/components/SupportScreen";
 
 const Support: NextPage = () => {

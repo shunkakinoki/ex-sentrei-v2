@@ -1,4 +1,5 @@
 import {GetStaticProps, InferGetStaticPropsType, GetStaticPaths} from "next";
+
 import DemoArticleScreen, {
   Props as DemoArticleScreenProps,
 } from "@/components/DemoArticleScreen";

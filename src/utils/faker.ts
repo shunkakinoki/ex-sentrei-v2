@@ -1,7 +1,8 @@
-import Blog from "@/types/Blog";
-import Author from "@/types/Author";
 import faker from "faker";
+
 import Article, {Pricing} from "@/types/Article";
+import Author from "@/types/Author";
+import Blog from "@/types/Blog";
 
 // Inspired by: https://github.com/Marak/faker.js/blob/4bd0935460ab62b72593b42471699d2044c7a53a/lib/markdown.js
 export const createMdHeader = (num = 3): string => {

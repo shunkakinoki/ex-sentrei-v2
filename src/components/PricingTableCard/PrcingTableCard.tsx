@@ -1,8 +1,9 @@
 /* eslint-disable react/require-default-props */
 
 import clsx from "clsx";
-import Plan from "@/types/Plan";
 import Link from "next/link";
+
+import Plan from "@/types/Plan";
 
 export interface Props {
   plan: Plan;

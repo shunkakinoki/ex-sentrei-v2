@@ -1,7 +1,7 @@
+import AuthForm, {Props as AuthFormProps} from "@/components/AuthForm";
 import ContainerCenter from "@/components/ContainerCenter";
 import ContainerRoot from "@/components/ContainerRoot";
 import HeaderRoot from "@/components/HeaderRoot";
-import AuthForm, {Props as AuthFormProps} from "@/components/AuthForm";
 
 export type Props = AuthFormProps;
 
