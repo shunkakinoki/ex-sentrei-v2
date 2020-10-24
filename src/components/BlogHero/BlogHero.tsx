@@ -1,4 +1,5 @@
 /* eslint-disable react/button-has-type */
+
 import Link from "next/link";
 
 import BlogAuthor from "@/components/BlogAuthor";
@@ -21,7 +22,7 @@ export default function BlogHero({
           <h1 className="text-5xl font-extrabold leading-10 tracking-tight text-center text-gray-900 md:text-left sm:text-5xl sm:leading-none md:text-6xl">
             {title}
           </h1>
-          <h4 className="pl-1 mt-5 text-lg text-center lg:mt-8 sm:pl-2 md:pl-3 md:text-left lg:pl-4">
+          <h4 className="mt-5 text-lg text-center lg:mt-8 md:text-left ">
             {subtitle}
           </h4>
         </div>
