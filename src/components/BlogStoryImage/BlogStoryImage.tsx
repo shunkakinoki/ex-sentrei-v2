@@ -8,7 +8,7 @@ export default function BlogStoryImage({image, title}: Props): JSX.Element {
     <div className="transition duration-300 ease-in-out transform shadow-none md:hover:-translate-y-1 md:shadow-lg xl:shadow-xl group-hover:shadow-none md:group-hover:shadow-2xl">
       <Image
         alt={`Story Cover for ${title}`}
-        lazy
+        loading="lazy"
         unoptimized
         unsized
         src={image ?? ""}
