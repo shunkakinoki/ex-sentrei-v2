@@ -1,4 +1,4 @@
-export default function LandingBanner(): JSX.Element {
+export default function PricingHero(): JSX.Element {
   return (
     <div className="relative overflow-hidden ">
       <div className="flex justify-center max-w-screen-xl mx-auto">
