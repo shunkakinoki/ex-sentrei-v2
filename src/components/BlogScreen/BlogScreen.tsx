@@ -1,5 +1,5 @@
 import BlogAuthor, {Props as BlogAuthorProps} from "@/components/BlogAuthor";
-import BlogBanner, {Props as BlogBannerProps} from "@/components/BlogBanner";
+import BlogHero, {Props as BlogHeroProps} from "@/components/BlogHero";
 import BlogPagination from "@/components/BlogPagination";
 import BlogStoryGrid, {
   Props as BlogStoryGridProps,
@@ -11,7 +11,7 @@ import {totalPages} from "@/const/demo";
 
 export interface Props extends BlogStoryGridProps {
   author: BlogAuthorProps;
-  blog: Omit<BlogBannerProps, "namespace">;
+  blog: Omit<BlogHeroProps, "namespace">;
   current: number;
   namespace: string;
 }
@@ -26,7 +26,7 @@ export default function BlogScreen({
   return (
     <ContainerRoot>
       <HeaderRoot />
-      <BlogBanner
+      <BlogHero
         title={blog.title}
         subtitle={blog.subtitle}
         namespace={namespace}
