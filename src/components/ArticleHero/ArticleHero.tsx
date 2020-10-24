@@ -1,13 +1,15 @@
 import ArticleAuthor from "@/components/ArticleAuthor";
+import ArticleAuthors from "@/components/ArticleAuthors";
 import Article from "@/types/Article";
 
 export type Props = Pick<
   Article,
-  "authors" | "date" | "time" | "title" | "subtitle"
+  "authors" | "date" | "pricing" | "time" | "title" | "subtitle"
 >;
 
 export default function ArticleHero({
   authors,
+  pricing,
   date,
   time,
   title,
@@ -30,7 +32,39 @@ export default function ArticleHero({
         </div>
       </div>
       <div className="px-4 mx-auto mt-1 mb-8 md:max-w-screen-sm sm:px-6 lg:px-8 md:mt-3 md:mb-12 xl:mt-6 lg:mb-16">
-        <ArticleAuthor authors={authors} date={date} time={time} />
+        <div className="px-4 py-2 mt-2">
+          <div className="flex items-center space-x-2 justify-left">
+            {authors.length === 1 ? (
+              <ArticleAuthor author={authors[0]} />
+            ) : (
+              <ArticleAuthors authors={authors} />
+            )}
+            <p className="flex items-center mt-1 font-medium text-center text-gray-500">
+              {authors.length === 1 && authors[0].name}
+              &nbsp;&middot;&nbsp;
+              {new Date(date).toDateString()}
+              &nbsp;&middot;&nbsp;
+              {time} min read
+              {pricing === "subscription" && <>&nbsp;&middot;&nbsp;</>}
+              {pricing === "subscription" && (
+                <svg
+                  className="w-4 h-4 mr-2 text-gray-600 fill-current"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                  />
+                </svg>
+              )}
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
