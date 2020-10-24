@@ -2,23 +2,23 @@ import {GetStaticProps, InferGetStaticPropsType} from "next";
 
 import DemoScreen, {Props as DemoScreenProps} from "@/components/DemoScreen";
 import Article from "@/types/Article";
-import {createArticles, createAuthor, createBlog} from "@/utils/faker";
+import Blog from "@/types/Blog";
+import {createArticles, createBlog} from "@/utils/faker";
 
-export type Props = Omit<DemoScreenProps, "articles"> & {
+export type Props = Omit<DemoScreenProps, "articles" | "blog"> & {
   articles: string;
+  blog: string;
 };
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const articles = createArticles();
-  const author = createAuthor();
   const blog = createBlog();
 
   return {
     props: {
       articles: JSON.stringify(articles),
-      author,
-      blog,
+      blog: JSON.stringify(blog),
       current: 1,
     },
   };
@@ -26,15 +26,13 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 const Demo = ({
   articles,
-  author,
   blog,
   current,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <DemoScreen
       articles={JSON.parse(articles) as Article[]}
-      author={author}
-      blog={blog}
+      blog={JSON.parse(blog) as Blog}
       current={current}
     />
   );
