@@ -34,6 +34,7 @@ Day 3
 - Integrate essential packages
 
 Day 4
+
 - Complete landing + onboarding pages
 
 Day 5
