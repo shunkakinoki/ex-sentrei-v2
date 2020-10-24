@@ -39,6 +39,7 @@ export default function BlogHero({
       <div className="flex justify-start w-full mt-3 align-middle sm:mt-6">
         <BlogAuthor
           name={authors[0].name}
+          namespace={authors[0].namespace}
           bio={authors[0].bio}
           image={authors[0].image}
         />
