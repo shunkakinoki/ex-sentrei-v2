@@ -11,7 +11,7 @@ export default function LandingHeroTyped({text}: Props): JSX.Element {
       strings: text,
       loop: true,
       backSpeed: 30,
-      backDelay: 3000,
+      backDelay: 1500,
       startDelay: 300,
       shuffle: true,
       typeSpeed: 90,

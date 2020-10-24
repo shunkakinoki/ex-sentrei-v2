@@ -4,7 +4,7 @@ import Blog from "@/types/Blog";
 
 export type Props = Blog & {namespace: string};
 
-export default function BlogBanner({
+export default function BlogHero({
   namespace,
   title,
   subtitle,
