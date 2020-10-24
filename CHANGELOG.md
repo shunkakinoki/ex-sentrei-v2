@@ -1,3 +1,9 @@
+## [1.28.3](https://github.com/sentrei/sentrei/compare/v1.28.2...v1.28.3) (2020-10-24)
+
+### Performance Improvements
+
+- ⚡️ refactor pricing hero ([a3757de](https://github.com/sentrei/sentrei/commit/a3757de6dc848ab7df60fa060bed2ffed5e93b27))
+
 ## [1.28.2](https://github.com/sentrei/sentrei/compare/v1.28.1...v1.28.2) (2020-10-24)
 
 ### Performance Improvements
