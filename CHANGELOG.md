@@ -1,3 +1,11 @@
+## [1.28.2](https://github.com/sentrei/sentrei/compare/v1.28.1...v1.28.2) (2020-10-24)
+
+### Performance Improvements
+
+- ⚡️ run eslint fix ([a3e6275](https://github.com/sentrei/sentrei/commit/a3e6275eb12f5e84c05947ff40ad8464c5fdb4de))
+- ⚡️ update eslintrc json w/ custom import ([bb14dad](https://github.com/sentrei/sentrei/commit/bb14dad529db87c3f389c1b76ff1c86251ba9486))
+- ⚡️ upgrade next js ([3849864](https://github.com/sentrei/sentrei/commit/3849864d901ac0dcb8a63e46cb891a82fcba3ed0))
+
 ## [1.28.1](https://github.com/sentrei/sentrei/compare/v1.28.0...v1.28.1) (2020-10-23)
 
 ### Bug Fixes
