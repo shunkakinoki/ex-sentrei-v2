@@ -1,3 +1,9 @@
+# [1.31.0](https://github.com/sentrei/sentrei/compare/v1.30.0...v1.31.0) (2020-10-24)
+
+### Features
+
+- 🎸 upgrade w/ ncu ([f118f19](https://github.com/sentrei/sentrei/commit/f118f198d64d3ae3988ca033c5e22d6255e12d18))
+
 # [1.30.0](https://github.com/sentrei/sentrei/compare/v1.29.0...v1.30.0) (2020-10-24)
 
 ### Features
