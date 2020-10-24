@@ -1,6 +1,7 @@
-import Author from "@/types/Author";
-import Article from "@/types/Article";
 import Image from "next/image";
+
+import Article from "@/types/Article";
+import Author from "@/types/Author";
 
 export interface Props extends Pick<Article, "date" | "time"> {
   authors: Author[];

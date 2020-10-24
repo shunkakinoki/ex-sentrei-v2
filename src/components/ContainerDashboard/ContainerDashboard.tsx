@@ -1,4 +1,5 @@
 import {ReactNode} from "react";
+
 import TabDashboard, {
   Props as TabDashboardProps,
 } from "@/components/TabDashboard";

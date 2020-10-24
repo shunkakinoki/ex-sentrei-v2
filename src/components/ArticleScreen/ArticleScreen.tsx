@@ -1,14 +1,15 @@
-import HeaderRoot from "@/components/HeaderRoot";
+import dynamic from "next/dynamic";
+
+import ArticleAuthor from "@/components/ArticleAuthor";
+import ArticleHero from "@/components/ArticleHero";
+import ArticleImage from "@/components/ArticleImage";
+import ArticleStoryGrid from "@/components/ArticleStoryGrid";
+import ArticleSubscribe from "@/components/ArticleSubscribe";
 import ContainerRoot from "@/components/ContainerRoot";
 import FooterRoot from "@/components/FooterRoot";
-import ArticleHero from "@/components/ArticleHero";
-import ArticleAuthor from "@/components/ArticleAuthor";
-import ArticleImage from "@/components/ArticleImage";
-import Author from "@/types/Author";
+import HeaderRoot from "@/components/HeaderRoot";
 import Article from "@/types/Article";
-import dynamic from "next/dynamic";
-import ArticleSubscribe from "@/components/ArticleSubscribe";
-import ArticleStoryGrid from "@/components/ArticleStoryGrid";
+import Author from "@/types/Author";
 
 const ArticleBody = dynamic(() => import("@/components/ArticleBody"), {
   ssr: false,

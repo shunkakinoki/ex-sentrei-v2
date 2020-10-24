@@ -1,8 +1,9 @@
 import {GetStaticProps, InferGetStaticPropsType, GetStaticPaths} from "next";
+
 import DemoScreen, {Props as DemoScreenProps} from "@/components/DemoScreen";
+import {totalPages} from "@/const/demo";
 import Article from "@/types/Article";
 import {createArticles, createAuthor, createBlog} from "@/utils/faker";
-import {totalPages} from "@/const/demo";
 
 export type Props = Omit<DemoScreenProps, "articles" | "current"> & {
   articles: string;

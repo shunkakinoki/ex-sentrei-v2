@@ -6,6 +6,7 @@ import {AppProps} from "next/app";
 import "../src/styles/index.css";
 import {RecoilRoot} from "recoil";
 import {SWRConfig} from "swr";
+
 import SeoRoot from "@/components/SeoRoot";
 
 const CustomApp = ({Component, pageProps}: AppProps): JSX.Element => {

@@ -1,5 +1,6 @@
-import Blog from "@/types/Blog";
 import Link from "next/link";
+
+import Blog from "@/types/Blog";
 
 export type Props = Blog & {namespace: string};
 

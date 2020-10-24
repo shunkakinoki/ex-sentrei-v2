@@ -1,4 +1,5 @@
 import {NextPage} from "next";
+
 import DemoDashboardSalesScreen from "@/components/DemoDashboardSalesScreen";
 
 const DemoDashboardSales: NextPage = () => {

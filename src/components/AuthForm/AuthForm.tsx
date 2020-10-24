@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
+import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-import clsx from "clsx";
 
 export interface Props {
   type: "login" | "signup" | "reset-password";

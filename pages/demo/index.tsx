@@ -1,4 +1,5 @@
 import {GetStaticProps, InferGetStaticPropsType} from "next";
+
 import DemoScreen, {Props as DemoScreenProps} from "@/components/DemoScreen";
 import Article from "@/types/Article";
 import {createArticles, createAuthor, createBlog} from "@/utils/faker";

@@ -1,8 +1,9 @@
-import BlogStoryImage from "@/components/BlogStoryImage";
-import BlogStoryHero from "@/components/BlogStoryHero";
 import clsx from "clsx";
-import Article from "@/types/Article";
 import Link from "next/link";
+
+import BlogStoryHero from "@/components/BlogStoryHero";
+import BlogStoryImage from "@/components/BlogStoryImage";
+import Article from "@/types/Article";
 
 export interface Props extends Omit<Article, "body"> {
   namespace: string;

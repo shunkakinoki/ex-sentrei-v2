@@ -1,12 +1,13 @@
-import Article from "@/types/Article";
-import ReactMarkdown from "react-markdown";
-import gfm from "remark-gfm";
-import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
-import {ReactNode, useEffect} from "react";
-import dracula from "react-syntax-highlighter/dist/esm/styles/prism/dracula";
-import Markdown from "@/styles/markdown.module.css";
-import Excerpt from "@/styles/excerpt.module.css";
 import clsx from "clsx";
+import {ReactNode, useEffect} from "react";
+import ReactMarkdown from "react-markdown";
+import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
+import dracula from "react-syntax-highlighter/dist/esm/styles/prism/dracula";
+import gfm from "remark-gfm";
+
+import Excerpt from "@/styles/excerpt.module.css";
+import Markdown from "@/styles/markdown.module.css";
+import Article from "@/types/Article";
 
 export interface Props extends Pick<Article, "body"> {
   excerpt?: boolean;

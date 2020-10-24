@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import LandingHeroTyped from "@/components/LandingHeroTyped";
 
 export default function LandingHero(): JSX.Element {

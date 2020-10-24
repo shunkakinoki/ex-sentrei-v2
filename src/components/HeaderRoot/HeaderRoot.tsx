@@ -1,9 +1,10 @@
-import Link from "next/link";
+import {Menu} from "@headlessui/react";
 import Image from "next/image";
+import Link from "next/link";
+
 import HeaderDemoMenu from "@/components/HeaderDemoMenu";
 import HeaderMobileMenu from "@/components/HeaderMobileMenu";
 import HeaderProfileMenu from "@/components/HeaderProfileMenu";
-import {Menu} from "@headlessui/react";
 
 export default function HeaderRoot(): JSX.Element {
   return (

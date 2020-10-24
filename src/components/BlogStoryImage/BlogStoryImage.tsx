@@ -1,5 +1,6 @@
-import Article from "@/types/Article";
 import Image from "next/image";
+
+import Article from "@/types/Article";
 
 export type Props = Pick<Article, "image" | "title">;
 

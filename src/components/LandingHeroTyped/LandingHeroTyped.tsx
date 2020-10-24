@@ -1,5 +1,5 @@
-import Typed from "typed.js";
 import {useEffect} from "react";
+import Typed from "typed.js";
 
 export interface Props {
   text: string[];

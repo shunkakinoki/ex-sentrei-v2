@@ -1,7 +1,7 @@
-import HeaderRoot from "@/components/HeaderRoot";
 import ContainerRoot from "@/components/ContainerRoot";
-import SettingsProfileSection from "@/components/SettingsProfileSection";
+import HeaderRoot from "@/components/HeaderRoot";
 import SettingsNotificationsSection from "@/components/SettingsNotificationsSection";
+import SettingsProfileSection from "@/components/SettingsProfileSection";
 
 export default function SettingsScreen(): JSX.Element {
   return (
