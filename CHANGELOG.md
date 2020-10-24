@@ -1,3 +1,13 @@
+# [1.30.0](https://github.com/sentrei/sentrei/compare/v1.29.0...v1.30.0) (2020-10-24)
+
+### Features
+
+- 🎸 ini article authors ([19e9fc3](https://github.com/sentrei/sentrei/commit/19e9fc3ac2648d645cd46a2d974858d8b19f0482))
+
+### Performance Improvements
+
+- ⚡️ ini namespace for article author link ([94c6ea0](https://github.com/sentrei/sentrei/commit/94c6ea0a30b4ec61ec8bca25e328e556b98e10e9))
+
 # [1.29.0](https://github.com/sentrei/sentrei/compare/v1.28.4...v1.29.0) (2020-10-24)
 
 ### Features
