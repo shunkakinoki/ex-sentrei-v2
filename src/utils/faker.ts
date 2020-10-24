@@ -124,8 +124,8 @@ export const createAuthor = (): Author => {
 
 export const createBlog = (): Blog => {
   return {
-    title: "My awesome newsletter",
-    subtitle: faker.lorem.sentence(),
+    title: faker.lorem.sentence(1),
+    subtitle: faker.lorem.sentences(Math.floor(Math.random() * 3) + 1),
   };
 };
 
