@@ -32,22 +32,32 @@ Day 3
 
 - Complete article
 - Integrate essential packages
-- Complete landing + onboarding pages
 
 Day 4
-
-- Finish WYSIWYG Editor
+- Complete landing + onboarding pages
 
 Day 5
 
-- Integrate backend w/ firebase (profile, signup, editor)
+- Complete revamped landing page
 
 Day 6
+
+- Complete blog pages
+- Complete dashboard pages
+- Finish WYSIWYG Editor
+
+Day 7
+
+- Integrate emitter w/ recoil
+- Integrate backend w/ firebase (profile, signup, editor)
+
+Day 9
 
 - Connect Stripe & Sendgrid
 - Connect Cloudinary for images
 - Integrate analytics
 
-Day 7
+Day 10
 
-Marketing & Refactoring + Launch
+- Complete refurbished landing page
+- Marketing & Refactoring + Launch
