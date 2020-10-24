@@ -5,7 +5,6 @@ export type Props = Omit<BlogScreenProps, "namespace">;
 
 export default function DemoScreen({
   articles,
-  author,
   blog,
   current,
 }: Props): JSX.Element {
@@ -14,7 +13,6 @@ export default function DemoScreen({
       <DemoBanner />
       <BlogScreen
         articles={articles}
-        author={author}
         blog={blog}
         current={current}
         namespace="demo"
