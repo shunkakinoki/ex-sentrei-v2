@@ -1,3 +1,16 @@
+# [1.29.0](https://github.com/sentrei/sentrei/compare/v1.28.4...v1.29.0) (2020-10-24)
+
+### Features
+
+- 🎸 complete refactor blog hero ([3bf30dd](https://github.com/sentrei/sentrei/commit/3bf30ddce5a57159f68b0765ce9dc7699b7aa32b))
+- 🎸 ini namespace type for author and blog ([77a980b](https://github.com/sentrei/sentrei/commit/77a980b6c6cb77da974ab21f37ffdf5a1f5f362f))
+
+### Performance Improvements
+
+- ⚡️ ini blog hero custom author border ([4aa6968](https://github.com/sentrei/sentrei/commit/4aa696889e601f225dfc90021636cd2a8b49eeab))
+- ⚡️ ini typescript scripts ([5bb0ef4](https://github.com/sentrei/sentrei/commit/5bb0ef4907bace2688e866d9e148be1400a4a965))
+- ⚡️ refactor demo article hero w/ author ([7465b03](https://github.com/sentrei/sentrei/commit/7465b03ff483eca453e221fc492bf1ea66e27b65))
+
 ## [1.28.4](https://github.com/sentrei/sentrei/compare/v1.28.3...v1.28.4) (2020-10-24)
 
 ### Performance Improvements
