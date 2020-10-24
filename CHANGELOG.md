@@ -1,3 +1,9 @@
+# [1.32.0](https://github.com/sentrei/sentrei/compare/v1.31.0...v1.32.0) (2020-10-24)
+
+### Features
+
+- 🎸 upgrade react experimental ([1f3fd05](https://github.com/sentrei/sentrei/commit/1f3fd05680f00e9dc8e6a2f15e05e17efa0bf5bd))
+
 # [1.31.0](https://github.com/sentrei/sentrei/compare/v1.30.0...v1.31.0) (2020-10-24)
 
 ### Features
