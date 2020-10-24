@@ -49,13 +49,11 @@ export default function LandingHero(): JSX.Element {
           <span className="w-3 h-3 ml-2 bg-yellow-300 rounded-full" />
           <span className="w-3 h-3 ml-2 bg-green-500 rounded-full" />
         </div>
-        <div className="mb-6">
-          <iframe
-            className="z-0 w-full h-64 mb-4 overflow-hidden md:h-96 lg:h-128"
-            src="/demo"
-            title="Demo"
-          />
-        </div>
+        <iframe
+          className="w-full h-64 overflow-hidden md:h-96 lg:h-128"
+          src="/demo"
+          title="Demo"
+        />
       </div>
     </div>
   );
