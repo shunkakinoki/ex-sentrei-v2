@@ -78,7 +78,7 @@ export default function ArticleAuthors({authors}: Props): JSX.Element {
                   {authors.map(author => (
                     <Listbox.Option key={author.namespace} value={author.name}>
                       {({selected, active}) => (
-                        <Link href="/demo/profile">
+                        <Link href={`/profile/${author.namespace}`}>
                           <a>
                             <div
                               className={`${
