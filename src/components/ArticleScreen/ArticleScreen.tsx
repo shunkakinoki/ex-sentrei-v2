@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic";
 
-import ArticleAuthor from "@/components/ArticleAuthor";
 import ArticleHero from "@/components/ArticleHero";
 import ArticleImage from "@/components/ArticleImage";
 import ArticleStoryGrid from "@/components/ArticleStoryGrid";
@@ -9,7 +8,6 @@ import ContainerRoot from "@/components/ContainerRoot";
 import FooterRoot from "@/components/FooterRoot";
 import HeaderRoot from "@/components/HeaderRoot";
 import Article from "@/types/Article";
-import Author from "@/types/Author";
 
 const ArticleBody = dynamic(() => import("@/components/ArticleBody"), {
   ssr: false,
@@ -19,13 +17,11 @@ const ArticleBody = dynamic(() => import("@/components/ArticleBody"), {
 
 export interface Props {
   article: Article;
-  authors: Author[];
   more: Article[];
   namespace: string;
 }
 
 export default function ArticleScreen({
-  authors,
   article,
   more,
   namespace,
@@ -33,11 +29,12 @@ export default function ArticleScreen({
   return (
     <ContainerRoot>
       <HeaderRoot />
-      <ArticleHero title={article.title} subtitle={article?.subtitle} />
-      <ArticleAuthor
-        authors={authors}
+      <ArticleHero
+        authors={article.authors}
         date={article.date}
         time={article.time}
+        title={article.title}
+        subtitle={article?.subtitle}
       />
       {article.image && (
         <ArticleImage title={article.title} image={article.image} />

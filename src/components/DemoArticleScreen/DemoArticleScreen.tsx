@@ -4,17 +4,6 @@ import ArticleScreen, {
 
 export type Props = Omit<ArticleScreenProps, "namespace">;
 
-export default function DemoArticleScreen({
-  article,
-  authors,
-  more,
-}: Props): JSX.Element {
-  return (
-    <ArticleScreen
-      article={article}
-      authors={authors}
-      more={more}
-      namespace="demo"
-    />
-  );
+export default function DemoArticleScreen({article, more}: Props): JSX.Element {
+  return <ArticleScreen article={article} more={more} namespace="demo" />;
 }

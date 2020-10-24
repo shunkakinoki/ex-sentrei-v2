@@ -100,20 +100,6 @@ export const createPricing = (): Pricing => {
   }
 };
 
-export const createArticle = (): Article => {
-  return {
-    body: createMarkdown(30),
-    excerpt: createMarkdown(1),
-    date: faker.date.past(Math.floor(Math.random() * 30)),
-    image: `${faker.image.image()}?random=${Date.now()}`,
-    pricing: createPricing(),
-    slug: faker.lorem.slug(),
-    time: Math.floor(Math.random() * 10 + 3),
-    title: faker.lorem.lines(Math.floor(Math.random() * 3 + 1)),
-    subtitle: faker.lorem.sentences(Math.floor(Math.random() * 11)),
-  };
-};
-
 export const createAuthor = (): Author => {
   return {
     image: faker.image.avatar(),
@@ -124,6 +110,21 @@ export const createAuthor = (): Author => {
 
 export const createAuthors = (num = 3): Author[] => {
   return new Array(num).fill(undefined).map(createAuthor);
+};
+
+export const createArticle = (): Article => {
+  return {
+    authors: createAuthors(Math.floor(Math.random() * 3) + 1),
+    body: createMarkdown(30),
+    excerpt: createMarkdown(1),
+    date: faker.date.past(Math.floor(Math.random() * 30)),
+    image: `${faker.image.image()}?random=${Date.now()}`,
+    pricing: createPricing(),
+    slug: faker.lorem.slug(),
+    time: Math.floor(Math.random() * 10 + 3),
+    title: faker.lorem.lines(Math.floor(Math.random() * 3 + 1)),
+    subtitle: faker.lorem.sentences(Math.floor(Math.random() * 11)),
+  };
 };
 
 export const createBlog = (): Blog => {

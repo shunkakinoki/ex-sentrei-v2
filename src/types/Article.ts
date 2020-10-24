@@ -1,6 +1,9 @@
+import Authors from "@/types/Author";
+
 export type Pricing = "free" | "paid" | "subscription";
 
 export default interface Article {
+  authors: Authors[];
   body: string;
   date: Date;
   excerpt?: string;

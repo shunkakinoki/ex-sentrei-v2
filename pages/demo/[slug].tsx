@@ -4,15 +4,10 @@ import DemoArticleScreen, {
   Props as DemoArticleScreenProps,
 } from "@/components/DemoArticleScreen";
 import Article from "@/types/Article";
-import Author from "@/types/Author";
-import {createArticle, createAuthors, createArticles} from "@/utils/faker";
+import {createArticle, createArticles} from "@/utils/faker";
 
-export type Props = Omit<
-  DemoArticleScreenProps,
-  "article" | "authors" | "more"
-> & {
+export type Props = Omit<DemoArticleScreenProps, "article" | "more"> & {
   article: string;
-  authors: string;
   more: string;
 };
 
@@ -27,13 +22,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const article = createArticle();
-  const authors = createAuthors();
   const more = createArticles(2);
 
   return {
     props: {
       article: JSON.stringify(article),
-      authors: JSON.stringify(authors),
       more: JSON.stringify(more),
     },
     revalidate: 300,
@@ -42,13 +35,11 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 const Slug = ({
   article,
-  authors,
   more,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <DemoArticleScreen
       article={JSON.parse(article) as Article}
-      authors={JSON.parse(authors) as Author[]}
       more={JSON.parse(more) as Article[]}
     />
   );
