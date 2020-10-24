@@ -32,6 +32,7 @@ export default function ArticleScreen({
       <ArticleHero
         authors={article.authors}
         date={article.date}
+        pricing={article.pricing}
         time={article.time}
         title={article.title}
         subtitle={article?.subtitle}
