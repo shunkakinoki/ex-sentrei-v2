@@ -1,3 +1,13 @@
+## [1.28.4](https://github.com/sentrei/sentrei/compare/v1.28.3...v1.28.4) (2020-10-24)
+
+### Performance Improvements
+
+- ⚡️ ini profile screen ([626a559](https://github.com/sentrei/sentrei/commit/626a559256a6153973493e56c36406caa28cc55d))
+- ⚡️ landing hero typed delay to 1500 ([7e9599c](https://github.com/sentrei/sentrei/commit/7e9599c0f13c9e75922e9994f6d5ae61d54333d3))
+- ⚡️ refactor blog title ([cb5ec2d](https://github.com/sentrei/sentrei/commit/cb5ec2d093f6951a28af0e32fc453d228a039eb0))
+- ⚡️ revamp blog hero ([b5b65de](https://github.com/sentrei/sentrei/commit/b5b65de12a1134778373d4f30963b6f193d720e6))
+- ⚡️ update 10day plan ([cee21a2](https://github.com/sentrei/sentrei/commit/cee21a24d8f4910c8902c628606ba0dda96939c8))
+
 ## [1.28.3](https://github.com/sentrei/sentrei/compare/v1.28.2...v1.28.3) (2020-10-24)
 
 ### Performance Improvements
