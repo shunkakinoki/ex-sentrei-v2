@@ -105,6 +105,7 @@ export const createAuthor = (): Author => {
     image: faker.image.avatar(),
     bio: faker.lorem.sentences(Math.floor(Math.random() * 3) + 1),
     name: faker.name.findName(),
+    namespace: faker.lorem.slug(),
   };
 };
 
