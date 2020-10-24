@@ -5,8 +5,8 @@ import LandingHeroTyped from "@/components/LandingHeroTyped";
 export default function LandingHero(): JSX.Element {
   return (
     <div className="relative overflow-hidden">
-      <div className="max-w-screen-xl mx-2">
-        <div className="relative z-10 pb-6 sm:pb-8 md:pb-12 xl:max-w-2xl xl:w-full xl:pb-36">
+      <div className="max-w-screen-xl">
+        <div className="relative pb-6 sm:pb-8 md:pb-12 xl:max-w-2xl xl:w-full xl:pb-36">
           <main className="mt-10 sm:mt-12 sm:pr-6 md:mt-16 lg:mt-20 xl:mt-28 xl:ml-4">
             <div className="sm:text-center xl:text-left">
               <h2 className="text-4xl font-extrabold leading-10 tracking-tight text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
