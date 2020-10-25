@@ -116,8 +116,8 @@ export default function PricingTableCard({plan}: Props): JSX.Element {
               )}
               {plan === "premium" && (
                 <CheckIconItem highlight>
-                  Premium subscription w/ Stripe (Zero margins excluding Stripe
-                  fee)
+                  Premium subscription w/ Stripe (Zero commissionss excluding
+                  Stripe fee)
                 </CheckIconItem>
               )}
             </ul>
