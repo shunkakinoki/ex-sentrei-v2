@@ -3,7 +3,7 @@ import {GetStaticProps, InferGetStaticPropsType, GetStaticPaths} from "next";
 import DemoDashboardScreen, {
   Props as DemoDashboardScreenProps,
 } from "@/components/DemoDashboardScreen";
-import {totalPages} from "@/const/demo";
+import {totalDashboardPages} from "@/const/demo";
 import Article from "@/types/Article";
 import {createArticles, createBlog} from "@/utils/faker";
 
@@ -17,7 +17,7 @@ export type Props = Omit<
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = new Array(totalPages).fill(undefined).map((_, i) => {
+  const paths = new Array(totalDashboardPages).fill(undefined).map((_, i) => {
     return {
       params: {
         num: (i + 1).toString(),
@@ -31,7 +31,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
   const articles = createArticles(
-    params?.num !== totalPages.toString()
+    params?.num !== totalDashboardPages.toString()
       ? 6
       : Math.floor(Math.random() * 3) + 1,
   );
@@ -57,7 +57,7 @@ const Num = ({
         /* Multiply one to convert to integer */
         (JSON.parse(current) as number) * 1
       }
-      total={totalPages}
+      total={totalDashboardPages}
     />
   );
 };

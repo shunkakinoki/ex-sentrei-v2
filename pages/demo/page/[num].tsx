@@ -1,7 +1,7 @@
 import {GetStaticProps, InferGetStaticPropsType, GetStaticPaths} from "next";
 
 import DemoScreen, {Props as DemoScreenProps} from "@/components/DemoScreen";
-import {totalPages} from "@/const/demo";
+import {totalArticlePages} from "@/const/demo";
 import Article from "@/types/Article";
 import {createArticles, createBlog} from "@/utils/faker";
 
@@ -12,7 +12,7 @@ export type Props = Omit<DemoScreenProps, "articles" | "current" | "total"> & {
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = new Array(totalPages).fill(undefined).map((_, i) => {
+  const paths = new Array(totalArticlePages).fill(undefined).map((_, i) => {
     return {
       params: {
         num: (i + 1).toString(),
@@ -50,7 +50,7 @@ const Num = ({
         /* Multiply one to convert to integer */
         (JSON.parse(current) as number) * 1
       }
-      total={totalPages}
+      total={totalArticlePages}
     />
   );
 };

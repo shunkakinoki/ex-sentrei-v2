@@ -3,7 +3,7 @@ import {GetStaticProps, InferGetStaticPropsType} from "next";
 import DemoDashboardScreen, {
   Props as DemoDashboardScreenProps,
 } from "@/components/DemoDashboardScreen";
-import {totalPages} from "@/const/demo";
+import {totalDashboardPages} from "@/const/demo";
 import Article from "@/types/Article";
 import {createArticles} from "@/utils/faker";
 
@@ -33,7 +33,7 @@ const Dashboard = ({
     <DemoDashboardScreen
       articles={JSON.parse(articles) as Article[]}
       current={1}
-      total={totalPages}
+      total={totalDashboardPages}
     />
   );
 };

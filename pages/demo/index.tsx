@@ -1,7 +1,7 @@
 import {GetStaticProps, InferGetStaticPropsType} from "next";
 
 import DemoScreen, {Props as DemoScreenProps} from "@/components/DemoScreen";
-import {totalPages} from "@/const/demo";
+import {totalArticlePages} from "@/const/demo";
 import Article from "@/types/Article";
 import Blog from "@/types/Blog";
 import {createArticles, createBlog} from "@/utils/faker";
@@ -35,7 +35,7 @@ const Demo = ({
       articles={JSON.parse(articles) as Article[]}
       blog={JSON.parse(blog) as Blog}
       current={current}
-      total={totalPages}
+      total={totalArticlePages}
     />
   );
 };
