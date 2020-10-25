@@ -7,6 +7,7 @@ import "../src/styles/index.css";
 import {RecoilRoot} from "recoil";
 import {SWRConfig} from "swr";
 
+import GlobalSnackbar from "@/components/GlobalAlert";
 import SeoRoot from "@/components/SeoRoot";
 
 const CustomApp = ({Component, pageProps}: AppProps): JSX.Element => {
@@ -30,6 +31,7 @@ const CustomApp = ({Component, pageProps}: AppProps): JSX.Element => {
             },
           }}
         >
+          <GlobalSnackbar />
           <Component {...pageProps} />
         </SWRConfig>
       </RecoilRoot>
