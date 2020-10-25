@@ -1,12 +1,14 @@
 import {GetStaticProps, InferGetStaticPropsType} from "next";
 
-import DemoScreen, {Props as DemoScreenProps} from "@/components/DemoScreen";
+import DemoBlogScreen, {
+  Props as DemoBlogScreenProps,
+} from "@/components/DemoBlogScreen";
 import {totalArticlePages} from "@/const/demo";
 import Article from "@/types/Article";
 import Blog from "@/types/Blog";
 import {createArticles, createBlog} from "@/utils/faker";
 
-export type Props = Omit<DemoScreenProps, "articles" | "blog" | "total"> & {
+export type Props = Omit<DemoBlogScreenProps, "articles" | "blog" | "total"> & {
   articles: string;
   blog: string;
 };
@@ -31,7 +33,7 @@ const Demo = ({
   current,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
-    <DemoScreen
+    <DemoBlogScreen
       articles={JSON.parse(articles) as Article[]}
       blog={JSON.parse(blog) as Blog}
       current={current}

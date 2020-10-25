@@ -1,11 +1,16 @@
 import {GetStaticProps, InferGetStaticPropsType, GetStaticPaths} from "next";
 
-import DemoScreen, {Props as DemoScreenProps} from "@/components/DemoScreen";
+import DemoBlogScreen, {
+  Props as DemoBlogScreenProps,
+} from "@/components/DemoBlogScreen";
 import {totalArticlePages} from "@/const/demo";
 import Article from "@/types/Article";
 import {createArticles, createBlog} from "@/utils/faker";
 
-export type Props = Omit<DemoScreenProps, "articles" | "current" | "total"> & {
+export type Props = Omit<
+  DemoBlogScreenProps,
+  "articles" | "current" | "total"
+> & {
   articles: string;
   current: string;
 };
@@ -43,7 +48,7 @@ const Num = ({
   current,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
-    <DemoScreen
+    <DemoBlogScreen
       articles={JSON.parse(articles) as Article[]}
       blog={blog}
       current={
