@@ -1,3 +1,13 @@
+## [1.36.1](https://github.com/sentrei/sentrei/compare/v1.36.0...v1.36.1) (2020-10-25)
+
+### Performance Improvements
+
+- ⚡️ beautify dashboard table ([b0a0b8c](https://github.com/sentrei/sentrei/commit/b0a0b8c70569c6bea89cc833542b3940f4ef9eb7))
+- ⚡️ refactor dashbaord container md lg breakpoint ([059d7d9](https://github.com/sentrei/sentrei/commit/059d7d9a95a557052ac434fb5e1fab39ca3b9ed5))
+- ⚡️ refactor pagination ellipsis ([cc0fe8a](https://github.com/sentrei/sentrei/commit/cc0fe8a101dd80c959b8ef2be92758e294c17678))
+- ⚡️ refactor tab dashboard text gray 500 ([4319a24](https://github.com/sentrei/sentrei/commit/4319a24cb3a15a4f191e27d841e4859be8916915))
+- ⚡️ refactor tab dashboard text gray color ([41935ca](https://github.com/sentrei/sentrei/commit/41935ca0acc9e8f797e8ce90e076d617bec18f65))
+
 # [1.36.0](https://github.com/sentrei/sentrei/compare/v1.35.0...v1.36.0) (2020-10-25)
 
 ### Bug Fixes
