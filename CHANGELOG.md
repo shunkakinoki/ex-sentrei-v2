@@ -1,3 +1,17 @@
+# [1.33.0](https://github.com/sentrei/sentrei/compare/v1.32.1...v1.33.0) (2020-10-25)
+
+### Features
+
+- 🎸 ini global alert ([c86cfd7](https://github.com/sentrei/sentrei/commit/c86cfd753c48a2b470a12d242c18215cea07b6c8))
+- 🎸 ini useAlert hook ([5264bf6](https://github.com/sentrei/sentrei/commit/5264bf6144c792d3abb00e4d0f65f1db746c6c34))
+
+### Performance Improvements
+
+- ⚡️ ini action message ([b7c38cc](https://github.com/sentrei/sentrei/commit/b7c38cc51d09cd14288063ff77a6d7b324a476b6))
+- ⚡️ ini alert component style w/ close ([7843b65](https://github.com/sentrei/sentrei/commit/7843b65a4e1a186c5b1a8a916e4015bb814fec7d))
+- ⚡️ ini eslintrc for recoil react hook ([9f0414a](https://github.com/sentrei/sentrei/commit/9f0414af7949c20abf31d3b663abd7f09cdc629b))
+- ⚡️ ini matt package ([811803b](https://github.com/sentrei/sentrei/commit/811803b4ea676419ed1ded187a4247002abdfc5c))
+
 ## [1.32.1](https://github.com/sentrei/sentrei/compare/v1.32.0...v1.32.1) (2020-10-25)
 
 ### Performance Improvements
