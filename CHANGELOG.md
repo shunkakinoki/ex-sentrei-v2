@@ -1,3 +1,19 @@
+# [1.36.0](https://github.com/sentrei/sentrei/compare/v1.35.0...v1.36.0) (2020-10-25)
+
+### Bug Fixes
+
+- 🐛 dashbaord num page correct article number ([639280b](https://github.com/sentrei/sentrei/commit/639280b414425de9acd25e912d8d165ed02d1910))
+
+### Features
+
+- 🎸 ini dashboard page w/ total prop ([34137b2](https://github.com/sentrei/sentrei/commit/34137b25403a0a61ea63721e7156238a976b2fa7))
+
+### Performance Improvements
+
+- ⚡️ ini total pages for next.js page prop ([4abc14f](https://github.com/sentrei/sentrei/commit/4abc14fd263b3e42b3cff10a4134fa35ceff2eb1))
+- ⚡️ refactor dashboard table date pricing order ([5df0aba](https://github.com/sentrei/sentrei/commit/5df0abafe7b7cf2c39d0b45f9ded269f6d011edf))
+- ⚡️ refactor demo const ([c548490](https://github.com/sentrei/sentrei/commit/c5484908f769ef516c1cd8c93e4779528fe7622c))
+
 # [1.35.0](https://github.com/sentrei/sentrei/compare/v1.34.0...v1.35.0) (2020-10-25)
 
 ### Bug Fixes
