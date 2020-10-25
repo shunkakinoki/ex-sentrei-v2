@@ -1,11 +1,15 @@
-import DashboardScreen from "@/components/DashboardScreen";
+import DashboardScreen, {
+  Props as DashboardScreenProps,
+} from "@/components/DashboardScreen";
 import DemoBanner from "@/components/DemoBanner";
 
-export default function DemoDashboardScreen(): JSX.Element {
+export type Props = Omit<DashboardScreenProps, "namespace">;
+
+export default function DemoDashboardScreen({articles}: Props): JSX.Element {
   return (
     <>
       <DemoBanner />
-      <DashboardScreen namespace="demo" />
+      <DashboardScreen articles={articles} namespace="demo" />
     </>
   );
 }
