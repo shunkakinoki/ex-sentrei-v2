@@ -49,7 +49,7 @@ export default function ArticleScreen({
       {article.pricing === "subscription" && (
         <ArticleSubscribe namespace={namespace} />
       )}
-      <ArticleStoryGrid articles={more} namespace="demo" />
+      <ArticleStoryGrid articles={more} namespace={namespace} />
       <FooterRoot />
     </ContainerRoot>
   );

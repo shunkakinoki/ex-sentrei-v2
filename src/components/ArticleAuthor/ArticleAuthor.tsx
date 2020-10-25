@@ -5,11 +5,15 @@ import Author from "@/types/Author";
 
 export interface Props {
   author: Author;
+  isDemo?: boolean;
 }
 
-export default function ArticleAuthor({author}: Props): JSX.Element {
+export default function ArticleAuthor({
+  author,
+  isDemo = false,
+}: Props): JSX.Element {
   return (
-    <Link href={`/demo/profile/${author.namespace}`}>
+    <Link href={`${isDemo ? "/demo" : ""}/profile/${author.namespace}`}>
       <a>
         <Image
           className="inline object-cover w-12 h-12 mr-2 rounded-full"

@@ -2,12 +2,16 @@ import ArticleAuthor from "@/components/ArticleAuthor";
 import ArticleAuthors from "@/components/ArticleAuthors";
 import Article from "@/types/Article";
 
-export type Props = Pick<
-  Article,
-  "authors" | "date" | "pricing" | "time" | "title" | "subtitle"
->;
+export interface Props
+  extends Pick<
+    Article,
+    "authors" | "date" | "pricing" | "time" | "title" | "subtitle"
+  > {
+  isDemo?: boolean;
+}
 
 export default function ArticleHero({
+  isDemo,
   authors,
   pricing,
   date,
@@ -35,9 +39,9 @@ export default function ArticleHero({
         <div className="px-4 py-2 mt-2">
           <div className="flex items-center space-x-2 justify-left">
             {authors.length === 1 ? (
-              <ArticleAuthor author={authors[0]} />
+              <ArticleAuthor author={authors[0]} isDemo={isDemo} />
             ) : (
-              <ArticleAuthors authors={authors} />
+              <ArticleAuthors authors={authors} isDemo={isDemo} />
             )}
             <p className="flex items-center mt-1 font-medium text-center text-gray-500">
               {authors.length === 1 && authors[0].name}
