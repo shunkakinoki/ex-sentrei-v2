@@ -6,7 +6,7 @@ export interface Props {
 
 export default function ContainerCenter({children}: Props): JSX.Element {
   return (
-    <div className="flex items-center justify-center px-4 py-12 mt-8 sm:px-6 lg:px-8">
+    <div className="flex items-center justify-center px-2 pt-2 mt-2 md:pt-4 lg:pt-6 xl:pt-12 sm:px-4 lg:px-6">
       {children}
     </div>
   );
