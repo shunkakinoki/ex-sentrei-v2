@@ -10,8 +10,9 @@ export default function LandingFeature(): JSX.Element {
             Engage with your audience like it&apos;s 2020.
           </h3>
           <p className="max-w-2xl mt-4 text-xl leading-7 text-gray-500 lg:mx-auto">
-            No more annnoying pop-ups to consume content. No more absurd margins
-            for content distribution. Readers and writers deserve much more.
+            No more annnoying pop-ups to consume content. No more absurd
+            commissionss for content distribution. Readers and writers deserve
+            much more.
           </p>
         </div>
         <div className="mt-10">
@@ -190,7 +191,7 @@ export default function LandingFeature(): JSX.Element {
                 </div>
                 <div className="ml-4">
                   <h4 className="text-lg font-medium leading-6 text-gray-900">
-                    Zero margin
+                    Zero commissions
                   </h4>
                   <p className="mt-2 text-base leading-6 text-gray-500">
                     You keep all of the revenue, excluding standard Stripe fees.

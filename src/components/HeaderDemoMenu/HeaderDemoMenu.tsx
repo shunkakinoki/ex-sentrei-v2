@@ -179,7 +179,7 @@ export default function HeaderDemoMenu({open}: Props): JSX.Element {
                       </p>
                       <p className="text-sm leading-5 text-gray-500">
                         Charge your customers for your own content with no
-                        margins at all
+                        commissionss at all
                       </p>
                     </div>
                   </a>
