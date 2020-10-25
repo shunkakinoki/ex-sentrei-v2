@@ -11,7 +11,7 @@ export default function LandingFeature(): JSX.Element {
           </h3>
           <p className="max-w-2xl mt-4 text-xl leading-7 text-gray-500 lg:mx-auto">
             No more annnoying pop-ups to consume content. No more absurd
-            commissionss for content distribution. Readers and writers deserve
+            commissions for content distribution. Readers and writers deserve
             much more.
           </p>
         </div>
