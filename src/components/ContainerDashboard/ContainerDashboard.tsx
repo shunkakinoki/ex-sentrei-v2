@@ -23,6 +23,11 @@ export default function ContainerDashboard({
             type="articles"
           />
           <TabDashboard
+            active={type === "customers"}
+            namespace={namespace}
+            type="customers"
+          />
+          <TabDashboard
             active={type === "sales"}
             namespace={namespace}
             type="sales"
