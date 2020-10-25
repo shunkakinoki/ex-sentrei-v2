@@ -1,3 +1,14 @@
+# [1.35.0](https://github.com/sentrei/sentrei/compare/v1.34.0...v1.35.0) (2020-10-25)
+
+### Bug Fixes
+
+- 🐛 dashboard sales screen ([c43d728](https://github.com/sentrei/sentrei/commit/c43d7288895906b85ccde5f9dc1e56795edc7a4d))
+
+### Features
+
+- 🎸 ini dashboard item subtitle w/ border ([40d7482](https://github.com/sentrei/sentrei/commit/40d7482c80099b610efd303ef3b34de975c2c299))
+- 🎸 ini demo dashboard w/ custom data ([079baf0](https://github.com/sentrei/sentrei/commit/079baf00ecb95a3822c38dca8171eebf2a9354ee))
+
 # [1.34.0](https://github.com/sentrei/sentrei/compare/v1.33.1...v1.34.0) (2020-10-25)
 
 ### Features
