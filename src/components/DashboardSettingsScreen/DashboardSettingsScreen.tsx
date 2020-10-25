@@ -2,7 +2,7 @@ import ContainerDashboard, {
   Props as ContainerDashboardProps,
 } from "@/components/ContainerDashboard";
 import ContainerRoot from "@/components/ContainerRoot";
-import DashbaordStats from "@/components/DashboardStats";
+import DashboardSettingsInfoSection from "@/components/DashboardSettingsInfoSection";
 import HeaderRoot from "@/components/HeaderRoot";
 
 export type Props = Pick<ContainerDashboardProps, "namespace">;
@@ -14,7 +14,9 @@ export default function DashboardSettingsScreen({
     <ContainerRoot>
       <HeaderRoot />
       <ContainerDashboard type="settings" namespace={namespace}>
-        <DashbaordStats />
+        <div className="container mx-3 my-6 md:mx-6 md:mt-10">
+          <DashboardSettingsInfoSection />
+        </div>
       </ContainerDashboard>
     </ContainerRoot>
   );
