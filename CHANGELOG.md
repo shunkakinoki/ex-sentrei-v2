@@ -1,3 +1,9 @@
+## [1.37.1](https://github.com/sentrei/sentrei/compare/v1.37.0...v1.37.1) (2020-10-25)
+
+### Performance Improvements
+
+- ⚡️ refactor dashboard table item group hover ([5f026c6](https://github.com/sentrei/sentrei/commit/5f026c66251d849cc551477ff54b822f09482b97))
+
 # [1.37.0](https://github.com/sentrei/sentrei/compare/v1.36.1...v1.37.0) (2020-10-25)
 
 ### Features
