@@ -31,7 +31,7 @@ export default function SettingsProfileSection(): JSX.Element {
                     </span>
                     <input
                       id="profile_website"
-                      className="flex-1 block w-full transition duration-150 ease-in-out border border-gray-300 rounded-none form-input rounded-r-md sm:text-sm sm:leading-5"
+                      className="flex-1 block w-full px-3 py-1 transition duration-150 ease-in-out border border-gray-300 rounded-none form-input rounded-r-md sm:text-sm sm:leading-5"
                       placeholder="www.example.com"
                     />
                   </div>
@@ -48,7 +48,7 @@ export default function SettingsProfileSection(): JSX.Element {
                   <textarea
                     id="about"
                     rows={3}
-                    className="block w-full mt-1 transition duration-150 ease-in-out border form-textarea sm:text-sm sm:leading-5"
+                    className="block w-full p-2 mt-1 transition duration-150 ease-in-out border form-textarea sm:text-sm sm:leading-5"
                     placeholder="you@example.com"
                   />
                 </div>

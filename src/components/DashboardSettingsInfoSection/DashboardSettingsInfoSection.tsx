@@ -18,15 +18,15 @@ export default function DashboardSettingsBlogSection(): JSX.Element {
               <div className="grid grid-cols-3 gap-6">
                 <div className="col-span-3 sm:col-span-2">
                   <label
-                    htmlFor="profile_website"
+                    htmlFor="info_title"
                     className="block text-sm font-medium leading-5 text-gray-700"
                   >
                     Title
                   </label>
                   <div className="flex mt-1 rounded-md shadow-sm">
                     <input
-                      id="profile_website"
-                      className="flex-1 block w-full transition duration-150 ease-in-out border border-gray-300 rounded-none form-input rounded-r-md sm:text-sm sm:leading-5"
+                      id="info_title"
+                      className="flex-1 block w-full px-3 py-1 transition duration-150 ease-in-out border border-gray-300 rounded-md form-input sm:text-sm sm:leading-5"
                       placeholder="My awesome title"
                     />
                   </div>
@@ -43,7 +43,7 @@ export default function DashboardSettingsBlogSection(): JSX.Element {
                   <textarea
                     id="about"
                     rows={3}
-                    className="block w-full mt-1 transition duration-150 ease-in-out border form-textarea sm:text-sm sm:leading-5"
+                    className="block w-full p-2 mt-1 transition duration-150 ease-in-out border form-textarea sm:text-sm sm:leading-5"
                     placeholder="We share awesome stories that you enjoy every day."
                   />
                 </div>
