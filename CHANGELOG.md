@@ -1,3 +1,16 @@
+# [1.37.0](https://github.com/sentrei/sentrei/compare/v1.36.1...v1.37.0) (2020-10-25)
+
+### Features
+
+- 🎸 ini customers screen ([debf798](https://github.com/sentrei/sentrei/commit/debf7983dfdb6ebcdc0f58131b4eebc717d70239))
+- 🎸 ini demo customers dashboard table screens ([6212045](https://github.com/sentrei/sentrei/commit/6212045501513e666f2d6a35ac797f87e6ba619b))
+
+### Performance Improvements
+
+- ⚡️ ini isDemo prop for article screen ([8b10e6c](https://github.com/sentrei/sentrei/commit/8b10e6c7703cd8203bb7bb66b9bfee906b8fe025))
+- ⚡️ refactor blog screen to demo screen ([1d87646](https://github.com/sentrei/sentrei/commit/1d876460f6e42c7a448eab36d3a82b6389764e82))
+- ⚡️ refactor container dashboard ([93d77d6](https://github.com/sentrei/sentrei/commit/93d77d69cad3f41df782b377f21375e9e6c33d94))
+
 ## [1.36.1](https://github.com/sentrei/sentrei/compare/v1.36.0...v1.36.1) (2020-10-25)
 
 ### Performance Improvements
