@@ -4,7 +4,7 @@ import {useState, useEffect} from "react";
 import useAlert from "@/hooks/useAlert";
 
 export default function GlobalAlert(): JSX.Element {
-  const {alert, action} = useAlert();
+  const {alert, action, message} = useAlert();
   const [, setDuration] = useState<number | null>(null);
 
   useEffect(() => {
@@ -36,10 +36,8 @@ export default function GlobalAlert(): JSX.Element {
         >
           <div className="flex">
             <div>
-              <p className="font-bold">Our privacy policy has changed</p>
-              <p className="text-sm">
-                Make sure you know how these changes affect you.
-              </p>
+              <p className="font-bold">{action}</p>
+              <p className="text-sm">{message}</p>
             </div>
             <div className="py-1 pl-1 ml-4">
               <button type="button" onClick={() => alert("dismiss")}>
