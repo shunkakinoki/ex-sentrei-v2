@@ -1,3 +1,9 @@
+## [1.37.2](https://github.com/sentrei/sentrei/compare/v1.37.1...v1.37.2) (2020-10-25)
+
+### Bug Fixes
+
+- 🐛 typo commisions bug ([304d5d4](https://github.com/sentrei/sentrei/commit/304d5d4dcb36bea3e7d2c6fb01d7016555fe4bb4))
+
 ## [1.37.1](https://github.com/sentrei/sentrei/compare/v1.37.0...v1.37.1) (2020-10-25)
 
 ### Performance Improvements
