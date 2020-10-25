@@ -1,18 +1,23 @@
 import {GetStaticProps, InferGetStaticPropsType, GetStaticPaths} from "next";
 
-import DemoScreen, {Props as DemoScreenProps} from "@/components/DemoScreen";
-import {totalArticlePages} from "@/const/demo";
+import DemoDashboardScreen, {
+  Props as DemoDashboardScreenProps,
+} from "@/components/DemoDashboardScreen";
+import {totalDashboardPages} from "@/const/demo";
 import Article from "@/types/Article";
 import {createArticles, createBlog} from "@/utils/faker";
 
-export type Props = Omit<DemoScreenProps, "articles" | "current" | "total"> & {
+export type Props = Omit<
+  DemoDashboardScreenProps,
+  "articles" | "current" | "total"
+> & {
   articles: string;
   current: string;
 };
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = new Array(totalArticlePages).fill(undefined).map((_, i) => {
+  const paths = new Array(totalDashboardPages).fill(undefined).map((_, i) => {
     return {
       params: {
         num: (i + 1).toString(),
@@ -25,7 +30,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
-  const articles = createArticles();
+  const articles = createArticles(
+    params?.num !== totalDashboardPages.toString()
+      ? 6
+      : Math.floor(Math.random() * 3) + 1,
+  );
   const blog = createBlog();
 
   return {
@@ -39,18 +48,16 @@ export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
 
 const Num = ({
   articles,
-  blog,
   current,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
-    <DemoScreen
+    <DemoDashboardScreen
       articles={JSON.parse(articles) as Article[]}
-      blog={blog}
       current={
         /* Multiply one to convert to integer */
         (JSON.parse(current) as number) * 1
       }
-      total={totalArticlePages}
+      total={totalDashboardPages}
     />
   );
 };

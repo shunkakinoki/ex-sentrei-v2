@@ -1,23 +1,23 @@
 import BlogHero, {Props as BlogHeroProps} from "@/components/BlogHero";
-import BlogPagination from "@/components/BlogPagination";
 import BlogStoryGrid, {
   Props as BlogStoryGridProps,
 } from "@/components/BlogStoryGrid";
 import ContainerRoot from "@/components/ContainerRoot";
 import FooterRoot from "@/components/FooterRoot";
 import HeaderRoot from "@/components/HeaderRoot";
-import {totalPages} from "@/const/demo";
+import PaginationBase, {
+  Props as PaginationBaseProps,
+} from "@/components/PaginationBase";
 
-export interface Props extends BlogStoryGridProps {
+export interface Props extends BlogStoryGridProps, PaginationBaseProps {
   blog: Omit<BlogHeroProps, "namespace">;
-  current: number;
-  namespace: string;
 }
 
 export default function BlogScreen({
   articles,
   blog,
   current,
+  total,
   namespace,
 }: Props): JSX.Element {
   return (
@@ -30,11 +30,7 @@ export default function BlogScreen({
         namespace={namespace}
       />
       <BlogStoryGrid articles={articles} namespace={namespace} />
-      <BlogPagination
-        current={current}
-        total={totalPages}
-        namespace={namespace}
-      />
+      <PaginationBase current={current} total={total} namespace={namespace} />
       <FooterRoot />
     </ContainerRoot>
   );

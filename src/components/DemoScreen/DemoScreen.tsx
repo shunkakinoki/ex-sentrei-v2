@@ -7,6 +7,7 @@ export default function DemoScreen({
   articles,
   blog,
   current,
+  total,
 }: Props): JSX.Element {
   return (
     <>
@@ -15,6 +16,7 @@ export default function DemoScreen({
         articles={articles}
         blog={blog}
         current={current}
+        total={total}
         namespace="demo"
       />
     </>

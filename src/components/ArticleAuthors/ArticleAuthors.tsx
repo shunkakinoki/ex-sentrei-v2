@@ -6,6 +6,7 @@ import Author from "@/types/Author";
 
 export interface Props {
   authors: Author[];
+  isDemo?: boolean;
 }
 
 // TODO: Convert to next/image
@@ -30,7 +31,7 @@ export function ArticleAuthorsImage({
   );
 }
 
-export default function ArticleAuthors({authors}: Props): JSX.Element {
+export default function ArticleAuthors({isDemo, authors}: Props): JSX.Element {
   return (
     <div className="flex">
       <Listbox as="div" className="space-y-1" value="" onChange={() => {}}>
@@ -78,7 +79,11 @@ export default function ArticleAuthors({authors}: Props): JSX.Element {
                   {authors.map(author => (
                     <Listbox.Option key={author.namespace} value={author.name}>
                       {({selected, active}) => (
-                        <Link href={`/profile/${author.namespace}`}>
+                        <Link
+                          href={`${isDemo ? "/demo" : ""}/profile/${
+                            author.namespace
+                          }`}
+                        >
                           <a>
                             <div
                               className={`${

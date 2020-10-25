@@ -1,11 +1,19 @@
 import DashboardTableItem from "@/components/DashboardTableItem";
+import PaginationBase, {
+  Props as PaginationBaseProps,
+} from "@/components/PaginationBase";
 import Article from "@/types/Article";
 
-export interface Props {
+export interface Props extends PaginationBaseProps {
   articles: Article[];
 }
 
-export default function DashboardTable({articles}: Props): JSX.Element {
+export default function DashboardTable({
+  articles,
+  current,
+  total,
+  namespace,
+}: Props): JSX.Element {
   return (
     <>
       {articles.map((article, index) => (
@@ -22,6 +30,7 @@ export default function DashboardTable({articles}: Props): JSX.Element {
           )}
         </>
       ))}
+      <PaginationBase current={current} total={total} namespace={namespace} />
     </>
   );
 }

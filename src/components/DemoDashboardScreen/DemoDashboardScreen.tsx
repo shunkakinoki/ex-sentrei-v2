@@ -5,11 +5,20 @@ import DemoBanner from "@/components/DemoBanner";
 
 export type Props = Omit<DashboardScreenProps, "namespace">;
 
-export default function DemoDashboardScreen({articles}: Props): JSX.Element {
+export default function DemoDashboardScreen({
+  articles,
+  current,
+  total,
+}: Props): JSX.Element {
   return (
     <>
       <DemoBanner />
-      <DashboardScreen articles={articles} namespace="demo" />
+      <DashboardScreen
+        articles={articles}
+        current={current}
+        total={total}
+        namespace="demo"
+      />
     </>
   );
 }

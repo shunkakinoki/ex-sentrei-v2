@@ -15,7 +15,7 @@ function PaginationEllipsis(): JSX.Element {
   );
 }
 
-export default function BlogPagination({
+export default function PaginationBase({
   current,
   total,
   namespace,
