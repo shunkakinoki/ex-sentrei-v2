@@ -14,8 +14,8 @@ export default function ContainerDashboard({
   namespace,
 }: Props): JSX.Element {
   return (
-    <div className="flex flex-col items-center justify-center px-4 py-12 mt-8 md:flex-row sm:px-6 lg:px-8 sm:mt-12 md:mt-16 ">
-      <div className="w-full md:w-1/4 lg:w-1/6">
+    <div className="flex flex-col items-center justify-center md:flex-row ">
+      <div className="w-full mt-8 md:w-1/4 lg:w-1/6 sm:px-6 lg:px-8 sm:mt-12 md:mt-16 ">
         <div className="flex flex-col ">
           <TabDashboard
             active={type === "articles"}
@@ -34,7 +34,11 @@ export default function ContainerDashboard({
           />
         </div>
       </div>
-      <div className="md:w-3/4 lg:w-5/6">{children}</div>
+      <div className="w-full px-3 md:w-3/4 lg:w-5/6">
+        <div className="flex flex-col mt-4 md:px-6 lg:px-9 md:mt-6 lg:mt-8">
+          {children}
+        </div>
+      </div>
     </div>
   );
 }
