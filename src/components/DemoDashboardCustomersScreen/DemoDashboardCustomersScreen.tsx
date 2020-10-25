@@ -1,11 +1,24 @@
-import DashboardCustomersScreen from "@/components/DashboardCustomersScreen";
+import DashboardCustomersScreen, {
+  Props as DashboardCustomersScreenProps,
+} from "@/components/DashboardCustomersScreen";
 import DemoBanner from "@/components/DemoBanner";
 
-export default function DemoDashboardCustomersScreen(): JSX.Element {
+export type Props = Omit<DashboardCustomersScreenProps, "namespace">;
+
+export default function DemoDashboardCustomersScreen({
+  customers,
+  current,
+  total,
+}: Props): JSX.Element {
   return (
     <>
       <DemoBanner />
-      <DashboardCustomersScreen namespace="demo" />
+      <DashboardCustomersScreen
+        customers={customers}
+        namespace="demo"
+        current={current}
+        total={total}
+      />
     </>
   );
 }
