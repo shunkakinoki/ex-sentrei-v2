@@ -31,7 +31,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
   const articles = createArticles(
-    params?.num === totalPages.toString()
+    params?.num !== totalPages.toString()
       ? 6
       : Math.floor(Math.random() * 3) + 1,
   );
