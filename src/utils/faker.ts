@@ -123,7 +123,7 @@ export const createArticle = (): Article => {
     pricing: createPricing(),
     slug: faker.lorem.slug(),
     time: Math.floor(Math.random() * 10 + 3),
-    title: faker.lorem.lines(Math.floor(Math.random() * 3 + 1)),
+    title: faker.lorem.lines(Math.floor(Math.random() * 1 + 1)),
     subtitle: faker.lorem.sentences(Math.floor(Math.random() * 11)),
   };
 };
