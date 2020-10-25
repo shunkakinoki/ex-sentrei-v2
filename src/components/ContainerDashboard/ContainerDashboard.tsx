@@ -14,7 +14,7 @@ export default function ContainerDashboard({
   namespace,
 }: Props): JSX.Element {
   return (
-    <div className="flex flex-col items-center justify-center md:flex-row ">
+    <div className="flex flex-col justify-center md:flex-row ">
       <div className="w-full mt-8 md:w-1/4 lg:w-1/6 sm:px-6 lg:px-8 sm:mt-12 md:mt-16 ">
         <div className="flex flex-col ">
           <TabDashboard

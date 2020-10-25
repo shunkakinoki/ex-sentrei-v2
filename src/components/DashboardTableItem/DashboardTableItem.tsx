@@ -1,10 +1,22 @@
-export default function DashboardTableItem(): JSX.Element {
+import Article from "@/types/Article";
+
+export type Props = Pick<Article, "date" | "pricing" | "title" | "subtitle">;
+
+export default function DashboardTableItem({
+  date,
+  pricing,
+  title,
+  subtitle,
+}: Props): JSX.Element {
   return (
     <div className="flex flex-col w-full md:flex md:flex-row md:items-center md:justify-between">
       <div className="flex-1 min-w-0">
-        <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate">
-          Demo Article
+        <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate-3-lines md:truncate-2-lines">
+          {title}
         </h2>
+        <h4 className="mt-2 mb-2 text-gray-600 sm:mt-3 sm:text-lg md:mt-5 md:text-xl truncate-3-lines md:truncate-2-lines">
+          {subtitle}
+        </h4>
         <div className="flex flex-col mt-1 sm:mt-0 sm:flex-row sm:flex-wrap">
           <div className="flex items-center mt-2 text-sm leading-5 text-gray-500 sm:mr-6">
             <svg
@@ -20,7 +32,7 @@ export default function DashboardTableItem(): JSX.Element {
                 clipRule="evenodd"
               />
             </svg>
-            Free Article
+            {pricing}
           </div>
           <div className="flex items-center mt-2 text-sm leading-5 text-gray-500">
             <svg
@@ -35,7 +47,7 @@ export default function DashboardTableItem(): JSX.Element {
                 clipRule="evenodd"
               />
             </svg>
-            January 9, 2020
+            {new Date(date).toDateString()}
           </div>
         </div>
       </div>
@@ -93,7 +105,7 @@ export default function DashboardTableItem(): JSX.Element {
                 clipRule="evenodd"
               />
             </svg>
-            Publish
+            Published
           </button>
         </span>
       </div>
