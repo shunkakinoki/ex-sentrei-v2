@@ -22,7 +22,7 @@ export default function TabDashboard({
     >
       <a
         className={clsx(
-          "inline-flex items-center px-4 py-2 md:py-3 text-gray-600 rounded-full md:m-1",
+          "inline-flex items-center px-4 py-2 md:py-3 text-gray-500 rounded-full md:px-5 md:my-1",
           active && " text-pink-400 bg-pink-200",
           !active && "hover:bg-pink-50",
         )}
@@ -82,7 +82,7 @@ export default function TabDashboard({
           </svg>
         )}
         <span>
-          <p className="pl-3 md:pl-4 lg:pl-5">
+          <p className="pl-3 lg:pl-5">
             {type === "articles" && "Articles"}
             {type === "sales" && "Sales"}
             {type === "settings" && "Settings"}

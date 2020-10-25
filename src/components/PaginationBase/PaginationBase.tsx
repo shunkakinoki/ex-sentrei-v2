@@ -9,7 +9,7 @@ export interface Props {
 
 function PaginationEllipsis(): JSX.Element {
   return (
-    <a className="items-center justify-center hidden w-8 leading-5 transition duration-150 ease-in border-t-2 border-transparent cursor-pointer md:flex">
+    <a className="items-center justify-center hidden w-8 leading-5 transition duration-150 ease-in border-t-2 border-transparent md:flex">
       ...
     </a>
   );
