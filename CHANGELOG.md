@@ -1,3 +1,9 @@
+## [1.32.1](https://github.com/sentrei/sentrei/compare/v1.32.0...v1.32.1) (2020-10-25)
+
+### Performance Improvements
+
+- ⚡️ upgrade next.js canary ([3533628](https://github.com/sentrei/sentrei/commit/353362852849b6017ccbad60b15892cbb83822f9))
+
 # [1.32.0](https://github.com/sentrei/sentrei/compare/v1.31.0...v1.32.0) (2020-10-24)
 
 ### Features
