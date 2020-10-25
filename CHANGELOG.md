@@ -1,3 +1,14 @@
+# [1.38.0](https://github.com/sentrei/sentrei/compare/v1.37.2...v1.38.0) (2020-10-25)
+
+### Features
+
+- 🎸 ini dasboard setting screen w/ info ([68abe62](https://github.com/sentrei/sentrei/commit/68abe62ed3915b40c977687dbe86535ee287c3a1))
+
+### Performance Improvements
+
+- ⚡️ refactor settings forms ([c6835ac](https://github.com/sentrei/sentrei/commit/c6835ac5ba7957ebfb16db54826e4d4146f3250b))
+- ⚡️ refactor settings screen ([80b29a0](https://github.com/sentrei/sentrei/commit/80b29a0c838434e020fe930e763c50065c0969ef))
+
 ## [1.37.2](https://github.com/sentrei/sentrei/compare/v1.37.1...v1.37.2) (2020-10-25)
 
 ### Bug Fixes
