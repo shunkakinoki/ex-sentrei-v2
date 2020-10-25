@@ -1,31 +1,25 @@
 /* eslint-disable @typescript-eslint/unbound-method */
 
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {useRecoilState, atom} from "recoil";
 
 import {AlertAction, AlertEmitter} from "@/types/Alert";
 import alert from "@/utils/alert";
 
-const alertEmitter = atom<AlertEmitter>({key: "alert", default: alert});
-
-const alertAction = atom<AlertAction>({
-  key: "alertMessage",
-  default: "dismiss",
-});
-
-const alertMessage = atom<string | undefined>({
+const alertAtom = atom<AlertEmitter>({
   key: "alert",
-  default: "",
+  default: alert,
 });
 
 export default function useAlert(): {
   alert: (action: AlertAction, msg?: string | undefined) => void;
-  action: AlertAction;
+  action: AlertAction | undefined;
   message: string | undefined;
 } {
-  const [emitter] = useRecoilState(alertEmitter);
-  const [action, setAction] = useRecoilState(alertAction);
-  const [message, setMessage] = useRecoilState(alertMessage);
+  const [emitter] = useRecoilState(alertAtom);
+
+  const [action, setAction] = useState<AlertAction>();
+  const [message, setMessage] = useState<string>();
 
   useEffect(() => {
     const defaultMessage = (type: AlertAction): string | undefined => {
@@ -52,7 +46,8 @@ export default function useAlert(): {
 
     alert.on("*", handler);
     return (): void => alert.off("*", handler);
-  }, [setAction, setMessage]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [alert]);
 
   return {alert: emitter.emit, action, message};
 }

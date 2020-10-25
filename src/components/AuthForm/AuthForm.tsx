@@ -4,11 +4,19 @@ import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 
+import useAlert from "@/hooks/useAlert";
+
 export interface Props {
   type: "login" | "signup" | "reset-password";
 }
 
 export default function AuthForm({type}: Props): JSX.Element {
+  const {alert} = useAlert();
+
+  const handleClick = (): void => {
+    alert("info");
+  };
+
   return (
     <div className="w-full max-w-md">
       <div>
@@ -98,6 +106,7 @@ export default function AuthForm({type}: Props): JSX.Element {
             {type !== "reset-password" && (
               <>
                 <input
+                  onClick={handleClick}
                   id="remember_me"
                   type="checkbox"
                   className="w-4 h-4 text-pink-600 transition duration-150 ease-in-out form-checkbox"
