@@ -5,7 +5,7 @@ import {totalPages} from "@/const/demo";
 import Article from "@/types/Article";
 import {createArticles, createBlog} from "@/utils/faker";
 
-export type Props = Omit<DemoScreenProps, "articles" | "current"> & {
+export type Props = Omit<DemoScreenProps, "articles" | "current" | "total"> & {
   articles: string;
   current: string;
 };
@@ -50,6 +50,7 @@ const Num = ({
         /* Multiply one to convert to integer */
         (JSON.parse(current) as number) * 1
       }
+      total={totalPages}
     />
   );
 };

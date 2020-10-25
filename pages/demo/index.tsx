@@ -1,11 +1,12 @@
 import {GetStaticProps, InferGetStaticPropsType} from "next";
 
 import DemoScreen, {Props as DemoScreenProps} from "@/components/DemoScreen";
+import {totalPages} from "@/const/demo";
 import Article from "@/types/Article";
 import Blog from "@/types/Blog";
 import {createArticles, createBlog} from "@/utils/faker";
 
-export type Props = Omit<DemoScreenProps, "articles" | "blog"> & {
+export type Props = Omit<DemoScreenProps, "articles" | "blog" | "total"> & {
   articles: string;
   blog: string;
 };
@@ -34,6 +35,7 @@ const Demo = ({
       articles={JSON.parse(articles) as Article[]}
       blog={JSON.parse(blog) as Blog}
       current={current}
+      total={totalPages}
     />
   );
 };

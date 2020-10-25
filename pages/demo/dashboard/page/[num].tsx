@@ -7,7 +7,10 @@ import {totalPages} from "@/const/demo";
 import Article from "@/types/Article";
 import {createArticles, createBlog} from "@/utils/faker";
 
-export type Props = Omit<DemoDashboardScreenProps, "articles" | "current"> & {
+export type Props = Omit<
+  DemoDashboardScreenProps,
+  "articles" | "current" | "total"
+> & {
   articles: string;
   current: string;
 };
