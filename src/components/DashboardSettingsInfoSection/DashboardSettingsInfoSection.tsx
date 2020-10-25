@@ -1,15 +1,13 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
-export default function SettingsProfileSection(): JSX.Element {
+export default function DashboardSettingsBlogSection(): JSX.Element {
   return (
     <div className="px-1 sm:px-2 md:px-3 md:grid md:grid-cols-3 md:gap-6">
       <div className="md:col-span-1">
         <div className="px-4 sm:px-0">
-          <h3 className="text-lg font-medium leading-6 text-gray-900">
-            Profile
-          </h3>
+          <h3 className="text-lg font-medium leading-6 text-gray-900">Info</h3>
           <p className="mt-1 text-sm leading-5 text-gray-600">
-            This information will be public so be careful what you share!
+            Public information about the publication
           </p>
         </div>
       </div>
@@ -20,40 +18,37 @@ export default function SettingsProfileSection(): JSX.Element {
               <div className="grid grid-cols-3 gap-6">
                 <div className="col-span-3 sm:col-span-2">
                   <label
-                    htmlFor="profile_website"
+                    htmlFor="info_title"
                     className="block text-sm font-medium leading-5 text-gray-700"
                   >
-                    Website
+                    Title
                   </label>
                   <div className="flex mt-1 rounded-md shadow-sm">
-                    <span className="inline-flex items-center px-3 text-sm text-gray-500 border border-r-0 border-gray-300 rounded-l-md bg-gray-50">
-                      http://
-                    </span>
                     <input
-                      id="profile_website"
-                      className="flex-1 block w-full px-3 py-1 transition duration-150 ease-in-out border border-gray-300 rounded-none form-input rounded-r-md sm:text-sm sm:leading-5"
-                      placeholder="www.example.com"
+                      id="info_title"
+                      className="flex-1 block w-full px-3 py-1 transition duration-150 ease-in-out border border-gray-300 rounded-md form-input sm:text-sm sm:leading-5"
+                      placeholder="My awesome title"
                     />
                   </div>
                 </div>
               </div>
               <div className="mt-6">
                 <label
-                  htmlFor="about"
+                  htmlFor="desciption"
                   className="block text-sm font-medium leading-5 text-gray-700"
                 >
-                  About
+                  Description
                 </label>
                 <div className="rounded-md shadow-sm">
                   <textarea
                     id="about"
                     rows={3}
                     className="block w-full p-2 mt-1 transition duration-150 ease-in-out border form-textarea sm:text-sm sm:leading-5"
-                    placeholder="you@example.com"
+                    placeholder="We share awesome stories that you enjoy every day."
                   />
                 </div>
                 <p className="mt-2 text-sm text-gray-500">
-                  Brief description for your profile.
+                  Brief description for your publication.
                 </p>
               </div>
               <div className="mt-6">
