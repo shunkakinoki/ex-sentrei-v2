@@ -15,12 +15,17 @@ export default function ContainerDashboard({
 }: Props): JSX.Element {
   return (
     <div className="flex flex-col justify-center lg:flex-row ">
-      <div className="w-full mt-8 lg:w-1/6 sm:mt-12 md:mt-16 ">
+      <div className="w-full mt-2 lg:w-1/6 sm:mt-3 md:mt-8 lg:mt-12 ">
         <div className="flex flex-col ">
           <TabDashboard
             active={type === "articles"}
             namespace={namespace}
             type="articles"
+          />
+          <TabDashboard
+            active={type === "customers"}
+            namespace={namespace}
+            type="customers"
           />
           <TabDashboard
             active={type === "sales"}

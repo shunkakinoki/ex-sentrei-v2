@@ -3,6 +3,7 @@ import faker from "faker";
 import Article, {Pricing} from "@/types/Article";
 import Author from "@/types/Author";
 import Blog from "@/types/Blog";
+import Customer from "@/types/Customer";
 
 // Inspired by: https://github.com/Marak/faker.js/blob/4bd0935460ab62b72593b42471699d2044c7a53a/lib/markdown.js
 export const createMdHeader = (num = 3): string => {
@@ -128,6 +129,10 @@ export const createArticle = (): Article => {
   };
 };
 
+export const createArticles = (num = 6): Article[] => {
+  return new Array(num).fill(undefined).map(createArticle);
+};
+
 export const createBlog = (): Blog => {
   return {
     authors: createAuthors(Math.floor(Math.random() * 3) + 1),
@@ -137,6 +142,16 @@ export const createBlog = (): Blog => {
   };
 };
 
-export const createArticles = (num = 6): Article[] => {
-  return new Array(num).fill(undefined).map(createArticle);
+export const createCustomer = (): Customer => {
+  return {
+    image: `${faker.image.image()}?random=${Date.now()}`,
+    name: faker.name.findName(),
+    email: faker.internet.email(),
+    date: faker.date.past(Math.floor(Math.random() * 30)),
+    status: "active",
+  };
+};
+
+export const createCustomers = (num = 10): Customer[] => {
+  return new Array(num).fill(undefined).map(createCustomer);
 };

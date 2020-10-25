@@ -1,23 +1,23 @@
 import {GetStaticProps, InferGetStaticPropsType, GetStaticPaths} from "next";
 
-import DemoBlogScreen, {
-  Props as DemoBlogScreenProps,
-} from "@/components/DemoBlogScreen";
-import {totalArticlePages} from "@/const/demo";
-import Article from "@/types/Article";
-import {createArticles, createBlog} from "@/utils/faker";
+import DemoDashboardCustomersScreen, {
+  Props as DemoDashboardCustomersScreenProps,
+} from "@/components/DemoDashboardCustomersScreen";
+import {totalCustomerPages} from "@/const/demo";
+import Customer from "@/types/Customer";
+import {createCustomers} from "@/utils/faker";
 
 export type Props = Omit<
-  DemoBlogScreenProps,
-  "articles" | "current" | "total"
+  DemoDashboardCustomersScreenProps,
+  "customers" | "current" | "total"
 > & {
-  articles: string;
+  customers: string;
   current: string;
 };
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = new Array(totalArticlePages).fill(undefined).map((_, i) => {
+  const paths = new Array(totalCustomerPages).fill(undefined).map((_, i) => {
     return {
       params: {
         num: (i + 1).toString(),
@@ -30,32 +30,32 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
-  const articles = createArticles();
-  const blog = createBlog();
+  const customers = createCustomers(
+    params?.num !== totalCustomerPages.toString()
+      ? 10
+      : Math.floor(Math.random() * 3) + 1,
+  );
 
   return {
     props: {
-      articles: JSON.stringify(articles),
-      blog,
+      customers: JSON.stringify(customers),
       current: JSON.stringify(params?.num),
     },
   };
 };
 
 const Num = ({
-  articles,
-  blog,
+  customers,
   current,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
-    <DemoBlogScreen
-      articles={JSON.parse(articles) as Article[]}
-      blog={blog}
+    <DemoDashboardCustomersScreen
+      customers={JSON.parse(customers) as Customer[]}
       current={
         /* Multiply one to convert to integer */
         (JSON.parse(current) as number) * 1
       }
-      total={totalArticlePages}
+      total={totalCustomerPages}
     />
   );
 };
