@@ -1,4 +1,4 @@
-import {GetStaticProps, InferGetStaticPropsType, GetStaticPaths} from "next";
+import {GetStaticProps, InferGetStaticPropsType} from "next";
 
 import DemoDashboardScreen, {
   Props as DemoDashboardScreenProps,
@@ -8,14 +8,6 @@ import {createArticles} from "@/utils/faker";
 
 export type Props = Omit<DemoDashboardScreenProps, "articles"> & {
   articles: string;
-};
-
-// eslint-disable-next-line @typescript-eslint/require-await
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [],
-    fallback: "unstable_blocking",
-  };
 };
 
 // eslint-disable-next-line @typescript-eslint/require-await
