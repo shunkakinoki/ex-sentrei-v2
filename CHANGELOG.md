@@ -1,3 +1,14 @@
+## [1.33.1](https://github.com/sentrei/sentrei/compare/v1.33.0...v1.33.1) (2020-10-25)
+
+### Bug Fixes
+
+- 🐛 change margin commissions ([736c0b2](https://github.com/sentrei/sentrei/commit/736c0b2415a524174736d6ef4dca0915954ec15f))
+
+### Performance Improvements
+
+- ⚡️ refactor container center ([c62fa6d](https://github.com/sentrei/sentrei/commit/c62fa6dc0941bcb8528d7244085cf142c1d0d6bd))
+- ⚡️ refactor landing hero ([56b81a3](https://github.com/sentrei/sentrei/commit/56b81a395ba8d0fec89d098b6b12c81e04941f86))
+
 # [1.33.0](https://github.com/sentrei/sentrei/compare/v1.32.1...v1.33.0) (2020-10-25)
 
 ### Features
