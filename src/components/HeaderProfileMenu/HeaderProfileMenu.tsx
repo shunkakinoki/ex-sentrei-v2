@@ -18,16 +18,14 @@ export default function HeaderProfileMenu({open}: Props): JSX.Element {
     >
       <div className="absolute right-0 w-48 mt-2 origin-top-right rounded-md shadow-lg">
         <div
-          className="py-1 bg-white rounded-md shadow-xs"
+          className="py-1 bg-white rounded-md shadow-xs cursor-not-allowed"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="user-menu"
         >
-          <Link href="/profile">
-            <a className="block px-4 py-2 text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus:bg-gray-100">
-              Your Profile
-            </a>
-          </Link>
+          <a className="block px-4 py-2 text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus:bg-gray-100">
+            Your Profile
+          </a>
           <Link href="/settings">
             <a className="block px-4 py-2 text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus:bg-gray-100">
               Settings
