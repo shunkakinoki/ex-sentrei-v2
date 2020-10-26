@@ -1,12 +1,18 @@
+import clsx from "clsx";
+
 import Article from "@/types/Article";
 
-export type Props = Pick<Article, "date" | "pricing" | "title" | "subtitle">;
+export type Props = Pick<
+  Article,
+  "date" | "pricing" | "title" | "subtitle" | "status"
+>;
 
 export default function DashboardTableItem({
   date,
   pricing,
   title,
   subtitle,
+  status,
 }: Props): JSX.Element {
   return (
     <div className="flex flex-col w-full md:flex md:flex-row md:items-center md:justify-between">
@@ -92,21 +98,44 @@ export default function DashboardTableItem({
         <span className="ml-3 rounded-md shadow-sm">
           <button
             type="button"
-            className="inline-flex items-center px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-pink-600 border border-transparent rounded-md hover:bg-pink-500 focus:outline-none focus:shadow-outline-pink focus:border-pink-700 active:bg-pink-700"
+            className={clsx(
+              "inline-flex items-center px-4 py-2 text-sm font-medium leading-5 transition duration-150 ease-in-outborder border-transparent rounded-md focus:outline-none focus:shadow-outline-pink",
+              status === "published" &&
+                "focus:border-pink-700 active:bg-pink-700 text-white bg-pink-600 hover:bg-pink-500",
+              status === "preview" &&
+                "focus:border-pink-300 active:bg-pink-300 text-pink-500 bg-white hover:bg-pink-200 border-pink-400 border",
+            )}
           >
-            <svg
-              className="w-5 h-5 mr-2 -ml-1"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-            Published
+            {status === "preview" && (
+              <svg
+                className="w-5 h-5 mr-2 -ml-1"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            )}
+            {status === "published" && (
+              <svg
+                className="w-5 h-5 mr-2 -ml-1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            )}
+            {status === "preview" && "Preview"}
+            {status === "published" && "Published"}
           </button>
         </span>
       </div>
