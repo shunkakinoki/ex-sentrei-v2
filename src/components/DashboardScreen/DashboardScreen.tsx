@@ -21,13 +21,15 @@ export default function DashboardScreen({
     <ContainerRoot>
       <HeaderRoot />
       <ContainerDashboard type="articles" namespace={namespace}>
-        <DashboardStats />
-        <DashboardTable
-          articles={articles}
-          current={current}
-          total={total}
-          namespace={`${namespace}/dashboard`}
-        />
+        <div className="container my-6 sm:mx-3 md:mx-6 md:mt-10">
+          <DashboardStats />
+          <DashboardTable
+            articles={articles}
+            current={current}
+            total={total}
+            namespace={`${namespace}/dashboard`}
+          />
+        </div>
       </ContainerDashboard>
     </ContainerRoot>
   );

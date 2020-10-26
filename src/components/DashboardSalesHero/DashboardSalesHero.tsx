@@ -12,7 +12,7 @@ export default function DashboardSalesHero({
   return (
     <div className="container p-3 m-auto md:p-4 text-grey-darkest">
       <div className="flex flex-col w-full mb-8 -mx-2 md:flex-row ">
-        <div className="px-4 py-2 m-2 text-center text-gray-700 bg-gray-100 md:w-1/3 rounded-xl">
+        <div className="w-full px-4 py-2 m-2 text-center text-gray-700 bg-gray-100 md:w-1/3 rounded-xl">
           <h2 className="m-3 text-xl font-semibold leading-9 text-left text-gray-900 font-display ">
             All-time sales
           </h2>
@@ -26,7 +26,7 @@ export default function DashboardSalesHero({
             Received: $&nbsp;{allConfirmed.toLocaleString()}
           </h2>
         </div>
-        <div className="px-4 py-2 m-2 text-center text-gray-700 bg-gray-100 md:w-1/3 rounded-xl">
+        <div className="w-full px-4 py-2 m-2 text-center text-gray-700 bg-gray-100 md:w-1/3 rounded-xl">
           <h2 className="m-3 text-xl font-semibold leading-9 text-left text-gray-900 font-display ">
             This month&apos;s sales
           </h2>
@@ -40,7 +40,7 @@ export default function DashboardSalesHero({
             Received: $&nbsp;{monthConfirmed.toLocaleString()}
           </h2>
         </div>
-        <div className="px-4 py-2 m-2 text-center text-gray-700 bg-gray-100 md:w-1/3 rounded-xl">
+        <div className="w-full px-4 py-2 m-2 text-center text-gray-700 bg-gray-100 md:w-1/3 rounded-xl">
           <h2 className="m-3 text-xl font-semibold leading-9 text-left text-gray-900 font-display ">
             Confirmed sales
           </h2>
