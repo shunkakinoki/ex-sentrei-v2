@@ -45,11 +45,18 @@ Day 6
 
 - Complete blog pages
 - Complete dashboard pages
-- Finish WYSIWYG Editor
 
 Day 7
 
 - Integrate emitter w/ recoil
+
+Day 8
+
+- Complete dashboard pages
+- Finish WYSIWYG Editor
+
+Day 9
+
 - Integrate backend w/ firebase (profile, signup, editor)
 
 Day 9

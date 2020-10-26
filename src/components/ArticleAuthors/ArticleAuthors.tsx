@@ -1,12 +1,10 @@
 import {Listbox, Transition} from "@headlessui/react";
 import clsx from "clsx";
-import Link from "next/link";
 
 import Author from "@/types/Author";
 
 export interface Props {
   authors: Author[];
-  isDemo?: boolean;
 }
 
 // TODO: Convert to next/image
@@ -31,7 +29,7 @@ export function ArticleAuthorsImage({
   );
 }
 
-export default function ArticleAuthors({isDemo, authors}: Props): JSX.Element {
+export default function ArticleAuthors({authors}: Props): JSX.Element {
   return (
     <div className="flex">
       <Listbox as="div" className="space-y-1" value="" onChange={() => {}}>
@@ -79,37 +77,31 @@ export default function ArticleAuthors({isDemo, authors}: Props): JSX.Element {
                   {authors.map(author => (
                     <Listbox.Option key={author.namespace} value={author.name}>
                       {({selected, active}) => (
-                        <Link
-                          href={`${isDemo ? "/demo" : ""}/profile/${
-                            author.namespace
-                          }`}
-                        >
-                          <a>
-                            <div
-                              className={`${
-                                active
-                                  ? "text-white bg-pink-400"
-                                  : "text-gray-900"
-                              } cursor-default select-none relative py-2 pl-3 pr-4`}
-                            >
-                              <div className="flex items-center space-x-3">
-                                <ArticleAuthorsImage
-                                  key={author.namespace}
-                                  src={author.image ?? ""}
-                                  name={author.name}
-                                  rear={false}
-                                />
-                                <span
-                                  className={`${
-                                    selected ? "font-semibold" : "font-normal"
-                                  } block truncate`}
-                                >
-                                  {author.name}
-                                </span>
-                              </div>
+                        <a>
+                          <div
+                            className={`${
+                              active
+                                ? "text-white bg-pink-400"
+                                : "text-gray-900"
+                            } cursor-default select-none relative py-2 pl-3 pr-4`}
+                          >
+                            <div className="flex items-center space-x-3">
+                              <ArticleAuthorsImage
+                                key={author.namespace}
+                                src={author.image ?? ""}
+                                name={author.name}
+                                rear={false}
+                              />
+                              <span
+                                className={`${
+                                  selected ? "font-semibold" : "font-normal"
+                                } block truncate`}
+                              >
+                                {author.name}
+                              </span>
                             </div>
-                          </a>
-                        </Link>
+                          </div>
+                        </a>
                       )}
                     </Listbox.Option>
                   ))}
