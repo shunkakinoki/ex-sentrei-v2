@@ -13,6 +13,7 @@ export default function DemoScreen({
     <>
       <DemoBanner />
       <BlogScreen
+        isDemo
         articles={articles}
         blog={blog}
         current={current}
