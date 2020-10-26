@@ -1,3 +1,9 @@
+# [1.43.0](https://github.com/sentrei/sentrei/compare/v1.42.0...v1.43.0) (2020-10-26)
+
+### Features
+
+- 🎸 ini editor screen ([3bfe1dd](https://github.com/sentrei/sentrei/commit/3bfe1dd603c18057b7a957f7bd497cfb7b541502))
+
 # [1.42.0](https://github.com/sentrei/sentrei/compare/v1.41.0...v1.42.0) (2020-10-26)
 
 ### Features
