@@ -1,3 +1,14 @@
+## [1.40.1](https://github.com/sentrei/sentrei/compare/v1.40.0...v1.40.1) (2020-10-26)
+
+### Bug Fixes
+
+- 🐛 fix sales hero ([53eb507](https://github.com/sentrei/sentrei/commit/53eb507024035ae19865d5f1423ade1713954efc))
+
+### Performance Improvements
+
+- ⚡️ ini container margin for dashboard component ([bbb4b44](https://github.com/sentrei/sentrei/commit/bbb4b44e1bd4e95b264bd63758a9e4054952ad58))
+- ⚡️ refactor mobile margin for dashboard components ([bc56748](https://github.com/sentrei/sentrei/commit/bc56748c1ea65ebf68b41828be61c020dc272153))
+
 # [1.40.0](https://github.com/sentrei/sentrei/compare/v1.39.1...v1.40.0) (2020-10-26)
 
 ### Features
