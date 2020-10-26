@@ -1,3 +1,9 @@
+# [1.41.0](https://github.com/sentrei/sentrei/compare/v1.40.1...v1.41.0) (2020-10-26)
+
+### Features
+
+- 🎸 ini dashboard status ([aa51c0c](https://github.com/sentrei/sentrei/commit/aa51c0cef9843dafdb6ff8e2efc474a2c28f0483))
+
 ## [1.40.1](https://github.com/sentrei/sentrei/compare/v1.40.0...v1.40.1) (2020-10-26)
 
 ### Bug Fixes
