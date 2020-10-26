@@ -2,14 +2,15 @@
 
 import Link from "next/link";
 
-import BlogAuthor from "@/components/BlogAuthor";
+import BlogAuthor, {Props as BlogAuthorProps} from "@/components/BlogAuthor";
 import Blog from "@/types/Blog";
 
-export interface Props extends Blog {
+export interface Props extends Blog, Pick<BlogAuthorProps, "isDemo"> {
   namespace: string;
 }
 
 export default function BlogHero({
+  isDemo = false,
   authors,
   namespace,
   title,
@@ -38,6 +39,7 @@ export default function BlogHero({
       </div>
       <div className="flex justify-start w-full mt-3 align-middle sm:mt-6">
         <BlogAuthor
+          isDemo={isDemo}
           name={authors[0].name}
           namespace={authors[0].namespace}
           bio={authors[0].bio}

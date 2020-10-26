@@ -3,13 +3,21 @@ import Link from "next/link";
 
 import Author from "@/types/Author";
 
-export type Props = Author;
+export interface Props extends Author {
+  isDemo?: boolean;
+}
 
-export default function BlogAuthor({bio, image, name}: Props): JSX.Element {
+export default function BlogAuthor({
+  isDemo = false,
+  bio,
+  image,
+  name,
+  namespace,
+}: Props): JSX.Element {
   return (
     <>
       <div className="flex-shrink-0 px-4 py-2 m-2 text-center ">
-        <Link href="/demo/profile">
+        <Link href={`${isDemo ? "/demo" : ""}/profile/${namespace}`}>
           <a>
             <Image
               unoptimized
