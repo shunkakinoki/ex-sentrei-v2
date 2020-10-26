@@ -11,6 +11,9 @@
   "scripts": {
     "build": "next build",
     "check": "yarn run depcheck && yarn run lint && yarn run release:check",
+    "clean": "yarn run clean:dist && yarn run clean:tsbuildinfo",
+    "clean:dist": "rimraf dist",
+    "clean:tsbuildinfo": "rimraf tsconfig*tsbuildinfo",
     "dev": "next dev",
     "eslint:check": "eslint . -c .eslintrc.json --ext .ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
     "eslint:fix": "eslint --fix . -c .eslintrc.json --ext .ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
@@ -85,6 +88,7 @@
     "json-sort-cli": "^1.16.4",
     "npm-check-updates": "^9.2.2",
     "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
     "semantic-release": "^17.2.1",
     "sort-package-json": "^1.46.1",
     "typescript": "^4.0.3",

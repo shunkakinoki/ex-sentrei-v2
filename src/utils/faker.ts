@@ -4,6 +4,7 @@ import Article, {Pricing} from "@/types/Article";
 import Author from "@/types/Author";
 import Blog from "@/types/Blog";
 import Customer from "@/types/Customer";
+import Sales from "@/types/Sales";
 
 // Inspired by: https://github.com/Marak/faker.js/blob/4bd0935460ab62b72593b42471699d2044c7a53a/lib/markdown.js
 export const createMdHeader = (num = 3): string => {
@@ -154,4 +155,14 @@ export const createCustomer = (): Customer => {
 
 export const createCustomers = (num = 10): Customer[] => {
   return new Array(num).fill(undefined).map(createCustomer);
+};
+
+export const createSales = (): Sales => {
+  return {
+    all: Math.floor(Math.random() * 300) + 1200,
+    allConfirmed: Math.floor(Math.random() * 300) + 900,
+    month: Math.floor(Math.random() * 300) + 300,
+    monthConfirmed: Math.floor(Math.random() * 300) + 200,
+    confirmed: Math.floor(Math.random() * 300) + 600,
+  };
 };
