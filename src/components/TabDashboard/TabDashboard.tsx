@@ -6,7 +6,7 @@ import Link from "next/link";
 export interface Props {
   active: boolean;
   namespace: string;
-  type: "articles" | "customers" | "sales" | "settings";
+  type: "articles" | "branding" | "customers" | "sales" | "settings";
 }
 
 export default function TabDashboard({
@@ -19,6 +19,8 @@ export default function TabDashboard({
       href={`/${namespace}/dashboard${
         type === "articles"
           ? ""
+          : type === "branding"
+          ? "/branding"
           : type === "customers"
           ? "/customers"
           : type === "sales"
@@ -46,6 +48,20 @@ export default function TabDashboard({
               strokeLinejoin="round"
               strokeWidth={2}
               d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            />
+          </svg>
+        )}
+        {type === "branding" && (
+          <svg
+            className="w-6 h-6"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z"
+              clipRule="evenodd"
             />
           </svg>
         )}
@@ -106,6 +122,7 @@ export default function TabDashboard({
         <span>
           <p className="pl-3 lg:pl-5">
             {type === "articles" && "Articles"}
+            {type === "branding" && "Branding"}
             {type === "customers" && "Customers"}
             {type === "sales" && "Sales"}
             {type === "settings" && "Settings"}
