@@ -1,3 +1,9 @@
+## [1.38.1](https://github.com/sentrei/sentrei/compare/v1.38.0...v1.38.1) (2020-10-26)
+
+### Performance Improvements
+
+- ⚡️ upgrade tailwind canary ([3d84ad4](https://github.com/sentrei/sentrei/commit/3d84ad4ac0d81901ce9d860ef0cd500ae8f6d958))
+
 # [1.38.0](https://github.com/sentrei/sentrei/compare/v1.37.2...v1.38.0) (2020-10-25)
 
 ### Features
