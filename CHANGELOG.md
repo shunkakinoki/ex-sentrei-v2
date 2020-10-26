@@ -1,3 +1,14 @@
+# [1.40.0](https://github.com/sentrei/sentrei/compare/v1.39.1...v1.40.0) (2020-10-26)
+
+### Features
+
+- 🎸 complete sales hero ([3df9adb](https://github.com/sentrei/sentrei/commit/3df9adbbfc597e5cac8b29965067f0287ba47825))
+
+### Performance Improvements
+
+- ⚡️ dashbaord sales hero ([d45fbf5](https://github.com/sentrei/sentrei/commit/d45fbf53f9574d2c461d0f4c7a6b8bf2ab946b73))
+- ⚡️ ini faker sales ([52ab437](https://github.com/sentrei/sentrei/commit/52ab437e72cd74971ea8ca6d14abbb147c169609))
+
 ## [1.39.1](https://github.com/sentrei/sentrei/compare/v1.39.0...v1.39.1) (2020-10-26)
 
 ### Bug Fixes
