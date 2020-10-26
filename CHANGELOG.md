@@ -1,3 +1,9 @@
+# [1.39.0](https://github.com/sentrei/sentrei/compare/v1.38.1...v1.39.0) (2020-10-26)
+
+### Features
+
+- 🎸 ini demo profile ([9e779b2](https://github.com/sentrei/sentrei/commit/9e779b209cfdd93055ac2e4fbc63755f14d40185))
+
 ## [1.38.1](https://github.com/sentrei/sentrei/compare/v1.38.0...v1.38.1) (2020-10-26)
 
 ### Performance Improvements
