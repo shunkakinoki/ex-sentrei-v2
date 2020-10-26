@@ -2,7 +2,7 @@ import ContainerDashboard, {
   Props as ContainerDashboardProps,
 } from "@/components/ContainerDashboard";
 import ContainerRoot from "@/components/ContainerRoot";
-import DashbaordStats from "@/components/DashboardStats";
+import DashboardSalesHero from "@/components/DashboardSalesHero";
 import HeaderRoot from "@/components/HeaderRoot";
 
 export type Props = Pick<ContainerDashboardProps, "namespace">;
@@ -12,7 +12,7 @@ export default function DashboardSalesScreen({namespace}: Props): JSX.Element {
     <ContainerRoot>
       <HeaderRoot />
       <ContainerDashboard type="sales" namespace={namespace}>
-        <DashbaordStats />
+        <DashboardSalesHero />
       </ContainerDashboard>
     </ContainerRoot>
   );
