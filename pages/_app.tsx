@@ -3,12 +3,14 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
 import {AppProps} from "next/app";
-import "../src/styles/index.css";
 import {RecoilRoot} from "recoil";
 import {SWRConfig} from "swr";
 
 import GlobalSnackbar from "@/components/GlobalAlert";
 import SeoRoot from "@/components/SeoRoot";
+import "@/styles/index.css";
+import "@/styles/nprogress.css";
+import "@/utils/nprogress";
 
 const CustomApp = ({Component, pageProps}: AppProps): JSX.Element => {
   return (
