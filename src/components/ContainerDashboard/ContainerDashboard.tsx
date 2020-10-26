@@ -39,8 +39,8 @@ export default function ContainerDashboard({
           />
         </div>
       </div>
-      <div className="w-full px-3 lg:w-5/6">
-        <div className="flex flex-col mt-4 md:px-6 lg:px-9 md:mt-6 lg:mt-8">
+      <div className="w-full sm:px-1 md:px-2 lg:px-3 lg:w-5/6">
+        <div className="flex flex-col mx-1 mt-4 sm:mx-2 md:mx-3 md:px-6 lg:px-9 md:mt-6 lg:mt-8">
           {children}
         </div>
       </div>

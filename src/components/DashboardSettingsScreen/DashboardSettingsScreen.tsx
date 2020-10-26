@@ -14,7 +14,7 @@ export default function DashboardSettingsScreen({
     <ContainerRoot>
       <HeaderRoot />
       <ContainerDashboard type="settings" namespace={namespace}>
-        <div className="container mx-3 my-6 md:mx-6 md:mt-10">
+        <div className="container my-6 sm:mx-3 md:mx-6 md:mt-10">
           <DashboardSettingsInfoSection />
         </div>
       </ContainerDashboard>
