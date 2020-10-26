@@ -1,3 +1,13 @@
+# [1.42.0](https://github.com/sentrei/sentrei/compare/v1.41.0...v1.42.0) (2020-10-26)
+
+### Features
+
+- 🎸 ini custom nprogress ([2af76b2](https://github.com/sentrei/sentrei/commit/2af76b295b43590d0be43f978136b68d1c960942))
+
+### Performance Improvements
+
+- ⚡️ upgrade npm packages ([84683f2](https://github.com/sentrei/sentrei/commit/84683f24b4e4e600dc71dfbcdf574058aecd89b0))
+
 # [1.41.0](https://github.com/sentrei/sentrei/compare/v1.40.1...v1.41.0) (2020-10-26)
 
 ### Features
