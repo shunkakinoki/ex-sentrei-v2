@@ -50,6 +50,7 @@ export default function DashboardSalesHero({
               <span>{confirmed.toLocaleString()}</span>
             </span>
           </div>
+          <div className="py-3" />
         </div>
       </div>
     </div>
