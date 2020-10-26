@@ -1,3 +1,14 @@
+## [1.39.1](https://github.com/sentrei/sentrei/compare/v1.39.0...v1.39.1) (2020-10-26)
+
+### Bug Fixes
+
+- 🐛 refactor blog screen ([7538de1](https://github.com/sentrei/sentrei/commit/7538de161674f272445fb85c116fbbbeecfe3c79))
+- 🐛 remove profile link ([b2b9091](https://github.com/sentrei/sentrei/commit/b2b9091d6036e3fe4e8c30804782411fabbca5e8))
+
+### Performance Improvements
+
+- ⚡️ refactor profile menu ([8c4bcbe](https://github.com/sentrei/sentrei/commit/8c4bcbee20bdee3a605d7a60a4dcd988a71899a8))
+
 # [1.39.0](https://github.com/sentrei/sentrei/compare/v1.38.1...v1.39.0) (2020-10-26)
 
 ### Features
