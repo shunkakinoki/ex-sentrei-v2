@@ -159,10 +159,10 @@ export const createCustomers = (num = 10): Customer[] => {
 
 export const createSales = (): Sales => {
   return {
-    all: 1000,
-    allConfirmed: 900,
-    month: 300,
-    monthConfirmed: 270,
-    confirmed: 600,
+    all: Math.floor(Math.random() * 300) + 1200,
+    allConfirmed: Math.floor(Math.random() * 300) + 900,
+    month: Math.floor(Math.random() * 300) + 300,
+    monthConfirmed: Math.floor(Math.random() * 300) + 200,
+    confirmed: Math.floor(Math.random() * 300) + 600,
   };
 };
