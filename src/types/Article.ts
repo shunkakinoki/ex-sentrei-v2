@@ -12,5 +12,6 @@ export default interface Article {
   slug: string;
   time: number;
   title: string;
+  status: "preview" | "published";
   subtitle?: string;
 }

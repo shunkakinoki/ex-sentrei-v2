@@ -127,6 +127,7 @@ export const createArticle = (): Article => {
     time: Math.floor(Math.random() * 10 + 3),
     title: faker.lorem.lines(Math.floor(Math.random() * 1 + 1)),
     subtitle: faker.lorem.sentences(Math.floor(Math.random() * 11)),
+    status: "published",
   };
 };
 

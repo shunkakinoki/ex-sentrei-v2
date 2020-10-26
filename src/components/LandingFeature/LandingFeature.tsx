@@ -12,7 +12,7 @@ export default function LandingFeature(): JSX.Element {
           <p className="max-w-2xl mt-4 text-xl leading-7 text-gray-500 lg:mx-auto">
             No more annnoying pop-ups to consume content. No more absurd
             commissions for content distribution. Readers and writers deserve
-            much more.
+            much more in 2020.
           </p>
         </div>
         <div className="mt-10">
