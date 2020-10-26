@@ -24,6 +24,7 @@ export default function BlogStoryGrid({
               title={article.title}
               slug={article.slug}
               subtitle={article.subtitle}
+              status={article.status}
               namespace={namespace}
               variant={index % 4 === 0 || index % 4 === 3 ? "small" : "medium"}
             />
