@@ -9,11 +9,8 @@ import PaginationBase, {
   Props as PaginationBaseProps,
 } from "@/components/PaginationBase";
 
-export interface Props
-  extends BlogStoryGridProps,
-    PaginationBaseProps,
-    BlogHeroProps {
-  blog: Omit<BlogHeroProps, "namespace">;
+export interface Props extends BlogStoryGridProps, PaginationBaseProps {
+  blog: Omit<BlogHeroProps, "name" | "namespace">;
 }
 
 export default function BlogScreen({
@@ -28,7 +25,6 @@ export default function BlogScreen({
       <HeaderRoot />
       <BlogHero
         authors={blog.authors}
-        name={blog.name}
         title={blog.title}
         subtitle={blog.subtitle}
         namespace={namespace}

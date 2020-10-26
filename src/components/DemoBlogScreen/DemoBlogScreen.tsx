@@ -3,7 +3,7 @@ import DemoBanner from "@/components/DemoBanner";
 
 export type Props = Omit<BlogScreenProps, "namespace">;
 
-export default function DemoScreen({
+export default function DemoBlogScreen({
   articles,
   blog,
   current,

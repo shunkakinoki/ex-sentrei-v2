@@ -5,7 +5,7 @@ import Link from "next/link";
 import BlogAuthor, {Props as BlogAuthorProps} from "@/components/BlogAuthor";
 import Blog from "@/types/Blog";
 
-export interface Props extends Blog, BlogAuthorProps {
+export interface Props extends Blog {
   namespace: string;
 }
 
