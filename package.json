@@ -15,6 +15,7 @@
     "clean:dist": "rimraf dist",
     "clean:tsbuildinfo": "rimraf tsconfig*tsbuildinfo",
     "dev": "next dev",
+    "env:pull": "vercel env pull .env.local",
     "eslint:check": "eslint . -c .eslintrc.json --ext .ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
     "eslint:fix": "eslint --fix . -c .eslintrc.json --ext .ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
     "fix": "yarn run jsonsort:fix && yarn run sort-package-json:fix && yarn run eslint:fix && yarn run prettier:fix",
@@ -43,6 +44,7 @@
   "dependencies": {
     "@headlessui/react": "^0.2.0",
     "@next/eslint-plugin-next": "^9.5.6-canary.15",
+    "@papercups-io/chat-widget": "^1.1.1",
     "@toast-ui/editor": "^2.5.0",
     "@toast-ui/react-editor": "^2.5.0",
     "@types/faker": "^5.1.3",
