@@ -1,3 +1,13 @@
+# [1.45.0](https://github.com/sentrei/sentrei/compare/v1.44.0...v1.45.0) (2020-10-27)
+
+### Features
+
+- 🎸 ini redirect landing ([d3e9a08](https://github.com/sentrei/sentrei/commit/d3e9a08908b65f9998cab621e969a414c03f5df3))
+
+### Performance Improvements
+
+- ⚡️ ini redirect sentrei.com ([98cf60f](https://github.com/sentrei/sentrei/commit/98cf60f2fbaa0d0c28347e1e0a0206f146496370))
+
 # [1.44.0](https://github.com/sentrei/sentrei/compare/v1.43.0...v1.44.0) (2020-10-27)
 
 ### Features
