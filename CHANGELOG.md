@@ -1,3 +1,14 @@
+# [1.48.0](https://github.com/sentrei/sentrei/compare/v1.47.1...v1.48.0) (2020-10-27)
+
+### Features
+
+- 🎸 ini app root ([e66d293](https://github.com/sentrei/sentrei/commit/e66d293e34f1f9d2ddf95ffa9d2a954904b30dfa))
+- 🎸 ini firebase env ([bfea8f9](https://github.com/sentrei/sentrei/commit/bfea8f919b0aba181192444a8dc8d0ea761b5e8e))
+
+### Performance Improvements
+
+- ⚡️ update w/ ncu ([66cc900](https://github.com/sentrei/sentrei/commit/66cc900ee0c0e4e9e9f65a807971c5c0490bbc8f))
+
 ## [1.47.1](https://github.com/sentrei/sentrei/compare/v1.47.0...v1.47.1) (2020-10-27)
 
 ### Performance Improvements
