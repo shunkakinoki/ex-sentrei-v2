@@ -1,9 +1,9 @@
 import {NextPage} from "next";
 
-import EditorScreen from "@/components/EditorScreen";
+import DemoEditorScreen from "@/components/DemoEditorScreen";
 
 const Editor: NextPage = () => {
-  return <EditorScreen />;
+  return <DemoEditorScreen />;
 };
 
 export default Editor;
