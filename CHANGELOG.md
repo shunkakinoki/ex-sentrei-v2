@@ -1,3 +1,9 @@
+## [1.48.1](https://github.com/sentrei/sentrei/compare/v1.48.0...v1.48.1) (2020-10-27)
+
+### Performance Improvements
+
+- ⚡️ ini as string ([3025190](https://github.com/sentrei/sentrei/commit/30251901d2a45f085034a856ca0f1080fc66b78a))
+
 # [1.48.0](https://github.com/sentrei/sentrei/compare/v1.47.1...v1.48.0) (2020-10-27)
 
 ### Features
