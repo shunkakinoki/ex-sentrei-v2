@@ -1,3 +1,13 @@
+# [1.50.0](https://github.com/sentrei/sentrei/compare/v1.49.0...v1.50.0) (2020-10-27)
+
+### Features
+
+- 🎸 ini license apglv3 ([f9749d0](https://github.com/sentrei/sentrei/commit/f9749d0da24c16eeedfa2f45f65d152e8e62bb0a))
+
+### Performance Improvements
+
+- ⚡️ ini functions dir ([355c523](https://github.com/sentrei/sentrei/commit/355c52333d41579d9e32139c080ba2e4e0f6a20b))
+
 # [1.49.0](https://github.com/sentrei/sentrei/compare/v1.48.1...v1.49.0) (2020-10-27)
 
 ### Features
