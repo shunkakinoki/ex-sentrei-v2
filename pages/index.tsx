@@ -49,7 +49,12 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
   }
 
   return {
-    unstable_notFound: true,
+    props: {
+      articles: JSON.stringify(articles),
+      blog: JSON.stringify(blog),
+      current: 1,
+      namespace: req.headers.host ?? "sentrei.com",
+    },
   };
 };
 
