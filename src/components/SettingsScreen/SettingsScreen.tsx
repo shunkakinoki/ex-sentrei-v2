@@ -19,7 +19,9 @@ export default function SettingsScreen(): JSX.Element {
             <div className="border-t border-gray-200" />
           </div>
         </div>
-        <SettingsNotificationsSection />
+        <div className="mt-10 sm:mt-0">
+          <SettingsNotificationsSection />
+        </div>
       </div>
     </ContainerRoot>
   );
