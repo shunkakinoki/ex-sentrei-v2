@@ -1,3 +1,9 @@
+## [1.45.1](https://github.com/sentrei/sentrei/compare/v1.45.0...v1.45.1) (2020-10-27)
+
+### Bug Fixes
+
+- 🐛 demo namespace string ([f0eb70c](https://github.com/sentrei/sentrei/commit/f0eb70c5eb6b68322300fb0b72d59e8a66e88cd0))
+
 # [1.45.0](https://github.com/sentrei/sentrei/compare/v1.44.0...v1.45.0) (2020-10-27)
 
 ### Features
