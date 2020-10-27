@@ -50,7 +50,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
 
   return {
     unstable_redirect: {
-      destination: "sentrei.com",
+      destination: "https://sentrei.com",
       permanent: false,
     },
   };
