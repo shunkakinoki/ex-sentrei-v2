@@ -1,3 +1,13 @@
+# [1.51.0](https://github.com/sentrei/sentrei/compare/v1.50.0...v1.51.0) (2020-10-27)
+
+### Features
+
+- 🎸 upgrade next package ([9a90cde](https://github.com/sentrei/sentrei/commit/9a90cdec8bbfcd7034873c43c165ee210633ff8b))
+
+### Performance Improvements
+
+- ⚡️ ini next themes ([0e14610](https://github.com/sentrei/sentrei/commit/0e1461005098b36a3b4bdf42ea2cd8012292984a))
+
 # [1.50.0](https://github.com/sentrei/sentrei/compare/v1.49.0...v1.50.0) (2020-10-27)
 
 ### Features
