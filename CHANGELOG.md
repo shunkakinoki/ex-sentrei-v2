@@ -1,3 +1,13 @@
+# [1.49.0](https://github.com/sentrei/sentrei/compare/v1.48.1...v1.49.0) (2020-10-27)
+
+### Features
+
+- 🎸 ini firebase config ([3fbfbb6](https://github.com/sentrei/sentrei/commit/3fbfbb61cdf68ae28582d1e35d71e6430a5f5cc6))
+
+### Performance Improvements
+
+- ⚡️ ini firestore dir ([02e84cc](https://github.com/sentrei/sentrei/commit/02e84cc697993c6bb03a00bc186db8343c50f8e8))
+
 ## [1.48.1](https://github.com/sentrei/sentrei/compare/v1.48.0...v1.48.1) (2020-10-27)
 
 ### Performance Improvements
