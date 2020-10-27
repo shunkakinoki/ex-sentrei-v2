@@ -1,3 +1,9 @@
+## [1.47.1](https://github.com/sentrei/sentrei/compare/v1.47.0...v1.47.1) (2020-10-27)
+
+### Performance Improvements
+
+- ⚡️ upgrade next canary ([fe57ee4](https://github.com/sentrei/sentrei/commit/fe57ee4d9749a92bce2cfcbb0909eecdf304fbaf))
+
 # [1.47.0](https://github.com/sentrei/sentrei/compare/v1.46.4...v1.47.0) (2020-10-27)
 
 ### Features
