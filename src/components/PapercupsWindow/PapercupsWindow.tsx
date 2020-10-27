@@ -12,7 +12,7 @@ export default function PapercupsWindow({isSales = false}: Props): JSX.Element {
         title={`Welcome to Sentrei ${isSales ? "Sales" : "Support"}`}
         subtitle="Ask us anything in the chat window below 😊"
         newMessagePlaceholder="Start typing ..."
-        primaryColor="#ffa7d7"
+        primaryColor="#EC4899"
         greeting="Hi there! How can we help you?"
         requireEmailUpfront={isSales}
       />

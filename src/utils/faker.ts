@@ -121,7 +121,10 @@ export const createArticle = (): Article => {
     body: createMarkdown(30),
     excerpt: createMarkdown(1),
     date: faker.date.past(Math.floor(Math.random() * 30)),
-    image: `${faker.image.image()}?random=${Date.now()}`,
+    image: `${faker.image.image()}?random=${Date.now()}`.replace(
+      "http",
+      "https",
+    ),
     pricing: createPricing(),
     slug: faker.lorem.slug(),
     time: Math.floor(Math.random() * 10 + 3),
@@ -146,7 +149,10 @@ export const createBlog = (): Blog => {
 
 export const createCustomer = (): Customer => {
   return {
-    image: `${faker.image.image()}?random=${Date.now()}`,
+    image: `${faker.image.image()}?random=${Date.now()}`.replace(
+      "http",
+      "https",
+    ),
     name: faker.name.findName(),
     email: faker.internet.email(),
     date: faker.date.past(Math.floor(Math.random() * 30)),
