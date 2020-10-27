@@ -1,4 +1,5 @@
 import {Switch} from "@headlessui/react";
+import clsx from "clsx";
 import {useState} from "react";
 
 export default function EditorHeaderSwitch(): JSX.Element {
@@ -8,7 +9,15 @@ export default function EditorHeaderSwitch(): JSX.Element {
     <div className="flex items-center justify-center">
       <div className="w-full max-w-xs mx-auto">
         <Switch.Group as="div" className="flex items-center space-x-3">
-          <Switch.Label>Draft</Switch.Label>
+          <Switch.Label
+            className={clsx(
+              "text-md",
+              !switchValue && "text-gray-600",
+              switchValue && "text-gray-300",
+            )}
+          >
+            Draft
+          </Switch.Label>
           <Switch
             as="button"
             checked={switchValue}
@@ -25,7 +34,15 @@ export default function EditorHeaderSwitch(): JSX.Element {
               />
             )}
           </Switch>
-          <Switch.Label>Publish</Switch.Label>
+          <Switch.Label
+            className={clsx(
+              "text-md",
+              switchValue && "text-gray-600",
+              !switchValue && "text-gray-300",
+            )}
+          >
+            Publish
+          </Switch.Label>
         </Switch.Group>
       </div>
     </div>
