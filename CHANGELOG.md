@@ -1,3 +1,10 @@
+# [1.46.0](https://github.com/sentrei/sentrei/compare/v1.45.1...v1.46.0) (2020-10-27)
+
+### Features
+
+- 🎸 ini papercups widget ([d2f7dad](https://github.com/sentrei/sentrei/commit/d2f7dadbad59977bf3407325c7e7910371086f55))
+- 🎸 ini sales support ([94fe87b](https://github.com/sentrei/sentrei/commit/94fe87b983cafbd403ee02ed871201ab50118134))
+
 ## [1.45.1](https://github.com/sentrei/sentrei/compare/v1.45.0...v1.45.1) (2020-10-27)
 
 ### Bug Fixes
