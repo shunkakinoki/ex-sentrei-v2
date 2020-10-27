@@ -1,0 +1,14 @@
+import {ChatWidget} from "@papercups-io/chat-widget";
+
+export default function PapercupsWidget(): JSX.Element {
+  return (
+    <ChatWidget
+      accountId={process.env.NEXT_PUBLIC_PAPERCUPS_ID ?? ""}
+      title="Welcome to Sentrei"
+      subtitle="Ask us anything in the chat window below 😊"
+      newMessagePlaceholder="Start typing ..."
+      primaryColor="#ffa7d7"
+      greeting="Hi there! How can we help you?"
+    />
+  );
+}
