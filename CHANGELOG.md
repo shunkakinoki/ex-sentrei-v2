@@ -1,3 +1,10 @@
+## [1.46.3](https://github.com/sentrei/sentrei/compare/v1.46.2...v1.46.3) (2020-10-27)
+
+### Performance Improvements
+
+- ⚡️ faker image https ([2c52783](https://github.com/sentrei/sentrei/commit/2c52783505a1b666b420ac7ae193127bc6d92236))
+- ⚡️ refactor branding theme ([fc23ccf](https://github.com/sentrei/sentrei/commit/fc23ccfae95ed5562a9a330150772af150bfad88))
+
 ## [1.46.2](https://github.com/sentrei/sentrei/compare/v1.46.1...v1.46.2) (2020-10-27)
 
 ### Performance Improvements
