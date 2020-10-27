@@ -41,9 +41,10 @@ const CustomApp = ({Component, pageProps}: AppProps): JSX.Element => {
             },
           }}
         >
-          <AppRoot />
-          <GlobalSnackbar />
-          <Component {...pageProps} />
+          <AppRoot>
+            <GlobalSnackbar />
+            <Component {...pageProps} />
+          </AppRoot>
         </SWRConfig>
       </RecoilRoot>
     </>
