@@ -12,7 +12,7 @@ export default function BlogStoryImage({image, title}: Props): JSX.Element {
         loading="lazy"
         unoptimized
         unsized
-        src={image ?? ""}
+        src={image as string}
         className="object-cover w-full h-40 bg-gray-400 sm:h-64"
       />
     </div>

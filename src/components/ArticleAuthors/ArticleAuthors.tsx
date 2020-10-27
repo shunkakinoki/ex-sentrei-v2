@@ -41,7 +41,7 @@ export default function ArticleAuthors({authors}: Props): JSX.Element {
                   return (
                     <ArticleAuthorsImage
                       key={author.namespace}
-                      src={author.image ?? ""}
+                      src={author.image as string}
                       name={author.name}
                       rear={index === 0}
                     />
@@ -88,7 +88,7 @@ export default function ArticleAuthors({authors}: Props): JSX.Element {
                             <div className="flex items-center space-x-3">
                               <ArticleAuthorsImage
                                 key={author.namespace}
-                                src={author.image ?? ""}
+                                src={author.image as string}
                                 name={author.name}
                                 rear={false}
                               />

@@ -11,7 +11,7 @@ export default function ArticleImage({image, title}: Props): JSX.Element {
         unoptimized
         unsized
         alt={`Story Cover for ${title}`}
-        src={image ?? ""}
+        src={image as string}
         className="object-cover w-full h-64 bg-gray-300 md:h-96 lg:h-128 xl:h-192"
       />
     </div>
