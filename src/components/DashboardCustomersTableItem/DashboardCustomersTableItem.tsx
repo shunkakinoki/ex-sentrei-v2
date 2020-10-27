@@ -20,7 +20,7 @@ export default function DashboardCustomersTableItem({
               className="w-10 h-10 rounded-full"
               unoptimized
               unsized
-              src={image ?? ""}
+              src={image as string}
               alt={`Customer ${name}`}
             />
           </div>

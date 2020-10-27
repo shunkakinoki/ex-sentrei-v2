@@ -13,7 +13,7 @@ export default function BlogAuthor({bio, image, name}: Props): JSX.Element {
             unoptimized
             unsized
             className="inline object-cover w-12 h-12 p-1 mr-2 border rounded-full"
-            src={image ?? ""}
+            src={image as string}
             alt={`Author ${name}`}
           />
         </a>
