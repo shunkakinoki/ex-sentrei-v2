@@ -27,7 +27,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
     req.headers.host === "sentrei.com"
   ) {
     return {
-      unstable_redirect: {
+      redirect: {
         destination: "/home",
         permanent: false,
       },
@@ -49,7 +49,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
   }
 
   return {
-    unstable_redirect: {
+    redirect: {
       destination: "https://sentrei.com",
       permanent: false,
     },
