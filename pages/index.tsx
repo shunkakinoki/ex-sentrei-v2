@@ -1,5 +1,4 @@
 import {GetServerSideProps, InferGetServerSidePropsType} from "next";
-import {useEffect} from "react";
 
 import BlogScreen, {Props as BlogScreenProps} from "@/components/BlogScreen";
 import {totalArticlePages} from "@/const/demo";
@@ -43,7 +42,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
         articles: JSON.stringify(articles),
         blog: JSON.stringify(blog),
         current: 1,
-        namespace: req.headers.host,
+        namespace: req.headers.host.split(".")[0],
       },
     };
   }
@@ -62,11 +61,6 @@ const Index = ({
   current,
   namespace,
 }: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element => {
-  useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.log(`host: ${namespace ?? ""}`);
-  });
-
   return (
     <BlogScreen
       articles={JSON.parse(articles) as Article[]}
