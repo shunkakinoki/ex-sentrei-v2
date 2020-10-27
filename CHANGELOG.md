@@ -1,3 +1,9 @@
+## [1.46.2](https://github.com/sentrei/sentrei/compare/v1.46.1...v1.46.2) (2020-10-27)
+
+### Performance Improvements
+
+- ⚡️ ini preview host ([d246ccc](https://github.com/sentrei/sentrei/commit/d246cccc49736f74ec30c91dde759aead0a0ccd1))
+
 ## [1.46.1](https://github.com/sentrei/sentrei/compare/v1.46.0...v1.46.1) (2020-10-27)
 
 ### Bug Fixes
