@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^0.2.0",
-    "@next/eslint-plugin-next": "^9.5.6-canary.15",
+    "@next/eslint-plugin-next": "^9.5.6-canary.16",
     "@papercups-io/chat-widget": "^1.1.1",
     "@toast-ui/editor": "^2.5.0",
     "@toast-ui/react-editor": "^2.5.0",
@@ -56,7 +56,7 @@
     "codemirror": "^5.58.2",
     "faker": "^5.1.0",
     "mitt": "^2.1.0",
-    "next": "^9.5.6-canary.15",
+    "next": "^9.5.6-canary.16",
     "next-seo": "^4.14.0",
     "nprogress": "^0.2.0",
     "postcss-import": "^13.0.0",

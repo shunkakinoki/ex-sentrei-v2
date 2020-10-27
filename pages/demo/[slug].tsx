@@ -15,7 +15,7 @@ export type Props = Omit<DemoArticleScreenProps, "article" | "more"> & {
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
-    fallback: "unstable_blocking",
+    fallback: "blocking",
   };
 };
 
