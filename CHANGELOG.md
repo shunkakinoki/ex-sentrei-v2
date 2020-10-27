@@ -1,3 +1,15 @@
+# [1.44.0](https://github.com/sentrei/sentrei/compare/v1.43.0...v1.44.0) (2020-10-27)
+
+### Features
+
+- 🎸 refactor form sections ([3ba0757](https://github.com/sentrei/sentrei/commit/3ba07576b65b0830c6151df62d729a91022cc231))
+
+### Performance Improvements
+
+- ⚡️ ini branding page ([8f84ec3](https://github.com/sentrei/sentrei/commit/8f84ec3c771036fe6dce93b44ba2264845b78100))
+- ⚡️ ini dashboard branding ([ce50b0f](https://github.com/sentrei/sentrei/commit/ce50b0f31b7825738cefb87fa5766727d145ff10))
+- ⚡️ refactor notification settings ([4ff6285](https://github.com/sentrei/sentrei/commit/4ff6285eac0714c7aed6bd179d45c1f99a5aba17))
+
 # [1.43.0](https://github.com/sentrei/sentrei/compare/v1.42.0...v1.43.0) (2020-10-26)
 
 ### Features
