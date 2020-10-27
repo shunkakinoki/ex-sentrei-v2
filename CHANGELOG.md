@@ -1,3 +1,13 @@
+## [1.46.1](https://github.com/sentrei/sentrei/compare/v1.46.0...v1.46.1) (2020-10-27)
+
+### Bug Fixes
+
+- 🐛 papercups sales title ([7353748](https://github.com/sentrei/sentrei/commit/7353748b973a279015d6af862cfe3c16a3c232b7))
+
+### Performance Improvements
+
+- ⚡️ refactor tailwind vh ([87df94c](https://github.com/sentrei/sentrei/commit/87df94cd0e104e270960664b335a061233d4f228))
+
 # [1.46.0](https://github.com/sentrei/sentrei/compare/v1.45.1...v1.46.0) (2020-10-27)
 
 ### Features
