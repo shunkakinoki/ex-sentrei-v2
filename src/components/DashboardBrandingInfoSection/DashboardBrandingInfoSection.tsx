@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
-export default function DashboardSettingsBlogSection(): JSX.Element {
+export default function DashboardBrandingInfoSection(): JSX.Element {
   return (
     <div className="px-1 sm:px-2 md:px-3 md:grid md:grid-cols-3 md:gap-6">
       <div className="md:col-span-1">
         <div className="px-4 sm:px-0">
           <h3 className="text-lg font-medium leading-6 text-gray-900">Info</h3>
           <p className="mt-1 text-sm leading-5 text-gray-600">
-            Public information about the publication
+            Basic branding information about the publication
           </p>
         </div>
       </div>

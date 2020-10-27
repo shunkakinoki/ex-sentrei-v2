@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
-export default function SettingsNotificationsSection(): JSX.Element {
+export default function DashboardSettingsNotificationsSection(): JSX.Element {
   return (
     <div className="px-1 sm:px-2 md:px-3 md:grid md:grid-cols-3 md:gap-6">
       <div className="md:col-span-1">
