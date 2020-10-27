@@ -1,3 +1,15 @@
+# [1.47.0](https://github.com/sentrei/sentrei/compare/v1.46.4...v1.47.0) (2020-10-27)
+
+### Features
+
+- 🎸 ini editor header ([ed4127d](https://github.com/sentrei/sentrei/commit/ed4127df4f53b9c99de2b75d46368d8d5568b759))
+
+### Performance Improvements
+
+- ⚡️ ini demo editor screen ([20e28e5](https://github.com/sentrei/sentrei/commit/20e28e54352f84613d20648df36f0738ba61077a))
+- ⚡️ ini editor header menu button icon ([83226dd](https://github.com/sentrei/sentrei/commit/83226dd15277812f0ab2773a78696709e3a658cd))
+- ⚡️ refactor icon hover ([68f3cd1](https://github.com/sentrei/sentrei/commit/68f3cd118ce49ad4c260dcab999b0389a7b94186))
+
 ## [1.46.4](https://github.com/sentrei/sentrei/compare/v1.46.3...v1.46.4) (2020-10-27)
 
 ### Performance Improvements
