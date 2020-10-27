@@ -9,7 +9,6 @@ import {createArticles, createBlog} from "@/utils/faker";
 export type Props = Omit<BlogScreenProps, "articles" | "blog" | "total"> & {
   articles: string;
   blog: string;
-  host: string | undefined;
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async ({
