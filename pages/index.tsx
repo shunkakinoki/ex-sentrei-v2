@@ -22,6 +22,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
   );
 
   if (
+    req.headers.host?.endsWith(".vercel.app") ||
     req.headers.host === "localhost:3000" ||
     req.headers.host === "sentrei.com"
   ) {
