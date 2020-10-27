@@ -1,15 +1,14 @@
 ignores:
   [
     "autoprefixer",
+    "firebase-*",
     "postcss-import",
     "sharp",
     "tailwindcss",
-    "vercel",
     "@semantic-release/*",
     "commitizen",
     "eslint-import-resolver-typescript",
     "git-cz",
-    "typescript",
   ]
 ignore-path: .gitignore
 skip-missing: true

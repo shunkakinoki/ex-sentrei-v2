@@ -3,14 +3,22 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
 import {AppProps} from "next/app";
+import dynamic from "next/dynamic";
 import {RecoilRoot} from "recoil";
 import {SWRConfig} from "swr";
 
-import GlobalSnackbar from "@/components/GlobalAlert";
 import SeoRoot from "@/components/SeoRoot";
 import "@/styles/index.css";
 import "@/styles/nprogress.css";
 import "@/utils/nprogress";
+
+const AppRoot = dynamic(() => import("@/components/AppRoot"), {
+  ssr: false,
+});
+
+const GlobalSnackbar = dynamic(() => import("@/components/GlobalAlert"), {
+  ssr: false,
+});
 
 const CustomApp = ({Component, pageProps}: AppProps): JSX.Element => {
   return (
@@ -33,6 +41,7 @@ const CustomApp = ({Component, pageProps}: AppProps): JSX.Element => {
             },
           }}
         >
+          <AppRoot />
           <GlobalSnackbar />
           <Component {...pageProps} />
         </SWRConfig>
