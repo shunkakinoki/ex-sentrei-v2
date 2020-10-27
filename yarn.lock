@@ -9994,6 +9994,11 @@ next-seo@^4.14.0:
   resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-4.14.0.tgz#8a3243286f65606da81f6fdb0f8b1673ab5dd5a6"
   integrity sha512-HHL82n2bx1Aj0z8kpy31LoJxzWpZwC/RlXleoO5zNNjJjEGtNS7uZ+wrvAbFGUqC4V54I1sZa4f0WZV+mpOx6w==
 
+next-themes@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/next-themes/-/next-themes-0.0.6.tgz#4533f0df4bbc6f44be736591b660f00bb356e9e1"
+  integrity sha512-5xEJRXRkA6v4ocg/2LLlQT7/0HXW0PJb5FaYTrlw9v58ZClMTVK4E4ZiY2YsaVtLkst4hK3qfI25n5OeNAORtQ==
+
 next-tick@1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.1.0.tgz#1836ee30ad56d67ef281b22bd199f709449b35eb"
