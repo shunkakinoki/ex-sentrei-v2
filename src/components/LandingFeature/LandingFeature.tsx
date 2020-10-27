@@ -10,9 +10,8 @@ export default function LandingFeature(): JSX.Element {
             Engage with your audience like it&apos;s 2020.
           </h3>
           <p className="max-w-2xl mt-4 text-xl leading-7 text-gray-500 lg:mx-auto">
-            No more annnoying pop-ups to consume content. No more absurd
-            commissions for content distribution. Readers and writers deserve
-            much more in 2020.
+            No more annnoying pop-ups to read content. No more absurd
+            commissions. Readers and writers deserve much more in 2020.
           </p>
         </div>
         <div className="mt-10">
@@ -42,7 +41,7 @@ export default function LandingFeature(): JSX.Element {
                     Blazing fast
                   </h4>
                   <p className="mt-2 text-base leading-6 text-gray-500">
-                    Delight your audience with the blazing-edge web technology.
+                    Delight your audience with the cutting-edge web technology.
                   </p>
                 </div>
               </div>

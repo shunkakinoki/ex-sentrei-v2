@@ -38,8 +38,7 @@ export default function DashboardSettingsNotificationsSection(): JSX.Element {
                         Analytics
                       </label>
                       <p className="text-gray-500">
-                        Recieve periodic digests for your analytics of your
-                        medium.
+                        Recieve periodic digests for dedicated analytics.
                       </p>
                     </div>
                   </div>

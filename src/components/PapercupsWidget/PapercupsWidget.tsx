@@ -7,7 +7,7 @@ export default function PapercupsWidget(): JSX.Element {
       title="Welcome to Sentrei"
       subtitle="Ask us anything in the chat window below 😊"
       newMessagePlaceholder="Start typing ..."
-      primaryColor="#ffa7d7"
+      primaryColor="##EC4899"
       greeting="Hi there! How can we help you?"
     />
   );
