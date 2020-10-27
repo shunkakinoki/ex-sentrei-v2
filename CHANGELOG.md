@@ -1,3 +1,9 @@
+## [1.46.4](https://github.com/sentrei/sentrei/compare/v1.46.3...v1.46.4) (2020-10-27)
+
+### Performance Improvements
+
+- ⚡️ ini next config ([af5af07](https://github.com/sentrei/sentrei/commit/af5af0761f6e657c7d84c73d801370d321a31bf7))
+
 ## [1.46.3](https://github.com/sentrei/sentrei/compare/v1.46.2...v1.46.3) (2020-10-27)
 
 ### Performance Improvements
