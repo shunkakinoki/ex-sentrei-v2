@@ -1,3 +1,15 @@
+# [1.52.0](https://github.com/sentrei/sentrei/compare/v1.51.0...v1.52.0) (2020-10-28)
+
+### Features
+
+- 🎸 ini auth screens ([275894a](https://github.com/sentrei/sentrei/commit/275894adb7c6baf73bdbd6683c5089b53d17c4a2))
+- 🎸 ini auth services ([16bf0dc](https://github.com/sentrei/sentrei/commit/16bf0dc767f150c3430fc97070d05754145d7be8))
+
+### Performance Improvements
+
+- ⚡️ ini auth emulator ([c9e873c](https://github.com/sentrei/sentrei/commit/c9e873cadb7b6a7c33990c44c6fded5697a236a7))
+- ⚡️ ini firebase auth ([2e72284](https://github.com/sentrei/sentrei/commit/2e7228474e181eff23031ee2c0f4370ee903e74c))
+
 # [1.51.0](https://github.com/sentrei/sentrei/compare/v1.50.0...v1.51.0) (2020-10-27)
 
 ### Features
