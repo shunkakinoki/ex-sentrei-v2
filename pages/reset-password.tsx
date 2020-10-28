@@ -1,9 +1,9 @@
 import {NextPage} from "next";
 
-import AuthScreen from "@/components/AuthScreen";
+import ResetPasswordScreen from "@/components/ResetPasswordScreen";
 
 const ResetPassword: NextPage = () => {
-  return <AuthScreen type="reset-password" />;
+  return <ResetPasswordScreen />;
 };
 
 export default ResetPassword;

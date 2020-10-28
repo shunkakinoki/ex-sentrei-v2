@@ -1,9 +1,9 @@
 import {NextPage} from "next";
 
-import AuthScreen from "@/components/AuthScreen";
+import LoginScreen from "@/components/LoginScreen";
 
 const Login: NextPage = () => {
-  return <AuthScreen type="login" />;
+  return <LoginScreen />;
 };
 
 export default Login;
