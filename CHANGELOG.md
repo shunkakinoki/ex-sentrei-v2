@@ -1,3 +1,9 @@
+## [1.52.2](https://github.com/sentrei/sentrei/compare/v1.52.1...v1.52.2) (2020-10-28)
+
+### Bug Fixes
+
+- 🐛 vercel ref firebase ([e6cc4c5](https://github.com/sentrei/sentrei/commit/e6cc4c5bfd6a52f27773ce51dfe0495197630f2a))
+
 ## [1.52.1](https://github.com/sentrei/sentrei/compare/v1.52.0...v1.52.1) (2020-10-28)
 
 ### Performance Improvements
