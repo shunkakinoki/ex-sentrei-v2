@@ -25,7 +25,7 @@
     "deploy:rules": "yarn run deploy:rules:database && yarn run deploy:rules:firestore && yarn run deploy:rules:storage",
     "deploy:rules:database": "firebase deploy -f --only database",
     "deploy:rules:database:manual": "firebase deploy --only database",
-    "deploy:rules:firestore": "firebase deploy -f --only firestore",
+    "deploy:rules:firestore": "firebase deloy -f --only firestore",
     "deploy:rules:firestore:manual": "firebase deploy --only firestore",
     "deploy:rules:storage": "firebase deploy -f --only storage",
     "deploy:rules:storage:manual": "firebase deploy --only storage",
