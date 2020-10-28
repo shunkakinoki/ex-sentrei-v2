@@ -1,3 +1,9 @@
+## [1.52.1](https://github.com/sentrei/sentrei/compare/v1.52.0...v1.52.1) (2020-10-28)
+
+### Performance Improvements
+
+- ⚡️ refactor firebase config ([37fe87c](https://github.com/sentrei/sentrei/commit/37fe87c570a2e7de6d96fa2cceecfc4259514a34))
+
 # [1.52.0](https://github.com/sentrei/sentrei/compare/v1.51.0...v1.52.0) (2020-10-28)
 
 ### Features
