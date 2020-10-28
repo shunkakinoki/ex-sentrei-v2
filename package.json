@@ -29,6 +29,7 @@
     "deploy:rules:firestore:manual": "firebase deploy --only firestore",
     "deploy:rules:storage": "firebase deploy -f --only storage",
     "deploy:rules:storage:manual": "firebase deploy --only storage",
+    "deploy:vercel": "vercel --prod --scope=sentrei",
     "dev": "next dev",
     "emulators:export": "firebase emulators:export --force ./data/",
     "emulators:start": "firebase emulators:start --import ./data --only auth,firestore --inspect-functions",
