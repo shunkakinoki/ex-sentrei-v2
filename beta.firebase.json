@@ -1,7 +1,8 @@
 {
   "emulators": {
     "auth": {
-      "host": "localhost"
+      "host": "localhost",
+      "port": 9099
     },
     "firestore": {
       "host": "localhost",
@@ -21,17 +22,11 @@
       "port": 8085
     }
   },
-  "database": {
-    "rules": "./database/rules.json"
-  },
   "firestore": {
     "indexes": "./firestore/firestore.indexes.json",
     "rules": "./firestore/firestore.rules"
   },
   "functions": {
     "source": "."
-  },
-  "storage": {
-    "rules": "./storage/storage.rules"
   }
 }
