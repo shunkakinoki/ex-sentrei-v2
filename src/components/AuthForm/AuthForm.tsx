@@ -3,18 +3,65 @@
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
+import {useRouter} from "next/router";
+import {useForm} from "react-hook-form";
 
-import useAlert from "@/hooks/useAlert";
+import {
+  logInWithEmailAndPassword,
+  sendPasswordResetEmail,
+  signInWithGoogle,
+  signUpWithEmailAndPassword,
+} from "@/services/auth";
 
 export interface Props {
   type: "login" | "signup" | "reset-password";
 }
 
-export default function AuthForm({type}: Props): JSX.Element {
-  const {alert} = useAlert();
+type Inputs = {
+  email: string;
+  password: string;
+};
 
-  const handleClick = (): void => {
-    alert("info");
+export default function AuthForm({type}: Props): JSX.Element {
+  const router = useRouter();
+  const {query} = useRouter();
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  const {register, handleSubmit} = useForm<Inputs>();
+
+  const handleGoogle = async () => {
+    await signInWithGoogle().then(async () => {
+      if (query.redirect) {
+        await router.push(String(query.redirect));
+      }
+    });
+  };
+
+  const onSubmit = async (data: Inputs) => {
+    const {email, password} = data;
+    switch (type) {
+      case "login": {
+        await logInWithEmailAndPassword(email, password).then(async () => {
+          if (query.redirect) {
+            await router.push(String(query.redirect));
+          }
+        });
+        break;
+      }
+      case "signup": {
+        await signUpWithEmailAndPassword(email, password).then(async () => {
+          if (query.redirect) {
+            await router.push(String(query.redirect));
+          }
+        });
+        break;
+      }
+      case "reset-password": {
+        await sendPasswordResetEmail(email);
+        break;
+      }
+      default:
+        break;
+    }
   };
 
   return (
@@ -41,27 +88,29 @@ export default function AuthForm({type}: Props): JSX.Element {
       <div className="mt-3 sm:mt-4 md:mt-5" />
       {type !== "reset-password" && (
         <div>
-          <div className="flex items-center justify-between py-2 md:py-3 md:justify-start">
-            <Link href="/demo/dashboard">
-              <a className="relative flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-pink-500 transition duration-150 ease-in-out bg-transparent border border-transparent border-pink-300 rounded hover:bg-pink-100 focus:border-pink-300 group focus:outline-none focus:shadow-md ">
-                <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                  <svg
-                    className="w-5 h-5 text-pink-500 transition duration-150 ease-in-out group-hover:text-pink-400"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    fill="none"
-                    strokeLinecap="round"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M17.788 5.108a9 9 0 1 0 3.212 6.892h-8" />
-                  </svg>
-                </span>
-                {type === "login" && "Login with Google"}
-                {type === "signup" && "Sign up with Google"}
-              </a>
-            </Link>
-          </div>
+          <button
+            type="button"
+            onClick={handleGoogle}
+            className="flex items-center justify-between w-full py-2 md:py-3 md:justify-start"
+          >
+            <a className="relative flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-pink-500 transition duration-150 ease-in-out bg-transparent border border-transparent border-pink-300 rounded hover:bg-pink-100 focus:border-pink-300 group focus:outline-none focus:shadow-md ">
+              <span className="absolute inset-y-0 left-0 flex items-center pl-3">
+                <svg
+                  className="w-5 h-5 text-pink-500 transition duration-150 ease-in-out group-hover:text-pink-400"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  fill="none"
+                  strokeLinecap="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M17.788 5.108a9 9 0 1 0 3.212 6.892h-8" />
+                </svg>
+              </span>
+              {type === "login" && "Login with Google"}
+              {type === "signup" && "Sign up with Google"}
+            </a>
+          </button>
           <div className="flex items-center">
             <div className="flex-grow w-full m-2 border-t border-gray-300" />
             <div className="flex-shrink px-4 py-1 m-2 text-center text-gray-500 ">
@@ -71,11 +120,17 @@ export default function AuthForm({type}: Props): JSX.Element {
           </div>
         </div>
       )}
-      <form className="py-2 mt-2" action="#" method="POST">
+      <form
+        className="py-2 mt-2"
+        action="#"
+        method="POST"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <input type="hidden" name="remember" value="true" />
         <div className="rounded-md shadow-sm">
           <div>
             <input
+              ref={register({required: true})}
               aria-label="Email address"
               name="email"
               type="email"
@@ -91,6 +146,7 @@ export default function AuthForm({type}: Props): JSX.Element {
           {type !== "reset-password" && (
             <div className="-mt-px">
               <input
+                ref={register({required: true})}
                 aria-label="Password"
                 name="password"
                 type="password"
@@ -106,7 +162,6 @@ export default function AuthForm({type}: Props): JSX.Element {
             {type !== "reset-password" && (
               <>
                 <input
-                  onClick={handleClick}
                   id="remember_me"
                   type="checkbox"
                   className="w-4 h-4 text-pink-600 transition duration-150 ease-in-out form-checkbox"
@@ -136,29 +191,30 @@ export default function AuthForm({type}: Props): JSX.Element {
           </div>
         </div>
         <div className="mt-6">
-          <Link href="/demo/dashboard">
-            <a className="relative flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-pink-400 border border-transparent rounded-md group focus:outline-none focus:border-pink-500 focus:shadow-md active:text-pink-200">
-              <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                <svg
-                  className="w-6 h-6 transition duration-150 ease-in-out "
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                  />
-                </svg>
-              </span>
-              {type === "login" && "Login"}
-              {type === "signup" && "Signup"}
-              {type === "reset-password" && "Reset password"}
-            </a>
-          </Link>
+          <button
+            type="submit"
+            className="relative flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-pink-400 border border-transparent rounded-md group focus:outline-none focus:border-pink-500 focus:shadow-md active:text-pink-200"
+          >
+            <span className="absolute inset-y-0 left-0 flex items-center pl-3">
+              <svg
+                className="w-6 h-6 transition duration-150 ease-in-out "
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                />
+              </svg>
+            </span>
+            {type === "login" && "Login"}
+            {type === "signup" && "Signup"}
+            {type === "reset-password" && "Reset password"}
+          </button>
         </div>
         <div className="text-sm leading-5 text-center">
           {type === "login" && (
