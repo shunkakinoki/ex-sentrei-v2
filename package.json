@@ -83,6 +83,8 @@
     }
   },
   "dependencies": {
+    "@firebase/firestore-types": "^2.0.0",
+    "@google-cloud/firestore": "^4.5.0",
     "@headlessui/react": "^0.2.0",
     "@next/eslint-plugin-next": "^10.0.0",
     "@papercups-io/chat-widget": "^1.1.1",

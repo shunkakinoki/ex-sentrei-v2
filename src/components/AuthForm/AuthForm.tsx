@@ -11,7 +11,7 @@ import {
   sendPasswordResetEmail,
   signInWithGoogle,
   signUpWithEmailAndPassword,
-} from "@/services/auth";
+} from "@/utils/auth";
 
 export interface Props {
   type: "login" | "signup" | "reset-password";

@@ -24,6 +24,6 @@
     }
   },
   "compileOnSave": true,
-  "include": ["pages/**/*", "src/**/*", "next-env.d.ts"],
+  "include": ["pages/**/*", "src/**/*", "*.d.ts"],
   "exclude": ["node_modules"]
 }

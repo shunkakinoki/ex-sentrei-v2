@@ -1361,7 +1361,7 @@
     faye-websocket "0.11.3"
     tslib "^1.11.1"
 
-"@firebase/firestore-types@2.0.0":
+"@firebase/firestore-types@2.0.0", "@firebase/firestore-types@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@firebase/firestore-types/-/firestore-types-2.0.0.tgz#1f6212553b240f1a8905bb8dcf1f87769138c5c0"
   integrity sha512-ZGb7p1SSQJP0Z+kc9GAUi+Fx5rJatFddBrS1ikkayW+QHfSIz0omU23OgSHcBGTxe8dJCeKiKA2Yf+tkDKO/LA==
@@ -1535,7 +1535,7 @@
     retry-request "^4.1.1"
     teeny-request "^7.0.0"
 
-"@google-cloud/firestore@^4.0.0":
+"@google-cloud/firestore@^4.0.0", "@google-cloud/firestore@^4.5.0":
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/@google-cloud/firestore/-/firestore-4.5.0.tgz#6308fda60496b662680241ccc7c7bee4516b8ff9"
   integrity sha512-sExt4E+TlBqyv4l/av6kBZ4YGS99Cc3P5UvLRNj9z41mT9ekPGhIzptbj4K6O7h0KCyDIDOiJdi4gUPH9lip4g==
