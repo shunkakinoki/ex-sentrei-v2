@@ -1,4 +1,5 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
     "module": "commonjs",
     "noImplicitReturns": true,
@@ -6,10 +7,12 @@
     "outDir": "lib",
     "sourceMap": true,
     "strict": true,
-    "target": "es2017"
+    "target": "es2017",
+    "paths": {
+      "@/*": ["../src/*"]
+    }
   },
   "compileOnSave": true,
-  "include": [
-    "src"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }
