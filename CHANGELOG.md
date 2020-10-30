@@ -1,3 +1,14 @@
+# [1.56.0](https://github.com/sentrei/sentrei/compare/v1.55.0...v1.56.0) (2020-10-30)
+
+### Features
+
+- 🎸 ini functions recoil ([b27d731](https://github.com/sentrei/sentrei/commit/b27d73103df43c7b4945b8e8476c94fc11d61d2a))
+- 🎸 ini global auth ([58f5d2c](https://github.com/sentrei/sentrei/commit/58f5d2ce958eef75a8465c435c68717cc41be535))
+
+### Performance Improvements
+
+- ⚡️ ini data dir ([57b79b4](https://github.com/sentrei/sentrei/commit/57b79b4c982c76c1c9fee5bf77e1edff298748c0))
+
 # [1.55.0](https://github.com/sentrei/sentrei/compare/v1.54.0...v1.55.0) (2020-10-30)
 
 ### Features
