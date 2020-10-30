@@ -27,7 +27,7 @@
     "deploy:vercel": "vercel --prod --scope=sentrei",
     "dev": "next dev",
     "emulators:export": "firebase emulators:export --force ./data/",
-    "emulators:start": "firebase emulators:start --import ./data --only auth,firestore,functions,pubsub --inspect-functions",
+    "emulators:start": "GCLOUD_PROJECT=sentrei-dev firebase emulators:start --import ./data --only auth,firestore,functions,pubsub --inspect-functions --export-on-exit=./data/",
     "env:get": "firebase functions:config:get > .runtimeconfig.json",
     "env:pull": "vercel env pull .env.local",
     "env:set": "test -f env.json && firebase functions:config:unset env && firebase functions:config:set env=\"$(cat env.json)\"",
