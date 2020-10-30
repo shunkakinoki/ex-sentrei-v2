@@ -3,9 +3,9 @@ export default function FooterRoot(): JSX.Element {
     <div className="pt-10">
       <div className="flex px-3 pt-5 pb-5 text-gray-600 border-t-2 border-gray-100">
         <div className="mt-2">
-          Sentrei Inc.&copy; Copyright 2020. All Rights Reserved. v
+          Sentrei Inc.&copy; Copyright 2020. All Rights Reserved. &nbsp;v
           {process.env.SENTREI_VERSION}
-          {process.env.VERCEL_GITHUB_COMMIT_REF}
+          &nbsp;{process.env.VERCEL_GITHUB_COMMIT_REF}
         </div>
       </div>
     </div>
