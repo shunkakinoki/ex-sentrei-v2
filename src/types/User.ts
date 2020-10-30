@@ -8,7 +8,6 @@ declare namespace User {
     name: string;
     email: string | null;
     lastSpaceId?: string;
-    notificationCount: FirebaseFirestore.FieldValue | number;
     role: "admin" | "moderator" | "viewer";
   }
 
