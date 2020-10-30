@@ -25,5 +25,5 @@
   },
   "compileOnSave": true,
   "include": ["pages/**/*", "src/**/*", "*.d.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["functions", "node_modules", "*.js"]
 }

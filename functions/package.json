@@ -4,6 +4,10 @@
   "engines": {
     "node": "12"
   },
+  "scripts": {
+    "eslint:check": "eslint . -c .eslintrc.json --ext .ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
+    "eslint:fix": "eslint --fix . -c .eslintrc.json --ext .ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint"
+  },
   "main": "lib/index.js",
   "dependencies": {
     "firebase-admin": "^9.3.0",

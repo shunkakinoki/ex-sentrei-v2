@@ -1,68 +1,79 @@
 {
   "extends": [
-    "airbnb-typescript",
     "plugin:prettier/recommended",
     "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:import/typescript",
-    "plugin:jsx-a11y/recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:@next/eslint-plugin-next/recommended",
-    "prettier/@typescript-eslint",
-    "prettier",
-    "prettier/react"
+    "prettier"
   ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": "tsconfig.json"
-  },
-  "root": true,
-  "rules": {
-    "import/order": [
-      "error",
-      {
-        "alphabetize": {
-          "caseInsensitive": true,
-          "order": "asc"
-        },
-        "groups": [
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "builtin",
-          "index"
-        ],
-        "pathGroups": [
+  "overrides": [
+    {
+      "extends": [
+        "airbnb-typescript",
+        "plugin:prettier/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript",
+        "plugin:jsx-a11y/recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:@next/eslint-plugin-next/recommended",
+        "prettier/@typescript-eslint",
+        "prettier",
+        "prettier/react"
+      ],
+      "files": ["src/**/*.ts", "src/**/*.tsx"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": "tsconfig.json"
+      },
+      "plugins": ["@typescript-eslint"],
+      "rules": {
+        "import/order": [
+          "error",
           {
-            "pattern": "@/**",
-            "group": "external",
-            "position": "after"
+            "alphabetize": {
+              "caseInsensitive": true,
+              "order": "asc"
+            },
+            "groups": [
+              "external",
+              "internal",
+              "parent",
+              "sibling",
+              "builtin",
+              "index"
+            ],
+            "pathGroups": [
+              {
+                "pattern": "@/**",
+                "group": "external",
+                "position": "after"
+              }
+            ],
+            "pathGroupsExcludedImportTypes": ["builtin"],
+            "newlines-between": "always"
           }
         ],
-        "pathGroupsExcludedImportTypes": ["builtin"],
-        "newlines-between": "always"
+        "jsx-a11y/anchor-is-valid": 0,
+        "react/react-in-jsx-scope": 0,
+        "react-hooks/exhaustive-deps": [
+          "warn",
+          {
+            "additionalHooks": "useRecoilCallback"
+          }
+        ]
+      },
+      "settings": {
+        "react": {
+          "version": "detect"
+        }
       }
-    ],
-    "jsx-a11y/anchor-is-valid": 0,
-    "react/react-in-jsx-scope": 0,
-    "react-hooks/exhaustive-deps": [
-      "warn",
-      {
-        "additionalHooks": "useRecoilCallback"
-      }
-    ]
-  },
-  "settings": {
-    "import/resolver": {
-      "typescript": {}
     },
-    "react": {
-      "version": "detect"
+    {
+      "files": ["functions/src/**/*.ts"]
     }
-  }
+  ],
+  "root": true
 }
