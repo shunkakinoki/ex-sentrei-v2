@@ -1,0 +1,21 @@
+{
+  "name": "functions",
+  "license": "AGPL-3.0-or-later",
+  "engines": {
+    "node": "12"
+  },
+  "scripts": {
+    "eslint:check": "eslint . -c .eslintrc.json --ext .ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
+    "eslint:fix": "eslint --fix . -c .eslintrc.json --ext .ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^9.3.0",
+    "firebase-functions": "^3.11.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.5",
+    "firebase-functions-test": "^0.2.3"
+  },
+  "private": true
+}

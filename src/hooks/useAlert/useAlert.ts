@@ -1,10 +1,18 @@
 /* eslint-disable @typescript-eslint/unbound-method */
 
+import mitt from "mitt";
 import {useEffect, useState} from "react";
 import {useRecoilState, atom} from "recoil";
 
 import {AlertAction, AlertEmitter} from "@/types/Alert";
-import alert from "@/utils/alert";
+
+const emitter = mitt();
+
+const alert: AlertEmitter = {
+  off: emitter.off,
+  on: emitter.on,
+  emit: emitter.emit,
+};
 
 const alertAtom = atom<AlertEmitter>({
   key: "alert",
@@ -16,7 +24,7 @@ export default function useAlert(): {
   action: AlertAction | undefined;
   message: string | undefined;
 } {
-  const [emitter] = useRecoilState(alertAtom);
+  const [alertEmitter] = useRecoilState(alertAtom);
 
   const [action, setAction] = useState<AlertAction>();
   const [message, setMessage] = useState<string>();
@@ -49,5 +57,5 @@ export default function useAlert(): {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [alert]);
 
-  return {alert: emitter.emit, action, message};
+  return {alert: alertEmitter.emit, action, message};
 }

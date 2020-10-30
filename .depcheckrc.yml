@@ -5,9 +5,11 @@ ignores:
     "postcss-import",
     "sharp",
     "tailwindcss",
+    "@next/*",
     "@semantic-release/*",
+    "@typescript-eslint/*",
     "commitizen",
-    "eslint-import-resolver-typescript",
+    "eslint-*",
     "git-cz",
   ]
 ignore-path: .gitignore
