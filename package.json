@@ -129,7 +129,7 @@
     "remark-gfm": "^1.0.0",
     "sharp": "^0.26.2",
     "swr": "^0.3.7",
-    "tailwindcss": "^2.0.0-alpha.2",
+    "tailwindcss": "^2.0.0-alpha.5",
     "tailwindcss-truncate-multiline": "^1.0.3",
     "typed.js": "^2.0.11"
   },
