@@ -10,6 +10,7 @@
   "author": "Shun Kakinoki",
   "scripts": {
     "alpha": "yarn run local:alpha && yarn run deploy",
+    "analyze": "ANALYZE=true yarn run build",
     "beta": "yarn run local:beta && yarn run deploy",
     "build": "next build",
     "check": "yarn run depcheck && yarn run lint && yarn run release:check",
@@ -96,6 +97,7 @@
   "dependencies": {
     "@headlessui/react": "^0.2.0",
     "@next/eslint-plugin-next": "^10.0.0",
+    "@next/bundle-analyzer": "^10.0.0",
     "@papercups-io/chat-widget": "^1.1.1",
     "@toast-ui/editor": "^2.5.0",
     "@toast-ui/react-editor": "^2.5.0",
