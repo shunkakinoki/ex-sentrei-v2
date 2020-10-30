@@ -10000,10 +10000,10 @@ next-seo@^4.14.1:
   resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-4.14.1.tgz#0ff5472da3dd3067a28c78026208525f310ed676"
   integrity sha512-Te1wBcRoSht1BaL2f9Dh3ZEPYAcltgeIgierZqIZ1knfNMjt17A4x+Y0xxZgZmQjanqAbKcozaLgq7h0rzhEaA==
 
-next-themes@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/next-themes/-/next-themes-0.0.6.tgz#4533f0df4bbc6f44be736591b660f00bb356e9e1"
-  integrity sha512-5xEJRXRkA6v4ocg/2LLlQT7/0HXW0PJb5FaYTrlw9v58ZClMTVK4E4ZiY2YsaVtLkst4hK3qfI25n5OeNAORtQ==
+next-themes@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/next-themes/-/next-themes-0.0.8.tgz#2a1748317085afbc2509e2c32bd04af4f0f6cb7d"
+  integrity sha512-dyrh+/bZW4hkecFEg2rfwOLLzU2UnE7KfiwcV0mIwkPrO+1n1WvwkC8nabgKA5Eoi8stkYfjmA72FxTaWEOHtg==
 
 next-tick@1:
   version "1.1.0"
@@ -12137,10 +12137,10 @@ readdirp@~3.4.0:
   dependencies:
     picomatch "^2.2.1"
 
-recoil@^0.0.13:
-  version "0.0.13"
-  resolved "https://registry.yarnpkg.com/recoil/-/recoil-0.0.13.tgz#23e6d63135c07d8defbd91aaa35dca94ec5c15a6"
-  integrity sha512-2OToaQ8GR//KsdKdaEhMi04QKStLGRpk3qjC58iBpZpUtsByZ4dUy2UJtRcYuhnVlltGZ8HNwcEQRdFOS864SQ==
+recoil@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/recoil/-/recoil-0.1.1.tgz#9490eb4c192e022731df164bbe564a857c87ff81"
+  integrity sha512-3tBDWb/21DS1XA3mHRwA0cAfiyBhWN0PSxKxEWmZzh4bX0XQI/NGcq5fU35Wp6uMlJnRZ3O6bpTTb+48nVrXrA==
 
 redent@^3.0.0:
   version "3.0.0"
