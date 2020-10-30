@@ -7,6 +7,13 @@ import User from "@/types/User";
 
 const db = admin.firestore();
 
+function getNameFromEmail(email: string): string {
+  if (email.lastIndexOf("@") === -1) {
+    return email;
+  }
+  return email.substring(0, email.lastIndexOf("@"));
+}
+
 /**
  * Setup profile on user create
  */
@@ -21,23 +28,15 @@ const userBatchSet = functions.auth.user().onCreate(async user => {
   const profileData: Profile.Response = {
     name: user.displayName || getNameFromEmail(user.email || user.uid),
     namespaceId: user.uid,
-    photo: user.photoURL || null,
-    photoHash: null,
+    image: user.photoURL || null,
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const userData: User.Response = {
     ...profileData,
-    duration: 0,
-    email: user.email,
+    email: user?.email || null,
     notificationCount: 0,
-    notificationSettings: {
-      chat: [],
-      general: [],
-      update: [],
-    },
-    record: 0,
     role: "viewer",
-    score: 0,
   };
 
   const namespaceRef = db.doc(`namespaces/${user.uid}`);

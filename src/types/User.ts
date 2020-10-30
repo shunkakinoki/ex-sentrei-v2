@@ -5,6 +5,7 @@ import Profile from "@/types/Profile";
 
 declare namespace User {
   export interface Fields extends Profile.Fields {
+    name: string;
     email: string | null;
     lastSpaceId?: string;
     notificationCount: FirebaseFirestore.FieldValue | number;
