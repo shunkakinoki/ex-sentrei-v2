@@ -1,7 +1,6 @@
 import {useMemo} from "react";
 import {useRecoilValue, atom} from "recoil";
 
-import firebase from "@/firebase";
 import Profile from "@/types/Profile";
 import User from "@/types/User";
 
@@ -15,7 +14,7 @@ export const userAtom = atom<User.Get | null | undefined>({
   default: undefined,
 });
 
-export const authStateAtom = atom<firebase.User | null | undefined>({
+export const authStateAtom = atom<firebase.default.User | null | undefined>({
   key: "auth",
   default: undefined,
 });
@@ -27,7 +26,7 @@ export const authInitializedAtom = atom<boolean | undefined>({
 
 export default function useAuth(): {
   isLoggedIn: boolean | undefined;
-  authState: firebase.User | null | undefined;
+  authState: firebase.default.User | null | undefined;
 } {
   const authState = useRecoilValue(authStateAtom);
   const isAuthInitialized = useRecoilValue(authInitializedAtom);
