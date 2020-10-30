@@ -23,7 +23,7 @@
     "deploy:functions": "firebase deploy -f --only functions",
     "deploy:functions:manual": "firebase deploy --only functions",
     "deploy:rules": "yarn run deploy:rules:firestore",
-    "deploy:rules:firestore": "firebase deloy -f --only firestore",
+    "deploy:rules:firestore": "firebase deploy -f --only firestore",
     "deploy:rules:firestore:manual": "firebase deploy --only firestore",
     "deploy:vercel": "vercel --prod --scope=sentrei",
     "dev": "next dev",
