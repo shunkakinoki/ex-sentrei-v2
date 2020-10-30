@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
+import {useEffect} from "react";
 import {useForm} from "react-hook-form";
 import {toast} from "react-toastify";
 import useSWR, {mutate} from "swr";
@@ -22,7 +23,7 @@ export default function SettingsSocialSection(): JSX.Element {
   );
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
-  const {register, handleSubmit} = useForm<SocialLinks>({
+  const {register, handleSubmit, reset} = useForm<SocialLinks>({
     defaultValues: {
       facebook: profile?.social?.facebook,
       github: profile?.social?.github,
@@ -53,6 +54,18 @@ export default function SettingsSocialSection(): JSX.Element {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     return mutate(`profiles/${authState.uid}`);
   };
+
+  useEffect(() => {
+    if (profile) {
+      reset({
+        facebook: profile?.social?.facebook,
+        github: profile?.social?.github,
+        instagram: profile?.social?.instagram,
+        twitter: profile?.social?.twitter,
+        website: profile?.social?.website,
+      });
+    }
+  }, [reset, profile]);
 
   return (
     <div className="px-1 sm:px-2 md:px-3 md:grid md:grid-cols-3 md:gap-6">

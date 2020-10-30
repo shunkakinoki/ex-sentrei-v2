@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
+import {useEffect} from "react";
 import {useForm} from "react-hook-form";
 import {toast} from "react-toastify";
 import useSWR, {mutate} from "swr";
@@ -22,7 +23,7 @@ export default function SettingsProfileSection(): JSX.Element {
   );
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
-  const {register, handleSubmit} = useForm<Profile.Fields>({
+  const {register, handleSubmit, reset} = useForm<Profile.Fields>({
     defaultValues: {
       bio: profile?.bio,
       name: profile?.name,
@@ -51,6 +52,16 @@ export default function SettingsProfileSection(): JSX.Element {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     return mutate(`profiles/${authState.uid}`);
   };
+
+  useEffect(() => {
+    if (profile) {
+      reset({
+        bio: profile?.bio,
+        name: profile?.name,
+        namespaceId: profile?.namespaceId,
+      });
+    }
+  }, [reset, profile]);
 
   return (
     <div className="px-1 sm:px-2 md:px-3 md:grid md:grid-cols-3 md:gap-6">
