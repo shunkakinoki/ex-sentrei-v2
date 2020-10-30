@@ -36,7 +36,7 @@ export default function AuthForm({type}: Props): JSX.Element {
           await router.push(String(query.redirect));
         }
       })
-      .catch(err => {
+      .catch((err: Error) => {
         toast.error(err);
       });
   };
@@ -51,7 +51,7 @@ export default function AuthForm({type}: Props): JSX.Element {
               await router.push(String(query.redirect));
             }
           })
-          .catch(err => {
+          .catch((err: Error) => {
             toast.error(err);
           });
         break;
@@ -63,13 +63,13 @@ export default function AuthForm({type}: Props): JSX.Element {
               await router.push(String(query.redirect));
             }
           })
-          .catch(err => {
-            toast.error(err);
+          .catch((err: Error) => {
+            toast.error(err.message);
           });
         break;
       }
       case "reset-password": {
-        await sendPasswordResetEmail(email).catch(err => {
+        await sendPasswordResetEmail(email).catch((err: Error) => {
           toast.error(err);
         });
         break;
