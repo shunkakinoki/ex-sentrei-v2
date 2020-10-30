@@ -28,7 +28,7 @@ const firebaseConfig = {
 
 if (!firebase.apps.length) {
   firebase.initializeApp(
-    process.env.NEXT_PUBLIC_VERCEL_GITHUB_COMMIT_REF === "refs/heads/main"
+    process.env.VERCEL_GITHUB_COMMIT_REF === "refs/heads/main"
       ? firebaseConfig
       : betaConfig,
   );
