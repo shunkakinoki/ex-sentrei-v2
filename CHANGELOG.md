@@ -1,3 +1,9 @@
+# [1.55.0](https://github.com/sentrei/sentrei/compare/v1.54.0...v1.55.0) (2020-10-30)
+
+### Features
+
+- 🎸 ini functions ([ba229bf](https://github.com/sentrei/sentrei/commit/ba229bfffcb55b6f3ee0e1c3bcdae03155cf604b))
+
 # [1.54.0](https://github.com/sentrei/sentrei/compare/v1.53.2...v1.54.0) (2020-10-30)
 
 ### Features
