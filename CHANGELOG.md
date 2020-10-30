@@ -1,3 +1,9 @@
+## [1.58.1](https://github.com/sentrei/sentrei/compare/v1.58.0...v1.58.1) (2020-10-30)
+
+### Performance Improvements
+
+- ⚡️ upgrade packages ncu ([c58ab44](https://github.com/sentrei/sentrei/commit/c58ab4486244d09dcce05fdf61d0dbc20aca5ea3))
+
 # [1.58.0](https://github.com/sentrei/sentrei/compare/v1.57.1...v1.58.0) (2020-10-30)
 
 ### Features
