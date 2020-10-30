@@ -1,3 +1,20 @@
+## [1.58.2](https://github.com/sentrei/sentrei/compare/v1.58.1...v1.58.2) (2020-10-30)
+
+### Bug Fixes
+
+- 🐛 update firestore alpha ([6413a8a](https://github.com/sentrei/sentrei/commit/6413a8aa74da4db80902d93c07b39fa3934f8c57))
+
+### Performance Improvements
+
+- ⚡️ ini form social ([6ae39a6](https://github.com/sentrei/sentrei/commit/6ae39a67ab91f9be499f7be68b70320c4786948c))
+- ⚡️ ini formstate dirty for swr reset ([77c5037](https://github.com/sentrei/sentrei/commit/77c5037840593ad602c9ed504134a93b7665fb40))
+- ⚡️ ini profile form ([432a820](https://github.com/sentrei/sentrei/commit/432a820200f7b7c5f1cac438a1757f96a2ac8c82))
+- ⚡️ ini profile sociallinks ([c5c137d](https://github.com/sentrei/sentrei/commit/c5c137d0436a8646043cc4633f66c206145cd706))
+- ⚡️ ini success toast ([219dbd0](https://github.com/sentrei/sentrei/commit/219dbd084bc6c091add6f392ba1bab66f46adaf0))
+- ⚡️ refactor reset form ([ea72ada](https://github.com/sentrei/sentrei/commit/ea72adafcec64ff6cb10541affe97d364dc7af60))
+- ⚡️ refactor swr profiles ([74b1825](https://github.com/sentrei/sentrei/commit/74b182574d957559d503af1c57e46857c99eb53e))
+- ⚡️ tmp firebase alpha ([1cf4c4f](https://github.com/sentrei/sentrei/commit/1cf4c4f6c84d034598e08bc4a9b23c0ae896a561))
+
 ## [1.58.1](https://github.com/sentrei/sentrei/compare/v1.58.0...v1.58.1) (2020-10-30)
 
 ### Performance Improvements
