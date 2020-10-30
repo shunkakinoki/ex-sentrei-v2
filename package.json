@@ -82,7 +82,9 @@
     "test:watch:firebase": "firebase emulators:exec --only firestore 'jest --collect-coverage --watch && yarn run coverage:rules'",
     "tsc": "tsc --p tsconfig.json",
     "typescript": "yarn run clean && yarn run tsc",
-    "watch": "yarn run tsc -w --preserveWatchOutput"
+    "typescript:functions": "cd functions && yarn run typescript",
+    "watch": "yarn run tsc -w --preserveWatchOutput",
+    "watch:functions": "cd functions && yarn run watch"
   },
   "husky": {
     "hooks": {
