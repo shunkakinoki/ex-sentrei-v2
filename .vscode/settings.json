@@ -37,6 +37,7 @@
   },
   "files.exclude": {
     "**/env.json": true,
-    "**/*.env.json": true
+    "**/*.env.json": true,
+    "**/*.runtimeconfig.json": true
   }
 }
