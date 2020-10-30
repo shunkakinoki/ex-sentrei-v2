@@ -1,3 +1,13 @@
+# [1.53.0](https://github.com/sentrei/sentrei/compare/v1.52.2...v1.53.0) (2020-10-30)
+
+### Features
+
+- 🎸 ini firebase config ([52f12c3](https://github.com/sentrei/sentrei/commit/52f12c3390097bf3b05743902d9c10a6b1f1703b))
+
+### Performance Improvements
+
+- ⚡️ ini plan ([68cd79a](https://github.com/sentrei/sentrei/commit/68cd79a1353a272a02f52964213871909687f054))
+
 ## [1.52.2](https://github.com/sentrei/sentrei/compare/v1.52.1...v1.52.2) (2020-10-28)
 
 ### Bug Fixes
