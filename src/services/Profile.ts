@@ -37,3 +37,10 @@ export const getProfileLive = (
       onSnapshot(snap.data() || null);
     });
 };
+
+export const updateProfile = (
+  profileId: string,
+  profile: Profile.Update,
+): Promise<void> => {
+  return db.doc(`profiles/${profileId}`).update(profile);
+};

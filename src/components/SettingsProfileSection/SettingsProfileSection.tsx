@@ -1,6 +1,39 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
+import {useForm} from "react-hook-form";
+import useSWR, {mutate} from "swr";
+
+import useAuth from "@/hooks/useAuth";
+import {getProfile, updateProfile} from "@/services/Profile";
+import Profile from "@/types/Profile";
+
+const getProfileFetcher = async (profileId: string) => {
+  return getProfile(profileId);
+};
+
 export default function SettingsProfileSection(): JSX.Element {
+  const {authState} = useAuth();
+
+  const {data: profile} = useSWR(
+    authState?.uid ? authState.uid : null,
+    getProfileFetcher,
+  );
+
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  const {register, handleSubmit} = useForm<Profile.Fields>();
+
+  const onSubmit = (data: Profile.Fields) => {
+    if (!authState?.uid) {
+      return null;
+    }
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    mutate(authState?.uid, data, false);
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    updateProfile(authState?.uid, data);
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    return mutate(authState.uid);
+  };
+
   return (
     <div className="px-1 sm:px-2 md:px-3 md:grid md:grid-cols-3 md:gap-6">
       <div className="md:col-span-1">
@@ -14,42 +47,63 @@ export default function SettingsProfileSection(): JSX.Element {
         </div>
       </div>
       <div className="mt-5 md:mt-0 md:col-span-2">
-        <form action="#" method="POST">
+        <form action="#" method="POST" onSubmit={handleSubmit(onSubmit)}>
           <div className="shadow-lg sm:rounded-md sm:overflow-hidden">
             <div className="px-4 py-5 bg-white sm:p-6">
               <div className="grid grid-cols-3 gap-6">
                 <div className="col-span-3 sm:col-span-2">
                   <label
-                    htmlFor="profile_website"
+                    htmlFor="profile_username"
                     className="block text-sm font-medium leading-5 text-gray-700"
                   >
-                    Website
+                    Username
                   </label>
                   <div className="flex mt-1 rounded-md shadow-sm">
                     <span className="inline-flex items-center px-3 text-sm text-gray-500 border border-r-0 border-gray-300 rounded-l-md bg-gray-50">
-                      http://
+                      https://sentrei.com/
                     </span>
                     <input
-                      id="profile_website"
+                      ref={register}
+                      id="profile_username"
                       className="flex-1 block w-full px-3 py-1 transition duration-150 ease-in-out border border-gray-300 rounded-none form-input rounded-r-md sm:text-sm sm:leading-5"
-                      placeholder="www.example.com"
+                      placeholder="shunkakinoki"
+                      value={profile?.namespaceId}
+                    />
+                  </div>
+                </div>
+                <div className="col-span-3 sm:col-span-2">
+                  <label
+                    htmlFor="profile_name"
+                    className="block text-sm font-medium leading-5 text-gray-700"
+                  >
+                    Name
+                  </label>
+                  <div className="flex mt-1 rounded-md shadow-sm">
+                    <input
+                      ref={register}
+                      id="profile_name"
+                      className="flex-1 block w-full px-3 py-1 transition duration-150 ease-in-out border border-gray-300 rounded-none form-input rounded-l-md rounded-r-md sm:text-sm sm:leading-5"
+                      placeholder="Shun Kakinoki"
+                      value={profile?.name}
                     />
                   </div>
                 </div>
               </div>
               <div className="mt-6">
                 <label
-                  htmlFor="about"
+                  htmlFor="bio"
                   className="block text-sm font-medium leading-5 text-gray-700"
                 >
-                  About
+                  Bio
                 </label>
                 <div className="rounded-md shadow-sm">
                   <textarea
-                    id="about"
+                    ref={register}
+                    id="bio"
                     rows={3}
                     className="block w-full p-2 mt-1 transition duration-150 ease-in-out border form-textarea sm:text-sm sm:leading-5"
                     placeholder="you@example.com"
+                    value={profile?.bio ?? ""}
                   />
                 </div>
                 <p className="mt-2 text-sm text-gray-500">
