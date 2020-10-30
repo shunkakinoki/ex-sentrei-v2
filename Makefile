@@ -56,9 +56,9 @@ secrets-set-main:
 	gcloud secrets versions add "functions_main_env" --data-file="main.env.json"
 
 firestore-delete-alpha:
-	yarn run alpha:local
-	yarn run firebase firestore:delete --all-collections 
+	yarn run local:alpha
+	yarn run firebase firestore:delete --all-collections
 
 firestore-delete-beta:
-	yarn run beta:local
-	yarn run firebase firestore:delete --all-collections 
+	yarn run local:beta
+	yarn run firebase firestore:delete --all-collections
