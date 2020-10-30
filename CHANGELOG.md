@@ -1,3 +1,9 @@
+## [1.57.1](https://github.com/sentrei/sentrei/compare/v1.57.0...v1.57.1) (2020-10-30)
+
+### Bug Fixes
+
+- 🐛 header chunksize reduce ([812e5dd](https://github.com/sentrei/sentrei/commit/812e5dde81a461e8d9c09ca14a5ae9441351accb))
+
 # [1.57.0](https://github.com/sentrei/sentrei/compare/v1.56.0...v1.57.0) (2020-10-30)
 
 ### Features
