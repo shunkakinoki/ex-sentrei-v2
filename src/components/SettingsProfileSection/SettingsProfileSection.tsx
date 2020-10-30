@@ -20,7 +20,13 @@ export default function SettingsProfileSection(): JSX.Element {
   );
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
-  const {register, handleSubmit} = useForm<Profile.Fields>();
+  const {register, handleSubmit} = useForm<Profile.Fields>({
+    defaultValues: {
+      bio: profile?.bio,
+      name: profile?.name,
+      namespaceId: profile?.namespaceId,
+    },
+  });
 
   const onSubmit = (data: Profile.Fields) => {
     if (!authState?.uid) {
@@ -65,9 +71,9 @@ export default function SettingsProfileSection(): JSX.Element {
                     <input
                       ref={register}
                       id="profile_username"
+                      name="namespaceId"
                       className="flex-1 block w-full px-3 py-1 transition duration-150 ease-in-out border border-gray-300 rounded-none form-input rounded-r-md sm:text-sm sm:leading-5"
                       placeholder="shunkakinoki"
-                      value={profile?.namespaceId}
                     />
                   </div>
                 </div>
@@ -81,10 +87,10 @@ export default function SettingsProfileSection(): JSX.Element {
                   <div className="flex mt-1 rounded-md shadow-sm">
                     <input
                       ref={register}
-                      id="profile_name"
+                      name="name"
+                      id="name"
                       className="flex-1 block w-full px-3 py-1 transition duration-150 ease-in-out border border-gray-300 rounded-none form-input rounded-l-md rounded-r-md sm:text-sm sm:leading-5"
                       placeholder="Shun Kakinoki"
-                      value={profile?.name}
                     />
                   </div>
                 </div>
@@ -99,11 +105,11 @@ export default function SettingsProfileSection(): JSX.Element {
                 <div className="rounded-md shadow-sm">
                   <textarea
                     ref={register}
+                    name="bio"
                     id="bio"
                     rows={3}
                     className="block w-full p-2 mt-1 transition duration-150 ease-in-out border form-textarea sm:text-sm sm:leading-5"
                     placeholder="you@example.com"
-                    value={profile?.bio ?? ""}
                   />
                 </div>
                 <p className="mt-2 text-sm text-gray-500">
