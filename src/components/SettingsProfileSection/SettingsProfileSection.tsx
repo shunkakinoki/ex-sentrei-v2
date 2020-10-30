@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
 import {useForm} from "react-hook-form";
+import {toast} from "react-toastify";
 import useSWR, {mutate} from "swr";
 
 import useAuth from "@/hooks/useAuth";
@@ -35,7 +36,17 @@ export default function SettingsProfileSection(): JSX.Element {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     mutate(authState?.uid, data, false);
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    updateProfile(authState?.uid, data);
+    updateProfile(authState?.uid, data)
+      .then(() =>
+        toast.success("Success", {
+          autoClose: 1500,
+          hideProgressBar: true,
+          draggable: false,
+        }),
+      )
+      .catch((err: Error) => {
+        toast.error(err.message);
+      });
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     return mutate(authState.uid);
   };
