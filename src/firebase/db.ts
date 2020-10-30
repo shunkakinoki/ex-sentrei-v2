@@ -1,14 +1,14 @@
 import firebase from "@/firebase";
-import "firebase/auth";
+import "firebase/firestore";
 
 const db = firebase.firestore();
 
-if (window.location.hostname === "localhost") {
-  db.settings({
-    host: "localhost:8080",
-    ssl: false,
-  });
-}
+// if (window.location.hostname === "localhost") {
+//   db.settings({
+//     host: "localhost:8080",
+//     ssl: false,
+//   });
+// }
 
 export const timestamp = firebase.firestore.FieldValue.serverTimestamp();
 

@@ -35,7 +35,6 @@ const userBatchSet = functions.auth.user().onCreate(async user => {
   const userData: User.Response = {
     ...profileData,
     email: user?.email || null,
-    notificationCount: 0,
     role: "viewer",
   };
 

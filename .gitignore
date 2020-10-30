@@ -1,4 +1,7 @@
 firebase.json
+env.json
+*.env.json
+.runtimeconfig.json
 
 # Logs
 logs

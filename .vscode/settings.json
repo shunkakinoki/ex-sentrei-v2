@@ -5,6 +5,11 @@
       "mode": "auto"
     }
   ],
+  "files.exclude": {
+    "**/*.env.json": true,
+    "**/*.runtimeconfig.json": true,
+    "**/env.json": true
+  },
   "i18n-ally.enabledFrameworks": ["i18next", "react"],
   "i18n-ally.enabledParsers": ["js", "json", "ts"],
   "i18n-ally.keystyle": "nested",
