@@ -1,3 +1,9 @@
+## [1.53.1](https://github.com/sentrei/sentrei/compare/v1.53.0...v1.53.1) (2020-10-30)
+
+### Performance Improvements
+
+- ⚡️ iini env config ([8e06053](https://github.com/sentrei/sentrei/commit/8e06053c879d0d63034a4804f13c66f2c65ebb7c))
+
 # [1.53.0](https://github.com/sentrei/sentrei/compare/v1.52.2...v1.53.0) (2020-10-30)
 
 ### Features
