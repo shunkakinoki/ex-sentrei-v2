@@ -22,7 +22,7 @@
     "depcheck": "depcheck .",
     "deploy:functions": "firebase deploy -f --only functions",
     "deploy:functions:manual": "firebase deploy --only functions",
-    "deploy:rules": "yarn run deploy:rules:database && yarn run deploy:rules:firestore && yarn run deploy:rules:storage",
+    "deploy:rules": "yarn run deploy:rules:firestore",
     "deploy:rules:firestore": "firebase deloy -f --only firestore",
     "deploy:rules:firestore:manual": "firebase deploy --only firestore",
     "deploy:vercel": "vercel --prod --scope=sentrei",
