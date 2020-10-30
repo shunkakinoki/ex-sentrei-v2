@@ -23,16 +23,16 @@ export default function SettingsProfileSection(): JSX.Element {
                     htmlFor="profile_website"
                     className="block text-sm font-medium leading-5 text-gray-700"
                   >
-                    Website
+                    Username
                   </label>
                   <div className="flex mt-1 rounded-md shadow-sm">
                     <span className="inline-flex items-center px-3 text-sm text-gray-500 border border-r-0 border-gray-300 rounded-l-md bg-gray-50">
-                      http://
+                      https://sentrei.com/
                     </span>
                     <input
                       id="profile_website"
                       className="flex-1 block w-full px-3 py-1 transition duration-150 ease-in-out border border-gray-300 rounded-none form-input rounded-r-md sm:text-sm sm:leading-5"
-                      placeholder="www.example.com"
+                      placeholder="shunkakinoki"
                     />
                   </div>
                 </div>
