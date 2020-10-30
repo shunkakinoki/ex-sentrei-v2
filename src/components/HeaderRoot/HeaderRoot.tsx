@@ -5,11 +5,8 @@ import Link from "next/link";
 import HeaderDemoMenu from "@/components/HeaderDemoMenu";
 import HeaderMobileMenu from "@/components/HeaderMobileMenu";
 import HeaderProfileMenu from "@/components/HeaderProfileMenu";
-import useAuth from "@/hooks/useAuth";
 
 export default function HeaderRoot(): JSX.Element {
-  const {isLoggedIn} = useAuth();
-
   return (
     <div className="relative z-20">
       <div className="px-4 mx-auto sm:px-6">
@@ -91,47 +88,42 @@ export default function HeaderRoot(): JSX.Element {
             </Link>
           </nav>
           <div className="items-center justify-end hidden space-x-8 md:flex md:flex-1 lg:w-0">
-            {isLoggedIn ? (
-              <div className="relative ml-3">
-                <Menu>
-                  {({open}) => (
-                    <>
-                      <Menu.Button
-                        className="flex text-sm transition duration-150 ease-in-out border-2 border-transparent rounded-full focus:outline-none focus:border-white"
-                        aria-label="Profile menu"
-                        aria-haspopup="true"
-                      >
-                        <Image
-                          src="/assets/logo.png"
-                          priority
-                          unsized
-                          alt="Profile"
-                          className="w-8 h-8 rounded-full"
-                        />
-                      </Menu.Button>
-                      <span className="z-30 ">
-                        <HeaderProfileMenu open={open} />
-                      </span>
-                    </>
-                  )}
-                </Menu>
-              </div>
-            ) : (
-              <>
-                <Link href="/login">
-                  <a className="text-base font-medium leading-6 text-gray-600 whitespace-no-wrap hover:text-pink-400">
-                    Log in
-                  </a>
-                </Link>
-                <span className="inline-flex rounded-md shadow-sm">
-                  <Link href="/signup">
-                    <a className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap transition duration-150 ease-in-out bg-pink-400 border border-transparent rounded-md hover:bg-pink-500 focus:outline-none focus:border-pink-800 focus:shadow-outline-pink active:bg-pink-700">
-                      Sign up
-                    </a>
-                  </Link>
-                </span>
-              </>
-            )}
+            <Link href="/login">
+              <a className="text-base font-medium leading-6 text-gray-600 whitespace-no-wrap hover:text-pink-400">
+                Log in
+              </a>
+            </Link>
+            <span className="inline-flex rounded-md shadow-sm">
+              <Link href="/signup">
+                <a className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap transition duration-150 ease-in-out bg-pink-400 border border-transparent rounded-md hover:bg-pink-500 focus:outline-none focus:border-pink-800 focus:shadow-outline-pink active:bg-pink-700">
+                  Sign up
+                </a>
+              </Link>
+            </span>
+            <div className="relative ml-3">
+              <Menu>
+                {({open}) => (
+                  <>
+                    <Menu.Button
+                      className="flex text-sm transition duration-150 ease-in-out border-2 border-transparent rounded-full focus:outline-none focus:border-white"
+                      aria-label="Profile menu"
+                      aria-haspopup="true"
+                    >
+                      <Image
+                        src="/assets/logo.png"
+                        priority
+                        unsized
+                        alt="Profile"
+                        className="w-8 h-8 rounded-full"
+                      />
+                    </Menu.Button>
+                    <span className="z-30 ">
+                      <HeaderProfileMenu open={open} />
+                    </span>
+                  </>
+                )}
+              </Menu>
+            </div>
           </div>
         </div>
       </div>
