@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {useRouter} from "next/router";
 import {useForm} from "react-hook-form";
+import {toast} from "react-toastify";
 
 import {
   logInWithEmailAndPassword,
@@ -29,34 +30,48 @@ export default function AuthForm({type}: Props): JSX.Element {
   const {register, handleSubmit} = useForm<Inputs>();
 
   const handleGoogle = async () => {
-    await signInWithGoogle().then(async () => {
-      if (query.redirect) {
-        await router.push(String(query.redirect));
-      }
-    });
+    await signInWithGoogle()
+      .then(async () => {
+        if (query.redirect) {
+          await router.push(String(query.redirect));
+        }
+      })
+      .catch(err => {
+        toast.error(err);
+      });
   };
 
   const onSubmit = async (data: Inputs) => {
     const {email, password} = data;
     switch (type) {
       case "login": {
-        await logInWithEmailAndPassword(email, password).then(async () => {
-          if (query.redirect) {
-            await router.push(String(query.redirect));
-          }
-        });
+        await logInWithEmailAndPassword(email, password)
+          .then(async () => {
+            if (query.redirect) {
+              await router.push(String(query.redirect));
+            }
+          })
+          .catch(err => {
+            toast.error(err);
+          });
         break;
       }
       case "signup": {
-        await signUpWithEmailAndPassword(email, password).then(async () => {
-          if (query.redirect) {
-            await router.push(String(query.redirect));
-          }
-        });
+        await signUpWithEmailAndPassword(email, password)
+          .then(async () => {
+            if (query.redirect) {
+              await router.push(String(query.redirect));
+            }
+          })
+          .catch(err => {
+            toast.error(err);
+          });
         break;
       }
       case "reset-password": {
-        await sendPasswordResetEmail(email);
+        await sendPasswordResetEmail(email).catch(err => {
+          toast.error(err);
+        });
         break;
       }
       default:
