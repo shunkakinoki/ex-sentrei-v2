@@ -6,8 +6,9 @@ ignores:
     "sharp",
     "tailwindcss",
     "@semantic-release/*",
+    "@typescript-eslint/*",
     "commitizen",
-    "eslint-import-resolver-typescript",
+    "eslint-*",
     "git-cz",
   ]
 ignore-path: .gitignore
