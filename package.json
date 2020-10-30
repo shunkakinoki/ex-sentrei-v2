@@ -96,8 +96,8 @@
   },
   "dependencies": {
     "@headlessui/react": "^0.2.0",
-    "@next/eslint-plugin-next": "^10.0.0",
     "@next/bundle-analyzer": "^10.0.0",
+    "@next/eslint-plugin-next": "^10.0.0",
     "@papercups-io/chat-widget": "^1.1.1",
     "@toast-ui/editor": "^2.5.0",
     "@toast-ui/react-editor": "^2.5.0",
