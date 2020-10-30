@@ -5,6 +5,7 @@ export default function FooterRoot(): JSX.Element {
         <div className="mt-2">
           Sentrei Inc.&copy; Copyright 2020. All Rights Reserved. v
           {process.env.SENTREI_VERSION}
+          {process.env.VERCEL_GITHUB_COMMIT_REF}
         </div>
       </div>
     </div>
