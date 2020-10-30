@@ -1,4 +1,5 @@
 firebase.json
+*.env.json
 
 # Logs
 logs
