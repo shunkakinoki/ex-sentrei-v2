@@ -9,14 +9,15 @@ import {getProfile, updateProfile} from "@/services/Profile";
 import {SocialLinks} from "@/types/Profile";
 
 const getProfileFetcher = async (profileId: string) => {
-  return getProfile(profileId);
+  const uid = profileId.replace("profiles/", "");
+  return getProfile(uid);
 };
 
 export default function SettingsSocialSection(): JSX.Element {
   const {authState} = useAuth();
 
   const {data: profile} = useSWR(
-    authState?.uid ? authState.uid : null,
+    authState?.uid ? `profiles/${authState.uid}` : null,
     getProfileFetcher,
   );
 
@@ -36,7 +37,7 @@ export default function SettingsSocialSection(): JSX.Element {
       return null;
     }
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    mutate(authState?.uid, {social: data}, false);
+    mutate(`profiles/${authState.uid}`, {social: data}, false);
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     updateProfile(authState?.uid, {social: data})
       .then(() =>
@@ -50,7 +51,7 @@ export default function SettingsSocialSection(): JSX.Element {
         toast.error(err.message);
       });
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    return mutate(authState.uid);
+    return mutate(`profiles/${authState.uid}`);
   };
 
   return (

@@ -9,14 +9,15 @@ import {getProfile, updateProfile} from "@/services/Profile";
 import Profile from "@/types/Profile";
 
 const getProfileFetcher = async (profileId: string) => {
-  return getProfile(profileId);
+  const uid = profileId.replace("profiles/", "");
+  return getProfile(uid);
 };
 
 export default function SettingsProfileSection(): JSX.Element {
   const {authState} = useAuth();
 
   const {data: profile} = useSWR(
-    authState?.uid ? authState.uid : null,
+    authState?.uid ? `profiles/${authState.uid}` : null,
     getProfileFetcher,
   );
 
@@ -34,7 +35,7 @@ export default function SettingsProfileSection(): JSX.Element {
       return null;
     }
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    mutate(authState?.uid, data, false);
+    mutate(`profiles/${authState.uid}`, data, false);
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     updateProfile(authState?.uid, data)
       .then(() =>
@@ -48,7 +49,7 @@ export default function SettingsProfileSection(): JSX.Element {
         toast.error(err.message);
       });
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    return mutate(authState.uid);
+    return mutate(`profiles/${authState.uid}`);
   };
 
   return (
