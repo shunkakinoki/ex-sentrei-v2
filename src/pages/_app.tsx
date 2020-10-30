@@ -20,7 +20,7 @@ const GlobalAuth = dynamic(() => import("@/components/GlobalAuth"), {
   ssr: false,
 });
 
-const GlobalSnackbar = dynamic(() => import("@/components/GlobalAlert"), {
+const GlobalToast = dynamic(() => import("@/components/GlobalToast"), {
   ssr: false,
 });
 
@@ -47,7 +47,7 @@ const CustomApp = ({Component, pageProps}: AppProps): JSX.Element => {
         >
           <AppRoot>
             <GlobalAuth />
-            <GlobalSnackbar />
+            <GlobalToast />
             <Component {...pageProps} />
           </AppRoot>
         </SWRConfig>

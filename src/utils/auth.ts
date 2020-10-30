@@ -23,3 +23,7 @@ export const signInWithGoogle = (): Promise<firebase.auth.UserCredential> => {
   const provider = new firebase.auth.GoogleAuthProvider();
   return auth.signInWithPopup(provider);
 };
+
+export const signOut = (): Promise<void> => {
+  return auth.signOut();
+};
