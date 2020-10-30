@@ -1,3 +1,18 @@
+# [1.54.0](https://github.com/sentrei/sentrei/compare/v1.53.2...v1.54.0) (2020-10-30)
+
+### Features
+
+- 🎸 ini firebase config ([82a2591](https://github.com/sentrei/sentrei/commit/82a2591123d2a29a8af49778a62a89cdec02005d))
+- 🎸 ini firebase service ([39b68ba](https://github.com/sentrei/sentrei/commit/39b68bab51b79b27371d9fb6721cb3f2cbd61e22))
+- 🎸 ini functions dir ([2c41297](https://github.com/sentrei/sentrei/commit/2c4129796a6bed3b8a76fc6db87b886b9f77273e))
+
+### Performance Improvements
+
+- ⚡️ ini alert model ([2771d22](https://github.com/sentrei/sentrei/commit/2771d22018fa0707f29e5289ed6ccdc355c697e6))
+- ⚡️ ini users onCreate ([d0b8421](https://github.com/sentrei/sentrei/commit/d0b84219ae93d785cd0a7e09157c7e0f7170c0e1))
+- ⚡️ migrate pages src ([6efc156](https://github.com/sentrei/sentrei/commit/6efc156207929142e5400e7c0385d155d43c7507))
+- ⚡️ refactor eslint override ([b12e00b](https://github.com/sentrei/sentrei/commit/b12e00bf6a762106639eb103672df242262c4eb8))
+
 ## [1.53.2](https://github.com/sentrei/sentrei/compare/v1.53.1...v1.53.2) (2020-10-30)
 
 ### Performance Improvements
