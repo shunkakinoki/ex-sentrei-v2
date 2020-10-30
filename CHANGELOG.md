@@ -1,3 +1,15 @@
+# [1.58.0](https://github.com/sentrei/sentrei/compare/v1.57.1...v1.58.0) (2020-10-30)
+
+### Features
+
+- 🎸 ini form profile ([a16e1bf](https://github.com/sentrei/sentrei/commit/a16e1bff7818ce622d672623b74532891943dea6))
+- 🎸 settings social section ([9abf873](https://github.com/sentrei/sentrei/commit/9abf873651548220f4b42e4eac304c37d40623b9))
+
+### Performance Improvements
+
+- ⚡️ ini profile rule ([1fa8b4c](https://github.com/sentrei/sentrei/commit/1fa8b4cb95f84241ecc63f6b0743650d741e56cd))
+- ⚡️ update username input ([dd43ba9](https://github.com/sentrei/sentrei/commit/dd43ba978d2ac1d2fa55b48ca98b7ffcaa0ae03c))
+
 ## [1.57.1](https://github.com/sentrei/sentrei/compare/v1.57.0...v1.57.1) (2020-10-30)
 
 ### Bug Fixes
