@@ -53,19 +53,28 @@ Day 7
 Day 8
 
 - Complete dashboard pages
-- Finish WYSIWYG Editor
 
 Day 9
+
+- Finish WYSIWYG Editor
+
+Day 10
+
+- Integrate global recoil
+
+Day 11
+
+Day 12
 
 - Integrate backend w/ firebase (profile, signup, editor)
 
-Day 9
+Day 13
 
 - Connect Stripe & Sendgrid
 - Connect Cloudinary for images
 - Integrate analytics
 
-Day 10
+Day 14
 
 - Complete refurbished landing page
 - Marketing & Refactoring + Launch
