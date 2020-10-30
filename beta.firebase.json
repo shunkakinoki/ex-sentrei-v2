@@ -27,6 +27,6 @@
     "rules": "./firestore/firestore.rules"
   },
   "functions": {
-    "source": "."
+    "source": "./functions"
   }
 }
