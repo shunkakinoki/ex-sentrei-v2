@@ -1,3 +1,9 @@
+## [1.53.2](https://github.com/sentrei/sentrei/compare/v1.53.1...v1.53.2) (2020-10-30)
+
+### Performance Improvements
+
+- ⚡️ ini footer ref ([0638412](https://github.com/sentrei/sentrei/commit/0638412ace2bf85490c9e85e532f21aeb4c5d727))
+
 ## [1.53.1](https://github.com/sentrei/sentrei/compare/v1.53.0...v1.53.1) (2020-10-30)
 
 ### Performance Improvements
