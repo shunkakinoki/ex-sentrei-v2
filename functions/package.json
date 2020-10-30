@@ -5,8 +5,14 @@
     "node": "12"
   },
   "scripts": {
+    "clean": "yarn run clean:dist && yarn run clean:tsbuildinfo",
+    "clean:dist": "rimraf dist",
+    "clean:tsbuildinfo": "rimraf tsconfig*tsbuildinfo",
     "eslint:check": "eslint . -c .eslintrc.json --ext .ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
-    "eslint:fix": "eslint --fix . -c .eslintrc.json --ext .ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint"
+    "eslint:fix": "eslint --fix . -c .eslintrc.json --ext .ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
+    "tsc": "tsc --p tsconfig.json",
+    "typescript": "yarn run clean && yarn run tsc",
+    "watch": "yarn run tsc -w --preserveWatchOutput"
   },
   "main": "lib/index.js",
   "dependencies": {

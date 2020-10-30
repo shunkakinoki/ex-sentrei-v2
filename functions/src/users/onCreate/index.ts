@@ -1,2 +1,2 @@
-// eslint-disable-next-line import/prefer-default-export
+export {default as disableUserSignup} from "./disableUserSignup";
 export {default as usersBatchSet} from "./usersBatchSet";
