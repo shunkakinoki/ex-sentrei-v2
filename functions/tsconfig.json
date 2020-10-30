@@ -9,7 +9,7 @@
     "strict": true,
     "target": "es2017",
     "paths": {
-      "@/types/*": ["../src/types/*"]
+      "@/*": ["../src/*"]
     }
   },
   "compileOnSave": true,
