@@ -26,6 +26,7 @@ const userBatchSet = functions.auth.user().onCreate(async user => {
   };
 
   const profileData: Profile.Response = {
+    bio: null,
     name: user.displayName || getNameFromEmail(user.email || user.uid),
     namespaceId: user.uid,
     image: user.photoURL || null,

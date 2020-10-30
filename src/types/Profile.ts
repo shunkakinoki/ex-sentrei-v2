@@ -2,7 +2,7 @@
 
 declare namespace Profile {
   export type EditableFields = {
-    bio: string;
+    bio: string | null;
     name: string;
     image: string | null;
   };

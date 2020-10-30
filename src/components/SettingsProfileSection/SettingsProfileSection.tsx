@@ -8,15 +8,14 @@ import {getProfile, updateProfile} from "@/services/Profile";
 import Profile from "@/types/Profile";
 
 const getProfileFetcher = async (profileId: string) => {
-  const uid = profileId.replace("profiles/", "");
-  return getProfile(uid);
+  return getProfile(profileId);
 };
 
 export default function SettingsProfileSection(): JSX.Element {
   const {authState} = useAuth();
 
   const {data: profile} = useSWR(
-    authState?.uid ? [`profiles/${authState.uid}`] : null,
+    authState?.uid ? authState.uid : null,
     getProfileFetcher,
   );
 
@@ -25,14 +24,14 @@ export default function SettingsProfileSection(): JSX.Element {
 
   const onSubmit = (data: Profile.Fields) => {
     if (!authState?.uid) {
-      return;
+      return null;
     }
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    mutate(`profiles/${authState.uid}`, data, false);
+    mutate(authState?.uid, data, false);
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     updateProfile(authState?.uid, data);
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    mutate(`profiles/${authState.uid}`);
+    return mutate(authState.uid);
   };
 
   return (
@@ -104,7 +103,7 @@ export default function SettingsProfileSection(): JSX.Element {
                     rows={3}
                     className="block w-full p-2 mt-1 transition duration-150 ease-in-out border form-textarea sm:text-sm sm:leading-5"
                     placeholder="you@example.com"
-                    value={profile?.bio}
+                    value={profile?.bio ?? ""}
                   />
                 </div>
                 <p className="mt-2 text-sm text-gray-500">
