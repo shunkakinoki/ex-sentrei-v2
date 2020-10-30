@@ -1,6 +1,58 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
+import {useForm} from "react-hook-form";
+import {toast} from "react-toastify";
+import useSWR, {mutate} from "swr";
+
+import useAuth from "@/hooks/useAuth";
+import {getProfile, updateProfile} from "@/services/Profile";
+import {SocialLinks} from "@/types/Profile";
+
+const getProfileFetcher = async (profileId: string) => {
+  return getProfile(profileId);
+};
+
 export default function SettingsSocialSection(): JSX.Element {
+  const {authState} = useAuth();
+
+  const {data: profile} = useSWR(
+    authState?.uid ? authState.uid : null,
+    getProfileFetcher,
+  );
+
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  const {register, handleSubmit} = useForm<SocialLinks>({
+    defaultValues: {
+      facebook: profile?.social?.facebook,
+      github: profile?.social?.github,
+      instagram: profile?.social?.instagram,
+      twitter: profile?.social?.twitter,
+      website: profile?.social?.website,
+    },
+  });
+
+  const onSubmit = (data: SocialLinks) => {
+    if (!authState?.uid) {
+      return null;
+    }
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    mutate(authState?.uid, {social: data}, false);
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    updateProfile(authState?.uid, {social: data})
+      .then(() =>
+        toast.success("Success", {
+          autoClose: 1500,
+          hideProgressBar: true,
+          draggable: false,
+        }),
+      )
+      .catch((err: Error) => {
+        toast.error(err.message);
+      });
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    return mutate(authState.uid);
+  };
+
   return (
     <div className="px-1 sm:px-2 md:px-3 md:grid md:grid-cols-3 md:gap-6">
       <div className="md:col-span-1">
@@ -14,13 +66,13 @@ export default function SettingsSocialSection(): JSX.Element {
         </div>
       </div>
       <div className="mt-5 md:mt-0 md:col-span-2">
-        <form action="#" method="POST">
+        <form action="#" method="POST" onSubmit={handleSubmit(onSubmit)}>
           <div className="shadow-lg sm:rounded-md sm:overflow-hidden">
             <div className="px-4 py-5 bg-white sm:p-6">
               <div className="grid grid-cols-3 gap-6">
                 <div className="col-span-3 sm:col-span-2">
                   <label
-                    htmlFor="profile_facebook"
+                    htmlFor="social_facebook"
                     className="block text-sm font-medium leading-5 text-gray-700"
                   >
                     Facebook
@@ -30,7 +82,9 @@ export default function SettingsSocialSection(): JSX.Element {
                       https://facebook.com/
                     </span>
                     <input
-                      id="profile_website"
+                      ref={register}
+                      id="social_facebook"
+                      name="facebook"
                       className="flex-1 block w-full px-3 py-1 transition duration-150 ease-in-out border border-gray-300 rounded-none form-input rounded-r-md sm:text-sm sm:leading-5"
                       placeholder="sentrei"
                     />
@@ -38,7 +92,7 @@ export default function SettingsSocialSection(): JSX.Element {
                 </div>
                 <div className="col-span-3 sm:col-span-2">
                   <label
-                    htmlFor="profile_github"
+                    htmlFor="social_github"
                     className="block text-sm font-medium leading-5 text-gray-700"
                   >
                     Github
@@ -48,7 +102,9 @@ export default function SettingsSocialSection(): JSX.Element {
                       https://github.com/
                     </span>
                     <input
-                      id="profile_website"
+                      ref={register}
+                      id="social_github"
+                      name="github"
                       className="flex-1 block w-full px-3 py-1 transition duration-150 ease-in-out border border-gray-300 rounded-none form-input rounded-r-md sm:text-sm sm:leading-5"
                       placeholder="sentrei"
                     />
@@ -56,7 +112,7 @@ export default function SettingsSocialSection(): JSX.Element {
                 </div>
                 <div className="col-span-3 sm:col-span-2">
                   <label
-                    htmlFor="profile_instagram"
+                    htmlFor="social_instagram"
                     className="block text-sm font-medium leading-5 text-gray-700"
                   >
                     Instagram
@@ -66,7 +122,9 @@ export default function SettingsSocialSection(): JSX.Element {
                       https://instagram.com/
                     </span>
                     <input
-                      id="profile_website"
+                      ref={register}
+                      id="social_instagram"
+                      name="instagram"
                       className="flex-1 block w-full px-3 py-1 transition duration-150 ease-in-out border border-gray-300 rounded-none form-input rounded-r-md sm:text-sm sm:leading-5"
                       placeholder="sentrei"
                     />
@@ -74,7 +132,7 @@ export default function SettingsSocialSection(): JSX.Element {
                 </div>
                 <div className="col-span-3 sm:col-span-2">
                   <label
-                    htmlFor="profile_twitter"
+                    htmlFor="social_twitter"
                     className="block text-sm font-medium leading-5 text-gray-700"
                   >
                     Twitter
@@ -84,7 +142,9 @@ export default function SettingsSocialSection(): JSX.Element {
                       https://twitter.com/
                     </span>
                     <input
-                      id="profile_website"
+                      ref={register}
+                      id="social_twitter"
+                      name="twitter"
                       className="flex-1 block w-full px-3 py-1 transition duration-150 ease-in-out border border-gray-300 rounded-none form-input rounded-r-md sm:text-sm sm:leading-5"
                       placeholder="SentreiHQ"
                     />
@@ -92,7 +152,7 @@ export default function SettingsSocialSection(): JSX.Element {
                 </div>
                 <div className="col-span-3 sm:col-span-2">
                   <label
-                    htmlFor="profile_website"
+                    htmlFor="social_website"
                     className="block text-sm font-medium leading-5 text-gray-700"
                   >
                     Website
@@ -102,7 +162,9 @@ export default function SettingsSocialSection(): JSX.Element {
                       https://
                     </span>
                     <input
-                      id="profile_website"
+                      ref={register}
+                      id="social_website"
+                      name="website"
                       className="flex-1 block w-full px-3 py-1 transition duration-150 ease-in-out border border-gray-300 rounded-none form-input rounded-r-md sm:text-sm sm:leading-5"
                       placeholder="www.example.com"
                     />

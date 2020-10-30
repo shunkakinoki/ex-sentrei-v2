@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 
 export interface SocialLinks {
-  facebook: string;
-  github: string;
-  instagram: string;
-  twitter: string;
-  website: string;
+  facebook?: string;
+  github?: string;
+  instagram?: string;
+  twitter?: string;
+  website?: string;
 }
 
 declare namespace Profile {
@@ -13,7 +13,7 @@ declare namespace Profile {
     bio: string | null;
     name: string;
     image: string | null;
-    social: SocialLinks;
+    social?: SocialLinks;
   };
 
   interface Fields extends EditableFields {
