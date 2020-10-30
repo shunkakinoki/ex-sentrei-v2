@@ -1,11 +1,27 @@
 import {Menu} from "@headlessui/react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 
-import HeaderDemoMenu from "@/components/HeaderDemoMenu";
-import HeaderMobileMenu from "@/components/HeaderMobileMenu";
-import HeaderProfileMenu from "@/components/HeaderProfileMenu";
 import useAuth from "@/hooks/useAuth";
+
+const HeaderDemoMenu = dynamic(() => import("@/components/HeaderDemoMenu"), {
+  ssr: false,
+});
+
+const HeaderMobileMenu = dynamic(
+  () => import("@/components/HeaderMobileMenu"),
+  {
+    ssr: false,
+  },
+);
+
+const HeaderProfileMenu = dynamic(
+  () => import("@/components/HeaderProfileMenu"),
+  {
+    ssr: false,
+  },
+);
 
 export default function HeaderRoot(): JSX.Element {
   const {isLoggedIn} = useAuth();
