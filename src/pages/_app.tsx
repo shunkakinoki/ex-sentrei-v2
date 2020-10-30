@@ -16,6 +16,10 @@ const AppRoot = dynamic(() => import("@/components/AppRoot"), {
   ssr: false,
 });
 
+const GlobalAuth = dynamic(() => import("@/components/GlobalAuth"), {
+  ssr: false,
+});
+
 const GlobalSnackbar = dynamic(() => import("@/components/GlobalAlert"), {
   ssr: false,
 });
@@ -42,6 +46,7 @@ const CustomApp = ({Component, pageProps}: AppProps): JSX.Element => {
           }}
         >
           <AppRoot>
+            <GlobalAuth />
             <GlobalSnackbar />
             <Component {...pageProps} />
           </AppRoot>
