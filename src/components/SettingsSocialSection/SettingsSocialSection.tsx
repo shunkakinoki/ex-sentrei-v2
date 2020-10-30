@@ -23,7 +23,7 @@ export default function SettingsSocialSection(): JSX.Element {
   );
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
-  const {register, handleSubmit, reset} = useForm<SocialLinks>({
+  const {register, handleSubmit, reset, formState} = useForm<SocialLinks>({
     defaultValues: {
       facebook: profile?.social?.facebook,
       github: profile?.social?.github,
@@ -33,14 +33,13 @@ export default function SettingsSocialSection(): JSX.Element {
     },
   });
 
-  const onSubmit = (data: SocialLinks) => {
+  const onSubmit = async (data: SocialLinks) => {
     if (!authState?.uid) {
       return null;
     }
+    await mutate(`profiles/${authState.uid}`, {social: data}, false);
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    mutate(`profiles/${authState.uid}`, {social: data}, false);
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    updateProfile(authState?.uid, {social: data})
+    await updateProfile(authState?.uid, {social: data})
       .then(() =>
         toast.success("Success", {
           autoClose: 1500,
@@ -52,11 +51,18 @@ export default function SettingsSocialSection(): JSX.Element {
         toast.error(err.message);
       });
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    return mutate(`profiles/${authState.uid}`);
+    await mutate(`profiles/${authState.uid}`);
+    return reset({
+      facebook: profile?.social?.facebook,
+      github: profile?.social?.github,
+      instagram: profile?.social?.instagram,
+      twitter: profile?.social?.twitter,
+      website: profile?.social?.website,
+    });
   };
 
   useEffect(() => {
-    if (profile) {
+    if (profile && !formState.isDirty) {
       reset({
         facebook: profile?.social?.facebook,
         github: profile?.social?.github,
@@ -65,7 +71,7 @@ export default function SettingsSocialSection(): JSX.Element {
         website: profile?.social?.website,
       });
     }
-  }, [reset, profile]);
+  }, [reset, profile, formState.isDirty]);
 
   return (
     <div className="px-1 sm:px-2 md:px-3 md:grid md:grid-cols-3 md:gap-6">

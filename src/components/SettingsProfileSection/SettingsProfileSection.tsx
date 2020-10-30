@@ -23,7 +23,7 @@ export default function SettingsProfileSection(): JSX.Element {
   );
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
-  const {register, handleSubmit, reset} = useForm<Profile.Fields>({
+  const {register, handleSubmit, reset, formState} = useForm<Profile.Fields>({
     defaultValues: {
       bio: profile?.bio,
       name: profile?.name,
@@ -31,14 +31,14 @@ export default function SettingsProfileSection(): JSX.Element {
     },
   });
 
-  const onSubmit = (data: Profile.Fields) => {
+  const onSubmit = async (data: Profile.Fields) => {
     if (!authState?.uid) {
       return null;
     }
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    mutate(`profiles/${authState.uid}`, data, false);
+    await mutate(`profiles/${authState.uid}`, data, false);
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    updateProfile(authState?.uid, data)
+    await updateProfile(authState?.uid, data)
       .then(() =>
         toast.success("Success", {
           autoClose: 1500,
@@ -50,18 +50,23 @@ export default function SettingsProfileSection(): JSX.Element {
         toast.error(err.message);
       });
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    return mutate(`profiles/${authState.uid}`);
+    await mutate(`profiles/${authState.uid}`);
+    return reset({
+      bio: profile?.bio,
+      name: profile?.name,
+      namespaceId: profile?.namespaceId,
+    });
   };
 
   useEffect(() => {
-    if (profile) {
+    if (profile && !formState.isDirty) {
       reset({
         bio: profile?.bio,
         name: profile?.name,
         namespaceId: profile?.namespaceId,
       });
     }
-  }, [reset, profile]);
+  }, [reset, profile, formState.isDirty]);
 
   return (
     <div className="px-1 sm:px-2 md:px-3 md:grid md:grid-cols-3 md:gap-6">
