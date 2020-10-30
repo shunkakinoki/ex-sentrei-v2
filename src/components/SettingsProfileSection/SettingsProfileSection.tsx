@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
+import {useEffect} from "react";
 import {useForm} from "react-hook-form";
+import {toast} from "react-toastify";
 import useSWR, {mutate} from "swr";
 
 import useAuth from "@/hooks/useAuth";
@@ -8,31 +10,63 @@ import {getProfile, updateProfile} from "@/services/Profile";
 import Profile from "@/types/Profile";
 
 const getProfileFetcher = async (profileId: string) => {
-  return getProfile(profileId);
+  const uid = profileId.replace("profiles/", "");
+  return getProfile(uid);
 };
 
 export default function SettingsProfileSection(): JSX.Element {
   const {authState} = useAuth();
 
   const {data: profile} = useSWR(
-    authState?.uid ? authState.uid : null,
+    authState?.uid ? `profiles/${authState.uid}` : null,
     getProfileFetcher,
   );
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
-  const {register, handleSubmit} = useForm<Profile.Fields>();
+  const {register, handleSubmit, reset, formState} = useForm<Profile.Fields>({
+    defaultValues: {
+      bio: profile?.bio,
+      name: profile?.name,
+      namespaceId: profile?.namespaceId,
+    },
+  });
 
-  const onSubmit = (data: Profile.Fields) => {
+  const onSubmit = async (data: Profile.Fields) => {
     if (!authState?.uid) {
       return null;
     }
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    mutate(authState?.uid, data, false);
+    await mutate(`profiles/${authState.uid}`, data, false);
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    updateProfile(authState?.uid, data);
+    await updateProfile(authState?.uid, data)
+      .then(() =>
+        toast.success("Success", {
+          autoClose: 1500,
+          hideProgressBar: true,
+          draggable: false,
+        }),
+      )
+      .catch((err: Error) => {
+        toast.error(err.message);
+      });
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    return mutate(authState.uid);
+    await mutate(`profiles/${authState.uid}`);
+    return reset({
+      bio: profile?.bio,
+      name: profile?.name,
+      namespaceId: profile?.namespaceId,
+    });
   };
+
+  useEffect(() => {
+    if (profile && !formState.isDirty) {
+      reset({
+        bio: profile?.bio,
+        name: profile?.name,
+        namespaceId: profile?.namespaceId,
+      });
+    }
+  }, [reset, profile, formState.isDirty]);
 
   return (
     <div className="px-1 sm:px-2 md:px-3 md:grid md:grid-cols-3 md:gap-6">
@@ -65,9 +99,9 @@ export default function SettingsProfileSection(): JSX.Element {
                     <input
                       ref={register}
                       id="profile_username"
+                      name="namespaceId"
                       className="flex-1 block w-full px-3 py-1 transition duration-150 ease-in-out border border-gray-300 rounded-none form-input rounded-r-md sm:text-sm sm:leading-5"
                       placeholder="shunkakinoki"
-                      value={profile?.namespaceId}
                     />
                   </div>
                 </div>
@@ -81,10 +115,10 @@ export default function SettingsProfileSection(): JSX.Element {
                   <div className="flex mt-1 rounded-md shadow-sm">
                     <input
                       ref={register}
-                      id="profile_name"
+                      name="name"
+                      id="name"
                       className="flex-1 block w-full px-3 py-1 transition duration-150 ease-in-out border border-gray-300 rounded-none form-input rounded-l-md rounded-r-md sm:text-sm sm:leading-5"
                       placeholder="Shun Kakinoki"
-                      value={profile?.name}
                     />
                   </div>
                 </div>
@@ -99,11 +133,11 @@ export default function SettingsProfileSection(): JSX.Element {
                 <div className="rounded-md shadow-sm">
                   <textarea
                     ref={register}
+                    name="bio"
                     id="bio"
                     rows={3}
                     className="block w-full p-2 mt-1 transition duration-150 ease-in-out border form-textarea sm:text-sm sm:leading-5"
                     placeholder="you@example.com"
-                    value={profile?.bio ?? ""}
                   />
                 </div>
                 <p className="mt-2 text-sm text-gray-500">

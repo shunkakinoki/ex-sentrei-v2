@@ -8,7 +8,7 @@ service cloud.firestore {
       allow update:
         if request.auth.uid != null
         && request.auth.uid == profileId
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(["bio", "name", "namespaceId", "photo"]);
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(["bio", "name", "namespaceId", "photo", "social"]);
       allow create, delete:
         if false;
     }
