@@ -5,6 +5,7 @@ ignores:
     "postcss-import",
     "sharp",
     "tailwindcss",
+    "@next/*",
     "@semantic-release/*",
     "@typescript-eslint/*",
     "commitizen",
