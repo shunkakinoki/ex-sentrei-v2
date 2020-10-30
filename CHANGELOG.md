@@ -1,3 +1,15 @@
+# [1.57.0](https://github.com/sentrei/sentrei/compare/v1.56.0...v1.57.0) (2020-10-30)
+
+### Features
+
+- 🎸 ini auth signout ([02cd803](https://github.com/sentrei/sentrei/commit/02cd8031d3845a7bceeaae08bb0fb6e0b8089df6))
+- 🎸 migrate to react-toastify from global alert ([74cdbef](https://github.com/sentrei/sentrei/commit/74cdbef8c535d1eb255d37b353a0e9f08ac79c74))
+
+### Performance Improvements
+
+- ⚡️ ini config toast ([1d427d7](https://github.com/sentrei/sentrei/commit/1d427d7124f5e254e9de06fe2fed02d6af62e648))
+- ⚡️ refactor isLoggedin header ([91df4ad](https://github.com/sentrei/sentrei/commit/91df4ad800ba84593d34d3e050aa7af210af8ac7))
+
 # [1.56.0](https://github.com/sentrei/sentrei/compare/v1.55.0...v1.56.0) (2020-10-30)
 
 ### Features
