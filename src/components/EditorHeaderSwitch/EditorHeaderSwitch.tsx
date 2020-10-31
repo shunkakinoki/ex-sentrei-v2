@@ -1,10 +1,15 @@
 import {Switch} from "@headlessui/react";
 import clsx from "clsx";
-import {useState} from "react";
+import {Dispatch, SetStateAction} from "react";
 
-export default function EditorHeaderSwitch(): JSX.Element {
-  const [switchValue, setSwitchValue] = useState(false);
-
+export interface Props {
+  switchValue: boolean;
+  setSwitchValue: Dispatch<SetStateAction<boolean>>;
+}
+export default function EditorHeaderSwitch({
+  switchValue,
+  setSwitchValue,
+}: Props): JSX.Element {
   return (
     <div className="flex items-center justify-center">
       <div className="w-full max-w-xs mx-auto">
