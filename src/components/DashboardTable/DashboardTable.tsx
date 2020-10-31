@@ -25,6 +25,7 @@ export default function DashboardTable({
             subtitle={article.subtitle}
             pricing={article.pricing}
             status={article.status}
+            namespaceId={namespaceId}
           />
           {index !== articles.length - 1 && (
             <div className="flex my-3 border-t border-gray-300 sm:my-6 lg:my-8" />
