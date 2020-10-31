@@ -1,3 +1,9 @@
+# [1.60.0](https://github.com/sentrei/sentrei/compare/v1.59.0...v1.60.0) (2020-10-31)
+
+### Features
+
+- 🎸 migrate namespace id ([2de69a4](https://github.com/sentrei/sentrei/commit/2de69a4250bf2d8d5c3f83a55ed7b46dcbc06c09))
+
 # [1.59.0](https://github.com/sentrei/sentrei/compare/v1.58.2...v1.59.0) (2020-10-31)
 
 ### Features
