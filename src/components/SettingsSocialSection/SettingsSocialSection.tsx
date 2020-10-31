@@ -7,7 +7,7 @@ import useSWR, {mutate} from "swr";
 
 import useAuth from "@/hooks/useAuth";
 import {getProfile, updateProfile} from "@/services/Profile";
-import {SocialLinks} from "@/types/Profile";
+import Social from "@/types/Social";
 
 const getProfileFetcher = async (profileId: string) => {
   const uid = profileId.replace("profiles/", "");
@@ -23,7 +23,7 @@ export default function SettingsSocialSection(): JSX.Element {
   );
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
-  const {register, handleSubmit, reset, formState} = useForm<SocialLinks>({
+  const {register, handleSubmit, reset, formState} = useForm<Social>({
     defaultValues: {
       facebook: profile?.social?.facebook,
       github: profile?.social?.github,
@@ -33,7 +33,7 @@ export default function SettingsSocialSection(): JSX.Element {
     },
   });
 
-  const onSubmit = async (data: SocialLinks) => {
+  const onSubmit = async (data: Social) => {
     if (!authState?.uid) {
       return null;
     }

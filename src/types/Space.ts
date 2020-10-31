@@ -2,7 +2,7 @@
 
 import Social from "@/types/Social";
 
-declare namespace Profile {
+declare namespace Space {
   export type EditableFields = {
     bio: string | null;
     name: string;
@@ -29,4 +29,4 @@ declare namespace Profile {
   }
 }
 
-export default Profile;
+export default Space;
