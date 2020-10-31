@@ -1,3 +1,14 @@
+# [1.63.0](https://github.com/sentrei/sentrei/compare/v1.62.1...v1.63.0) (2020-10-31)
+
+### Features
+
+- 🎸 ini dashboard table refactor link hash ([a3ee4ac](https://github.com/sentrei/sentrei/commit/a3ee4acd0e63d3d0b7f282e6b8073edf3a930d6c))
+
+### Performance Improvements
+
+- ⚡️ ini editor namespace ([ddf8916](https://github.com/sentrei/sentrei/commit/ddf8916f90b307a8af3e64dfbdc01f3a14649bf0))
+- ⚡️ refactor dashboard link ([f48c040](https://github.com/sentrei/sentrei/commit/f48c0401222ac5faf18e3b0e2897a0cb87cae59a))
+
 ## [1.62.1](https://github.com/sentrei/sentrei/compare/v1.62.0...v1.62.1) (2020-10-31)
 
 ### Bug Fixes
