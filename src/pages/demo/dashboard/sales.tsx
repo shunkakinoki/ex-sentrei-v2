@@ -8,7 +8,7 @@ import {createSales} from "@/utils/faker";
 
 export type Props = Omit<
   DemoDashboardSalesScreenProps,
-  "namespace" | "sales"
+  "namespaceId" | "sales"
 > & {
   sales: string;
 };

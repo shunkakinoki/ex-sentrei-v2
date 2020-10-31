@@ -15,19 +15,19 @@ export default function DashboardScreen({
   articles,
   current,
   total,
-  namespace,
+  namespaceId,
 }: Props): JSX.Element {
   return (
     <ContainerRoot>
       <HeaderRoot />
-      <ContainerDashboard type="articles" namespace={namespace}>
+      <ContainerDashboard type="articles" namespaceId={namespaceId}>
         <div className="container my-6 sm:mx-3 md:mx-6 md:mt-10">
           <DashboardStats />
           <DashboardTable
             articles={articles}
             current={current}
             total={total}
-            namespace={`${namespace}/dashboard`}
+            namespaceId={`${namespaceId}/dashboard`}
           />
         </div>
       </ContainerDashboard>

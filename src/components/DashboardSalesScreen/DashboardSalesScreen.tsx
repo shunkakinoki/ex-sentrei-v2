@@ -6,18 +6,18 @@ import DashboardSalesHero from "@/components/DashboardSalesHero";
 import HeaderRoot from "@/components/HeaderRoot";
 import Sales from "@/types/Sales";
 
-export interface Props extends Pick<ContainerDashboardProps, "namespace"> {
+export interface Props extends Pick<ContainerDashboardProps, "namespaceId"> {
   sales: Sales;
 }
 
 export default function DashboardSalesScreen({
-  namespace,
+  namespaceId,
   sales,
 }: Props): JSX.Element {
   return (
     <ContainerRoot>
       <HeaderRoot />
-      <ContainerDashboard type="sales" namespace={namespace}>
+      <ContainerDashboard type="sales" namespaceId={namespaceId}>
         <DashboardSalesHero
           all={sales.all}
           allConfirmed={sales.allConfirmed}

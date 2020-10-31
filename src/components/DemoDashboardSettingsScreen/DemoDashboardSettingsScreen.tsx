@@ -5,7 +5,7 @@ export default function DemoDashboardSettingsScreen(): JSX.Element {
   return (
     <>
       <DemoBanner />
-      <DashboardSettingsScreen namespace="demo" />
+      <DashboardSettingsScreen namespaceId="demo" />
     </>
   );
 }

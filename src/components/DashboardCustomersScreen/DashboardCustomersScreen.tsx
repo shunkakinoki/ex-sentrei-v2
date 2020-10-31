@@ -9,13 +9,13 @@ import HeaderRoot from "@/components/HeaderRoot";
 import Customer from "@/types/Customer";
 
 export interface Props
-  extends Pick<ContainerDashboardProps, "namespace">,
+  extends Pick<ContainerDashboardProps, "namespaceId">,
     DashboardCustomersTableProps {
   customers: Customer[];
 }
 
 export default function DashboardCustomersScreen({
-  namespace,
+  namespaceId,
   customers,
   current,
   total,
@@ -23,12 +23,12 @@ export default function DashboardCustomersScreen({
   return (
     <ContainerRoot>
       <HeaderRoot />
-      <ContainerDashboard type="customers" namespace={namespace}>
+      <ContainerDashboard type="customers" namespaceId={namespaceId}>
         <DashboardCustomersTable
           customers={customers}
           current={current}
           total={total}
-          namespace={`${namespace}/dashboard/customers`}
+          namespaceId={`${namespaceId}/dashboard/customers`}
         />
       </ContainerDashboard>
     </ContainerRoot>

@@ -10,7 +10,7 @@ import PaginationBase, {
 } from "@/components/PaginationBase";
 
 export interface Props extends BlogStoryGridProps, PaginationBaseProps {
-  blog: Omit<BlogHeroProps, "name" | "namespace">;
+  blog: Omit<BlogHeroProps, "name" | "namespaceId">;
 }
 
 export default function BlogScreen({
@@ -18,7 +18,7 @@ export default function BlogScreen({
   blog,
   current,
   total,
-  namespace,
+  namespaceId,
 }: Props): JSX.Element {
   return (
     <ContainerRoot>
@@ -27,10 +27,14 @@ export default function BlogScreen({
         authors={blog.authors}
         title={blog.title}
         subtitle={blog.subtitle}
-        namespace={namespace}
+        namespaceId={namespaceId}
       />
-      <BlogStoryGrid articles={articles} namespace={namespace} />
-      <PaginationBase current={current} total={total} namespace={namespace} />
+      <BlogStoryGrid articles={articles} namespaceId={namespaceId} />
+      <PaginationBase
+        current={current}
+        total={total}
+        namespaceId={namespaceId}
+      />
       <FooterRoot />
     </ContainerRoot>
   );

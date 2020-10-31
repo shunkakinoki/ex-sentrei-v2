@@ -3,7 +3,7 @@ import DashboardScreen, {
 } from "@/components/DashboardScreen";
 import DemoBanner from "@/components/DemoBanner";
 
-export type Props = Omit<DashboardScreenProps, "namespace">;
+export type Props = Omit<DashboardScreenProps, "namespaceId">;
 
 export default function DemoDashboardScreen({
   articles,
@@ -17,7 +17,7 @@ export default function DemoDashboardScreen({
         articles={articles}
         current={current}
         total={total}
-        namespace="demo"
+        namespaceId="demo"
       />
     </>
   );

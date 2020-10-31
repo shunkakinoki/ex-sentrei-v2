@@ -6,14 +6,14 @@ import BlogStoryImage from "@/components/BlogStoryImage";
 import Article from "@/types/Article";
 
 export interface Props extends Omit<Article, "authors" | "body"> {
-  namespace: string;
+  namespaceId: string;
   variant: "small" | "medium" | "large";
 }
 
 export default function BlogStoryCard({
   date,
   image,
-  namespace,
+  namespaceId,
   slug,
   time,
   title,
@@ -22,7 +22,7 @@ export default function BlogStoryCard({
   variant,
 }: Props): JSX.Element {
   return (
-    <Link href={`/${namespace}/${slug}`}>
+    <Link href={`/${namespaceId}/${slug}`}>
       <a
         className={clsx(
           "w-full my-4 px-0 sm:px-2 md:px-3 xl:px-4 shadow-lg sm:shadow-none sm:my-2 md:w-1/2 ",

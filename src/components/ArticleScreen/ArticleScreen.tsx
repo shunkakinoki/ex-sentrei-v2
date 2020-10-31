@@ -18,13 +18,13 @@ const ArticleBody = dynamic(() => import("@/components/ArticleBody"), {
 export interface Props {
   article: Article;
   more: Article[];
-  namespace: string;
+  namespaceId: string;
 }
 
 export default function ArticleScreen({
   article,
   more,
-  namespace,
+  namespaceId,
 }: Props): JSX.Element {
   return (
     <ContainerRoot>
@@ -47,9 +47,9 @@ export default function ArticleScreen({
         <ArticleBody excerpt body={article.excerpt} />
       )}
       {article.pricing === "subscription" && (
-        <ArticleSubscribe namespace={namespace} />
+        <ArticleSubscribe namespaceId={namespaceId} />
       )}
-      <ArticleStoryGrid articles={more} namespace={namespace} />
+      <ArticleStoryGrid articles={more} namespaceId={namespaceId} />
       <FooterRoot />
     </ContainerRoot>
   );

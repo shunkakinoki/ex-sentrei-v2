@@ -5,18 +5,18 @@ import Link from "next/link";
 
 export interface Props {
   active: boolean;
-  namespace: string;
+  namespaceId: string;
   type: "articles" | "branding" | "customers" | "sales" | "settings";
 }
 
 export default function TabDashboard({
   active,
-  namespace,
+  namespaceId,
   type,
 }: Props): JSX.Element {
   return (
     <Link
-      href={`/${namespace}/dashboard${
+      href={`/${namespaceId}/dashboard${
         type === "articles"
           ? ""
           : type === "branding"

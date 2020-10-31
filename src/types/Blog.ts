@@ -2,7 +2,7 @@ import Author from "@/types/Author";
 
 export default interface Props {
   authors: Author[];
-  namespace: string;
+  namespaceId: string;
   title: string;
   subtitle?: string;
 }
