@@ -1,11 +1,15 @@
 import DemoBanner from "@/components/DemoBanner";
-import EditorScreen from "@/components/EditorScreen";
+import EditorScreen, {
+  Props as EditorScreenProps,
+} from "@/components/EditorScreen";
 
-export default function DemoEditorScreen(): JSX.Element {
+export type Props = Pick<EditorScreenProps, "article">;
+
+export default function DemoEditorScreen({article}: Props): JSX.Element {
   return (
     <>
       <DemoBanner />
-      <EditorScreen namespaceId="demo" />
+      <EditorScreen article={article} namespaceId="demo" />
     </>
   );
 }
