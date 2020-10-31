@@ -8,8 +8,21 @@ service cloud.firestore {
       allow update:
         if request.auth.uid != null
         && request.auth.uid == profileId
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(["bio", "name", "namespaceId", "photo", "social"]);
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(["bio", "name", "namespaceId", "image", "social"]);
       allow create, delete:
+        if false;
+    }
+    match /spaces/{spaceId} {
+      allow get:
+        if request.auth.uid != null;
+      allow update:
+        if request.auth.uid != null
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(["description", "title", "image", "settings"])
+        && (request.resource.data.description == null || request.resource.data.description is string)
+        && (request.resource.data.description == null || request.resource.data.description.size() <= 1000)
+        && (request.resource.data.title != null && request.resource.data.title is string)
+        && (request.resource.data.image == null || request.resource.data.image is string);
+      allow create, delete, list:
         if false;
     }
   }
