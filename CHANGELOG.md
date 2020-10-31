@@ -1,3 +1,9 @@
+# [1.62.0](https://github.com/sentrei/sentrei/compare/v1.61.1...v1.62.0) (2020-10-31)
+
+### Features
+
+- 🎸 ini rich markdown ([46a2d2f](https://github.com/sentrei/sentrei/commit/46a2d2f0e3c1df119588850c9de1d84c339e5e48))
+
 ## [1.61.1](https://github.com/sentrei/sentrei/compare/v1.61.0...v1.61.1) (2020-10-31)
 
 ### Performance Improvements
