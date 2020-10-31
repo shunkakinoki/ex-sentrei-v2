@@ -1,3 +1,9 @@
+## [1.61.1](https://github.com/sentrei/sentrei/compare/v1.61.0...v1.61.1) (2020-10-31)
+
+### Performance Improvements
+
+- ⚡️ refactor auth screen ([bde674d](https://github.com/sentrei/sentrei/commit/bde674da797e14cbe3cd2bd67ddf3eb812c10e1c))
+
 # [1.61.0](https://github.com/sentrei/sentrei/compare/v1.60.0...v1.61.0) (2020-10-31)
 
 ### Features
