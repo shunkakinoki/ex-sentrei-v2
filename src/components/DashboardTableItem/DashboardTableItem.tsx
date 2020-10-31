@@ -1,8 +1,11 @@
 import clsx from "clsx";
 import Link from "next/link";
+import useSWR from "swr";
 
 import useAuth from "@/hooks/useAuth";
+import {getSpace} from "@/services/Space";
 import Article from "@/types/Article";
+import Space from "@/types/Space";
 
 export interface Props
   extends Pick<
@@ -11,6 +14,11 @@ export interface Props
   > {
   namespaceId: string;
 }
+
+const getSpaceFetcher = async (spaceId: string) => {
+  const uid = spaceId.replace("spaces/", "");
+  return getSpace(uid);
+};
 
 export default function DashboardTableItem({
   date,
@@ -22,6 +30,16 @@ export default function DashboardTableItem({
   namespaceId,
 }: Props): JSX.Element {
   const {authState} = useAuth();
+
+  const {data: space} = useSWR(
+    // eslint-disable-next-line no-nested-ternary
+    namespaceId === "demo"
+      ? null
+      : authState?.uid
+      ? `spaces/${authState.uid}`
+      : null,
+    getSpaceFetcher,
+  );
 
   return (
     <div className="flex flex-col w-full md:flex md:flex-row md:items-center md:justify-between">
@@ -89,9 +107,10 @@ export default function DashboardTableItem({
         </Link>
         <a
           href={`https://${
-            // eslint-disable-next-line no-nested-ternary
-            namespaceId !== "" ? namespaceId : authState?.uid ?? "demo"
-          }.sentrei.com${namespaceId === "demo" ? "/demo" : ""}/${slug}`}
+            namespaceId !== "demo" ? space?.namespaceId ?? "" : "demo"
+          }${space?.namespaceId !== undefined ? "." : ""}sentrei.com${
+            namespaceId === "demo" ? "/demo" : ""
+          }/${slug}`}
           className="ml-3 rounded-md shadow-sm group"
           target="_blank"
           rel="noreferrer"
