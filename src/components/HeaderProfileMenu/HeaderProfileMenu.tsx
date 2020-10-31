@@ -25,9 +25,6 @@ export default function HeaderProfileMenu({open}: Props): JSX.Element {
           aria-orientation="vertical"
           aria-labelledby="user-menu"
         >
-          <a className="block px-4 py-2 text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus:bg-gray-100">
-            Your Profile
-          </a>
           <Link href="/dashboard">
             <a className="block px-4 py-2 text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus:bg-gray-100">
               Dashboard
