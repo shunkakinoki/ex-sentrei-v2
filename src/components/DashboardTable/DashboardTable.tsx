@@ -25,6 +25,7 @@ export default function DashboardTable({
             subtitle={article.subtitle}
             pricing={article.pricing}
             status={article.status}
+            slug={article.slug}
             namespaceId={namespaceId}
           />
           {index !== articles.length - 1 && (
