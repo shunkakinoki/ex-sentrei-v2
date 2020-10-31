@@ -1,8 +1,16 @@
-import DashboardTableItem from "@/components/DashboardTableItem";
+import dynamic from "next/dynamic";
+
 import PaginationBase, {
   Props as PaginationBaseProps,
 } from "@/components/PaginationBase";
 import Article from "@/types/Article";
+
+const DashboardTableItem = dynamic(
+  () => import("@/components/DashboardTableItem"),
+  {
+    ssr: false,
+  },
+);
 
 export interface Props extends PaginationBaseProps {
   articles: Article.Get[];
