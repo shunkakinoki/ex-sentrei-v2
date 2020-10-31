@@ -1,7 +1,21 @@
+import dynamic from "next/dynamic";
+
 import ContainerRoot from "@/components/ContainerRoot";
 import HeaderRoot from "@/components/HeaderRoot";
-import SettingsProfileSection from "@/components/SettingsProfileSection";
-import SettingsSocialSection from "@/components/SettingsSocialSection";
+
+const SettingsProfileSection = dynamic(
+  () => import("@/components/SettingsProfileSection"),
+  {
+    ssr: false,
+  },
+);
+
+const SettingsSocialSection = dynamic(
+  () => import("@/components/SettingsSocialSection"),
+  {
+    ssr: false,
+  },
+);
 
 export default function SettingsScreen(): JSX.Element {
   return (
