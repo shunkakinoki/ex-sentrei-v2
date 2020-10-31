@@ -1,3 +1,11 @@
+## [1.64.1](https://github.com/sentrei/sentrei/compare/v1.64.0...v1.64.1) (2020-10-31)
+
+### Performance Improvements
+
+- ⚡️ ini pathname header ([91d6066](https://github.com/sentrei/sentrei/commit/91d606614ba9bda9b103a3a831dc9ba741e1aa4b))
+- ⚡️ refactor header root ([6ea9575](https://github.com/sentrei/sentrei/commit/6ea95757ab1ee793c810675e066ba4f0a20a5669))
+- ⚡️ refactor pathname validation ([9cc5191](https://github.com/sentrei/sentrei/commit/9cc51912e28ad693464f951a6d8c7b78dcaa8d63))
+
 # [1.64.0](https://github.com/sentrei/sentrei/compare/v1.63.0...v1.64.0) (2020-10-31)
 
 ### Features
