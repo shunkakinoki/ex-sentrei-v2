@@ -120,6 +120,15 @@ export default function HeaderRoot(): JSX.Element {
           )}
           <div className="items-center justify-end hidden space-x-8 md:flex md:flex-1 lg:w-0">
             {isLoggedIn && (
+              <span className="inline-flex rounded-md shadow-sm">
+                <Link href="/dashboard/editor">
+                  <a className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap transition duration-150 ease-in-out bg-pink-400 border border-transparent rounded-md hover:bg-pink-500 focus:outline-none focus:border-pink-800 focus:shadow-outline-pink active:bg-pink-700">
+                    Create New
+                  </a>
+                </Link>
+              </span>
+            )}
+            {isLoggedIn && (
               <div className="relative ml-3">
                 <Menu>
                   {({open}) => (
