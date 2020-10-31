@@ -11,7 +11,7 @@ export default function EditorHeaderSwitch(): JSX.Element {
         <Switch.Group as="div" className="flex items-center space-x-3">
           <Switch.Label
             className={clsx(
-              "text-md",
+              "text-md hidden md:block",
               !switchValue && "text-gray-600",
               switchValue && "text-gray-300",
             )}
@@ -36,7 +36,7 @@ export default function EditorHeaderSwitch(): JSX.Element {
           </Switch>
           <Switch.Label
             className={clsx(
-              "text-md",
+              "text-md hidden md:block",
               switchValue && "text-gray-600",
               !switchValue && "text-gray-300",
             )}
