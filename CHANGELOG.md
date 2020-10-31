@@ -1,3 +1,15 @@
+## [1.65.3](https://github.com/sentrei/sentrei/compare/v1.65.2...v1.65.3) (2020-10-31)
+
+### Performance Improvements
+
+- ⚡️ dynamic dashboard item ([d497443](https://github.com/sentrei/sentrei/commit/d497443ed509fadbf12ac7839908ac428e15bf10))
+- ⚡️ ini body mount use effect hook ([a4eee39](https://github.com/sentrei/sentrei/commit/a4eee390e2dfeff78cc60e8ac622edf26232c34b))
+- ⚡️ ini editor recoil ([4c96cd5](https://github.com/sentrei/sentrei/commit/4c96cd5d15751f419986456689c57371e581ffb2))
+- ⚡️ ini item link ([1aa7998](https://github.com/sentrei/sentrei/commit/1aa7998280db40964716c6ae7c9ab853191a4f6e))
+- ⚡️ ini subdomain preview ([c2348da](https://github.com/sentrei/sentrei/commit/c2348da73fb9a49cc52d7517602962aa22a957b4))
+- ⚡️ refactor unnecessary code ([fe390f4](https://github.com/sentrei/sentrei/commit/fe390f40d903c08b47ea7630600042c04454cf34))
+- ⚡️ remove unnecessary toolkit ([64f95e9](https://github.com/sentrei/sentrei/commit/64f95e9a665c3e42ff80b964e5241e7f296cf785))
+
 ## [1.65.2](https://github.com/sentrei/sentrei/compare/v1.65.1...v1.65.2) (2020-10-31)
 
 ### Performance Improvements
