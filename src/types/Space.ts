@@ -1,13 +1,10 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 
-import Social from "@/types/Social";
-
-declare namespace Profile {
+declare namespace Space {
   export type EditableFields = {
-    bio: string | null;
-    name: string;
+    description: string | null;
+    title: string;
     image: string | null;
-    social?: Social;
   };
 
   interface Fields extends EditableFields {
@@ -29,4 +26,4 @@ declare namespace Profile {
   }
 }
 
-export default Profile;
+export default Space;

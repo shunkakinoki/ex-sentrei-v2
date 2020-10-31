@@ -3,6 +3,7 @@ import * as functions from "firebase-functions";
 
 import Namespace from "@/types/Namespace";
 import Profile from "@/types/Profile";
+import Space from "@/types/Space";
 import User from "@/types/User";
 
 const db = admin.firestore();
@@ -39,6 +40,13 @@ const userBatchSet = functions.auth.user().onCreate(async user => {
     role: "viewer",
   };
 
+  const spaceData: Space.Response = {
+    description: null,
+    title: `${profileData.name}'s Newsletter`,
+    image: user.photoURL || null,
+    namespaceId: user.uid,
+  };
+
   const namespaceRef = db.doc(`namespaces/${user.uid}`);
   batch.set(namespaceRef, namespaceData, {merge: true});
 
@@ -47,6 +55,9 @@ const userBatchSet = functions.auth.user().onCreate(async user => {
 
   const profileRef = db.doc(`profiles/${user.uid}`);
   batch.set(profileRef, profileData, {merge: true});
+
+  const spaceRef = db.doc(`spaces/${user.uid}`);
+  batch.set(spaceRef, spaceData, {merge: true});
 
   return batch.commit();
 });
