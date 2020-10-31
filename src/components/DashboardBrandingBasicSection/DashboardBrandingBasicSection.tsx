@@ -96,6 +96,29 @@ export default function DashboardBrandingBasicSection({
               <div className="grid grid-cols-3 gap-6">
                 <div className="col-span-3 sm:col-span-2">
                   <label
+                    htmlFor="basic_namespace"
+                    className="block text-sm font-medium leading-5 text-gray-700"
+                  >
+                    Subdomain
+                  </label>
+                  <div className="flex mt-1 rounded-md shadow-sm">
+                    <span className="inline-flex items-center px-3 text-sm text-gray-500 border border-r-0 border-gray-300 rounded-l-md bg-gray-50">
+                      https://
+                    </span>
+                    <input
+                      ref={register}
+                      id="basic_namespace"
+                      name="namespaceId"
+                      className="flex-1 block w-full px-3 py-1 transition duration-150 ease-in-out border border-gray-300 rounded-none form-input sm:text-sm sm:leading-5"
+                      placeholder="shunkakinoki"
+                    />
+                    <span className="inline-flex items-center px-3 text-sm text-gray-500 border border-l-0 border-gray-300 rounded-r-md bg-gray-50">
+                      .sentrei.com
+                    </span>
+                  </div>
+                </div>
+                <div className="col-span-3 sm:col-span-2">
+                  <label
                     htmlFor="basic_title"
                     className="block text-sm font-medium leading-5 text-gray-700"
                   >
