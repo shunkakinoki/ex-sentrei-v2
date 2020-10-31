@@ -1,3 +1,20 @@
+# [1.61.0](https://github.com/sentrei/sentrei/compare/v1.60.0...v1.61.0) (2020-10-31)
+
+### Features
+
+- 🎸 ini dashboard pages ([d765858](https://github.com/sentrei/sentrei/commit/d7658588ba159007323611c4eba7bc902b8fafc8))
+
+### Performance Improvements
+
+- ⚡️ ini dashboard forms ([2e1d845](https://github.com/sentrei/sentrei/commit/2e1d84597732d994eaf940303a9504930c9c1125))
+- ⚡️ ini dashboard radio ([36d45e9](https://github.com/sentrei/sentrei/commit/36d45e9472a5b12d3ac1a9d8dddfab45f3fa02bb))
+- ⚡️ ini namespace space ([0fa0aed](https://github.com/sentrei/sentrei/commit/0fa0aedbce6d63ddbf1c5bcd759a12bce3c6a7f6))
+- ⚡️ ini notifications form ([1684953](https://github.com/sentrei/sentrei/commit/16849532490df04a2b115f49d1e67f7dbe37fc1b))
+- ⚡️ ini spaces rules ([567969a](https://github.com/sentrei/sentrei/commit/567969afabb672e6699c4672a0815233f623d60b))
+- ⚡️ ini subdomain form ([276b129](https://github.com/sentrei/sentrei/commit/276b129b8ef8faff753c8e55153b160c56600a23))
+- ⚡️ no pagination for total pages 1 ([b9c1a06](https://github.com/sentrei/sentrei/commit/b9c1a06d92d50976113bcb6241cf2ca8c831d778))
+- ⚡️ refactor namespace id ([a272b5e](https://github.com/sentrei/sentrei/commit/a272b5e22dbefee521e9f5a5abb2bcac608a8a37))
+
 # [1.60.0](https://github.com/sentrei/sentrei/compare/v1.59.0...v1.60.0) (2020-10-31)
 
 ### Features
