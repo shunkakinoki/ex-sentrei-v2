@@ -1,3 +1,14 @@
+# [1.59.0](https://github.com/sentrei/sentrei/compare/v1.58.2...v1.59.0) (2020-10-31)
+
+### Features
+
+- 🎸 ini space form ([b25d36d](https://github.com/sentrei/sentrei/commit/b25d36dca2c70a74cd634e7c9a494baef2a701af))
+- 🎸 refactor types space ([5952070](https://github.com/sentrei/sentrei/commit/59520706f7a8893a69967588e7822abb2eb33d50))
+
+### Performance Improvements
+
+- ⚡️ ini dashboard route ([2432de8](https://github.com/sentrei/sentrei/commit/2432de8efed6be255d2b76458f6cb0c6c4642277))
+
 ## [1.58.2](https://github.com/sentrei/sentrei/compare/v1.58.1...v1.58.2) (2020-10-30)
 
 ### Bug Fixes
