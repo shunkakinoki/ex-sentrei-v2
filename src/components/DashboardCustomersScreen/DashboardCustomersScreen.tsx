@@ -28,7 +28,7 @@ export default function DashboardCustomersScreen({
           customers={customers}
           current={current}
           total={total}
-          namespaceId={`${namespaceId}/dashboard/customers`}
+          namespaceId={namespaceId}
         />
       </ContainerDashboard>
     </ContainerRoot>

@@ -61,7 +61,11 @@ export default function DashboardTableItem({
         </div>
       </div>
       <div className="flex mt-5 md:mt-0 md:ml-4">
-        <Link href={`${namespaceId}/editor`}>
+        <Link
+          href={`${
+            namespaceId !== "" ? "/" : ""
+          }${namespaceId}/dashboard/editor`}
+        >
           <a className="rounded-md shadow-sm group">
             <div className="inline-flex items-center px-4 py-2 text-sm font-medium leading-5 text-gray-700 bg-white border border-gray-300 rounded-md group-hover:text-pink-500 focus:outline-none focus:shadow-outline-pink focus:border-pink-300 active:text-gray-800 active:bg-gray-50">
               <svg
