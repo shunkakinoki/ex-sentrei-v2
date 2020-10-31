@@ -1,11 +1,19 @@
+import dynamic from "next/dynamic";
+
 import ContainerDashboard, {
   Props as ContainerDashboardProps,
 } from "@/components/ContainerDashboard";
 import ContainerRoot from "@/components/ContainerRoot";
-import DashboardSettingsNotificationsSection from "@/components/DashboardSettingsNotificationsSection";
 import HeaderRoot from "@/components/HeaderRoot";
 
 export type Props = Pick<ContainerDashboardProps, "namespaceId">;
+
+const DashboardSettingsNotificationsSection = dynamic(
+  () => import("@/components/DashboardSettingsNotificationsSection"),
+  {
+    ssr: false,
+  },
+);
 
 export default function DashboardSettingsScreen({
   namespaceId,
