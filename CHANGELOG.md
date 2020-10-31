@@ -1,3 +1,9 @@
+## [1.62.1](https://github.com/sentrei/sentrei/compare/v1.62.0...v1.62.1) (2020-10-31)
+
+### Bug Fixes
+
+- 🐛 form dynamic load ([051bf46](https://github.com/sentrei/sentrei/commit/051bf460f9fc874283c9f6cf937d6b1881010dfa))
+
 # [1.62.0](https://github.com/sentrei/sentrei/compare/v1.61.1...v1.62.0) (2020-10-31)
 
 ### Features
