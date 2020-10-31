@@ -1,6 +1,86 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
-export default function DashboardSettingsNotificationsSection(): JSX.Element {
+import {useEffect} from "react";
+import {useForm} from "react-hook-form";
+import {toast} from "react-toastify";
+import useSWR, {mutate} from "swr";
+
+import useAuth from "@/hooks/useAuth";
+import {getSpace, updateSpace} from "@/services/Space";
+import {NotificationSettings} from "@/types/Space";
+
+const getSpaceFetcher = async (spaceId: string) => {
+  const uid = spaceId.replace("spaces/", "");
+  return getSpace(uid);
+};
+
+export interface Props {
+  namespaceId: string;
+}
+
+export default function DashboardSettingsNotificationsSection({
+  namespaceId,
+}: Props): JSX.Element {
+  const {authState} = useAuth();
+
+  const {data: space} = useSWR(
+    // eslint-disable-next-line no-nested-ternary
+    namespaceId === "demo"
+      ? null
+      : authState?.uid
+      ? `spaces/${authState.uid}`
+      : null,
+    getSpaceFetcher,
+  );
+
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  const {register, handleSubmit, reset, formState} = useForm<
+    NotificationSettings
+  >({
+    defaultValues: {
+      analytics: space?.settings?.analytics,
+      customer: space?.settings?.customer,
+      sales: space?.settings?.sales,
+    },
+  });
+
+  const onSubmit = async (data: NotificationSettings) => {
+    if (!authState?.uid) {
+      return null;
+    }
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    await mutate(`spaces/${authState.uid}`, data, false);
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    await updateSpace(authState?.uid, {settings: data})
+      .then(() =>
+        toast.success("Success", {
+          autoClose: 1500,
+          hideProgressBar: true,
+          draggable: false,
+        }),
+      )
+      .catch((err: Error) => {
+        toast.error(err.message);
+      });
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    await mutate(`spaces/${authState.uid}`);
+    return reset({
+      analytics: space?.settings?.analytics,
+      customer: space?.settings?.customer,
+      sales: space?.settings?.sales,
+    });
+  };
+
+  useEffect(() => {
+    if (space && !formState.isDirty) {
+      reset({
+        analytics: space?.settings?.analytics,
+        customer: space?.settings?.customer,
+        sales: space?.settings?.sales,
+      });
+    }
+  }, [reset, space, formState.isDirty]);
+
   return (
     <div className="px-1 sm:px-2 md:px-3 md:grid md:grid-cols-3 md:gap-6">
       <div className="md:col-span-1">
@@ -14,7 +94,7 @@ export default function DashboardSettingsNotificationsSection(): JSX.Element {
         </div>
       </div>
       <div className="mt-5 md:mt-0 md:col-span-2">
-        <form action="#" method="POST">
+        <form action="#" method="POST" onSubmit={handleSubmit(onSubmit)}>
           <div className="overflow-hidden shadow-lg sm:rounded-md">
             <div className="px-4 py-5 bg-white sm:p-6">
               <fieldset>
@@ -25,14 +105,16 @@ export default function DashboardSettingsNotificationsSection(): JSX.Element {
                   <div className="flex items-start">
                     <div className="flex items-center h-5">
                       <input
-                        id="comments"
+                        ref={register}
+                        name="analytics"
+                        id="notifications_analytics"
                         type="checkbox"
                         className="w-4 h-4 text-pink-600 transition duration-150 ease-in-out form-checkbox"
                       />
                     </div>
                     <div className="ml-3 text-sm leading-5">
                       <label
-                        htmlFor="comments"
+                        htmlFor="notifications_analytics"
                         className="font-medium text-gray-700"
                       >
                         Analytics
@@ -46,20 +128,23 @@ export default function DashboardSettingsNotificationsSection(): JSX.Element {
                     <div className="flex items-start">
                       <div className="flex items-center h-5">
                         <input
-                          id="candidates"
+                          ref={register}
+                          name="analytics"
+                          id="notifications_customer"
                           type="checkbox"
                           className="w-4 h-4 text-pink-600 transition duration-150 ease-in-out form-checkbox"
                         />
                       </div>
                       <div className="ml-3 text-sm leading-5">
                         <label
-                          htmlFor="candidates"
+                          htmlFor="notifications_customer"
                           className="font-medium text-gray-700"
                         >
-                          Comments
+                          Customer
                         </label>
                         <p className="text-gray-500">
-                          Get notified when a customer posts a comment.
+                          Get notified when you a customer subscribes to your
+                          publication.
                         </p>
                       </div>
                     </div>
@@ -68,14 +153,16 @@ export default function DashboardSettingsNotificationsSection(): JSX.Element {
                     <div className="flex items-start">
                       <div className="flex items-center h-5">
                         <input
-                          id="offers"
+                          ref={register}
+                          name="sales"
+                          id="notifications_sales"
                           type="checkbox"
                           className="w-4 h-4 text-pink-600 transition duration-150 ease-in-out form-checkbox"
                         />
                       </div>
                       <div className="ml-3 text-sm leading-5">
                         <label
-                          htmlFor="offers"
+                          htmlFor="notifications_sales"
                           className="font-medium text-gray-700"
                         >
                           Sales
