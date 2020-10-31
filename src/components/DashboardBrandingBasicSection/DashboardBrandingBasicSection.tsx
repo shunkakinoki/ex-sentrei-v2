@@ -1,6 +1,73 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
+import {useEffect} from "react";
+import {useForm} from "react-hook-form";
+import {toast} from "react-toastify";
+import useSWR, {mutate} from "swr";
+
+import useAuth from "@/hooks/useAuth";
+import {getSpace, updateSpace} from "@/services/Space";
+import Space from "@/types/Space";
+
+const getSpaceFetcher = async (spaceId: string) => {
+  const uid = spaceId.replace("spaces/", "");
+  return getSpace(uid);
+};
+
 export default function DashboardBrandingBasicSection(): JSX.Element {
+  const {authState} = useAuth();
+
+  const {data: space} = useSWR(
+    authState?.uid ? `spaces/${authState.uid}` : null,
+    getSpaceFetcher,
+  );
+
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  const {register, handleSubmit, reset, formState} = useForm<Space.Fields>({
+    defaultValues: {
+      description: space?.description,
+      title: space?.title,
+      namespaceId: space?.namespaceId,
+    },
+  });
+
+  const onSubmit = async (data: Space.Fields) => {
+    if (!authState?.uid) {
+      return null;
+    }
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    await mutate(`spaces/${authState.uid}`, data, false);
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    await updateSpace(authState?.uid, data)
+      .then(() =>
+        toast.success("Success", {
+          autoClose: 1500,
+          hideProgressBar: true,
+          draggable: false,
+        }),
+      )
+      .catch((err: Error) => {
+        toast.error(err.message);
+      });
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    await mutate(`spaces/${authState.uid}`);
+    return reset({
+      description: space?.description,
+      title: space?.title,
+      namespaceId: space?.namespaceId,
+    });
+  };
+
+  useEffect(() => {
+    if (space && !formState.isDirty) {
+      reset({
+        description: space?.description,
+        title: space?.title,
+        namespaceId: space?.namespaceId,
+      });
+    }
+  }, [reset, space, formState.isDirty]);
+
   return (
     <div className="px-1 sm:px-2 md:px-3 md:grid md:grid-cols-3 md:gap-6">
       <div className="md:col-span-1">
@@ -12,20 +79,22 @@ export default function DashboardBrandingBasicSection(): JSX.Element {
         </div>
       </div>
       <div className="mt-5 md:mt-0 md:col-span-2">
-        <form action="#" method="POST">
+        <form action="#" method="POST" onSubmit={handleSubmit(onSubmit)}>
           <div className="shadow-lg sm:rounded-md sm:overflow-hidden">
             <div className="px-4 py-5 bg-white sm:p-6">
               <div className="grid grid-cols-3 gap-6">
                 <div className="col-span-3 sm:col-span-2">
                   <label
-                    htmlFor="info_title"
+                    htmlFor="basic_title"
                     className="block text-sm font-medium leading-5 text-gray-700"
                   >
                     Title
                   </label>
                   <div className="flex mt-1 rounded-md shadow-sm">
                     <input
-                      id="info_title"
+                      ref={register}
+                      id="basic_title"
+                      name="title"
                       className="flex-1 block w-full px-3 py-1 transition duration-150 ease-in-out border border-gray-300 rounded-md form-input sm:text-sm sm:leading-5"
                       placeholder="My awesome title"
                     />
@@ -34,14 +103,16 @@ export default function DashboardBrandingBasicSection(): JSX.Element {
               </div>
               <div className="mt-6">
                 <label
-                  htmlFor="desciption"
+                  htmlFor="basic_description"
                   className="block text-sm font-medium leading-5 text-gray-700"
                 >
                   Description
                 </label>
                 <div className="rounded-md shadow-sm">
                   <textarea
-                    id="about"
+                    ref={register}
+                    id="basic_description"
+                    name="description"
                     rows={3}
                     className="block w-full p-2 mt-1 transition duration-150 ease-in-out border form-textarea sm:text-sm sm:leading-5"
                     placeholder="We share awesome stories that you enjoy every day."
