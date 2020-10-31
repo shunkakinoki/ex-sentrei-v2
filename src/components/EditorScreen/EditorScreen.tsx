@@ -7,10 +7,14 @@ const EditorRich = dynamic(() => import("@/components/EditorRich"), {
   ssr: false,
 });
 
-export default function EditorScreen(): JSX.Element {
+export interface Props {
+  namespaceId: string;
+}
+
+export default function EditorScreen({namespaceId}: Props): JSX.Element {
   return (
     <ContainerRoot>
-      <EditorHeader />
+      <EditorHeader namespaceId={namespaceId} />
       <div className="relative px-3 py-3 my-12 mx-9 md:mx-12 lg:mx-18">
         <EditorRich />
       </div>
