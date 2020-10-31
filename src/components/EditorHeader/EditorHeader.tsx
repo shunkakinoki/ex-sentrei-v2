@@ -1,12 +1,19 @@
 import Link from "next/link";
 
 import EditorHeaderSwitch from "@/components/EditorHeaderSwitch";
+import EditorHeaderTitle, {
+  Props as EditorHeaderTitleProps,
+} from "@/components/EditorHeaderTitle";
 
-export interface Props {
+export interface Props extends EditorHeaderTitleProps {
   namespaceId: string;
 }
 
-export default function EditorHeader({namespaceId}: Props): JSX.Element {
+export default function EditorHeader({
+  title,
+  slug,
+  namespaceId,
+}: Props): JSX.Element {
   return (
     <div className="relative z-20">
       <div className="px-4 mx-auto sm:px-6">
@@ -31,7 +38,13 @@ export default function EditorHeader({namespaceId}: Props): JSX.Element {
               </svg>
             </a>
           </Link>
-          <div className="lg:w-0 lg:flex-1" />
+          <div className="lg:w-0 lg:flex-1">
+            <EditorHeaderTitle
+              slug={slug}
+              title={title}
+              namespaceId={namespaceId}
+            />
+          </div>
           <a className="inline-flex items-center p-2 text-gray-500 rounded-full md:p-3 hover:bg-pink-50">
             <svg
               className="w-6 h-6 text-gray-600"

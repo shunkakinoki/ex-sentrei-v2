@@ -2,16 +2,39 @@ import Authors from "@/types/Author";
 
 export type Pricing = "free" | "paid" | "subscription";
 
-export default interface Article {
-  authors: Authors[];
-  body: string;
-  date: Date;
-  excerpt?: string;
-  image?: string;
-  pricing: Pricing;
-  slug: string;
-  time: number;
-  title: string;
-  status: "preview" | "published";
-  subtitle?: string;
+// eslint-disable-next-line @typescript-eslint/no-namespace
+declare namespace Article {
+  export type EditableFields = {
+    authors: Authors[];
+    body: string;
+    date: Date;
+    excerpt?: string;
+    image?: string;
+    pricing: Pricing;
+    slug: string;
+    time: number;
+    title: string;
+    status: "preview" | "published";
+    subtitle?: string;
+  };
+
+  interface Fields extends EditableFields {
+    namespaceId: string;
+  }
+
+  export type AdminUpdate = Partial<Fields>;
+
+  export type Response = Fields;
+
+  export type Update = Partial<Response>;
+
+  export interface Get extends Response {
+    uid: string;
+  }
+
+  export interface Snapshot extends Get {
+    snap: FirebaseFirestore.DocumentSnapshot;
+  }
 }
+
+export default Article;

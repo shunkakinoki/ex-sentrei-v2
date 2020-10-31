@@ -16,8 +16,8 @@ const ArticleBody = dynamic(() => import("@/components/ArticleBody"), {
 });
 
 export interface Props {
-  article: Article;
-  more: Article[];
+  article: Article.Get;
+  more: Article.Get[];
   namespaceId: string;
 }
 

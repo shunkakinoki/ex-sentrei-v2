@@ -39,7 +39,7 @@ const Dashboard = ({
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <DemoDashboardScreen
-      articles={JSON.parse(articles) as Article[]}
+      articles={JSON.parse(articles) as Article.Get[]}
       current={1}
       total={totalDashboardPages}
     />

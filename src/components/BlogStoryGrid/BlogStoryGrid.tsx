@@ -2,7 +2,7 @@ import BlogStoryCard from "@/components/BlogStoryCard";
 import Article from "@/types/Article";
 
 export interface Props {
-  articles: Article[];
+  articles: Article.Fields[];
   namespaceId: string;
 }
 

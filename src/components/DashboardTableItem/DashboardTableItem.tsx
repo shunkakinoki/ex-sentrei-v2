@@ -5,7 +5,7 @@ import Article from "@/types/Article";
 
 export interface Props
   extends Pick<
-    Article,
+    Article.Fields,
     "date" | "pricing" | "title" | "subtitle" | "slug" | "status"
   > {
   namespaceId: string;

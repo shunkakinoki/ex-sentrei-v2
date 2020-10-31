@@ -34,7 +34,7 @@ const Demo = ({
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <DemoBlogScreen
-      articles={JSON.parse(articles) as Article[]}
+      articles={JSON.parse(articles) as Article.Get[]}
       blog={JSON.parse(blog) as Blog}
       current={current}
       total={totalArticlePages}

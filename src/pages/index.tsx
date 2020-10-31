@@ -64,7 +64,7 @@ const Index = ({
 }: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element => {
   return (
     <BlogScreen
-      articles={JSON.parse(articles) as Article[]}
+      articles={JSON.parse(articles) as Article.Get[]}
       blog={JSON.parse(blog) as Blog}
       current={current}
       total={totalArticlePages}
