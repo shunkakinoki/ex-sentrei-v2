@@ -40,7 +40,7 @@ export default function ArticleAuthors({authors}: Props): JSX.Element {
                 {authors.map((author, index) => {
                   return (
                     <ArticleAuthorsImage
-                      key={author.namespace}
+                      key={author.namespaceId}
                       src={author.image as string}
                       name={author.name}
                       rear={index === 0}
@@ -75,7 +75,10 @@ export default function ArticleAuthors({authors}: Props): JSX.Element {
                   className="py-1 overflow-auto text-base leading-6 rounded-md shadow-xs max-h-60 focus:outline-none sm:text-sm sm:leading-5"
                 >
                   {authors.map(author => (
-                    <Listbox.Option key={author.namespace} value={author.name}>
+                    <Listbox.Option
+                      key={author.namespaceId}
+                      value={author.name}
+                    >
                       {({selected, active}) => (
                         <a>
                           <div
@@ -87,7 +90,7 @@ export default function ArticleAuthors({authors}: Props): JSX.Element {
                           >
                             <div className="flex items-center space-x-3">
                               <ArticleAuthorsImage
-                                key={author.namespace}
+                                key={author.namespaceId}
                                 src={author.image as string}
                                 name={author.name}
                                 rear={false}

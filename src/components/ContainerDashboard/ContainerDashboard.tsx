@@ -11,7 +11,7 @@ export interface Props extends Omit<TabDashboardProps, "active"> {
 export default function ContainerDashboard({
   children,
   type,
-  namespace,
+  namespaceId,
 }: Props): JSX.Element {
   return (
     <div className="flex flex-col justify-center lg:flex-row ">
@@ -19,27 +19,27 @@ export default function ContainerDashboard({
         <div className="flex flex-col ">
           <TabDashboard
             active={type === "articles"}
-            namespace={namespace}
+            namespaceId={namespaceId}
             type="articles"
           />
           <TabDashboard
             active={type === "branding"}
-            namespace={namespace}
+            namespaceId={namespaceId}
             type="branding"
           />
           <TabDashboard
             active={type === "customers"}
-            namespace={namespace}
+            namespaceId={namespaceId}
             type="customers"
           />
           <TabDashboard
             active={type === "sales"}
-            namespace={namespace}
+            namespaceId={namespaceId}
             type="sales"
           />
           <TabDashboard
             active={type === "settings"}
-            namespace={namespace}
+            namespaceId={namespaceId}
             type="settings"
           />
         </div>

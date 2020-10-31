@@ -43,7 +43,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
         articles: JSON.stringify(articles),
         blog: JSON.stringify(blog),
         current: 1,
-        namespace: req.headers.host.split(".")[0],
+        namespaceId: req.headers.host.split(".")[0],
       },
     };
   }
@@ -60,7 +60,7 @@ const Index = ({
   articles,
   blog,
   current,
-  namespace,
+  namespaceId,
 }: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element => {
   return (
     <BlogScreen
@@ -68,7 +68,7 @@ const Index = ({
       blog={JSON.parse(blog) as Blog}
       current={current}
       total={totalArticlePages}
-      namespace={namespace}
+      namespaceId={namespaceId}
     />
   );
 };

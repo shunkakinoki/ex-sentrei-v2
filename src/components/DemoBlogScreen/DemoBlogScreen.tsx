@@ -1,7 +1,7 @@
 import BlogScreen, {Props as BlogScreenProps} from "@/components/BlogScreen";
 import DemoBanner from "@/components/DemoBanner";
 
-export type Props = Omit<BlogScreenProps, "namespace">;
+export type Props = Omit<BlogScreenProps, "namespaceId">;
 
 export default function DemoBlogScreen({
   articles,
@@ -17,7 +17,7 @@ export default function DemoBlogScreen({
         blog={blog}
         current={current}
         total={total}
-        namespace="demo"
+        namespaceId="demo"
       />
     </>
   );

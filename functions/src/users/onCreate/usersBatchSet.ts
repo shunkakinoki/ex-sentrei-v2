@@ -23,7 +23,7 @@ const userBatchSet = functions.auth.user().onCreate(async user => {
 
   const namespaceData: Namespace = {
     uid: user.uid,
-    model: "user",
+    model: "profile",
   };
 
   const profileData: Profile.Response = {

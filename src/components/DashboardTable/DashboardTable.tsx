@@ -12,7 +12,7 @@ export default function DashboardTable({
   articles,
   current,
   total,
-  namespace,
+  namespaceId,
 }: Props): JSX.Element {
   return (
     <>
@@ -31,7 +31,11 @@ export default function DashboardTable({
           )}
         </>
       ))}
-      <PaginationBase current={current} total={total} namespace={namespace} />
+      <PaginationBase
+        current={current}
+        total={total}
+        namespaceId={namespaceId}
+      />
     </>
   );
 }

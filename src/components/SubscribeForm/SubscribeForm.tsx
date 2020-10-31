@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
 export interface Props {
-  namespace: string;
+  namespaceId: string;
 }
 
 export default function SubscribeForm(): JSX.Element {

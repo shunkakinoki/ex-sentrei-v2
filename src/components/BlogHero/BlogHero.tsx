@@ -6,12 +6,12 @@ import BlogAuthor from "@/components/BlogAuthor";
 import Blog from "@/types/Blog";
 
 export interface Props extends Blog {
-  namespace: string;
+  namespaceId: string;
 }
 
 export default function BlogHero({
   authors,
-  namespace,
+  namespaceId,
   title,
   subtitle,
 }: Props): JSX.Element {
@@ -28,7 +28,7 @@ export default function BlogHero({
         </div>
         <div className="mt-10 sm:mt-15 sm:flex sm:justify-center md:w-1/2 lg:w-1/3 lg:flex-shrink-0 lg:mt-0">
           <div className="rounded-md shadow">
-            <Link href={`/${namespace}/subscribe`}>
+            <Link href={`/${namespaceId}/subscribe`}>
               <a className="flex items-center justify-center w-full px-8 py-3 font-medium text-white rounded-md hover:from-purple-300 hover:via-pink-400 hover:to-red-400 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 md:py-4 md:text-lg md:px-20">
                 Subscribe now.
               </a>
@@ -39,7 +39,7 @@ export default function BlogHero({
       <div className="flex justify-start w-full mt-3 align-middle sm:mt-6">
         <BlogAuthor
           name={authors[0].name}
-          namespace={authors[0].namespace}
+          namespaceId={authors[0].namespaceId}
           bio={authors[0].bio}
           image={authors[0].image}
         />

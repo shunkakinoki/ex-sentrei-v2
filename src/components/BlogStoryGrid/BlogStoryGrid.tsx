@@ -3,12 +3,12 @@ import Article from "@/types/Article";
 
 export interface Props {
   articles: Article[];
-  namespace: string;
+  namespaceId: string;
 }
 
 export default function BlogStoryGrid({
   articles,
-  namespace,
+  namespaceId,
 }: Props): JSX.Element {
   return (
     <section className="mt-8 mb-16 sm:mt-16 md:mb-12 lg:mb-20">
@@ -25,7 +25,7 @@ export default function BlogStoryGrid({
               slug={article.slug}
               subtitle={article.subtitle}
               status={article.status}
-              namespace={namespace}
+              namespaceId={namespaceId}
               variant={index % 4 === 0 || index % 4 === 3 ? "small" : "medium"}
             />
           );

@@ -5,7 +5,7 @@ export default function DemoDashboardBrandingScreen(): JSX.Element {
   return (
     <>
       <DemoBanner />
-      <DashboardBrandingScreen namespace="demo" />
+      <DashboardBrandingScreen namespaceId="demo" />
     </>
   );
 }

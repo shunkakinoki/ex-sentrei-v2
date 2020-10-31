@@ -12,7 +12,7 @@ export default function DashboardCustomersTable({
   customers,
   current,
   total,
-  namespace,
+  namespaceId,
 }: Props): JSX.Element {
   return (
     <div className="flex flex-col">
@@ -51,7 +51,11 @@ export default function DashboardCustomersTable({
           </div>
         </div>
       </div>
-      <PaginationBase current={current} total={total} namespace={namespace} />
+      <PaginationBase
+        current={current}
+        total={total}
+        namespaceId={namespaceId}
+      />
     </div>
   );
 }
