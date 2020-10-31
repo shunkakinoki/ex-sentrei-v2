@@ -1,3 +1,11 @@
+## [1.65.2](https://github.com/sentrei/sentrei/compare/v1.65.1...v1.65.2) (2020-10-31)
+
+### Performance Improvements
+
+- ⚡️ ini header new ([c89752a](https://github.com/sentrei/sentrei/commit/c89752adabcfb14583a65e49b27f1d02fc54b4a1))
+- ⚡️ refactor editor header ([7b70ab5](https://github.com/sentrei/sentrei/commit/7b70ab57da95745424a2d1b428717298dd8df90e))
+- ⚡️ refactor editor swr ([7a4a4ae](https://github.com/sentrei/sentrei/commit/7a4a4ae5ac46452ed4c9f9468f9136e48a2310fc))
+
 ## [1.65.1](https://github.com/sentrei/sentrei/compare/v1.65.0...v1.65.1) (2020-10-31)
 
 ### Bug Fixes
