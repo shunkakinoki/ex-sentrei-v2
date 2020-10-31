@@ -1,3 +1,10 @@
+# [1.65.0](https://github.com/sentrei/sentrei/compare/v1.64.1...v1.65.0) (2020-10-31)
+
+### Features
+
+- 🎸 ini article service ([5d7ff0d](https://github.com/sentrei/sentrei/commit/5d7ff0d52e43d2b105e667fdc77f9746a90a4537))
+- 🎸 ini editor header title with form ([266f13e](https://github.com/sentrei/sentrei/commit/266f13e9bce140239deca2d145eff52d5075dc53))
+
 ## [1.64.1](https://github.com/sentrei/sentrei/compare/v1.64.0...v1.64.1) (2020-10-31)
 
 ### Performance Improvements
