@@ -1,19 +1,6 @@
 import {useMemo} from "react";
 import {useRecoilValue, atom} from "recoil";
 
-import Profile from "@/types/Profile";
-import User from "@/types/User";
-
-export const profileAtom = atom<Profile.Get | null>({
-  key: "profile",
-  default: null,
-});
-
-export const userAtom = atom<User.Get | null | undefined>({
-  key: "user",
-  default: undefined,
-});
-
 export const authStateAtom = atom<firebase.default.User | null | undefined>({
   key: "auth",
   default: undefined,

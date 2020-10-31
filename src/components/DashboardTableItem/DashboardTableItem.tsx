@@ -1,7 +1,11 @@
 import clsx from "clsx";
 import Link from "next/link";
+import useSWR from "swr";
 
+import useAuth from "@/hooks/useAuth";
+import {getSpace} from "@/services/Space";
 import Article from "@/types/Article";
+import Space from "@/types/Space";
 
 export interface Props
   extends Pick<
@@ -10,6 +14,11 @@ export interface Props
   > {
   namespaceId: string;
 }
+
+const getSpaceFetcher = async (spaceId: string) => {
+  const uid = spaceId.replace("spaces/", "");
+  return getSpace(uid);
+};
 
 export default function DashboardTableItem({
   date,
@@ -20,6 +29,18 @@ export default function DashboardTableItem({
   status,
   namespaceId,
 }: Props): JSX.Element {
+  const {authState} = useAuth();
+
+  const {data: space} = useSWR(
+    // eslint-disable-next-line no-nested-ternary
+    namespaceId === "demo"
+      ? null
+      : authState?.uid
+      ? `spaces/${authState.uid}`
+      : null,
+    getSpaceFetcher,
+  );
+
   return (
     <div className="flex flex-col w-full md:flex md:flex-row md:items-center md:justify-between">
       <div className="flex-1 min-w-0">
@@ -84,11 +105,17 @@ export default function DashboardTableItem({
             </div>
           </a>
         </Link>
-        <span className="ml-3 rounded-md shadow-sm group">
-          <button
-            type="button"
-            className="inline-flex items-center px-4 py-2 text-sm font-medium leading-5 text-gray-700 bg-white border border-gray-300 rounded-md group-hover:text-pink-500 focus:outline-none focus:shadow-outline-pink focus:border-pink-300 active:text-gray-800 active:bg-gray-50"
-          >
+        <a
+          href={`https://${
+            namespaceId !== "demo" ? space?.namespaceId ?? "" : "demo"
+          }${space?.namespaceId !== undefined ? "." : ""}sentrei.com${
+            namespaceId === "demo" ? "/demo" : ""
+          }/${slug}`}
+          className="ml-3 rounded-md shadow-sm group"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <div className="inline-flex items-center px-4 py-2 text-sm font-medium leading-5 text-gray-700 bg-white border border-gray-300 rounded-md group-hover:text-pink-500 focus:outline-none focus:shadow-outline-pink focus:border-pink-300 active:text-gray-800 active:bg-gray-50">
             <svg
               className="w-5 h-5 mr-2 -ml-1 group-hover:text-pink-500"
               fill="currentColor"
@@ -102,8 +129,8 @@ export default function DashboardTableItem({
               />
             </svg>
             View
-          </button>
-        </span>
+          </div>
+        </a>
         <span className="ml-3 rounded-md shadow-sm">
           <button
             type="button"
