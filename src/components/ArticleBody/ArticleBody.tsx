@@ -1,9 +1,6 @@
 import clsx from "clsx";
-import {ReactNode, useEffect} from "react";
-import ReactMarkdown from "react-markdown";
-import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
-import dracula from "react-syntax-highlighter/dist/esm/styles/prism/dracula";
-import gfm from "remark-gfm";
+import {useEffect} from "react";
+import Editor from "rich-markdown-editor";
 
 import Excerpt from "@/styles/excerpt.module.css";
 import Markdown from "@/styles/markdown.module.css";
@@ -12,24 +9,6 @@ import Article from "@/types/Article";
 export interface Props extends Pick<Article, "body"> {
   excerpt?: boolean;
 }
-
-const renderers = {
-  // eslint-disable-next-line react/display-name
-  code: ({
-    language,
-    value,
-  }: {
-    language: string | undefined;
-    value: ReactNode;
-  }) => {
-    return (
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      <SyntaxHighlighter style={dracula} lnguage={language}>
-        {value}
-      </SyntaxHighlighter>
-    );
-  },
-};
 
 export default function ArticleBody({body, excerpt}: Props): JSX.Element {
   useEffect(() => {
@@ -46,9 +25,13 @@ export default function ArticleBody({body, excerpt}: Props): JSX.Element {
       )}
     >
       <div className={Markdown.markdown}>
-        <ReactMarkdown renderers={renderers} plugins={[gfm]}>
-          {body}
-        </ReactMarkdown>
+        <Editor
+          defaultValue={body}
+          readOnly
+          onChange={() => {
+            return null;
+          }}
+        />
       </div>
     </div>
   );

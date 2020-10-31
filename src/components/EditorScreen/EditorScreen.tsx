@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import ContainerRoot from "@/components/ContainerRoot";
 import EditorHeader from "@/components/EditorHeader";
 
-const EditorToast = dynamic(() => import("@/components/EditorToast"), {
+const EditorRich = dynamic(() => import("@/components/EditorRich"), {
   ssr: false,
 });
 
@@ -11,12 +11,8 @@ export default function EditorScreen(): JSX.Element {
   return (
     <ContainerRoot>
       <EditorHeader />
-      <div className="relative py-12 overflow-hidden md:py-24">
-        <div className="flex justify-center ">
-          <div className="shadow-xl">
-            <EditorToast />
-          </div>
-        </div>
+      <div className="relative px-3 py-3 my-12 mx-9 md:mx-12 lg:mx-18">
+        <EditorRich />
       </div>
     </ContainerRoot>
   );
