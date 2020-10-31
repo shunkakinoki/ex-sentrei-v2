@@ -43,71 +43,75 @@ export default function HeaderRoot(): JSX.Element {
               </a>
             </Link>
           </div>
-          <div className="-my-2 -mr-2 md:hidden">
-            <Menu>
-              {({open}) => (
-                <>
-                  <Menu.Button className="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500">
-                    <svg
-                      className="w-6 h-6"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M4 6h16M4 12h16M4 18h16"
-                      />
-                    </svg>
-                  </Menu.Button>
-                  <span className="z-30 ">
-                    <HeaderMobileMenu open={open} />
-                  </span>
-                </>
-              )}
-            </Menu>
-          </div>
-          <nav className="hidden md:flex">
-            <Menu>
-              {({open}) => (
-                <>
-                  <Menu.Button className="inline-flex items-center space-x-1 text-base font-medium leading-6 text-gray-600 group">
-                    <span className="group-hover:text-pink-400">Demo</span>
-                    <svg
-                      className="w-5 h-5 text-gray-600 group-hover:text-pink-400 "
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </Menu.Button>
-                  <span className="z-30 ">
-                    <HeaderDemoMenu open={open} />
-                  </span>
-                </>
-              )}
-            </Menu>
-            <Link href="/pricing">
-              <a className="mx-4 text-base font-medium leading-6 text-gray-600 transition duration-150 ease-in-out md:mx-6 hover:text-pink-400">
-                Pricing
-              </a>
-            </Link>
-            <Link href="/support">
-              <a className="text-base font-medium leading-6 text-gray-600 transition duration-150 ease-in-out hover:text-pink-400">
-                Support
-              </a>
-            </Link>
-          </nav>
+          {!isLoggedIn && (
+            <>
+              <div className="-my-2 -mr-2 md:hidden">
+                <Menu>
+                  {({open}) => (
+                    <>
+                      <Menu.Button className="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500">
+                        <svg
+                          className="w-6 h-6"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M4 6h16M4 12h16M4 18h16"
+                          />
+                        </svg>
+                      </Menu.Button>
+                      <span className="z-30 ">
+                        <HeaderMobileMenu open={open} />
+                      </span>
+                    </>
+                  )}
+                </Menu>
+              </div>
+              <nav className="hidden md:flex">
+                <Menu>
+                  {({open}) => (
+                    <>
+                      <Menu.Button className="inline-flex items-center space-x-1 text-base font-medium leading-6 text-gray-600 group">
+                        <span className="group-hover:text-pink-400">Demo</span>
+                        <svg
+                          className="w-5 h-5 text-gray-600 group-hover:text-pink-400 "
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </Menu.Button>
+                      <span className="z-30 ">
+                        <HeaderDemoMenu open={open} />
+                      </span>
+                    </>
+                  )}
+                </Menu>
+                <Link href="/pricing">
+                  <a className="mx-4 text-base font-medium leading-6 text-gray-600 transition duration-150 ease-in-out md:mx-6 hover:text-pink-400">
+                    Pricing
+                  </a>
+                </Link>
+                <Link href="/support">
+                  <a className="text-base font-medium leading-6 text-gray-600 transition duration-150 ease-in-out hover:text-pink-400">
+                    Support
+                  </a>
+                </Link>
+              </nav>
+            </>
+          )}
           <div className="items-center justify-end hidden space-x-8 md:flex md:flex-1 lg:w-0">
-            {isLoggedIn ? (
+            {isLoggedIn && (
               <div className="relative ml-3">
                 <Menu>
                   {({open}) => (
@@ -132,7 +136,8 @@ export default function HeaderRoot(): JSX.Element {
                   )}
                 </Menu>
               </div>
-            ) : (
+            )}
+            {!isLoggedIn && (
               <>
                 <Link href="/login">
                   <a className="text-base font-medium leading-6 text-gray-600 whitespace-no-wrap hover:text-pink-400">
