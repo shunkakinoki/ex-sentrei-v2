@@ -14,11 +14,22 @@ const getSpaceFetcher = async (spaceId: string) => {
   return getSpace(uid);
 };
 
-export default function DashboardBrandingBasicSection(): JSX.Element {
+export interface Props {
+  namespaceId: string;
+}
+
+export default function DashboardBrandingBasicSection({
+  namespaceId,
+}: Props): JSX.Element {
   const {authState} = useAuth();
 
   const {data: space} = useSWR(
-    authState?.uid ? `spaces/${authState.uid}` : null,
+    // eslint-disable-next-line no-nested-ternary
+    namespaceId === "demo"
+      ? null
+      : authState?.uid
+      ? `spaces/${authState.uid}`
+      : null,
     getSpaceFetcher,
   );
 

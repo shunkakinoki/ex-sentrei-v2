@@ -15,7 +15,7 @@ export default function DashboardSettingsScreen({
       <HeaderRoot />
       <ContainerDashboard type="branding" namespaceId={namespaceId}>
         <div className="container my-6 sm:mx-3 md:mx-6 md:mt-10">
-          <DashboardBrandingBasicSection />
+          <DashboardBrandingBasicSection namespaceId={namespaceId} />
         </div>
       </ContainerDashboard>
     </ContainerRoot>
