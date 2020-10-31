@@ -67,8 +67,13 @@ export default function EditorHeaderTitle({
   }, [reset, article, formState.isDirty]);
 
   return (
-    <form action="#" method="POST" onSubmit={handleSubmit(onSubmit)}>
-      <div className="flex items-center py-2 border-b border-pink-500">
+    <form
+      className="mx-auto"
+      action="#"
+      method="POST"
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      <div className="flex items-center border-b border-pink-500">
         <input
           ref={register}
           name="title"
