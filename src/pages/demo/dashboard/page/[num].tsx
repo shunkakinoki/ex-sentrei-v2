@@ -52,7 +52,7 @@ const Num = ({
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <DemoDashboardScreen
-      articles={JSON.parse(articles) as Article[]}
+      articles={JSON.parse(articles) as Article.Get[]}
       current={
         /* Multiply one to convert to integer */
         (JSON.parse(current) as number) * 1

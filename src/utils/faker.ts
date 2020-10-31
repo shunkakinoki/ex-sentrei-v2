@@ -115,7 +115,7 @@ export const createAuthors = (num = 3): Author[] => {
   return new Array(num).fill(undefined).map(createAuthor);
 };
 
-export const createArticle = (): Article => {
+export const createArticle = (): Article.Get => {
   return {
     authors: createAuthors(Math.floor(Math.random() * 3) + 1),
     body: createMarkdown(30),
@@ -131,10 +131,12 @@ export const createArticle = (): Article => {
     title: faker.lorem.lines(Math.floor(Math.random() * 1 + 1)),
     subtitle: faker.lorem.sentences(Math.floor(Math.random() * 11)),
     status: "published",
+    uid: faker.random.uuid(),
+    namespaceId: "demo",
   };
 };
 
-export const createArticles = (num = 6): Article[] => {
+export const createArticles = (num = 6): Article.Get[] => {
   return new Array(num).fill(undefined).map(createArticle);
 };
 

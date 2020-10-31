@@ -8,7 +8,7 @@ import HeaderRoot from "@/components/HeaderRoot";
 import Article from "@/types/Article";
 
 export interface Props extends DashboardTableProps {
-  articles: Article[];
+  articles: Article.Get[];
 }
 
 export default function DashboardScreen({

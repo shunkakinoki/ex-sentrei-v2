@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import Article from "@/types/Article";
 
-export type Props = Pick<Article, "image" | "title">;
+export type Props = Pick<Article.Fields, "image" | "title">;
 
 export default function ArticleImage({image, title}: Props): JSX.Element {
   return (

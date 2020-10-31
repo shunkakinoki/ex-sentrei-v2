@@ -39,8 +39,8 @@ const Slug = ({
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <DemoArticleScreen
-      article={JSON.parse(article) as Article}
-      more={JSON.parse(more) as Article[]}
+      article={JSON.parse(article) as Article.Get}
+      more={JSON.parse(more) as Article.Get[]}
     />
   );
 };

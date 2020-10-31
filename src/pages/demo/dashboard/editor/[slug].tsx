@@ -32,7 +32,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 const Demo = ({
   article,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  return <DemoEditorScreen article={JSON.parse(article) as Article} />;
+  return <DemoEditorScreen article={JSON.parse(article) as Article.Get} />;
 };
 
 export default Demo;

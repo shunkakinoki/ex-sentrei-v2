@@ -5,7 +5,7 @@ import PaginationBase, {
 import Article from "@/types/Article";
 
 export interface Props extends PaginationBaseProps {
-  articles: Article[];
+  articles: Article.Get[];
 }
 
 export default function DashboardTable({

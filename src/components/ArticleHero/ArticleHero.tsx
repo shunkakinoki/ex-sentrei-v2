@@ -3,7 +3,7 @@ import ArticleAuthors from "@/components/ArticleAuthors";
 import Article from "@/types/Article";
 
 export type Props = Pick<
-  Article,
+  Article.Fields,
   "authors" | "date" | "pricing" | "time" | "title" | "subtitle"
 >;
 

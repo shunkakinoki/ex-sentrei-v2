@@ -9,7 +9,7 @@ const EditorRich = dynamic(() => import("@/components/EditorRich"), {
 });
 
 export interface Props {
-  article?: Article;
+  article?: Article.Get;
   namespaceId: string;
 }
 

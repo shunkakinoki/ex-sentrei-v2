@@ -33,7 +33,7 @@ const Slug = ({
   article,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
-    <EditorScreen article={JSON.parse(article) as Article} namespaceId="" />
+    <EditorScreen article={JSON.parse(article) as Article.Get} namespaceId="" />
   );
 };
 

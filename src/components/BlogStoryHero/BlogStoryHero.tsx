@@ -1,7 +1,7 @@
 import Article from "@/types/Article";
 
 export type Props = Pick<
-  Article,
+  Article.Fields,
   "date" | "time" | "title" | "subtitle" | "pricing"
 >;
 
