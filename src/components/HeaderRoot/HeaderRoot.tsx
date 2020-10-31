@@ -2,6 +2,8 @@ import {Menu} from "@headlessui/react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
+import {useRouter} from "next/router";
+import {useEffect} from "react";
 
 import useAuth from "@/hooks/useAuth";
 
@@ -25,6 +27,7 @@ const HeaderProfileMenu = dynamic(
 
 export default function HeaderRoot(): JSX.Element {
   const {isLoggedIn} = useAuth();
+  const {pathname} = useRouter();
 
   return (
     <div className="relative z-20">
@@ -43,7 +46,12 @@ export default function HeaderRoot(): JSX.Element {
               </a>
             </Link>
           </div>
-          {!isLoggedIn && (
+          {(!isLoggedIn ||
+            pathname.startsWith("/") ||
+            pathname.startsWith("/home") ||
+            pathname.startsWith("/landing") ||
+            pathname.startsWith("/pricing") ||
+            pathname.startsWith("/demo")) && (
             <>
               <div className="-my-2 -mr-2 md:hidden">
                 <Menu>
