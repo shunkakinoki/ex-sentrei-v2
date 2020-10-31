@@ -77,9 +77,9 @@ export default function EditorHeaderTitle({
         <input
           ref={register}
           name="title"
-          className="w-full px-2 py-1 mr-3 leading-tight text-gray-700 bg-transparent border-none appearance-none focus:outline-none"
+          className="w-full px-2 py-3 mr-3 leading-tight text-gray-700 bg-transparent border-none appearance-none focus:outline-none"
           type="text"
-          placeholder="My Awesome Title"
+          placeholder="Write article title..."
           aria-label="Article title"
         />
         <button
@@ -87,12 +87,6 @@ export default function EditorHeaderTitle({
           type="button"
         >
           Change
-        </button>
-        <button
-          className="flex-shrink-0 px-2 py-1 text-sm text-pink-500 border-4 border-transparent rounded hover:text-pink-800"
-          type="button"
-        >
-          Cancel
         </button>
       </div>
     </form>
