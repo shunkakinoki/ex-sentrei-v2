@@ -1,7 +1,9 @@
 import {useEffect} from "react";
 import {useForm} from "react-hook-form";
+import {useSetRecoilState} from "recoil";
 import useSWR from "swr";
 
+import {editorTitleAtom} from "@/hooks/useEditor";
 import {getArticle} from "@/services/Article";
 import Article from "@/types/Article";
 
@@ -19,6 +21,8 @@ export default function EditorHeaderTitle({
   title,
   namespaceId,
 }: Props): JSX.Element {
+  const setTitleState = useSetRecoilState(editorTitleAtom);
+
   const {data: article} = useSWR(
     // eslint-disable-next-line no-nested-ternary
     namespaceId === "demo" ? null : slug ? `articles/${slug}` : null,
@@ -26,11 +30,17 @@ export default function EditorHeaderTitle({
   );
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
-  const {register, reset, formState} = useForm<Props>({
+  const {register, reset, formState, watch} = useForm<Props>({
     defaultValues: {
       title,
     },
   });
+
+  const titleValue = watch("title");
+
+  useEffect(() => {
+    setTitleState(titleValue);
+  }, [setTitleState, titleValue]);
 
   useEffect(() => {
     if (article && !formState.isDirty) {
