@@ -129,7 +129,7 @@ export default function DashboardSettingsNotificationsSection({
                       <div className="flex items-center h-5">
                         <input
                           ref={register}
-                          name="analytics"
+                          name="customer"
                           id="notifications_customer"
                           type="checkbox"
                           className="w-4 h-4 text-pink-600 transition duration-150 ease-in-out form-checkbox"
