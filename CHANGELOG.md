@@ -1,3 +1,9 @@
+## [1.65.1](https://github.com/sentrei/sentrei/compare/v1.65.0...v1.65.1) (2020-10-31)
+
+### Bug Fixes
+
+- 🐛 editor header title ([68c38fc](https://github.com/sentrei/sentrei/commit/68c38fc78979db8d4724932518fbc1879e98058a))
+
 # [1.65.0](https://github.com/sentrei/sentrei/compare/v1.64.1...v1.65.0) (2020-10-31)
 
 ### Features
