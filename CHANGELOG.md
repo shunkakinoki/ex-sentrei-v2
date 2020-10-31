@@ -1,3 +1,9 @@
+# [1.64.0](https://github.com/sentrei/sentrei/compare/v1.63.0...v1.64.0) (2020-10-31)
+
+### Features
+
+- 🎸 ini editor slug ([30f34ff](https://github.com/sentrei/sentrei/commit/30f34ffa56de142ce71fd5120be1853e8c5f801f))
+
 # [1.63.0](https://github.com/sentrei/sentrei/compare/v1.62.1...v1.63.0) (2020-10-31)
 
 ### Features
