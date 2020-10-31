@@ -1,9 +1,8 @@
 import {useEffect} from "react";
 import {useForm} from "react-hook-form";
-import {toast} from "react-toastify";
-import useSWR, {mutate} from "swr";
+import useSWR from "swr";
 
-import {getArticle, updateArticle} from "@/services/Article";
+import {getArticle} from "@/services/Article";
 import Article from "@/types/Article";
 
 export interface Props extends Partial<Pick<Article.Fields, "slug" | "title">> {
@@ -27,36 +26,11 @@ export default function EditorHeaderTitle({
   );
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
-  const {register, handleSubmit, reset, formState} = useForm<Props>({
+  const {register, reset, formState} = useForm<Props>({
     defaultValues: {
       title,
     },
   });
-
-  const onSubmit = async (data: Pick<Article.Fields, "title">) => {
-    if (!slug) {
-      return null;
-    }
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    await mutate(`articles/${slug}`, data, false);
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    await updateArticle(slug, data)
-      .then(() =>
-        toast.success("Success", {
-          autoClose: 1500,
-          hideProgressBar: true,
-          draggable: false,
-        }),
-      )
-      .catch((err: Error) => {
-        toast.error(err.message);
-      });
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    await mutate(`articles/${slug}`);
-    return reset({
-      title: article?.title,
-    });
-  };
 
   useEffect(() => {
     if (article && !formState.isDirty) {
@@ -67,12 +41,7 @@ export default function EditorHeaderTitle({
   }, [reset, article, formState.isDirty]);
 
   return (
-    <form
-      className="mx-auto"
-      action="#"
-      method="POST"
-      onSubmit={handleSubmit(onSubmit)}
-    >
+    <form className="mx-auto" action="#" method="POST">
       <div className="flex items-center border-b border-pink-500">
         <input
           ref={register}
