@@ -31,11 +31,13 @@ export default function DashboardTable({
           )}
         </>
       ))}
-      <PaginationBase
-        current={current}
-        total={total}
-        namespaceId={namespaceId}
-      />
+      {total > 1 && (
+        <PaginationBase
+          current={current}
+          total={total}
+          namespaceId={namespaceId}
+        />
+      )}
     </>
   );
 }

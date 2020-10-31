@@ -14,11 +14,22 @@ const getSpaceFetcher = async (spaceId: string) => {
   return getSpace(uid);
 };
 
-export default function DashboardBrandingBasicSection(): JSX.Element {
+export interface Props {
+  namespaceId: string;
+}
+
+export default function DashboardBrandingBasicSection({
+  namespaceId,
+}: Props): JSX.Element {
   const {authState} = useAuth();
 
   const {data: space} = useSWR(
-    authState?.uid ? `spaces/${authState.uid}` : null,
+    // eslint-disable-next-line no-nested-ternary
+    namespaceId === "demo"
+      ? null
+      : authState?.uid
+      ? `spaces/${authState.uid}`
+      : null,
     getSpaceFetcher,
   );
 
@@ -83,6 +94,29 @@ export default function DashboardBrandingBasicSection(): JSX.Element {
           <div className="shadow-lg sm:rounded-md sm:overflow-hidden">
             <div className="px-4 py-5 bg-white sm:p-6">
               <div className="grid grid-cols-3 gap-6">
+                <div className="col-span-3 sm:col-span-2">
+                  <label
+                    htmlFor="basic_namespace"
+                    className="block text-sm font-medium leading-5 text-gray-700"
+                  >
+                    Subdomain
+                  </label>
+                  <div className="flex mt-1 rounded-md shadow-sm">
+                    <span className="inline-flex items-center px-3 text-sm text-gray-500 border border-r-0 border-gray-300 rounded-l-md bg-gray-50">
+                      https://
+                    </span>
+                    <input
+                      ref={register}
+                      id="basic_namespace"
+                      name="namespaceId"
+                      className="flex-1 block w-full px-3 py-1 transition duration-150 ease-in-out border border-gray-300 rounded-none form-input sm:text-sm sm:leading-5"
+                      placeholder="shunkakinoki"
+                    />
+                    <span className="inline-flex items-center px-3 text-sm text-gray-500 border border-l-0 border-gray-300 rounded-r-md bg-gray-50">
+                      .sentrei.com
+                    </span>
+                  </div>
+                </div>
                 <div className="col-span-3 sm:col-span-2">
                   <label
                     htmlFor="basic_title"

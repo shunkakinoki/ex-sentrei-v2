@@ -16,7 +16,7 @@ export default function TabDashboard({
 }: Props): JSX.Element {
   return (
     <Link
-      href={`/${namespaceId}/dashboard${
+      href={`${namespaceId !== "" ? "/" : ""}${namespaceId}/dashboard${
         type === "articles"
           ? ""
           : type === "branding"
