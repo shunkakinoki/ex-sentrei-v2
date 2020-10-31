@@ -1,9 +1,15 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
 
 import EditorHeaderSwitch from "@/components/EditorHeaderSwitch";
-import EditorHeaderTitle, {
-  Props as EditorHeaderTitleProps,
-} from "@/components/EditorHeaderTitle";
+import {Props as EditorHeaderTitleProps} from "@/components/EditorHeaderTitle";
+
+const EditorHeaderTitle = dynamic(
+  () => import("@/components/EditorHeaderTitle"),
+  {
+    ssr: false,
+  },
+);
 
 export interface Props extends EditorHeaderTitleProps {
   namespaceId: string;
