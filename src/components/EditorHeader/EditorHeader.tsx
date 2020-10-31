@@ -1,9 +1,23 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
+import {useState} from "react";
 
 import EditorHeaderSwitch from "@/components/EditorHeaderSwitch";
-import EditorHeaderTitle, {
-  Props as EditorHeaderTitleProps,
-} from "@/components/EditorHeaderTitle";
+import {Props as EditorHeaderTitleProps} from "@/components/EditorHeaderTitle";
+
+const EditorHeaderButton = dynamic(
+  () => import("@/components/EditorHeaderButton"),
+  {
+    ssr: false,
+  },
+);
+
+const EditorHeaderTitle = dynamic(
+  () => import("@/components/EditorHeaderTitle"),
+  {
+    ssr: false,
+  },
+);
 
 export interface Props extends EditorHeaderTitleProps {
   namespaceId: string;
@@ -14,6 +28,8 @@ export default function EditorHeader({
   slug,
   namespaceId,
 }: Props): JSX.Element {
+  const [switchValue, setSwitchValue] = useState(false);
+
   return (
     <div className="relative z-20">
       <div className="px-4 mx-auto sm:px-6">
@@ -61,14 +77,11 @@ export default function EditorHeader({
               />
             </svg>
           </a>
-          <EditorHeaderSwitch />
-          <span className="inline-flex rounded-md shadow-sm">
-            <Link href="/demo/dashboard">
-              <a className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap transition duration-150 ease-in-out bg-pink-400 border border-transparent rounded-md hover:bg-pink-500 focus:outline-none focus:border-pink-800 focus:shadow-outline-pink active:bg-pink-700">
-                Save
-              </a>
-            </Link>
-          </span>
+          <EditorHeaderSwitch
+            switchValue={switchValue}
+            setSwitchValue={setSwitchValue}
+          />
+          <EditorHeaderButton switchValue={switchValue} />
         </div>
       </div>
     </div>

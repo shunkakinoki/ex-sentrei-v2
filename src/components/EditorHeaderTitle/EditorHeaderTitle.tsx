@@ -82,12 +82,6 @@ export default function EditorHeaderTitle({
           placeholder="Write article title..."
           aria-label="Article title"
         />
-        <button
-          className="flex-shrink-0 px-2 py-1 text-sm text-white bg-pink-500 border-4 border-pink-500 rounded hover:bg-pink-700 hover:border-pink-700"
-          type="button"
-        >
-          Change
-        </button>
       </div>
     </form>
   );
