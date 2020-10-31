@@ -41,6 +41,7 @@ export default function DashboardSettingsNotificationsSection({
       analytics: space?.settings?.analytics,
       customer: space?.settings?.customer,
       sales: space?.settings?.sales,
+      app: space?.settings?.app,
     },
   });
 
@@ -185,12 +186,15 @@ export default function DashboardSettingsNotificationsSection({
                 <div className="mt-4">
                   <div className="flex items-center">
                     <input
-                      id="push_everything"
-                      name="push_notifications"
+                      ref={register}
+                      id="app_everything"
+                      name="app"
+                      value="everything"
                       type="radio"
+                      defaultChecked={space?.settings?.app === "everything"}
                       className="w-4 h-4 text-pink-600 transition duration-150 ease-in-out form-radio"
                     />
-                    <label htmlFor="push_everything" className="ml-3">
+                    <label htmlFor="app_everything" className="ml-3">
                       <span className="block text-sm font-medium leading-5 text-gray-700">
                         Everything
                       </span>
@@ -198,12 +202,15 @@ export default function DashboardSettingsNotificationsSection({
                   </div>
                   <div className="flex items-center mt-4">
                     <input
-                      id="push_email"
-                      name="push_notifications"
+                      ref={register}
+                      id="app_email"
+                      name="app"
+                      value="email"
                       type="radio"
+                      defaultChecked={space?.settings?.app === "email"}
                       className="w-4 h-4 text-pink-600 transition duration-150 ease-in-out form-radio"
                     />
-                    <label htmlFor="push_email" className="ml-3">
+                    <label htmlFor="app_email" className="ml-3">
                       <span className="block text-sm font-medium leading-5 text-gray-700">
                         Same as email
                       </span>
@@ -211,12 +218,15 @@ export default function DashboardSettingsNotificationsSection({
                   </div>
                   <div className="flex items-center mt-4">
                     <input
-                      id="push_nothing"
-                      name="push_notifications"
+                      ref={register}
+                      id="app_nothing"
+                      name="app"
+                      value="nothing"
                       type="radio"
+                      defaultChecked={space?.settings?.app === "nothing"}
                       className="w-4 h-4 text-pink-600 transition duration-150 ease-in-out form-radio"
                     />
-                    <label htmlFor="push_nothing" className="ml-3">
+                    <label htmlFor="app_nothing" className="ml-3">
                       <span className="block text-sm font-medium leading-5 text-gray-700">
                         No app notifications
                       </span>

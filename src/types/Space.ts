@@ -3,9 +3,10 @@
 export type NotificationType = "app" | "email";
 
 export interface NotificationSettings {
-  analytics: NotificationType[];
-  customer: NotificationType[];
-  sales: NotificationType[];
+  analytics?: boolean;
+  customer?: boolean;
+  sales?: boolean;
+  app?: "everything" | "email" | "nothing";
 }
 
 declare namespace Space {
