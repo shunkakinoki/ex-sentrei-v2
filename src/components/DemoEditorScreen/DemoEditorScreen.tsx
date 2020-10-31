@@ -5,7 +5,7 @@ export default function DemoEditorScreen(): JSX.Element {
   return (
     <>
       <DemoBanner />
-      <EditorScreen />
+      <EditorScreen namespaceId="demo" />
     </>
   );
 }

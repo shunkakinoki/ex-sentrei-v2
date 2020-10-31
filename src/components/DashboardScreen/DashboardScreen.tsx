@@ -27,9 +27,7 @@ export default function DashboardScreen({
             articles={articles}
             current={current}
             total={total}
-            namespaceId={`${
-              namespaceId !== "" ? "/" : ""
-            }${namespaceId}/dashboard`}
+            namespaceId={namespaceId}
           />
         </div>
       </ContainerDashboard>

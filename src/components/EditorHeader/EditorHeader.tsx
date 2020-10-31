@@ -2,12 +2,18 @@ import Link from "next/link";
 
 import EditorHeaderSwitch from "@/components/EditorHeaderSwitch";
 
-export default function EditorHeader(): JSX.Element {
+export interface Props {
+  namespaceId: string;
+}
+
+export default function EditorHeader({namespaceId}: Props): JSX.Element {
   return (
     <div className="relative z-20">
       <div className="px-4 mx-auto sm:px-6">
         <div className="flex justify-between py-6 border-b-2 border-gray-100 i item-center md:justify-start md:space-x-10">
-          <Link href="/demo/dashboard">
+          <Link
+            href={`${namespaceId !== "" ? "/" : ""}${namespaceId}/dashboard`}
+          >
             <a className="inline-flex items-center p-2 text-gray-500 rounded-full md:p-3 hover:bg-pink-50">
               <svg
                 className="w-6 h-6"

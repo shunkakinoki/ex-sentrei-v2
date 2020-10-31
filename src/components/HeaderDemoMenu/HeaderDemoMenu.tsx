@@ -50,7 +50,7 @@ export default function HeaderDemoMenu({open}: Props): JSX.Element {
                     </div>
                   </a>
                 </Link>
-                <Link href="/demo/editor">
+                <Link href="/demo/dashboard/editor">
                   <a className="flex items-start p-3 -m-3 space-x-4 transition duration-150 ease-in-out rounded-lg hover:bg-gray-50">
                     <svg
                       className="flex-shrink-0 w-6 h-6 text-pink-600"
