@@ -46,11 +46,12 @@ export default function HeaderRoot(): JSX.Element {
             </Link>
           </div>
           {(!isLoggedIn ||
-            pathname.startsWith("/") ||
-            pathname.startsWith("/home") ||
-            pathname.startsWith("/landing") ||
-            pathname.startsWith("/pricing") ||
-            pathname.startsWith("/demo")) && (
+            pathname === "/" ||
+            pathname === "/home" ||
+            pathname === "/landing" ||
+            pathname === "/pricing" ||
+            pathname === "/demo" ||
+            pathname.startsWith("/demo/")) && (
             <>
               <div className="-my-2 -mr-2 md:hidden">
                 <Menu>
