@@ -15,11 +15,10 @@ export default function LandingHero(): JSX.Element {
             way to start your own <br />
             <LandingHeroTyped text={["blog", "media", "newsletter"]} />.
           </h2>
-          <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl xl:mx-0">
-            Managing a CMS is a lot of work. <br />
+          <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl md:max-w-2xl">
+            Managing a CMS is a lot of work.
             Medium&copy;&nbsp;&amp;&nbsp;Substack&copy; have their own
-            shortcomings. <br />
-            We aim to much better, how the world deserves in 2020.
+            shortcomings. We aim to much better, how the world deserves in 2020.
           </p>
           <div className="mt-5 sm:mt-8 sm:flex sm:justify-center xl:justify-start">
             <div className="rounded-md shadow">
