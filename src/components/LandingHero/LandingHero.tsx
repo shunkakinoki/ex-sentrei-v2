@@ -6,13 +6,13 @@ export default function LandingHero(): JSX.Element {
   return (
     <div className="relative pt-6 pb-3">
       <div className="max-w-screen-md px-4 mx-auto mt-10 sm:px-6 md:mt-16 lg:mt-20">
-        <div className="text-center">
+        <div className="sm:text-left md:text-center">
           <h2 className="text-4xl font-extrabold leading-10 tracking-tight text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
             The most{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
               delightful
             </span>{" "}
-            way to start your own <br />
+            way to start your own <br className="hidden sm:block" />
             <LandingHeroTyped text={["blog", "media", "newsletter"]} />.
           </h2>
           <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl md:max-w-2xl lg:max-w-3xl">
