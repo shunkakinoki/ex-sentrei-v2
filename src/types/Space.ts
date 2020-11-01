@@ -15,7 +15,6 @@ export interface NotificationSettings {
 // eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace Space {
   export type EditableFields = {
-    authorUids: string[];
     description: string | null;
     title: string;
     image: string | null;
@@ -24,6 +23,7 @@ declare namespace Space {
   };
 
   interface Fields extends EditableFields {
+    authorUids: string[];
     namespaceId: string;
   }
 

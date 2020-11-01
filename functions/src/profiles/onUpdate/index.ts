@@ -1,2 +1,2 @@
-// eslint-disable-next-line import/prefer-default-export
 export {default as activityProfileUpdate} from "./activityProfileUpdate";
+export {default as userProfileUpdate} from "./userProfileUpdate";
