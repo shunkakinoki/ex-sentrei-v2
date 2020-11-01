@@ -129,7 +129,6 @@ export const createArticle = (): Article.Get => {
       "https",
     ),
     pricing: createPricing(),
-    slug: faker.lorem.slug(),
     time: Math.floor(Math.random() * 10 + 3),
     title: faker.lorem.lines(Math.floor(Math.random() * 1 + 1)),
     subtitle: faker.lorem.sentences(Math.floor(Math.random() * 11)),
@@ -138,7 +137,7 @@ export const createArticle = (): Article.Get => {
     updatedBy: createAuthor(),
     updatedByUid: faker.random.uuid(),
     uid: faker.random.uuid(),
-    namespaceId: "demo",
+    nameslugId: "demo",
   };
 };
 
@@ -149,10 +148,16 @@ export const createArticles = (num = 6): Article.Get[] => {
 export const createBlog = (): Space.Get => {
   return {
     authors: createAuthors(Math.floor(Math.random() * 3) + 1),
+    createdAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
+    createdBy: createAuthor(),
+    createdByUid: faker.random.uuid(),
     title: faker.lorem.sentences(Math.floor(Math.random() * 3) + 1),
     description: faker.lorem.sentences(Math.floor(Math.random() * 3) + 1),
     plan: "free",
     namespaceId: faker.lorem.slug(),
+    updatedAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
+    updatedBy: createAuthor(),
+    updatedByUid: faker.random.uuid(),
     uid: faker.random.uuid(),
     image: `${faker.image.image()}?random=${Date.now()}`.replace(
       "http",

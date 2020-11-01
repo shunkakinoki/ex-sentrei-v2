@@ -4,13 +4,13 @@ import Article from "@/types/Article";
 
 export type Props = Pick<
   Article.Get,
-  "authors" | "date" | "pricing" | "time" | "title" | "subtitle"
+  "authors" | "createdAt" | "pricing" | "time" | "title" | "subtitle"
 >;
 
 export default function ArticleHero({
   authors,
+  createdAt,
   pricing,
-  date,
   time,
   title,
   subtitle,
@@ -42,7 +42,7 @@ export default function ArticleHero({
             <p className="flex items-center mt-1 font-medium text-center text-gray-500">
               {authors.length === 1 && authors[0].name}
               &nbsp;&middot;&nbsp;
-              {new Date(date).toDateString()}
+              {createdAt}
               &nbsp;&middot;&nbsp;
               {time} min read
               {pricing === "subscription" && <>&nbsp;&middot;&nbsp;</>}

@@ -2,7 +2,7 @@ import BlogStoryCard from "@/components/BlogStoryCard";
 import Article from "@/types/Article";
 
 export interface Props {
-  articles: Article.Fields[];
+  articles: Article.Get[];
   namespaceId: string;
 }
 
@@ -16,16 +16,16 @@ export default function BlogStoryGrid({
         {articles.map((article, index) => {
           return (
             <BlogStoryCard
-              key={article.slug}
-              date={article.date}
+              key={article.uid}
+              updatedAt={article.updatedAt}
               image={article.image}
               pricing={article.pricing}
               time={article.time}
               title={article.title}
-              slug={article.slug}
               subtitle={article.subtitle}
               status={article.status}
               namespaceId={namespaceId}
+              uid={article.uid}
               variant={index % 4 === 0 || index % 4 === 3 ? "small" : "medium"}
             />
           );
