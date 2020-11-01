@@ -7,7 +7,7 @@ import Space from "@/types/Space";
 import User from "@/types/User";
 
 const db = admin.firestore();
-const timestamp = admin.firestore.FieldValue.serverTimestamp();
+const timestamp = admin.firestore.Timestamp.now();
 
 function getNameFromEmail(email: string): string {
   if (email.lastIndexOf("@") === -1) {

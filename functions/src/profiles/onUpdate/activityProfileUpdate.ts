@@ -8,7 +8,8 @@ import Activity from "@/types/Activity";
 import Profile from "@/types/Profile";
 
 const db = admin.firestore();
-const timestamp = admin.firestore.FieldValue.serverTimestamp();
+const timestamp = admin.firestore.Timestamp.now();
+
 /**
  * Create profile activity on update
  */
