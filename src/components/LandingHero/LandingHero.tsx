@@ -12,7 +12,7 @@ export default function LandingHero(): JSX.Element {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ">
               delightful
             </span>{" "}
-            way to start your own{" "}
+            way to start your own <br />
             <LandingHeroTyped text={["blog", "media", "newsletter"]} />.
           </h2>
           <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl xl:mx-0">
