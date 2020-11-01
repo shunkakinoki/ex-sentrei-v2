@@ -40,6 +40,7 @@ const activitySpaceUpdate = functions.firestore
       spaceId,
       updatedAt: after.updatedAt,
       user: after.updatedBy,
+      userId: after.updatedByUid,
       userNotification: [],
     };
 

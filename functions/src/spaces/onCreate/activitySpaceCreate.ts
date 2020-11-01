@@ -30,6 +30,7 @@ const activitySpaceCreate = functions.firestore
       spaceId,
       updatedAt: data.updatedAt,
       user: data.updatedBy,
+      userId: data.updatedByUid,
       userNotification: [],
     };
 
