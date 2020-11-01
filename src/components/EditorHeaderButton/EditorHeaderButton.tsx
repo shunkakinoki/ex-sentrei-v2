@@ -1,23 +1,73 @@
 import clsx from "clsx";
+import {toast} from "react-toastify";
 import {useRecoilValue, useResetRecoilState} from "recoil";
+import useSWR from "swr";
 
+import {timestamp} from "@/firebase/db";
+import useAuth from "@/hooks/useAuth";
 import {editorTitleAtom, editorBodyAtom} from "@/hooks/useEditor";
+import {createArticle} from "@/services/Article";
+import {getProfile} from "@/services/Profile";
 
 export interface Props {
   switchValue: boolean;
 }
 
+const getProfileFetcher = async (profileId: string) => {
+  const uid = profileId.replace("profiles/", "");
+  return getProfile(uid);
+};
+
 export default function EditorHeaderButton({switchValue}: Props): JSX.Element {
+  const {authState} = useAuth();
+
+  const {data: profile} = useSWR(
+    authState?.uid ? `profiles/${authState.uid}` : null,
+    getProfileFetcher,
+  );
+
   const editorTitle = useRecoilValue(editorTitleAtom);
   const editorBody = useRecoilValue(editorBodyAtom);
   const resetEditorTitle = useResetRecoilState(editorTitleAtom);
   const resetEditorBody = useResetRecoilState(editorBodyAtom);
 
-  const handleClick = (): void => {
-    // eslint-disable-next-line no-console
-    console.log(editorBody, editorTitle);
-    resetEditorBody();
-    resetEditorTitle();
+  const handleClick = async (): Promise<void> => {
+    if (!profile || !authState?.uid) {
+      return;
+    }
+    if (editorBody === undefined || editorBody === "") {
+      toast.error("Please write body!");
+      return;
+    }
+    if (editorTitle === undefined || editorTitle === "") {
+      toast.error("Please write title!");
+      return;
+    }
+    toast.info("Publishing...");
+
+    try {
+      await createArticle({
+        authors: [],
+        body: editorBody,
+        createdAt: timestamp,
+        createdBy: profile,
+        createdByUid: authState?.uid,
+        pricing: "free",
+        nameslugId: "",
+        status: "published",
+        time: 3,
+        title: editorTitle,
+        updatedAt: timestamp,
+        updatedBy: profile,
+        updatedByUid: authState?.uid,
+      })?.then(() => {
+        toast.success("Published!");
+        resetEditorBody();
+        resetEditorTitle();
+      });
+    } catch (err) {
+      toast.error("Error");
+    }
   };
 
   return (

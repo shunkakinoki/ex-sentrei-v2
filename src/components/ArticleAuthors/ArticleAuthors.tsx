@@ -1,10 +1,10 @@
 import {Listbox, Transition} from "@headlessui/react";
 import clsx from "clsx";
 
-import Author from "@/types/Author";
+import Profile from "@/types/Profile";
 
 export interface Props {
-  authors: Author[];
+  authors: Profile.Fields[];
 }
 
 // TODO: Convert to next/image

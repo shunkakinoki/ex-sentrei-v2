@@ -1,10 +1,10 @@
 import faker from "faker";
 
 import Article, {Pricing} from "@/types/Article";
-import Author from "@/types/Author";
-import Blog from "@/types/Blog";
 import Customer from "@/types/Customer";
+import Profile from "@/types/Profile";
 import Sales from "@/types/Sales";
+import Space from "@/types/Space";
 
 // Inspired by: https://github.com/Marak/faker.js/blob/4bd0935460ab62b72593b42471699d2044c7a53a/lib/markdown.js
 export const createMdHeader = (num = 3): string => {
@@ -102,16 +102,17 @@ export const createPricing = (): Pricing => {
   }
 };
 
-export const createAuthor = (): Author => {
+export const createAuthor = (): Profile.Get => {
   return {
     image: faker.image.avatar(),
     bio: faker.lorem.sentences(Math.floor(Math.random() * 3) + 1),
     name: faker.name.findName(),
     namespaceId: faker.lorem.slug(),
+    uid: faker.random.uuid(),
   };
 };
 
-export const createAuthors = (num = 3): Author[] => {
+export const createAuthors = (num = 3): Profile.Get[] => {
   return new Array(num).fill(undefined).map(createAuthor);
 };
 
@@ -119,20 +120,24 @@ export const createArticle = (): Article.Get => {
   return {
     authors: createAuthors(Math.floor(Math.random() * 3) + 1),
     body: createMarkdown(30),
+    createdAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
+    createdBy: createAuthor(),
+    createdByUid: faker.random.uuid(),
     excerpt: createMarkdown(1),
-    date: faker.date.past(Math.floor(Math.random() * 30)),
     image: `${faker.image.image()}?random=${Date.now()}`.replace(
       "http",
       "https",
     ),
     pricing: createPricing(),
-    slug: faker.lorem.slug(),
     time: Math.floor(Math.random() * 10 + 3),
     title: faker.lorem.lines(Math.floor(Math.random() * 1 + 1)),
     subtitle: faker.lorem.sentences(Math.floor(Math.random() * 11)),
     status: "published",
+    updatedAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
+    updatedBy: createAuthor(),
+    updatedByUid: faker.random.uuid(),
     uid: faker.random.uuid(),
-    namespaceId: "demo",
+    nameslugId: "demo",
   };
 };
 
@@ -140,12 +145,24 @@ export const createArticles = (num = 6): Article.Get[] => {
   return new Array(num).fill(undefined).map(createArticle);
 };
 
-export const createBlog = (): Blog => {
+export const createBlog = (): Space.Get => {
   return {
     authors: createAuthors(Math.floor(Math.random() * 3) + 1),
+    createdAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
+    createdBy: createAuthor(),
+    createdByUid: faker.random.uuid(),
     title: faker.lorem.sentences(Math.floor(Math.random() * 3) + 1),
-    subtitle: faker.lorem.sentences(Math.floor(Math.random() * 3) + 1),
+    description: faker.lorem.sentences(Math.floor(Math.random() * 3) + 1),
+    plan: "free",
     namespaceId: faker.lorem.slug(),
+    updatedAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
+    updatedBy: createAuthor(),
+    updatedByUid: faker.random.uuid(),
+    uid: faker.random.uuid(),
+    image: `${faker.image.image()}?random=${Date.now()}`.replace(
+      "http",
+      "https",
+    ),
   };
 };
 

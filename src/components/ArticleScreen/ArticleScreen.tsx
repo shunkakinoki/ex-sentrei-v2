@@ -31,7 +31,7 @@ export default function ArticleScreen({
       <HeaderRoot />
       <ArticleHero
         authors={article.authors}
-        date={article.date}
+        createdAt={article.createdAt}
         pricing={article.pricing}
         time={article.time}
         title={article.title}

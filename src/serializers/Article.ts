@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 
 import Article from "@/types/Article";
+import {serializeFirebaseDate} from "@/utils/date";
 
 export const serializeArticle = (
   snap: firebase.default.firestore.DocumentSnapshot<Article.Response>,
@@ -9,6 +10,8 @@ export const serializeArticle = (
 
   return {
     ...data,
+    createdAt: serializeFirebaseDate(data.createdAt),
+    updatedAt: serializeFirebaseDate(data.updatedAt),
     uid: snap.id,
   };
 };
@@ -20,6 +23,8 @@ export const serializeAdminArticle = (
 
   return {
     ...data,
+    createdAt: serializeFirebaseDate(data.createdAt),
+    updatedAt: serializeFirebaseDate(data.updatedAt),
     uid: snap.id,
   };
 };

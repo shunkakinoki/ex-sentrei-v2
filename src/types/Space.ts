@@ -1,5 +1,9 @@
-/* eslint-disable @typescript-eslint/no-namespace */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
+import Metadata from "@/types/Metadata";
+import Profile from "@/types/Profile";
+
+export type Plan = "free" | "pro" | "premium";
 export type NotificationType = "app" | "email";
 
 export interface NotificationSettings {
@@ -9,25 +13,30 @@ export interface NotificationSettings {
   app?: "everything" | "email" | "nothing";
 }
 
+// eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace Space {
   export type EditableFields = {
     description: string | null;
     title: string;
     image: string | null;
+    plan: Plan;
     settings?: NotificationSettings;
   };
 
   interface Fields extends EditableFields {
+    authors: Profile.Fields[];
     namespaceId: string;
   }
 
   export type AdminUpdate = Partial<Fields>;
 
-  export type Response = Fields;
+  export interface Response extends Fields, Metadata.Response {}
 
-  export type Update = Partial<Response>;
+  export interface Create extends Fields, Metadata.Create {}
 
-  export interface Get extends Response {
+  export interface Update extends Partial<EditableFields>, Metadata.Update {}
+
+  export interface Get extends Fields, Metadata.Get {
     uid: string;
   }
 

@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import Author from "@/types/Author";
+import Profile from "@/types/Profile";
 
-export type Props = Author;
+export type Props = Profile.Fields;
 
 export default function BlogAuthor({bio, image, name}: Props): JSX.Element {
   return (

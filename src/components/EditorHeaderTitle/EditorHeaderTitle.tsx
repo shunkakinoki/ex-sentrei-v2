@@ -7,7 +7,7 @@ import {editorTitleAtom} from "@/hooks/useEditor";
 import {getArticle} from "@/services/Article";
 import Article from "@/types/Article";
 
-export interface Props extends Partial<Pick<Article.Fields, "slug" | "title">> {
+export interface Props extends Partial<Pick<Article.Get, "uid" | "title">> {
   namespaceId: string;
 }
 
@@ -17,7 +17,7 @@ const getArticleFetcher = async (articleId: string) => {
 };
 
 export default function EditorHeaderTitle({
-  slug,
+  uid,
   title,
   namespaceId,
 }: Props): JSX.Element {
@@ -25,7 +25,7 @@ export default function EditorHeaderTitle({
 
   const {data: article} = useSWR(
     // eslint-disable-next-line no-nested-ternary
-    namespaceId === "demo" ? null : slug ? `articles/${slug}` : null,
+    namespaceId === "demo" ? null : uid ? `articles/${uid}` : null,
     getArticleFetcher,
   );
 

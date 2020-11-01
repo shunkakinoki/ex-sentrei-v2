@@ -20,7 +20,7 @@ export default function EditorScreen({
   return (
     <ContainerRoot>
       <EditorHeader
-        slug={article?.slug}
+        uid={article?.uid}
         title={article?.title}
         namespaceId={namespaceId}
       />

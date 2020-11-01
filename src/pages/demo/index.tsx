@@ -5,7 +5,7 @@ import DemoBlogScreen, {
 } from "@/components/DemoBlogScreen";
 import {totalArticlePages} from "@/const/demo";
 import Article from "@/types/Article";
-import Blog from "@/types/Blog";
+import Space from "@/types/Space";
 import {createArticles, createBlog} from "@/utils/faker";
 
 export type Props = Omit<DemoBlogScreenProps, "articles" | "blog" | "total"> & {
@@ -35,7 +35,7 @@ const Demo = ({
   return (
     <DemoBlogScreen
       articles={JSON.parse(articles) as Article.Get[]}
-      blog={JSON.parse(blog) as Blog}
+      blog={JSON.parse(blog) as Space.Get}
       current={current}
       total={totalArticlePages}
     />

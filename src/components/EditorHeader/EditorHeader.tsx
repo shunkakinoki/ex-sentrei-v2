@@ -27,7 +27,7 @@ export interface Props extends EditorHeaderTitleProps {
 
 export default function EditorHeader({
   title,
-  slug,
+  uid,
   namespaceId,
 }: Props): JSX.Element {
   const [switchValue, setSwitchValue] = useState(false);
@@ -71,7 +71,7 @@ export default function EditorHeader({
           </Link>
           <div className="lg:w-0 lg:flex-1">
             <EditorHeaderTitle
-              slug={slug}
+              uid={uid}
               title={title}
               namespaceId={namespaceId}
             />

@@ -3,14 +3,14 @@ import ArticleAuthors from "@/components/ArticleAuthors";
 import Article from "@/types/Article";
 
 export type Props = Pick<
-  Article.Fields,
-  "authors" | "date" | "pricing" | "time" | "title" | "subtitle"
+  Article.Get,
+  "authors" | "createdAt" | "pricing" | "time" | "title" | "subtitle"
 >;
 
 export default function ArticleHero({
   authors,
+  createdAt,
   pricing,
-  date,
   time,
   title,
   subtitle,
@@ -35,14 +35,14 @@ export default function ArticleHero({
         <div className="px-4 py-2 mt-2">
           <div className="flex items-center space-x-2 justify-left">
             {authors.length === 1 ? (
-              <ArticleAuthor author={authors[0]} />
+              <ArticleAuthor image={authors[0].image} name={authors[0].name} />
             ) : (
               <ArticleAuthors authors={authors} />
             )}
             <p className="flex items-center mt-1 font-medium text-center text-gray-500">
               {authors.length === 1 && authors[0].name}
               &nbsp;&middot;&nbsp;
-              {new Date(date).toDateString()}
+              {createdAt}
               &nbsp;&middot;&nbsp;
               {time} min read
               {pricing === "subscription" && <>&nbsp;&middot;&nbsp;</>}

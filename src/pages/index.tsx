@@ -3,7 +3,7 @@ import {GetServerSideProps, InferGetServerSidePropsType} from "next";
 import BlogScreen, {Props as BlogScreenProps} from "@/components/BlogScreen";
 import {totalArticlePages} from "@/const/demo";
 import Article from "@/types/Article";
-import Blog from "@/types/Blog";
+import Space from "@/types/Space";
 import {createArticles, createBlog} from "@/utils/faker";
 
 export type Props = Omit<BlogScreenProps, "articles" | "blog" | "total"> & {
@@ -65,7 +65,7 @@ const Index = ({
   return (
     <BlogScreen
       articles={JSON.parse(articles) as Article.Get[]}
-      blog={JSON.parse(blog) as Blog}
+      blog={JSON.parse(blog) as Space.Get}
       current={current}
       total={totalArticlePages}
       namespaceId={namespaceId}

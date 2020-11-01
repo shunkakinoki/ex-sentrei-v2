@@ -5,9 +5,16 @@ import {useForm} from "react-hook-form";
 import {toast} from "react-toastify";
 import useSWR, {mutate} from "swr";
 
+import {timestamp} from "@/firebase/db";
 import useAuth from "@/hooks/useAuth";
+import {getProfile} from "@/services/Profile";
 import {getSpace, updateSpace} from "@/services/Space";
 import {NotificationSettings} from "@/types/Space";
+
+const getProfileFetcher = async (profileId: string) => {
+  const uid = profileId.replace("profiles/", "");
+  return getProfile(uid);
+};
 
 const getSpaceFetcher = async (spaceId: string) => {
   const uid = spaceId.replace("spaces/", "");
@@ -22,6 +29,11 @@ export default function DashboardSettingsNotificationsSection({
   namespaceId,
 }: Props): JSX.Element {
   const {authState} = useAuth();
+
+  const {data: profile} = useSWR(
+    authState?.uid ? `profiles/${authState.uid}` : null,
+    getProfileFetcher,
+  );
 
   const {data: space} = useSWR(
     // eslint-disable-next-line no-nested-ternary
@@ -46,13 +58,18 @@ export default function DashboardSettingsNotificationsSection({
   });
 
   const onSubmit = async (data: NotificationSettings) => {
-    if (!authState?.uid) {
+    if (!authState?.uid || !profile) {
       return null;
     }
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     await mutate(`spaces/${authState.uid}`, data, false);
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    await updateSpace(authState?.uid, {settings: data})
+    await updateSpace(authState?.uid, {
+      settings: data,
+      updatedAt: timestamp,
+      updatedBy: profile,
+      updatedByUid: authState?.uid,
+    })
       .then(() =>
         toast.success("Success", {
           autoClose: 1500,

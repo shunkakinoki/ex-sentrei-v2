@@ -6,7 +6,7 @@ import Excerpt from "@/styles/excerpt.module.css";
 import Markdown from "@/styles/markdown.module.css";
 import Article from "@/types/Article";
 
-export interface Props extends Pick<Article.Fields, "body"> {
+export interface Props extends Pick<Article.Get, "body"> {
   excerpt?: boolean;
 }
 

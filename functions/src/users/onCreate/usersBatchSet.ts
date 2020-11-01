@@ -46,8 +46,10 @@ const userBatchSet = functions.auth.user().onCreate(async user => {
   };
 
   const spaceData: Space.Response = {
+    authors: [profileData],
     description: null,
-    title: `${profileData.name}'s Newsletter`,
+    plan: "free",
+    title: `${profileData.name}'s Publication`,
     image: user.photoURL || null,
     namespaceId: user.uid,
   };

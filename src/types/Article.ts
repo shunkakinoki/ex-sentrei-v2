@@ -1,17 +1,18 @@
-import Authors from "@/types/Author";
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+
+import Metadata from "@/types/Metadata";
+import Profile from "@/types/Profile";
 
 export type Pricing = "free" | "paid" | "subscription";
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace Article {
   export type EditableFields = {
-    authors: Authors[];
+    authors: Profile.Fields[];
     body: string;
-    date: Date;
     excerpt?: string;
     image?: string;
     pricing: Pricing;
-    slug: string;
     time: number;
     title: string;
     status: "preview" | "published";
@@ -19,16 +20,18 @@ declare namespace Article {
   };
 
   interface Fields extends EditableFields {
-    namespaceId: string;
+    nameslugId: string;
   }
 
   export type AdminUpdate = Partial<Fields>;
 
-  export type Response = Fields;
+  export interface Response extends Fields, Metadata.Response {}
 
-  export type Update = Partial<Response>;
+  export interface Create extends Fields, Metadata.Create {}
 
-  export interface Get extends Response {
+  export interface Update extends Partial<EditableFields>, Metadata.Update {}
+
+  export interface Get extends Fields, Metadata.Get {
     uid: string;
   }
 

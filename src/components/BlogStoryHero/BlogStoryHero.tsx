@@ -1,16 +1,16 @@
 import Article from "@/types/Article";
 
 export type Props = Pick<
-  Article.Fields,
-  "date" | "time" | "title" | "subtitle" | "pricing"
+  Article.Get,
+  "time" | "title" | "subtitle" | "pricing" | "updatedAt"
 >;
 
 export default function BlogStoryHero({
-  date,
   time,
   title,
   subtitle,
   pricing,
+  updatedAt,
 }: Props): JSX.Element {
   return (
     <div className="pb-4 pl-6 mt-3 overflow-auto sm:pb-4 sm:pl-3 md:pl-4 sm:mt-4">
@@ -23,7 +23,7 @@ export default function BlogStoryHero({
         {subtitle}
       </h6>
       <p className="flex items-center mt-1 font-medium text-left text-gray-500">
-        {new Date(date).toDateString()}
+        {updatedAt}
         &nbsp;&middot;&nbsp;
         {time} min read
         {pricing === "subscription" && <>&nbsp;&middot;&nbsp;</>}

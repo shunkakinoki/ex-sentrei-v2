@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 
-import Plan from "@/types/Plan";
+import {Plan} from "@/types/Space";
 
 export interface Props {
   plan: Plan;
