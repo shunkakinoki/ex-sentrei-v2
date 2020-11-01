@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
+import firebase from "firebase";
+
 import Metadata from "@/types/Metadata";
 import Profile from "@/types/Profile";
-
-import firebase from "firebase";
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace Member {

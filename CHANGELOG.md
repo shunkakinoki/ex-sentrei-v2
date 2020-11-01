@@ -1,3 +1,16 @@
+# [1.66.0](https://github.com/sentrei/sentrei/compare/v1.65.3...v1.66.0) (2020-11-01)
+
+### Features
+
+- 🎸 ini activity article ([f185016](https://github.com/sentrei/sentrei/commit/f1850166299aeba62feb4ec1da679755b13d3730))
+- 🎸 ini article service ([996f593](https://github.com/sentrei/sentrei/commit/996f59329f042712c0a968f07958c8f7c20e6b1d))
+- 🎸 ini revamp type ([6495dbf](https://github.com/sentrei/sentrei/commit/6495dbff8b287fe284f2470c00702f6fba75dd47))
+- 🎸 ini space metadata ([a509bfe](https://github.com/sentrei/sentrei/commit/a509bfe5337a50db37d7a691cfde94473840968c))
+
+### Performance Improvements
+
+- ⚡️ ini spaces functions ([eb94bae](https://github.com/sentrei/sentrei/commit/eb94baef9fdca00f0457c0e08fd397f8c84725cf))
+
 ## [1.65.3](https://github.com/sentrei/sentrei/compare/v1.65.2...v1.65.3) (2020-10-31)
 
 ### Performance Improvements
