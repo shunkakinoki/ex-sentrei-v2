@@ -3,18 +3,14 @@
 import {useEffect} from "react";
 import {useForm} from "react-hook-form";
 import {toast} from "react-toastify";
-import useSWR, {mutate} from "swr";
+import {mutate} from "swr";
 
 import {timestamp} from "@/firebase/db";
 import useAuth from "@/hooks/useAuth";
 import useProfile from "@/hooks/useProfile";
-import {getSpace, updateSpace} from "@/services/Space";
+import useSpace from "@/hooks/useSpace";
+import {updateSpace} from "@/services/Space";
 import {NotificationSettings} from "@/types/Space";
-
-const getSpaceFetcher = async (spaceId: string) => {
-  const uid = spaceId.replace("spaces/", "");
-  return getSpace(uid);
-};
 
 export interface Props {
   namespaceId: string;
@@ -24,18 +20,8 @@ export default function DashboardSettingsNotificationsSection({
   namespaceId,
 }: Props): JSX.Element {
   const {authState} = useAuth();
-
   const {profile} = useProfile();
-
-  const {data: space} = useSWR(
-    // eslint-disable-next-line no-nested-ternary
-    namespaceId === "demo"
-      ? null
-      : authState?.uid
-      ? `spaces/${authState.uid}`
-      : null,
-    getSpaceFetcher,
-  );
+  const {space} = useSpace(namespaceId);
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
   const {register, handleSubmit, reset, formState} = useForm<
