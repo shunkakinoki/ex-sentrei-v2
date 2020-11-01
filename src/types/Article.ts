@@ -12,7 +12,6 @@ declare namespace Article {
     excerpt?: string;
     image?: string;
     pricing: Pricing;
-    time: number;
     title: string;
     status: "preview" | "published";
     subtitle?: string;
@@ -21,6 +20,7 @@ declare namespace Article {
   interface Fields extends EditableFields {
     nameslugId: string;
     spaceId: string;
+    time?: number;
   }
 
   export type AdminUpdate = Partial<Fields>;
