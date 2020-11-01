@@ -4,5 +4,6 @@ admin.initializeApp();
 
 export * as activity from "./activity";
 export * as namespaces from "./namespaces";
+export * as profiles from "./profiles";
 export * as users from "./users";
 export * as spaces from "./spaces";
