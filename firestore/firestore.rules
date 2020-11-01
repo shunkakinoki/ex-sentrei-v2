@@ -17,7 +17,7 @@ service cloud.firestore {
         if request.auth.uid != null;
       allow update:
         if request.auth.uid != null
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(["description", "title", "namespaceId", "image", "settings"])
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(["description", "title", "namespaceId", "image", "settings", "updatedAt", "updatedBy", "updatedByUid"])
         && (request.resource.data.description == null || request.resource.data.description is string)
         && (request.resource.data.description == null || request.resource.data.description.size() <= 1000)
         && (request.resource.data.title != null && request.resource.data.title is string)
