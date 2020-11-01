@@ -3,6 +3,7 @@ import {useForm} from "react-hook-form";
 import {useSetRecoilState} from "recoil";
 import useSWR from "swr";
 
+import useArticle from "@/hooks/useArticle";
 import {editorTitleAtom} from "@/hooks/useEditor";
 import {getArticle} from "@/services/Article";
 import Article from "@/types/Article";
@@ -11,23 +12,14 @@ export interface Props extends Partial<Pick<Article.Get, "uid" | "title">> {
   namespaceId: string;
 }
 
-const getArticleFetcher = async (articleId: string) => {
-  const uid = articleId.replace("articles/", "");
-  return getArticle(uid);
-};
-
 export default function EditorHeaderTitle({
   uid,
   title,
   namespaceId,
 }: Props): JSX.Element {
-  const setTitleState = useSetRecoilState(editorTitleAtom);
+  const {article} = useArticle(namespaceId, uid);
 
-  const {data: article} = useSWR(
-    // eslint-disable-next-line no-nested-ternary
-    namespaceId === "demo" ? null : uid ? `articles/${uid}` : null,
-    getArticleFetcher,
-  );
+  const setTitleState = useSetRecoilState(editorTitleAtom);
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
   const {register, reset, formState, watch} = useForm<Props>({

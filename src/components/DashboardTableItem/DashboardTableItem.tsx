@@ -1,9 +1,7 @@
 import clsx from "clsx";
 import Link from "next/link";
-import useSWR from "swr";
 
-import useAuth from "@/hooks/useAuth";
-import {getSpace} from "@/services/Space";
+import useSpace from "@/hooks/useSpace";
 import Article from "@/types/Article";
 
 export interface Props
@@ -14,11 +12,6 @@ export interface Props
   namespaceId: string;
 }
 
-const getSpaceFetcher = async (spaceId: string) => {
-  const uid = spaceId.replace("spaces/", "");
-  return getSpace(uid);
-};
-
 export default function DashboardTableItem({
   pricing,
   title,
@@ -28,17 +21,7 @@ export default function DashboardTableItem({
   uid,
   updatedAt,
 }: Props): JSX.Element {
-  const {authState} = useAuth();
-
-  const {data: space} = useSWR(
-    // eslint-disable-next-line no-nested-ternary
-    namespaceId === "demo"
-      ? null
-      : authState?.uid
-      ? `spaces/${authState.uid}`
-      : null,
-    getSpaceFetcher,
-  );
+  const {space} = useSpace(namespaceId);
 
   return (
     <div className="flex flex-col w-full md:flex md:flex-row md:items-center md:justify-between">
