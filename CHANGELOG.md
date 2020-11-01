@@ -1,3 +1,17 @@
+# [1.67.0](https://github.com/sentrei/sentrei/compare/v1.66.0...v1.67.0) (2020-11-01)
+
+### Features
+
+- 🎸 ini use article ([2ab991c](https://github.com/sentrei/sentrei/commit/2ab991cced813580eddde92b13a21c2e535edcc6))
+- 🎸 ini use profile ([7a6785d](https://github.com/sentrei/sentrei/commit/7a6785d87fc516487a7d2a57833c85fd673ae850))
+- 🎸 ini use space ([e9d1c41](https://github.com/sentrei/sentrei/commit/e9d1c418734cc263e873a8243920623ba8b38f1a))
+
+### Performance Improvements
+
+- ⚡️ ini swr article custom use hook ([fcee1e8](https://github.com/sentrei/sentrei/commit/fcee1e8c1c713ba5c2aa02e74db6f189bda14b6f))
+- ⚡️ ini swr profile custom use hook ([f4a9b5f](https://github.com/sentrei/sentrei/commit/f4a9b5f4a78587147c0ee33f3daccb3d05ce5d75))
+- ⚡️ ini swr space custom use hook ([f3ab114](https://github.com/sentrei/sentrei/commit/f3ab1146dfdd94bf57a28a51787557bad0361ee3))
+
 # [1.66.0](https://github.com/sentrei/sentrei/compare/v1.65.3...v1.66.0) (2020-11-01)
 
 ### Features
