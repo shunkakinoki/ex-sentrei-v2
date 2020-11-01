@@ -1,30 +1,21 @@
 import clsx from "clsx";
 import {toast} from "react-toastify";
 import {useRecoilValue, useResetRecoilState} from "recoil";
-import useSWR from "swr";
 
 import {timestamp} from "@/firebase/db";
 import useAuth from "@/hooks/useAuth";
 import {editorTitleAtom, editorBodyAtom} from "@/hooks/useEditor";
+import useProfile from "@/hooks/useProfile";
 import {createArticle} from "@/services/Article";
-import {getProfile} from "@/services/Profile";
 
 export interface Props {
   switchValue: boolean;
 }
 
-const getProfileFetcher = async (profileId: string) => {
-  const uid = profileId.replace("profiles/", "");
-  return getProfile(uid);
-};
-
 export default function EditorHeaderButton({switchValue}: Props): JSX.Element {
   const {authState} = useAuth();
 
-  const {data: profile} = useSWR(
-    authState?.uid ? `profiles/${authState.uid}` : null,
-    getProfileFetcher,
-  );
+  const {profile} = useProfile();
 
   const editorTitle = useRecoilValue(editorTitleAtom);
   const editorBody = useRecoilValue(editorBodyAtom);

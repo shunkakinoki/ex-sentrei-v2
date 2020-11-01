@@ -3,24 +3,17 @@
 import {useEffect} from "react";
 import {useForm} from "react-hook-form";
 import {toast} from "react-toastify";
-import useSWR, {mutate} from "swr";
+import {mutate} from "swr";
 
 import useAuth from "@/hooks/useAuth";
-import {getProfile, updateProfile} from "@/services/Profile";
+import useProfile from "@/hooks/useProfile";
+import {updateProfile} from "@/services/Profile";
 import Profile from "@/types/Profile";
-
-const getProfileFetcher = async (profileId: string) => {
-  const uid = profileId.replace("profiles/", "");
-  return getProfile(uid);
-};
 
 export default function SettingsProfileSection(): JSX.Element {
   const {authState} = useAuth();
 
-  const {data: profile} = useSWR(
-    authState?.uid ? `profiles/${authState.uid}` : null,
-    getProfileFetcher,
-  );
+  const {profile} = useProfile();
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
   const {register, handleSubmit, reset, formState} = useForm<Profile.Fields>({

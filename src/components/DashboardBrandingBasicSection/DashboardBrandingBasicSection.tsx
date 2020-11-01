@@ -7,14 +7,9 @@ import useSWR, {mutate} from "swr";
 
 import {timestamp} from "@/firebase/db";
 import useAuth from "@/hooks/useAuth";
-import {getProfile} from "@/services/Profile";
+import useProfile from "@/hooks/useProfile";
 import {getSpace, updateSpace} from "@/services/Space";
 import Space from "@/types/Space";
-
-const getProfileFetcher = async (profileId: string) => {
-  const uid = profileId.replace("profiles/", "");
-  return getProfile(uid);
-};
 
 const getSpaceFetcher = async (spaceId: string) => {
   const uid = spaceId.replace("spaces/", "");
@@ -29,11 +24,7 @@ export default function DashboardBrandingBasicSection({
   namespaceId,
 }: Props): JSX.Element {
   const {authState} = useAuth();
-
-  const {data: profile} = useSWR(
-    authState?.uid ? `profiles/${authState.uid}` : null,
-    getProfileFetcher,
-  );
+  const {profile} = useProfile();
 
   const {data: space} = useSWR(
     // eslint-disable-next-line no-nested-ternary
