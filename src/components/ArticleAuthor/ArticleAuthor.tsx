@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import Profile from "@/types/Profile";
 
-export type Props = Pick<Profile.Fields, "image" | "name">;
+export type Props = Pick<Profile.Get, "image" | "name">;
 
 export default function ArticleAuthor({image, name}: Props): JSX.Element {
   return (

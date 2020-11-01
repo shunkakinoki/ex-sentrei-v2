@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
 import Metadata from "@/types/Metadata";
-import Profile from "@/types/Profile";
 
 export type Pricing = "free" | "paid" | "subscription";
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace Article {
   export type EditableFields = {
-    authors: Profile.Fields[];
+    authorUids: string[];
     body: string;
     excerpt?: string;
     image?: string;

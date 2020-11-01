@@ -4,6 +4,7 @@ import DemoBanner from "@/components/DemoBanner";
 export type Props = Omit<BlogScreenProps, "namespaceId">;
 
 export default function DemoBlogScreen({
+  author,
   articles,
   blog,
   current,
@@ -13,6 +14,7 @@ export default function DemoBlogScreen({
     <>
       <DemoBanner />
       <BlogScreen
+        author={author}
         articles={articles}
         blog={blog}
         current={current}
