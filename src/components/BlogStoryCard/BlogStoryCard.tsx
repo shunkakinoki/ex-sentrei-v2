@@ -16,6 +16,7 @@ export interface Props
     | "createdAt"
     | "createdBy"
     | "createdByUid"
+    | "spaceId"
   > {
   namespaceId: string;
   variant: "small" | "medium" | "large";

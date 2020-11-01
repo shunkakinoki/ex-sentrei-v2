@@ -45,6 +45,7 @@ export default function EditorHeaderButton({switchValue}: Props): JSX.Element {
         createdByUid: authState?.uid,
         pricing: "free",
         nameslugId: "",
+        spaceId: authState?.uid,
         status: "published",
         time: 3,
         title: editorTitle,
