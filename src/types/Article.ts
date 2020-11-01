@@ -10,11 +10,9 @@ declare namespace Article {
   export type EditableFields = {
     authors: Profile.Fields[];
     body: string;
-    date: Date;
     excerpt?: string;
     image?: string;
     pricing: Pricing;
-    slug: string;
     time: number;
     title: string;
     status: "preview" | "published";
@@ -22,18 +20,18 @@ declare namespace Article {
   };
 
   interface Fields extends EditableFields {
-    namespaceId: string;
+    nameslugId: string;
   }
 
   export type AdminUpdate = Partial<Fields>;
 
-  export type Response = Fields;
+  export interface Response extends Fields, Metadata.Response {}
 
   export interface Create extends Fields, Metadata.Create {}
 
-  export interface Update extends Partial<Response>, Metadata.Update {}
+  export interface Update extends Partial<EditableFields>, Metadata.Update {}
 
-  export interface Get extends Response, Metadata.Get {
+  export interface Get extends Fields, Metadata.Get {
     uid: string;
   }
 

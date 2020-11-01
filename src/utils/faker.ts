@@ -120,8 +120,10 @@ export const createArticle = (): Article.Get => {
   return {
     authors: createAuthors(Math.floor(Math.random() * 3) + 1),
     body: createMarkdown(30),
+    createdAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
+    createdBy: createAuthor(),
+    createdByUid: faker.random.uuid(),
     excerpt: createMarkdown(1),
-    date: faker.date.past(Math.floor(Math.random() * 30)),
     image: `${faker.image.image()}?random=${Date.now()}`.replace(
       "http",
       "https",
@@ -132,6 +134,9 @@ export const createArticle = (): Article.Get => {
     title: faker.lorem.lines(Math.floor(Math.random() * 1 + 1)),
     subtitle: faker.lorem.sentences(Math.floor(Math.random() * 11)),
     status: "published",
+    updatedAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
+    updatedBy: createAuthor(),
+    updatedByUid: faker.random.uuid(),
     uid: faker.random.uuid(),
     namespaceId: "demo",
   };
