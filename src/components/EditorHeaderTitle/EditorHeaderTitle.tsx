@@ -7,7 +7,7 @@ import {editorTitleAtom} from "@/hooks/useEditor";
 import {getArticle} from "@/services/Article";
 import Article from "@/types/Article";
 
-export interface Props extends Partial<Pick<Article.Fields, "slug" | "title">> {
+export interface Props extends Partial<Pick<Article.Get, "slug" | "title">> {
   namespaceId: string;
 }
 

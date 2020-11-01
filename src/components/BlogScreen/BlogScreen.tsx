@@ -26,7 +26,7 @@ export default function BlogScreen({
       <BlogHero
         authors={blog.authors}
         title={blog.title}
-        subtitle={blog.subtitle}
+        description={blog.description}
         namespaceId={namespaceId}
       />
       <BlogStoryGrid articles={articles} namespaceId={namespaceId} />

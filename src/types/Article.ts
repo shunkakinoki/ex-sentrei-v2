@@ -1,11 +1,11 @@
-import Authors from "@/types/Author";
+import Profile from "@/types/Profile";
 
 export type Pricing = "free" | "paid" | "subscription";
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace Article {
   export type EditableFields = {
-    authors: Authors[];
+    authors: Profile.Fields[];
     body: string;
     date: Date;
     excerpt?: string;

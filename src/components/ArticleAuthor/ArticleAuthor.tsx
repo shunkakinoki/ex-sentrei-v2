@@ -1,20 +1,18 @@
 import Image from "next/image";
 
-import Author from "@/types/Author";
+import Profile from "@/types/Profile";
 
-export interface Props {
-  author: Author;
-}
+export type Props = Pick<Profile.Fields, "image" | "name">;
 
-export default function ArticleAuthor({author}: Props): JSX.Element {
+export default function ArticleAuthor({image, name}: Props): JSX.Element {
   return (
     <a>
       <Image
         className="inline object-cover w-12 h-12 mr-2 rounded-full"
         unoptimized
         unsized
-        src={author.image ?? ""}
-        alt={`Author ${author.name}`}
+        src={image ?? ""}
+        alt={`Author ${name}`}
       />
     </a>
   );

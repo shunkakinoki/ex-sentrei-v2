@@ -5,11 +5,10 @@ import useSWR from "swr";
 import useAuth from "@/hooks/useAuth";
 import {getSpace} from "@/services/Space";
 import Article from "@/types/Article";
-import Space from "@/types/Space";
 
 export interface Props
   extends Pick<
-    Article.Fields,
+    Article.Get,
     "date" | "pricing" | "title" | "subtitle" | "slug" | "status"
   > {
   namespaceId: string;

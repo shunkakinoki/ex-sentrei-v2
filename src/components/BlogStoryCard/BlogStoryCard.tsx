@@ -5,7 +5,7 @@ import BlogStoryHero from "@/components/BlogStoryHero";
 import BlogStoryImage from "@/components/BlogStoryImage";
 import Article from "@/types/Article";
 
-export interface Props extends Omit<Article.Fields, "authors" | "body"> {
+export interface Props extends Omit<Article.Get, "authors" | "body" | "uid"> {
   namespaceId: string;
   variant: "small" | "medium" | "large";
 }

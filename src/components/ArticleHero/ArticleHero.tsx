@@ -3,7 +3,7 @@ import ArticleAuthors from "@/components/ArticleAuthors";
 import Article from "@/types/Article";
 
 export type Props = Pick<
-  Article.Fields,
+  Article.Get,
   "authors" | "date" | "pricing" | "time" | "title" | "subtitle"
 >;
 
@@ -35,7 +35,7 @@ export default function ArticleHero({
         <div className="px-4 py-2 mt-2">
           <div className="flex items-center space-x-2 justify-left">
             {authors.length === 1 ? (
-              <ArticleAuthor author={authors[0]} />
+              <ArticleAuthor image={authors[0].image} name={authors[0].name} />
             ) : (
               <ArticleAuthors authors={authors} />
             )}

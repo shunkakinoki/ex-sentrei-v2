@@ -3,9 +3,11 @@
 import Link from "next/link";
 
 import BlogAuthor from "@/components/BlogAuthor";
-import Blog from "@/types/Blog";
+import Space from "@/types/Space";
 
-export interface Props extends Blog {
+// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+export interface Props
+  extends Pick<Space.Get, "authors" | "description" | "title"> {
   namespaceId: string;
 }
 
@@ -13,7 +15,7 @@ export default function BlogHero({
   authors,
   namespaceId,
   title,
-  subtitle,
+  description,
 }: Props): JSX.Element {
   return (
     <section>
@@ -23,7 +25,7 @@ export default function BlogHero({
             {title}
           </h1>
           <h4 className="mt-5 text-lg text-center lg:mt-8 md:text-left ">
-            {subtitle}
+            {description}
           </h4>
         </div>
         <div className="mt-10 sm:mt-15 sm:flex sm:justify-center md:w-1/2 lg:w-1/3 lg:flex-shrink-0 lg:mt-0">
