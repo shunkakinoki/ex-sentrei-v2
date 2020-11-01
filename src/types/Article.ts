@@ -21,6 +21,7 @@ declare namespace Article {
 
   interface Fields extends EditableFields {
     nameslugId: string;
+    spaceId: string;
   }
 
   export type AdminUpdate = Partial<Fields>;
