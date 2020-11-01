@@ -24,6 +24,7 @@ declare namespace Activity {
     createdByUid: string;
     fullItemPath: string;
     itemPath: string;
+    userId: string;
     spaceId?: string;
     updatedAt: firebase.default.firestore.FieldValue;
     user: Profile.Response;
