@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+
+import Metadata from "@/types/Metadata";
 import Profile from "@/types/Profile";
 
 export type Pricing = "free" | "paid" | "subscription";
@@ -26,9 +29,11 @@ declare namespace Article {
 
   export type Response = Fields;
 
-  export type Update = Partial<Response>;
+  export interface Create extends Fields, Metadata.Create {}
 
-  export interface Get extends Response {
+  export interface Update extends Partial<Response>, Metadata.Update {}
+
+  export interface Get extends Response, Metadata.Get {
     uid: string;
   }
 
