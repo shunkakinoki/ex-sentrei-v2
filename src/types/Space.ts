@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
+import Metadata from "@/types/Metadata";
 import Profile from "@/types/Profile";
 
 export type Plan = "free" | "pro" | "premium";
@@ -29,13 +30,13 @@ declare namespace Space {
 
   export type AdminUpdate = Partial<Fields>;
 
-  export type Response = Fields;
+  export interface Response extends Fields, Metadata.Response {}
 
-  export type Create = Fields;
+  export interface Create extends Fields, Metadata.Create {}
 
-  export type Update = Partial<EditableFields>;
+  export interface Update extends Partial<EditableFields>, Metadata.Update {}
 
-  export interface Get extends Fields {
+  export interface Get extends Fields, Metadata.Get {
     uid: string;
   }
 
