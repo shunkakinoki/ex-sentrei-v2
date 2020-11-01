@@ -1,11 +1,15 @@
 import ArticleAuthor from "@/components/ArticleAuthor";
 import ArticleAuthors from "@/components/ArticleAuthors";
 import Article from "@/types/Article";
+import Profile from "@/types/Profile";
 
-export type Props = Pick<
-  Article.Get,
-  "authors" | "createdAt" | "pricing" | "time" | "title" | "subtitle"
->;
+export interface Props
+  extends Pick<
+    Article.Get,
+    "createdAt" | "pricing" | "time" | "title" | "subtitle"
+  > {
+  authors: Profile.Get[];
+}
 
 export default function ArticleHero({
   authors,

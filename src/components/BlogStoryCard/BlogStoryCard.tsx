@@ -8,7 +8,7 @@ import Article from "@/types/Article";
 export interface Props
   extends Omit<
     Article.Get,
-    | "authors"
+    | "authorUids"
     | "body"
     | "nameslugId"
     | "updatedBy"
@@ -16,6 +16,7 @@ export interface Props
     | "createdAt"
     | "createdBy"
     | "createdByUid"
+    | "spaceId"
   > {
   namespaceId: string;
   variant: "small" | "medium" | "large";

@@ -4,30 +4,30 @@ import * as admin from "firebase-admin";
 import * as functions from "firebase-functions";
 
 import Activity from "@/types/Activity";
-import Space from "@/types/Space";
+import Article from "@/types/Article";
 
 const db = admin.firestore();
 
 /**
- * Create space activity on delete
+ * Create article activity on delete
  */
-const activitySpaceDelete = functions.firestore
-  .document("spaces/{spaceId}")
+const activityArticleDelete = functions.firestore
+  .document("articles/{articleId}")
   .onDelete(async (snap, context) => {
-    const {spaceId} = context.params;
+    const {articleId} = context.params;
 
-    const data = snap.data() as Space.Response;
+    const data = snap.data() as Article.Response;
 
-    const activity: Activity.DeleteSpace = {
+    const activity: Activity.DeleteArticle = {
       action: "deleted",
       after: null,
       before: data,
-      category: "spaces",
-      categoryId: spaceId,
+      category: "articles",
+      categoryId: articleId,
       createdByUid: data.updatedByUid,
-      fullItemPath: `spaces/${spaceId as string}`,
-      itemPath: `spaces/${spaceId as string}`,
-      spaceId,
+      fullItemPath: `articles/${articleId as string}`,
+      itemPath: `articles/${articleId as string}`,
+      spaceId: data.spaceId,
       updatedAt: data.updatedAt,
       user: data.updatedBy,
       userId: data.updatedByUid,
@@ -37,4 +37,4 @@ const activitySpaceDelete = functions.firestore
     return db.collection("activity").add(activity);
   });
 
-export default activitySpaceDelete;
+export default activityArticleDelete;

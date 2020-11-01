@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
 import Metadata from "@/types/Metadata";
-import Profile from "@/types/Profile";
 
 export type Plan = "free" | "pro" | "premium";
 export type NotificationType = "app" | "email";
@@ -24,7 +23,7 @@ declare namespace Space {
   };
 
   interface Fields extends EditableFields {
-    authors: Profile.Fields[];
+    authorUids: string[];
     namespaceId: string;
   }
 

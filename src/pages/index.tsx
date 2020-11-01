@@ -3,10 +3,15 @@ import {GetServerSideProps, InferGetServerSidePropsType} from "next";
 import BlogScreen, {Props as BlogScreenProps} from "@/components/BlogScreen";
 import {totalArticlePages} from "@/const/demo";
 import Article from "@/types/Article";
+import Profile from "@/types/Profile";
 import Space from "@/types/Space";
-import {createArticles, createBlog} from "@/utils/faker";
+import {createAuthor, createArticles, createBlog} from "@/utils/faker";
 
-export type Props = Omit<BlogScreenProps, "articles" | "blog" | "total"> & {
+export type Props = Omit<
+  BlogScreenProps,
+  "author" | "articles" | "blog" | "total"
+> & {
+  author: string;
   articles: string;
   blog: string;
 };
@@ -34,12 +39,14 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
     };
   }
 
+  const author = createAuthor();
   const articles = createArticles();
   const blog = createBlog();
 
   if (req.headers.host === "demo.sentrei.com") {
     return {
       props: {
+        author: JSON.stringify(author),
         articles: JSON.stringify(articles),
         blog: JSON.stringify(blog),
         current: 1,
@@ -57,6 +64,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
 };
 
 const Index = ({
+  author,
   articles,
   blog,
   current,
@@ -64,6 +72,7 @@ const Index = ({
 }: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element => {
   return (
     <BlogScreen
+      author={JSON.parse(author) as Profile.Get}
       articles={JSON.parse(articles) as Article.Get[]}
       blog={JSON.parse(blog) as Space.Get}
       current={current}

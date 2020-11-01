@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-import ArticleHero from "@/components/ArticleHero";
+import ArticleHero, {Props as ArticleHeroProps} from "@/components/ArticleHero";
 import ArticleImage from "@/components/ArticleImage";
 import ArticleStoryGrid from "@/components/ArticleStoryGrid";
 import ArticleSubscribe from "@/components/ArticleSubscribe";
@@ -15,13 +15,14 @@ const ArticleBody = dynamic(() => import("@/components/ArticleBody"), {
   loading: () => <div className="p-8 md:p-12 lg:p-16" />,
 });
 
-export interface Props {
+export interface Props extends Pick<ArticleHeroProps, "authors"> {
   article: Article.Get;
   more: Article.Get[];
   namespaceId: string;
 }
 
 export default function ArticleScreen({
+  authors,
   article,
   more,
   namespaceId,
@@ -30,7 +31,7 @@ export default function ArticleScreen({
     <ContainerRoot>
       <HeaderRoot />
       <ArticleHero
-        authors={article.authors}
+        authors={authors}
         createdAt={article.createdAt}
         pricing={article.pricing}
         time={article.time}

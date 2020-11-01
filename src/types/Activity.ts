@@ -4,7 +4,7 @@ import Space from "@/types/Space";
 
 export type UserAction = "created" | "updated" | "deleted";
 
-type EditableContent = "articles" | "spaces";
+type EditableContent = "articles" | "profiles" | "spaces";
 
 type EditableContentType = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -24,6 +24,7 @@ declare namespace Activity {
     createdByUid: string;
     fullItemPath: string;
     itemPath: string;
+    userId: string;
     spaceId?: string;
     updatedAt: firebase.default.firestore.FieldValue;
     user: Profile.Response;
@@ -56,14 +57,13 @@ declare namespace Activity {
   export type CreateArticle = Create<Article.Response, "articles">;
   export type UpdateArticle = Update<Article.Response, "articles">;
   export type DeleteArticle = Delete<Article.Response, "articles">;
+  export type UpdateProfile = Update<Profile.Response, "profiles">;
   export type CreateSpace = Create<Space.Response, "spaces">;
   export type UpdateSpace = Update<Space.Response, "spaces">;
   export type DeleteSpace = Delete<Space.Response, "spaces">;
 
   export type CreateActions = CreateArticle | CreateSpace;
-
-  export type UpdateActions = UpdateArticle | UpdateSpace;
-
+  export type UpdateActions = UpdateArticle | UpdateProfile | UpdateSpace;
   export type DeleteActions = DeleteArticle | DeleteSpace;
 
   export type Response = Omit<

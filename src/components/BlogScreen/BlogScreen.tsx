@@ -8,12 +8,15 @@ import HeaderRoot from "@/components/HeaderRoot";
 import PaginationBase, {
   Props as PaginationBaseProps,
 } from "@/components/PaginationBase";
+import Profile from "@/types/Profile";
 
 export interface Props extends BlogStoryGridProps, PaginationBaseProps {
-  blog: Omit<BlogHeroProps, "name" | "namespaceId">;
+  author: Profile.Get;
+  blog: Omit<BlogHeroProps, "author" | "name" | "namespaceId">;
 }
 
 export default function BlogScreen({
+  author,
   articles,
   blog,
   current,
@@ -24,7 +27,7 @@ export default function BlogScreen({
     <ContainerRoot>
       <HeaderRoot />
       <BlogHero
-        authors={blog.authors}
+        author={author}
         title={blog.title}
         description={blog.description}
         namespaceId={namespaceId}

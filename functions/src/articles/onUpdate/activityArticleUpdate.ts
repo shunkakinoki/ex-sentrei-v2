@@ -5,20 +5,20 @@ import * as functions from "firebase-functions";
 import {isEqual, pick} from "lodash";
 
 import Activity from "@/types/Activity";
-import Space from "@/types/Space";
+import Article from "@/types/Article";
 
 const db = admin.firestore();
 
 /**
- * Create space activity on update
+ * Create article activity on update
  */
-const activitySpaceUpdate = functions.firestore
-  .document("spaces/{spaceId}")
+const activityArticleUpdate = functions.firestore
+  .document("articles/{articleId}")
   .onUpdate(async (change, context) => {
-    const {spaceId} = context.params;
+    const {articleId} = context.params;
 
-    const before = change.before.data() as Space.Response;
-    const after = change.after.data() as Space.Response;
+    const before = change.before.data() as Article.Response;
+    const after = change.after.data() as Article.Response;
     const fieldsToTrack = ["description", "name", "photo"];
     const beforeChanges = pick(before, fieldsToTrack);
     const afterChanges = pick(after, fieldsToTrack);
@@ -28,16 +28,16 @@ const activitySpaceUpdate = functions.firestore
       return false;
     }
 
-    const activity: Activity.UpdateSpace = {
+    const activity: Activity.UpdateArticle = {
       action: "updated",
       after,
       before,
-      category: "spaces",
-      categoryId: spaceId,
+      category: "articles",
+      categoryId: articleId,
       createdByUid: after.updatedByUid,
-      fullItemPath: `spaces/${spaceId as string}`,
-      itemPath: `spaces/${spaceId as string}`,
-      spaceId,
+      fullItemPath: `articles/${articleId as string}`,
+      itemPath: `articles/${articleId as string}`,
+      spaceId: after.spaceId,
       updatedAt: after.updatedAt,
       user: after.updatedBy,
       userId: after.updatedByUid,
@@ -47,4 +47,4 @@ const activitySpaceUpdate = functions.firestore
     return db.collection("activity").add(activity);
   });
 
-export default activitySpaceUpdate;
+export default activityArticleUpdate;

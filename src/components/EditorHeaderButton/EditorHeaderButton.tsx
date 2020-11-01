@@ -38,13 +38,14 @@ export default function EditorHeaderButton({switchValue}: Props): JSX.Element {
 
     try {
       await createArticle({
-        authors: [],
+        authorUids: [authState?.uid],
         body: editorBody,
         createdAt: timestamp,
         createdBy: profile,
         createdByUid: authState?.uid,
         pricing: "free",
         nameslugId: "",
+        spaceId: authState?.uid,
         status: "published",
         time: 3,
         title: editorTitle,

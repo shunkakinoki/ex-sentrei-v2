@@ -3,16 +3,17 @@
 import Link from "next/link";
 
 import BlogAuthor from "@/components/BlogAuthor";
+import Profile from "@/types/Profile";
 import Space from "@/types/Space";
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-export interface Props
-  extends Pick<Space.Get, "authors" | "description" | "title"> {
+export interface Props extends Pick<Space.Get, "description" | "title"> {
+  author: Profile.Get;
   namespaceId: string;
 }
 
 export default function BlogHero({
-  authors,
+  author,
   namespaceId,
   title,
   description,
@@ -39,12 +40,7 @@ export default function BlogHero({
         </div>
       </div>
       <div className="flex justify-start w-full mt-3 align-middle sm:mt-6">
-        <BlogAuthor
-          name={authors[0].name}
-          namespaceId={authors[0].namespaceId}
-          bio={authors[0].bio}
-          image={authors[0].image}
-        />
+        <BlogAuthor name={author.name} bio={author.bio} image={author.image} />
         <div className="flex-shrink-0 hidden px-8 py-3 m-3 ml-auto md:block">
           <button className="px-4 py-2 font-bold text-gray-800 bg-gray-300 border-r rounded-l hover:bg-gray-400">
             <svg

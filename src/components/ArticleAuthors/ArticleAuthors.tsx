@@ -4,7 +4,7 @@ import clsx from "clsx";
 import Profile from "@/types/Profile";
 
 export interface Props {
-  authors: Profile.Fields[];
+  authors: Profile.Get[];
 }
 
 // TODO: Convert to next/image

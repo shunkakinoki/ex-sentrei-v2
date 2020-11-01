@@ -116,9 +116,17 @@ export const createAuthors = (num = 3): Profile.Get[] => {
   return new Array(num).fill(undefined).map(createAuthor);
 };
 
+export const createProfileUid = (): string => {
+  return faker.random.uuid();
+};
+
+export const createAuthorUids = (num = 3): string[] => {
+  return new Array(num).fill(undefined).map(createProfileUid);
+};
+
 export const createArticle = (): Article.Get => {
   return {
-    authors: createAuthors(Math.floor(Math.random() * 3) + 1),
+    authorUids: createAuthorUids(),
     body: createMarkdown(30),
     createdAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
     createdBy: createAuthor(),
@@ -129,6 +137,7 @@ export const createArticle = (): Article.Get => {
       "https",
     ),
     pricing: createPricing(),
+    spaceId: faker.random.uuid(),
     time: Math.floor(Math.random() * 10 + 3),
     title: faker.lorem.lines(Math.floor(Math.random() * 1 + 1)),
     subtitle: faker.lorem.sentences(Math.floor(Math.random() * 11)),
@@ -147,7 +156,7 @@ export const createArticles = (num = 6): Article.Get[] => {
 
 export const createBlog = (): Space.Get => {
   return {
-    authors: createAuthors(Math.floor(Math.random() * 3) + 1),
+    authorUids: createAuthorUids(),
     createdAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
     createdBy: createAuthor(),
     createdByUid: faker.random.uuid(),

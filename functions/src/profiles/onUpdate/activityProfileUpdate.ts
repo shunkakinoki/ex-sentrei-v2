@@ -5,20 +5,20 @@ import * as functions from "firebase-functions";
 import {isEqual, pick} from "lodash";
 
 import Activity from "@/types/Activity";
-import Space from "@/types/Space";
+import Profile from "@/types/Profile";
 
 const db = admin.firestore();
-
+const timestamp = admin.firestore.FieldValue.serverTimestamp();
 /**
- * Create space activity on update
+ * Create profile activity on update
  */
-const activitySpaceUpdate = functions.firestore
-  .document("spaces/{spaceId}")
+const activityProfileUpdate = functions.firestore
+  .document("profiles/{profileId}")
   .onUpdate(async (change, context) => {
-    const {spaceId} = context.params;
+    const {profileId} = context.params;
 
-    const before = change.before.data() as Space.Response;
-    const after = change.after.data() as Space.Response;
+    const before = change.before.data() as Profile.Response;
+    const after = change.after.data() as Profile.Response;
     const fieldsToTrack = ["description", "name", "photo"];
     const beforeChanges = pick(before, fieldsToTrack);
     const afterChanges = pick(after, fieldsToTrack);
@@ -28,23 +28,22 @@ const activitySpaceUpdate = functions.firestore
       return false;
     }
 
-    const activity: Activity.UpdateSpace = {
+    const activity: Activity.UpdateProfile = {
       action: "updated",
       after,
       before,
-      category: "spaces",
-      categoryId: spaceId,
-      createdByUid: after.updatedByUid,
-      fullItemPath: `spaces/${spaceId as string}`,
-      itemPath: `spaces/${spaceId as string}`,
-      spaceId,
-      updatedAt: after.updatedAt,
-      user: after.updatedBy,
-      userId: after.updatedByUid,
+      category: "profiles",
+      categoryId: profileId,
+      createdByUid: profileId,
+      fullItemPath: `profiles/${profileId as string}`,
+      itemPath: `profiles/${profileId as string}`,
+      updatedAt: timestamp,
+      user: after,
+      userId: profileId,
       userNotification: [],
     };
 
     return db.collection("activity").add(activity);
   });
 
-export default activitySpaceUpdate;
+export default activityProfileUpdate;

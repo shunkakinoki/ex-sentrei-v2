@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import Profile from "@/types/Profile";
 
-export type Props = Profile.Fields;
+export type Props = Pick<Profile.Get, "bio" | "image" | "name">;
 
 export default function BlogAuthor({bio, image, name}: Props): JSX.Element {
   return (
