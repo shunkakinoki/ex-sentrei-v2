@@ -1,3 +1,18 @@
+# [1.69.0](https://github.com/sentrei/sentrei/compare/v1.68.0...v1.69.0) (2020-11-01)
+
+### Features
+
+- 🎸 ini article query ([21f422e](https://github.com/sentrei/sentrei/commit/21f422e50bf48952595fdd97c0a353ca4ce1a8e4))
+- 🎸 ini server timestamp ([0dbaf4d](https://github.com/sentrei/sentrei/commit/0dbaf4da2123b853f2b0c4b214018d12bb8e8a78))
+
+### Performance Improvements
+
+- ⚡️ articles index functions ([1bb0fdc](https://github.com/sentrei/sentrei/commit/1bb0fdceb019671947dfe60fd65bf09a67cdb699))
+- ⚡️ ini articles rules ([dd1dc70](https://github.com/sentrei/sentrei/commit/dd1dc701b0aee725c8fae82f17df14c13ffe08a2))
+- ⚡️ ini swr error ([b602812](https://github.com/sentrei/sentrei/commit/b6028123430caee678d10ed7351f6952d2e90fc1))
+- ⚡️ refactor landing hero ([ef89564](https://github.com/sentrei/sentrei/commit/ef895647f8db999ffcdf28af21064ea867114580))
+- ⚡️ refactor metadata profile ([e1801d6](https://github.com/sentrei/sentrei/commit/e1801d66be848d84de42343e13a50ca363d6f7df))
+
 # [1.68.0](https://github.com/sentrei/sentrei/compare/v1.67.0...v1.68.0) (2020-11-01)
 
 ### Features
