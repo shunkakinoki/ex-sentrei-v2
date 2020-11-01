@@ -1,3 +1,20 @@
+# [1.68.0](https://github.com/sentrei/sentrei/compare/v1.67.0...v1.68.0) (2020-11-01)
+
+### Features
+
+- 🎸 ini activity functions ([cc5c3ff](https://github.com/sentrei/sentrei/commit/cc5c3ff880f4e00806909d079d605866ba5b33e3))
+- 🎸 ini articles functions ([220facb](https://github.com/sentrei/sentrei/commit/220facb179737e7d0c176a237e655069774a9fe4))
+- 🎸 ini author profile in article space model ([004ae62](https://github.com/sentrei/sentrei/commit/004ae6264ac2804edc423926d0a48a9d0b83b25a))
+- 🎸 ini landing dmo ([1cfa682](https://github.com/sentrei/sentrei/commit/1cfa682968c155c1f76151590ab519ff545f8a11))
+- 🎸 ini namespaces functions ([1028afa](https://github.com/sentrei/sentrei/commit/1028afa68f054d4192bc59ed7bc8f9772e557b46))
+- 🎸 ini profiles functions ([96f7322](https://github.com/sentrei/sentrei/commit/96f73224d0c5c27a50874da874fe253e638080a6))
+
+### Performance Improvements
+
+- ⚡️ ini profile update with author uids ([be51abf](https://github.com/sentrei/sentrei/commit/be51abfd7843fb5ccb495a2f5983419e87167195))
+- ⚡️ ini space id for article type ([9aa10c8](https://github.com/sentrei/sentrei/commit/9aa10c8eb238c08f787ead62039fd2c8a174055b))
+- ⚡️ ini userid activity ([c1be22e](https://github.com/sentrei/sentrei/commit/c1be22ef3b179c46d87e9d5c11546c3dd4f93648))
+
 # [1.67.0](https://github.com/sentrei/sentrei/compare/v1.66.0...v1.67.0) (2020-11-01)
 
 ### Features
