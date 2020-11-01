@@ -58,6 +58,8 @@ export default function EditorHeaderButton({switchValue}: Props): JSX.Element {
         resetEditorTitle();
       });
     } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error(err);
       toast.error("Error");
     }
   };

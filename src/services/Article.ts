@@ -16,7 +16,7 @@ export const articleConverter: firebase.default.firestore.FirestoreDataConverter
 };
 
 export const createArticle = async (article: Article.Create): Promise<void> => {
-  await db.collection("aricles").add(article);
+  await db.collection("articles").add(article);
 };
 
 export const getArticle = async (

@@ -1,6 +1,29 @@
 rules_version = "2";
 service cloud.firestore {
   match /databases/{database}/documents {
+    match /articles/{articleId} {
+      allow get:
+        if request.auth.uid != null;
+      allow create:
+        if request.auth.uid != null
+        && request.resource.data.body is string
+        && request.resource.data.createdAt == request.time
+        && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.bio == request.resource.data.createdBy.bio
+        && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.name == request.resource.data.createdBy.name
+        && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.image == request.resource.data.createdBy.image
+        && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.namespaceId == request.resource.data.createdBy.namespaceId
+        && request.resource.data.createdByUid == request.auth.uid
+        && request.resource.data.title is string
+        && request.resource.data.title.size() <= 1000
+        && request.resource.data.updatedAt == request.time
+        && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.bio == request.resource.data.updatedBy.bio
+        && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.name == request.resource.data.updatedBy.name
+        && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.image == request.resource.data.updatedBy.image
+        && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.namespaceId == request.resource.data.updatedBy.namespaceId
+        && request.resource.data.updatedByUid == request.auth.uid;
+      allow update, delete, list:
+        if false;
+    }
     match /profiles/{profileId} {
       allow get;
       allow list:
