@@ -10,7 +10,8 @@
     "target": "es2017",
     "paths": {
       "@/*": ["../src/*"]
-    }
+    },
+    "types": ["../node_modules/firebase"]
   },
   "compileOnSave": true,
   "include": ["src/**/*"],

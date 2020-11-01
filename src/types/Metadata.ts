@@ -10,7 +10,7 @@ declare namespace Metadata {
 
   export interface Create extends Update {
     createdAt: firebase.default.firestore.FieldValue;
-    createdBy: Profile.Get;
+    createdBy: Profile.Response;
     createdByUid: string;
   }
 

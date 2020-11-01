@@ -7,6 +7,7 @@ import Space from "@/types/Space";
 import User from "@/types/User";
 
 const db = admin.firestore();
+const timestamp = admin.firestore.Timestamp.now();
 
 function getNameFromEmail(email: string): string {
   if (email.lastIndexOf("@") === -1) {
@@ -46,12 +47,18 @@ const userBatchSet = functions.auth.user().onCreate(async user => {
   };
 
   const spaceData: Space.Response = {
-    authors: [profileData],
+    authorUids: [user.uid],
+    createdAt: timestamp,
+    createdBy: profileData,
+    createdByUid: user.uid,
     description: null,
     plan: "free",
     title: `${profileData.name}'s Publication`,
     image: user.photoURL || null,
     namespaceId: user.uid,
+    updatedAt: timestamp,
+    updatedBy: profileData,
+    updatedByUid: user.uid,
   };
 
   const profileNamespaceRef = db.doc(`namespaces/@${user.uid}`);

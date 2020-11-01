@@ -2,6 +2,13 @@ import db from "@/firebase/db";
 import {serializeArticle} from "@/serializers/Article";
 import Article from "@/types/Article";
 
+export default interface ArticleQuery {
+  spaceId: string;
+  last?: number;
+  limit?: number;
+  start?: number;
+}
+
 export const articleConverter: firebase.default.firestore.FirestoreDataConverter<Article.Get> = {
   toFirestore(data: Article.Get) {
     return data;
@@ -15,8 +22,33 @@ export const articleConverter: firebase.default.firestore.FirestoreDataConverter
   },
 };
 
+const articleQuery = ({
+  limit = 10,
+  last,
+  spaceId,
+  start,
+}: ArticleQuery): firebase.default.firestore.Query<Article.Get> => {
+  let ref = db
+    .collection("articles")
+    .withConverter(articleConverter)
+    .orderBy("createdAt", "desc")
+    .limit(limit);
+
+  if (spaceId) {
+    ref = ref.where("spaceId", "==", spaceId);
+  }
+  if (start) {
+    ref = ref.startAfter(last);
+  }
+  if (last) {
+    ref = ref.endAt(last);
+  }
+
+  return ref;
+};
+
 export const createArticle = async (article: Article.Create): Promise<void> => {
-  await db.collection("aricles").add(article);
+  await db.collection("articles").add(article);
 };
 
 export const getArticle = async (
@@ -40,6 +72,13 @@ export const getArticleLive = (
     .onSnapshot(snap => {
       onSnapshot(snap.data() || null);
     });
+};
+
+export const getArticles = async (
+  query: ArticleQuery,
+): Promise<Article.Get[]> => {
+  const snap = await articleQuery(query).get();
+  return snap.docs.map(doc => doc.data());
 };
 
 export const updateArticle = (

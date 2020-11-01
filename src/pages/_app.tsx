@@ -38,10 +38,10 @@ const CustomApp = ({Component, pageProps}: AppProps): JSX.Element => {
               console.log(`data: ${data}, key: ${key}`);
             },
             onError: (err, key) => {
-              console.log(`err: ${err}, key: ${key}`);
+              console.error(`err: ${err}, key: ${key}`);
             },
             onErrorRetry: (err, key) => {
-              console.log(`err: ${err}, key: ${key}`);
+              console.error(`err: ${err}, key: ${key}`);
             },
           }}
         >
