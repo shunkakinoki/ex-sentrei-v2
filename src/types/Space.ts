@@ -23,6 +23,7 @@ declare namespace Space {
   };
 
   interface Fields extends EditableFields {
+    articleCount: number;
     authorUids: string[];
     namespaceId: string;
   }
