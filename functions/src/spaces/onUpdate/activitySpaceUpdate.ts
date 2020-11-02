@@ -19,7 +19,13 @@ const activitySpaceUpdate = functions.firestore
 
     const before = change.before.data() as Space.Response;
     const after = change.after.data() as Space.Response;
-    const fieldsToTrack = ["description", "name", "photo"];
+    const fieldsToTrack = [
+      "description",
+      "title",
+      "image",
+      "namespaceId",
+      "settings",
+    ];
     const beforeChanges = pick(before, fieldsToTrack);
     const afterChanges = pick(after, fieldsToTrack);
     const noChanges = isEqual(beforeChanges, afterChanges);
