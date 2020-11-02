@@ -1,3 +1,10 @@
+## [1.70.1](https://github.com/sentrei/sentrei/compare/v1.70.0...v1.70.1) (2020-11-02)
+
+### Performance Improvements
+
+- ⚡️ refactor landing hero ([fe01180](https://github.com/sentrei/sentrei/commit/fe01180760e0846e7892333dc86bf47fda0fc5b2))
+- ⚡️ refactor pricing card ([e031147](https://github.com/sentrei/sentrei/commit/e031147273ae091a6a43b180e5b7afa679f91f15))
+
 # [1.70.0](https://github.com/sentrei/sentrei/compare/v1.69.0...v1.70.0) (2020-11-02)
 
 ### Features
