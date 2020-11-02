@@ -108,6 +108,9 @@ export default function PricingTableCard({plan}: Props): JSX.Element {
               <CheckIconItem>Built-in newsletter</CheckIconItem>
               <CheckIconItem>Custom analytics</CheckIconItem>
               <CheckIconItem>Custom editor</CheckIconItem>
+              <CheckIconItem highlight>
+                Zero commissions on purchases
+              </CheckIconItem>
               {(plan === "pro" || plan === "premium") && (
                 <CheckIconItem highlight>Cusom domains</CheckIconItem>
               )}
@@ -116,8 +119,7 @@ export default function PricingTableCard({plan}: Props): JSX.Element {
               )}
               {plan === "premium" && (
                 <CheckIconItem highlight>
-                  Premium subscription w/ Stripe (Zero commissions excluding
-                  Stripe fee)
+                  Dedicated premium integrations
                 </CheckIconItem>
               )}
             </ul>
