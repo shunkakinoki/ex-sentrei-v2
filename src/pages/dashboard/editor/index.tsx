@@ -3,7 +3,7 @@ import {NextPage} from "next";
 import EditorScreen from "@/components/EditorScreen";
 
 const Editor: NextPage = () => {
-  return <EditorScreen namespaceId="" />;
+  return <EditorScreen articleId="" namespaceId="" />;
 };
 
 export default Editor;

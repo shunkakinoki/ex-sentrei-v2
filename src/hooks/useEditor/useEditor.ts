@@ -1,7 +1,7 @@
 import {useRecoilValue, atom} from "recoil";
 
-export const editorTitleAtom = atom<string | undefined>({
-  key: "editorTitle",
+export const editorArticleIdAtom = atom<string | undefined>({
+  key: "editorArticleId",
   default: undefined,
 });
 
@@ -10,15 +10,31 @@ export const editorBodyAtom = atom<string | undefined>({
   default: undefined,
 });
 
+export const editorSwitchAtom = atom<boolean>({
+  key: "editorSwitch",
+  default: false,
+});
+
+export const editorTitleAtom = atom<string | undefined>({
+  key: "editorTitle",
+  default: undefined,
+});
+
 export default function useEditor(): {
-  editorTitle: string | undefined;
+  editorArticleId: string | undefined;
   editorBody: string | undefined;
+  editorSwitch: boolean;
+  editorTitle: string | undefined;
 } {
-  const editorTitle = useRecoilValue(editorTitleAtom);
+  const editorArticleId = useRecoilValue(editorArticleIdAtom);
   const editorBody = useRecoilValue(editorBodyAtom);
+  const editorSwitch = useRecoilValue(editorSwitchAtom);
+  const editorTitle = useRecoilValue(editorTitleAtom);
 
   return {
-    editorTitle,
+    editorArticleId,
     editorBody,
+    editorSwitch,
+    editorTitle,
   };
 }

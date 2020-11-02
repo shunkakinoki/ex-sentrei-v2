@@ -1,4 +1,3 @@
-import {useEffect} from "react";
 import {toast} from "react-toastify";
 import {useSetRecoilState} from "recoil";
 import Editor from "rich-markdown-editor";
@@ -10,10 +9,6 @@ export type Props = Pick<Article.Get, "body">;
 
 export default function EditorRich({body}: Props): JSX.Element {
   const setBodyState = useSetRecoilState(editorBodyAtom);
-
-  useEffect(() => {
-    setBodyState(body);
-  }, [setBodyState, body]);
 
   return (
     <Editor

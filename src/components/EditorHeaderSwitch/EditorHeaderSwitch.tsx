@@ -1,15 +1,14 @@
 import {Switch} from "@headlessui/react";
 import clsx from "clsx";
-import {Dispatch, SetStateAction} from "react";
+import {useSetRecoilState} from "recoil";
 
-export interface Props {
-  switchValue: boolean;
-  setSwitchValue: Dispatch<SetStateAction<boolean>>;
-}
-export default function EditorHeaderSwitch({
-  switchValue,
-  setSwitchValue,
-}: Props): JSX.Element {
+import useEditor, {editorSwitchAtom} from "@/hooks/useEditor";
+
+export default function EditorHeaderSwitch(): JSX.Element {
+  const {editorSwitch} = useEditor();
+
+  const setEditorSwitch = useSetRecoilState(editorSwitchAtom);
+
   return (
     <div className="flex items-center justify-center">
       <div className="w-full max-w-xs mx-auto">
@@ -17,19 +16,19 @@ export default function EditorHeaderSwitch({
           <Switch.Label
             className={clsx(
               "text-md hidden md:block",
-              !switchValue && "text-gray-600",
-              switchValue && "text-gray-300",
+              !editorSwitch && "text-gray-600",
+              editorSwitch && "text-gray-300",
             )}
           >
             Draft
           </Switch.Label>
           <Switch
             as="button"
-            checked={switchValue}
+            checked={editorSwitch}
             className={`${
-              switchValue ? "bg-pink-500" : "bg-gray-200"
+              editorSwitch ? "bg-pink-500" : "bg-gray-200"
             } relative inline-flex flex-shrink-0 border-gray-100 h-6 m-1 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-full cursor-pointer w-10 focus:outline-none focus:shadow-outline shadow-md`}
-            onChange={setSwitchValue}
+            onChange={setEditorSwitch}
           >
             {({checked}) => (
               <span
@@ -42,8 +41,8 @@ export default function EditorHeaderSwitch({
           <Switch.Label
             className={clsx(
               "text-md hidden md:block",
-              switchValue && "text-gray-600",
-              !switchValue && "text-gray-300",
+              editorSwitch && "text-gray-600",
+              !editorSwitch && "text-gray-300",
             )}
           >
             Publish

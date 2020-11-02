@@ -31,9 +31,9 @@ export default function LandingHero(): JSX.Element {
             </span>
             .
             <br className="hidden lg:block" /> We aim to do much better, how the
-            internet{" "}
+            internet deserves in{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
-              deserves in 2020
+              2020
             </span>
             .
           </p>
