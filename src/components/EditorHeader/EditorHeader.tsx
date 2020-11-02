@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import {useState} from "react";
 import {useResetRecoilState} from "recoil";
 
 import EditorHeaderSwitch from "@/components/EditorHeaderSwitch";
@@ -30,7 +29,6 @@ export default function EditorHeader({
   uid,
   namespaceId,
 }: Props): JSX.Element {
-  const [switchValue, setSwitchValue] = useState(false);
   const resetEditorTitle = useResetRecoilState(editorTitleAtom);
   const resetEditorBody = useResetRecoilState(editorBodyAtom);
 
@@ -76,11 +74,8 @@ export default function EditorHeader({
               namespaceId={namespaceId}
             />
           </div>
-          <EditorHeaderSwitch
-            switchValue={switchValue}
-            setSwitchValue={setSwitchValue}
-          />
-          <EditorHeaderButton switchValue={switchValue} />
+          <EditorHeaderSwitch />
+          <EditorHeaderButton />
         </div>
       </div>
     </div>
