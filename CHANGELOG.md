@@ -1,3 +1,9 @@
+## [1.71.1](https://github.com/sentrei/sentrei/compare/v1.71.0...v1.71.1) (2020-11-02)
+
+### Performance Improvements
+
+- ⚡️ remove articles space ([c8e3e19](https://github.com/sentrei/sentrei/commit/c8e3e19e423b6dc5fa331180c9c69a76df15d50a))
+
 # [1.71.0](https://github.com/sentrei/sentrei/compare/v1.70.3...v1.71.0) (2020-11-02)
 
 ### Features
