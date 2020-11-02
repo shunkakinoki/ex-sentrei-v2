@@ -1,2 +1,2 @@
+// eslint-disable-next-line import/prefer-default-export
 export {default as activityArticleUpdate} from "./activityArticleUpdate";
-export {default as spaceArticleUpdate} from "./spaceArticleUpdate";
