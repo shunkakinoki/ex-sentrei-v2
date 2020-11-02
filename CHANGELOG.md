@@ -1,3 +1,14 @@
+# [1.70.0](https://github.com/sentrei/sentrei/compare/v1.69.0...v1.70.0) (2020-11-02)
+
+### Features
+
+- 🎸 upgrade next images ([c2357e6](https://github.com/sentrei/sentrei/commit/c2357e69524108e5a55aee43776bfe4ef0ae5805))
+
+### Performance Improvements
+
+- ⚡️ ini layout fill ([d04fb39](https://github.com/sentrei/sentrei/commit/d04fb39078a13c8d4b331d81af31e9b668f5d408))
+- ⚡️ upgrade packages ncu ([fb4b99a](https://github.com/sentrei/sentrei/commit/fb4b99a8215eea5fe34a4773fc3fefcef63eff03))
+
 # [1.69.0](https://github.com/sentrei/sentrei/compare/v1.68.0...v1.69.0) (2020-11-01)
 
 ### Features
