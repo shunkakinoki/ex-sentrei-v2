@@ -47,6 +47,7 @@ const userBatchSet = functions.auth.user().onCreate(async user => {
   };
 
   const spaceData: Space.Response = {
+    articleCount: 0,
     authorUids: [user.uid],
     createdAt: timestamp,
     createdBy: profileData,
