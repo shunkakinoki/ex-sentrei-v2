@@ -1,24 +1,18 @@
 import clsx from "clsx";
 import {toast} from "react-toastify";
-import {useRecoilValue, useResetRecoilState} from "recoil";
+import {useResetRecoilState} from "recoil";
 
 import {timestamp} from "@/firebase/db";
 import useAuth from "@/hooks/useAuth";
-import {
-  editorTitleAtom,
-  editorBodyAtom,
-  editorSwitchAtom,
-} from "@/hooks/useEditor";
+import useEditor, {editorTitleAtom, editorBodyAtom} from "@/hooks/useEditor";
 import useProfile from "@/hooks/useProfile";
-import {createArticle} from "@/services/Article";
+import {createArticle, updateArticle} from "@/services/Article";
 
 export default function EditorHeaderButton(): JSX.Element {
   const {authState} = useAuth();
   const {profile} = useProfile();
+  const {editorArticleId, editorBody, editorTitle, editorSwitch} = useEditor();
 
-  const editorBody = useRecoilValue(editorBodyAtom);
-  const editorSwitch = useRecoilValue(editorSwitchAtom);
-  const editorTitle = useRecoilValue(editorTitleAtom);
   const resetEditorTitle = useResetRecoilState(editorTitleAtom);
   const resetEditorBody = useResetRecoilState(editorBodyAtom);
 
@@ -37,26 +31,43 @@ export default function EditorHeaderButton(): JSX.Element {
     toast.info("Publishing...");
 
     try {
-      await createArticle({
-        authorUids: [authState?.uid],
-        body: editorBody,
-        createdAt: timestamp,
-        createdBy: profile,
-        createdByUid: authState?.uid,
-        pricing: "free",
-        nameslugId: "",
-        spaceId: authState?.uid,
-        status: "published",
-        time: 3,
-        title: editorTitle,
-        updatedAt: timestamp,
-        updatedBy: profile,
-        updatedByUid: authState?.uid,
-      })?.then(() => {
-        toast.success("Published!");
-        resetEditorBody();
-        resetEditorTitle();
-      });
+      if (editorSwitch) {
+        await createArticle({
+          authorUids: [authState?.uid],
+          body: editorBody,
+          createdAt: timestamp,
+          createdBy: profile,
+          createdByUid: authState?.uid,
+          pricing: "free",
+          nameslugId: "",
+          spaceId: authState?.uid,
+          status: "published",
+          time: 3,
+          title: editorTitle,
+          updatedAt: timestamp,
+          updatedBy: profile,
+          updatedByUid: authState?.uid,
+        })?.then(() => {
+          toast.success("Published!");
+          resetEditorBody();
+          resetEditorTitle();
+        });
+      } else if (editorArticleId) {
+        await updateArticle(editorArticleId, {
+          authorUids: [authState?.uid],
+          body: editorBody,
+          pricing: "free",
+          status: "published",
+          title: editorTitle,
+          updatedAt: timestamp,
+          updatedBy: profile,
+          updatedByUid: authState?.uid,
+        })?.then(() => {
+          toast.success("Published!");
+          resetEditorBody();
+          resetEditorTitle();
+        });
+      }
     } catch (err) {
       // eslint-disable-next-line no-console
       console.error(err);

@@ -1,11 +1,12 @@
 import {Switch} from "@headlessui/react";
 import clsx from "clsx";
-import {useRecoilValue, useSetRecoilState} from "recoil";
+import {useSetRecoilState} from "recoil";
 
-import {editorSwitchAtom} from "@/hooks/useEditor";
+import useEditor, {editorSwitchAtom} from "@/hooks/useEditor";
 
 export default function EditorHeaderSwitch(): JSX.Element {
-  const editorSwitch = useRecoilValue(editorSwitchAtom);
+  const {editorSwitch} = useEditor();
+
   const setEditorSwitch = useSetRecoilState(editorSwitchAtom);
 
   return (
