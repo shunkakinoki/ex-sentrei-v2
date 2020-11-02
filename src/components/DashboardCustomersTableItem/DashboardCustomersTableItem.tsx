@@ -18,8 +18,10 @@ export default function DashboardCustomersTableItem({
           <div className="flex-shrink-0 w-10 h-10">
             <Image
               className="w-10 h-10 rounded-full"
-              unoptimized
-              unsized
+              loading="lazy"
+              height={40}
+              width={40}
+              layout="fixed"
               src={image as string}
               alt={`Customer ${name}`}
             />

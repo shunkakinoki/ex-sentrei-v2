@@ -10,8 +10,9 @@ export default function BlogAuthor({bio, image, name}: Props): JSX.Element {
       <div className="flex-shrink-0 px-4 py-2 m-2 text-center ">
         <a>
           <Image
-            unoptimized
-            unsized
+            height={50}
+            width={50}
+            layout="fixed"
             className="inline object-cover w-12 h-12 p-1 mr-2 border rounded-full"
             src={image as string}
             alt={`Author ${name}`}
