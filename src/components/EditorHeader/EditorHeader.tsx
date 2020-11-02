@@ -1,10 +1,8 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import {useResetRecoilState} from "recoil";
 
 import EditorHeaderSwitch from "@/components/EditorHeaderSwitch";
 import {Props as EditorHeaderTitleProps} from "@/components/EditorHeaderTitle";
-import {editorTitleAtom, editorBodyAtom} from "@/hooks/useEditor";
 
 const EditorHeaderButton = dynamic(
   () => import("@/components/EditorHeaderButton"),
@@ -29,14 +27,6 @@ export default function EditorHeader({
   uid,
   namespaceId,
 }: Props): JSX.Element {
-  const resetEditorTitle = useResetRecoilState(editorTitleAtom);
-  const resetEditorBody = useResetRecoilState(editorBodyAtom);
-
-  const handleClick = () => {
-    resetEditorBody();
-    resetEditorTitle();
-  };
-
   return (
     <div className="relative z-20">
       <div className="px-4 mx-auto sm:px-6">
@@ -44,13 +34,7 @@ export default function EditorHeader({
           <Link
             href={`${namespaceId !== "" ? "/" : ""}${namespaceId}/dashboard`}
           >
-            <a
-              role="button"
-              tabIndex={0}
-              className="inline-flex items-center p-2 text-gray-500 rounded-full md:p-3 hover:bg-pink-50"
-              onKeyPress={handleClick}
-              onClick={handleClick}
-            >
+            <a className="inline-flex items-center p-2 text-gray-500 rounded-full md:p-3 hover:bg-pink-50">
               <svg
                 className="w-6 h-6"
                 fill="none"
