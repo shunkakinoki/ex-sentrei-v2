@@ -1,3 +1,16 @@
+# [1.71.0](https://github.com/sentrei/sentrei/compare/v1.70.3...v1.71.0) (2020-11-02)
+
+### Features
+
+- 🎸 ini article count ([5b98dff](https://github.com/sentrei/sentrei/commit/5b98dffc76a189eb100c8650ef524f94962ee091))
+- 🎸 ini articles spaces sync custom functions ([a2f9b97](https://github.com/sentrei/sentrei/commit/a2f9b97bcaa4b33d4e3f5558c1fefdc383d03d6f))
+
+### Performance Improvements
+
+- ⚡️ ini count field ([e39040c](https://github.com/sentrei/sentrei/commit/e39040ce2f0a496d6b424ab851fc532f0d2545c8))
+- ⚡️ ini faker count ([bfa7d75](https://github.com/sentrei/sentrei/commit/bfa7d75d716a3550624f97167dc7cada10d49db7))
+- ⚡️ ini space update ([42cff78](https://github.com/sentrei/sentrei/commit/42cff783fc288068b9b5a07085b9d1f5dfb9c073))
+
 ## [1.70.3](https://github.com/sentrei/sentrei/compare/v1.70.2...v1.70.3) (2020-11-02)
 
 ### Performance Improvements
