@@ -3,11 +3,9 @@ import {GetStaticProps, InferGetStaticPropsType, GetStaticPaths} from "next";
 import EditorScreen, {
   Props as EditorScreenProps,
 } from "@/components/EditorScreen";
-import Article from "@/types/Article";
-import {createArticle} from "@/utils/faker";
 
 export type Props = Omit<EditorScreenProps, "article" | "namespaceId"> & {
-  article: string;
+  articleId: string;
 };
 
 // eslint-disable-next-line @typescript-eslint/require-await
@@ -19,21 +17,23 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 // eslint-disable-next-line @typescript-eslint/require-await
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const article = createArticle();
-
+export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
   return {
     props: {
-      article: JSON.stringify(article),
+      articleId: JSON.stringify(params?.articleId),
     },
   };
 };
 
 const Slug = ({
-  article,
+  articleId,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
-    <EditorScreen article={JSON.parse(article) as Article.Get} namespaceId="" />
+    <EditorScreen
+      article={undefined}
+      articleId={JSON.parse(articleId) as string}
+      namespaceId=""
+    />
   );
 };
 

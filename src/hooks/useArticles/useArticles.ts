@@ -3,11 +3,16 @@ import useSWR from "swr";
 import {getArticles, ArticleQuery} from "@/services/Article";
 import Article from "@/types/Article";
 
-const getArticlesFetcher = async (query: ArticleQuery) => {
-  return getArticles(query);
+const getArticlesFetcher = async (
+  _: string,
+  spaceId: string,
+  start: number,
+  end: number,
+) => {
+  return getArticles({spaceId, start, end});
 };
 
-export default function useArticle(
+export default function useArticles(
   namespaceId: string,
   query: ArticleQuery,
   initialData?: Article.Get[],
@@ -16,7 +21,11 @@ export default function useArticle(
 } {
   const {data: articles} = useSWR(
     // eslint-disable-next-line no-nested-ternary
-    namespaceId === "demo" ? null : query ? `articles/${query.spaceId}` : null,
+    namespaceId === "demo"
+      ? null
+      : query
+      ? ["articles", query.spaceId, query.start, query.end]
+      : null,
     getArticlesFetcher,
     {initialData},
   );

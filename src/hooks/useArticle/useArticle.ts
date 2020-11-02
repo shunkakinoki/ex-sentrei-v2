@@ -10,14 +10,16 @@ const getArticleFetcher = async (articleId: string) => {
 
 export default function useArticle(
   namespaceId: string,
-  uid?: string,
+  articleId?: string,
+  initialData?: Article.Get,
 ): {
   article: Article.Get | null | undefined;
 } {
   const {data: article} = useSWR(
     // eslint-disable-next-line no-nested-ternary
-    namespaceId === "demo" ? null : uid ? `articles/${uid}` : null,
+    namespaceId === "demo" ? null : articleId ? `articles/${articleId}` : null,
     getArticleFetcher,
+    {initialData},
   );
 
   return {article};
