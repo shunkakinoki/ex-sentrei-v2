@@ -1,3 +1,14 @@
+## [1.70.2](https://github.com/sentrei/sentrei/compare/v1.70.1...v1.70.2) (2020-11-02)
+
+### Bug Fixes
+
+- 🐛 article authors proper z index bug ([36e29e9](https://github.com/sentrei/sentrei/commit/36e29e9ee8c35c2c035d28294b5fe30ac3c7011f))
+
+### Performance Improvements
+
+- ⚡️ ini eslint sort ([802b33a](https://github.com/sentrei/sentrei/commit/802b33a86a43fd5162930b6af36dda27a8f8c58d))
+- ⚡️ ini sort vars ([986ddce](https://github.com/sentrei/sentrei/commit/986ddcec58f84c06fa7af25f78644db22ab83316))
+
 ## [1.70.1](https://github.com/sentrei/sentrei/compare/v1.70.0...v1.70.1) (2020-11-02)
 
 ### Performance Improvements
