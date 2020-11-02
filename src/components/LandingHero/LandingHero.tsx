@@ -8,12 +8,12 @@ export default function LandingHero(): JSX.Element {
       <div className="px-4 mx-auto mt-10 sm:px-6">
         <div className="sm:text-left md:text-center">
           <h2 className="text-4xl font-extrabold leading-10 tracking-tight text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
-            The{" "}
+            The most{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-              most friendly
+              friendly
             </span>
+            <br className="hidden sm:block" /> writing platform for{" "}
             <br className="hidden sm:block" />
-            writing platform for <br className="hidden sm:block" />
             <LandingHeroTyped
               text={["blogging.", "journalism.", "newsletters."]}
             />
@@ -24,16 +24,16 @@ export default function LandingHero(): JSX.Element {
               zero commisions{" "}
             </span>
             for all paid articles and subscriptions, so you get all the revenue.
-            <br />
-            We never show annoying ads, badges, and popups so readers enjoy the{" "}
+            <br className="hidden lg:block" /> We never show annoying ads,
+            badges, and popups so readers enjoy the{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
               best experience
             </span>
             .
-            <br />
-            We aim to do much better, how the{" "}
+            <br className="hidden lg:block" /> We aim to do much better, how the
+            internet{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
-              internet deserves in 2020
+              deserves in 2020
             </span>
             .
           </p>
