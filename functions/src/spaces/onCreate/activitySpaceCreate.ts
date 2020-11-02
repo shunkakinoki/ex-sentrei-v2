@@ -18,6 +18,10 @@ const activitySpaceCreate = functions.firestore
 
     const data = snap.data() as Space.Response;
 
+    if (!data.createdByUid || !data.updatedBy || !data.updatedByUid) {
+      return false;
+    }
+
     const activity: Activity.CreateSpace = {
       action: "created",
       after: data,
