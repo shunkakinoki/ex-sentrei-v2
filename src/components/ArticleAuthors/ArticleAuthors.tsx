@@ -31,7 +31,7 @@ export function ArticleAuthorsImage({
 
 export default function ArticleAuthors({authors}: Props): JSX.Element {
   return (
-    <div className="flex">
+    <div className="z-30 flex">
       <Listbox as="div" className="space-y-1" value="" onChange={() => {}}>
         {({open}) => (
           <>

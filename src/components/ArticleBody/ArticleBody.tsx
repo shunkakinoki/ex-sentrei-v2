@@ -26,8 +26,8 @@ export default function ArticleBody({body, excerpt}: Props): JSX.Element {
     >
       <div className={Markdown.markdown}>
         <Editor
-          defaultValue={body}
           readOnly
+          defaultValue={body}
           onChange={() => {
             return null;
           }}
