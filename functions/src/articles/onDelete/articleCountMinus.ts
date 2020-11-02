@@ -12,7 +12,7 @@ const articleCountMinus = functions.firestore
   .document("spaces/{spaceId}/articles/{articleId}")
   .onDelete((_, context) => {
     const {spaceId} = context.params;
-    return db.doc(`spaces/${spaceId}`).update(<Space.AdminUpdate>{
+    return db.doc(`spaces/${spaceId as string}`).update(<Space.AdminUpdate>{
       articleCount: admin.firestore.FieldValue.increment(-1),
     });
   });

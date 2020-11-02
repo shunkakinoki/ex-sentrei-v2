@@ -23,7 +23,7 @@ declare namespace Space {
   };
 
   interface Fields extends EditableFields {
-    articleCount: number;
+    articleCount: firebase.default.firestore.FieldValue | number;
     authorUids: string[];
     namespaceId: string;
   }
@@ -37,6 +37,7 @@ declare namespace Space {
   export interface Update extends Partial<EditableFields>, Metadata.Update {}
 
   export interface Get extends Fields, Metadata.Get {
+    articleCount: number;
     uid: string;
   }
 
