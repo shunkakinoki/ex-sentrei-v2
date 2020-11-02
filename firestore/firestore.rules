@@ -21,7 +21,10 @@ service cloud.firestore {
         && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.image == request.resource.data.updatedBy.image
         && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.namespaceId == request.resource.data.updatedBy.namespaceId
         && request.resource.data.updatedByUid == request.auth.uid;
-      allow update, delete, list:
+      allow list:
+        if request.auth.uid != null
+        && request.query.limit <= 30;
+      allow update, delete:
         if false;
     }
     match /profiles/{profileId} {

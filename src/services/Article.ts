@@ -2,9 +2,9 @@ import db from "@/firebase/db";
 import {serializeArticle} from "@/serializers/Article";
 import Article from "@/types/Article";
 
-export default interface ArticleQuery {
+export interface ArticleQuery {
   spaceId: string;
-  last?: number;
+  end?: number;
   limit?: number;
   start?: number;
 }
@@ -24,7 +24,7 @@ export const articleConverter: firebase.default.firestore.FirestoreDataConverter
 
 const articleQuery = ({
   limit = 10,
-  last,
+  end,
   spaceId,
   start,
 }: ArticleQuery): firebase.default.firestore.Query<Article.Get> => {
@@ -38,10 +38,10 @@ const articleQuery = ({
     ref = ref.where("spaceId", "==", spaceId);
   }
   if (start) {
-    ref = ref.startAfter(last);
+    ref = ref.startAfter(start);
   }
-  if (last) {
-    ref = ref.endAt(last);
+  if (end) {
+    ref = ref.endAt(end);
   }
 
   return ref;
