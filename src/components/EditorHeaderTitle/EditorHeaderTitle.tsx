@@ -1,11 +1,9 @@
 import {useEffect} from "react";
 import {useForm} from "react-hook-form";
 import {useSetRecoilState} from "recoil";
-import useSWR from "swr";
 
 import useArticle from "@/hooks/useArticle";
 import {editorTitleAtom} from "@/hooks/useEditor";
-import {getArticle} from "@/services/Article";
 import Article from "@/types/Article";
 
 export interface Props extends Partial<Pick<Article.Get, "uid" | "title">> {
