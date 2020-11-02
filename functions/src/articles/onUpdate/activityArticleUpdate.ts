@@ -19,7 +19,7 @@ const activityArticleUpdate = functions.firestore
 
     const before = change.before.data() as Article.Response;
     const after = change.after.data() as Article.Response;
-    const fieldsToTrack = ["description", "name", "photo"];
+    const fieldsToTrack = ["body", "excerpt", "image", "status", "title"];
     const beforeChanges = pick(before, fieldsToTrack);
     const afterChanges = pick(after, fieldsToTrack);
     const noChanges = isEqual(beforeChanges, afterChanges);
