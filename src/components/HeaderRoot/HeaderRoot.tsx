@@ -36,8 +36,8 @@ export default function HeaderRoot(): JSX.Element {
             <Link href="/">
               <a className="inline-block">
                 <Image
-                  src="/assets/logo.png"
                   priority
+                  src="/assets/logo.png"
                   height={50}
                   width={50}
                   layout="fixed"
@@ -141,8 +141,8 @@ export default function HeaderRoot(): JSX.Element {
                         aria-haspopup="true"
                       >
                         <Image
-                          src="/assets/logo.png"
                           priority
+                          src="/assets/logo.png"
                           height={40}
                           width={40}
                           layout="fixed"

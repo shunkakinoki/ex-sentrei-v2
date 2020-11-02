@@ -84,8 +84,8 @@ export default function AuthForm({type}: Props): JSX.Element {
       <div>
         <div className="flex justify-center">
           <Image
-            src="/assets/logo.png"
             priority
+            src="/assets/logo.png"
             height={90}
             width={90}
             layout="intrinsic"
@@ -108,8 +108,8 @@ export default function AuthForm({type}: Props): JSX.Element {
         <div>
           <button
             type="button"
-            onClick={handleGoogle}
             className="flex items-center justify-between w-full py-2 md:py-3 md:justify-start"
+            onClick={handleGoogle}
           >
             <a className="relative flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-pink-500 transition duration-150 ease-in-out bg-transparent border border-transparent border-pink-300 rounded hover:bg-pink-100 focus:border-pink-300 group focus:outline-none focus:shadow-md ">
               <span className="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -149,10 +149,10 @@ export default function AuthForm({type}: Props): JSX.Element {
           <div>
             <input
               ref={register({required: true})}
+              required
               aria-label="Email address"
               name="email"
               type="email"
-              required
               className={clsx(
                 "relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none focus:outline-none focus:shadow-outline-pink focus:border-pink-300 focus:z-10 sm:text-sm sm:leading-5",
                 type !== "reset-password" && "rounded-t-md",
@@ -165,10 +165,10 @@ export default function AuthForm({type}: Props): JSX.Element {
             <div className="-mt-px">
               <input
                 ref={register({required: true})}
+                required
                 aria-label="Password"
                 name="password"
                 type="password"
-                required
                 className="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none rounded-b-md focus:outline-none focus:shadow-outline-pink focus:border-pink-300 focus:z-10 sm:text-sm sm:leading-5"
                 placeholder="Password"
               />

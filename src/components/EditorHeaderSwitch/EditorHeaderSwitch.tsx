@@ -26,10 +26,10 @@ export default function EditorHeaderSwitch({
           <Switch
             as="button"
             checked={switchValue}
-            onChange={setSwitchValue}
             className={`${
               switchValue ? "bg-pink-500" : "bg-gray-200"
             } relative inline-flex flex-shrink-0 border-gray-100 h-6 m-1 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-full cursor-pointer w-10 focus:outline-none focus:shadow-outline shadow-md`}
+            onChange={setSwitchValue}
           >
             {({checked}) => (
               <span
