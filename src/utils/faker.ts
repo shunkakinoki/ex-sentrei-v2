@@ -156,6 +156,7 @@ export const createArticles = (num = 6): Article.Get[] => {
 
 export const createBlog = (): Space.Get => {
   return {
+    articleCount: 180,
     authorUids: createAuthorUids(),
     createdAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
     createdBy: createAuthor(),

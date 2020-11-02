@@ -10,6 +10,7 @@ export const serializeSpace = (
 
   return {
     ...data,
+    articleCount: data.articleCount as number,
     createdAt: serializeFirebaseDate(data.createdAt),
     updatedAt: serializeFirebaseDate(data.updatedAt),
     uid: snap.id,
@@ -23,6 +24,7 @@ export const serializeAdminSpace = (
 
   return {
     ...data,
+    articleCount: data.articleCount as number,
     createdAt: serializeFirebaseDate(data.createdAt),
     updatedAt: serializeFirebaseDate(data.updatedAt),
     uid: snap.id,
