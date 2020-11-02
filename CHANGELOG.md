@@ -1,3 +1,10 @@
+## [1.70.3](https://github.com/sentrei/sentrei/compare/v1.70.2...v1.70.3) (2020-11-02)
+
+### Performance Improvements
+
+- ⚡️ ini space subtitle ([3fe5a44](https://github.com/sentrei/sentrei/commit/3fe5a446d2b1540262f70a873fd4366e8e15453b))
+- ⚡️ refactor landing title and sub title ([5154ef0](https://github.com/sentrei/sentrei/commit/5154ef03d5d7c47dd3dd1057e8bff00e152024dd))
+
 ## [1.70.2](https://github.com/sentrei/sentrei/compare/v1.70.1...v1.70.2) (2020-11-02)
 
 ### Bug Fixes
