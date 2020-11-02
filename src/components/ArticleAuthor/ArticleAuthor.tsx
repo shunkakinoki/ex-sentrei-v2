@@ -6,11 +6,11 @@ export type Props = Pick<Profile.Get, "image" | "name">;
 
 export default function ArticleAuthor({image, name}: Props): JSX.Element {
   return (
-    <a>
+    <a className="inline object-cover w-12 h-12 mr-2 rounded-full">
       <Image
-        className="inline object-cover w-12 h-12 mr-2 rounded-full"
-        unoptimized
-        unsized
+        height={50}
+        width={50}
+        layout="fixed"
         src={image ?? ""}
         alt={`Author ${name}`}
       />

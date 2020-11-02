@@ -38,7 +38,9 @@ export default function HeaderRoot(): JSX.Element {
                 <Image
                   src="/assets/logo.png"
                   priority
-                  unsized
+                  height={50}
+                  width={50}
+                  layout="fixed"
                   alt="Logo"
                   className="w-auto h-12 sm:h-10"
                 />
@@ -141,7 +143,9 @@ export default function HeaderRoot(): JSX.Element {
                         <Image
                           src="/assets/logo.png"
                           priority
-                          unsized
+                          height={40}
+                          width={40}
+                          layout="fixed"
                           alt="Profile"
                           className="w-8 h-8 rounded-full"
                         />
