@@ -1,3 +1,18 @@
+# [1.72.0](https://github.com/sentrei/sentrei/compare/v1.71.1...v1.72.0) (2020-11-02)
+
+### Features
+
+- 🎸 ini article hooks with initial data ([e83d74a](https://github.com/sentrei/sentrei/commit/e83d74ac7bb1480c381a49728663f7d986bd4746))
+- 🎸 ini recoil editor ([c4d3d1e](https://github.com/sentrei/sentrei/commit/c4d3d1e08f002b23fbeb01a156c6c9263241df5a))
+
+### Performance Improvements
+
+- ⚡️ dynamic header switch ([86a405d](https://github.com/sentrei/sentrei/commit/86a405d3a89c8d12cb367938a3c7b768e1f0d8fa))
+- ⚡️ ini list articles ([5126779](https://github.com/sentrei/sentrei/commit/512677992e21cb3fac934a7903037e4b7836c854))
+- ⚡️ propogate use editor ([d2990ea](https://github.com/sentrei/sentrei/commit/d2990eabeb7b8f003962e9d3f0b14d14fb7c4943))
+- ⚡️ remove deprecated reset for recoil hook ([e1a22e9](https://github.com/sentrei/sentrei/commit/e1a22e9ff123f42d6eff367eff77872f07f50de6))
+- ⚡️ update landing hero with shortened 2020 ([89173ea](https://github.com/sentrei/sentrei/commit/89173ea4ac9f21cbf7f58c7b80ac060d4bd1cd4e))
+
 ## [1.71.1](https://github.com/sentrei/sentrei/compare/v1.71.0...v1.71.1) (2020-11-02)
 
 ### Performance Improvements
