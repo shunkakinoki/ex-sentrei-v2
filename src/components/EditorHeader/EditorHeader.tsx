@@ -1,11 +1,17 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
-import EditorHeaderSwitch from "@/components/EditorHeaderSwitch";
 import {Props as EditorHeaderTitleProps} from "@/components/EditorHeaderTitle";
 
 const EditorHeaderButton = dynamic(
   () => import("@/components/EditorHeaderButton"),
+  {
+    ssr: false,
+  },
+);
+
+const EditorHeaderSwitch = dynamic(
+  () => import("@/components/EditorHeaderSwitch"),
   {
     ssr: false,
   },
