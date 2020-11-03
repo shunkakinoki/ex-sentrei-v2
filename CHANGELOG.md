@@ -1,3 +1,14 @@
+## [1.76.1](https://github.com/sentrei/sentrei/compare/v1.76.0...v1.76.1) (2020-11-03)
+
+### Performance Improvements
+
+- ⚡️ ini dashbaord screen with swr hook ([db8d16f](https://github.com/sentrei/sentrei/commit/db8d16f5ad3c968b04ed3209981f1dbc6ac61032))
+- ⚡️ ini dashboard screen ([4b20f04](https://github.com/sentrei/sentrei/commit/4b20f04f7582774a010d02ae30b399569711da3a))
+- ⚡️ ini editor recoil ([87f9fbf](https://github.com/sentrei/sentrei/commit/87f9fbf46bb76b8eef64339597d4707e4d302ff5))
+- ⚡️ ini editor screen dynamic swr hook ([15fe652](https://github.com/sentrei/sentrei/commit/15fe652e83c7ec0e1e1ad6aaf9937de520d10e07))
+- ⚡️ ini set title for editor header ([8a01ad2](https://github.com/sentrei/sentrei/commit/8a01ad2e21e91d1d7c1bc9748d81884f79f500f6))
+- ⚡️ refactor editor header unnecessary article hook ([4f8250c](https://github.com/sentrei/sentrei/commit/4f8250c9243583c96c7612d203c936473ac237a3))
+
 # [1.76.0](https://github.com/sentrei/sentrei/compare/v1.75.1...v1.76.0) (2020-11-03)
 
 ### Features
