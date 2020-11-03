@@ -37,9 +37,11 @@ export default function DashboardBrandingBasicSection({
     if (!authState?.uid || !profile) {
       return null;
     }
+
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     await mutate(`spaces/${authState.uid}`, data, false);
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
+
     await updateSpace(authState?.uid, {
       ...data,
       updatedAt: timestamp,
@@ -56,12 +58,11 @@ export default function DashboardBrandingBasicSection({
       .catch((err: Error) => {
         toast.error(err.message);
       });
+
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     await mutate(`spaces/${authState.uid}`);
-    return reset({
-      description: space?.description,
-      title: space?.title,
-    });
+
+    return null;
   };
 
   useEffect(() => {

@@ -30,9 +30,11 @@ export default function SettingsProfileSection(): JSX.Element {
     if (!authState?.uid) {
       return null;
     }
+
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     await mutate(`profiles/${authState.uid}`, data, false);
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
+
     await updateProfile(authState?.uid, data)
       .then(() =>
         toast.success("Success", {
@@ -46,11 +48,8 @@ export default function SettingsProfileSection(): JSX.Element {
       });
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     await mutate(`profiles/${authState.uid}`);
-    return reset({
-      bio: profile?.bio,
-      name: profile?.name,
-      namespaceId: profile?.namespaceId,
-    });
+
+    return null;
   };
 
   useEffect(() => {

@@ -39,8 +39,10 @@ export default function DashboardSettingsNotificationsSection({
     if (!authState?.uid || !profile) {
       return null;
     }
+
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     await mutate(`spaces/${authState.uid}`, data, false);
+
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     await updateSpace(authState?.uid, {
       settings: data,
@@ -58,13 +60,11 @@ export default function DashboardSettingsNotificationsSection({
       .catch((err: Error) => {
         toast.error(err.message);
       });
+
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     await mutate(`spaces/${authState.uid}`);
-    return reset({
-      analytics: space?.settings?.analytics,
-      customer: space?.settings?.customer,
-      sales: space?.settings?.sales,
-    });
+
+    return null;
   };
 
   useEffect(() => {

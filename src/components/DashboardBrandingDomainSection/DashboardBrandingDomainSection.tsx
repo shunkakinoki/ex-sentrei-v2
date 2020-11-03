@@ -43,6 +43,7 @@ export default function DashboardBrandingDomainSection({
       toast.error("Is reserved namespace!");
       return null;
     }
+
     if (!(await validateNamespace(data.namespaceId))) {
       toast.error("Namespace is already used!");
       return null;
