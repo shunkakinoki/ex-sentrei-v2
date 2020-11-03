@@ -13,9 +13,7 @@ export default function EditorHeaderTitle({title}: Props): JSX.Element {
   const setTitleState = useSetRecoilState(editorTitleAtom);
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
-  const {register, reset, formState, watch} = useForm<
-    Partial<Pick<Article.Get, "title">>
-  >({
+  const {register, watch} = useForm<Partial<Pick<Article.Get, "title">>>({
     defaultValues: {
       title,
     },
@@ -24,16 +22,12 @@ export default function EditorHeaderTitle({title}: Props): JSX.Element {
   const titleValue = watch("title");
 
   useEffect(() => {
-    setTitleState(titleValue);
-  }, [setTitleState, titleValue]);
+    setTitleState(title);
+  }, [setTitleState, title]);
 
   useEffect(() => {
-    if (!formState.isDirty) {
-      reset({
-        title: "",
-      });
-    }
-  }, [reset, formState.isDirty]);
+    setTitleState(titleValue);
+  }, [setTitleState, titleValue]);
 
   return (
     <form className="mx-auto" action="#" method="POST">
