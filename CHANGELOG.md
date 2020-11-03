@@ -1,3 +1,18 @@
+# [1.73.0](https://github.com/sentrei/sentrei/compare/v1.72.0...v1.73.0) (2020-11-03)
+
+### Bug Fixes
+
+- 🐛 object cover for blog story image ([12fddb0](https://github.com/sentrei/sentrei/commit/12fddb0812ec64aba71fc3eb7dec3d7d41e876cd))
+
+### Features
+
+- 🎸 ini page context get custom type ([15e9d2e](https://github.com/sentrei/sentrei/commit/15e9d2ee59266cf9292db179504cb50d184831e0))
+
+### Performance Improvements
+
+- ⚡️ ini revalidate mount for use articles ([ce5ce2f](https://github.com/sentrei/sentrei/commit/ce5ce2ffa53a7f4bce9ab2948d8c6870b833df39))
+- ⚡️ update to 60 ([b9270d2](https://github.com/sentrei/sentrei/commit/b9270d2bc03279d0c99f210ad390bcee4f01e4e1))
+
 # [1.72.0](https://github.com/sentrei/sentrei/compare/v1.71.1...v1.72.0) (2020-11-02)
 
 ### Features
