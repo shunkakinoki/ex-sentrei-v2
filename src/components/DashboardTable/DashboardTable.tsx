@@ -61,14 +61,16 @@ export default function DashboardTable({
         <PaginationBase
           current={current}
           total={Math.floor(space.articleCount / 10) + 1}
-          namespaceId={namespaceId}
+          namespaceId={`dashboard${
+            namespaceId === "" ? "" : "/"
+          }${namespaceId}`}
         />
       )}
       {namespaceId === "demo" && total > 1 && (
         <PaginationBase
           current={current}
           total={total}
-          namespaceId={namespaceId}
+          namespaceId="dasboard/demo"
         />
       )}
     </>
