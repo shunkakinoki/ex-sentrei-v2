@@ -8,8 +8,14 @@ import {
 import EditorScreen, {
   Props as EditorScreenProps,
 } from "@/components/EditorScreen";
+import {getAdminArticle} from "@/servicesAdmin/Article";
+import Article from "@/types/Article";
 
-export type Props = Omit<EditorScreenProps, "article" | "namespaceId"> & {
+export type Props = Omit<
+  EditorScreenProps,
+  "article" | "articleId" | "namespaceId"
+> & {
+  article: string;
   articleId: string;
 };
 
@@ -23,21 +29,27 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<Props> = async ({
   params,
-}: // eslint-disable-next-line @typescript-eslint/require-await
-GetStaticPropsContext) => {
+}: GetStaticPropsContext) => {
+  const article = await getAdminArticle(String(params?.articleId));
+
+  if (!article) {
+    return {notFound: true};
+  }
   return {
     props: {
+      article: JSON.stringify(article),
       articleId: JSON.stringify(params?.articleId),
     },
   };
 };
 
 const Slug = ({
+  article,
   articleId,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <EditorScreen
-      article={undefined}
+      article={JSON.parse(article) as Article.Get}
       articleId={JSON.parse(articleId) as string}
       namespaceId=""
     />
