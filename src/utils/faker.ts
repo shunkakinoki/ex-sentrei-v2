@@ -161,6 +161,7 @@ export const createSpace = (): Space.Get => {
     createdAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
     createdBy: createAuthor(),
     createdByUid: faker.random.uuid(),
+    customerCount: 300,
     description: faker.lorem.sentences(Math.floor(Math.random() * 3) + 1),
     image: `${faker.image.image()}?random=${Date.now()}`.replace(
       "http",
