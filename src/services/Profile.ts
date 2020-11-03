@@ -3,15 +3,15 @@ import {serializeProfile} from "@/serializers/Profile";
 import Profile from "@/types/Profile";
 
 export const profileConverter: firebase.default.firestore.FirestoreDataConverter<Profile.Get> = {
-  toFirestore(data: Profile.Get) {
-    return data;
-  },
   fromFirestore(
     snapshot: firebase.default.firestore.QueryDocumentSnapshot<
       Profile.Response
     >,
   ): Profile.Get {
     return serializeProfile(snapshot);
+  },
+  toFirestore(data: Profile.Get) {
+    return data;
   },
 };
 

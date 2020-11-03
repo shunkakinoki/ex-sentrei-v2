@@ -104,8 +104,8 @@ export const createPricing = (): Pricing => {
 
 export const createAuthor = (): Profile.Get => {
   return {
-    image: faker.image.avatar(),
     bio: faker.lorem.sentences(Math.floor(Math.random() * 3) + 1),
+    image: faker.image.avatar(),
     name: faker.name.findName(),
     namespaceId: faker.lorem.slug(),
     uid: faker.random.uuid(),
@@ -136,17 +136,17 @@ export const createArticle = (): Article.Get => {
       "http",
       "https",
     ),
+    nameslugId: "demo",
     pricing: createPricing(),
     spaceId: faker.random.uuid(),
+    status: "published",
+    subtitle: faker.lorem.sentences(Math.floor(Math.random() * 11)),
     time: Math.floor(Math.random() * 10 + 3),
     title: faker.lorem.lines(Math.floor(Math.random() * 1 + 1)),
-    subtitle: faker.lorem.sentences(Math.floor(Math.random() * 11)),
-    status: "published",
+    uid: faker.random.uuid(),
     updatedAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
     updatedBy: createAuthor(),
     updatedByUid: faker.random.uuid(),
-    uid: faker.random.uuid(),
-    nameslugId: "demo",
   };
 };
 
@@ -161,30 +161,30 @@ export const createSpace = (): Space.Get => {
     createdAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
     createdBy: createAuthor(),
     createdByUid: faker.random.uuid(),
-    title: faker.lorem.sentences(Math.floor(Math.random() * 3) + 1),
     description: faker.lorem.sentences(Math.floor(Math.random() * 3) + 1),
-    plan: "free",
-    namespaceId: faker.lorem.slug(),
-    updatedAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
-    updatedBy: createAuthor(),
-    updatedByUid: faker.random.uuid(),
-    uid: faker.random.uuid(),
     image: `${faker.image.image()}?random=${Date.now()}`.replace(
       "http",
       "https",
     ),
+    namespaceId: faker.lorem.slug(),
+    plan: "free",
+    title: faker.lorem.sentences(Math.floor(Math.random() * 3) + 1),
+    uid: faker.random.uuid(),
+    updatedAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
+    updatedBy: createAuthor(),
+    updatedByUid: faker.random.uuid(),
   };
 };
 
 export const createCustomer = (): Customer => {
   return {
+    date: faker.date.past(Math.floor(Math.random() * 30)),
+    email: faker.internet.email(),
     image: `${faker.image.image()}?random=${Date.now()}`.replace(
       "http",
       "https",
     ),
     name: faker.name.findName(),
-    email: faker.internet.email(),
-    date: faker.date.past(Math.floor(Math.random() * 30)),
     status: "active",
   };
 };
@@ -197,8 +197,8 @@ export const createSales = (): Sales => {
   return {
     all: Math.floor(Math.random() * 300) + 1200,
     allConfirmed: Math.floor(Math.random() * 300) + 900,
+    confirmed: Math.floor(Math.random() * 300) + 600,
     month: Math.floor(Math.random() * 300) + 300,
     monthConfirmed: Math.floor(Math.random() * 300) + 200,
-    confirmed: Math.floor(Math.random() * 300) + 600,
   };
 };

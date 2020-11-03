@@ -30,7 +30,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     };
   });
 
-  return {paths, fallback: false};
+  return {fallback: false, paths};
 };
 
 export const getStaticProps: GetStaticProps<Props> = async ({
@@ -45,8 +45,8 @@ GetStaticPropsContext) => {
 
   return {
     props: {
-      customers: JSON.stringify(customers),
       current: JSON.stringify(params?.num),
+      customers: JSON.stringify(customers),
     },
   };
 };

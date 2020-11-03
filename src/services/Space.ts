@@ -3,13 +3,13 @@ import {serializeSpace} from "@/serializers/Space";
 import Space from "@/types/Space";
 
 export const spaceConverter: firebase.default.firestore.FirestoreDataConverter<Space.Get> = {
-  toFirestore(data: Space.Get) {
-    return data;
-  },
   fromFirestore(
     snapshot: firebase.default.firestore.QueryDocumentSnapshot<Space.Response>,
   ): Space.Get {
     return serializeSpace(snapshot);
+  },
+  toFirestore(data: Space.Get) {
+    return data;
   },
 };
 

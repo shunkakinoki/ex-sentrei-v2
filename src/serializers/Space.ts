@@ -12,8 +12,8 @@ export const serializeSpace = (
     ...data,
     articleCount: data.articleCount as number,
     createdAt: serializeFirebaseDate(data.createdAt),
-    updatedAt: serializeFirebaseDate(data.updatedAt),
     uid: snap.id,
+    updatedAt: serializeFirebaseDate(data.updatedAt),
   };
 };
 
@@ -26,7 +26,7 @@ export const serializeAdminSpace = (
     ...data,
     articleCount: data.articleCount as number,
     createdAt: serializeFirebaseDate(data.createdAt),
-    updatedAt: serializeFirebaseDate(data.updatedAt),
     uid: snap.id,
+    updatedAt: serializeFirebaseDate(data.updatedAt),
   };
 };

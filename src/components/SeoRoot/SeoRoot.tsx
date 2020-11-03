@@ -9,23 +9,23 @@ export default function SeoDefault(): JSX.Element {
       titleTemplate="Sentrei | %s"
       description="The most delightful way to start your own blog, media, or a newsletter."
       openGraph={{
-        type: "website",
-        locale: "en_US",
-        url: "https://sentrei.com",
-        site_name: "sentrei.com",
         images: [
           {
+            alt: "Sentrei Logo Image",
+            height: 500,
             url: "https://www.sentrei.com/logo.png",
             width: 500,
-            height: 500,
-            alt: "Sentrei Logo Image",
           },
         ],
+        locale: "en_US",
+        site_name: "sentrei.com",
+        type: "website",
+        url: "https://sentrei.com",
       }}
       twitter={{
+        cardType: "summary_large_image",
         handle: "@sentrei_com",
         site: "@sentrei_com",
-        cardType: "summary_large_image",
       }}
     />
   );

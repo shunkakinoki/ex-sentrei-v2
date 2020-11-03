@@ -76,6 +76,11 @@
             "additionalHooks": "useRecoilCallback"
           }
         ],
+        "sort-keys": [
+          "error",
+          "asc",
+          {"caseSensitive": true, "natural": true, "minKeys": 3}
+        ],
         "sort-vars": ["error", {"ignoreCase": false}]
       },
       "settings": {

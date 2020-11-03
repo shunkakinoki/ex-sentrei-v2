@@ -1,23 +1,23 @@
 import {useRecoilValue, atom} from "recoil";
 
 export const editorArticleIdAtom = atom<string | undefined>({
-  key: "editorArticleId",
   default: undefined,
+  key: "editorArticleId",
 });
 
 export const editorBodyAtom = atom<string | undefined>({
-  key: "editorBody",
   default: undefined,
+  key: "editorBody",
 });
 
 export const editorSwitchAtom = atom<boolean>({
-  key: "editorSwitch",
   default: false,
+  key: "editorSwitch",
 });
 
 export const editorTitleAtom = atom<string | undefined>({
-  key: "editorTitle",
   default: undefined,
+  key: "editorTitle",
 });
 
 export default function useEditor(): {

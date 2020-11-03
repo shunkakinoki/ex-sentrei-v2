@@ -29,9 +29,9 @@ export default function DashboardSettingsNotificationsSection({
   >({
     defaultValues: {
       analytics: space?.settings?.analytics,
+      app: space?.settings?.app,
       customer: space?.settings?.customer,
       sales: space?.settings?.sales,
-      app: space?.settings?.app,
     },
   });
 
@@ -51,8 +51,8 @@ export default function DashboardSettingsNotificationsSection({
       .then(() =>
         toast.success("Success", {
           autoClose: 1500,
-          hideProgressBar: true,
           draggable: false,
+          hideProgressBar: true,
         }),
       )
       .catch((err: Error) => {

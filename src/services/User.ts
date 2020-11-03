@@ -3,13 +3,13 @@ import {serializeUser} from "@/serializers/User";
 import User from "@/types/User";
 
 export const userConverter: firebase.default.firestore.FirestoreDataConverter<User.Get> = {
-  toFirestore(data: User.Get) {
-    return data;
-  },
   fromFirestore(
     snapshot: firebase.default.firestore.QueryDocumentSnapshot<User.Response>,
   ): User.Get {
     return serializeUser(snapshot);
+  },
+  toFirestore(data: User.Get) {
+    return data;
   },
 };
 

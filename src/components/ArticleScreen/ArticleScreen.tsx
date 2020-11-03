@@ -10,9 +10,10 @@ import HeaderRoot from "@/components/HeaderRoot";
 import Article from "@/types/Article";
 
 const ArticleBody = dynamic(() => import("@/components/ArticleBody"), {
-  ssr: false,
   // eslint-disable-next-line react/display-name
   loading: () => <div className="p-8 md:p-12 lg:p-16" />,
+
+  ssr: false,
 });
 
 export interface Props extends Pick<ArticleHeroProps, "authors"> {

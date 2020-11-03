@@ -35,8 +35,8 @@ export default function SettingsProfileSection(): JSX.Element {
       .then(() =>
         toast.success("Success", {
           autoClose: 1500,
-          hideProgressBar: true,
           draggable: false,
+          hideProgressBar: true,
         }),
       )
       .catch((err: Error) => {

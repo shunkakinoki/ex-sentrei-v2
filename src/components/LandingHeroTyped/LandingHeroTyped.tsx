@@ -8,12 +8,12 @@ export interface Props {
 export default function LandingHeroTyped({text}: Props): JSX.Element {
   useEffect(() => {
     const options = {
-      strings: text,
-      loop: true,
-      backSpeed: 30,
       backDelay: 1500,
-      startDelay: 300,
+      backSpeed: 30,
+      loop: true,
       shuffle: true,
+      startDelay: 300,
+      strings: text,
       typeSpeed: 90,
     };
 
