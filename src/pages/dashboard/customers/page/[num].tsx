@@ -11,8 +11,8 @@ export type Props = Omit<
   DashboardCustomersScreenProps,
   "customers" | "current" | "total" | "namespaceId"
 > & {
-  customers: string;
   current: string;
+  customers: string;
 };
 
 // eslint-disable-next-line @typescript-eslint/require-await
@@ -25,7 +25,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     };
   });
 
-  return {paths, fallback: false};
+  return {fallback: false, paths};
 };
 
 // eslint-disable-next-line @typescript-eslint/require-await
@@ -38,8 +38,8 @@ export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
 
   return {
     props: {
-      customers: JSON.stringify(customers),
       current: JSON.stringify(params?.num),
+      customers: JSON.stringify(customers),
     },
   };
 };

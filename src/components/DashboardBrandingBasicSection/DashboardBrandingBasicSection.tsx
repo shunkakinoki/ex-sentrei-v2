@@ -27,8 +27,8 @@ export default function DashboardBrandingBasicSection({
   const {register, handleSubmit, reset, formState} = useForm<Space.Fields>({
     defaultValues: {
       description: space?.description,
-      title: space?.title,
       namespaceId: space?.namespaceId,
+      title: space?.title,
     },
   });
 
@@ -48,8 +48,8 @@ export default function DashboardBrandingBasicSection({
       .then(() =>
         toast.success("Success", {
           autoClose: 1500,
-          hideProgressBar: true,
           draggable: false,
+          hideProgressBar: true,
         }),
       )
       .catch((err: Error) => {
@@ -59,8 +59,8 @@ export default function DashboardBrandingBasicSection({
     await mutate(`spaces/${authState.uid}`);
     return reset({
       description: space?.description,
-      title: space?.title,
       namespaceId: space?.namespaceId,
+      title: space?.title,
     });
   };
 
@@ -68,8 +68,8 @@ export default function DashboardBrandingBasicSection({
     if (space && !formState.isDirty) {
       reset({
         description: space?.description,
-        title: space?.title,
         namespaceId: space?.namespaceId,
+        title: space?.title,
       });
     }
   }, [reset, space, formState.isDirty]);

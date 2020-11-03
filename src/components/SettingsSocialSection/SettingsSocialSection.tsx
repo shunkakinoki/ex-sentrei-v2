@@ -36,8 +36,8 @@ export default function SettingsSocialSection(): JSX.Element {
       .then(() =>
         toast.success("Success", {
           autoClose: 1500,
-          hideProgressBar: true,
           draggable: false,
+          hideProgressBar: true,
         }),
       )
       .catch((err: Error) => {

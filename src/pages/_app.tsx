@@ -31,17 +31,17 @@ const CustomApp = ({Component, pageProps}: AppProps): JSX.Element => {
       <RecoilRoot>
         <SWRConfig
           value={{
-            onLoadingSlow: key => {
-              console.log(`key:${key}`);
-            },
-            onSuccess: (data, key) => {
-              console.log(`data: ${data}, key: ${key}`);
-            },
             onError: (err, key) => {
               console.error(`err: ${err}, key: ${key}`);
             },
             onErrorRetry: (err, key) => {
               console.error(`err: ${err}, key: ${key}`);
+            },
+            onLoadingSlow: key => {
+              console.log(`key:${key}`);
+            },
+            onSuccess: (data, key) => {
+              console.log(`data: ${data}, key: ${key}`);
             },
           }}
         >

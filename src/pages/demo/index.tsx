@@ -13,8 +13,8 @@ export type Props = Omit<
   DemoSpaceScreenProps,
   "author" | "articles" | "space" | "total"
 > & {
-  author: string;
   articles: string;
+  author: string;
   space: string;
 };
 
@@ -26,10 +26,10 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
   return {
     props: {
-      author: JSON.stringify(author),
       articles: JSON.stringify(articles),
-      space: JSON.stringify(space),
+      author: JSON.stringify(author),
       current: 1,
+      space: JSON.stringify(space),
     },
   };
 };

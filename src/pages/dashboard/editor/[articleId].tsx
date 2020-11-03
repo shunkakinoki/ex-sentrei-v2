@@ -16,8 +16,8 @@ export type Props = Omit<EditorScreenProps, "article" | "namespaceId"> & {
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: [],
     fallback: "blocking",
+    paths: [],
   };
 };
 

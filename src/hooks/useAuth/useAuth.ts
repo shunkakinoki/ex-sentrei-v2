@@ -2,18 +2,18 @@ import {useMemo} from "react";
 import {useRecoilValue, atom} from "recoil";
 
 export const authStateAtom = atom<firebase.default.User | null | undefined>({
-  key: "auth",
   default: undefined,
+  key: "auth",
 });
 
 export const authInitializedAtom = atom<boolean | undefined>({
-  key: "authInitialized",
   default: undefined,
+  key: "authInitialized",
 });
 
 export default function useAuth(): {
-  isLoggedIn: boolean | undefined;
   authState: firebase.default.User | null | undefined;
+  isLoggedIn: boolean | undefined;
 } {
   const authState = useRecoilValue(authStateAtom);
   const isAuthInitialized = useRecoilValue(authInitializedAtom);
@@ -23,7 +23,7 @@ export default function useAuth(): {
   );
 
   return {
-    isLoggedIn,
     authState,
+    isLoggedIn,
   };
 }

@@ -3,22 +3,22 @@ import {serializeArticle} from "@/serializers/Article";
 import Article from "@/types/Article";
 
 export interface ArticleQuery {
-  spaceId: string;
   end?: number;
   limit?: number;
+  spaceId: string;
   start?: number;
 }
 
 export const articleConverter: firebase.default.firestore.FirestoreDataConverter<Article.Get> = {
-  toFirestore(data: Article.Get) {
-    return data;
-  },
   fromFirestore(
     snapshot: firebase.default.firestore.QueryDocumentSnapshot<
       Article.Response
     >,
   ): Article.Get {
     return serializeArticle(snapshot);
+  },
+  toFirestore(data: Article.Get) {
+    return data;
   },
 };
 

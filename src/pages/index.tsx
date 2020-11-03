@@ -15,8 +15,8 @@ export type Props = Omit<
   SpaceScreenProps,
   "author" | "articles" | "space" | "total"
 > & {
-  author: string;
   articles: string;
+  author: string;
   space: string;
 };
 
@@ -50,11 +50,11 @@ GetServerSidePropsContext) => {
   if (req.headers.host === "demo.sentrei.com") {
     return {
       props: {
-        author: JSON.stringify(author),
         articles: JSON.stringify(articles),
-        space: JSON.stringify(space),
+        author: JSON.stringify(author),
         current: 1,
         namespaceId: req.headers.host.split(".")[0],
+        space: JSON.stringify(space),
       },
     };
   }

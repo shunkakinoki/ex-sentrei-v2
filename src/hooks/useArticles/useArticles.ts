@@ -9,7 +9,7 @@ const getArticlesFetcher = async (
   start: number,
   end: number,
 ) => {
-  return getArticles({spaceId, start, end});
+  return getArticles({end, spaceId, start});
 };
 
 export default function useArticles(

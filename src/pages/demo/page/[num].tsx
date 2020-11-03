@@ -12,8 +12,8 @@ export type Props = Omit<
   DemoSpaceScreenProps,
   "author" | "articles" | "current" | "total"
 > & {
-  author: string;
   articles: string;
+  author: string;
   current: string;
 };
 
@@ -27,7 +27,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     };
   });
 
-  return {paths, fallback: false};
+  return {fallback: false, paths};
 };
 
 // eslint-disable-next-line @typescript-eslint/require-await
@@ -38,10 +38,10 @@ export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
 
   return {
     props: {
-      author: JSON.stringify(author),
       articles: JSON.stringify(articles),
-      space,
+      author: JSON.stringify(author),
       current: JSON.stringify(params?.num),
+      space,
     },
   };
 };

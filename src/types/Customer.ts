@@ -1,6 +1,6 @@
 export default interface Props {
-  email: string;
   date: Date;
+  email: string;
   image?: string;
   name: string;
   status: "active";

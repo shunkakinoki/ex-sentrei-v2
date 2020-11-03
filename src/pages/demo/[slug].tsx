@@ -11,16 +11,16 @@ export type Props = Omit<
   DemoArticleScreenProps,
   "authors" | "article" | "more"
 > & {
-  authors: string;
   article: string;
+  authors: string;
   more: string;
 };
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: [],
     fallback: "blocking",
+    paths: [],
   };
 };
 
@@ -32,8 +32,8 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
   return {
     props: {
-      authors: JSON.stringify(authors),
       article: JSON.stringify(article),
+      authors: JSON.stringify(authors),
       more: JSON.stringify(more),
     },
     revalidate: 300,

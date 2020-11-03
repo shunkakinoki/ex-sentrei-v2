@@ -21,7 +21,7 @@ export default function DashboardScreen({
   const {authState} = useAuth();
   const {articles: swrArticles} = useArticles(
     namespaceId,
-    {spaceId: authState?.uid ?? "", start: current, end: current + 10},
+    {end: current + 10, spaceId: authState?.uid ?? "", start: current},
     articles,
   );
 

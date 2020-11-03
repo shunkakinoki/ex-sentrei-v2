@@ -17,41 +17,41 @@ export type ContentCategory = EditableContent;
 declare namespace Activity {
   interface Fields<T, C extends keyof EditableContentType> {
     action: UserAction;
-    before: T | null;
     after: T | null;
+    before: T | null;
     category: C;
     categoryId: string;
     createdByUid: string;
     fullItemPath: string;
     itemPath: string;
-    userId: string;
     spaceId?: string;
+    type?: string;
     updatedAt: firebase.default.firestore.FieldValue;
     user: Profile.Response;
+    userId: string;
     userNotification: string[];
-    type?: string;
     value?: number;
   }
 
   interface Create<T, C extends keyof EditableContentType>
     extends Fields<T, C> {
     action: "created";
-    before: null;
     after: T;
+    before: null;
   }
 
   interface Update<T, C extends keyof EditableContentType>
     extends Fields<T, C> {
     action: "updated";
-    before: T;
     after: T;
+    before: T;
   }
 
   interface Delete<T, C extends keyof EditableContentType>
     extends Fields<T, C> {
     action: "deleted";
-    before: T;
     after: null;
+    before: T;
   }
 
   export type CreateArticle = Create<Article.Response, "articles">;
