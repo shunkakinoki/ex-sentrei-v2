@@ -2,6 +2,7 @@ import * as admin from "firebase-admin";
 import * as functions from "firebase-functions";
 
 import Space from "@/types/Space";
+import Article from "@/types/Article";
 
 const db = admin.firestore();
 
@@ -9,10 +10,11 @@ const db = admin.firestore();
  * Increase article count to arbitrary collection
  */
 const articleCountPlus = functions.firestore
-  .document("spaces/{spaceId}/articles/{articleId}")
-  .onCreate((_, context) => {
-    const {spaceId} = context.params;
-    return db.doc(`spaces/${spaceId as string}`).update(<Space.AdminUpdate>{
+  .document("articles/{articleId}")
+  .onCreate(snap => {
+    const data = snap.data() as Article.Response;
+
+    return db.doc(`spaces/${data.spaceId}`).update(<Space.AdminUpdate>{
       articleCount: admin.firestore.FieldValue.increment(1),
     });
   });
