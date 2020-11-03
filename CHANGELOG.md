@@ -1,3 +1,9 @@
+# [1.74.0](https://github.com/sentrei/sentrei/compare/v1.73.0...v1.74.0) (2020-11-03)
+
+### Features
+
+- 🎸 migrate blog space ([88e90bb](https://github.com/sentrei/sentrei/commit/88e90bb3af242c9dc565c0823d4ab4013da0eb39))
+
 # [1.73.0](https://github.com/sentrei/sentrei/compare/v1.72.0...v1.73.0) (2020-11-03)
 
 ### Bug Fixes
