@@ -24,7 +24,9 @@ export default function DashboardBrandingBasicSection({
   const {space} = useSpace(namespaceId);
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
-  const {register, handleSubmit, reset, formState} = useForm<Space.Fields>({
+  const {register, handleSubmit, reset, formState} = useForm<
+    Partial<Pick<Space.Fields, "description" | "namespaceId" | "title">>
+  >({
     defaultValues: {
       description: space?.description,
       namespaceId: space?.namespaceId,

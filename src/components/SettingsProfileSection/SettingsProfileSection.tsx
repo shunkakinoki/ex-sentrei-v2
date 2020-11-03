@@ -16,7 +16,9 @@ export default function SettingsProfileSection(): JSX.Element {
   const {profile} = useProfile();
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
-  const {register, handleSubmit, reset, formState} = useForm<Profile.Fields>({
+  const {register, handleSubmit, reset, formState} = useForm<
+    Partial<Profile.Fields>
+  >({
     defaultValues: {
       bio: profile?.bio,
       name: profile?.name,
