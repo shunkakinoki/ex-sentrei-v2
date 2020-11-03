@@ -31,7 +31,7 @@ const articleQuery = ({
   let ref = db
     .collection("articles")
     .withConverter(articleConverter)
-    .orderBy("createdAt", "desc")
+    .orderBy("spaceNum", "desc")
     .limit(limit);
 
   if (spaceId) {
