@@ -1,4 +1,9 @@
-import {GetStaticProps, InferGetStaticPropsType, GetStaticPaths} from "next";
+import {
+  GetStaticProps,
+  InferGetStaticPropsType,
+  GetStaticPaths,
+  GetStaticPropsContext,
+} from "next";
 
 import EditorScreen, {
   Props as EditorScreenProps,
@@ -16,8 +21,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-// eslint-disable-next-line @typescript-eslint/require-await
-export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
+export const getStaticProps: GetStaticProps<Props> = async ({
+  params,
+}: // eslint-disable-next-line @typescript-eslint/require-await
+GetStaticPropsContext) => {
   return {
     props: {
       articleId: JSON.stringify(params?.articleId),

@@ -1,4 +1,9 @@
-import {GetStaticProps, InferGetStaticPropsType, GetStaticPaths} from "next";
+import {
+  GetStaticProps,
+  InferGetStaticPropsType,
+  GetStaticPaths,
+  GetStaticPropsContext,
+} from "next";
 
 import DemoDashboardCustomersScreen, {
   Props as DemoDashboardCustomersScreenProps,
@@ -28,8 +33,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {paths, fallback: false};
 };
 
-// eslint-disable-next-line @typescript-eslint/require-await
-export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
+export const getStaticProps: GetStaticProps<Props> = async ({
+  params,
+}: // eslint-disable-next-line @typescript-eslint/require-await
+GetStaticPropsContext) => {
   const customers = createCustomers(
     params?.num !== totalCustomerPages.toString()
       ? 10
