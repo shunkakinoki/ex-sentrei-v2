@@ -1,13 +1,6 @@
 import db from "@/firebase/db";
 import {serializeArticle} from "@/serializers/Article";
-import Article from "@/types/Article";
-
-export interface ArticleQuery {
-  end?: number;
-  limit?: number;
-  spaceId: string;
-  start?: number;
-}
+import Article, {ArticleQuery} from "@/types/Article";
 
 export const articleConverter: firebase.default.firestore.FirestoreDataConverter<Article.Get> = {
   fromFirestore(
@@ -22,7 +15,7 @@ export const articleConverter: firebase.default.firestore.FirestoreDataConverter
   },
 };
 
-const articleQuery = ({
+export const articleQuery = ({
   limit = 10,
   end,
   spaceId,

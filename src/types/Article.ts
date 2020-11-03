@@ -2,6 +2,13 @@
 
 import Metadata from "@/types/Metadata";
 
+export interface ArticleQuery {
+  end?: number;
+  limit?: number;
+  spaceId: string;
+  start?: number;
+}
+
 export type Pricing = "free" | "paid" | "subscription";
 
 // eslint-disable-next-line @typescript-eslint/no-namespace

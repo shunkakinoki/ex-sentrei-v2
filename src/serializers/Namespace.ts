@@ -13,3 +13,14 @@ export const serializeNamespace = (
     uid: snap.id,
   };
 };
+
+export const serializeAdminNamespace = (
+  snap: FirebaseFirestore.DocumentSnapshot<Namespace.Response>,
+): Namespace.Get => {
+  const data = snap.data()!;
+
+  return {
+    ...data,
+    uid: snap.id,
+  };
+};
