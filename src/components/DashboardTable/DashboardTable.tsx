@@ -5,6 +5,7 @@ import PaginationBase, {
 } from "@/components/PaginationBase";
 import useArticles from "@/hooks/useArticles";
 import useAuth from "@/hooks/useAuth";
+import useSpace from "@/hooks/useSpace";
 import Article from "@/types/Article";
 
 const DashboardTableItem = dynamic(
@@ -27,9 +28,15 @@ export default function DashboardTable({
   const {authState} = useAuth();
   const {articles: swrArticles} = useArticles(
     namespaceId,
-    {end: current + 10, spaceId: authState?.uid ?? "", start: current},
+    {
+      end: current * 10,
+      spaceId: authState?.uid ?? "",
+      start: (current - 1) * 10,
+    },
     articles,
   );
+  const {space} = useSpace(namespaceId);
+
   return (
     <>
       {swrArticles &&
@@ -50,7 +57,14 @@ export default function DashboardTable({
             )}
           </>
         ))}
-      {total > 1 && (
+      {space?.articleCount && space.articleCount > 10 && (
+        <PaginationBase
+          current={current}
+          total={Math.floor(space.articleCount / 10) + 1}
+          namespaceId={namespaceId}
+        />
+      )}
+      {namespaceId === "demo" && total > 1 && (
         <PaginationBase
           current={current}
           total={total}
