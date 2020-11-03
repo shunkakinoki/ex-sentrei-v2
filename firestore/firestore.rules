@@ -21,10 +21,21 @@ service cloud.firestore {
         && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.image == request.resource.data.updatedBy.image
         && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.namespaceId == request.resource.data.updatedBy.namespaceId
         && request.resource.data.updatedByUid == request.auth.uid;
+      allow update:
+        if request.auth.uid != null
+        && request.resource.data.body is string
+        && request.resource.data.title is string
+        && request.resource.data.title.size() <= 1000
+        && request.resource.data.updatedAt == request.time
+        && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.bio == request.resource.data.updatedBy.bio
+        && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.name == request.resource.data.updatedBy.name
+        && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.image == request.resource.data.updatedBy.image
+        && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.namespaceId == request.resource.data.updatedBy.namespaceId
+        && request.resource.data.updatedByUid == request.auth.uid;
       allow list:
         if request.auth.uid != null
         && request.query.limit <= 30;
-      allow update, delete:
+      allow delete:
         if false;
     }
     match /profiles/{profileId} {
