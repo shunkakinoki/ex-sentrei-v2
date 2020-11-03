@@ -1,4 +1,4 @@
-import BlogStoryCard from "@/components/BlogStoryCard";
+import SpaceStoryCard from "@/components/SpaceStoryCard";
 import Article from "@/types/Article";
 
 export interface Props {
@@ -6,7 +6,7 @@ export interface Props {
   namespaceId: string;
 }
 
-export default function BlogStoryGrid({
+export default function SpaceStoryGrid({
   articles,
   namespaceId,
 }: Props): JSX.Element {
@@ -15,7 +15,7 @@ export default function BlogStoryGrid({
       <div className="flex flex-wrap mb-8 -mx-2">
         {articles.map((article, index) => {
           return (
-            <BlogStoryCard
+            <SpaceStoryCard
               key={article.uid}
               updatedAt={article.updatedAt}
               image={article.image}

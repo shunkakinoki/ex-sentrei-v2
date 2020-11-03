@@ -5,7 +5,7 @@ export type Props = Pick<
   "time" | "title" | "subtitle" | "pricing" | "updatedAt"
 >;
 
-export default function BlogStoryHero({
+export default function SpaceStoryHero({
   time,
   title,
   subtitle,

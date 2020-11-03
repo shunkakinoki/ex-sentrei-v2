@@ -10,7 +10,7 @@ import DashboardScreen, {
 } from "@/components/DashboardScreen";
 import {totalDashboardPages} from "@/const/demo";
 import Article from "@/types/Article";
-import {createArticles, createBlog} from "@/utils/faker";
+import {createArticles, createSpace} from "@/utils/faker";
 
 export type Props = Omit<
   DashboardScreenProps,
@@ -42,12 +42,12 @@ GetStaticPropsContext) => {
       ? 6
       : Math.floor(Math.random() * 3) + 1,
   );
-  const blog = createBlog();
+  const space = createSpace();
 
   return {
     props: {
       articles: JSON.stringify(articles),
-      blog,
+      space,
       current: JSON.stringify(params?.num),
     },
   };

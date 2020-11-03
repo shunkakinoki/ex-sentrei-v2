@@ -1,22 +1,22 @@
-import BlogScreen, {Props as BlogScreenProps} from "@/components/BlogScreen";
 import DemoBanner from "@/components/DemoBanner";
+import SpaceScreen, {Props as SpaceScreenProps} from "@/components/SpaceScreen";
 
-export type Props = Omit<BlogScreenProps, "namespaceId">;
+export type Props = Omit<SpaceScreenProps, "namespaceId">;
 
-export default function DemoBlogScreen({
+export default function DemoSpaceScreen({
   author,
   articles,
-  blog,
+  space,
   current,
   total,
 }: Props): JSX.Element {
   return (
     <>
       <DemoBanner />
-      <BlogScreen
+      <SpaceScreen
         author={author}
         articles={articles}
-        blog={blog}
+        space={space}
         current={current}
         total={total}
         namespaceId="demo"

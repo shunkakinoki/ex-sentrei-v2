@@ -4,20 +4,20 @@ import {
   GetServerSidePropsContext,
 } from "next";
 
-import BlogScreen, {Props as BlogScreenProps} from "@/components/BlogScreen";
+import SpaceScreen, {Props as SpaceScreenProps} from "@/components/SpaceScreen";
 import {totalArticlePages} from "@/const/demo";
 import Article from "@/types/Article";
 import Profile from "@/types/Profile";
 import Space from "@/types/Space";
-import {createAuthor, createArticles, createBlog} from "@/utils/faker";
+import {createAuthor, createArticles, createSpace} from "@/utils/faker";
 
 export type Props = Omit<
-  BlogScreenProps,
-  "author" | "articles" | "blog" | "total"
+  SpaceScreenProps,
+  "author" | "articles" | "space" | "total"
 > & {
   author: string;
   articles: string;
-  blog: string;
+  space: string;
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async ({
@@ -45,14 +45,14 @@ GetServerSidePropsContext) => {
 
   const author = createAuthor();
   const articles = createArticles();
-  const blog = createBlog();
+  const space = createSpace();
 
   if (req.headers.host === "demo.sentrei.com") {
     return {
       props: {
         author: JSON.stringify(author),
         articles: JSON.stringify(articles),
-        blog: JSON.stringify(blog),
+        space: JSON.stringify(space),
         current: 1,
         namespaceId: req.headers.host.split(".")[0],
       },
@@ -70,15 +70,15 @@ GetServerSidePropsContext) => {
 const Index = ({
   author,
   articles,
-  blog,
+  space,
   current,
   namespaceId,
 }: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element => {
   return (
-    <BlogScreen
+    <SpaceScreen
       author={JSON.parse(author) as Profile.Get}
       articles={JSON.parse(articles) as Article.Get[]}
-      blog={JSON.parse(blog) as Space.Get}
+      space={JSON.parse(space) as Space.Get}
       current={current}
       total={totalArticlePages}
       namespaceId={namespaceId}

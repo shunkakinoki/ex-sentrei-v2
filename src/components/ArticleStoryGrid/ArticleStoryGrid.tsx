@@ -1,4 +1,4 @@
-import BlogStoryCard from "@/components/BlogStoryCard";
+import SpaceStoryCard from "@/components/SpaceStoryCard";
 import Article from "@/types/Article";
 
 export interface Props {
@@ -23,7 +23,7 @@ export default function ArticleStoryGrid({
       <div className="flex flex-wrap mt-4 sm:mt-8 md:mt-12 lg:mt-16">
         {articles.map((article, index) => {
           return (
-            <BlogStoryCard
+            <SpaceStoryCard
               key={article.uid}
               updatedAt={article.updatedAt}
               image={article.image}

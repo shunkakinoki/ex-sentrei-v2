@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import Link from "next/link";
 
-import BlogStoryHero from "@/components/BlogStoryHero";
-import BlogStoryImage from "@/components/BlogStoryImage";
+import SpaceStoryHero from "@/components/SpaceStoryHero";
+import SpaceStoryImage from "@/components/SpaceStoryImage";
 import Article from "@/types/Article";
 
 export interface Props
@@ -22,7 +22,7 @@ export interface Props
   variant: "small" | "medium" | "large";
 }
 
-export default function BlogStoryCard({
+export default function SpaceStoryCard({
   image,
   namespaceId,
   updatedAt,
@@ -45,8 +45,8 @@ export default function BlogStoryCard({
         )}
       >
         <div className="rounded sm:rounded-2xl md:rounded-lg group">
-          <BlogStoryImage image={image} title={title} />
-          <BlogStoryHero
+          <SpaceStoryImage image={image} title={title} />
+          <SpaceStoryHero
             time={time}
             title={title}
             subtitle={subtitle}
