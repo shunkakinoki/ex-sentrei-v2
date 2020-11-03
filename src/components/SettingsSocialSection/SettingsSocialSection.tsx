@@ -33,7 +33,6 @@ export default function SettingsSocialSection(): JSX.Element {
 
     await mutate(`profiles/${authState.uid}`, {social: data}, false);
 
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     await updateProfile(authState?.uid, {social: data})
       .then(() =>
         toast.success("Success", {
@@ -46,7 +45,6 @@ export default function SettingsSocialSection(): JSX.Element {
         toast.error(err.message);
       });
 
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     await mutate(`profiles/${authState.uid}`);
 
     return null;

@@ -40,10 +40,8 @@ export default function DashboardSettingsNotificationsSection({
       return null;
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     await mutate(`spaces/${authState.uid}`, data, false);
 
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     await updateSpace(authState?.uid, {
       settings: data,
       updatedAt: timestamp,
@@ -61,7 +59,6 @@ export default function DashboardSettingsNotificationsSection({
         toast.error(err.message);
       });
 
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     await mutate(`spaces/${authState.uid}`);
 
     return null;

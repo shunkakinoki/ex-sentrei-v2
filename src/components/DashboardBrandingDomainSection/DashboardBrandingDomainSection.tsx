@@ -49,14 +49,12 @@ export default function DashboardBrandingDomainSection({
       return null;
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     await mutate(
       `spaces/${authState.uid}`,
       {...space, namespaceId: data.namespaceId},
       false,
     );
 
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     await createNamespace(data.namespaceId, {
       model: "spaces",
       id: authState?.uid,
@@ -71,7 +69,6 @@ export default function DashboardBrandingDomainSection({
       .catch((err: Error) => {
         toast.error(err.message);
       });
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     await mutate(`spaces/${authState.uid}`);
 
     return null;
