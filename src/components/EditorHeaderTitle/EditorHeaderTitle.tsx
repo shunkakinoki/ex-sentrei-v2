@@ -20,7 +20,9 @@ export default function EditorHeaderTitle({
   const setTitleState = useSetRecoilState(editorTitleAtom);
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
-  const {register, reset, formState, watch} = useForm<Props>({
+  const {register, reset, formState, watch} = useForm<
+    Partial<Pick<Article.Get, "uid" | "title">>
+  >({
     defaultValues: {
       title,
     },
