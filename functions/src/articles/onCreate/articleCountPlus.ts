@@ -12,10 +12,29 @@ const db = admin.firestore();
 const articleCountPlus = functions.firestore
   .document("articles/{articleId}")
   .onCreate(snap => {
-    const data = snap.data() as Article.Response;
+    return db.runTransaction(async transaction => {
+      const data = snap.data() as Article.Response;
 
-    return db.doc(`spaces/${data.spaceId}`).update(<Space.AdminUpdate>{
-      articleCount: admin.firestore.FieldValue.increment(1),
+      const spaceRef = db.doc(`spaces/${data.spaceId}`);
+      const spaceData = (
+        await transaction.get(spaceRef)
+      ).data() as Space.Response;
+
+      const number = (spaceData.articleCount as number) + 1;
+
+      transaction.update(spaceRef, {
+        articleCount: number,
+      });
+
+      const customerRef = snap.ref;
+
+      transaction.set(
+        customerRef,
+        {
+          spaceNum: number,
+        },
+        {merge: true},
+      );
     });
   });
 

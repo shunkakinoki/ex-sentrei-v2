@@ -14,10 +14,39 @@ const db = admin.firestore();
 const articleCountMinus = functions.firestore
   .document("articles/{articleId}")
   .onDelete(snap => {
-    const data = snap.data() as Article.Response;
+    return db.runTransaction(async transaction => {
+      const data = snap.data() as Article.Response;
 
-    return db.doc(`spaces/${data.spaceId}`).update(<Space.AdminUpdate>{
-      articleCount: admin.firestore.FieldValue.increment(-1),
+      const spaceRef = db.doc(`spaces/${data.spaceId}`);
+      const spaceData = (
+        await transaction.get(spaceRef)
+      ).data() as Space.Response;
+
+      const number = (spaceData.articleCount as number) - 1;
+
+      transaction.update(spaceRef, {
+        articleCount: number,
+      });
+
+      return db
+        .collection("articles")
+        .where("spaceNum", ">", number)
+        .get()
+        .then(snapshot => {
+          snapshot.forEach(doc => {
+            const articleData = doc.data() as Article.Response;
+
+            const spaceNum = (articleData?.spaceNum as number) - 1;
+
+            transaction.set(
+              doc.ref,
+              {
+                spaceNum,
+              },
+              {merge: true},
+            );
+          });
+        });
     });
   });
 
