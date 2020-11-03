@@ -1,3 +1,9 @@
+# [1.79.0](https://github.com/sentrei/sentrei/compare/v1.78.0...v1.79.0) (2020-11-03)
+
+### Features
+
+- 🎸 ini custom domains ([0387b7c](https://github.com/sentrei/sentrei/commit/0387b7c25b2861ed1c16b1d4b9ae712557546839))
+
 # [1.78.0](https://github.com/sentrei/sentrei/compare/v1.77.0...v1.78.0) (2020-11-03)
 
 ### Bug Fixes
