@@ -22,20 +22,20 @@ function getNameFromEmail(email: string): string {
 const userBatchSet = functions.auth.user().onCreate(async user => {
   const batch = db.batch();
 
-  const profileNamespaceData: Namespace = {
-    uid: `@${user.uid}`,
+  const profileNamespaceData: Namespace.Response = {
+    id: user.uid,
     model: "profiles",
   };
 
-  const spaceNamespaceData: Namespace = {
-    uid: user.uid,
+  const spaceNamespaceData: Namespace.Response = {
+    id: user.uid,
     model: "spaces",
   };
 
   const profileData: Profile.Response = {
     bio: null,
     name: user.displayName || getNameFromEmail(user.email || user.uid),
-    namespaceId: user.uid,
+    namespaceId: `@${user.uid}`,
     image: user.photoURL || null,
   };
 
@@ -71,7 +71,7 @@ const userBatchSet = functions.auth.user().onCreate(async user => {
   const userRef = db.doc(`users/${user.uid}`);
   batch.set(userRef, userData, {merge: true});
 
-  const profileRef = db.doc(`profiles/${user.uid}`);
+  const profileRef = db.doc(`profiles/@${user.uid}`);
   batch.set(profileRef, profileData, {merge: true});
 
   const spaceRef = db.doc(`spaces/${user.uid}`);

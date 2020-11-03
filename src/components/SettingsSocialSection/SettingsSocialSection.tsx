@@ -30,8 +30,9 @@ export default function SettingsSocialSection(): JSX.Element {
     if (!authState?.uid) {
       return null;
     }
+
     await mutate(`profiles/${authState.uid}`, {social: data}, false);
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+
     await updateProfile(authState?.uid, {social: data})
       .then(() =>
         toast.success("Success", {
@@ -43,15 +44,10 @@ export default function SettingsSocialSection(): JSX.Element {
       .catch((err: Error) => {
         toast.error(err.message);
       });
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+
     await mutate(`profiles/${authState.uid}`);
-    return reset({
-      facebook: profile?.social?.facebook,
-      github: profile?.social?.github,
-      instagram: profile?.social?.instagram,
-      twitter: profile?.social?.twitter,
-      website: profile?.social?.website,
-    });
+
+    return null;
   };
 
   useEffect(() => {

@@ -49,6 +49,19 @@ service cloud.firestore {
       allow create, delete:
         if false;
     }
+    match /namespaces/{namespaceId} {
+      allow get:
+        if request.auth.uid != null;
+      allow list:
+        if request.auth.uid != null
+        && request.query.limit == 1;
+      allow create:
+        if request.auth.uid != null
+        && request.resource.data.id == request.auth.uid
+        && request.resource.data.model == "spaces";
+      allow update, delete:
+        if false;
+    }
     match /spaces/{spaceId} {
       allow get:
         if request.auth.uid != null;

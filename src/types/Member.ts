@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
-import firebase from "firebase";
-
 import Metadata from "@/types/Metadata";
 import Profile from "@/types/Profile";
 
@@ -28,7 +26,7 @@ declare namespace Member {
   }
 
   export interface Snapshot extends Get {
-    snap: firebase.firestore.DocumentSnapshot;
+    snap: firebase.default.firestore.DocumentSnapshot;
   }
 }
 
