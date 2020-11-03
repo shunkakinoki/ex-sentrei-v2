@@ -37,7 +37,6 @@ export default function EditorHeader({
   articleId,
   status,
   title,
-  uid,
   namespaceId,
 }: Props): JSX.Element {
   return (
@@ -65,11 +64,7 @@ export default function EditorHeader({
             </a>
           </Link>
           <div className="lg:w-0 lg:flex-1">
-            <EditorHeaderTitle
-              uid={uid}
-              title={title}
-              namespaceId={namespaceId}
-            />
+            <EditorHeaderTitle title={title} namespaceId={namespaceId} />
           </div>
           <EditorHeaderSwitch status={status} />
           <EditorHeaderButton articleId={articleId} />

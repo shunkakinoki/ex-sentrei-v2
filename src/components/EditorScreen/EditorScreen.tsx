@@ -24,7 +24,6 @@ export default function EditorScreen({
     <ContainerRoot>
       <EditorHeader
         articleId={articleId}
-        uid={article?.uid ?? ""}
         status={article?.status ?? "preview"}
         title={article?.title ?? ""}
         namespaceId={namespaceId}
