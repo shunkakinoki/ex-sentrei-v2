@@ -48,12 +48,14 @@ const userBatchSet = functions.auth.user().onCreate(async user => {
 
   const spaceData: Space.Response = {
     articleCount: 0,
+    customerCount: 0,
     authorUids: [user.uid],
     createdAt: timestamp,
     createdBy: profileData,
     createdByUid: user.uid,
     description: null,
     plan: "free",
+    memberCount: 1,
     title: `${profileData.name}'s Publication`,
     image: user.photoURL || null,
     namespaceId: user.uid,
