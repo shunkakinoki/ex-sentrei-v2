@@ -39,16 +39,22 @@ export default function DashboardBrandingDomainSection({
       return null;
     }
 
-    if (!isReservedNamespace(data.namespaceId)) {
+    if (isReservedNamespace(data.namespaceId)) {
       toast.error("Is reserved namespace!");
+      return null;
     }
-
-    if (await validateNamespace(data.namespaceId)) {
+    if (!(await validateNamespace(data.namespaceId))) {
       toast.error("Namespace is already used!");
+      return null;
     }
 
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    await mutate(`spaces/${authState.uid}`, data, false);
+    await mutate(
+      `spaces/${authState.uid}`,
+      {namespaceId: data.namespaceId},
+      false,
+    );
+
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     await createNamespace(data.namespaceId, {
       model: "spaces",
@@ -66,9 +72,8 @@ export default function DashboardBrandingDomainSection({
       });
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     await mutate(`spaces/${authState.uid}`);
-    return reset({
-      namespaceId: space?.namespaceId,
-    });
+
+    return null;
   };
 
   useEffect(() => {
