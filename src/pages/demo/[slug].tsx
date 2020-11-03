@@ -11,8 +11,8 @@ export type Props = Omit<
   DemoArticleScreenProps,
   "authors" | "article" | "more"
 > & {
-  authors: string;
   article: string;
+  authors: string;
   more: string;
 };
 

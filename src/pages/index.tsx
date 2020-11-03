@@ -15,8 +15,8 @@ export type Props = Omit<
   SpaceScreenProps,
   "author" | "articles" | "space" | "total"
 > & {
-  author: string;
   articles: string;
+  author: string;
   space: string;
 };
 

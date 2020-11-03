@@ -13,9 +13,9 @@ export function ArticleAuthorsImage({
   name,
   rear,
 }: {
-  src: string;
   name: string;
   rear: boolean;
+  src: string;
 }): JSX.Element {
   return (
     <img

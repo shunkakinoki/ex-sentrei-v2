@@ -13,8 +13,8 @@ export type Props = Omit<
   DemoSpaceScreenProps,
   "author" | "articles" | "space" | "total"
 > & {
-  author: string;
   articles: string;
+  author: string;
   space: string;
 };
 

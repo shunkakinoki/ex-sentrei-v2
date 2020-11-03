@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export interface Props {
   current: number;
-  total: number;
   namespaceId: string;
+  total: number;
 }
 
 function PaginationEllipsis(): JSX.Element {
@@ -24,9 +24,9 @@ export default function PaginationBase({
     num,
     border = false,
   }: {
-    num: number;
     // eslint-disable-next-line react/require-default-props
     border?: boolean;
+    num: number;
   }): JSX.Element {
     return (
       <Link href={num !== 1 ? `${namespaceId}/page/${num}` : `${namespaceId}`}>

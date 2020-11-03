@@ -12,8 +12,8 @@ export type Props = Omit<
   DemoSpaceScreenProps,
   "author" | "articles" | "current" | "total"
 > & {
-  author: string;
   articles: string;
+  author: string;
   current: string;
 };
 

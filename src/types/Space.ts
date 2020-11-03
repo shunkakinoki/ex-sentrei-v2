@@ -7,19 +7,19 @@ export type NotificationType = "app" | "email";
 
 export interface NotificationSettings {
   analytics?: boolean;
+  app?: "everything" | "email" | "nothing";
   customer?: boolean;
   sales?: boolean;
-  app?: "everything" | "email" | "nothing";
 }
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace Space {
   export type EditableFields = {
     description: string | null;
-    title: string;
     image: string | null;
     plan: Plan;
     settings?: NotificationSettings;
+    title: string;
   };
 
   interface Fields extends EditableFields {

@@ -12,8 +12,8 @@ export const authInitializedAtom = atom<boolean | undefined>({
 });
 
 export default function useAuth(): {
-  isLoggedIn: boolean | undefined;
   authState: firebase.default.User | null | undefined;
+  isLoggedIn: boolean | undefined;
 } {
   const authState = useRecoilValue(authStateAtom);
   const isAuthInitialized = useRecoilValue(authInitializedAtom);

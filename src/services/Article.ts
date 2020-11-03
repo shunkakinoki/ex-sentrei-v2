@@ -3,9 +3,9 @@ import {serializeArticle} from "@/serializers/Article";
 import Article from "@/types/Article";
 
 export interface ArticleQuery {
-  spaceId: string;
   end?: number;
   limit?: number;
+  spaceId: string;
   start?: number;
 }
 

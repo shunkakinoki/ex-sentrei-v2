@@ -12,9 +12,9 @@ declare namespace Article {
     excerpt?: string;
     image?: string;
     pricing: Pricing;
-    title: string;
     status: "preview" | "published";
     subtitle?: string;
+    title: string;
   };
 
   interface Fields extends EditableFields {

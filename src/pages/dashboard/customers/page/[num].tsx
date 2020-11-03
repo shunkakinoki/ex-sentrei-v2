@@ -11,8 +11,8 @@ export type Props = Omit<
   DashboardCustomersScreenProps,
   "customers" | "current" | "total" | "namespaceId"
 > & {
-  customers: string;
   current: string;
+  customers: string;
 };
 
 // eslint-disable-next-line @typescript-eslint/require-await
