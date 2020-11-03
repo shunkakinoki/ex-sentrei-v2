@@ -21,7 +21,7 @@ export default function LandingHero(): JSX.Element {
           <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl md:max-w-3xl lg:max-w-4xl">
             We charge{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-              zero commisions{" "}
+              zero commissions{" "}
             </span>
             for all paid articles and subscriptions, so you get all the revenue.
             <br className="hidden lg:block" /> We never show annoying ads,
