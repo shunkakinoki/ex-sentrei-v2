@@ -1,3 +1,14 @@
+# [1.75.0](https://github.com/sentrei/sentrei/compare/v1.74.0...v1.75.0) (2020-11-03)
+
+### Features
+
+- 🎸 fix sort keys ([0248aa2](https://github.com/sentrei/sentrei/commit/0248aa213c2cbe0a118572252f7d222a8a1392ba))
+
+### Performance Improvements
+
+- ⚡️ eslint sort keys ([3dd480c](https://github.com/sentrei/sentrei/commit/3dd480c11428d3ab1599db1fc69c501659f00df9))
+- ⚡️ ini sort keys ([a04d329](https://github.com/sentrei/sentrei/commit/a04d3296e56ee4b339c9b0c20447f4f2ab02d24f))
+
 # [1.74.0](https://github.com/sentrei/sentrei/compare/v1.73.0...v1.74.0) (2020-11-03)
 
 ### Features
