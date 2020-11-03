@@ -16,7 +16,7 @@ const namespaceBatchDelete = functions.firestore
 
     const list = await db
       .collection("namespaces")
-      .where("modelId", "==", data.modelId)
+      .where("uid", "==", data.uid)
       .get();
 
     const old = list.docs.filter(item => item.id !== snap.id);
