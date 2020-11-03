@@ -167,6 +167,7 @@ export const createSpace = (): Space.Get => {
       "http",
       "https",
     ),
+    memberCount: 30,
     namespaceId: faker.lorem.slug(),
     plan: "free",
     title: faker.lorem.sentences(Math.floor(Math.random() * 3) + 1),

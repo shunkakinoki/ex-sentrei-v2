@@ -26,6 +26,7 @@ declare namespace Space {
     articleCount: firebase.default.firestore.FieldValue | number;
     authorUids: string[];
     customerCount: firebase.default.firestore.FieldValue | number;
+    memberCount: firebase.default.firestore.FieldValue | number;
     namespaceId: string;
   }
 
@@ -40,6 +41,7 @@ declare namespace Space {
   export interface Get extends Fields, Metadata.Get {
     articleCount: number;
     customerCount: number;
+    memberCount: number;
     uid: string;
   }
 
