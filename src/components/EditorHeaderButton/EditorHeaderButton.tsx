@@ -7,10 +7,14 @@ import useEditor from "@/hooks/useEditor";
 import useProfile from "@/hooks/useProfile";
 import {createArticle, updateArticle} from "@/services/Article";
 
-export default function EditorHeaderButton(): JSX.Element {
+export interface Props {
+  articleId?: string;
+}
+
+export default function EditorHeaderButton({articleId}: Props): JSX.Element {
   const {authState} = useAuth();
   const {profile} = useProfile();
-  const {editorArticleId, editorBody, editorTitle, editorSwitch} = useEditor();
+  const {editorBody, editorTitle, editorSwitch} = useEditor();
 
   const handleClick = async (): Promise<void> => {
     if (!profile || !authState?.uid) {
@@ -46,8 +50,8 @@ export default function EditorHeaderButton(): JSX.Element {
         })?.then(() => {
           toast.success("Published!");
         });
-      } else if (editorArticleId) {
-        await updateArticle(editorArticleId, {
+      } else if (articleId) {
+        await updateArticle(articleId, {
           authorUids: [authState?.uid],
           body: editorBody,
           pricing: "free",

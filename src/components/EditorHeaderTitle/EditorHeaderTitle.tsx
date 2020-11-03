@@ -6,7 +6,7 @@ import useArticle from "@/hooks/useArticle";
 import {editorTitleAtom} from "@/hooks/useEditor";
 import Article from "@/types/Article";
 
-export interface Props extends Partial<Pick<Article.Get, "uid" | "title">> {
+export interface Props extends Pick<Article.Get, "uid" | "title"> {
   namespaceId: string;
 }
 

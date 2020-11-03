@@ -1,6 +1,8 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
+import {Props as EditorHeaderButtonProps} from "@/components/EditorHeaderButton";
+import {Props as EditorHeaderSwitchProps} from "@/components/EditorHeaderSwitch";
 import {Props as EditorHeaderTitleProps} from "@/components/EditorHeaderTitle";
 
 const EditorHeaderButton = dynamic(
@@ -24,11 +26,16 @@ const EditorHeaderTitle = dynamic(
   },
 );
 
-export interface Props extends EditorHeaderTitleProps {
+export interface Props
+  extends EditorHeaderButtonProps,
+    EditorHeaderSwitchProps,
+    EditorHeaderTitleProps {
   namespaceId: string;
 }
 
 export default function EditorHeader({
+  articleId,
+  status,
   title,
   uid,
   namespaceId,
@@ -64,8 +71,8 @@ export default function EditorHeader({
               namespaceId={namespaceId}
             />
           </div>
-          <EditorHeaderSwitch />
-          <EditorHeaderButton />
+          <EditorHeaderSwitch status={status} />
+          <EditorHeaderButton articleId={articleId} />
         </div>
       </div>
     </div>
