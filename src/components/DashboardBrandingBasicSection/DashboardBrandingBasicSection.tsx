@@ -39,7 +39,7 @@ export default function DashboardBrandingBasicSection({
     }
 
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    await mutate(`spaces/${authState.uid}`, data, false);
+    await mutate(`spaces/${authState.uid}`, {...space, data}, false);
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
 
     await updateSpace(authState?.uid, {

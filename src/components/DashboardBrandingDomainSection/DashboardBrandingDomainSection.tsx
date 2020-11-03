@@ -52,7 +52,7 @@ export default function DashboardBrandingDomainSection({
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     await mutate(
       `spaces/${authState.uid}`,
-      {namespaceId: data.namespaceId},
+      {...space, namespaceId: data.namespaceId},
       false,
     );
 
