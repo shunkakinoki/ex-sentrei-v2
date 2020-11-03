@@ -1,3 +1,16 @@
+# [1.76.0](https://github.com/sentrei/sentrei/compare/v1.75.1...v1.76.0) (2020-11-03)
+
+### Features
+
+- 🎸 ini editor admin ([f2bceee](https://github.com/sentrei/sentrei/commit/f2bceee90decd18c151ca902fda0b5d5dc211119))
+- 🎸 ini serverless trace next config js ([1e7336a](https://github.com/sentrei/sentrei/commit/1e7336a517d4c41609020f24b4bc55e5381f728c))
+
+### Performance Improvements
+
+- ⚡️ ini form hooks with partial types ([15c5a8e](https://github.com/sentrei/sentrei/commit/15c5a8e8610c8d5d844c68ec5354c12e2ccbbcd2))
+- ⚡️ upgrade next canary with default target ([a0397b9](https://github.com/sentrei/sentrei/commit/a0397b93b4a6ce5942e68c83556ed9f06b312566))
+- ⚡️ upgrade with ncu ([1b937d0](https://github.com/sentrei/sentrei/commit/1b937d08d732590b1bdbb370378b8ccc99f2134e))
+
 ## [1.75.1](https://github.com/sentrei/sentrei/compare/v1.75.0...v1.75.1) (2020-11-03)
 
 ### Performance Improvements
