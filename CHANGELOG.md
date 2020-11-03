@@ -1,3 +1,22 @@
+# [1.77.0](https://github.com/sentrei/sentrei/compare/v1.76.2...v1.77.0) (2020-11-03)
+
+### Bug Fixes
+
+- 🐛 precise profile namespace ([bdf8a16](https://github.com/sentrei/sentrei/commit/bdf8a169943aade509d04da3fb5cee0044c72d4c))
+
+### Features
+
+- 🎸 ini namespace services ([68afe79](https://github.com/sentrei/sentrei/commit/68afe799ef362363a058803a5263a3d313e7bf8d))
+
+### Performance Improvements
+
+- ⚡️ ini dashboard table pagination and hook ([7b989d4](https://github.com/sentrei/sentrei/commit/7b989d4ee8b27139aa47aea43a72cb3785160266))
+- ⚡️ ini domain section custom form hook ([a02d107](https://github.com/sentrei/sentrei/commit/a02d10728bf97b242b175f8e92877c74c0da85b1))
+- ⚡️ ini mutate with custom spread operator ([a63b254](https://github.com/sentrei/sentrei/commit/a63b25486ed76b18f2db0afdbdc537e7e53453c1))
+- ⚡️ ini namespaces rules ([368e083](https://github.com/sentrei/sentrei/commit/368e083ba82aeeec8df7f21a7ea0aa87a09640c6))
+- ⚡️ refactor form reset for form section ([599fa53](https://github.com/sentrei/sentrei/commit/599fa53d01617391ca40b89cf2fda2f506226a10))
+- ⚡️ refactor namespaces functions ([5b2f6cb](https://github.com/sentrei/sentrei/commit/5b2f6cb7853746bd9fb1db4ec469bb5f03218343))
+
 ## [1.76.2](https://github.com/sentrei/sentrei/compare/v1.76.1...v1.76.2) (2020-11-03)
 
 ### Performance Improvements
