@@ -35,7 +35,6 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   if (!article) {
     return {notFound: true};
   }
-
   return {
     props: {
       article: JSON.stringify(article),
