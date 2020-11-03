@@ -1,3 +1,17 @@
+# [1.80.0](https://github.com/sentrei/sentrei/compare/v1.79.0...v1.80.0) (2020-11-03)
+
+### Bug Fixes
+
+- 🐛 namespace batch delete ([26f6965](https://github.com/sentrei/sentrei/commit/26f6965a5a8f9c80eec704c11dfb69ce384eb724))
+
+### Features
+
+- 🎸 ini use auth router redirect hook ([14cbabc](https://github.com/sentrei/sentrei/commit/14cbabc19a430ad9545d76034b593ea87b18183b))
+
+### Performance Improvements
+
+- ⚡️ ini host name for firebase ini ([974acbf](https://github.com/sentrei/sentrei/commit/974acbf6f53beafe99958cba4441b8f9773fe624))
+
 # [1.79.0](https://github.com/sentrei/sentrei/compare/v1.78.0...v1.79.0) (2020-11-03)
 
 ### Features
