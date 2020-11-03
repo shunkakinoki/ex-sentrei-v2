@@ -10,7 +10,6 @@ export interface Props
     Article.Get,
     | "authorUids"
     | "body"
-    | "nameslugId"
     | "updatedBy"
     | "updatedByUid"
     | "createdAt"
