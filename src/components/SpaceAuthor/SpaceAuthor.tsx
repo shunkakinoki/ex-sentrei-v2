@@ -4,7 +4,7 @@ import Profile from "@/types/Profile";
 
 export type Props = Pick<Profile.Get, "bio" | "image" | "name">;
 
-export default function BlogAuthor({bio, image, name}: Props): JSX.Element {
+export default function SpaceAuthor({bio, image, name}: Props): JSX.Element {
   return (
     <>
       <div className="flex-shrink-0 px-4 py-2 m-2 text-center ">

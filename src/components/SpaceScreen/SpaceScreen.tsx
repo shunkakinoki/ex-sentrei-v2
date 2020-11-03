@@ -1,24 +1,24 @@
-import BlogHero, {Props as BlogHeroProps} from "@/components/BlogHero";
-import BlogStoryGrid, {
-  Props as BlogStoryGridProps,
-} from "@/components/BlogStoryGrid";
 import ContainerRoot from "@/components/ContainerRoot";
 import FooterRoot from "@/components/FooterRoot";
 import HeaderRoot from "@/components/HeaderRoot";
 import PaginationBase, {
   Props as PaginationBaseProps,
 } from "@/components/PaginationBase";
+import SpaceHero, {Props as SpaceHeroProps} from "@/components/SpaceHero";
+import SpaceStoryGrid, {
+  Props as SpaceStoryGridProps,
+} from "@/components/SpaceStoryGrid";
 import Profile from "@/types/Profile";
 
-export interface Props extends BlogStoryGridProps, PaginationBaseProps {
+export interface Props extends SpaceStoryGridProps, PaginationBaseProps {
   author: Profile.Get;
-  blog: Omit<BlogHeroProps, "author" | "name" | "namespaceId">;
+  space: Omit<SpaceHeroProps, "author" | "name" | "namespaceId">;
 }
 
-export default function BlogScreen({
+export default function SpaceScreen({
   author,
   articles,
-  blog,
+  space,
   current,
   total,
   namespaceId,
@@ -26,13 +26,13 @@ export default function BlogScreen({
   return (
     <ContainerRoot>
       <HeaderRoot />
-      <BlogHero
+      <SpaceHero
         author={author}
-        title={blog.title}
-        description={blog.description}
+        title={space.title}
+        description={space.description}
         namespaceId={namespaceId}
       />
-      <BlogStoryGrid articles={articles} namespaceId={namespaceId} />
+      <SpaceStoryGrid articles={articles} namespaceId={namespaceId} />
       <PaginationBase
         current={current}
         total={total}

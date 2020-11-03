@@ -154,7 +154,7 @@ export const createArticles = (num = 6): Article.Get[] => {
   return new Array(num).fill(undefined).map(createArticle);
 };
 
-export const createBlog = (): Space.Get => {
+export const createSpace = (): Space.Get => {
   return {
     articleCount: 180,
     authorUids: createAuthorUids(),

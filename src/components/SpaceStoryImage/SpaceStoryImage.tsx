@@ -4,7 +4,7 @@ import Article from "@/types/Article";
 
 export type Props = Pick<Article.Fields, "image" | "title">;
 
-export default function BlogStoryImage({image, title}: Props): JSX.Element {
+export default function SpaceStoryImage({image, title}: Props): JSX.Element {
   return (
     <div className="transition duration-300 ease-in-out transform shadow-none md:hover:-translate-y-1 md:shadow-lg xl:shadow-xl group-hover:shadow-none md:group-hover:shadow-2xl">
       <div className="relative">
