@@ -38,8 +38,8 @@ export default function useAuth(): {
       Router.pathname === "/pricing" ||
       Router.pathname === "/profile" ||
       Router.pathname === "/reset-password" ||
+      Router.pathname === "/sales" ||
       Router.pathname === "/signup" ||
-      Router.pathname === "/settings" ||
       Router.pathname === "/support"
     ) {
       return;
