@@ -1,59 +1,41 @@
 import dynamic from "next/dynamic";
-import {useEffect} from "react";
-import {useSetRecoilState} from "recoil";
 
 import ContainerRoot from "@/components/ContainerRoot";
 import EditorHeader from "@/components/EditorHeader";
-import useArticle from "@/hooks/useArticle";
-import {
-  editorBodyAtom,
-  editorSwitchAtom,
-  editorTitleAtom,
-} from "@/hooks/useEditor";
-import Article from "@/types/Article";
+import {Props as EditorScreenDynamicProps} from "@/components/EditorScreenDynamic";
 
 const EditorRich = dynamic(() => import("@/components/EditorRich"), {
   ssr: false,
 });
 
-export interface Props {
-  article?: Article.Get;
-  articleId?: string;
-  namespaceId: string;
-}
+const EditorScreenDynamic = dynamic(
+  () => import("@/components/EditorScreenDynamic"),
+  {
+    ssr: false,
+  },
+);
+
+export type Props = EditorScreenDynamicProps;
 
 export default function EditorScreen({
   article,
   articleId,
   namespaceId,
 }: Props): JSX.Element {
-  const {article: swrArticle} = useArticle(namespaceId, articleId, article);
-
-  const setBodySwitch = useSetRecoilState(editorBodyAtom);
-  const setEditorSwitch = useSetRecoilState(editorSwitchAtom);
-  const setEditorTitle = useSetRecoilState(editorTitleAtom);
-
-  useEffect(() => {
-    setBodySwitch(article?.body);
-  }, [setBodySwitch, article?.body]);
-
-  useEffect(() => {
-    setEditorSwitch(article?.status === "published");
-  }, [setEditorSwitch, article?.status]);
-
-  useEffect(() => {
-    setEditorTitle(article?.title);
-  }, [setEditorTitle, article?.title]);
-
   return (
     <ContainerRoot>
+      <EditorScreenDynamic
+        article={article}
+        articleId={articleId}
+        namespaceId={namespaceId}
+      />
       <EditorHeader
-        uid={swrArticle?.uid}
-        title={swrArticle?.title}
+        uid={article?.uid}
+        title={article?.title}
         namespaceId={namespaceId}
       />
       <div className="relative px-3 py-3 my-12 mx-9 md:mx-12 lg:mx-18">
-        <EditorRich body={swrArticle?.body ?? ""} />
+        <EditorRich body={article?.body ?? ""} />
       </div>
     </ContainerRoot>
   );
