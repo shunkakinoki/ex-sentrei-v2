@@ -1,13 +1,21 @@
 import {Switch} from "@headlessui/react";
 import clsx from "clsx";
+import {useEffect} from "react";
 import {useSetRecoilState} from "recoil";
 
 import useEditor, {editorSwitchAtom} from "@/hooks/useEditor";
+import Article from "@/types/Article";
 
-export default function EditorHeaderSwitch(): JSX.Element {
+export type Props = Pick<Article.Get, "status">;
+
+export default function EditorHeaderSwitch({status}: Props): JSX.Element {
   const {editorSwitch} = useEditor();
 
   const setEditorSwitch = useSetRecoilState(editorSwitchAtom);
+
+  useEffect(() => {
+    setEditorSwitch(status === "published");
+  }, [setEditorSwitch, status]);
 
   return (
     <div className="flex items-center justify-center">

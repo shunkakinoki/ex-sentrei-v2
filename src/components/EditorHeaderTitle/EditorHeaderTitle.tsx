@@ -2,27 +2,18 @@ import {useEffect} from "react";
 import {useForm} from "react-hook-form";
 import {useSetRecoilState} from "recoil";
 
-import useArticle from "@/hooks/useArticle";
 import {editorTitleAtom} from "@/hooks/useEditor";
 import Article from "@/types/Article";
 
-export interface Props extends Partial<Pick<Article.Get, "uid" | "title">> {
+export interface Props extends Pick<Article.Get, "title"> {
   namespaceId: string;
 }
 
-export default function EditorHeaderTitle({
-  uid,
-  title,
-  namespaceId,
-}: Props): JSX.Element {
-  const {article} = useArticle(namespaceId, uid);
-
+export default function EditorHeaderTitle({title}: Props): JSX.Element {
   const setTitleState = useSetRecoilState(editorTitleAtom);
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
-  const {register, reset, formState, watch} = useForm<
-    Partial<Pick<Article.Get, "uid" | "title">>
-  >({
+  const {register, watch} = useForm<Partial<Pick<Article.Get, "title">>>({
     defaultValues: {
       title,
     },
@@ -31,16 +22,12 @@ export default function EditorHeaderTitle({
   const titleValue = watch("title");
 
   useEffect(() => {
-    setTitleState(titleValue);
-  }, [setTitleState, titleValue]);
+    setTitleState(title);
+  }, [setTitleState, title]);
 
   useEffect(() => {
-    if (article && !formState.isDirty) {
-      reset({
-        title: article?.title,
-      });
-    }
-  }, [reset, article, formState.isDirty]);
+    setTitleState(titleValue);
+  }, [setTitleState, titleValue]);
 
   return (
     <form className="mx-auto" action="#" method="POST">

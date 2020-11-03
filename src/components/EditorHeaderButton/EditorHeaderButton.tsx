@@ -1,20 +1,20 @@
 import clsx from "clsx";
 import {toast} from "react-toastify";
-import {useResetRecoilState} from "recoil";
 
 import {timestamp} from "@/firebase/db";
 import useAuth from "@/hooks/useAuth";
-import useEditor, {editorTitleAtom, editorBodyAtom} from "@/hooks/useEditor";
+import useEditor from "@/hooks/useEditor";
 import useProfile from "@/hooks/useProfile";
 import {createArticle, updateArticle} from "@/services/Article";
 
-export default function EditorHeaderButton(): JSX.Element {
+export interface Props {
+  articleId?: string;
+}
+
+export default function EditorHeaderButton({articleId}: Props): JSX.Element {
   const {authState} = useAuth();
   const {profile} = useProfile();
-  const {editorArticleId, editorBody, editorTitle, editorSwitch} = useEditor();
-
-  const resetEditorTitle = useResetRecoilState(editorTitleAtom);
-  const resetEditorBody = useResetRecoilState(editorBodyAtom);
+  const {editorBody, editorTitle, editorSwitch} = useEditor();
 
   const handleClick = async (): Promise<void> => {
     if (!profile || !authState?.uid) {
@@ -49,11 +49,9 @@ export default function EditorHeaderButton(): JSX.Element {
           updatedByUid: authState?.uid,
         })?.then(() => {
           toast.success("Published!");
-          resetEditorBody();
-          resetEditorTitle();
         });
-      } else if (editorArticleId) {
-        await updateArticle(editorArticleId, {
+      } else if (articleId) {
+        await updateArticle(articleId, {
           authorUids: [authState?.uid],
           body: editorBody,
           pricing: "free",
@@ -64,8 +62,6 @@ export default function EditorHeaderButton(): JSX.Element {
           updatedByUid: authState?.uid,
         })?.then(() => {
           toast.success("Published!");
-          resetEditorBody();
-          resetEditorTitle();
         });
       }
     } catch (err) {

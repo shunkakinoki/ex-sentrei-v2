@@ -1,6 +1,8 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
+import {Props as EditorHeaderButtonProps} from "@/components/EditorHeaderButton";
+import {Props as EditorHeaderSwitchProps} from "@/components/EditorHeaderSwitch";
 import {Props as EditorHeaderTitleProps} from "@/components/EditorHeaderTitle";
 
 const EditorHeaderButton = dynamic(
@@ -24,13 +26,17 @@ const EditorHeaderTitle = dynamic(
   },
 );
 
-export interface Props extends EditorHeaderTitleProps {
+export interface Props
+  extends EditorHeaderButtonProps,
+    EditorHeaderSwitchProps,
+    EditorHeaderTitleProps {
   namespaceId: string;
 }
 
 export default function EditorHeader({
+  articleId,
+  status,
   title,
-  uid,
   namespaceId,
 }: Props): JSX.Element {
   return (
@@ -58,14 +64,10 @@ export default function EditorHeader({
             </a>
           </Link>
           <div className="lg:w-0 lg:flex-1">
-            <EditorHeaderTitle
-              uid={uid}
-              title={title}
-              namespaceId={namespaceId}
-            />
+            <EditorHeaderTitle title={title} namespaceId={namespaceId} />
           </div>
-          <EditorHeaderSwitch />
-          <EditorHeaderButton />
+          <EditorHeaderSwitch status={status} />
+          <EditorHeaderButton articleId={articleId} />
         </div>
       </div>
     </div>

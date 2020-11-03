@@ -1,12 +1,14 @@
+import dynamic from "next/dynamic";
+
 import ContainerDashboard from "@/components/ContainerDashboard";
 import ContainerRoot from "@/components/ContainerRoot";
-import DashboardTable, {
-  Props as DashboardTableProps,
-} from "@/components/DashboardTable";
+import {Props as DashboardTableProps} from "@/components/DashboardTable";
 import HeaderRoot from "@/components/HeaderRoot";
-import useArticles from "@/hooks/useArticles";
-import useAuth from "@/hooks/useAuth";
 import Article from "@/types/Article";
+
+const DashboardTable = dynamic(() => import("@/components/DashboardTable"), {
+  ssr: false,
+});
 
 export interface Props extends DashboardTableProps {
   articles: Article.Get[];
@@ -18,26 +20,17 @@ export default function DashboardScreen({
   total,
   namespaceId,
 }: Props): JSX.Element {
-  const {authState} = useAuth();
-  const {articles: swrArticles} = useArticles(
-    namespaceId,
-    {end: current + 10, spaceId: authState?.uid ?? "", start: current},
-    articles,
-  );
-
   return (
     <ContainerRoot>
       <HeaderRoot />
       <ContainerDashboard type="articles" namespaceId={namespaceId}>
         <div className="container my-6 sm:mx-3 md:mx-6 md:mt-10">
-          {swrArticles && (
-            <DashboardTable
-              articles={swrArticles}
-              current={current}
-              total={total}
-              namespaceId={namespaceId}
-            />
-          )}
+          <DashboardTable
+            articles={articles}
+            current={current}
+            total={total}
+            namespaceId={namespaceId}
+          />
         </div>
       </ContainerDashboard>
     </ContainerRoot>
