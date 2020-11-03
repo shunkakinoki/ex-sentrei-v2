@@ -5,7 +5,6 @@ import {
 } from "next";
 
 import SpaceScreen, {Props as SpaceScreenProps} from "@/components/SpaceScreen";
-import {totalArticlePages} from "@/const/demo";
 import {getAdminArticles} from "@/servicesAdmin/Article";
 import {getAdminNamespace} from "@/servicesAdmin/Namespace";
 import {getAdminProfile} from "@/servicesAdmin/Profile";
@@ -17,16 +16,18 @@ import {createAuthor, createArticles, createSpace} from "@/utils/faker";
 
 export type Props = Omit<
   SpaceScreenProps,
-  "author" | "articles" | "space" | "total"
+  "author" | "articles" | "current" | "space" | "total"
 > & {
   articles: string;
   author: string;
+  current: string;
   space: string;
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async ({
   res,
   req,
+  params,
 }: // eslint-disable-next-line @typescript-eslint/require-await
 GetServerSidePropsContext) => {
   res.setHeader(
@@ -56,8 +57,8 @@ GetServerSidePropsContext) => {
       props: {
         articles: JSON.stringify(articles),
         author: JSON.stringify(author),
-        current: 1,
-        namespaceId: req.headers.host.split(".")[0],
+        current: JSON.stringify(params?.num),
+        namespaceId: JSON.stringify(req.headers.host.split(".")[0]),
         space: JSON.stringify(space),
       },
     };
@@ -91,8 +92,8 @@ GetServerSidePropsContext) => {
         props: {
           articles: JSON.stringify(articles),
           author: JSON.stringify(profile),
-          current: 1,
-          namespaceId,
+          current: JSON.stringify(params?.num),
+          namespaceId: JSON.stringify(namespaceId),
           space: JSON.stringify(space),
         },
       };
@@ -103,10 +104,7 @@ GetServerSidePropsContext) => {
   }
 
   return {
-    redirect: {
-      destination: "https://sentrei.com",
-      permanent: false,
-    },
+    notFound: true,
   };
 };
 
@@ -122,8 +120,8 @@ const Index = ({
       author={JSON.parse(author) as Profile.Get}
       articles={JSON.parse(articles) as Article.Get[]}
       space={JSON.parse(space) as Space.Get}
-      current={current}
-      total={totalArticlePages}
+      current={(JSON.parse(current) as number) * 1}
+      total={0}
       namespaceId={namespaceId}
     />
   );

@@ -1,13 +1,6 @@
 import adminDb from "@/firebaseAdmin/db";
 import {serializeAdminArticle} from "@/serializers/Article";
-import Article from "@/types/Article";
-
-export interface ArticleQuery {
-  end?: number;
-  limit?: number;
-  spaceId: string;
-  start?: number;
-}
+import Article, {ArticleQuery} from "@/types/Article";
 
 export const articleAdminConverter: FirebaseFirestore.FirestoreDataConverter<Article.Get> = {
   fromFirestore(
@@ -20,6 +13,31 @@ export const articleAdminConverter: FirebaseFirestore.FirestoreDataConverter<Art
   },
 };
 
+export const articleQuery = ({
+  limit = 10,
+  end,
+  spaceId,
+  start,
+}: ArticleQuery): FirebaseFirestore.Query<Article.Get> => {
+  let ref = adminDb
+    .collection("articles")
+    .withConverter(articleAdminConverter)
+    .orderBy("spaceNum", "desc")
+    .limit(limit);
+
+  if (spaceId) {
+    ref = ref.where("spaceId", "==", spaceId);
+  }
+  if (start) {
+    ref = ref.where("spaceNum", ">=", start);
+  }
+  if (end) {
+    ref = ref.where("spaceNum", "<", end);
+  }
+
+  return ref;
+};
+
 export const getAdminArticle = async (
   articleId: string,
 ): Promise<Article.Get | null> => {
@@ -29,4 +47,11 @@ export const getAdminArticle = async (
     .get();
 
   return snap.data() || null;
+};
+
+export const getAdminArticles = async (
+  query: ArticleQuery,
+): Promise<Article.Get[]> => {
+  const snap = await articleQuery(query).get();
+  return snap.docs.map(doc => doc.data());
 };

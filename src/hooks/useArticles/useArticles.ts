@@ -1,7 +1,7 @@
 import useSWR from "swr";
 
-import {getArticles, ArticleQuery} from "@/services/Article";
-import Article from "@/types/Article";
+import {getArticles} from "@/services/Article";
+import Article, {ArticleQuery} from "@/types/Article";
 
 const getArticlesFetcher = async (
   _: string,
