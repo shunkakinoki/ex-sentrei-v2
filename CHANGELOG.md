@@ -1,3 +1,9 @@
+## [1.75.1](https://github.com/sentrei/sentrei/compare/v1.75.0...v1.75.1) (2020-11-03)
+
+### Performance Improvements
+
+- ⚡️ fix typo commissions ([948f3c6](https://github.com/sentrei/sentrei/commit/948f3c6d2a7f585adcab3cdd16bf6be9878793eb))
+
 # [1.75.0](https://github.com/sentrei/sentrei/compare/v1.74.0...v1.75.0) (2020-11-03)
 
 ### Features
