@@ -5,18 +5,17 @@ import {
   GetStaticPropsContext,
 } from "next";
 
-import EditorScreen, {
-  Props as EditorScreenProps,
-} from "@/components/EditorScreen";
+import ArticleScreen, {
+  Props as ArticleScreenProps,
+} from "@/components/ArticleScreen";
 import {getAdminArticle} from "@/servicesAdmin/Article";
 import Article from "@/types/Article";
 
 export type Props = Omit<
-  EditorScreenProps,
-  "article" | "articleId" | "namespaceId"
+  ArticleScreenProps,
+  "authors" | "article" | "more" | "namespaceId"
 > & {
   article: string;
-  articleId: string;
 };
 
 // eslint-disable-next-line @typescript-eslint/require-await
@@ -30,31 +29,32 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<Props> = async ({
   params,
 }: GetStaticPropsContext) => {
-  const article = await getAdminArticle(String(params?.articleId));
+  try {
+    const article = await getAdminArticle(String(params?.articleId));
 
-  if (!article) {
-    return {notFound: true};
+    return {
+      props: {
+        article: JSON.stringify(article),
+      },
+    };
+  } catch (err) {
+    return {
+      notFound: true,
+    };
   }
-
-  return {
-    props: {
-      article: JSON.stringify(article),
-      articleId: JSON.stringify(params?.articleId),
-    },
-  };
 };
 
-const Slug = ({
+const SlugId = ({
   article,
-  articleId,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
-    <EditorScreen
+    <ArticleScreen
       article={JSON.parse(article) as Article.Get}
-      articleId={JSON.parse(articleId) as string}
+      authors={[]}
+      more={[]}
       namespaceId=""
     />
   );
 };
 
-export default Slug;
+export default SlugId;
