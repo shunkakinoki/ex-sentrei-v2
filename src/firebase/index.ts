@@ -26,11 +26,7 @@ const firebaseConfig = {
   storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET as string,
 };
 
-if (
-  !firebase.apps.length &&
-  (window.location.hostname === "localhost" ||
-    window.location.hostname === "sentrei.com")
-) {
+if (!firebase.apps.length) {
   firebase.initializeApp(
     process.env.VERCEL_GITHUB_COMMIT_REF === "main"
       ? firebaseConfig
