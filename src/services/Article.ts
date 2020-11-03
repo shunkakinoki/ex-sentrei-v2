@@ -38,10 +38,10 @@ const articleQuery = ({
     ref = ref.where("spaceId", "==", spaceId);
   }
   if (start) {
-    ref = ref.startAfter(start);
+    ref = ref.where("spaceNum", ">=", start);
   }
   if (end) {
-    ref = ref.endAt(end);
+    ref = ref.where("spaceNum", "<", end);
   }
 
   return ref;
