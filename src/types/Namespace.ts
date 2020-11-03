@@ -3,8 +3,8 @@ export type NamespaceModel = "profiles" | "spaces";
 // eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace Namespace {
   interface Fields {
-    id: string;
     model: NamespaceModel;
+    modelId: string;
   }
 
   export type Response = Fields;

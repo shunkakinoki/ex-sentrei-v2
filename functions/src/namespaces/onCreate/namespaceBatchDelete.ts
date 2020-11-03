@@ -11,12 +11,12 @@ const db = admin.firestore();
 const namespaceBatchDelete = functions.firestore
   .document("namespaces/{namespaceId}")
   .onCreate(async snap => {
-    const data = snap.data() as Namespace.Response;
+    const data = snap.data() as Namespace.Get;
     const batch = db.batch();
 
     const list = await db
       .collection("namespaces")
-      .where("id", "==", data.id)
+      .where("uid", "==", data.uid)
       .get();
 
     const old = list.docs.filter(item => item.id !== snap.id);

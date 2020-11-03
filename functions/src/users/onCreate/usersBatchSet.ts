@@ -23,13 +23,13 @@ const userBatchSet = functions.auth.user().onCreate(async user => {
   const batch = db.batch();
 
   const profileNamespaceData: Namespace.Response = {
-    id: user.uid,
     model: "profiles",
+    modelId: user.uid,
   };
 
   const spaceNamespaceData: Namespace.Response = {
-    id: user.uid,
     model: "spaces",
+    modelId: user.uid,
   };
 
   const profileData: Profile.Response = {
@@ -48,12 +48,14 @@ const userBatchSet = functions.auth.user().onCreate(async user => {
 
   const spaceData: Space.Response = {
     articleCount: 0,
+    customerCount: 0,
     authorUids: [user.uid],
     createdAt: timestamp,
     createdBy: profileData,
     createdByUid: user.uid,
     description: null,
     plan: "free",
+    memberCount: 1,
     title: `${profileData.name}'s Publication`,
     image: user.photoURL || null,
     namespaceId: user.uid,
@@ -71,7 +73,7 @@ const userBatchSet = functions.auth.user().onCreate(async user => {
   const userRef = db.doc(`users/${user.uid}`);
   batch.set(userRef, userData, {merge: true});
 
-  const profileRef = db.doc(`profiles/@${user.uid}`);
+  const profileRef = db.doc(`profiles/${user.uid}`);
   batch.set(profileRef, profileData, {merge: true});
 
   const spaceRef = db.doc(`spaces/${user.uid}`);

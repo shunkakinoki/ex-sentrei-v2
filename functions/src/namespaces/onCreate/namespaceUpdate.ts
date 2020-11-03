@@ -17,12 +17,12 @@ const namespaceUpdate = functions.firestore
 
     if (data.model === "spaces") {
       return db
-        .doc(`spaces/${data.id}`)
+        .doc(`spaces/${data.modelId}`)
         .update(<Space.AdminUpdate>{namespaceId: snap.id});
     }
 
     return db
-      .doc(`profiles/${data.id}`)
+      .doc(`profiles/${data.modelId}`)
       .update(<Profile.AdminUpdate>{namespaceId: snap.id});
   });
 

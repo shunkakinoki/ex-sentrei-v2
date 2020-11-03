@@ -29,7 +29,9 @@ export default function PaginationBase({
     num: number;
   }): JSX.Element {
     return (
-      <Link href={num !== 1 ? `${namespaceId}/page/${num}` : `${namespaceId}`}>
+      <Link
+        href={num !== 1 ? `/${namespaceId}/page/${num}` : `/${namespaceId}`}
+      >
         <a
           className={clsx(
             "items-center justify-center hidden w-8 leading-5 transition duration-150 ease-in border-t-2 border-transparent cursor-pointer md:flex hover:text-pink-400",
@@ -51,8 +53,8 @@ export default function PaginationBase({
           <Link
             href={
               current - 1 !== 1
-                ? `${namespaceId}/page/${current - 1}`
-                : `${namespaceId}`
+                ? `/${namespaceId}/page/${current - 1}`
+                : `/${namespaceId}`
             }
           >
             <a className="flex items-center justify-center w-8 h-8 mr-1 cursor-pointer hover:text-pink-300">
@@ -89,7 +91,7 @@ export default function PaginationBase({
           <PaginationNumber border={current === total} num={total} />
         </div>
         {current !== total && (
-          <Link href={`${namespaceId}/page/${current + 1}`}>
+          <Link href={`/${namespaceId}/page/${current + 1}`}>
             <a className="flex items-center justify-center w-8 h-8 ml-1 cursor-pointer hover:text-pink-300">
               <svg
                 className="w-5 h-5"

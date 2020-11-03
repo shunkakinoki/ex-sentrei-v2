@@ -57,7 +57,7 @@ export default function DashboardBrandingDomainSection({
 
     await createNamespace(data.namespaceId, {
       model: "spaces",
-      id: authState?.uid,
+      modelId: authState?.uid,
     })
       .then(() =>
         toast.success("Success", {

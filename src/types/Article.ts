@@ -18,8 +18,9 @@ declare namespace Article {
   };
 
   interface Fields extends EditableFields {
-    nameslugId: string;
+    slugId?: string;
     spaceId: string;
+    spaceNum?: number;
     time?: number;
   }
 
