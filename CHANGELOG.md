@@ -1,3 +1,14 @@
+# [1.81.0](https://github.com/sentrei/sentrei/compare/v1.80.0...v1.81.0) (2020-11-03)
+
+### Features
+
+- 🎸 ini slug id ([738c507](https://github.com/sentrei/sentrei/commit/738c507db58f0a4982f5bd20ebe689ca2c0136bf))
+
+### Performance Improvements
+
+- ⚡️ ini slug id ([43fee7f](https://github.com/sentrei/sentrei/commit/43fee7f9d60429496a2167ee78623c789cfabbfb))
+- ⚡️ refactor use hook private redirect patths ([5b8d309](https://github.com/sentrei/sentrei/commit/5b8d309a2f8d485ee7d6f722fcb15f6bf60962b2))
+
 # [1.80.0](https://github.com/sentrei/sentrei/compare/v1.79.0...v1.80.0) (2020-11-03)
 
 ### Bug Fixes
