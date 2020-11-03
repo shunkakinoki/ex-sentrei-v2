@@ -1,3 +1,11 @@
+## [1.76.2](https://github.com/sentrei/sentrei/compare/v1.76.1...v1.76.2) (2020-11-03)
+
+### Performance Improvements
+
+- ⚡️ ini activity batch ([ace482f](https://github.com/sentrei/sentrei/commit/ace482f25f5d2d810fd5d525e549b743c10c8a0e))
+- ⚡️ ini update article ([dc6f3d0](https://github.com/sentrei/sentrei/commit/dc6f3d0f8e98c026cf5a820a1ad6b307afbbdde3))
+- ⚡️ refactor article count ([0c6d971](https://github.com/sentrei/sentrei/commit/0c6d97160c43f7e55a207e07c36157f30416d999))
+
 ## [1.76.1](https://github.com/sentrei/sentrei/compare/v1.76.0...v1.76.1) (2020-11-03)
 
 ### Performance Improvements
