@@ -27,7 +27,7 @@ export default function useArticles(
       ? ["articles", query.spaceId, query.start, query.end]
       : null,
     getArticlesFetcher,
-    {initialData},
+    {initialData, revalidateOnMount: true},
   );
 
   return {articles};
