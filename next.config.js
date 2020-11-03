@@ -5,6 +5,7 @@ var withBundleAnalyzer = require("@next/bundle-analyzer")({
 });
 
 var nextConfig = {
+  target: "experimental-serverless-trace",
   ignoreBuildErrors: false,
   reactStrictMode: true,
   trailingSlash: false,
