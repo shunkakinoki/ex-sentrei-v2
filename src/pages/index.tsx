@@ -1,4 +1,8 @@
-import {GetServerSideProps, InferGetServerSidePropsType} from "next";
+import {
+  GetServerSideProps,
+  InferGetServerSidePropsType,
+  GetServerSidePropsContext,
+} from "next";
 
 import BlogScreen, {Props as BlogScreenProps} from "@/components/BlogScreen";
 import {totalArticlePages} from "@/const/demo";
@@ -19,8 +23,8 @@ export type Props = Omit<
 export const getServerSideProps: GetServerSideProps<Props> = async ({
   res,
   req,
-  // eslint-disable-next-line @typescript-eslint/require-await
-}) => {
+}: // eslint-disable-next-line @typescript-eslint/require-await
+GetServerSidePropsContext) => {
   res.setHeader(
     "Cache-Control",
     "public, s-maxage=1, stale-while-revalidate=59",
