@@ -18,10 +18,7 @@ var nextConfig = {
   },
   images: {
     domains: ["placeimg.com", "s3.amazonaws.com"],
-  }
+  },
 };
 
-module.exports = withPlugins(
-  [withBundleAnalyzer],
-  nextConfig,
-);
+module.exports = withPlugins([withBundleAnalyzer], nextConfig);
