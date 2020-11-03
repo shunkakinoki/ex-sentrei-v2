@@ -1,3 +1,26 @@
+# [1.78.0](https://github.com/sentrei/sentrei/compare/v1.77.0...v1.78.0) (2020-11-03)
+
+### Bug Fixes
+
+- 🐛 profile ref function ([a9f8231](https://github.com/sentrei/sentrei/commit/a9f823166afcb5c3e06e21d93e0c69e5792c563c))
+
+### Features
+
+- 🎸 ini transaction article count custom function ([2fdedc2](https://github.com/sentrei/sentrei/commit/2fdedc2cb4528f91ef4b18ff6e97ef5bb3860b7a))
+
+### Performance Improvements
+
+- ⚡️ ini article query with space num ([a31ebb1](https://github.com/sentrei/sentrei/commit/a31ebb14fa9e7211c25e7c88ab821c0a8d180580))
+- ⚡️ ini customer count ([10d326f](https://github.com/sentrei/sentrei/commit/10d326fd7ed31decf3a7ff2617c46344497edda2))
+- ⚡️ ini member count ([9cf4986](https://github.com/sentrei/sentrei/commit/9cf49864ab448270b1c37bbed019ccf6fdbcba68))
+- ⚡️ ini migrate to model id field ([b97ecfc](https://github.com/sentrei/sentrei/commit/b97ecfc05a491d31637c4ca68c4b80641f37d4b8))
+- ⚡️ ini space field for user function ([7255c28](https://github.com/sentrei/sentrei/commit/7255c28103786c9426fc1eab7e559385d78c9490))
+- ⚡️ ini space num custom article query ([73f9f02](https://github.com/sentrei/sentrei/commit/73f9f02c580f7871abbd8d1d5d5ce08043503c0c))
+- ⚡️ refacor space field ([589aa6e](https://github.com/sentrei/sentrei/commit/589aa6ea47bd07d8ff5ff15276ed08f4d717df7b))
+- ⚡️ refactor firestore rules ([d224ad5](https://github.com/sentrei/sentrei/commit/d224ad534cba4b92f828ae71f9f0a92e7c71002e))
+- ⚡️ refactor namespace batch delete uid field ([5e01968](https://github.com/sentrei/sentrei/commit/5e019682e9f0a2a7ffafd828ff45d26b8cd7eada))
+- ⚡️ refactor pagination base namespace id prop ([5fdd403](https://github.com/sentrei/sentrei/commit/5fdd403173292f901c48fdbe2188647a8a767ea0))
+
 # [1.77.0](https://github.com/sentrei/sentrei/compare/v1.76.2...v1.77.0) (2020-11-03)
 
 ### Bug Fixes
