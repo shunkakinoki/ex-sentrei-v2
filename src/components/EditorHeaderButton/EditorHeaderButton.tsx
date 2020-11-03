@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import {useRouter} from "next/router";
 import {toast} from "react-toastify";
 
 import {timestamp} from "@/firebase/db";
@@ -12,6 +13,7 @@ export interface Props {
 }
 
 export default function EditorHeaderButton({articleId}: Props): JSX.Element {
+  const router = useRouter();
   const {authState} = useAuth();
   const {profile} = useProfile();
   const {editorBody, editorTitle, editorSwitch} = useEditor();
@@ -28,10 +30,11 @@ export default function EditorHeaderButton({articleId}: Props): JSX.Element {
       toast.error("Please write title!");
       return;
     }
-    toast.info("Publishing...");
+
+    toast.info(editorSwitch ? "Publishing..." : "Saving...");
 
     try {
-      if (editorSwitch) {
+      if (articleId === "") {
         await createArticle({
           authorUids: [authState?.uid],
           body: editorBody,
@@ -41,27 +44,29 @@ export default function EditorHeaderButton({articleId}: Props): JSX.Element {
           nameslugId: "",
           pricing: "free",
           spaceId: authState?.uid,
-          status: "published",
+          status: editorSwitch ? "published" : "preview",
           time: 3,
           title: editorTitle,
           updatedAt: timestamp,
           updatedBy: profile,
           updatedByUid: authState?.uid,
         })?.then(() => {
-          toast.success("Published!");
+          toast.success(editorSwitch ? "Published!" : "Saved!");
+          return router.push("/dashboard");
         });
       } else if (articleId) {
         await updateArticle(articleId, {
           authorUids: [authState?.uid],
           body: editorBody,
           pricing: "free",
-          status: "published",
+          status: editorSwitch ? "published" : "preview",
           title: editorTitle,
           updatedAt: timestamp,
           updatedBy: profile,
           updatedByUid: authState?.uid,
         })?.then(() => {
-          toast.success("Published!");
+          toast.success(editorSwitch ? "Updated!" : "Saved!");
+          return router.push("/dashboard");
         });
       }
     } catch (err) {

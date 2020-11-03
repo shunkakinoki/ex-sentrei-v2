@@ -13,8 +13,7 @@ const db = admin.firestore();
  */
 const activityBatchSet = functions.firestore
   .document("activity/{activityId}")
-  .onCreate((snap, context) => {
-    const {activityId} = context.params;
+  .onCreate(snap => {
     const data = snap.data() as Activity.Response;
 
     const batch = db.batch();
@@ -27,19 +26,11 @@ const activityBatchSet = functions.firestore
 
     if (data.spaceId) {
       const spaceRef = db.doc(`spaces/${data.spaceId}`);
-      const spaceActivityRef = db.doc(
-        `spaces/${data.spaceId}/activity/${activityId as string}`,
-      );
       batch.set(spaceRef, updateData, {merge: true});
-      batch.set(spaceActivityRef, data);
     }
 
     const userRef = db.doc(`users/${data.userId}`);
-    const userActivityRef = db.doc(
-      `users/${data.userId}/activity/${activityId as string}`,
-    );
     batch.set(userRef, updateData, {merge: true});
-    batch.set(userActivityRef, data);
 
     return batch.commit();
   });
