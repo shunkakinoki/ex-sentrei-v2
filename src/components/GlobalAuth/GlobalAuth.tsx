@@ -1,3 +1,4 @@
+import nookies from "nookies";
 import {useEffect} from "react";
 import {useSetRecoilState} from "recoil";
 
@@ -14,6 +15,24 @@ const GlobalAuth = (): null => {
       setAuthInitializedState(true);
     });
   }, [setAuthState, setAuthInitializedState]);
+
+  useEffect(() => {
+    return auth.onIdTokenChanged(async user => {
+      if (!user) {
+        nookies.set(undefined, "token", "", {
+          maxAge: 30 * 24 * 60 * 60,
+          path: "/",
+        });
+        return;
+      }
+
+      const token = await user.getIdToken();
+      nookies.set(undefined, "token", token, {
+        maxAge: 30 * 24 * 60 * 60,
+        path: "/",
+      });
+    });
+  }, []);
 
   return null;
 };
