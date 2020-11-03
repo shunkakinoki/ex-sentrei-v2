@@ -13,14 +13,16 @@ const db = admin.firestore();
 const namespaceUpdate = functions.firestore
   .document("namespaces/{namespaceId}")
   .onCreate(snap => {
-    const data = snap.data() as Namespace;
+    const data = snap.data() as Namespace.Response;
+
     if (data.model === "spaces") {
       return db
-        .doc(`spaces/${data.uid}`)
+        .doc(`spaces/${data.id}`)
         .update(<Space.AdminUpdate>{namespaceId: snap.id});
     }
+
     return db
-      .doc(`profiles/${data.uid}`)
+      .doc(`profiles/${data.id}`)
       .update(<Profile.AdminUpdate>{namespaceId: snap.id});
   });
 

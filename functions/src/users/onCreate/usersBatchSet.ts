@@ -22,13 +22,13 @@ function getNameFromEmail(email: string): string {
 const userBatchSet = functions.auth.user().onCreate(async user => {
   const batch = db.batch();
 
-  const profileNamespaceData: Namespace = {
-    uid: user.uid,
+  const profileNamespaceData: Namespace.Response = {
+    id: user.uid,
     model: "profiles",
   };
 
-  const spaceNamespaceData: Namespace = {
-    uid: user.uid,
+  const spaceNamespaceData: Namespace.Response = {
+    id: user.uid,
     model: "spaces",
   };
 
