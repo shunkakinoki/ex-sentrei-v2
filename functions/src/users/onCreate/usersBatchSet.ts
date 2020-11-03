@@ -23,13 +23,13 @@ const userBatchSet = functions.auth.user().onCreate(async user => {
   const batch = db.batch();
 
   const profileNamespaceData: Namespace.Response = {
-    id: user.uid,
     model: "profiles",
+    modelId: user.uid,
   };
 
   const spaceNamespaceData: Namespace.Response = {
-    id: user.uid,
     model: "spaces",
+    modelId: user.uid,
   };
 
   const profileData: Profile.Response = {
