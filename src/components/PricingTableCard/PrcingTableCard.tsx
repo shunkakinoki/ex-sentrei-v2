@@ -107,7 +107,6 @@ export default function PricingTableCard({plan}: Props): JSX.Element {
             <ul>
               <CheckIconItem>Built-in newsletter</CheckIconItem>
               <CheckIconItem>Custom analytics</CheckIconItem>
-              <CheckIconItem>Custom editor</CheckIconItem>
               <CheckIconItem highlight>
                 Zero commissions on purchases
               </CheckIconItem>
@@ -115,12 +114,10 @@ export default function PricingTableCard({plan}: Props): JSX.Element {
                 <CheckIconItem highlight>Cusom domains</CheckIconItem>
               )}
               {(plan === "pro" || plan === "premium") && (
-                <CheckIconItem highlight>Dedicated support</CheckIconItem>
+                <CheckIconItem highlight>Unlimited theming</CheckIconItem>
               )}
               {plan === "premium" && (
-                <CheckIconItem highlight>
-                  Dedicated premium integrations
-                </CheckIconItem>
+                <CheckIconItem highlight>3rd party integrations</CheckIconItem>
               )}
             </ul>
             <div className="mt-8 md:mt-10 lg:mt-12">

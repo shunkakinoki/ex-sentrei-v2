@@ -13,7 +13,7 @@ export default function SpaceStoryImage({image, title}: Props): JSX.Element {
             layout="fill"
             className="object-cover"
             alt={`Story Cover for ${title}`}
-            src={image as string}
+            src={image ?? "/assets/logo.png"}
           />
         </div>
       </div>

@@ -40,6 +40,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
       article: JSON.stringify(article),
       articleId: JSON.stringify(params?.articleId),
     },
+    revalidate: 30,
   };
 };
 

@@ -8,7 +8,6 @@ import SpaceScreen, {Props as SpaceScreenProps} from "@/components/SpaceScreen";
 import {totalArticlePages} from "@/const/demo";
 import {getAdminArticles} from "@/servicesAdmin/Article";
 import {getAdminNamespace} from "@/servicesAdmin/Namespace";
-import {getAdminProfile} from "@/servicesAdmin/Profile";
 import {getAdminSpace} from "@/servicesAdmin/Space";
 import Article from "@/types/Article";
 import Profile from "@/types/Profile";
@@ -31,14 +30,10 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
 GetServerSidePropsContext) => {
   res.setHeader(
     "Cache-Control",
-    "public, s-maxage=1, stale-while-revalidate=60",
+    "public, s-maxage=1, stale-while-revalidate=30",
   );
 
-  if (
-    req.headers.host === "localhost:3000" ||
-    req.headers.host === "sentrei.com" ||
-    req.headers.host?.endsWith(".vercel.app")
-  ) {
+  if (req.headers.host === "sentrei.com") {
     return {
       redirect: {
         destination: "/home",
@@ -65,6 +60,7 @@ GetServerSidePropsContext) => {
 
   if (req.headers.host?.endsWith(".sentrei.com")) {
     const namespaceId = req.headers.host?.replace(".sentrei.com", "");
+    const author = createAuthor();
 
     try {
       const namespace = await getAdminNamespace(namespaceId);
@@ -73,24 +69,25 @@ GetServerSidePropsContext) => {
         throw new Error(`No modelId in namespace ${namespaceId}`);
       }
 
+      if (namespace.model === "profiles") {
+        return {
+          notFound: true,
+        };
+      }
+
       const articlesReq = getAdminArticles({
         end: 10,
         spaceId: namespace?.modelId,
         start: 0,
       });
-      const profileReq = getAdminProfile(namespaceId);
-      const spaceReq = getAdminSpace(namespaceId);
+      const spaceReq = getAdminSpace(namespace.modelId);
 
-      const [articles, profile, space] = await Promise.all([
-        articlesReq,
-        profileReq,
-        spaceReq,
-      ]);
+      const [articles, space] = await Promise.all([articlesReq, spaceReq]);
 
       return {
         props: {
           articles: JSON.stringify(articles),
-          author: JSON.stringify(profile),
+          author: JSON.stringify(author),
           current: 1,
           namespaceId,
           space: JSON.stringify(space),

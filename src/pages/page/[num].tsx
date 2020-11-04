@@ -96,6 +96,7 @@ GetServerSidePropsContext) => {
           namespaceId: JSON.stringify(namespaceId),
           space: JSON.stringify(space),
         },
+        revalidate: 30,
       };
     } catch (err) {
       // eslint-disable-next-line no-console

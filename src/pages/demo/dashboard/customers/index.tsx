@@ -22,7 +22,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     props: {
       customers: JSON.stringify(customers),
     },
-    revalidate: 300,
   };
 };
 

@@ -11,7 +11,7 @@ export default function ArticleAuthor({image, name}: Props): JSX.Element {
         height={50}
         width={50}
         layout="fixed"
-        src={image ?? ""}
+        src={image ?? "/assets/logo.png"}
         alt={`Author ${name}`}
       />
     </a>
