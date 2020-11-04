@@ -24,31 +24,16 @@ export default function useAuth(): {
   );
 
   useEffect(() => {
-    if (isAuthInitialized === undefined) {
-      return;
-    }
-    if (Router.pathname === "/demo" || Router.pathname.startsWith("/demo/")) {
-      return;
-    }
     if (
-      Router.pathname === "/" ||
-      Router.pathname === "/home" ||
-      Router.pathname === "/landing" ||
-      Router.pathname === "/login" ||
-      Router.pathname === "/pricing" ||
-      Router.pathname === "/profile" ||
-      Router.pathname === "/reset-password" ||
-      Router.pathname === "/sales" ||
-      Router.pathname === "/signup" ||
-      Router.pathname === "/support"
+      (Router.pathname === "/profile" ||
+        Router.pathname === "/settings" ||
+        Router.pathname.startsWith("/dashboard")) &&
+      !isLoggedIn
     ) {
-      return;
-    }
-    if (!isLoggedIn) {
       // eslint-disable-next-line no-void
       void Router.replace("/login");
     }
-  }, [isAuthInitialized, isLoggedIn]);
+  }, [isLoggedIn]);
 
   return {
     authState,
