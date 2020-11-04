@@ -8,17 +8,14 @@ import SpaceHero, {Props as SpaceHeroProps} from "@/components/SpaceHero";
 import SpaceStoryGrid, {
   Props as SpaceStoryGridProps,
 } from "@/components/SpaceStoryGrid";
-import Profile from "@/types/Profile";
 
 export interface Props
   extends SpaceStoryGridProps,
     Omit<PaginationBaseProps, "pathname"> {
-  author: Profile.Get;
   space: Omit<SpaceHeroProps, "author" | "name" | "namespaceId">;
 }
 
 export default function SpaceScreen({
-  author,
   articles,
   space,
   current,
@@ -29,10 +26,10 @@ export default function SpaceScreen({
     <ContainerRoot>
       <HeaderRoot />
       <SpaceHero
-        author={author}
-        title={space.title}
         description={space.description}
         namespaceId={namespaceId}
+        title={space.title}
+        updatedBy={space.updatedBy}
       />
       <SpaceStoryGrid articles={articles} namespaceId={namespaceId} />
       {total > 1 && (

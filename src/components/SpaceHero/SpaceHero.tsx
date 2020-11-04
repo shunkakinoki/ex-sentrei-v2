@@ -3,20 +3,19 @@
 import Link from "next/link";
 
 import SpaceAuthor from "@/components/SpaceAuthor";
-import Profile from "@/types/Profile";
 import Space from "@/types/Space";
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-export interface Props extends Pick<Space.Get, "description" | "title"> {
-  author: Profile.Get;
+export interface Props
+  extends Pick<Space.Get, "description" | "title" | "updatedBy"> {
   namespaceId: string;
 }
 
 export default function SpaceHero({
-  author,
+  description,
   namespaceId,
   title,
-  description,
+  updatedBy,
 }: Props): JSX.Element {
   return (
     <section>
@@ -40,7 +39,11 @@ export default function SpaceHero({
         </div>
       </div>
       <div className="flex justify-start w-full mt-3 align-middle sm:mt-6">
-        <SpaceAuthor name={author.name} bio={author.bio} image={author.image} />
+        <SpaceAuthor
+          name={updatedBy.name}
+          bio={updatedBy.bio}
+          image={updatedBy.image}
+        />
         <div className="flex-shrink-0 hidden px-8 py-3 m-3 ml-auto md:block">
           <button className="px-4 py-2 font-bold text-gray-800 bg-gray-300 border-r rounded-l hover:bg-gray-400">
             <svg

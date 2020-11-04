@@ -10,16 +10,14 @@ import {getAdminArticles} from "@/servicesAdmin/Article";
 import {getAdminNamespace} from "@/servicesAdmin/Namespace";
 import {getAdminSpace} from "@/servicesAdmin/Space";
 import Article from "@/types/Article";
-import Profile from "@/types/Profile";
 import Space from "@/types/Space";
-import {createAuthor, createArticles, createSpace} from "@/utils/faker";
+import {createArticles, createSpace} from "@/utils/faker";
 
 export type Props = Omit<
   SpaceScreenProps,
-  "author" | "articles" | "namespaceId" | "space" | "total"
+  "articles" | "namespaceId" | "space" | "total"
 > & {
   articles: string;
-  author: string;
   current: number;
   space: string;
   total: number;
@@ -49,14 +47,12 @@ GetServerSidePropsContext) => {
   }
 
   if (req.headers.host === "demo.sentrei.com") {
-    const author = createAuthor();
     const articles = createArticles();
     const space = createSpace();
 
     return {
       props: {
         articles: JSON.stringify(articles),
-        author: JSON.stringify(author),
         current: Number(params?.num) * 1,
         space: JSON.stringify(space),
         total: totalArticlePages,
@@ -73,7 +69,6 @@ GetServerSidePropsContext) => {
       namespaceId = "shunkakinoki";
     }
 
-    const author = createAuthor();
     const namespace = await getAdminNamespace(namespaceId);
 
     if (!namespace?.modelId) {
@@ -102,7 +97,6 @@ GetServerSidePropsContext) => {
     return {
       props: {
         articles: JSON.stringify(articles),
-        author: JSON.stringify(author),
         current: Number(params?.num) * 1,
         space: JSON.stringify(space),
         total: totalArticleCount,
@@ -122,7 +116,6 @@ GetServerSidePropsContext) => {
 };
 
 const Num = ({
-  author,
   articles,
   current,
   space,
@@ -130,7 +123,6 @@ const Num = ({
 }: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element => {
   return (
     <SpaceScreen
-      author={JSON.parse(author) as Profile.Get}
       articles={JSON.parse(articles) as Article.Get[]}
       space={JSON.parse(space) as Space.Get}
       current={current}
