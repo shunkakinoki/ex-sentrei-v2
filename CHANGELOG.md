@@ -1,3 +1,13 @@
+## [1.83.1](https://github.com/sentrei/sentrei/compare/v1.83.0...v1.83.1) (2020-11-04)
+
+### Bug Fixes
+
+- 🐛 pagination one issue ([4f41825](https://github.com/sentrei/sentrei/commit/4f418253f62f5e86598395d4b4a62dc1c8ff1cc6))
+
+### Performance Improvements
+
+- ⚡️ upgrade next canary ([1eeb2cc](https://github.com/sentrei/sentrei/commit/1eeb2ccc9005f59ded0f5f0d2753028cbd91e30b))
+
 # [1.83.0](https://github.com/sentrei/sentrei/compare/v1.82.1...v1.83.0) (2020-11-04)
 
 ### Features
