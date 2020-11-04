@@ -1,3 +1,13 @@
+# [1.84.0](https://github.com/sentrei/sentrei/compare/v1.83.1...v1.84.0) (2020-11-04)
+
+### Features
+
+- 🎸 editor rich styling ([1518f59](https://github.com/sentrei/sentrei/commit/1518f5985d9d9bb5b0fca9aa78a29b31a3192379))
+
+### Performance Improvements
+
+- ⚡️ refactor page rendering ([0a80219](https://github.com/sentrei/sentrei/commit/0a802196007a253f5a7cfc9cc19a1f04d468195c))
+
 ## [1.83.1](https://github.com/sentrei/sentrei/compare/v1.83.0...v1.83.1) (2020-11-04)
 
 ### Bug Fixes
