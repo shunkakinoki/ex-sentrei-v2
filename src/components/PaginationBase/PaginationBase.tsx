@@ -98,7 +98,9 @@ export default function PaginationBase({
           {current < total - 1 && <PaginationNumber num={current + 1} />}
           {current === 1 && total > 3 && <PaginationNumber num={current + 2} />}
           {current < total - 2 && <PaginationEllipsis />}
-          <PaginationNumber border={current === total} num={total} />
+          {current !== 1 && (
+            <PaginationNumber border={current === total} num={total} />
+          )}
         </div>
         {current !== total && (
           <Link href={`${pathname}/page/${current + 1}`}>
