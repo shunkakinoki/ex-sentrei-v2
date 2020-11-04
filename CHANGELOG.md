@@ -1,3 +1,14 @@
+## [1.82.1](https://github.com/sentrei/sentrei/compare/v1.82.0...v1.82.1) (2020-11-04)
+
+### Bug Fixes
+
+- 🐛 refactor use auth custom router redirect ([fd457d5](https://github.com/sentrei/sentrei/commit/fd457d583867e2776683148594d46a817af1ab19))
+
+### Performance Improvements
+
+- ⚡️ refactor form hash ([bc44ed0](https://github.com/sentrei/sentrei/commit/bc44ed06c83255eef01cf2bd29ca7bed4be96016))
+- ⚡️ refactor index rendering ([e7db698](https://github.com/sentrei/sentrei/commit/e7db6980069264c4239b28f3a0e415d55d58951e))
+
 # [1.82.0](https://github.com/sentrei/sentrei/compare/v1.81.2...v1.82.0) (2020-11-04)
 
 ### Bug Fixes
