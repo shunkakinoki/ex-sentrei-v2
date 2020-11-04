@@ -34,7 +34,10 @@ GetServerSidePropsContext) => {
     "public, s-maxage=1, stale-while-revalidate=30",
   );
 
-  if (req.headers.host === "sentrei.com") {
+  if (
+    req.headers.host === "sentrei.com" ||
+    req.headers.host?.endsWith(".vercel.app")
+  ) {
     return {
       redirect: {
         destination: "/home",

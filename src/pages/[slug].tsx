@@ -33,7 +33,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   params,
 }: GetStaticPropsContext) => {
   try {
-    const article = await getAdminArticle(String(params?.slugId));
+    const article = await getAdminArticle(String(params?.slug));
     if (!article?.authorUids) {
       return {
         notFound: true,
@@ -55,7 +55,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   }
 };
 
-const SlugId = ({
+const Slug = ({
   article,
   authors,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
@@ -69,4 +69,4 @@ const SlugId = ({
   );
 };
 
-export default SlugId;
+export default Slug;
