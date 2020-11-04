@@ -86,6 +86,7 @@ GetServerSidePropsContext) => {
       limit: 6,
       spaceId: namespace?.modelId,
       start: 0,
+      status: "published",
     });
     const spaceReq = getAdminSpace(namespace.modelId);
 
