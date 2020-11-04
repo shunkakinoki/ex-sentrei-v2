@@ -1,3 +1,9 @@
+# [1.83.0](https://github.com/sentrei/sentrei/compare/v1.82.1...v1.83.0) (2020-11-04)
+
+### Features
+
+- 🎸 ini space pageg ([094fcf6](https://github.com/sentrei/sentrei/commit/094fcf6b3363c6aa68ed4539219161dbf7fe188f))
+
 ## [1.82.1](https://github.com/sentrei/sentrei/compare/v1.82.0...v1.82.1) (2020-11-04)
 
 ### Bug Fixes
