@@ -1,3 +1,15 @@
+# [1.85.0](https://github.com/sentrei/sentrei/compare/v1.84.0...v1.85.0) (2020-11-04)
+
+### Features
+
+- 🎸 ini articles query with status field ([c53ad76](https://github.com/sentrei/sentrei/commit/c53ad76323ff930f4e308d4309d41efe6ee315f8))
+- 🎸 ini author updated by for space ([1243b12](https://github.com/sentrei/sentrei/commit/1243b12b9a18e317447351d513b1e6ebb8a488bf))
+
+### Performance Improvements
+
+- ⚡️ deprecate space authorUids ([0468980](https://github.com/sentrei/sentrei/commit/046898011f2aebadb35e4ca186d3f45d6ea26580))
+- ⚡️ refactor space pagination ([65eaab9](https://github.com/sentrei/sentrei/commit/65eaab9d6cd0b997cdc29ae1da6c593d80266ef1))
+
 # [1.84.0](https://github.com/sentrei/sentrei/compare/v1.83.1...v1.84.0) (2020-11-04)
 
 ### Features
