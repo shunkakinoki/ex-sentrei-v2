@@ -1,3 +1,9 @@
+## [1.81.1](https://github.com/sentrei/sentrei/compare/v1.81.0...v1.81.1) (2020-11-04)
+
+### Performance Improvements
+
+- ⚡️ refactor landing hero ([19ef257](https://github.com/sentrei/sentrei/commit/19ef257314a10eb080284f6c4307aca49a330246))
+
 # [1.81.0](https://github.com/sentrei/sentrei/compare/v1.80.0...v1.81.0) (2020-11-03)
 
 ### Features
