@@ -1,3 +1,11 @@
+## [1.81.2](https://github.com/sentrei/sentrei/compare/v1.81.1...v1.81.2) (2020-11-04)
+
+### Performance Improvements
+
+- ⚡️ refactor hero liner ([06247ea](https://github.com/sentrei/sentrei/commit/06247ea981cdbdf5f00bbc6bcf392b7b35e6832f))
+- ⚡️ refactor padding hero ([b3be85a](https://github.com/sentrei/sentrei/commit/b3be85a2e22f9ec641b8f13c7a443f8cb94d807f))
+- ⚡️ refactor papercups shadow ([d0a4142](https://github.com/sentrei/sentrei/commit/d0a41425f115912b4dedb91b9e5845eb7c8e693c))
+
 ## [1.81.1](https://github.com/sentrei/sentrei/compare/v1.81.0...v1.81.1) (2020-11-04)
 
 ### Performance Improvements
