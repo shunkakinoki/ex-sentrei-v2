@@ -4,8 +4,9 @@ import PaginationBase, {
 } from "@/components/PaginationBase";
 import Customer from "@/types/Customer";
 
-export interface Props extends PaginationBaseProps {
+export interface Props extends Omit<PaginationBaseProps, "pathname"> {
   customers: Customer[];
+  namespaceId: string;
 }
 
 export default function DashboardCustomersTable({
@@ -51,11 +52,7 @@ export default function DashboardCustomersTable({
           </div>
         </div>
       </div>
-      <PaginationBase
-        current={current}
-        total={total}
-        namespaceId={namespaceId}
-      />
+      <PaginationBase current={current} pathname={namespaceId} total={total} />
     </div>
   );
 }
