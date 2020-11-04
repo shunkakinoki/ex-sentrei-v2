@@ -75,7 +75,7 @@ export default function SettingsSocialSection(): JSX.Element {
         </div>
       </div>
       <div className="mt-5 md:mt-0 md:col-span-2">
-        <form action="#" method="POST" onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="shadow-lg sm:rounded-md sm:overflow-hidden">
             <div className="px-4 py-5 bg-white sm:p-6">
               <div className="grid grid-cols-3 gap-6">

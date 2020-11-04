@@ -30,7 +30,7 @@ export default function EditorHeaderTitle({title}: Props): JSX.Element {
   }, [setTitleState, titleValue]);
 
   return (
-    <form className="mx-auto" action="#" method="POST">
+    <form className="mx-auto">
       <div className="flex items-center border-b border-pink-500">
         <input
           ref={register}

@@ -87,7 +87,7 @@ export default function DashboardSettingsNotificationsSection({
         </div>
       </div>
       <div className="mt-5 md:mt-0 md:col-span-2">
-        <form action="#" method="POST" onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="overflow-hidden shadow-lg sm:rounded-md">
             <div className="px-4 py-5 bg-white sm:p-6">
               <fieldset>
