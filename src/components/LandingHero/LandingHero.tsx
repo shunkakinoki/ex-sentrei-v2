@@ -4,13 +4,13 @@ import LandingHeroTyped from "@/components/LandingHeroTyped";
 
 export default function LandingHero(): JSX.Element {
   return (
-    <div className="relative pt-3 pb-9 md:pb-3">
+    <div className="relative pt-3 pb-9 md:pb-6">
       <div className="px-4 mx-auto mt-10 sm:px-6">
         <div className="sm:text-left md:text-center">
           <h2 className="text-4xl font-extrabold leading-10 tracking-tight text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
             The most{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-              friendly
+              loving
             </span>
             <br className="hidden sm:block" /> writing platform for <br />
             <LandingHeroTyped
