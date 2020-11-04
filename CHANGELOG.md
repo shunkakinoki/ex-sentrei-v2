@@ -1,3 +1,17 @@
+# [1.82.0](https://github.com/sentrei/sentrei/compare/v1.81.2...v1.82.0) (2020-11-04)
+
+### Bug Fixes
+
+- 🐛 correct revalidate options ([01fe2c0](https://github.com/sentrei/sentrei/commit/01fe2c064692106d8874cfe7d127375d2aa06a61))
+
+### Features
+
+- 🎸 ini custom domains ([2c35c59](https://github.com/sentrei/sentrei/commit/2c35c59461e3aa99c3b8f598b7cced96ad535b74))
+
+### Performance Improvements
+
+- ⚡️ refactor pricing card ([e3ac7ce](https://github.com/sentrei/sentrei/commit/e3ac7ceac5f8131ea4860e0b145c6a0998679594))
+
 ## [1.81.2](https://github.com/sentrei/sentrei/compare/v1.81.1...v1.81.2) (2020-11-04)
 
 ### Performance Improvements
