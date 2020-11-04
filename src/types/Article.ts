@@ -7,6 +7,7 @@ export interface ArticleQuery {
   limit?: number;
   spaceId: string;
   start?: number;
+  status?: string;
 }
 
 export type Pricing = "free" | "paid" | "subscription";

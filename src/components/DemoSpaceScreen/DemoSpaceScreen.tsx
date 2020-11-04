@@ -4,7 +4,6 @@ import SpaceScreen, {Props as SpaceScreenProps} from "@/components/SpaceScreen";
 export type Props = Omit<SpaceScreenProps, "namespaceId">;
 
 export default function DemoSpaceScreen({
-  author,
   articles,
   space,
   current,
@@ -14,7 +13,6 @@ export default function DemoSpaceScreen({
     <>
       <DemoBanner />
       <SpaceScreen
-        author={author}
         articles={articles}
         space={space}
         current={current}

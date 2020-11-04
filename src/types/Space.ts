@@ -24,7 +24,6 @@ declare namespace Space {
 
   interface Fields extends EditableFields {
     articleCount: firebase.default.firestore.FieldValue | number;
-    authorUids: string[];
     customerCount: firebase.default.firestore.FieldValue | number;
     memberCount: firebase.default.firestore.FieldValue | number;
     namespaceId: string;

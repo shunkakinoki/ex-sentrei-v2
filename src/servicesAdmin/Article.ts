@@ -18,6 +18,7 @@ export const articleQuery = ({
   end,
   spaceId,
   start,
+  status,
 }: ArticleQuery): FirebaseFirestore.Query<Article.Get> => {
   let ref = adminDb
     .collection("articles")
@@ -27,6 +28,9 @@ export const articleQuery = ({
 
   if (spaceId) {
     ref = ref.where("spaceId", "==", spaceId);
+  }
+  if (status) {
+    ref = ref.where("status", "==", status);
   }
   if (start) {
     ref = ref.where("spaceNum", ">=", start);

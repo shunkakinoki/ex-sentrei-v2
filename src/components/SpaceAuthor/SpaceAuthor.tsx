@@ -14,7 +14,7 @@ export default function SpaceAuthor({bio, image, name}: Props): JSX.Element {
             width={50}
             layout="fixed"
             className="inline object-cover w-12 h-12 p-1 mr-2 border rounded-full"
-            src={image as string}
+            src={image ?? "/assets/logo.png"}
             alt={`Author ${name}`}
           />
         </a>
