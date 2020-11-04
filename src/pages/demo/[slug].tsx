@@ -36,7 +36,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       authors: JSON.stringify(authors),
       more: JSON.stringify(more),
     },
-    revalidate: 300,
   };
 };
 
