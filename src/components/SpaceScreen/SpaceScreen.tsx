@@ -10,7 +10,9 @@ import SpaceStoryGrid, {
 } from "@/components/SpaceStoryGrid";
 import Profile from "@/types/Profile";
 
-export interface Props extends SpaceStoryGridProps, PaginationBaseProps {
+export interface Props
+  extends SpaceStoryGridProps,
+    Omit<PaginationBaseProps, "pathname"> {
   author: Profile.Get;
   space: Omit<SpaceHeroProps, "author" | "name" | "namespaceId">;
 }
@@ -36,7 +38,7 @@ export default function SpaceScreen({
       <PaginationBase
         current={current}
         total={total}
-        namespaceId={namespaceId}
+        pathname={namespaceId === "" ? "" : `/${namespaceId}`}
       />
       <FooterRoot />
     </ContainerRoot>

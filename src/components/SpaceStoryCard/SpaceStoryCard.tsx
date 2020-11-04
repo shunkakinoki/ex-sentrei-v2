@@ -33,7 +33,7 @@ export default function SpaceStoryCard({
   variant,
 }: Props): JSX.Element {
   return (
-    <Link href={`/${namespaceId}/${uid}`}>
+    <Link href={`${namespaceId === "" ? "" : "/"}${namespaceId}/${uid}`}>
       <a
         className={clsx(
           "w-full my-4 px-0 sm:px-2 md:px-3 xl:px-4 shadow-lg sm:shadow-none sm:my-2 md:w-1/2 ",

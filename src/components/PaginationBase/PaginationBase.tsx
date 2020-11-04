@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export interface Props {
   current: number;
-  namespaceId: string;
+  pathname: string;
   total: number;
 }
 
@@ -18,7 +18,7 @@ function PaginationEllipsis(): JSX.Element {
 export default function PaginationBase({
   current,
   total,
-  namespaceId,
+  pathname,
 }: Props): JSX.Element {
   function PaginationNumber({
     num,
@@ -30,7 +30,14 @@ export default function PaginationBase({
   }): JSX.Element {
     return (
       <Link
-        href={num !== 1 ? `/${namespaceId}/page/${num}` : `/${namespaceId}`}
+        href={
+          // eslint-disable-next-line no-nested-ternary
+          num !== 1
+            ? `${pathname}/page/${num}`
+            : pathname === ""
+            ? "/"
+            : `${pathname}`
+        }
       >
         <a
           className={clsx(
@@ -52,9 +59,12 @@ export default function PaginationBase({
         {current !== 1 && (
           <Link
             href={
+              // eslint-disable-next-line no-nested-ternary
               current - 1 !== 1
-                ? `/${namespaceId}/page/${current - 1}`
-                : `/${namespaceId}`
+                ? `${pathname}/page/${current - 1}`
+                : pathname === ""
+                ? "/"
+                : `${pathname}`
             }
           >
             <a className="flex items-center justify-center w-8 h-8 mr-1 cursor-pointer hover:text-pink-300">
@@ -91,7 +101,7 @@ export default function PaginationBase({
           <PaginationNumber border={current === total} num={total} />
         </div>
         {current !== total && (
-          <Link href={`/${namespaceId}/page/${current + 1}`}>
+          <Link href={`${pathname}/page/${current + 1}`}>
             <a className="flex items-center justify-center w-8 h-8 ml-1 cursor-pointer hover:text-pink-300">
               <svg
                 className="w-5 h-5"

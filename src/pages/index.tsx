@@ -16,11 +16,12 @@ import {createAuthor, createArticles, createSpace} from "@/utils/faker";
 
 export type Props = Omit<
   SpaceScreenProps,
-  "author" | "articles" | "space" | "total"
+  "author" | "articles" | "current" | "namespaceId" | "space" | "total"
 > & {
   articles: string;
   author: string;
   space: string;
+  total: number;
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async ({
@@ -51,9 +52,8 @@ GetServerSidePropsContext) => {
       props: {
         articles: JSON.stringify(articles),
         author: JSON.stringify(author),
-        current: 1,
-        namespaceId: req.headers.host.split(".")[0],
         space: JSON.stringify(space),
+        total: totalArticlePages,
       },
     };
   }
@@ -89,14 +89,16 @@ GetServerSidePropsContext) => {
     const spaceReq = getAdminSpace(namespace.modelId);
 
     const [articles, space] = await Promise.all([articlesReq, spaceReq]);
+    const totalArticleCount = space?.articleCount
+      ? Math.floor(space?.articleCount / 6) + 1
+      : 0;
 
     return {
       props: {
         articles: JSON.stringify(articles),
         author: JSON.stringify(author),
-        current: 1,
-        namespaceId,
         space: JSON.stringify(space),
+        total: totalArticleCount,
       },
     };
   } catch (err) {
@@ -116,17 +118,16 @@ const Index = ({
   author,
   articles,
   space,
-  current,
-  namespaceId,
+  total,
 }: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element => {
   return (
     <SpaceScreen
       author={JSON.parse(author) as Profile.Get}
       articles={JSON.parse(articles) as Article.Get[]}
       space={JSON.parse(space) as Space.Get}
-      current={current}
-      total={totalArticlePages}
-      namespaceId={namespaceId}
+      current={1}
+      total={total}
+      namespaceId=""
     />
   );
 };

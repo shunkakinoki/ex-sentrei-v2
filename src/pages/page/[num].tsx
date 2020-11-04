@@ -5,9 +5,9 @@ import {
 } from "next";
 
 import SpaceScreen, {Props as SpaceScreenProps} from "@/components/SpaceScreen";
+import {totalArticlePages} from "@/const/demo";
 import {getAdminArticles} from "@/servicesAdmin/Article";
 import {getAdminNamespace} from "@/servicesAdmin/Namespace";
-import {getAdminProfile} from "@/servicesAdmin/Profile";
 import {getAdminSpace} from "@/servicesAdmin/Space";
 import Article from "@/types/Article";
 import Profile from "@/types/Profile";
@@ -16,12 +16,13 @@ import {createAuthor, createArticles, createSpace} from "@/utils/faker";
 
 export type Props = Omit<
   SpaceScreenProps,
-  "author" | "articles" | "current" | "space" | "total"
+  "author" | "articles" | "namespaceId" | "space" | "total"
 > & {
   articles: string;
   author: string;
-  current: string;
+  current: number;
   space: string;
+  total: number;
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async ({
@@ -32,14 +33,10 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
 GetServerSidePropsContext) => {
   res.setHeader(
     "Cache-Control",
-    "public, s-maxage=1, stale-while-revalidate=60",
+    "public, s-maxage=1, stale-while-revalidate=30",
   );
 
-  if (
-    req.headers.host === "localhost:3000" ||
-    req.headers.host === "sentrei.com" ||
-    req.headers.host?.endsWith(".vercel.app")
-  ) {
+  if (req.headers.host === "sentrei.com") {
     return {
       redirect: {
         destination: "/home",
@@ -57,75 +54,87 @@ GetServerSidePropsContext) => {
       props: {
         articles: JSON.stringify(articles),
         author: JSON.stringify(author),
-        current: JSON.stringify(params?.num),
-        namespaceId: JSON.stringify(req.headers.host.split(".")[0]),
+        current: Number(params?.num) * 1,
         space: JSON.stringify(space),
+        total: totalArticlePages,
       },
     };
   }
 
-  if (req.headers.host?.endsWith(".sentrei.com")) {
-    const namespaceId = req.headers.host?.replace(".sentrei.com", "");
+  try {
+    let namespaceId = "";
 
-    try {
-      const namespace = await getAdminNamespace(namespaceId);
-
-      if (!namespace?.modelId) {
-        throw new Error(`No modelId in namespace ${namespaceId}`);
-      }
-
-      const articlesReq = getAdminArticles({
-        end: 10,
-        spaceId: namespace?.modelId,
-        start: 0,
-      });
-      const profileReq = getAdminProfile(namespaceId);
-      const spaceReq = getAdminSpace(namespaceId);
-
-      const [articles, profile, space] = await Promise.all([
-        articlesReq,
-        profileReq,
-        spaceReq,
-      ]);
-
-      return {
-        props: {
-          articles: JSON.stringify(articles),
-          author: JSON.stringify(profile),
-          current: JSON.stringify(params?.num),
-          namespaceId: JSON.stringify(namespaceId),
-          space: JSON.stringify(space),
-        },
-        revalidate: 30,
-      };
-    } catch (err) {
-      // eslint-disable-next-line no-console
-      console.error(err);
+    if (req.headers.host?.endsWith(".sentrei.com")) {
+      namespaceId = req.headers.host?.replace(".sentrei.com", "");
+    } else if (req.headers.host === "localhost:3000") {
+      namespaceId = "shunkakinoki";
     }
+
+    const author = createAuthor();
+    const namespace = await getAdminNamespace(namespaceId);
+
+    if (!namespace?.modelId) {
+      throw new Error(`No modelId in namespace ${namespaceId}`);
+    }
+
+    if (namespace.model === "profiles") {
+      return {
+        notFound: true,
+      };
+    }
+
+    const articlesReq = getAdminArticles({
+      end: 10,
+      limit: 6,
+      spaceId: namespace?.modelId,
+      start: 0,
+    });
+    const spaceReq = getAdminSpace(namespace.modelId);
+
+    const [articles, space] = await Promise.all([articlesReq, spaceReq]);
+    const totalArticleCount = space?.articleCount
+      ? Math.floor(space?.articleCount / 6) + 1
+      : 0;
+
+    return {
+      props: {
+        articles: JSON.stringify(articles),
+        author: JSON.stringify(author),
+        current: Number(params?.num) * 1,
+        space: JSON.stringify(space),
+        total: totalArticleCount,
+      },
+    };
+  } catch (err) {
+    // eslint-disable-next-line no-console
+    console.error(err);
   }
 
   return {
-    notFound: true,
+    redirect: {
+      destination: "https://sentrei.com",
+      permanent: false,
+    },
   };
 };
 
-const Index = ({
+const Num = ({
   author,
   articles,
-  space,
   current,
-  namespaceId,
+  space,
+  total,
 }: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element => {
   return (
     <SpaceScreen
       author={JSON.parse(author) as Profile.Get}
       articles={JSON.parse(articles) as Article.Get[]}
       space={JSON.parse(space) as Space.Get}
-      current={(JSON.parse(current) as number) * 1}
-      total={0}
-      namespaceId={namespaceId}
+      current={current}
+      total={total}
+      namespaceId=""
     />
   );
 };
 
-export default Index;
+export default Num;

@@ -15,8 +15,9 @@ const DashboardTableItem = dynamic(
   },
 );
 
-export interface Props extends PaginationBaseProps {
+export interface Props extends Omit<PaginationBaseProps, "pathname"> {
   articles: Article.Get[];
+  namespaceId: string;
 }
 
 export default function DashboardTable({
@@ -60,17 +61,15 @@ export default function DashboardTable({
       {space?.articleCount && space.articleCount > 10 && (
         <PaginationBase
           current={current}
+          pathname={`/dashboard${namespaceId === "" ? "" : "/"}${namespaceId}`}
           total={Math.floor(space.articleCount / 10) + 1}
-          namespaceId={`dashboard${
-            namespaceId === "" ? "" : "/"
-          }${namespaceId}`}
         />
       )}
       {namespaceId === "demo" && total > 1 && (
         <PaginationBase
           current={current}
+          pathname="/dashboard/demo"
           total={total}
-          namespaceId="dasboard/demo"
         />
       )}
     </>
