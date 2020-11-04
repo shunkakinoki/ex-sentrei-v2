@@ -58,45 +58,50 @@ GetServerSidePropsContext) => {
     };
   }
 
-  if (req.headers.host?.endsWith(".sentrei.com")) {
-    const namespaceId = req.headers.host?.replace(".sentrei.com", "");
-    const author = createAuthor();
+  try {
+    let namespaceId = "";
 
-    try {
-      const namespace = await getAdminNamespace(namespaceId);
-
-      if (!namespace?.modelId) {
-        throw new Error(`No modelId in namespace ${namespaceId}`);
-      }
-
-      if (namespace.model === "profiles") {
-        return {
-          notFound: true,
-        };
-      }
-
-      const articlesReq = getAdminArticles({
-        end: 10,
-        spaceId: namespace?.modelId,
-        start: 0,
-      });
-      const spaceReq = getAdminSpace(namespace.modelId);
-
-      const [articles, space] = await Promise.all([articlesReq, spaceReq]);
-
-      return {
-        props: {
-          articles: JSON.stringify(articles),
-          author: JSON.stringify(author),
-          current: 1,
-          namespaceId,
-          space: JSON.stringify(space),
-        },
-      };
-    } catch (err) {
-      // eslint-disable-next-line no-console
-      console.error(err);
+    if (req.headers.host?.endsWith(".sentrei.com")) {
+      namespaceId = req.headers.host?.replace(".sentrei.com", "");
+    } else if (req.headers.host === "localhost:3000") {
+      namespaceId = "shunkakinoki";
     }
+
+    const author = createAuthor();
+    const namespace = await getAdminNamespace(namespaceId);
+
+    if (!namespace?.modelId) {
+      throw new Error(`No modelId in namespace ${namespaceId}`);
+    }
+
+    if (namespace.model === "profiles") {
+      return {
+        notFound: true,
+      };
+    }
+
+    const articlesReq = getAdminArticles({
+      end: 10,
+      limit: 6,
+      spaceId: namespace?.modelId,
+      start: 0,
+    });
+    const spaceReq = getAdminSpace(namespace.modelId);
+
+    const [articles, space] = await Promise.all([articlesReq, spaceReq]);
+
+    return {
+      props: {
+        articles: JSON.stringify(articles),
+        author: JSON.stringify(author),
+        current: 1,
+        namespaceId,
+        space: JSON.stringify(space),
+      },
+    };
+  } catch (err) {
+    // eslint-disable-next-line no-console
+    console.error(err);
   }
 
   return {
