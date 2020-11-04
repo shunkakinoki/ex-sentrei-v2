@@ -35,11 +35,13 @@ export default function SpaceScreen({
         namespaceId={namespaceId}
       />
       <SpaceStoryGrid articles={articles} namespaceId={namespaceId} />
-      <PaginationBase
-        current={current}
-        total={total}
-        pathname={namespaceId === "" ? "" : `/${namespaceId}`}
-      />
+      {total > 1 && (
+        <PaginationBase
+          current={current}
+          total={total}
+          pathname={namespaceId === "" ? "" : `/${namespaceId}`}
+        />
+      )}
       <FooterRoot />
     </ContainerRoot>
   );
