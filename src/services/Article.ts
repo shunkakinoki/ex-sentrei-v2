@@ -25,7 +25,6 @@ export const articleQuery = ({
   let ref = db
     .collection("articles")
     .withConverter(articleConverter)
-    .orderBy("spaceNum", "desc")
     .limit(limit);
 
   if (spaceId) {
@@ -35,10 +34,10 @@ export const articleQuery = ({
     ref = ref.where("status", "==", status).orderBy("createdAt", "desc");
   }
   if (start) {
-    ref = ref.where("spaceNum", ">=", start);
+    ref = ref.where("spaceNum", "<=", start).orderBy("spaceNum", "desc");
   }
   if (end) {
-    ref = ref.where("spaceNum", "<", end);
+    ref = ref.where("spaceNum", ">", end);
   }
 
   return ref;

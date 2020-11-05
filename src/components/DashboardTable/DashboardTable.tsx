@@ -27,16 +27,21 @@ export default function DashboardTable({
   namespaceId,
 }: Props): JSX.Element {
   const {authState} = useAuth();
+  const {space} = useSpace(namespaceId);
   const {articles: swrArticles} = useArticles(
     namespaceId,
     {
-      end: current * 10,
+      end:
+        space?.articleCount && space?.articleCount > 0
+          ? (space?.articleCount + 1 ?? 10) - current * 10
+          : 0,
       spaceId: authState?.uid ?? "",
-      start: (current - 1) * 10,
+      start: space?.articleCount
+        ? (space?.articleCount + 1 ?? 10) - (current - 1) * 10
+        : 10,
     },
     articles,
   );
-  const {space} = useSpace(namespaceId);
 
   return (
     <>
