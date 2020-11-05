@@ -1,10 +1,14 @@
+import dynamic from "next/dynamic";
+
 import ContainerRoot from "@/components/ContainerRoot";
 import FooterRoot from "@/components/FooterRoot";
 import HeaderRoot from "@/components/HeaderRoot";
 import SpaceHero, {Props as SpaceHeroProps} from "@/components/SpaceHero";
-import SpaceStoryGrid, {
-  Props as SpaceStoryGridProps,
-} from "@/components/SpaceStoryGrid";
+import {Props as SpaceStoryGridProps} from "@/components/SpaceStoryGrid";
+
+const SpaceStoryGrid = dynamic(() => import("@/components/SpaceStoryGrid"), {
+  ssr: false,
+});
 
 export interface Props extends SpaceStoryGridProps {
   space: Omit<SpaceHeroProps, "author" | "name" | "namespaceId">;
