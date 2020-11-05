@@ -46,7 +46,7 @@ declare namespace Article {
   }
 
   export interface Snapshot extends Get {
-    snap: FirebaseFirestore.DocumentSnapshot;
+    snap: firebase.default.firestore.DocumentSnapshot;
   }
 }
 

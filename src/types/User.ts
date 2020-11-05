@@ -18,7 +18,7 @@ declare namespace User {
   }
 
   export interface Snapshot extends Get {
-    snap: FirebaseFirestore.DocumentSnapshot;
+    snap: firebase.default.firestore.DocumentSnapshot;
   }
 
   export type Update = Partial<Response>;

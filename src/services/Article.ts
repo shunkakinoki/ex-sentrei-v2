@@ -81,6 +81,13 @@ export const getArticles = async (
   return snap.docs.map(doc => doc.data());
 };
 
+export const getArticlesSnapshot = async (
+  query: ArticleQuery,
+): Promise<Article.Snapshot[]> => {
+  const ref = await articleQuery(query).get();
+  return ref.docs.map(snap => ({...snap.data(), snap}));
+};
+
 export const updateArticle = (
   articleId: string,
   article: Article.Update,

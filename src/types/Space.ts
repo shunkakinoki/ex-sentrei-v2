@@ -45,7 +45,7 @@ declare namespace Space {
   }
 
   export interface Snapshot extends Get {
-    snap: FirebaseFirestore.DocumentSnapshot;
+    snap: firebase.default.firestore.DocumentSnapshot;
   }
 }
 
