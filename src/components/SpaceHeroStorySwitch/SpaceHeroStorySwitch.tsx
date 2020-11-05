@@ -1,14 +1,12 @@
 import {useSetRecoilState} from "recoil";
 
-import useStory, {storySwitchAtom} from "@/hooks/useStory";
+import {storySwitchAtom} from "@/hooks/useStory";
 
 export default function SpaceHeroStorySwitch(): JSX.Element {
-  const {storySwitch} = useStory();
-
   const setStorySwitch = useSetRecoilState(storySwitchAtom);
 
-  const handleClick = (): void => {
-    setStorySwitch(!storySwitch);
+  const handleClick = (value: boolean): void => {
+    setStorySwitch(value);
   };
 
   return (
@@ -16,7 +14,7 @@ export default function SpaceHeroStorySwitch(): JSX.Element {
       <button
         type="button"
         className="px-4 py-2 font-bold text-gray-800 bg-gray-300 border-r rounded-l hover:bg-gray-400"
-        onClick={handleClick}
+        onClick={() => handleClick(true)}
       >
         <svg
           className="w-6 h-6"
@@ -36,7 +34,7 @@ export default function SpaceHeroStorySwitch(): JSX.Element {
       <button
         type="button"
         className="px-4 py-2 font-bold text-gray-800 bg-gray-300 rounded-r hover:bg-gray-400"
-        onClick={handleClick}
+        onClick={() => handleClick(false)}
       >
         <svg
           className="w-6 h-6"
