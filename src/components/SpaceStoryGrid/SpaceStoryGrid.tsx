@@ -1,4 +1,5 @@
-import SpaceStoryCard from "@/components/SpaceStoryCard";
+import dynamic from "next/dynamic";
+
 import useArticles from "@/hooks/useArticles";
 import useAuth from "@/hooks/useAuth";
 import Article from "@/types/Article";
@@ -7,6 +8,10 @@ export interface Props {
   articles: Article.Get[];
   namespaceId: string;
 }
+
+const SpaceStoryCard = dynamic(() => import("@/components/SpaceStoryCard"), {
+  ssr: false,
+});
 
 export default function SpaceStoryGrid({
   articles,
