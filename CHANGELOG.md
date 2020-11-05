@@ -1,3 +1,9 @@
+## [1.87.1](https://github.com/sentrei/sentrei/compare/v1.87.0...v1.87.1) (2020-11-05)
+
+### Performance Improvements
+
+- ⚡️ complete refactor card ([94c7572](https://github.com/sentrei/sentrei/commit/94c7572fab57b7c87e201bc6a0317df54354ae3b))
+
 # [1.87.0](https://github.com/sentrei/sentrei/compare/v1.86.0...v1.87.0) (2020-11-05)
 
 ### Features
