@@ -1,7 +1,7 @@
 import {useRecoilValue, atom} from "recoil";
 
 export const storySwitchAtom = atom<boolean>({
-  default: true,
+  default: false,
   key: "storySwitch",
 });
 
