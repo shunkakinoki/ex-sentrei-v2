@@ -79,10 +79,7 @@ GetServerSidePropsContext) => {
     }
 
     const articlesReq = getAdminArticles({
-      end: 10,
-      limit: 6,
       spaceId: namespace?.modelId,
-      start: 0,
       status: "published",
     });
     const spaceReq = getAdminSpace(namespace.modelId);
@@ -115,14 +112,11 @@ GetServerSidePropsContext) => {
 const Index = ({
   articles,
   space,
-  total,
 }: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element => {
   return (
     <SpaceScreen
       articles={JSON.parse(articles) as Article.Get[]}
       space={JSON.parse(space) as Space.Get}
-      current={1}
-      total={total}
       namespaceId=""
     />
   );
