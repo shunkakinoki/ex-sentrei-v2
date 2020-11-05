@@ -2,6 +2,7 @@ import useSWR from "swr";
 
 import {getArticles} from "@/services/Article";
 import Article, {ArticleQuery} from "@/types/Article";
+import {createArticles} from "@/utils/faker";
 
 const getArticlesFetcher = async (
   _: string,
@@ -34,11 +35,16 @@ export default function useArticles(
   const {data: articles} = useSWR(
     // eslint-disable-next-line no-nested-ternary
     namespaceId === "demo"
-      ? null
+      ? JSON.stringify(query.startAfter)
       : query
-      ? ["articles", query.spaceId, query.startAfter, query.status]
+      ? [
+          "articles",
+          query.spaceId,
+          JSON.stringify(query.startAfter),
+          query.status,
+        ]
       : null,
-    getArticlesFetcher,
+    namespaceId === "demo" ? createArticles : getArticlesFetcher,
     {initialData},
   );
 

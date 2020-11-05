@@ -150,7 +150,10 @@ export const createArticle = (): Article.Get => {
   };
 };
 
-export const createArticles = (num = 6): Article.Get[] => {
+export const createArticles = (num: number | string = 6): Article.Get[] => {
+  if (typeof num === "string") {
+    return new Array(6).fill(undefined).map(createArticle);
+  }
   return new Array(num).fill(undefined).map(createArticle);
 };
 
