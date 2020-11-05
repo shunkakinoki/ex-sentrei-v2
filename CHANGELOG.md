@@ -1,3 +1,15 @@
+# [1.86.0](https://github.com/sentrei/sentrei/compare/v1.85.0...v1.86.0) (2020-11-05)
+
+### Features
+
+- 🎸 ini use articles space story grid ([aa5ea8c](https://github.com/sentrei/sentrei/commit/aa5ea8c0065e4b620fcc9ff68b103cc9aee4be4e))
+- 🎸 revamp article query ([61fe6d8](https://github.com/sentrei/sentrei/commit/61fe6d82d983b3896b81c38b103beefd8a3a3569))
+- 🎸 revamp article query for space num ([694561e](https://github.com/sentrei/sentrei/commit/694561e718f31230f0864852c3205169c1e1b371))
+
+### Performance Improvements
+
+- ⚡️ revamp firestore indexes ([0bc91cd](https://github.com/sentrei/sentrei/commit/0bc91cd6620c0f2897a107faa5f38b7fcbeb9a9e))
+
 # [1.85.0](https://github.com/sentrei/sentrei/compare/v1.84.0...v1.85.0) (2020-11-04)
 
 ### Features
