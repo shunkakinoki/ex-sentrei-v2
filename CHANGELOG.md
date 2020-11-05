@@ -1,3 +1,10 @@
+# [1.87.0](https://github.com/sentrei/sentrei/compare/v1.86.0...v1.87.0) (2020-11-05)
+
+### Features
+
+- 🎸 ini story switch ([3cfe9ba](https://github.com/sentrei/sentrei/commit/3cfe9ba82a40c28b05b5b59c23066d85bce14664))
+- 🎸 ini story switch custom layout flex ([6c8122f](https://github.com/sentrei/sentrei/commit/6c8122fb352f5e6e23f06dbb4ada3fa9b1bfb195))
+
 # [1.86.0](https://github.com/sentrei/sentrei/compare/v1.85.0...v1.86.0) (2020-11-05)
 
 ### Features
