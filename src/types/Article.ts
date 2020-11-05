@@ -7,6 +7,7 @@ export interface ArticleQuery {
   limit?: number;
   spaceId: string;
   start?: number;
+  startAfter?: firebase.default.firestore.DocumentSnapshot;
   status?: string;
 }
 

@@ -6,10 +6,22 @@ import Article, {ArticleQuery} from "@/types/Article";
 const getArticlesFetcher = async (
   _: string,
   spaceId: string,
-  start: number,
-  end: number,
+  status: "published" | "preview",
+  startAfter?: string,
 ) => {
-  return getArticles({end, spaceId, start});
+  if (startAfter) {
+    const startAfterShot = JSON.parse(
+      startAfter,
+    ) as firebase.default.firestore.DocumentSnapshot;
+    return getArticles({
+      limit: 6,
+      spaceId,
+      startAfter: startAfterShot,
+      status,
+    });
+  }
+
+  return getArticles({limit: 6, spaceId, startAfter: undefined, status});
 };
 
 export default function useArticles(
@@ -24,10 +36,10 @@ export default function useArticles(
     namespaceId === "demo"
       ? null
       : query
-      ? ["articles", query.spaceId, query.start, query.end]
+      ? ["articles", query.spaceId, query.startAfter, query.status]
       : null,
     getArticlesFetcher,
-    {initialData, revalidateOnMount: true},
+    {initialData},
   );
 
   return {articles};

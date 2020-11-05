@@ -5,7 +5,6 @@ import {
 } from "next";
 
 import SpaceScreen, {Props as SpaceScreenProps} from "@/components/SpaceScreen";
-import {totalArticlePages} from "@/const/demo";
 import {getAdminArticles} from "@/servicesAdmin/Article";
 import {getAdminNamespace} from "@/servicesAdmin/Namespace";
 import {getAdminSpace} from "@/servicesAdmin/Space";
@@ -19,7 +18,6 @@ export type Props = Omit<
 > & {
   articles: string;
   space: string;
-  total: number;
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async ({
@@ -52,7 +50,6 @@ GetServerSidePropsContext) => {
       props: {
         articles: JSON.stringify(articles),
         space: JSON.stringify(space),
-        total: totalArticlePages,
       },
     };
   }
@@ -79,21 +76,18 @@ GetServerSidePropsContext) => {
     }
 
     const articlesReq = getAdminArticles({
+      limit: 6,
       spaceId: namespace?.modelId,
       status: "published",
     });
     const spaceReq = getAdminSpace(namespace.modelId);
 
     const [articles, space] = await Promise.all([articlesReq, spaceReq]);
-    const totalArticleCount = space?.articleCount
-      ? Math.floor(space?.articleCount / 6) + 1
-      : 0;
 
     return {
       props: {
         articles: JSON.stringify(articles),
         space: JSON.stringify(space),
-        total: totalArticleCount,
       },
     };
   } catch (err) {

@@ -21,6 +21,7 @@ export const articleQuery = ({
   spaceId,
   start,
   status,
+  startAfter,
 }: ArticleQuery): firebase.default.firestore.Query<Article.Get> => {
   let ref = db
     .collection("articles")
@@ -38,6 +39,9 @@ export const articleQuery = ({
   }
   if (end) {
     ref = ref.where("spaceNum", ">", end);
+  }
+  if (startAfter) {
+    ref = ref.startAfter(startAfter);
   }
 
   return ref;

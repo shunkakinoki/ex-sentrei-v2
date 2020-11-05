@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-import useArticles from "@/hooks/useArticles";
+import useArticlesInfinite from "@/hooks/useArticlesInfinite";
 import useAuth from "@/hooks/useAuth";
 import Article from "@/types/Article";
 
@@ -18,11 +18,11 @@ export default function SpaceStoryGrid({
   namespaceId,
 }: Props): JSX.Element {
   const {authState} = useAuth();
-  const {articles: swrArticles} = useArticles(
+  const {articles: swrArticles} = useArticlesInfinite(
     namespaceId,
     {
-      limit: 6,
       spaceId: authState?.uid ?? "",
+      startAfter: undefined,
       status: "published",
     },
     articles,
