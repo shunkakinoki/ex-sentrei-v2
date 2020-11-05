@@ -12,9 +12,9 @@ export default function SpaceStoryImage({image, title}: Props): JSX.Element {
   return (
     <div
       className={clsx(
-        "w-full transition duration-300 ease-in-out transform shadow-none md:hover:-translate-y-1 md:shadow-lg xl:shadow-xl group-hover:shadow-none md:group-hover:shadow-2xl",
+        "transition duration-300 ease-in-out transform shadow-none md:hover:-translate-y-1 md:shadow-lg xl:shadow-xl group-hover:shadow-none md:group-hover:shadow-2xl",
         {
-          "w-full": storySwitch,
+          "md:w-full": storySwitch,
           "md:w-1/2 flex-none": !storySwitch,
         },
       )}
