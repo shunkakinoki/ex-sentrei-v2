@@ -3,7 +3,6 @@ import {GetStaticProps, InferGetStaticPropsType} from "next";
 import DemoSpaceScreen, {
   Props as DemoSpaceScreenProps,
 } from "@/components/DemoSpaceScreen";
-import {totalArticlePages} from "@/const/demo";
 import Article from "@/types/Article";
 import Space from "@/types/Space";
 import {createArticles, createSpace} from "@/utils/faker";
@@ -33,14 +32,11 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 const Demo = ({
   articles,
   space,
-  current,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <DemoSpaceScreen
       articles={JSON.parse(articles) as Article.Get[]}
       space={JSON.parse(space) as Space.Get}
-      current={current}
-      total={totalArticlePages}
     />
   );
 };

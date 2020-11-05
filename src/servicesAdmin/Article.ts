@@ -23,20 +23,19 @@ export const articleQuery = ({
   let ref = adminDb
     .collection("articles")
     .withConverter(articleAdminConverter)
-    .orderBy("spaceNum", "desc")
     .limit(limit);
 
   if (spaceId) {
     ref = ref.where("spaceId", "==", spaceId);
   }
   if (status) {
-    ref = ref.where("status", "==", status);
+    ref = ref.where("status", "==", status).orderBy("createdAt", "desc");
   }
   if (start) {
-    ref = ref.where("spaceNum", ">=", start);
+    ref = ref.where("spaceNum", "<=", start).orderBy("spaceNum", "desc");
   }
   if (end) {
-    ref = ref.where("spaceNum", "<", end);
+    ref = ref.where("spaceNum", ">", end);
   }
 
   return ref;

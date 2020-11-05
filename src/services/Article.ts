@@ -20,21 +20,24 @@ export const articleQuery = ({
   end,
   spaceId,
   start,
+  status,
 }: ArticleQuery): firebase.default.firestore.Query<Article.Get> => {
   let ref = db
     .collection("articles")
     .withConverter(articleConverter)
-    .orderBy("spaceNum", "desc")
     .limit(limit);
 
   if (spaceId) {
     ref = ref.where("spaceId", "==", spaceId);
   }
+  if (status) {
+    ref = ref.where("status", "==", status).orderBy("createdAt", "desc");
+  }
   if (start) {
-    ref = ref.where("spaceNum", ">=", start);
+    ref = ref.where("spaceNum", "<=", start).orderBy("spaceNum", "desc");
   }
   if (end) {
-    ref = ref.where("spaceNum", "<", end);
+    ref = ref.where("spaceNum", ">", end);
   }
 
   return ref;

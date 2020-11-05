@@ -3,22 +3,11 @@ import SpaceScreen, {Props as SpaceScreenProps} from "@/components/SpaceScreen";
 
 export type Props = Omit<SpaceScreenProps, "namespaceId">;
 
-export default function DemoSpaceScreen({
-  articles,
-  space,
-  current,
-  total,
-}: Props): JSX.Element {
+export default function DemoSpaceScreen({articles, space}: Props): JSX.Element {
   return (
     <>
       <DemoBanner />
-      <SpaceScreen
-        articles={articles}
-        space={space}
-        current={current}
-        total={total}
-        namespaceId="demo"
-      />
+      <SpaceScreen articles={articles} space={space} namespaceId="demo" />
     </>
   );
 }
