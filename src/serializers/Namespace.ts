@@ -10,7 +10,7 @@ export const serializeNamespace = (
 
   return {
     ...data,
-    uid: snap.id,
+    id: snap.id,
   };
 };
 
@@ -21,6 +21,6 @@ export const serializeAdminNamespace = (
 
   return {
     ...data,
-    uid: snap.id,
+    id: snap.id,
   };
 };

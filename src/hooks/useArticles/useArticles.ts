@@ -8,10 +8,8 @@ const getArticlesFetcher = async (
   spaceId: string,
   start: number,
   end: number,
-  status: "published" | "preview",
-  limit: number,
 ) => {
-  return getArticles({end, limit, spaceId, start, status});
+  return getArticles({end, spaceId, start});
 };
 
 export default function useArticles(
@@ -26,14 +24,7 @@ export default function useArticles(
     namespaceId === "demo"
       ? null
       : query
-      ? [
-          "articles",
-          query.spaceId,
-          query.start,
-          query.end,
-          query.status,
-          query.limit,
-        ]
+      ? ["articles", query.spaceId, query.start, query.end]
       : null,
     getArticlesFetcher,
     {initialData, revalidateOnMount: true},

@@ -25,7 +25,7 @@ declare namespace Profile {
   }
 
   export interface Snapshot extends Get {
-    snap: FirebaseFirestore.DocumentSnapshot;
+    snap: firebase.default.firestore.DocumentSnapshot;
   }
 }
 

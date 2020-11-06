@@ -23,7 +23,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
       articles: JSON.stringify(articles),
-      current: 1,
       space: JSON.stringify(space),
     },
   };

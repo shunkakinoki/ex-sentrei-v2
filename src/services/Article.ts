@@ -21,6 +21,7 @@ export const articleQuery = ({
   spaceId,
   start,
   status,
+  startAfter,
 }: ArticleQuery): firebase.default.firestore.Query<Article.Get> => {
   let ref = db
     .collection("articles")
@@ -38,6 +39,9 @@ export const articleQuery = ({
   }
   if (end) {
     ref = ref.where("spaceNum", ">", end);
+  }
+  if (startAfter) {
+    ref = ref.startAfter(startAfter);
   }
 
   return ref;
@@ -75,6 +79,13 @@ export const getArticles = async (
 ): Promise<Article.Get[]> => {
   const snap = await articleQuery(query).get();
   return snap.docs.map(doc => doc.data());
+};
+
+export const getArticlesSnapshot = async (
+  query: ArticleQuery,
+): Promise<Article.Snapshot[]> => {
+  const ref = await articleQuery(query).get();
+  return ref.docs.map(snap => ({...snap.data(), snap}));
 };
 
 export const updateArticle = (

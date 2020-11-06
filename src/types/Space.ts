@@ -40,12 +40,12 @@ declare namespace Space {
   export interface Get extends Fields, Metadata.Get {
     articleCount: number;
     customerCount: number;
+    id: string;
     memberCount: number;
-    uid: string;
   }
 
   export interface Snapshot extends Get {
-    snap: FirebaseFirestore.DocumentSnapshot;
+    snap: firebase.default.firestore.DocumentSnapshot;
   }
 }
 

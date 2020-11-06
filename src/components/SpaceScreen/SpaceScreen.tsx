@@ -5,13 +5,14 @@ import FooterRoot from "@/components/FooterRoot";
 import HeaderRoot from "@/components/HeaderRoot";
 import SpaceHero, {Props as SpaceHeroProps} from "@/components/SpaceHero";
 import {Props as SpaceStoryGridProps} from "@/components/SpaceStoryGrid";
+import Space from "@/types/Space";
 
 const SpaceStoryGrid = dynamic(() => import("@/components/SpaceStoryGrid"), {
   ssr: false,
 });
 
-export interface Props extends SpaceStoryGridProps {
-  space: Omit<SpaceHeroProps, "author" | "name" | "namespaceId">;
+export interface Props extends Omit<SpaceStoryGridProps, "spaceId"> {
+  space: Space.Get;
 }
 
 export default function SpaceScreen({
@@ -28,7 +29,11 @@ export default function SpaceScreen({
         title={space.title}
         updatedBy={space.updatedBy}
       />
-      <SpaceStoryGrid articles={articles} namespaceId={namespaceId} />
+      <SpaceStoryGrid
+        articles={articles}
+        namespaceId={namespaceId}
+        spaceId={space.id}
+      />
       <FooterRoot />
     </ContainerRoot>
   );

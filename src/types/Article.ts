@@ -7,6 +7,7 @@ export interface ArticleQuery {
   limit?: number;
   spaceId: string;
   start?: number;
+  startAfter?: firebase.default.firestore.DocumentSnapshot;
   status?: string;
 }
 
@@ -41,11 +42,11 @@ declare namespace Article {
   export interface Update extends Partial<EditableFields>, Metadata.Update {}
 
   export interface Get extends Fields, Metadata.Get {
-    uid: string;
+    id: string;
   }
 
   export interface Snapshot extends Get {
-    snap: FirebaseFirestore.DocumentSnapshot;
+    snap: firebase.default.firestore.DocumentSnapshot;
   }
 }
 

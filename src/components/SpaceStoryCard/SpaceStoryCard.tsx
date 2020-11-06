@@ -23,6 +23,7 @@ export interface Props
 }
 
 export default function SpaceStoryCard({
+  id,
   image,
   namespaceId,
   updatedAt,
@@ -30,13 +31,12 @@ export default function SpaceStoryCard({
   title,
   subtitle,
   pricing,
-  uid,
   variant,
 }: Props): JSX.Element {
   const {storySwitch} = useStory();
 
   return (
-    <Link href={`${namespaceId === "" ? "" : "/"}${namespaceId}/${uid}`}>
+    <Link href={`${namespaceId === "" ? "" : "/"}${namespaceId}/${id}`}>
       <a
         className={clsx(
           "w-full my-4 px-1 sm:px-2 md:px-3 xl:px-4 shadow-lg sm:shadow-none sm:my-2",

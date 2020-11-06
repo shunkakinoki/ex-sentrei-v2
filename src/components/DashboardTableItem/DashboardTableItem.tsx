@@ -7,18 +7,18 @@ import Article from "@/types/Article";
 export interface Props
   extends Pick<
     Article.Get,
-    "pricing" | "title" | "subtitle" | "status" | "uid" | "updatedAt"
+    "pricing" | "title" | "subtitle" | "status" | "id" | "updatedAt"
   > {
   namespaceId: string;
 }
 
 export default function DashboardTableItem({
+  id,
   pricing,
   title,
   subtitle,
   status,
   namespaceId,
-  uid,
   updatedAt,
 }: Props): JSX.Element {
   const {space} = useSpace(namespaceId);
@@ -71,7 +71,7 @@ export default function DashboardTableItem({
         <Link
           href={`${
             namespaceId !== "" ? "/" : ""
-          }${namespaceId}/dashboard/editor/${uid}`}
+          }${namespaceId}/dashboard/editor/${id}`}
         >
           <a className="rounded-md shadow-sm group">
             <div className="inline-flex items-center px-4 py-2 text-sm font-medium leading-5 text-gray-700 bg-white border border-gray-300 rounded-md group-hover:text-pink-500 focus:outline-none focus:shadow-outline-pink focus:border-pink-300 active:text-gray-800 active:bg-gray-50">
@@ -92,7 +92,7 @@ export default function DashboardTableItem({
             namespaceId !== "demo" ? space?.namespaceId ?? "" : "demo"
           }${space?.namespaceId !== undefined ? "." : ""}sentrei.com${
             namespaceId === "demo" ? "/demo" : ""
-          }/${uid}`}
+          }/${id}`}
           className="ml-3 rounded-md shadow-sm group"
           target="_blank"
           rel="noreferrer"
