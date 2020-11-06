@@ -18,14 +18,14 @@ const ArticleBody = dynamic(() => import("@/components/ArticleBody"), {
 
 export interface Props extends Pick<ArticleHeroProps, "authors"> {
   article: Article.Get;
-  more: Article.Get[];
+  moreArticles: Article.Get[];
   namespaceId: string;
 }
 
 export default function ArticleScreen({
   authors,
   article,
-  more,
+  moreArticles,
   namespaceId,
 }: Props): JSX.Element {
   return (
@@ -51,9 +51,9 @@ export default function ArticleScreen({
       {article.pricing === "subscription" && (
         <ArticleSubscribe namespaceId={namespaceId} />
       )}
-      {more.length > 1 && (
+      {moreArticles.length >= 1 && (
         <ArticleStoryGrid
-          articles={more}
+          articles={moreArticles}
           namespaceId={namespaceId}
           title={article.title}
         />

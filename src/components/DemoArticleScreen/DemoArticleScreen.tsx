@@ -7,13 +7,13 @@ export type Props = Omit<ArticleScreenProps, "namespaceId">;
 export default function DemoArticleScreen({
   authors,
   article,
-  more,
+  moreArticles,
 }: Props): JSX.Element {
   return (
     <ArticleScreen
       authors={authors}
       article={article}
-      more={more}
+      moreArticles={moreArticles}
       namespaceId="demo"
     />
   );

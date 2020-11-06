@@ -26,6 +26,7 @@ export default function ArticleStoryGrid({
           return (
             <SpaceStoryCard
               key={article.id}
+              noSwitch
               updatedAt={article.updatedAt}
               image={article.image}
               pricing={article.pricing}

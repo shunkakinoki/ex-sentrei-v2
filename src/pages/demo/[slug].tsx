@@ -9,11 +9,11 @@ import {createArticle, createArticles, createAuthors} from "@/utils/faker";
 
 export type Props = Omit<
   DemoArticleScreenProps,
-  "authors" | "article" | "more"
+  "authors" | "article" | "moreArticles"
 > & {
   article: string;
   authors: string;
-  more: string;
+  moreArticles: string;
 };
 
 // eslint-disable-next-line @typescript-eslint/require-await
@@ -28,13 +28,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const authors = createAuthors();
   const article = createArticle();
-  const more = createArticles(2);
+  const articles = createArticles(2);
 
   return {
     props: {
       article: JSON.stringify(article),
       authors: JSON.stringify(authors),
-      more: JSON.stringify(more),
+      moreArticles: JSON.stringify(articles),
     },
   };
 };
@@ -42,13 +42,13 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 const Slug = ({
   authors,
   article,
-  more,
+  moreArticles,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <DemoArticleScreen
       authors={JSON.parse(authors) as Profile.Get[]}
       article={JSON.parse(article) as Article.Get}
-      more={JSON.parse(more) as Article.Get[]}
+      moreArticles={JSON.parse(moreArticles) as Article.Get[]}
     />
   );
 };
