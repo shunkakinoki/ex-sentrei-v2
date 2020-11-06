@@ -1,3 +1,13 @@
+# [1.92.0](https://github.com/sentrei/sentrei/compare/v1.91.0...v1.92.0) (2020-11-06)
+
+### Features
+
+- 🎸 ini header toolkit ([772a807](https://github.com/sentrei/sentrei/commit/772a8072730a931e398ee19e0116d77dabbc6e01))
+
+### Performance Improvements
+
+- ⚡️ upgrade pro 12 ([426a150](https://github.com/sentrei/sentrei/commit/426a150171769f6c9de1bd4c19b7f5e654ecc214))
+
 # [1.91.0](https://github.com/sentrei/sentrei/compare/v1.90.0...v1.91.0) (2020-11-06)
 
 ### Features
