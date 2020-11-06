@@ -1,3 +1,9 @@
+# [1.89.0](https://github.com/sentrei/sentrei/compare/v1.88.0...v1.89.0) (2020-11-06)
+
+### Features
+
+- 🎸 ini spaces namespace ([1656276](https://github.com/sentrei/sentrei/commit/16562761e53b4adc1b976eb85bdedde48b3bf3d9))
+
 # [1.88.0](https://github.com/sentrei/sentrei/compare/v1.87.1...v1.88.0) (2020-11-06)
 
 ### Features
