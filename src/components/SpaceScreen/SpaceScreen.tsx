@@ -11,7 +11,8 @@ const SpaceStoryGrid = dynamic(() => import("@/components/SpaceStoryGrid"), {
   ssr: false,
 });
 
-export interface Props extends Omit<SpaceStoryGridProps, "spaceId"> {
+export interface Props
+  extends Omit<SpaceStoryGridProps, "articleCount" | "spaceId"> {
   space: Space.Get;
 }
 
