@@ -1,10 +1,12 @@
 import clsx from "clsx";
 import {useRouter} from "next/router";
+import {useEffect} from "react";
 import {toast} from "react-toastify";
+import {useSetRecoilState} from "recoil";
 
 import {timestamp} from "@/firebase/db";
 import useAuth from "@/hooks/useAuth";
-import useEditor from "@/hooks/useEditor";
+import useEditor, {editorArticleIdAtom} from "@/hooks/useEditor";
 import useProfile from "@/hooks/useProfile";
 import {createArticle, updateArticle} from "@/services/Article";
 
@@ -17,6 +19,12 @@ export default function EditorHeaderButton({articleId}: Props): JSX.Element {
   const {authState} = useAuth();
   const {profile} = useProfile();
   const {editorBody, editorTitle, editorSwitch} = useEditor();
+
+  const setEditorArticleId = useSetRecoilState(editorArticleIdAtom);
+
+  useEffect(() => {
+    setEditorArticleId(articleId);
+  }, [setEditorArticleId, articleId]);
 
   const handleClick = async (): Promise<void> => {
     if (!profile || !authState?.uid) {
