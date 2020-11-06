@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
+import {useEffect} from "react";
 import {useForm} from "react-hook-form";
 import {useSetRecoilState} from "recoil";
 
@@ -20,12 +21,23 @@ export default function EditorToolkitSection(): JSX.Element {
   const setEditorSubtitle = useSetRecoilState(editorSubtitleAtom);
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
-  const {register, handleSubmit} = useForm<Partial<Article.Fields>>({
+  const {register, handleSubmit, reset, formState} = useForm<
+    Partial<Article.Fields>
+  >({
     defaultValues: {
       pricing: editorPricing,
       subtitle: editorSubtitle,
     },
   });
+
+  useEffect(() => {
+    if (!formState.isDirty) {
+      reset({
+        pricing: editorPricing,
+        subtitle: editorSubtitle,
+      });
+    }
+  }, [reset, editorPricing, editorSubtitle, formState.isDirty]);
 
   // eslint-disable-next-line @typescript-eslint/require-await
   const onSubmit = async (data: Article.Fields) => {
