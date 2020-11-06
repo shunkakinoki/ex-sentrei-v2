@@ -130,7 +130,7 @@ export default function EditorToolkitSection(): JSX.Element {
             </div>
           </div>
           <div className="px-4 py-3 text-right bg-gray-50 sm:px-6">
-            <div className="flex items-center justify-between py-2 border-b border-teal-500">
+            <div className="flex items-center justify-between py-2">
               <button
                 type="button"
                 className="flex justify-center px-4 py-2 ml-3 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-red-600 border border-transparent rounded-md hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-pink active:bg-pink-700"
