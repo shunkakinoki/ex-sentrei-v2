@@ -1,3 +1,13 @@
+## [1.89.1](https://github.com/sentrei/sentrei/compare/v1.89.0...v1.89.1) (2020-11-06)
+
+### Bug Fixes
+
+- 🐛 articles firestore rules ([16857d6](https://github.com/sentrei/sentrei/commit/16857d63d4d9e1164688050c6e5d79457ebfd18c))
+
+### Performance Improvements
+
+- ⚡️ ini namespace id for index pages ([60726c1](https://github.com/sentrei/sentrei/commit/60726c159e070aeeb24408d712b8ac01ef551065))
+
 # [1.89.0](https://github.com/sentrei/sentrei/compare/v1.88.0...v1.89.0) (2020-11-06)
 
 ### Features
