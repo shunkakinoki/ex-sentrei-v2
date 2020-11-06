@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import {useState, useEffect} from "react";
+import {mutate} from "swr";
 
 import db from "@/firebase/db";
 import useArticlesInfinite from "@/hooks/useArticlesInfinite";
@@ -27,13 +28,12 @@ export default function SpaceStoryGrid({
   const [lastItem, setLastItem] = useState<
     firebase.default.firestore.DocumentSnapshot
   >();
+  const [articleShots, setArticleShots] = useState<Article.Get[]>(articles);
 
   const {articles: swrArticles} = useArticlesInfinite(
     namespaceId,
     {
       spaceId,
-      startAfter: undefined,
-      status: "published",
     },
     articles,
   );
@@ -45,10 +45,16 @@ export default function SpaceStoryGrid({
 
   const handleClick = (): void => {
     // eslint-disable-next-line no-void
-    void getArticlesSnapshot({startAfter: lastItem, spaceId}).then(res => {
-      const last = res[res.length - 1];
-      setLastItem(last.snap);
-    });
+    void getArticlesSnapshot({limit: 6, spaceId, startAfter: lastItem}).then(
+      res => {
+        const newArticles: Article.Get[] = res;
+        setArticleShots({...articleShots, ...newArticles});
+        // eslint-disable-next-line no-void
+        void mutate(["articles", spaceId], {...swrArticles}, false);
+        const last = res[res.length - 1];
+        setLastItem(last.snap);
+      },
+    );
   };
 
   return (
