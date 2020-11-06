@@ -100,7 +100,7 @@ export default function EditorToolkitSection(): JSX.Element {
                   ref={register}
                   name="subtitle"
                   id="subtitle"
-                  rows={2}
+                  rows={3}
                   className="block w-full p-2 mt-1 transition duration-150 ease-in-out border form-textarea sm:text-sm sm:leading-5"
                   placeholder="My awesome subtitle"
                 />
