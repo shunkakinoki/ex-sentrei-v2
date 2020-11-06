@@ -93,7 +93,7 @@ export default function PricingTableCard({plan}: Props): JSX.Element {
                   </span>
                   <span>
                     {plan === "free" && "0"}
-                    {plan === "pro" && "9"}
+                    {plan === "pro" && "12"}
                     {plan === "premium" && "25"}
                   </span>
                 </span>

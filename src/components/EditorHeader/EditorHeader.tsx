@@ -4,6 +4,7 @@ import Link from "next/link";
 import {Props as EditorHeaderButtonProps} from "@/components/EditorHeaderButton";
 import {Props as EditorHeaderSwitchProps} from "@/components/EditorHeaderSwitch";
 import {Props as EditorHeaderTitleProps} from "@/components/EditorHeaderTitle";
+import EditorHeaderToolkit from "@/components/EditorHeaderToolkit";
 
 const EditorHeaderButton = dynamic(
   () => import("@/components/EditorHeaderButton"),
@@ -66,6 +67,7 @@ export default function EditorHeader({
           <div className="lg:w-0 lg:flex-1">
             <EditorHeaderTitle title={title} namespaceId={namespaceId} />
           </div>
+          <EditorHeaderToolkit />
           <EditorHeaderSwitch status={status} />
           <EditorHeaderButton articleId={articleId} />
         </div>
