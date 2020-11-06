@@ -19,7 +19,16 @@ export default function useArticlesInfinite(
     namespaceId === "demo" ? null : query ? ["articles", query.spaceId] : null,
     getArticlesFetcher,
     {
+      errorRetryCount: 0,
+      errorRetryInterval: 0,
       initialData,
+      refreshInterval: 0,
+      refreshWhenHidden: false,
+      refreshWhenOffline: false,
+      revalidateOnFocus: false,
+      revalidateOnMount: false,
+      revalidateOnReconnect: false,
+      shouldRetryOnError: false,
     },
   );
 
