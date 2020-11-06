@@ -824,32 +824,32 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/react/-/react-1.6.19.tgz#fce0f2b802804258b67817550bf3186dde2b1bd6"
   integrity sha512-RS37Tagqyp2R0XFPoUZeSbZC5uJQRPhqOHWeT1LEwxESjMWb3VORHz7E827ldeQr3UW6VEQEyq/THegu+bLj6A==
 
-"@next/bundle-analyzer@^10.0.2-canary.1":
-  version "10.0.2-canary.1"
-  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-10.0.2-canary.1.tgz#e262644ccdd534f6b4f42c183d763bef74d2c3e7"
-  integrity sha512-eEVdx37BknkzXUoN22oq0VcQywm8rxEGghG69hlg9taVmJ371Q1mJFyUOe8xpfPCzzKKQRIhMSFW0IAZjyLwKQ==
+"@next/bundle-analyzer@^10.0.2-canary.2":
+  version "10.0.2-canary.2"
+  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-10.0.2-canary.2.tgz#5c9c6552ceb531a21cebf1a28600e0ea8a4ec27d"
+  integrity sha512-2g9oat9ulWrOnXd6H/Qs1Ek8NHOYRf5jwQiEldFHAhdlrnTD9oJ6oiFxNXVbm9Ap58ZSyOHPPtMe6+efyk7R2Q==
   dependencies:
     webpack-bundle-analyzer "3.6.1"
 
-"@next/env@10.0.2-canary.1":
-  version "10.0.2-canary.1"
-  resolved "https://registry.yarnpkg.com/@next/env/-/env-10.0.2-canary.1.tgz#e989f76f370ca8da50456255876457d00b4ee0ba"
-  integrity sha512-vzGAOOSWAwZ1ft89ZPXvxxqzHB6WkYcGjS1St+iY9pzhjnVbBroKelwdFqXUFaSLTJMsIiP+SFIa72uDKO7LYw==
+"@next/env@10.0.2-canary.2":
+  version "10.0.2-canary.2"
+  resolved "https://registry.yarnpkg.com/@next/env/-/env-10.0.2-canary.2.tgz#60c841f908cf383aee8353097084c22bc57c771b"
+  integrity sha512-HXGiGMm1JJGRiNaZaSSIjCqV/BXSrZ5fMDEsggkwmgfVlypsME5Hm9T5YKtfzMDTYAT8lpzOI0Yg+bEnpQliTQ==
 
-"@next/eslint-plugin-next@^10.0.2-canary.1":
-  version "10.0.2-canary.1"
-  resolved "https://registry.yarnpkg.com/@next/eslint-plugin-next/-/eslint-plugin-next-10.0.2-canary.1.tgz#008b3541ad80ed6104f6ba66dff463bf01bf4632"
-  integrity sha512-y1iPGzKoWrs1bvAPa+uSuEyW4/rgrzNbEIO+rM4+o1Us3w4G7lEy1xBezc2MCIhf3MQ/xOs+A/o3V2h/tceiUA==
+"@next/eslint-plugin-next@^10.0.2-canary.2":
+  version "10.0.2-canary.2"
+  resolved "https://registry.yarnpkg.com/@next/eslint-plugin-next/-/eslint-plugin-next-10.0.2-canary.2.tgz#292e4c5d6ade30e67b68fc6cf59fd564c7411f4b"
+  integrity sha512-KVZQyNKkMElL6N13jMoZtvVs/ZybJGixYUApC51ePXBZ37IAp6P2nbYyt+TFyRoSsxl9QsFK1kV+FdvBQyF2pg==
 
-"@next/polyfill-module@10.0.2-canary.1":
-  version "10.0.2-canary.1"
-  resolved "https://registry.yarnpkg.com/@next/polyfill-module/-/polyfill-module-10.0.2-canary.1.tgz#dcfda1079fc1e0ca59f04f3187a0c1facaa157bc"
-  integrity sha512-TJnAsfP+HvUzqP747EKQmNNYe8laMOucZj5qlQHoqzyTF5rE9UOMMoNT8qVMMnReLFHBZh4fl0z+GUGd/a+D/w==
+"@next/polyfill-module@10.0.2-canary.2":
+  version "10.0.2-canary.2"
+  resolved "https://registry.yarnpkg.com/@next/polyfill-module/-/polyfill-module-10.0.2-canary.2.tgz#12d9c6d47fdecfc29e69f7877162a0bbb3d444c0"
+  integrity sha512-UHnHi63SxvTIRdwfCl71kF+avRjlun+6arnmocnhi6xjG+U2ylwNmKSgDRnSUnGghC65RVttpTKRvUQwLR9fOA==
 
-"@next/react-dev-overlay@10.0.2-canary.1":
-  version "10.0.2-canary.1"
-  resolved "https://registry.yarnpkg.com/@next/react-dev-overlay/-/react-dev-overlay-10.0.2-canary.1.tgz#4a9c5ab443891aa05099ad533f615f06e999d005"
-  integrity sha512-ExkIwlpkkoL5+Ns41pOik2kDQ/6vW7bx3OvWUh2exUHwUKytwUDvjDOTBbRw896h8cC8bhYN/w0eYMlFLQ2TKw==
+"@next/react-dev-overlay@10.0.2-canary.2":
+  version "10.0.2-canary.2"
+  resolved "https://registry.yarnpkg.com/@next/react-dev-overlay/-/react-dev-overlay-10.0.2-canary.2.tgz#4e3ed97b0a70742e3f01d10c8b98d862ee024cb3"
+  integrity sha512-ajo7NTogW7O99Z8dMI+D3cNmOhwAlAhXZ/YR4/dSRBn0EOueirhmg8yAxOJfSEfnBUs62HeBBy4zMNd9BucRww==
   dependencies:
     "@babel/code-frame" "7.10.4"
     ally.js "1.4.1"
@@ -862,10 +862,10 @@
     stacktrace-parser "0.1.10"
     strip-ansi "6.0.0"
 
-"@next/react-refresh-utils@10.0.2-canary.1":
-  version "10.0.2-canary.1"
-  resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-10.0.2-canary.1.tgz#aae233a017d76e1e9834f287c1608062912ed400"
-  integrity sha512-A+ZInE/N5BBdAZmwTj4pmGgYuUZPVKoDJE8+KR2nICGsyEkoV6aMXln/w6pJR+x+CYgWJxfKXvLdxQQS8/Yh7A==
+"@next/react-refresh-utils@10.0.2-canary.2":
+  version "10.0.2-canary.2"
+  resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-10.0.2-canary.2.tgz#5f7f13c21fbf214a37c2baadae0d463262e3e269"
+  integrity sha512-MXuRvMXDk5lsz3iS6Le1rfhGh2nv3oNKROjVQGixsMc67NemCVK45aZKsbFKsy3zIOXhH+0OLuSUloW896n7Ig==
 
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
@@ -8984,18 +8984,18 @@ next-tick@~1.0.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
-next@^10.0.2-canary.1:
-  version "10.0.2-canary.1"
-  resolved "https://registry.yarnpkg.com/next/-/next-10.0.2-canary.1.tgz#6c690bcc777abb9ba5314e12c364a05d1455317f"
-  integrity sha512-KlUEPpk3QoHgScqektSO575PEkCFoSMT4OIcmab5FsD1bcYCSSnzmn6YQMvbIqL+PWtA4GduLblLd1LmcHSjeA==
+next@^10.0.2-canary.2:
+  version "10.0.2-canary.2"
+  resolved "https://registry.yarnpkg.com/next/-/next-10.0.2-canary.2.tgz#349b9cea7f060bf9c74f35b48b9e7e3256b0d097"
+  integrity sha512-O5cu6LLiZ660ieSOkpIii+0PYtH7KcMtFW0fCL8cVty8qt5fEvjs3lr7G912brfck/YBFk0bvfkJS2HcgvdsmA==
   dependencies:
     "@ampproject/toolbox-optimizer" "2.7.0-alpha.1"
     "@babel/runtime" "7.12.5"
     "@hapi/accept" "5.0.1"
-    "@next/env" "10.0.2-canary.1"
-    "@next/polyfill-module" "10.0.2-canary.1"
-    "@next/react-dev-overlay" "10.0.2-canary.1"
-    "@next/react-refresh-utils" "10.0.2-canary.1"
+    "@next/env" "10.0.2-canary.2"
+    "@next/polyfill-module" "10.0.2-canary.2"
+    "@next/react-dev-overlay" "10.0.2-canary.2"
+    "@next/react-refresh-utils" "10.0.2-canary.2"
     ast-types "0.13.2"
     babel-plugin-transform-define "2.0.0"
     babel-plugin-transform-react-remove-prop-types "0.4.24"
