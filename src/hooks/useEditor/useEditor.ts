@@ -20,21 +20,29 @@ export const editorTitleAtom = atom<string | undefined>({
   key: "editorTitle",
 });
 
+export const editorToolkitAtom = atom<boolean>({
+  default: false,
+  key: "editorToolkit",
+});
+
 export default function useEditor(): {
   editorArticleId: string | undefined;
   editorBody: string | undefined;
   editorSwitch: boolean;
   editorTitle: string | undefined;
+  editorToolkit: boolean;
 } {
   const editorArticleId = useRecoilValue(editorArticleIdAtom);
   const editorBody = useRecoilValue(editorBodyAtom);
   const editorSwitch = useRecoilValue(editorSwitchAtom);
   const editorTitle = useRecoilValue(editorTitleAtom);
+  const editorToolkit = useRecoilValue(editorToolkitAtom);
 
   return {
     editorArticleId,
     editorBody,
     editorSwitch,
     editorTitle,
+    editorToolkit,
   };
 }
