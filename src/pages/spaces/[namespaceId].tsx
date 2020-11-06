@@ -69,13 +69,13 @@ GetStaticPropsContext) => {
 
   return {
     redirect: {
-      destination: "https://sentrei.com",
+      destination: "/",
       permanent: false,
     },
   };
 };
 
-const Index = ({
+const NamespaceId = ({
   articles,
   space,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
@@ -88,4 +88,4 @@ const Index = ({
   );
 };
 
-export default Index;
+export default NamespaceId;

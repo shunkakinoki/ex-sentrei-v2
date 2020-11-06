@@ -2,8 +2,8 @@ import {NextPage} from "next";
 
 import DemoDashboardSettingsScreen from "@/components/DemoDashboardSettingsScreen";
 
-const DemoDashboardSettings: NextPage = () => {
+const Settings: NextPage = () => {
   return <DemoDashboardSettingsScreen />;
 };
 
-export default DemoDashboardSettings;
+export default Settings;

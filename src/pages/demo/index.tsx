@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   };
 };
 
-const Demo = ({
+const Index = ({
   articles,
   space,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
@@ -40,4 +40,4 @@ const Demo = ({
   );
 };
 
-export default Demo;
+export default Index;

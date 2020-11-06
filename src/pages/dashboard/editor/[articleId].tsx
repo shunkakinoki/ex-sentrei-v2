@@ -44,7 +44,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   };
 };
 
-const Slug = ({
+const ArticleId = ({
   article,
   articleId,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
@@ -57,4 +57,4 @@ const Slug = ({
   );
 };
 
-export default Slug;
+export default ArticleId;

@@ -2,8 +2,8 @@ import {NextPage} from "next";
 
 import DemoEditorScreen from "@/components/DemoEditorScreen";
 
-const Editor: NextPage = () => {
+const Index: NextPage = () => {
   return <DemoEditorScreen />;
 };
 
-export default Editor;
+export default Index;

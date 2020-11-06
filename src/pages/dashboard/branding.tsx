@@ -2,8 +2,8 @@ import {NextPage} from "next";
 
 import DashboardBrandingScreen from "@/components/DashboardBrandingScreen";
 
-const DashboardSettings: NextPage = () => {
+const Branding: NextPage = () => {
   return <DashboardBrandingScreen namespaceId="" />;
 };
 
-export default DashboardSettings;
+export default Branding;
