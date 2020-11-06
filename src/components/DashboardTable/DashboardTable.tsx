@@ -46,7 +46,7 @@ export default function DashboardTable({
   return (
     <>
       {swrArticles &&
-        swrArticles.map((article, index) => (
+        swrArticles.map(article => (
           <>
             <DashboardTableItem
               key={article.id}
@@ -58,9 +58,6 @@ export default function DashboardTable({
               id={article.id}
               updatedAt={article.updatedAt}
             />
-            {index !== articles.length - 1 && (
-              <div className="flex my-3 border-t border-gray-300 sm:my-6 lg:my-8" />
-            )}
           </>
         ))}
       {space?.articleCount && space.articleCount > 10 && (
