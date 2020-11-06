@@ -1,13 +1,16 @@
 import dynamic from "next/dynamic";
 import {useState, useEffect} from "react";
 import {toast} from "react-toastify";
+import {useSetRecoilState} from "recoil";
 
 import db from "@/firebase/db";
+import {storySwitchAtom} from "@/hooks/useStory";
 import {getArticlesSnapshot} from "@/services/Article";
 import Article from "@/types/Article";
 import {createArticles} from "@/utils/faker";
 
 export interface Props {
+  articleCount: number;
   articles: Article.Get[];
   namespaceId: string;
   spaceId: string;
@@ -19,9 +22,12 @@ const SpaceStoryCard = dynamic(() => import("@/components/SpaceStoryCard"), {
 
 export default function SpaceStoryGrid({
   articles: initialArticles,
+  articleCount,
   namespaceId,
   spaceId,
 }: Props): JSX.Element {
+  const setStorySwitch = useSetRecoilState(storySwitchAtom);
+
   const [articles, setArticles] = useState<Article.Get[]>(initialArticles);
   const [isPageBottom, setIsPageBottom] = useState(false);
   const [lastPath] = useState<string>(
@@ -33,6 +39,12 @@ export default function SpaceStoryGrid({
   const [loading, setLoading] = useState<boolean>(false);
 
   const shouldLoadMore = articles.length > 0 && articles.length % 6 === 0;
+
+  useEffect(() => {
+    if (articleCount < 3) {
+      setStorySwitch(false);
+    }
+  }, [articleCount, setStorySwitch]);
 
   useEffect(() => {
     function handleScroll() {

@@ -19,10 +19,12 @@ export interface Props
     | "spaceId"
   > {
   namespaceId: string;
-  variant: "small" | "medium" | "large";
+  noSwitch?: boolean;
+  variant: "small" | "medium";
 }
 
 export default function SpaceStoryCard({
+  noSwitch = false,
   id,
   image,
   namespaceId,
@@ -43,7 +45,7 @@ export default function SpaceStoryCard({
           {
             "md:w-1/2 lg:w-1/3": storySwitch && variant === "small",
             "md:w-1/2 lg:w-2/3": storySwitch && variant === "medium",
-            "md:w-full md:py-2": !storySwitch,
+            "md:w-full md:py-2": noSwitch && !storySwitch,
           },
         )}
       >

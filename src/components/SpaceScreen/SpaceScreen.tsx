@@ -32,6 +32,7 @@ export default function SpaceScreen({
       <SpaceStoryGrid
         articles={articles}
         namespaceId={namespaceId}
+        articleCount={space.articleCount}
         spaceId={space.id}
       />
       <FooterRoot />
