@@ -15,7 +15,7 @@ import Profile from "@/types/Profile";
 
 export type Props = Omit<
   ArticleScreenProps,
-  "authors" | "article" | "more" | "namespaceId"
+  "authors" | "article" | "moreArticles" | "namespaceId"
 > & {
   article: string;
   authors: string;
@@ -63,7 +63,7 @@ const Slug = ({
     <ArticleScreen
       article={JSON.parse(article) as Article.Get}
       authors={JSON.parse(authors) as Profile.Get[]}
-      more={[]}
+      moreArticles={[]}
       namespaceId=""
     />
   );
