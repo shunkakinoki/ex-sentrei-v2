@@ -1,3 +1,14 @@
+# [1.90.0](https://github.com/sentrei/sentrei/compare/v1.89.1...v1.90.0) (2020-11-06)
+
+### Features
+
+- 🎸 ini more articles ([83276e7](https://github.com/sentrei/sentrei/commit/83276e786b95fcc96e59dee4a90e5b2e0affaebc))
+- 🎸 ini no switch for story card ([29d4598](https://github.com/sentrei/sentrei/commit/29d459804709eb9f95b8b559c34eafeaf483ac1b))
+
+### Performance Improvements
+
+- ⚡️ refactor more articles ([70364f9](https://github.com/sentrei/sentrei/commit/70364f91d19fac4cc1623f15a5dcbc48f1ea59e2))
+
 ## [1.89.1](https://github.com/sentrei/sentrei/compare/v1.89.0...v1.89.1) (2020-11-06)
 
 ### Bug Fixes
