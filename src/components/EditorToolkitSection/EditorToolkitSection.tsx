@@ -47,9 +47,9 @@ export default function EditorToolkitSection(): JSX.Element {
   };
 
   return (
-    <div className="mt-5 md:mt-0 md:col-span-2 md:w-128">
+    <div className="mt-5 md:mt-0 md:col-span-2 sm:w-96 md:w-128 xl:w-192">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="shadow-lg sm:rounded-md sm:overflow-hidden">
+        <div className="shadow-2xl sm:rounded-md sm:overflow-hidden">
           <div className="px-4 pt-1 pb-3 bg-white ">
             <fieldset>
               <legend className="block text-sm font-medium leading-5 text-gray-700">
@@ -153,7 +153,7 @@ export default function EditorToolkitSection(): JSX.Element {
               <div className="flex-shrink-0">
                 <button
                   type="button"
-                  className="inline-flex justify-center px-4 py-2 text-sm font-medium leading-5 text-pink-400 transition duration-150 ease-in-out bg-white border border-pink-400 rounded-md hover:bg-pink-100 focus:outline-none focus:border-pink-700 focus:shadow-outline-pink active:bg-pink-700"
+                  className="inline-flex justify-center px-4 py-2 ml-3 text-sm font-medium leading-5 text-pink-400 transition duration-150 ease-in-out bg-white border border-pink-400 rounded-md hover:bg-pink-100 focus:outline-none focus:border-pink-700 focus:shadow-outline-pink active:bg-pink-700"
                   onClick={() => setEditorToolkit(false)}
                 >
                   Cancel

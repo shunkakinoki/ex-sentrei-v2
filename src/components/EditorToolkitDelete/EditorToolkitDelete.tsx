@@ -8,7 +8,7 @@ export default function EditorToolkitDelete(): JSX.Element {
   return (
     <div className="flex items-end justify-center text-center sm:block sm:p-0">
       <div
-        className="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:align-middle sm:max-w-lg sm:w-full"
+        className="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-2xl sm:align-middle sm:max-w-lg sm:w-full"
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-headline"
