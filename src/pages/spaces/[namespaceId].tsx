@@ -11,12 +11,14 @@ import {getAdminNamespace} from "@/servicesAdmin/Namespace";
 import {getAdminSpace} from "@/servicesAdmin/Space";
 import Article from "@/types/Article";
 import Space from "@/types/Space";
+import {createArticles, createSpace} from "@/utils/faker";
 
 export type Props = Omit<
   SpaceScreenProps,
   "articles" | "current" | "namespaceId" | "space" | "total"
 > & {
   articles: string;
+  namespaceId: string;
   space: string;
 };
 
@@ -35,12 +37,24 @@ GetStaticPropsContext) => {
   try {
     const namespaceId = String(params?.namespaceId);
 
+    if (namespaceId === "demo") {
+      const articles = createArticles();
+      const space = createSpace();
+
+      return {
+        props: {
+          articles: JSON.stringify(articles),
+          namespaceId: JSON.stringify("demo"),
+          space: JSON.stringify(space),
+        },
+      };
+    }
+
     const namespace = await getAdminNamespace(namespaceId);
 
     if (!namespace?.modelId) {
       throw new Error(`No modelId in namespace ${namespaceId}`);
     }
-
     if (namespace.model === "profiles") {
       return {
         notFound: true,
@@ -59,6 +73,7 @@ GetStaticPropsContext) => {
     return {
       props: {
         articles: JSON.stringify(articles),
+        namespaceId: JSON.stringify("demo"),
         space: JSON.stringify(space),
       },
     };
@@ -77,13 +92,14 @@ GetStaticPropsContext) => {
 
 const NamespaceId = ({
   articles,
+  namespaceId,
   space,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <SpaceScreen
       articles={JSON.parse(articles) as Article.Get[]}
+      namespaceId={JSON.parse(namespaceId) as string}
       space={JSON.parse(space) as Space.Get}
-      namespaceId=""
     />
   );
 };

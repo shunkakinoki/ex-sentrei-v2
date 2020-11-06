@@ -17,6 +17,7 @@ export type Props = Omit<
   "articles" | "current" | "namespaceId" | "space" | "total"
 > & {
   articles: string;
+  namespaceId: string;
   space: string;
 };
 
@@ -49,6 +50,7 @@ GetServerSidePropsContext) => {
     return {
       props: {
         articles: JSON.stringify(articles),
+        namespaceId: JSON.stringify("demo"),
         space: JSON.stringify(space),
       },
     };
@@ -87,6 +89,7 @@ GetServerSidePropsContext) => {
     return {
       props: {
         articles: JSON.stringify(articles),
+        namespaceId: JSON.stringify(""),
         space: JSON.stringify(space),
       },
     };
@@ -106,12 +109,13 @@ GetServerSidePropsContext) => {
 const Index = ({
   articles,
   space,
+  namespaceId,
 }: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element => {
   return (
     <SpaceScreen
       articles={JSON.parse(articles) as Article.Get[]}
       space={JSON.parse(space) as Space.Get}
-      namespaceId=""
+      namespaceId={JSON.parse(namespaceId) as string}
     />
   );
 };

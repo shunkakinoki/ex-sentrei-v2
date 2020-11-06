@@ -2,8 +2,7 @@ rules_version = "2";
 service cloud.firestore {
   match /databases/{database}/documents {
     match /articles/{articleId} {
-      allow get:
-        if request.auth.uid != null;
+      allow get;
       allow create:
         if request.auth.uid != null
         && request.resource.data.body is string
@@ -32,9 +31,7 @@ service cloud.firestore {
         && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.image == request.resource.data.updatedBy.image
         && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.namespaceId == request.resource.data.updatedBy.namespaceId
         && request.resource.data.updatedByUid == request.auth.uid;
-      allow list:
-        if request.auth.uid != null
-        && request.query.limit <= 30;
+      allow list;
       allow delete:
         if false;
     }
