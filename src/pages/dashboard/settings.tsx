@@ -2,8 +2,8 @@ import {NextPage} from "next";
 
 import DashboardSettingsScreen from "@/components/DashboardSettingsScreen";
 
-const DashboardSettings: NextPage = () => {
+const Settings: NextPage = () => {
   return <DashboardSettingsScreen namespaceId="" />;
 };
 
-export default DashboardSettings;
+export default Settings;

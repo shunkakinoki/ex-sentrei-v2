@@ -2,8 +2,8 @@ import {NextPage} from "next";
 
 import ProfileScreen from "@/components/ProfileScreen";
 
-const Profile: NextPage = () => {
+const Slug: NextPage = () => {
   return <ProfileScreen />;
 };
 
-export default Profile;
+export default Slug;

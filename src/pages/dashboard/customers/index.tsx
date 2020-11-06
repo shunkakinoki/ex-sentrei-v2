@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   };
 };
 
-const Dashboard = ({
+const Index = ({
   customers,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
@@ -39,4 +39,4 @@ const Dashboard = ({
   );
 };
 
-export default Dashboard;
+export default Index;

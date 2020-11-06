@@ -29,10 +29,10 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   };
 };
 
-const Demo = ({
+const ArticleId = ({
   article,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return <DemoEditorScreen article={JSON.parse(article) as Article.Get} />;
 };
 
-export default Demo;
+export default ArticleId;

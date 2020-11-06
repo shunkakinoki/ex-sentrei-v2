@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import ContainerRoot from "@/components/ContainerRoot";
 import FooterRoot from "@/components/FooterRoot";
 import HeaderRoot from "@/components/HeaderRoot";
-import SpaceHero, {Props as SpaceHeroProps} from "@/components/SpaceHero";
+import SpaceHero from "@/components/SpaceHero";
 import {Props as SpaceStoryGridProps} from "@/components/SpaceStoryGrid";
 import Space from "@/types/Space";
 
