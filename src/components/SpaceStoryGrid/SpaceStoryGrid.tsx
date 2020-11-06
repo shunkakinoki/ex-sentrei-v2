@@ -1,12 +1,12 @@
 import dynamic from "next/dynamic";
 
 import useArticlesInfinite from "@/hooks/useArticlesInfinite";
-import useAuth from "@/hooks/useAuth";
 import Article from "@/types/Article";
 
 export interface Props {
   articles: Article.Get[];
   namespaceId: string;
+  spaceId: string;
 }
 
 const SpaceStoryCard = dynamic(() => import("@/components/SpaceStoryCard"), {
@@ -16,12 +16,12 @@ const SpaceStoryCard = dynamic(() => import("@/components/SpaceStoryCard"), {
 export default function SpaceStoryGrid({
   articles,
   namespaceId,
+  spaceId,
 }: Props): JSX.Element {
-  const {authState} = useAuth();
   const {articles: swrArticles} = useArticlesInfinite(
     namespaceId,
     {
-      spaceId: authState?.uid ?? "",
+      spaceId,
       startAfter: undefined,
       status: "published",
     },
@@ -35,7 +35,7 @@ export default function SpaceStoryGrid({
           swrArticles.map((article, index) => {
             return (
               <SpaceStoryCard
-                key={article.uid}
+                key={article.id}
                 updatedAt={article.updatedAt}
                 image={article.image}
                 pricing={article.pricing}
@@ -44,7 +44,7 @@ export default function SpaceStoryGrid({
                 subtitle={article.subtitle}
                 status={article.status}
                 namespaceId={namespaceId}
-                uid={article.uid}
+                id={article.id}
                 variant={
                   index % 4 === 0 || index % 4 === 3 ? "small" : "medium"
                 }

@@ -49,13 +49,13 @@ export default function DashboardTable({
         swrArticles.map((article, index) => (
           <>
             <DashboardTableItem
-              key={article.uid}
+              key={article.id}
               title={article.title}
               subtitle={article.subtitle}
               pricing={article.pricing}
               status={article.status}
               namespaceId={namespaceId}
-              uid={article.uid}
+              id={article.id}
               updatedAt={article.updatedAt}
             />
             {index !== articles.length - 1 && (

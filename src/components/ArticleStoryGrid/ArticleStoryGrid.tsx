@@ -25,7 +25,7 @@ export default function ArticleStoryGrid({
         {articles.map((article, index) => {
           return (
             <SpaceStoryCard
-              key={article.uid}
+              key={article.id}
               updatedAt={article.updatedAt}
               image={article.image}
               pricing={article.pricing}
@@ -34,7 +34,7 @@ export default function ArticleStoryGrid({
               subtitle={article.subtitle}
               status={article.status}
               namespaceId={namespaceId}
-              uid={article.uid}
+              id={article.id}
               variant={index % 4 === 0 || index % 4 === 3 ? "small" : "medium"}
             />
           );

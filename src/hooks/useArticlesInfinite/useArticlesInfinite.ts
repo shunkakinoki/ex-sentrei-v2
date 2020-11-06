@@ -2,30 +2,17 @@ import useSWR from "swr";
 
 import {getArticles} from "@/services/Article";
 import Article, {ArticleQuery} from "@/types/Article";
-import {createArticles} from "@/utils/faker";
 
 const getArticlesFetcher = async (
   _: string,
   spaceId: string,
-  status: "published" | "preview",
-  startAfter?: string,
+  start: number,
+  end: number,
 ) => {
-  if (startAfter) {
-    const startAfterShot = JSON.parse(
-      startAfter,
-    ) as firebase.default.firestore.DocumentSnapshot;
-    return getArticles({
-      limit: 6,
-      spaceId,
-      startAfter: startAfterShot,
-      status,
-    });
-  }
-
-  return getArticles({limit: 6, spaceId, startAfter: undefined, status});
+  return getArticles({end, spaceId, start});
 };
 
-export default function useArticles(
+export default function useArticlesInfinite(
   namespaceId: string,
   query: ArticleQuery,
   initialData?: Article.Get[],
@@ -35,17 +22,23 @@ export default function useArticles(
   const {data: articles} = useSWR(
     // eslint-disable-next-line no-nested-ternary
     namespaceId === "demo"
-      ? JSON.stringify(query.startAfter)
+      ? null
       : query
-      ? [
-          "articles",
-          query.spaceId,
-          JSON.stringify(query.startAfter),
-          query.status,
-        ]
+      ? ["articles", query.spaceId, query.start, query.end]
       : null,
-    namespaceId === "demo" ? createArticles : getArticlesFetcher,
-    {initialData},
+    getArticlesFetcher,
+    {
+      errorRetryCount: 0,
+      errorRetryInterval: 0,
+      initialData,
+      refreshInterval: 0,
+      refreshWhenHidden: false,
+      refreshWhenOffline: false,
+      revalidateOnFocus: false,
+      revalidateOnMount: false,
+      revalidateOnReconnect: false,
+      shouldRetryOnError: false,
+    },
   );
 
   return {articles};

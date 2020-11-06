@@ -11,7 +11,7 @@ export const serializeArticle = (
   return {
     ...data,
     createdAt: serializeFirebaseDate(data.createdAt),
-    uid: snap.id,
+    id: snap.id,
     updatedAt: serializeFirebaseDate(data.updatedAt),
   };
 };
@@ -24,7 +24,7 @@ export const serializeAdminArticle = (
   return {
     ...data,
     createdAt: serializeFirebaseDate(data.createdAt),
-    uid: snap.id,
+    id: snap.id,
     updatedAt: serializeFirebaseDate(data.updatedAt),
   };
 };

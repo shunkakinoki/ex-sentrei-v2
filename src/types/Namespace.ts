@@ -14,7 +14,7 @@ declare namespace Namespace {
   export type Update = Partial<Fields>;
 
   export interface Get extends Response {
-    uid: string;
+    id: string;
   }
 
   export interface Snapshot extends Get {

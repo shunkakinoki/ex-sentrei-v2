@@ -132,6 +132,7 @@ export const createArticle = (): Article.Get => {
     createdBy: createAuthor(),
     createdByUid: faker.random.uuid(),
     excerpt: createMarkdown(1),
+    id: faker.random.uuid(),
     image: `${faker.image.image()}?random=${Date.now()}`.replace(
       "http",
       "https",
@@ -143,7 +144,6 @@ export const createArticle = (): Article.Get => {
     subtitle: faker.lorem.sentences(Math.floor(Math.random() * 11)),
     time: Math.floor(Math.random() * 10 + 3),
     title: faker.lorem.lines(Math.floor(Math.random() * 1 + 1)),
-    uid: faker.random.uuid(),
     updatedAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
     updatedBy: createAuthor(),
     updatedByUid: faker.random.uuid(),
@@ -162,6 +162,7 @@ export const createSpace = (): Space.Get => {
     createdByUid: faker.random.uuid(),
     customerCount: 300,
     description: faker.lorem.sentences(Math.floor(Math.random() * 3) + 1),
+    id: faker.random.uuid(),
     image: `${faker.image.image()}?random=${Date.now()}`.replace(
       "http",
       "https",
@@ -170,7 +171,6 @@ export const createSpace = (): Space.Get => {
     namespaceId: faker.lorem.slug(),
     plan: "free",
     title: faker.lorem.sentences(Math.floor(Math.random() * 3) + 1),
-    uid: faker.random.uuid(),
     updatedAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
     updatedBy: createAuthor(),
     updatedByUid: faker.random.uuid(),

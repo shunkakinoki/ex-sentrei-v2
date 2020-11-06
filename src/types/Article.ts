@@ -42,7 +42,7 @@ declare namespace Article {
   export interface Update extends Partial<EditableFields>, Metadata.Update {}
 
   export interface Get extends Fields, Metadata.Get {
-    uid: string;
+    id: string;
   }
 
   export interface Snapshot extends Get {
