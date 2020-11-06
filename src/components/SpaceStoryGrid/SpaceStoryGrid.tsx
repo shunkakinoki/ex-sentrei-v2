@@ -1,6 +1,9 @@
 import dynamic from "next/dynamic";
+import {useState, useEffect} from "react";
 
+import db from "@/firebase/db";
 import useArticlesInfinite from "@/hooks/useArticlesInfinite";
+import {getArticlesSnapshot} from "@/services/Article";
 import Article from "@/types/Article";
 
 export interface Props {
@@ -18,6 +21,13 @@ export default function SpaceStoryGrid({
   namespaceId,
   spaceId,
 }: Props): JSX.Element {
+  const [lastPath] = useState<string>(
+    `articles/${articles[articles.length - 1].id}`,
+  );
+  const [lastItem, setLastItem] = useState<
+    firebase.default.firestore.DocumentSnapshot
+  >();
+
   const {articles: swrArticles} = useArticlesInfinite(
     namespaceId,
     {
@@ -27,6 +37,19 @@ export default function SpaceStoryGrid({
     },
     articles,
   );
+
+  useEffect(() => {
+    // eslint-disable-next-line no-void
+    void db.doc(lastPath).get().then(setLastItem);
+  }, [lastPath]);
+
+  const handleClick = (): void => {
+    // eslint-disable-next-line no-void
+    void getArticlesSnapshot({startAfter: lastItem, spaceId}).then(res => {
+      const last = res[res.length - 1];
+      setLastItem(last.snap);
+    });
+  };
 
   return (
     <section className="mt-8 mb-16 sm:mt-16 md:mb-12 lg:mb-20">
@@ -51,6 +74,15 @@ export default function SpaceStoryGrid({
               />
             );
           })}
+      </div>
+      <div className="flex justify-center">
+        <button
+          type="button"
+          className="px-4 py-2 font-bold text-white bg-pink-500 rounded-full hover:bg-pink-700"
+          onClick={handleClick}
+        >
+          Load More
+        </button>
       </div>
     </section>
   );
