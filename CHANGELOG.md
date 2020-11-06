@@ -1,3 +1,20 @@
+# [1.88.0](https://github.com/sentrei/sentrei/compare/v1.87.1...v1.88.0) (2020-11-06)
+
+### Features
+
+- 🎸 ini article infinite ([d39e262](https://github.com/sentrei/sentrei/commit/d39e2624fcc0720fb124bc35c3f7fa0742973da4))
+- 🎸 ini articles infinite custom swr hook ([2e0dfad](https://github.com/sentrei/sentrei/commit/2e0dfada213acdc34a9b3fc1f4dd280765704f00))
+- 🎸 ini id model ([a91270c](https://github.com/sentrei/sentrei/commit/a91270c0fe6d41d0618ed66d8c2fc4c2798978b2))
+- 🎸 ini infinite scroll ([f3f4cb0](https://github.com/sentrei/sentrei/commit/f3f4cb01a7cf0549776323e360bb1635a23f9839))
+
+### Performance Improvements
+
+- ⚡️ ini faker infinite ([0f81582](https://github.com/sentrei/sentrei/commit/0f81582081df1aa7e30da1e4423401c1639a7b23))
+- ⚡️ ini infinite fetch ([f1f0751](https://github.com/sentrei/sentrei/commit/f1f07515eee865deb952b67141803b6018097a27))
+- ⚡️ update snapshot type ([268d5ff](https://github.com/sentrei/sentrei/commit/268d5ff88854bd22bf54a3b8badc8dc6633e12fe))
+- ⚡️ upgrade next canary ([d5ee837](https://github.com/sentrei/sentrei/commit/d5ee837fb1851323c937ff1f9fb9e6cd20bf6411))
+- ⚡️ upgrade w/ ncu ([6233f2a](https://github.com/sentrei/sentrei/commit/6233f2a30b1a46b5d23d1a90303efa976072ee63))
+
 ## [1.87.1](https://github.com/sentrei/sentrei/compare/v1.87.0...v1.87.1) (2020-11-05)
 
 ### Performance Improvements
