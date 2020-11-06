@@ -1,3 +1,16 @@
+# [1.91.0](https://github.com/sentrei/sentrei/compare/v1.90.0...v1.91.0) (2020-11-06)
+
+### Features
+
+- 🎸 ini no switch ([f49419c](https://github.com/sentrei/sentrei/commit/f49419c7c4a061e6d1a34182f4aa4fd5d379ade4))
+
+### Performance Improvements
+
+- ⚡️ refactor dashboard table ([483cbb0](https://github.com/sentrei/sentrei/commit/483cbb04386d9ca8293bbaee9a5a140f25900632))
+- ⚡️ refactor space namespace ([72a4cd0](https://github.com/sentrei/sentrei/commit/72a4cd0ef95cc3d88db06e208abd971d5f879d0c))
+- ⚡️ refactor table item ([03604ab](https://github.com/sentrei/sentrei/commit/03604ab897c9a1bdd9d06dda8541bcb6b550c0eb))
+- ⚡️ upgrade with ncu ([5f1321b](https://github.com/sentrei/sentrei/commit/5f1321b818349bd8a3cc4a1f84d59102966d6712))
+
 # [1.90.0](https://github.com/sentrei/sentrei/compare/v1.89.1...v1.90.0) (2020-11-06)
 
 ### Features
