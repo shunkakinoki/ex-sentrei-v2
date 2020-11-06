@@ -94,3 +94,7 @@ export const updateArticle = (
 ): Promise<void> => {
   return db.doc(`articles/${articleId}`).update(article);
 };
+
+export const deleteArticle = (articleId: string): Promise<void> => {
+  return db.doc(`articles/${articleId}`).delete();
+};

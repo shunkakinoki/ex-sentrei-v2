@@ -33,7 +33,7 @@ service cloud.firestore {
         && request.resource.data.updatedByUid == request.auth.uid;
       allow list;
       allow delete:
-        if false;
+        if request.auth.uid != null;
     }
     match /profiles/{profileId} {
       allow get;

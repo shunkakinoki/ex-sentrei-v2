@@ -1,9 +1,26 @@
+import {useRouter} from "next/router";
+import {toast} from "react-toastify";
 import {useSetRecoilState} from "recoil";
 
-import {editorDeleteAtom} from "@/hooks/useEditor";
+import useEditor, {editorDeleteAtom} from "@/hooks/useEditor";
+import {deleteArticle} from "@/services/Article";
 
 export default function EditorToolkitDelete(): JSX.Element {
+  const router = useRouter();
+  const {editorArticleId} = useEditor();
+
   const setEditorDelete = useSetRecoilState(editorDeleteAtom);
+
+  const handleClick = (): void => {
+    if (editorArticleId === "" || editorArticleId === undefined) {
+      toast.error("Article doesn't exist yet! Please save to continue");
+      return;
+    }
+    // eslint-disable-next-line no-void
+    void deleteArticle(editorArticleId);
+    // eslint-disable-next-line no-void
+    void router.push("/dashboard");
+  };
 
   return (
     <div className="flex items-end justify-center text-center sm:block sm:p-0">
@@ -52,6 +69,7 @@ export default function EditorToolkitDelete(): JSX.Element {
             <button
               type="button"
               className="inline-flex justify-center w-full px-4 py-2 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-red-600 border border-transparent rounded-md shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red sm:text-sm sm:leading-5"
+              onClick={handleClick}
             >
               Delete
             </button>
