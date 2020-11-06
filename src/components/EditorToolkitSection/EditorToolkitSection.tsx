@@ -63,7 +63,7 @@ export default function EditorToolkitSection(): JSX.Element {
                   <input
                     ref={register}
                     id="pricing_subscription"
-                    name="app"
+                    name="pricing"
                     value="subscription"
                     type="radio"
                     className="w-4 h-4 text-pink-600 transition duration-150 ease-in-out form-radio"
