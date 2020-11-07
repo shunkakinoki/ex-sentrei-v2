@@ -1,3 +1,14 @@
+# [1.94.0](https://github.com/sentrei/sentrei/compare/v1.93.1...v1.94.0) (2020-11-07)
+
+### Features
+
+- 🎸 ini landing faq ([b65db27](https://github.com/sentrei/sentrei/commit/b65db27e8d9203854c648cd80db980a8799ae62d))
+
+### Performance Improvements
+
+- ⚡️ refactor landing feature ([3d5a720](https://github.com/sentrei/sentrei/commit/3d5a7201cfc677637219ee9d96563590b73eb0a0))
+- ⚡️ refactor loving delightful ([8d41deb](https://github.com/sentrei/sentrei/commit/8d41deb696dc2add04c8aeeae63e9df200214dcb))
+
 ## [1.93.1](https://github.com/sentrei/sentrei/compare/v1.93.0...v1.93.1) (2020-11-07)
 
 ### Performance Improvements
