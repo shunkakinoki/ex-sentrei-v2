@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function LandingFaq(): JSX.Element {
   return (
-    <section className="container max-w-screen-xl px-4 py-24 mx-auto">
+    <section className="container max-w-screen-xl px-4 pt-12 pb-8 mx-auto">
       <div className="lg:text-center">
         <p className="text-base font-semibold leading-6 tracking-wide text-pink-600 uppercase">
           FAQ
