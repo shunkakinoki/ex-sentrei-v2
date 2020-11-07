@@ -1,3 +1,17 @@
+# [1.93.0](https://github.com/sentrei/sentrei/compare/v1.92.0...v1.93.0) (2020-11-07)
+
+### Features
+
+- 🎸 ini editor toolkit ([64891bf](https://github.com/sentrei/sentrei/commit/64891bfb4199e9501a26342ea0e30c1eb038c1f9))
+
+### Performance Improvements
+
+- ⚡️ ini article id for editor hook ([0c995cd](https://github.com/sentrei/sentrei/commit/0c995cd71b56b368a09157d12d5f08333f1b43e6))
+- ⚡️ ini delete form ([9d86b63](https://github.com/sentrei/sentrei/commit/9d86b637cf91abbcae7e6752ee703563dca85ce1))
+- ⚡️ ini pricing field ([e6aed42](https://github.com/sentrei/sentrei/commit/e6aed42812a67b371d91ad61c5a905c5a2f699a7))
+- ⚡️ ini save subtitle and pricing fields ([f859a0d](https://github.com/sentrei/sentrei/commit/f859a0d659cf4c507247b1bd30a34fa204ad6db7))
+- ⚡️ update textarea 3 ([2e0976f](https://github.com/sentrei/sentrei/commit/2e0976f4a2a32490af8909896cb5c47833c729cf))
+
 # [1.92.0](https://github.com/sentrei/sentrei/compare/v1.91.0...v1.92.0) (2020-11-06)
 
 ### Features
