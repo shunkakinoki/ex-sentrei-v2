@@ -21,7 +21,7 @@ export default function LandingFaq(): JSX.Element {
           </h5>
           <p className="text-base leading-6 text-gray-500">
             Sentrei is a writing platform that devotes itself to being not evil,
-            and being fair to both readers and writers.
+            being fair to both readers and writers.
           </p>
           <h5 className="mt-10 mb-3 font-semibold text-gray-900">
             Is Sentrei really free forever?
