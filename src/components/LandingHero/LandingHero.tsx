@@ -37,17 +37,45 @@ export default function LandingHero(): JSX.Element {
             .
           </p>
           <div className="mt-5 sm:mt-8 sm:flex sm:justify-center">
-            <div className="rounded-md shadow">
+            <div className="rounded-md group">
               <Link href="/signup">
-                <a className="flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-pink-500 border border-transparent rounded-md shadow-md md:shadow-lg hover:bg-pink-400 focus:outline-none focus:border-pink-300 focus:shadow-outline-pink md:py-4 md:text-lg md:px-10 hover:shadow-xl">
+                <a className="flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-pink-500 border border-transparent rounded-md shadow-md md:shadow-lg group-hover:bg-pink-400 focus:outline-none focus:border-pink-300 focus:shadow-outline-pink md:py-4 md:text-lg md:px-10 group-hover:shadow-xl">
                   Start free
+                  <svg
+                    className="w-5 h-5 ml-1 "
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
                 </a>
               </Link>
             </div>
-            <div className="mt-3 sm:mt-0 sm:ml-3">
+            <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 group">
               <Link href="/demo">
-                <a className="flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 text-pink-800 transition duration-150 ease-in-out bg-pink-100 border border-transparent rounded-md shadow-md md:shadow-lg hover:text-pink-500 hover:bg-pink-200 focus:outline-none focus:shadow-outline-pink focus:border-pink-300 md:py-4 md:text-lg md:px-10 hover:shadow-xl">
+                <a className="flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 text-pink-800 transition duration-150 ease-in-out bg-pink-100 border border-transparent rounded-md shadow-md md:shadow-lg group-hover:text-pink-500 group-hover:bg-pink-200 focus:outline-none focus:shadow-outline-pink focus:border-pink-300 md:py-4 md:text-lg md:px-10 group-hover:shadow-xl">
                   Live demo
+                  <svg
+                    className="w-5 h-5 ml-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
+                    />
+                  </svg>
                 </a>
               </Link>
             </div>
