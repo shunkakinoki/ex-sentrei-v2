@@ -10,7 +10,7 @@ export default function LandingHero(): JSX.Element {
           <h2 className="text-4xl font-extrabold leading-10 tracking-tight text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
             The most{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-              loving
+              delightful
             </span>
             <br className="hidden sm:block" /> writing platform for <br />
             <LandingHeroTyped
