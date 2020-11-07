@@ -17,7 +17,7 @@ export default function LandingHero(): JSX.Element {
               text={["blogging.", "journalism.", "newsletters."]}
             />
           </h2>
-          <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl md:max-w-3xl lg:max-w-4xl">
+          <p className="mt-3 text-base text-gray-500 sm:mt-4 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl md:max-w-3xl lg:max-w-4xl">
             We charge{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
               zero commissions{" "}
@@ -36,7 +36,7 @@ export default function LandingHero(): JSX.Element {
             </span>
             .
           </p>
-          <div className="mt-5 sm:mt-8 sm:flex sm:justify-center">
+          <div className="mt-5 sm:mt-6 sm:flex sm:justify-center">
             <div className="rounded-md group">
               <Link href="/signup">
                 <a className="flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-pink-500 border border-transparent rounded-md shadow-md md:shadow-lg group-hover:bg-pink-400 focus:outline-none focus:border-pink-300 focus:shadow-outline-pink md:py-4 md:text-lg md:px-10 group-hover:shadow-xl">
@@ -78,6 +78,56 @@ export default function LandingHero(): JSX.Element {
                   </svg>
                 </a>
               </Link>
+            </div>
+          </div>
+          <div className="flex flex-col justify-start mt-3 mb-3 space-x-0 space-y-2 text-xs font-medium text-gray-600 md:mt-5 md:flex-row md:justify-center md:space-x-8 md:space-y-0">
+            <div className="flex items-center ">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentcolor"
+                className="w-4 h-4 mr-1 text-green-400"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414.0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414.0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <p className="text-base leading-7 text-gray-500 lg:mx-auto">
+                Forever free to start
+              </p>
+            </div>
+            <div className="flex items-center">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentcolor"
+                className="w-4 h-4 mr-1 text-green-400"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414.0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414.0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <p className="text-base leading-7 text-gray-500 lg:mx-auto">
+                Write in markdown
+              </p>
+            </div>
+            <div className="flex items-center">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentcolor"
+                className="w-4 h-4 mr-1 text-green-400"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414.0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414.0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <p className="text-base leading-7 text-gray-500 lg:mx-auto">
+                Zero commissions
+              </p>
             </div>
           </div>
         </div>
