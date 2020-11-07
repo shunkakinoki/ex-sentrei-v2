@@ -4,7 +4,7 @@ export default function LandingFeature(): JSX.Element {
       <div className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <p className="text-base font-semibold leading-6 tracking-wide text-pink-600 uppercase">
-            Start your Sentrei journey
+            Explore the Sentrei Way
           </p>
           <h3 className="mt-2 text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
             Engage with your audience like it&apos;s 2020.
