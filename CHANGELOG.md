@@ -1,3 +1,11 @@
+## [1.93.1](https://github.com/sentrei/sentrei/compare/v1.93.0...v1.93.1) (2020-11-07)
+
+### Performance Improvements
+
+- ⚡️ ini hero checks ([79e5e8a](https://github.com/sentrei/sentrei/commit/79e5e8afb4ddd40c419bdbeca38034c2334db92f))
+- ⚡️ ini icons demo ([39ab52a](https://github.com/sentrei/sentrei/commit/39ab52a52de85b712f9fb2dc8ebaafd55304059d))
+- ⚡️ ini icons hero ([af2b04c](https://github.com/sentrei/sentrei/commit/af2b04c521a85a5e4ea59909c415621e3fe941f7))
+
 # [1.93.0](https://github.com/sentrei/sentrei/compare/v1.92.0...v1.93.0) (2020-11-07)
 
 ### Features
