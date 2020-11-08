@@ -1,3 +1,15 @@
+# [1.95.0](https://github.com/sentrei/sentrei/compare/v1.94.0...v1.95.0) (2020-11-08)
+
+### Features
+
+- 🎸 ini next seo ([1d78e66](https://github.com/sentrei/sentrei/commit/1d78e6610973f6e778e114eb762c10f5845f596b))
+
+### Performance Improvements
+
+- ⚡️ refactor seo details ([1092759](https://github.com/sentrei/sentrei/commit/109275955c82203e2b60950c13ab527e8af95fc4))
+- ⚡️ upgrace w/ ncu ([13b317c](https://github.com/sentrei/sentrei/commit/13b317cc873b98b872dbd1dab757e94f6b600041))
+- ⚡️ upgrade core canary ([56c9e9b](https://github.com/sentrei/sentrei/commit/56c9e9b74c99d845ac1aaf52b10c881b4a18a7f1))
+
 # [1.94.0](https://github.com/sentrei/sentrei/compare/v1.93.1...v1.94.0) (2020-11-07)
 
 ### Features
