@@ -6,6 +6,7 @@ import {Props as AuthFormProps} from "@/components/AuthForm";
 import ContainerCenter from "@/components/ContainerCenter";
 import ContainerRoot from "@/components/ContainerRoot";
 import HeaderRoot from "@/components/HeaderRoot";
+import SeoApp from "@/components/SeoApp";
 import useAuth from "@/hooks/useAuth";
 
 const AuthForm = dynamic(() => import("@/components/AuthForm"), {ssr: false});
@@ -27,11 +28,23 @@ export default function AuthScreen({type}: Props): JSX.Element {
   }, [router, isLoggedIn]);
 
   return (
-    <ContainerRoot>
-      <HeaderRoot />
-      <ContainerCenter>
-        <AuthForm type={type} />
-      </ContainerCenter>
-    </ContainerRoot>
+    <>
+      <SeoApp
+        title={
+          // eslint-disable-next-line no-nested-ternary
+          type === "login"
+            ? "Login"
+            : type === "signup"
+            ? "Sign Up"
+            : "Reset Password"
+        }
+      />
+      <ContainerRoot>
+        <HeaderRoot />
+        <ContainerCenter>
+          <AuthForm type={type} />
+        </ContainerCenter>
+      </ContainerRoot>
+    </>
   );
 }

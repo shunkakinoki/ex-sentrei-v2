@@ -6,6 +6,7 @@ import DashboardCustomersTable, {
   Props as DashboardCustomersTableProps,
 } from "@/components/DashboardCustomersTable";
 import HeaderRoot from "@/components/HeaderRoot";
+import SeoApp from "@/components/SeoApp";
 import Customer from "@/types/Customer";
 
 export interface Props
@@ -21,16 +22,19 @@ export default function DashboardCustomersScreen({
   total,
 }: Props): JSX.Element {
   return (
-    <ContainerRoot>
-      <HeaderRoot />
-      <ContainerDashboard type="customers" namespaceId={namespaceId}>
-        <DashboardCustomersTable
-          customers={customers}
-          current={current}
-          total={total}
-          namespaceId={namespaceId}
-        />
-      </ContainerDashboard>
-    </ContainerRoot>
+    <>
+      <SeoApp title="Customers" />
+      <ContainerRoot>
+        <HeaderRoot />
+        <ContainerDashboard type="customers" namespaceId={namespaceId}>
+          <DashboardCustomersTable
+            customers={customers}
+            current={current}
+            total={total}
+            namespaceId={namespaceId}
+          />
+        </ContainerDashboard>
+      </ContainerRoot>
+    </>
   );
 }
