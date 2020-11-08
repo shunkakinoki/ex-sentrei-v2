@@ -4,6 +4,7 @@ import ContainerDashboard from "@/components/ContainerDashboard";
 import ContainerRoot from "@/components/ContainerRoot";
 import {Props as DashboardTableProps} from "@/components/DashboardTable";
 import HeaderRoot from "@/components/HeaderRoot";
+import SeoApp from "@/components/SeoApp";
 import Article from "@/types/Article";
 
 const DashboardTable = dynamic(() => import("@/components/DashboardTable"), {
@@ -21,18 +22,21 @@ export default function DashboardScreen({
   namespaceId,
 }: Props): JSX.Element {
   return (
-    <ContainerRoot>
-      <HeaderRoot />
-      <ContainerDashboard type="articles" namespaceId={namespaceId}>
-        <div className="container my-6 sm:mx-3 md:mx-6 md:mt-10">
-          <DashboardTable
-            articles={articles}
-            current={current}
-            total={total}
-            namespaceId={namespaceId}
-          />
-        </div>
-      </ContainerDashboard>
-    </ContainerRoot>
+    <>
+      <SeoApp title="Dashboard" />
+      <ContainerRoot>
+        <HeaderRoot />
+        <ContainerDashboard type="articles" namespaceId={namespaceId}>
+          <div className="container my-6 sm:mx-3 md:mx-6 md:mt-10">
+            <DashboardTable
+              articles={articles}
+              current={current}
+              total={total}
+              namespaceId={namespaceId}
+            />
+          </div>
+        </ContainerDashboard>
+      </ContainerRoot>
+    </>
   );
 }

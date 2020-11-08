@@ -6,8 +6,9 @@ export default function SeoDefault(): JSX.Element {
     <DefaultSeo
       noindex={false}
       nofollow={false}
+      title="Sentrei"
       titleTemplate="Sentrei | %s"
-      description="The most delightful way to start your own blog, media, or a newsletter."
+      description="The most delightful writing platform."
       openGraph={{
         images: [
           {

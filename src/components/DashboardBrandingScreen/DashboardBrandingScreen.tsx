@@ -5,6 +5,7 @@ import ContainerDashboard, {
 } from "@/components/ContainerDashboard";
 import ContainerRoot from "@/components/ContainerRoot";
 import HeaderRoot from "@/components/HeaderRoot";
+import SeoApp from "@/components/SeoApp";
 
 export type Props = Pick<ContainerDashboardProps, "namespaceId">;
 
@@ -22,23 +23,26 @@ const DashboardBrandingDomainSection = dynamic(
   },
 );
 
-export default function DashboardSettingsScreen({
+export default function DashboardBrandingScreen({
   namespaceId,
 }: Props): JSX.Element {
   return (
-    <ContainerRoot>
-      <HeaderRoot />
-      <ContainerDashboard type="branding" namespaceId={namespaceId}>
-        <div className="container my-6 sm:mx-3 md:mx-6 md:mt-10">
-          <DashboardBrandingBasicSection namespaceId={namespaceId} />
-          <div className="hidden sm:block">
-            <div className="py-5 sm:py-8 md:py-12 lg:py-16 xl:py-20">
-              <div className="border-t border-gray-200" />
+    <>
+      <SeoApp title="Branding" />
+      <ContainerRoot>
+        <HeaderRoot />
+        <ContainerDashboard type="branding" namespaceId={namespaceId}>
+          <div className="container my-6 sm:mx-3 md:mx-6 md:mt-10">
+            <DashboardBrandingBasicSection namespaceId={namespaceId} />
+            <div className="hidden sm:block">
+              <div className="py-5 sm:py-8 md:py-12 lg:py-16 xl:py-20">
+                <div className="border-t border-gray-200" />
+              </div>
             </div>
+            <DashboardBrandingDomainSection namespaceId={namespaceId} />
           </div>
-          <DashboardBrandingDomainSection namespaceId={namespaceId} />
-        </div>
-      </ContainerDashboard>
-    </ContainerRoot>
+        </ContainerDashboard>
+      </ContainerRoot>
+    </>
   );
 }

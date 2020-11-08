@@ -5,6 +5,7 @@ import FooterRoot from "@/components/FooterRoot";
 import HeaderRoot from "@/components/HeaderRoot";
 import PricingHero from "@/components/PricingHero";
 import PricingTable from "@/components/PricingTable";
+import SeoLanding from "@/components/SeoLanding";
 
 const PapercupsWidget = dynamic(() => import("@/components/PapercupsWidget"), {
   ssr: false,
@@ -12,12 +13,15 @@ const PapercupsWidget = dynamic(() => import("@/components/PapercupsWidget"), {
 
 export default function PricingScreen(): JSX.Element {
   return (
-    <ContainerRoot>
-      <HeaderRoot />
-      <PapercupsWidget />
-      <PricingHero />
-      <PricingTable />
-      <FooterRoot />
-    </ContainerRoot>
+    <>
+      <SeoLanding title="Pricing" />
+      <ContainerRoot>
+        <HeaderRoot />
+        <PapercupsWidget />
+        <PricingHero />
+        <PricingTable />
+        <FooterRoot />
+      </ContainerRoot>
+    </>
   );
 }

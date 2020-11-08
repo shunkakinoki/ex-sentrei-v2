@@ -7,6 +7,7 @@ import ArticleSubscribe from "@/components/ArticleSubscribe";
 import ContainerRoot from "@/components/ContainerRoot";
 import FooterRoot from "@/components/FooterRoot";
 import HeaderRoot from "@/components/HeaderRoot";
+import SeoArticle from "@/components/SeoArticle";
 import Article from "@/types/Article";
 
 const ArticleBody = dynamic(() => import("@/components/ArticleBody"), {
@@ -29,36 +30,39 @@ export default function ArticleScreen({
   namespaceId,
 }: Props): JSX.Element {
   return (
-    <ContainerRoot>
-      <HeaderRoot />
-      <ArticleHero
-        authors={authors}
-        createdAt={article.createdAt}
-        pricing={article.pricing}
-        time={article.time}
-        title={article.title}
-        subtitle={article?.subtitle}
-      />
-      {article.image && (
-        <ArticleImage title={article.title} image={article.image} />
-      )}
-      {article.pricing === "free" && article.body && (
-        <ArticleBody body={article.body} />
-      )}
-      {article.pricing === "subscription" && article.excerpt && (
-        <ArticleBody excerpt body={article.excerpt} />
-      )}
-      {article.pricing === "subscription" && (
-        <ArticleSubscribe namespaceId={namespaceId} />
-      )}
-      {moreArticles.length >= 1 && (
-        <ArticleStoryGrid
-          articles={moreArticles}
-          namespaceId={namespaceId}
+    <>
+      <SeoArticle title={article.title} description={article.excerpt ?? ""} />
+      <ContainerRoot>
+        <HeaderRoot />
+        <ArticleHero
+          authors={authors}
+          createdAt={article.createdAt}
+          pricing={article.pricing}
+          time={article.time}
           title={article.title}
+          subtitle={article?.subtitle}
         />
-      )}
-      <FooterRoot />
-    </ContainerRoot>
+        {article.image && (
+          <ArticleImage title={article.title} image={article.image} />
+        )}
+        {article.pricing === "free" && article.body && (
+          <ArticleBody body={article.body} />
+        )}
+        {article.pricing === "subscription" && article.excerpt && (
+          <ArticleBody excerpt body={article.excerpt} />
+        )}
+        {article.pricing === "subscription" && (
+          <ArticleSubscribe namespaceId={namespaceId} />
+        )}
+        {moreArticles.length >= 1 && (
+          <ArticleStoryGrid
+            articles={moreArticles}
+            namespaceId={namespaceId}
+            title={article.title}
+          />
+        )}
+        <FooterRoot />
+      </ContainerRoot>
+    </>
   );
 }

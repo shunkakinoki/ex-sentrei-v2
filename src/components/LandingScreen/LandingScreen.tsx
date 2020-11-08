@@ -8,6 +8,7 @@ import LandingDemo from "@/components/LandingDemo";
 import LandingFaq from "@/components/LandingFaq";
 import LandingFeature from "@/components/LandingFeature";
 import LandingHero from "@/components/LandingHero";
+import SeoLanding from "@/components/SeoLanding";
 
 const PapercupsWidget = dynamic(() => import("@/components/PapercupsWidget"), {
   ssr: false,
@@ -15,15 +16,18 @@ const PapercupsWidget = dynamic(() => import("@/components/PapercupsWidget"), {
 
 export default function LandingScreen(): JSX.Element {
   return (
-    <ContainerRoot>
-      <HeaderRoot />
-      <PapercupsWidget />
-      <LandingHero />
-      <LandingDemo />
-      <LandingFeature />
-      <LandingFaq />
-      <LandingCta />
-      <FooterRoot />
-    </ContainerRoot>
+    <>
+      <SeoLanding title="Sentrei" />
+      <ContainerRoot>
+        <HeaderRoot />
+        <PapercupsWidget />
+        <LandingHero />
+        <LandingDemo />
+        <LandingFeature />
+        <LandingFaq />
+        <LandingCta />
+        <FooterRoot />
+      </ContainerRoot>
+    </>
   );
 }
