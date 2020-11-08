@@ -5,5 +5,5 @@ export interface Props {
 }
 
 export default function SeoApp({title}: Props): JSX.Element {
-  return <NextSeo nofollow noindex title={title} />;
+  return <NextSeo nofollow noindex title={title} titleTemplate="%s" />;
 }

@@ -11,7 +11,7 @@ export default function SeoSpace({title, description}: Props): JSX.Element {
       noindex={false}
       nofollow={false}
       description={description}
-      title={title}
+      title={`${title} - ${description}`}
       titleTemplate="%s"
     />
   );

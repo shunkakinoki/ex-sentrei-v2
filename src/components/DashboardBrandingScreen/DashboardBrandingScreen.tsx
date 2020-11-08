@@ -23,12 +23,12 @@ const DashboardBrandingDomainSection = dynamic(
   },
 );
 
-export default function DashboardSettingsScreen({
+export default function DashboardBrandingScreen({
   namespaceId,
 }: Props): JSX.Element {
   return (
     <>
-      <SeoApp title="Settings" />
+      <SeoApp title="Branding" />
       <ContainerRoot>
         <HeaderRoot />
         <ContainerDashboard type="branding" namespaceId={namespaceId}>
