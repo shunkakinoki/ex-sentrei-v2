@@ -1,3 +1,16 @@
+# [1.98.0](https://github.com/sentrei/sentrei/compare/v1.97.0...v1.98.0) (2020-11-09)
+
+### Features
+
+- 🎸 ini landing journey ([5e9b527](https://github.com/sentrei/sentrei/commit/5e9b5276ce690aae045110d763f4d4ccfe80aa86))
+
+### Performance Improvements
+
+- ⚡️ ini markdown grid ([c4cf546](https://github.com/sentrei/sentrei/commit/c4cf5460fbf66e75835e1a2b013343c8b3df7a0b))
+- ⚡️ ini transition journey ([f53e6ff](https://github.com/sentrei/sentrei/commit/f53e6ffd4cbf8785cc81bfdcb6aa16b32bbe7af1))
+- ⚡️ refactor landing faq ([68ab1dc](https://github.com/sentrei/sentrei/commit/68ab1dc7b387e0c9195d20f3bf03d4ca8da20d3e))
+- ⚡️ refactor landing hero ([2bd5983](https://github.com/sentrei/sentrei/commit/2bd5983a7d1b2bfd9778a8ec88b315708cfb2c82))
+
 # [1.97.0](https://github.com/sentrei/sentrei/compare/v1.96.0...v1.97.0) (2020-11-09)
 
 ### Features
