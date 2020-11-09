@@ -106,6 +106,46 @@ export default function LandingJourney(): JSX.Element {
             <div className="h-32 p-4 overflow-auto overscroll-none" />
           </div>
         </div>
+        <div className="grid items-center grid-cols-1 mt-10 mb-24 md:grid-cols-2 gap-y-10 md:gap-y-32 gap-x-10 md:gap-x-24">
+          <div>
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
+                <div className="flex items-center justify-center w-12 h-12 text-white bg-pink-500 rounded-md">
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div className="ml-4">
+                <h3 className="text-xl font-semibold leading-6 tracking-wide text-pink-600 uppercase">
+                  STEP 3
+                </h3>
+              </div>
+            </div>
+            <h2 className="mt-3 mb-4 text-2xl font-extrabold leading-tight tracking-tight text-center text-black sm:text-left md:text-4xl">
+              Get paid on subscriptions
+            </h2>
+            <p className="mb-5 text-base text-center text-gray-600 sm:text-left md:text-lg">
+              You get all of the revenue. Unlike traditional services, we do not
+              charge any platform commissions on purchases. (excluding standard
+              Stripe fees) We believe writers deserve more.
+            </p>
+          </div>
+          <div className="p-4 overflow-hidden transition duration-300 ease-in-out transform border border-gray-300 rounded-lg shadow-2xl hover:-translate-y-3">
+            <div className="h-32 p-4 overflow-auto overscroll-none" />
+          </div>
+        </div>
       </div>
     </section>
   );
