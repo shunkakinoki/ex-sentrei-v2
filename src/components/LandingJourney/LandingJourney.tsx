@@ -34,7 +34,7 @@ export default function LandingJourney(): JSX.Element {
               We believe that markdown is here to stay.
             </p>
           </div>
-          <div className="p-4 overflow-hidden border border-gray-300 rounded-lg shadow-2xl">
+          <div className="p-4 overflow-hidden transition duration-300 ease-in-out transform border border-gray-300 rounded-lg shadow-2xl hover:-translate-y-3">
             <div className="h-32 p-4 overflow-auto overscroll-none">
               <EditorRich body="Lorem Ipsum" />
             </div>
