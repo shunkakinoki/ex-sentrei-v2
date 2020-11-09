@@ -24,8 +24,8 @@ export default function DashboardScreen({
   return (
     <>
       <SeoApp title="Dashboard" />
+      <HeaderRoot />
       <ContainerRoot>
-        <HeaderRoot />
         <ContainerDashboard type="articles" namespaceId={namespaceId}>
           <div className="container my-6 sm:mx-3 md:mx-6 md:mt-10">
             <DashboardTable

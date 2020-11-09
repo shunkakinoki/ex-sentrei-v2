@@ -6,8 +6,9 @@ export default function ProfileScreen(): JSX.Element {
   return (
     <>
       <SeoApp title="Profile" />
+      <HeaderRoot />
       <ContainerRoot>
-        <HeaderRoot />
+        <></>
       </ContainerRoot>
     </>
   );

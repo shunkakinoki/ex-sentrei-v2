@@ -29,8 +29,8 @@ export default function DashboardSettingsScreen({
   return (
     <>
       <SeoApp title="Settings" />
+      <HeaderRoot />
       <ContainerRoot>
-        <HeaderRoot />
         <ContainerDashboard type="settings" namespaceId={namespaceId}>
           <div className="container my-6 sm:mx-3 md:mx-6 md:mt-10">
             <DashboardSettingsNotificationsSection namespaceId={namespaceId} />

@@ -12,8 +12,8 @@ export default function SupportScreen(): JSX.Element {
   return (
     <>
       <SeoLanding title="Support" />
+      <HeaderRoot />
       <ContainerRoot>
-        <HeaderRoot />
         <PapercupsWindow />
       </ContainerRoot>
     </>

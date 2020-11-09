@@ -8,8 +8,8 @@ export default function SubscribeScreen(): JSX.Element {
   return (
     <>
       <SeoSpace title="Subscribe" description="Subscribe to the publication" />
+      <HeaderRoot />
       <ContainerRoot>
-        <HeaderRoot />
         <ContainerCenter>
           <SubscribeForm />
         </ContainerCenter>

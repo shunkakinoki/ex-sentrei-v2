@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic";
 
-import ContainerRoot from "@/components/ContainerRoot";
 import FooterRoot from "@/components/FooterRoot";
 import HeaderRoot from "@/components/HeaderRoot";
 import LandingCta from "@/components/LandingCta";
@@ -19,17 +18,15 @@ export default function LandingScreen(): JSX.Element {
   return (
     <>
       <SeoLanding title="Sentrei" />
-      <ContainerRoot>
-        <HeaderRoot />
-        <PapercupsWidget />
-        <LandingHero />
-        <LandingDemo />
-        <LandingJourney />
-        <LandingFeature />
-        <LandingFaq />
-        <LandingCta />
-        <FooterRoot />
-      </ContainerRoot>
+      <HeaderRoot />
+      <PapercupsWidget />
+      <LandingHero />
+      <LandingDemo />
+      <LandingJourney />
+      <LandingFeature />
+      <LandingFaq />
+      <LandingCta />
+      <FooterRoot />
     </>
   );
 }

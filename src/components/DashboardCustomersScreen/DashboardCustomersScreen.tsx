@@ -24,8 +24,8 @@ export default function DashboardCustomersScreen({
   return (
     <>
       <SeoApp title="Customers" />
+      <HeaderRoot />
       <ContainerRoot>
-        <HeaderRoot />
         <ContainerDashboard type="customers" namespaceId={namespaceId}>
           <DashboardCustomersTable
             customers={customers}

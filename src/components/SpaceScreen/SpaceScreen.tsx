@@ -28,8 +28,8 @@ export default function SpaceScreen({
         title={space.title}
         description={space.description ?? space.title}
       />
+      <HeaderRoot />
       <ContainerRoot>
-        <HeaderRoot />
         <SpaceHero
           description={space.description}
           namespaceId={namespaceId}
@@ -42,8 +42,8 @@ export default function SpaceScreen({
           articleCount={space.articleCount}
           spaceId={space.id}
         />
-        <FooterRoot social={space?.social} />
       </ContainerRoot>
+      <FooterRoot social={space?.social} />
     </>
   );
 }
