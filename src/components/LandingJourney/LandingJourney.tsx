@@ -24,14 +24,39 @@ export default function LandingJourney(): JSX.Element {
       <div className="container px-4 mx-auto sm:px-6 lg:px-8">
         <div className="grid items-center grid-cols-1 mt-10 mb-24 md:grid-cols-2 gap-y-10 md:gap-y-32 gap-x-10 md:gap-x-24">
           <div>
-            <p className="text-base font-semibold leading-6 tracking-wide text-pink-600 uppercase">
-              STEP 1
-            </p>
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
+                <div className="flex items-center justify-center w-12 h-12 text-white bg-pink-500 rounded-md">
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div className="ml-4">
+                <h3 className="text-xl font-semibold leading-6 tracking-wide text-pink-600 uppercase">
+                  STEP 1
+                </h3>
+              </div>
+            </div>
             <h2 className="mt-3 mb-4 text-2xl font-extrabold leading-tight tracking-tight text-center text-black sm:text-left md:text-4xl">
               Write in markdown
             </h2>
             <p className="mb-5 text-base text-center text-gray-600 sm:text-left md:text-lg">
-              We believe that markdown is here to stay.
+              Write seamlessly with markdown, with custom formats supported.
+              Import and publish it instantly on your own site. We plan to
+              support integrations so that you can write anywhere of your
+              liking.
             </p>
           </div>
           <div className="p-4 overflow-hidden transition duration-300 ease-in-out transform border border-gray-300 rounded-lg shadow-2xl hover:-translate-y-3">
