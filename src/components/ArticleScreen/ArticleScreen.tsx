@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 
 import ArticleHero, {Props as ArticleHeroProps} from "@/components/ArticleHero";
 import ArticleImage from "@/components/ArticleImage";
+import ArticlePreviewBanner from "@/components/ArticlePreviewBanner";
 import ArticleStoryGrid from "@/components/ArticleStoryGrid";
 import ArticleSubscribe from "@/components/ArticleSubscribe";
 import ContainerRoot from "@/components/ContainerRoot";
@@ -13,7 +14,6 @@ import Article from "@/types/Article";
 const ArticleBody = dynamic(() => import("@/components/ArticleBody"), {
   // eslint-disable-next-line react/display-name
   loading: () => <div className="p-8 md:p-12 lg:p-16" />,
-
   ssr: false,
 });
 
@@ -31,6 +31,7 @@ export default function ArticleScreen({
 }: Props): JSX.Element {
   return (
     <>
+      {article.status === "preview" && <ArticlePreviewBanner />}
       <SeoArticle title={article.title} description={article.excerpt ?? ""} />
       <ContainerRoot>
         <HeaderRoot />
