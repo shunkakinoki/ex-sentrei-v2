@@ -32,6 +32,16 @@ export default function LandingFaq(): JSX.Element {
             experience for readers.
           </p>
           <h5 className="mt-10 mb-3 font-semibold text-gray-900">
+            Is there a catch for &quot;zero commissions&quot; policy on
+            purchases?
+          </h5>
+          <p className="text-base leading-6 text-gray-500">
+            Technically, yes. We use Stripe to process payments, so Stripe will
+            have a 3.6% commission fee on paywalls. However, unlike many
+            publishing platforms, the rest will belong to you, as Sentrei takes
+            no platform commissions.
+          </p>
+          <h5 className="mt-10 mb-3 font-semibold text-gray-900">
             Is there a discount for Startups and Colleges?
           </h5>
           <p className="text-base leading-6 text-gray-500">
@@ -42,16 +52,6 @@ export default function LandingFaq(): JSX.Element {
               <a className="underline">support</a>
             </Link>{" "}
             for further information.
-          </p>
-          <h5 className="mt-10 mb-3 font-semibold text-gray-900">
-            Is there a catch for &quot;zero commissions&quot; policy on
-            purchases?
-          </h5>
-          <p className="text-base leading-6 text-gray-500">
-            Technically, yes. We use Stripe to process payments, so Stripe will
-            have a 3.6% commission fee on paywalls. However, unlike many
-            publishing platforms, the rest will be in your pocket, as Sentrei
-            takes no commissions.
           </p>
           <h5 className="mt-10 mb-3 font-semibold text-gray-900">
             Is Sentrei free for open-source?
