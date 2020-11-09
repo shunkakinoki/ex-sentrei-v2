@@ -1,6 +1,10 @@
-export default function LogoLinkedin(): JSX.Element {
+export interface Props {
+  href: string;
+}
+
+export default function LogoLinkedin({href}: Props): JSX.Element {
   return (
-    <>
+    <a href={href} target="_blank" rel="noopener noreferrer">
       <span className="sr-only">LinkedIn</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -27,6 +31,6 @@ export default function LogoLinkedin(): JSX.Element {
           fill="url(#a)"
         />
       </svg>
-    </>
+    </a>
   );
 }

@@ -22,12 +22,22 @@ export default function FooterRoot({space}: Props): JSX.Element {
         </div>
       </div>
       <div className="flex items-center space-x-6">
-        <LogoFacebook />
-        <LogoGithub />
-        <LogoInstagram />
-        <LogoLinkedin />
-        <LogoTwitter />
-        <LogoWebsite />
+        {space?.social?.facebook && (
+          <LogoFacebook href={space?.social?.facebook} />
+        )}
+        {space?.social?.github && <LogoGithub href={space?.social?.github} />}
+        {space?.social?.instagram && (
+          <LogoInstagram href={space?.social?.instagram} />
+        )}
+        {space?.social?.linkedin && (
+          <LogoLinkedin href={space?.social?.linkedin} />
+        )}
+        {space?.social?.twitter && (
+          <LogoTwitter href={space?.social?.twitter} />
+        )}
+        {space?.social?.website && (
+          <LogoWebsite href={space?.social?.website} />
+        )}
       </div>
     </footer>
   );

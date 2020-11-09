@@ -1,6 +1,10 @@
-export default function LogoTwitter(): JSX.Element {
+export interface Props {
+  href: string;
+}
+
+export default function LogoTwitter({href}: Props): JSX.Element {
   return (
-    <>
+    <a href={href} target="_blank" rel="noopener noreferrer">
       <span className="sr-only">Twitter</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -23,6 +27,6 @@ export default function LogoTwitter(): JSX.Element {
           strokeWidth=".5"
         />
       </svg>
-    </>
+    </a>
   );
 }

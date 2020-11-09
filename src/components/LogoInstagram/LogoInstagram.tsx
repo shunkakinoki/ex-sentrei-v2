@@ -1,6 +1,10 @@
-export default function LogoInstagram(): JSX.Element {
+export interface Props {
+  href: string;
+}
+
+export default function LogoInstagram({href}: Props): JSX.Element {
   return (
-    <>
+    <a href={href} target="_blank" rel="noopener noreferrer">
       <span className="sr-only">Instagram</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -41,6 +45,6 @@ export default function LogoInstagram(): JSX.Element {
           fill="url(#1)"
         />
       </svg>
-    </>
+    </a>
   );
 }
