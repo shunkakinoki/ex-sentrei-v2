@@ -1,3 +1,9 @@
+# [1.97.0](https://github.com/sentrei/sentrei/compare/v1.96.0...v1.97.0) (2020-11-09)
+
+### Features
+
+- 🎸 ini preview banner ([b96781b](https://github.com/sentrei/sentrei/commit/b96781b0a620f116f02c97cef61b5f2bb4c69e0f))
+
 # [1.96.0](https://github.com/sentrei/sentrei/compare/v1.95.0...v1.96.0) (2020-11-09)
 
 ### Features
