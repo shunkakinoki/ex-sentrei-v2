@@ -27,7 +27,7 @@ export default function LandingJourney(): JSX.Element {
             <p className="text-base font-semibold leading-6 tracking-wide text-pink-600 uppercase">
               STEP 1
             </p>
-            <h2 className="mb-4 text-2xl font-extrabold leading-tight tracking-tight text-center text-black sm:text-left md:text-4xl">
+            <h2 className="mt-3 mb-4 text-2xl font-extrabold leading-tight tracking-tight text-center text-black sm:text-left md:text-4xl">
               Write in markdown
             </h2>
             <p className="mb-5 text-base text-center text-gray-600 sm:text-left md:text-lg">
@@ -36,7 +36,7 @@ export default function LandingJourney(): JSX.Element {
           </div>
           <div className="p-4 overflow-hidden transition duration-300 ease-in-out transform border border-gray-300 rounded-lg shadow-2xl hover:-translate-y-3">
             <div className="h-32 p-4 overflow-auto overscroll-none">
-              <EditorRich body="Lorem Ipsum" />
+              <EditorRich body="" />
             </div>
           </div>
         </div>
