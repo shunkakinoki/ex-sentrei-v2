@@ -4,7 +4,7 @@ export interface Props {
 
 export default function LogoWebsite({href}: Props): JSX.Element {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
+    <a href={`https://${href}`} target="_blank" rel="noopener noreferrer">
       <svg
         className="w-6 h-6 text-indigo-300"
         fill="none"

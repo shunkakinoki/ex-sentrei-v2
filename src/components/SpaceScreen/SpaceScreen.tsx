@@ -42,7 +42,7 @@ export default function SpaceScreen({
           articleCount={space.articleCount}
           spaceId={space.id}
         />
-        <FooterRoot />
+        <FooterRoot social={space?.social} />
       </ContainerRoot>
     </>
   );

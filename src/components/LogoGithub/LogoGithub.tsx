@@ -4,7 +4,11 @@ export interface Props {
 
 export default function LogoGithub({href}: Props): JSX.Element {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
+    <a
+      href={`https://github.com/${href}`}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <span className="sr-only">GitHub</span>
       <svg
         className="w-5 h-5"

@@ -4,7 +4,11 @@ export interface Props {
 
 export default function LogoFacebook({href}: Props): JSX.Element {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
+    <a
+      href={`https://facebook.com/${href}`}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <span className="sr-only">Facebook</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
