@@ -1,3 +1,14 @@
+# [1.100.0](https://github.com/sentrei/sentrei/compare/v1.99.0...v1.100.0) (2020-11-09)
+
+### Features
+
+- 🎸 ini landing mission with demo bg ([526ee79](https://github.com/sentrei/sentrei/commit/526ee79298826537f914e1864b6e68f17339b61e))
+
+### Performance Improvements
+
+- ⚡️ demo shadow animation ([08b3164](https://github.com/sentrei/sentrei/commit/08b3164f72ce7f9cab1125e5fb183f2bd05714ca))
+- ⚡️ demo to pb3 ([0323f64](https://github.com/sentrei/sentrei/commit/0323f6432ed43da652beeb46a89df3a9b3fff2f9))
+
 # [1.99.0](https://github.com/sentrei/sentrei/compare/v1.98.0...v1.99.0) (2020-11-09)
 
 ### Features
