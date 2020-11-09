@@ -1,3 +1,18 @@
+# [1.99.0](https://github.com/sentrei/sentrei/compare/v1.98.0...v1.99.0) (2020-11-09)
+
+### Features
+
+- 🎸 ini landing mission ([3aad17a](https://github.com/sentrei/sentrei/commit/3aad17a72efb5d1b8329c1074198dafd8d8c9b09))
+- 🎸 ini refactor container ([9341d01](https://github.com/sentrei/sentrei/commit/9341d0137e2efde16a69cd9c9d1841733d3479ba))
+
+### Performance Improvements
+
+- ⚡️ ini px3 demo ([c62b62f](https://github.com/sentrei/sentrei/commit/c62b62fe6c144499616a9c1768068635e7515b9d))
+- ⚡️ refactor mission body ([8a2580e](https://github.com/sentrei/sentrei/commit/8a2580e1fa1a493e2b2dab1d9c4a954711759db6))
+- ⚡️ remove landing screen ([2e634fc](https://github.com/sentrei/sentrei/commit/2e634fc9cf6244eef92f71cca5777abc32606200))
+- ⚡️ update demo animation ([41f64d1](https://github.com/sentrei/sentrei/commit/41f64d106991dd285179d4ce04017848436b8458))
+- ⚡️ update landing journey ([c5c52d5](https://github.com/sentrei/sentrei/commit/c5c52d581746131c83446bff67cd8eae0e3c9e10))
+
 # [1.98.0](https://github.com/sentrei/sentrei/compare/v1.97.0...v1.98.0) (2020-11-09)
 
 ### Features
