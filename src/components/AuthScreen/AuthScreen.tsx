@@ -39,8 +39,8 @@ export default function AuthScreen({type}: Props): JSX.Element {
             : "Reset Password"
         }
       />
+      <HeaderRoot />
       <ContainerRoot>
-        <HeaderRoot />
         <ContainerCenter>
           <AuthForm type={type} />
         </ContainerCenter>

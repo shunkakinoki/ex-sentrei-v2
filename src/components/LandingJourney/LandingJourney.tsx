@@ -6,8 +6,8 @@ const EditorRich = dynamic(() => import("@/components/EditorRich"), {
 
 export default function LandingJourney(): JSX.Element {
   return (
-    <section className="py-12">
-      <div className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
+    <section className="max-w-screen-xl py-12 mx-auto">
+      <div className="px-4 mx-auto sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <p className="text-base font-semibold leading-6 tracking-wide text-pink-600 uppercase ">
             Start your Sentrei journey
@@ -21,7 +21,7 @@ export default function LandingJourney(): JSX.Element {
           </p>
         </div>
       </div>
-      <div className="px-4 mx-auto">
+      <div className="container px-4 mx-auto sm:px-6 lg:px-8">
         <div className="grid items-center grid-cols-1 mt-10 mb-24 md:grid-cols-2 gap-y-10 md:gap-y-32 gap-x-10 md:gap-x-24">
           <div>
             <p className="text-base font-semibold leading-6 tracking-wide text-pink-600 uppercase">

@@ -25,7 +25,7 @@ export default function SpaceHero({
   updatedBy,
 }: Props): JSX.Element {
   return (
-    <section>
+    <section className="container w-full mx-auto">
       <div className="flex flex-col items-center mt-16 mb-16 md:flex-row md:justify-between md:mb-12 lg:mt-24 lg:mb-20">
         <div className="md:w-1/2 lg:w-2/3">
           <h1 className="text-5xl font-extrabold leading-10 tracking-tight text-center text-gray-900 md:text-left sm:text-5xl sm:leading-none md:text-6xl">

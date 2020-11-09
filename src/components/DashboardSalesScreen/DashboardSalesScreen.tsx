@@ -18,8 +18,8 @@ export default function DashboardSalesScreen({
   return (
     <>
       <SeoApp title="Sales" />
+      <HeaderRoot />
       <ContainerRoot>
-        <HeaderRoot />
         <ContainerDashboard type="sales" namespaceId={namespaceId}>
           <DashboardSalesHero
             all={sales.all}

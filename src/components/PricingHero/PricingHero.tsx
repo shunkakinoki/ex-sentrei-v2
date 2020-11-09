@@ -2,7 +2,7 @@ export default function PricingHero(): JSX.Element {
   return (
     <div className="relative overflow-hidden ">
       <div className="flex justify-center max-w-screen-xl mx-auto">
-        <div className="relative z-10 pb-8 sm:pb-16 lg:max-w-2xl lg:w-full">
+        <div className="relative z-10 lg:max-w-2xl lg:w-full">
           <main className="max-w-screen-xl px-4 mx-auto mt-10 sm:mt-8 sm:px-6 md:mt-12 lg:mt-16 lg:px-8 xl:mt-20">
             <div className="text-center">
               <h3 className="text-4xl font-extrabold leading-10 tracking-tight text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">

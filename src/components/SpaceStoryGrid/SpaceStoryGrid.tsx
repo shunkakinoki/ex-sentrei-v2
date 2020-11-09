@@ -119,7 +119,7 @@ export default function SpaceStoryGrid({
   ]);
 
   return (
-    <section className="mt-8 mb-16 sm:mt-16 md:mb-12 lg:mb-20">
+    <section className="container mx-auto mt-8 mb-16 section sm:mt-16 md:mb-12 lg:mb-20">
       <div className="flex flex-wrap mb-8 -mx-2">
         {articles &&
           articles.map((article, index) => {

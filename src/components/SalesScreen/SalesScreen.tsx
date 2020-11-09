@@ -12,8 +12,8 @@ export default function SalesScreen(): JSX.Element {
   return (
     <>
       <SeoLanding title="Sales" />
+      <HeaderRoot />
       <ContainerRoot>
-        <HeaderRoot />
         <PapercupsWindow isSales />
       </ContainerRoot>
     </>

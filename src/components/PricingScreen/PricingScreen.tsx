@@ -15,13 +15,13 @@ export default function PricingScreen(): JSX.Element {
   return (
     <>
       <SeoLanding title="Pricing" />
+      <HeaderRoot />
       <ContainerRoot>
-        <HeaderRoot />
         <PapercupsWidget />
         <PricingHero />
         <PricingTable />
-        <FooterRoot />
       </ContainerRoot>
+      <FooterRoot />
     </>
   );
 }
