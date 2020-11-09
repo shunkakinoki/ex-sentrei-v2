@@ -36,7 +36,10 @@ export default function DashboardTableItem({
 
   return (
     <>
-      <div className="flex flex-col w-full md:flex md:flex-row md:items-center md:justify-between">
+      <div
+        key={id}
+        className="flex flex-col w-full md:flex md:flex-row md:items-center md:justify-between"
+      >
         <div className="flex-1 min-w-0">
           <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 truncate-2-lines ">
             {title}

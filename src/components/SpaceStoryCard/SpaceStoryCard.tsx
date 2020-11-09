@@ -38,7 +38,10 @@ export default function SpaceStoryCard({
   const {storySwitch} = useStory();
 
   return (
-    <Link href={`${namespaceId === "" ? "" : "/"}${namespaceId}/${id}`}>
+    <Link
+      key={id}
+      href={`${namespaceId === "" ? "" : "/"}${namespaceId}/${id}`}
+    >
       <a
         className={clsx(
           "w-full my-4 px-1 sm:px-2 md:px-3 xl:px-4 shadow-lg sm:shadow-none sm:my-2",

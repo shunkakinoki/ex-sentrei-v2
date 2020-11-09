@@ -12,7 +12,7 @@ export default function DashboardCustomersTableItem({
   status,
 }: Props): JSX.Element {
   return (
-    <tr>
+    <tr key={name}>
       <td className="px-6 py-4 whitespace-no-wrap">
         <div className="flex items-center">
           <div className="flex-shrink-0 w-10 h-10">
