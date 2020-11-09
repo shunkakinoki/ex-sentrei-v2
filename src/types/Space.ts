@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
 import Metadata from "@/types/Metadata";
+import Social from "@/types/Social";
 
 export type Plan = "free" | "pro" | "premium";
 export type NotificationType = "app" | "email";
@@ -19,6 +20,7 @@ declare namespace Space {
     image: string | null;
     plan: Plan;
     settings?: NotificationSettings;
+    social?: Social;
     title: string;
   };
 

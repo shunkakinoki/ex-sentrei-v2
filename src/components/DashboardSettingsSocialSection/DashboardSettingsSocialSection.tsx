@@ -5,36 +5,49 @@ import {useForm} from "react-hook-form";
 import {toast} from "react-toastify";
 import {mutate} from "swr";
 
+import {timestamp} from "@/firebase/db";
 import useAuth from "@/hooks/useAuth";
 import useProfile from "@/hooks/useProfile";
-import {updateProfile} from "@/services/Profile";
+import useSpace from "@/hooks/useSpace";
+import {updateSpace} from "@/services/Space";
 import Social from "@/types/Social";
 
-export default function SettingsSocialSection(): JSX.Element {
-  const {authState} = useAuth();
+export interface Props {
+  namespaceId: string;
+}
 
+export default function DashboardSettingsSocialSection({
+  namespaceId,
+}: Props): JSX.Element {
+  const {authState} = useAuth();
   const {profile} = useProfile();
+  const {space} = useSpace(namespaceId);
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
   const {register, handleSubmit, reset, formState} = useForm<Social>({
     defaultValues: {
-      facebook: profile?.social?.facebook,
-      github: profile?.social?.github,
-      instagram: profile?.social?.instagram,
-      linkedin: profile?.social?.linkedin,
-      twitter: profile?.social?.twitter,
-      website: profile?.social?.website,
+      facebook: space?.social?.facebook,
+      github: space?.social?.github,
+      instagram: space?.social?.instagram,
+      linkedin: space?.social?.linkedin,
+      twitter: space?.social?.twitter,
+      website: space?.social?.website,
     },
   });
 
   const onSubmit = async (data: Social) => {
-    if (!authState?.uid) {
+    if (!authState?.uid || !profile || !space?.id) {
       return null;
     }
 
     await mutate(`profiles/${authState.uid}`, {social: data}, false);
 
-    await updateProfile(authState?.uid, {social: data})
+    await updateSpace(space.id, {
+      social: data,
+      updatedAt: timestamp,
+      updatedBy: profile,
+      updatedByUid: authState.uid,
+    })
       .then(() =>
         toast.success("Success", {
           autoClose: 1500,
@@ -52,16 +65,16 @@ export default function SettingsSocialSection(): JSX.Element {
   };
 
   useEffect(() => {
-    if (profile && !formState.isDirty) {
+    if (space && !formState.isDirty) {
       reset({
-        facebook: profile?.social?.facebook,
-        github: profile?.social?.github,
-        instagram: profile?.social?.instagram,
-        twitter: profile?.social?.twitter,
-        website: profile?.social?.website,
+        facebook: space?.social?.facebook,
+        github: space?.social?.github,
+        instagram: space?.social?.instagram,
+        twitter: space?.social?.twitter,
+        website: space?.social?.website,
       });
     }
-  }, [reset, profile, formState.isDirty]);
+  }, [reset, space, formState.isDirty]);
 
   return (
     <div className="px-1 sm:px-2 md:px-3 md:grid md:grid-cols-3 md:gap-6">
@@ -71,7 +84,7 @@ export default function SettingsSocialSection(): JSX.Element {
             Social
           </h3>
           <p className="mt-1 text-sm leading-5 text-gray-600">
-            This information will be public so be careful what you share!
+            This will be displayed on the footer!
           </p>
         </div>
       </div>
