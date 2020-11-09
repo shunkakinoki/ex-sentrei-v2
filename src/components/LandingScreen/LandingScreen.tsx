@@ -8,6 +8,7 @@ import LandingDemo from "@/components/LandingDemo";
 import LandingFaq from "@/components/LandingFaq";
 import LandingFeature from "@/components/LandingFeature";
 import LandingHero from "@/components/LandingHero";
+import LandingJourney from "@/components/LandingJourney";
 import SeoLanding from "@/components/SeoLanding";
 
 const PapercupsWidget = dynamic(() => import("@/components/PapercupsWidget"), {
@@ -23,6 +24,7 @@ export default function LandingScreen(): JSX.Element {
         <PapercupsWidget />
         <LandingHero />
         <LandingDemo />
+        <LandingJourney />
         <LandingFeature />
         <LandingFaq />
         <LandingCta />
