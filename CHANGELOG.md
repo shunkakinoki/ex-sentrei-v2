@@ -1,3 +1,18 @@
+# [1.96.0](https://github.com/sentrei/sentrei/compare/v1.95.0...v1.96.0) (2020-11-09)
+
+### Features
+
+- 🎸 ini logo icons ([f7c2d37](https://github.com/sentrei/sentrei/commit/f7c2d373531598d328464fe6affcb1e447d4aa38))
+
+### Performance Improvements
+
+- ⚡️ ini footer href ([0baa4f1](https://github.com/sentrei/sentrei/commit/0baa4f14fe53f078516a5ec5474fc1fd6935113c))
+- ⚡️ ini key id ([b901e54](https://github.com/sentrei/sentrei/commit/b901e543ae558e5286217f2b6f423c52915fb009))
+- ⚡️ ini key prop ([d682e9e](https://github.com/sentrei/sentrei/commit/d682e9e3529439675a378b9668e8df1d83566a07))
+- ⚡️ ini link icons ([d48c4fc](https://github.com/sentrei/sentrei/commit/d48c4fc455c9880c373ce1517843a2786feea24a))
+- ⚡️ ini space social firestore spaces rule ([85ccdbb](https://github.com/sentrei/sentrei/commit/85ccdbbd7b79a3ce8eca2fc10a43e548d185747e))
+- ⚡️ upgrade social sections ([834aaf5](https://github.com/sentrei/sentrei/commit/834aaf5cd607e7aff8889ba28a5099c0b14e98a8))
+
 # [1.95.0](https://github.com/sentrei/sentrei/compare/v1.94.0...v1.95.0) (2020-11-08)
 
 ### Features
