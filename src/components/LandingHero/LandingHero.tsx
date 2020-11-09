@@ -4,7 +4,7 @@ import LandingHeroTyped from "@/components/LandingHeroTyped";
 
 export default function LandingHero(): JSX.Element {
   return (
-    <div className="relative pt-3 pb-9 md:pb-6">
+    <div className="relative pt-3 pb-3 md:pb-6">
       <div className="px-4 mx-auto mt-10 sm:px-6">
         <div className="sm:text-left md:text-center">
           <h2 className="text-4xl font-extrabold leading-10 tracking-tight text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
@@ -80,7 +80,7 @@ export default function LandingHero(): JSX.Element {
               </Link>
             </div>
           </div>
-          <div className="flex flex-col justify-start mt-3 mb-3 space-x-0 space-y-2 text-xs font-medium text-gray-600 md:mt-5 md:flex-row md:justify-center md:space-x-8 md:space-y-0">
+          <div className="flex flex-col justify-center mx-auto mt-8 mb-3 space-x-0 space-y-2 text-xs text-gray-600 sm:mt-6 md:mt-4 sm:flex-row sm:space-x-8 sm:space-y-0">
             <div className="flex items-center ">
               <svg
                 viewBox="0 0 20 20"
@@ -93,7 +93,7 @@ export default function LandingHero(): JSX.Element {
                   clipRule="evenodd"
                 />
               </svg>
-              <p className="text-base leading-7 text-gray-500 lg:mx-auto">
+              <p className="text-base font-normal leading-7 text-gray-500 lg:mx-auto">
                 Forever free to start
               </p>
             </div>
@@ -109,7 +109,7 @@ export default function LandingHero(): JSX.Element {
                   clipRule="evenodd"
                 />
               </svg>
-              <p className="text-base leading-7 text-gray-500 lg:mx-auto">
+              <p className="text-base font-normal leading-7 text-gray-500 lg:mx-auto">
                 Write in markdown
               </p>
             </div>
@@ -125,7 +125,7 @@ export default function LandingHero(): JSX.Element {
                   clipRule="evenodd"
                 />
               </svg>
-              <p className="text-base leading-7 text-gray-500 lg:mx-auto">
+              <p className="text-base font-normal leading-7 text-gray-500 lg:mx-auto">
                 Zero commissions
               </p>
             </div>

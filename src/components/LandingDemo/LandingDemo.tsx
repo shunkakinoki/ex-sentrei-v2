@@ -1,6 +1,6 @@
 export default function LandingDemo(): JSX.Element {
   return (
-    <div className="pb-3 mt-6">
+    <div className="py-3">
       <p className="mx-auto mb-2 text-sm font-medium text-center text-gray-400">
         <svg
           className="inline-block w-3 h-3 mr-1 text-gray-400 animate-bounce"
