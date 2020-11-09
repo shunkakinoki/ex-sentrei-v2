@@ -22,7 +22,7 @@ export default function LandingJourney(): JSX.Element {
         </div>
       </div>
       <div className="container px-4 mx-auto sm:px-6 lg:px-8">
-        <div className="grid items-center grid-cols-1 mt-10 mb-24 md:grid-cols-2 gap-y-10 md:gap-y-32 gap-x-10 md:gap-x-24">
+        <div className="grid items-center grid-cols-1 mt-10 mb-16 md:grid-cols-2 gap-y-10 md:gap-y-32 gap-x-10 md:gap-x-24">
           <div>
             <div className="flex items-center">
               <div className="flex-shrink-0">
@@ -65,7 +65,7 @@ export default function LandingJourney(): JSX.Element {
             </div>
           </div>
         </div>
-        <div className="grid flex-col-reverse items-center grid-cols-1 mt-10 mb-24 md:grid-cols-2 gap-y-10 md:gap-y-32 gap-x-10 md:gap-x-24">
+        <div className="grid flex-col-reverse items-center grid-cols-1 mt-10 mb-16 md:grid-cols-2 gap-y-10 md:gap-y-32 gap-x-10 md:gap-x-24">
           <div className="order-none md:order-2">
             <div className="flex items-center">
               <div className="flex-shrink-0">
@@ -106,7 +106,7 @@ export default function LandingJourney(): JSX.Element {
             <div className="h-32 p-4 overflow-auto overscroll-none" />
           </div>
         </div>
-        <div className="grid items-center grid-cols-1 mt-10 mb-24 md:grid-cols-2 gap-y-10 md:gap-y-32 gap-x-10 md:gap-x-24">
+        <div className="grid items-center grid-cols-1 mt-10 mb-16 md:grid-cols-2 gap-y-10 md:gap-y-32 gap-x-10 md:gap-x-24">
           <div>
             <div className="flex items-center">
               <div className="flex-shrink-0">
