@@ -1,3 +1,12 @@
+## [1.100.1](https://github.com/sentrei/sentrei/compare/v1.100.0...v1.100.1) (2020-11-09)
+
+### Performance Improvements
+
+- ⚡️ ini journey audience ([f8f5316](https://github.com/sentrei/sentrei/commit/f8f5316d4b5518324a66ea5891a7024e31d1bb1a))
+- ⚡️ ini journey payment ([54f1171](https://github.com/sentrei/sentrei/commit/54f11710fd6216ef3e3b96c5b027a1687d343b7a))
+- ⚡️ ini markdown journey ([6d2768f](https://github.com/sentrei/sentrei/commit/6d2768fa1b7e724fe501d6813a1c069b152b8f20))
+- ⚡️ refactor journey mb ([70bea8c](https://github.com/sentrei/sentrei/commit/70bea8c03ac2cfe2729f89fe69136a8a221a23d6))
+
 # [1.100.0](https://github.com/sentrei/sentrei/compare/v1.99.0...v1.100.0) (2020-11-09)
 
 ### Features
