@@ -16,7 +16,7 @@ export default function LandingTestimonial(): JSX.Element {
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-400">
             game-changer
           </span>
-          .
+          .“
         </h1>
         <div className="mx-auto mb-3 shadow-lg avatar" />
         <p className="text-base font-medium text-gray-200">Kohei Nagata</p>
