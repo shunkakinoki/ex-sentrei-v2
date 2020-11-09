@@ -47,18 +47,16 @@ export default function DashboardTable({
     <>
       {swrArticles &&
         swrArticles.map(article => (
-          <>
-            <DashboardTableItem
-              key={article.id}
-              title={article.title}
-              subtitle={article.subtitle}
-              pricing={article.pricing}
-              status={article.status}
-              namespaceId={namespaceId}
-              id={article.id}
-              updatedAt={article.updatedAt}
-            />
-          </>
+          <DashboardTableItem
+            key={article.id}
+            title={article.title}
+            subtitle={article.subtitle}
+            pricing={article.pricing}
+            status={article.status}
+            namespaceId={namespaceId}
+            id={article.id}
+            updatedAt={article.updatedAt}
+          />
         ))}
       {space?.articleCount && space.articleCount > 10 && (
         <PaginationBase

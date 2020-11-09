@@ -2,12 +2,9 @@ import Image from "next/image";
 
 import Customer from "@/types/Customer";
 
-export interface Props extends Customer {
-  key: string;
-}
+export type Props = Customer;
 
 export default function DashboardCustomersTableItem({
-  key,
   email,
   date,
   image,
@@ -15,7 +12,7 @@ export default function DashboardCustomersTableItem({
   status,
 }: Props): JSX.Element {
   return (
-    <tr key={key}>
+    <tr key={name}>
       <td className="px-6 py-4 whitespace-no-wrap">
         <div className="flex items-center">
           <div className="flex-shrink-0 w-10 h-10">

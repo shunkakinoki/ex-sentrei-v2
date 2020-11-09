@@ -18,7 +18,6 @@ export interface Props
     | "createdByUid"
     | "spaceId"
   > {
-  key: string;
   namespaceId: string;
   noSwitch?: boolean;
   variant: "small" | "medium";
@@ -26,7 +25,6 @@ export interface Props
 
 export default function SpaceStoryCard({
   noSwitch = false,
-  key,
   id,
   image,
   namespaceId,
@@ -41,7 +39,7 @@ export default function SpaceStoryCard({
 
   return (
     <Link
-      key={key}
+      key={id}
       href={`${namespaceId === "" ? "" : "/"}${namespaceId}/${id}`}
     >
       <a
