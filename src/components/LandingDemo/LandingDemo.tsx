@@ -1,6 +1,6 @@
 export default function LandingDemo(): JSX.Element {
   return (
-    <section className="max-w-screen-xl py-3 mx-auto">
+    <section className="container max-w-screen-xl px-3 py-3 mx-auto">
       <p className="mb-2 text-sm font-medium text-center text-gray-400 ">
         <svg
           className="inline-block w-3 h-3 mr-1 text-gray-400 animate-bounce"
