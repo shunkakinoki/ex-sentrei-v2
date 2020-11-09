@@ -13,11 +13,11 @@ export default function LandingJourney(): JSX.Element {
             Start your Sentrei journey
           </p>
           <h3 className="mt-2 text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-            The most friendly way of monetizing your content
+            The most friendly platform for all writers.
           </h3>
           <p className="max-w-2xl mt-4 text-xl leading-7 text-gray-500 lg:mx-auto">
-            Seamless flow from writing to publishing. No more need for advanced
-            integrations. You have all the control.
+            Seamless flow from writing to publishing. No platform commissions on
+            paywalls. No ads or popups for readers. No comprimises.
           </p>
         </div>
       </div>
