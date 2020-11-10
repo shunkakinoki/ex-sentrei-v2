@@ -122,9 +122,20 @@ export default function LandingDemo(): JSX.Element {
               </div>
             </div>
             <iframe
-              className="w-full h-64 overflow-hidden bg-white md:h-96 lg:h-128"
-              src={tabType === "website" ? "/demo" : "/demo/dashboard"}
-              title="Demo"
+              className={clsx(
+                "w-full h-64 overflow-hidden bg-white md:h-96 lg:h-128",
+                tabType !== "website" && "hidden",
+              )}
+              src="/demo"
+              title="Demo website"
+            />
+            <iframe
+              className={clsx(
+                "w-full h-64 overflow-hidden bg-white md:h-96 lg:h-128",
+                tabType !== "dashboard" && "hidden",
+              )}
+              src="/demo/dashboard"
+              title="Demo dashboard"
             />
           </div>
         </div>
