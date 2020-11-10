@@ -1,3 +1,20 @@
+# [1.103.0](https://github.com/sentrei/sentrei/compare/v1.102.1...v1.103.0) (2020-11-10)
+
+### Features
+
+- 🎸 ini legal screen ([4814446](https://github.com/sentrei/sentrei/commit/48144467d2fd00ee3edf821c398c695c9b9beacc))
+- 🎸 ini one tap ([eb9428a](https://github.com/sentrei/sentrei/commit/eb9428aeff4721ae7627a192f76c3af70ee2b7ff))
+- 🎸 ini segment analytics ([8cda162](https://github.com/sentrei/sentrei/commit/8cda162ca876d256d4dc275d95d5882f16f18938))
+
+### Performance Improvements
+
+- ⚡️ ini markdown util ([f73c6df](https://github.com/sentrei/sentrei/commit/f73c6df7515a21ac95ed4294687eabbabda89e0e))
+- ⚡️ ini proper typ ([a6fa826](https://github.com/sentrei/sentrei/commit/a6fa826694e86e204e2364e53a9f918959bece72))
+- ⚡️ refactor custom error ([38f791e](https://github.com/sentrei/sentrei/commit/38f791ed4bb3b81bf4a6d6f6972da7c09c89a257))
+- ⚡️ refactor makdown page ([27cac26](https://github.com/sentrei/sentrei/commit/27cac2612b7931cdcf18aa1396a505f69c8f5125))
+- ⚡️ refactor markdown utils ([1f6cbd3](https://github.com/sentrei/sentrei/commit/1f6cbd399b260eebb075effe1c94d6feb8acab6c))
+- ⚡️ refactor window segment ([cd334cc](https://github.com/sentrei/sentrei/commit/cd334cc977942727eea0618339bee28196301a4e))
+
 ## [1.102.1](https://github.com/sentrei/sentrei/compare/v1.102.0...v1.102.1) (2020-11-10)
 
 ### Bug Fixes
