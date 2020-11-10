@@ -7,7 +7,7 @@ export default function LandingDemo(): JSX.Element {
   return (
     <section className="relative">
       <div
-        className="absolute inset-0 bg-gray-300 pointer-events-none top-1/2 md:mt-24 "
+        className="absolute inset-0 bg-gray-200 pointer-events-none top-1/2 md:mt-24 "
         aria-hidden="true"
       />
       <div className="absolute bottom-0 left-0 right-0 w-px p-px m-auto transform translate-y-1/2" />
