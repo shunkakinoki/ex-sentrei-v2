@@ -10,6 +10,7 @@ export default function SpaceAuthor({bio, image, name}: Props): JSX.Element {
       <div className="flex-shrink-0 px-4 py-2 m-2 text-center ">
         <a>
           <Image
+            priority
             height={50}
             width={50}
             layout="fixed"
