@@ -1,3 +1,16 @@
+# [1.105.0](https://github.com/sentrei/sentrei/compare/v1.104.0...v1.105.0) (2020-11-10)
+
+### Features
+
+- 🎸 ini landing globe ([9becf90](https://github.com/sentrei/sentrei/commit/9becf90fd3511b268ac05d3df604e3ec1becb451))
+
+### Performance Improvements
+
+- ⚡️ ini landing image ([cb67f2c](https://github.com/sentrei/sentrei/commit/cb67f2cef6c49942d916b0ab4fdafcab047954b5))
+- ⚡️ refactor demo height ([4858642](https://github.com/sentrei/sentrei/commit/48586420dd52f4983dfba604e93ff679a14b0a28))
+- ⚡️ refactor landing mission ([9aaf337](https://github.com/sentrei/sentrei/commit/9aaf3376eac854e7f0e9be3f5064706680511498))
+- ⚡️ refactor landing section ([4b7e248](https://github.com/sentrei/sentrei/commit/4b7e248270ea64a7663eb797b099043e3765c77f))
+
 # [1.104.0](https://github.com/sentrei/sentrei/compare/v1.103.0...v1.104.0) (2020-11-10)
 
 ### Bug Fixes
