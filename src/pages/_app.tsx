@@ -12,11 +12,11 @@ import "@/styles/index.css";
 import "@/styles/nprogress.css";
 import "@/utils/nprogress";
 
-const AppRoot = dynamic(() => import("@/components/AppRoot"), {
+const GlobalAuth = dynamic(() => import("@/components/GlobalAuth"), {
   ssr: false,
 });
 
-const GlobalAuth = dynamic(() => import("@/components/GlobalAuth"), {
+const GlobalRoot = dynamic(() => import("@/components/GlobalRoot"), {
   ssr: false,
 });
 
@@ -45,11 +45,11 @@ const CustomApp = ({Component, pageProps}: AppProps): JSX.Element => {
             },
           }}
         >
-          <AppRoot>
+          <GlobalRoot>
             <GlobalAuth />
             <GlobalToast />
             <Component {...pageProps} />
-          </AppRoot>
+          </GlobalRoot>
         </SWRConfig>
       </RecoilRoot>
     </>
