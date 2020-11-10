@@ -11,8 +11,8 @@ export default function LandingDemo(): JSX.Element {
         aria-hidden="true"
       />
       <div className="absolute bottom-0 left-0 right-0 w-px p-px m-auto transform translate-y-1/2" />
-      <div className="relative max-w-6xl px-4 mx-auto sm:px-6">
-        <div className="container max-w-screen-xl px-3 py-3 mx-auto">
+      <div className="relative max-w-6xl px-3 mx-auto sm:px-6">
+        <div className="container max-w-screen-xl mx-auto">
           <p className="mb-3 text-sm font-medium text-center text-gray-400 ">
             <svg
               className="inline-block w-3 h-3 mr-1 text-gray-400 animate-bounce"
