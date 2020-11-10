@@ -1,5 +1,6 @@
 ignores:
   [
+    "@types/segment-analytics",
     "autoprefixer",
     "firebase-*",
     "postcss-import",

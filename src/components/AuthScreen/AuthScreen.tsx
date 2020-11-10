@@ -10,6 +10,7 @@ import SeoApp from "@/components/SeoApp";
 import useAuth from "@/hooks/useAuth";
 
 const AuthForm = dynamic(() => import("@/components/AuthForm"), {ssr: false});
+const OneTap = dynamic(() => import("@/components/OneTap"), {ssr: false});
 
 export type Props = AuthFormProps;
 
@@ -39,6 +40,7 @@ export default function AuthScreen({type}: Props): JSX.Element {
             : "Reset Password"
         }
       />
+      <OneTap />
       <HeaderRoot />
       <ContainerRoot>
         <ContainerCenter>
