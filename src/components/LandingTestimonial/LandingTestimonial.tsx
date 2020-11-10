@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function LandingTestimonial(): JSX.Element {
   return (
     <section className="bg-gray-600">
@@ -18,7 +20,14 @@ export default function LandingTestimonial(): JSX.Element {
           </span>
           .“
         </h1>
-        <div className="mx-auto mb-3 shadow-lg avatar" />
+        <Image
+          className="mx-auto mb-3 shadow-lg avatar"
+          height={50}
+          width={50}
+          layout="fixed"
+          src="/assets/logo.png"
+          alt="Testimonial author"
+        />
         <p className="text-base font-medium text-gray-200">Kohei Nagata</p>
         <p className="text-xs font-medium text-gray-400">CEO, Here</p>
       </div>
