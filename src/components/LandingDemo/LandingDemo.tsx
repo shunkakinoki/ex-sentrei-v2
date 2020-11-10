@@ -1,4 +1,9 @@
+import clsx from "clsx";
+import {useState} from "react";
+
 export default function LandingDemo(): JSX.Element {
+  const [tabType, setTabType] = useState<"website" | "dashboard">("website");
+
   return (
     <section className="relative">
       <div
@@ -34,14 +39,91 @@ export default function LandingDemo(): JSX.Element {
             </svg>
           </p>
           <div className="container justify-center flex-grow max-w-screen-xl mx-auto transition duration-300 ease-in-out transform rounded-lg shadow-xl hover:shadow-2xl hover:-translate-y-3">
-            <div className="flex px-5 pt-4 pb-4 bg-gray-300 rounded-t">
-              <span className="w-3 h-3 bg-red-500 rounded-full" />
-              <span className="w-3 h-3 ml-2 bg-yellow-300 rounded-full" />
-              <span className="w-3 h-3 ml-2 bg-green-500 rounded-full" />
+            <div className="flex items-end pt-2 pl-3 pr-5 bg-gray-300 rounded-t">
+              <div className="flex items-center self-center mr-3">
+                <span className="w-3 h-3 mx-1 bg-red-600 rounded-full focus:outline-none" />
+                <span className="w-3 h-3 mx-1 bg-yellow-600 rounded-full focus:outline-none" />
+                <span className="w-3 h-3 mx-1 bg-green-600 rounded-full focus:outline-none" />
+              </div>
+              <button
+                className={clsx(
+                  "flex items-end justify-between w-24 py-1 text-sm rounded-t-lg sm:w-48 sm:py-2",
+                  tabType === "website" && "bg-gray-100",
+                  tabType !== "website" && "bg-gray-400 opacity-75",
+                )}
+                type="button"
+                onClick={() => setTabType("website")}
+              >
+                <div className="px-2 overflow-x-hidden text-xs text-left text-gray-700 truncate whitespace-no-wrap sm:px-4 sm:text-md">
+                  Demo Website
+                </div>
+                <div className="self-center flex-shrink-0 w-2 h-2 mx-1 sm:w-3 sm:h-3 sm:mx-3 focus:outline-none">
+                  <svg
+                    className="w-full h-full text-gray-500 fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 320 512"
+                  >
+                    <path d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z" />
+                  </svg>
+                </div>
+              </button>
+              <button
+                type="button"
+                className={clsx(
+                  "flex items-end justify-between w-24 py-1 text-sm rounded-t-lg sm:w-48 sm:py-2",
+                  tabType === "dashboard" && "bg-gray-100",
+                  tabType !== "dashboard" && "bg-gray-400 opacity-75",
+                )}
+                onClick={() => setTabType("dashboard")}
+              >
+                <div className="px-2 overflow-x-hidden text-xs text-left text-gray-700 truncate whitespace-no-wrap sm:px-4 sm:text-md">
+                  Demo Dashboard
+                </div>
+                <div className="self-center flex-shrink-0 w-2 h-2 mx-1 sm:w-3 sm:h-3 sm:mx-3 focus:outline-none">
+                  <svg
+                    className="w-full h-full text-gray-500 fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 320 512"
+                  >
+                    <path d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z" />
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div className="flex items-center justify-between bg-gray-100">
+              <div className="flex flex-grow mx-2 my-1">
+                <div className="flex items-center mx-2 my-1">
+                  <svg
+                    className="w-4 h-4 mr-4 text-gray-500 fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                  >
+                    <path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z" />
+                  </svg>
+                  <svg
+                    className="w-4 h-4 text-gray-400 fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                  >
+                    <path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z" />
+                  </svg>
+                </div>
+                <div className="flex w-3/4 mx-2 my-1">
+                  <input
+                    type="text"
+                    className="w-full px-4 py-1 text-sm font-light leading-3 text-gray-600 bg-gray-300 rounded-full shadow"
+                    value={
+                      tabType === "website"
+                        ? "https://demo.sentrei.com"
+                        : "https://demo.sentrei.com/demo/dashboard"
+                    }
+                  />
+                </div>
+              </div>
             </div>
             <iframe
               className="w-full h-64 overflow-hidden bg-white md:h-96 lg:h-128"
-              src="/demo"
+              src={tabType === "website" ? "/demo" : "/demo/dashboard"}
               title="Demo"
             />
           </div>
