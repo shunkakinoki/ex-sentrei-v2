@@ -57,7 +57,7 @@ const CustomError = (
     !("hasGetInitialPropsRun" in ctx && ctx.hasGetInitialPropsRun) &&
     ctx.err
   ) {
-    trackEvent("exception", {
+    trackEvent("Exception", {
       description: ctx.err.message,
       error: ctx.err.name,
       stack: ctx.err.stack,
