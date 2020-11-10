@@ -1,3 +1,19 @@
+# [1.104.0](https://github.com/sentrei/sentrei/compare/v1.103.0...v1.104.0) (2020-11-10)
+
+### Bug Fixes
+
+- 🐛 anchor descendant bug ([7918876](https://github.com/sentrei/sentrei/commit/7918876f84b2d871fec259127f9ba92d81e0572c))
+
+### Features
+
+- 🎸 ini global root ([6342cb5](https://github.com/sentrei/sentrei/commit/6342cb596f7e35f726d60883546f9e075d427223))
+
+### Performance Improvements
+
+- ⚡️ refactor demo bg ([b8fe438](https://github.com/sentrei/sentrei/commit/b8fe438a4756187e0f7d707843c074f04dcf805c))
+- ⚡️ refactor seo root ([6200544](https://github.com/sentrei/sentrei/commit/620054461e52d19a5b6da030cf272a9341ba98da))
+- ⚡️ revert demo bg ([82dc1ca](https://github.com/sentrei/sentrei/commit/82dc1cab72caf2b5ff3038ba73a55e883eacf8c1))
+
 # [1.103.0](https://github.com/sentrei/sentrei/compare/v1.102.1...v1.103.0) (2020-11-10)
 
 ### Features
