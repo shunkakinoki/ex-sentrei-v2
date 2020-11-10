@@ -7,9 +7,8 @@ import markdown from "@/utils/markdown";
 
 export type Props = PrivacyScreenProps;
 
-// eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const body = markdown("privacy");
+  const body = await markdown("privacy");
 
   return {
     props: {

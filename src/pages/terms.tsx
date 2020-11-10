@@ -5,9 +5,8 @@ import markdown from "@/utils/markdown";
 
 export type Props = TermsScreenProps;
 
-// eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const body = markdown("terms");
+  const body = await markdown("terms");
 
   return {
     props: {
