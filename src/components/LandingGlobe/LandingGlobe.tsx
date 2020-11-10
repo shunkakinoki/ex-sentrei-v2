@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import Image from "next/image";
 
 import Pulse from "@/styles/pulse.module.css";
 
@@ -45,12 +46,13 @@ export default function LandingGlobe(): JSX.Element {
                 />
               </g>
             </svg>
-            <img
-              className="relative rounded-full shadow-xl"
+            <Image
+              className="relative rounded-full"
               src="/assets/planet.png"
-              width="400"
-              height="400"
-              alt="Planet"
+              layout="fixed"
+              width={400}
+              height={400}
+              alt="Planett"
             />
             <svg
               className="absolute max-w-full"

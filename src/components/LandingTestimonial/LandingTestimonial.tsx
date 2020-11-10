@@ -21,11 +21,11 @@ export default function LandingTestimonial(): JSX.Element {
           .“
         </h1>
         <Image
-          className="mx-auto mb-3 shadow-lg avatar"
+          className="mx-auto mb-3 rounded-full shadow-lg"
           height={50}
           width={50}
           layout="fixed"
-          src="/assets/logo.png"
+          src="/assets/kohei.jpg"
           alt="Testimonial author"
         />
         <p className="text-base font-medium text-gray-200">Kohei Nagata</p>
