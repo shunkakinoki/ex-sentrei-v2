@@ -47,6 +47,7 @@ export default function LandingGlobe(): JSX.Element {
               </g>
             </svg>
             <Image
+              priority
               className="relative rounded-full"
               src="/assets/planet.png"
               layout="fixed"

@@ -21,6 +21,7 @@ export default function LandingTestimonial(): JSX.Element {
           .“
         </h1>
         <Image
+          priority
           className="mx-auto mb-3 rounded-full shadow-lg"
           height={50}
           width={50}
