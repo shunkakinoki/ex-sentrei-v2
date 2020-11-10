@@ -1,3 +1,14 @@
+## [1.102.1](https://github.com/sentrei/sentrei/compare/v1.102.0...v1.102.1) (2020-11-10)
+
+### Bug Fixes
+
+- 🐛 typo custom domains ([5d18056](https://github.com/sentrei/sentrei/commit/5d18056cdca9807920b349b8b75f8165e91bad9d))
+
+### Performance Improvements
+
+- ⚡️ refactor landing mission ([8bcba39](https://github.com/sentrei/sentrei/commit/8bcba39403914a4cc8ad5ab5be4ed7263929bba8))
+- ⚡️ refactor mission typography ([2d6427d](https://github.com/sentrei/sentrei/commit/2d6427dc4cc74a7686e8fe90fa1df2a0aaedb5c5))
+
 # [1.102.0](https://github.com/sentrei/sentrei/compare/v1.101.0...v1.102.0) (2020-11-10)
 
 ### Features
