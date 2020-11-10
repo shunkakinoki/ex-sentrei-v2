@@ -1,9 +1,14 @@
 import fs from "fs";
-import {join} from "path";
+import {resolve} from "path";
+import {promisify} from "util";
 
-export default function getPostBySlug(slug: string): string {
+const readFile = promisify(fs.readFile);
+
+export default async function markdown(slug: string): Promise<string> {
   const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join("legal", `${realSlug}.md`);
-  const body = fs.readFileSync(fullPath, "utf8");
+  const body = await readFile(
+    resolve(process.cwd(), `./blog/${realSlug}`),
+    "utf8",
+  );
   return body;
 }
