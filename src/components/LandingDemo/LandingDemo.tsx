@@ -109,9 +109,29 @@ export default function LandingDemo(): JSX.Element {
                   </svg>
                 </div>
                 <div className="flex w-3/4 mx-2 my-1">
+                  <div className="relative text-gray-600 focus-within:text-gray-400">
+                    <span className="absolute inset-y-0 left-0 flex items-center pl-2">
+                      <span className="p-1 focus:outline-none focus:shadow-outline">
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
                   <input
                     type="text"
-                    className="w-full px-4 py-1 text-sm font-light leading-3 text-gray-600 bg-gray-300 rounded-full shadow"
+                    className="w-full py-1 text-sm font-light leading-3 text-gray-600 bg-gray-300 rounded-full shadow pl-9"
                     value={
                       tabType === "website"
                         ? "https://demo.sentrei.com"
