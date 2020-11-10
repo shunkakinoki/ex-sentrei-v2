@@ -1,6 +1,6 @@
 export default function LandingMission(): JSX.Element {
   return (
-    <div className="py-16 bg-gray-200">
+    <section className="w-full py-16 bg-gray-200">
       <div className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <p className="text-base font-semibold leading-6 tracking-wide text-pink-600 uppercase">
@@ -98,6 +98,6 @@ export default function LandingMission(): JSX.Element {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -4,7 +4,7 @@ import Pulse from "@/styles/pulse.module.css";
 
 export default function LandingGlobe(): JSX.Element {
   return (
-    <section className="py-16">
+    <section className="w-full py-16 bg-white">
       <div className="max-w-6xl px-4 mx-auto sm:px-6">
         <div className="lg:text-center">
           <p className="text-base font-semibold leading-6 tracking-wide text-pink-600 uppercase">
@@ -14,9 +14,9 @@ export default function LandingGlobe(): JSX.Element {
             Delight every customer.
           </h3>
           <p className="max-w-2xl mt-4 text-xl leading-7 text-gray-500 lg:mx-auto">
-            We never put forward anythiing that gets in the way of a great
-            reading experience for your customers. Let the world know of your
-            content.
+            We never put forward anything that gets in the way of providing a
+            great reading experience for your customers. Let the world know of
+            your content.
           </p>
         </div>
         <div className="flex flex-col items-center pt-12 md:pt-16">
@@ -107,7 +107,7 @@ export default function LandingGlobe(): JSX.Element {
               xmlns="http://www.w3.org/2000/svg"
             >
               <circle
-                className="text-gray-800 fill-current"
+                className="text-gray-600 fill-current"
                 cx="40"
                 cy="40"
                 r="40"
