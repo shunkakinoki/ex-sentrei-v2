@@ -1,6 +1,6 @@
 export default function LandingFeature(): JSX.Element {
   return (
-    <section className="py-16">
+    <section className="w-full py-16 bg-gray-100">
       <div className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <p className="text-base font-semibold leading-6 tracking-wide text-pink-600 uppercase">

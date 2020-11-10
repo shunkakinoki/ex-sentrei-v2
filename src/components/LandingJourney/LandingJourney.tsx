@@ -6,7 +6,7 @@ const EditorRich = dynamic(() => import("@/components/EditorRich"), {
 
 export default function LandingJourney(): JSX.Element {
   return (
-    <section className="max-w-screen-xl py-12 mx-auto">
+    <section className="w-full max-w-screen-xl py-12 mx-auto">
       <div className="px-4 mx-auto sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <p className="text-base font-semibold leading-6 tracking-wide text-pink-600 uppercase ">

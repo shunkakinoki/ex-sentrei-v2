@@ -143,7 +143,7 @@ export default function LandingDemo(): JSX.Element {
             </div>
             <iframe
               className={clsx(
-                "w-full h-64 overflow-hidden bg-white md:h-96 lg:h-128",
+                "w-full h-80 overflow-hidden bg-white sm:h-96 md:h-128",
                 tabType !== "website" && "hidden",
               )}
               src="/demo"
@@ -151,7 +151,7 @@ export default function LandingDemo(): JSX.Element {
             />
             <iframe
               className={clsx(
-                "w-full h-64 overflow-hidden bg-white md:h-96 lg:h-128",
+                "w-full h-80 overflow-hidden bg-white sm:h-96 md:h-128",
                 tabType !== "dashboard" && "hidden",
               )}
               src="/demo/dashboard"

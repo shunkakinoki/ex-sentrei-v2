@@ -6,6 +6,7 @@ import LandingCta from "@/components/LandingCta";
 import LandingDemo from "@/components/LandingDemo";
 import LandingFaq from "@/components/LandingFaq";
 import LandingFeature from "@/components/LandingFeature";
+import LandingGlobe from "@/components/LandingGlobe";
 import LandingHero from "@/components/LandingHero";
 import LandingJourney from "@/components/LandingJourney";
 import LandingMission from "@/components/LandingMission";
@@ -31,6 +32,7 @@ export default function LandingScreen(): JSX.Element {
       <LandingJourney />
       <LandingTestimonial />
       <LandingFeature />
+      <LandingGlobe />
       <LandingFaq />
       <LandingCta />
       <FooterRoot />
