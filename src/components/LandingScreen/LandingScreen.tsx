@@ -12,6 +12,8 @@ import LandingMission from "@/components/LandingMission";
 import LandingTestimonial from "@/components/LandingTestimonial";
 import SeoLanding from "@/components/SeoLanding";
 
+const OneTap = dynamic(() => import("@/components/OneTap"), {ssr: false});
+
 const PapercupsWidget = dynamic(() => import("@/components/PapercupsWidget"), {
   ssr: false,
 });
@@ -20,6 +22,7 @@ export default function LandingScreen(): JSX.Element {
   return (
     <>
       <SeoLanding title="Sentrei" />
+      <OneTap />
       <HeaderRoot />
       <PapercupsWidget />
       <LandingHero />
