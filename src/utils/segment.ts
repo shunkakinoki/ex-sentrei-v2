@@ -27,7 +27,7 @@ export const pageView = (
   options?: SegmentAnalytics.SegmentOpts,
   callback?: () => void,
 ): void => {
-  if (window.analytics) {
+  if (typeof window !== "undefined") {
     window.analytics.page(category, name, properties, options, callback);
   }
 };
@@ -38,7 +38,7 @@ export const identifyUser = (
   options?: SegmentAnalytics.SegmentOpts,
   callback?: () => void,
 ): void => {
-  if (window.analytics) {
+  if (typeof window !== "undefined") {
     window.analytics.identify(userId, traits, options, callback);
   }
 };
@@ -49,7 +49,7 @@ export const recordGroup = (
   options?: SegmentAnalytics.SegmentOpts,
   callback?: () => void,
 ): void => {
-  if (window.analytics) {
+  if (typeof window !== "undefined") {
     window.analytics.group(groupId, traits, options, callback);
   }
 };
@@ -60,7 +60,7 @@ export const trackEvent = (
   options?: SegmentAnalytics.SegmentOpts,
   callback?: () => void,
 ): void => {
-  if (window.analytics) {
+  if (typeof window !== "undefined") {
     window.analytics.track(event, properties, options, callback);
   }
 };
@@ -70,7 +70,7 @@ export const trackForm = (
   event: string | {(elm: Element): string},
   properties?: Object | {(elm: Element): Object},
 ): void => {
-  if (window.analytics) {
+  if (typeof window !== "undefined") {
     window.analytics.trackForm(elements, event, properties);
   }
 };
@@ -80,7 +80,7 @@ export const trackLink = (
   event: string | {(elm: Element): string},
   properties?: Object | {(elm: Element): Object},
 ): void => {
-  if (window.analytics) {
+  if (typeof window !== "undefined") {
     window.analytics.trackLink(elements, event, properties);
   }
 };
