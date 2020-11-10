@@ -1,3 +1,13 @@
+## [1.105.1](https://github.com/sentrei/sentrei/compare/v1.105.0...v1.105.1) (2020-11-10)
+
+### Performance Improvements
+
+- ⚡️ globe overflow hidden ([e2924c9](https://github.com/sentrei/sentrei/commit/e2924c9f3a358b646a324ce2c5337e37f4458353))
+- ⚡️ ini priority image ([abd7488](https://github.com/sentrei/sentrei/commit/abd7488c15d2ea9b8b8bda0beaac2eb889078d4d))
+- ⚡️ refactor px demo ([62f4237](https://github.com/sentrei/sentrei/commit/62f4237e6f4e8fb1527e6361aa78403b5707ab16))
+- ⚡️ upgrade alpha packages ([10a0fa0](https://github.com/sentrei/sentrei/commit/10a0fa0b9f95faac1a0ec6fdfe1ce82ed9ff097a))
+- ⚡️ upgrade with ncu ([6eb7d83](https://github.com/sentrei/sentrei/commit/6eb7d83a3748d4e5c1bd5b49fee487b1e216e5e1))
+
 # [1.105.0](https://github.com/sentrei/sentrei/compare/v1.104.0...v1.105.0) (2020-11-10)
 
 ### Features
