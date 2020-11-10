@@ -6,7 +6,7 @@ export default function SeoDefault(): JSX.Element {
     <DefaultSeo
       noindex={false}
       nofollow={false}
-      title="Sentrei"
+      title="The most delightful writing platform."
       titleTemplate="Sentrei | %s"
       description="The most delightful writing platform."
       openGraph={{

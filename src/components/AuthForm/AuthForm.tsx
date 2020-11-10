@@ -111,7 +111,7 @@ export default function AuthForm({type}: Props): JSX.Element {
             className="flex items-center justify-between w-full py-2 md:py-3 md:justify-start"
             onClick={handleGoogle}
           >
-            <a className="relative flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-pink-500 transition duration-150 ease-in-out bg-transparent border border-transparent border-pink-300 rounded hover:bg-pink-100 focus:border-pink-300 group focus:outline-none focus:shadow-md ">
+            <div className="relative flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-pink-500 transition duration-150 ease-in-out bg-transparent border border-transparent border-pink-300 rounded hover:bg-pink-100 focus:border-pink-300 group focus:outline-none focus:shadow-md ">
               <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                 <svg
                   className="w-5 h-5 text-pink-500 transition duration-150 ease-in-out group-hover:text-pink-400"
@@ -127,7 +127,7 @@ export default function AuthForm({type}: Props): JSX.Element {
               </span>
               {type === "login" && "Login with Google"}
               {type === "signup" && "Sign up with Google"}
-            </a>
+            </div>
           </button>
           <div className="flex items-center">
             <div className="flex-grow w-full m-2 border-t border-gray-300" />
@@ -246,7 +246,7 @@ export default function AuthForm({type}: Props): JSX.Element {
           )}
           {type === "signup" && (
             <div className="flex items-center justify-center mt-3 md:mt-4">
-              <a className="text-xs font-normal text-center">
+              <span className="text-xs font-normal text-center">
                 By signing up you agree to our{" "}
                 <Link href="/terms">
                   <a className="text-pink-400 transition duration-150 ease-in-out hover:text-pink-500 focus:outline-none focus:underline">
@@ -259,7 +259,7 @@ export default function AuthForm({type}: Props): JSX.Element {
                     Privacy Policy
                   </a>
                 </Link>
-              </a>{" "}
+              </span>{" "}
             </div>
           )}
         </div>
