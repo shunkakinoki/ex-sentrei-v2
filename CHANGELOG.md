@@ -1,3 +1,16 @@
+# [1.101.0](https://github.com/sentrei/sentrei/compare/v1.100.1...v1.101.0) (2020-11-10)
+
+### Features
+
+- 🎸 ini landing testimoniial ([f61f790](https://github.com/sentrei/sentrei/commit/f61f790bcdf05361085fb70331dc406515da240c))
+
+### Performance Improvements
+
+- ⚡️ ini testimonial image ([91b1455](https://github.com/sentrei/sentrei/commit/91b1455ad4d2c88ba37223df9d31278108b51035))
+- ⚡️ ini testimonial quotation ([7c8e62b](https://github.com/sentrei/sentrei/commit/7c8e62b58951cbfec3b71d2083b11e940c6db914))
+- ⚡️ refactor img next ([5637b09](https://github.com/sentrei/sentrei/commit/5637b09cd3b28d95c21915fc54bba89d2fe6520c))
+- ⚡️ refactor landing feature ([d2d5fe7](https://github.com/sentrei/sentrei/commit/d2d5fe78f4a5e34ea780b8ef4b1d377f0bfbf484))
+
 ## [1.100.1](https://github.com/sentrei/sentrei/compare/v1.100.0...v1.100.1) (2020-11-09)
 
 ### Performance Improvements
