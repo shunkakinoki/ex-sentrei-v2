@@ -40,14 +40,14 @@ export default function LandingDemo(): JSX.Element {
           </p>
           <div className="container justify-center flex-grow max-w-screen-xl mx-auto transition duration-300 ease-in-out transform rounded-lg shadow-xl hover:shadow-2xl hover:-translate-y-3">
             <div className="flex items-end pt-2 pl-3 pr-5 bg-gray-300 rounded-t">
-              <div className="flex items-center self-center mr-3">
+              <div className="items-center self-center hidden mr-3 sm:flex ">
                 <span className="w-3 h-3 mx-1 bg-red-600 rounded-full focus:outline-none" />
                 <span className="w-3 h-3 mx-1 bg-yellow-600 rounded-full focus:outline-none" />
                 <span className="w-3 h-3 mx-1 bg-green-600 rounded-full focus:outline-none" />
               </div>
               <button
                 className={clsx(
-                  "flex items-end justify-between w-24 py-1 text-sm rounded-t-lg sm:w-48 sm:py-2",
+                  "flex items-end justify-between w-24 py-2 text-sm rounded-t-lg sm:w-48",
                   tabType === "website" && "bg-gray-100",
                   tabType !== "website" && "bg-gray-400 opacity-75",
                 )}
@@ -70,7 +70,7 @@ export default function LandingDemo(): JSX.Element {
               <button
                 type="button"
                 className={clsx(
-                  "flex items-end justify-between w-24 py-1 text-sm rounded-t-lg sm:w-48 sm:py-2",
+                  "flex items-end justify-between w-24 py-2 text-sm rounded-t-lg sm:w-48",
                   tabType === "dashboard" && "bg-gray-100",
                   tabType !== "dashboard" && "bg-gray-400 opacity-75",
                 )}
@@ -132,7 +132,7 @@ export default function LandingDemo(): JSX.Element {
                   <input
                     type="text"
                     className="w-full py-1 text-sm font-light leading-3 text-gray-600 bg-gray-300 rounded-full shadow pl-9"
-                    value={
+                    defaultValue={
                       tabType === "website"
                         ? "https://demo.sentrei.com"
                         : "https://demo.sentrei.com/demo/dashboard"
