@@ -111,7 +111,7 @@ export default function PricingTableCard({plan}: Props): JSX.Element {
                 Zero commissions on purchases
               </CheckIconItem>
               {(plan === "pro" || plan === "premium") && (
-                <CheckIconItem highlight>Cusom domains</CheckIconItem>
+                <CheckIconItem highlight>Custom domains</CheckIconItem>
               )}
               {(plan === "pro" || plan === "premium") && (
                 <CheckIconItem highlight>Unlimited theming</CheckIconItem>
