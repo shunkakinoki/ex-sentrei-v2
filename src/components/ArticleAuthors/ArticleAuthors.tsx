@@ -1,5 +1,6 @@
 import {Listbox, Transition} from "@headlessui/react";
 import clsx from "clsx";
+import Image from "next/image";
 
 import Profile from "@/types/Profile";
 
@@ -9,19 +10,19 @@ export interface Props {
 
 // TODO: Convert to next/image
 export function ArticleAuthorsImage({
-  key,
   src,
   name,
   rear,
 }: {
-  key: string;
   name: string;
   rear: boolean;
   src: string;
 }): JSX.Element {
   return (
-    <img
-      key={key}
+    <Image
+      height={30}
+      width={30}
+      layout="fixed"
       className={clsx(
         "inline-block w-6 h-6 md:w-8 md:h-8 text-white rounded-full shadow-solid",
         !rear && "-ml-1",
