@@ -5,10 +5,5 @@ import {promisify} from "util";
 const readFile = promisify(fs.readFile);
 
 export default async function markdown(slug: string): Promise<string> {
-  const realSlug = slug.replace(/\.md$/, "");
-  const body = await readFile(
-    resolve(process.cwd(), `./legal/${realSlug}`),
-    "utf8",
-  );
-  return body;
+  return readFile(resolve(process.cwd(), `./legal/${slug}.md`), "utf8");
 }
