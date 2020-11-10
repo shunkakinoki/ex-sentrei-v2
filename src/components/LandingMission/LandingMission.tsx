@@ -18,7 +18,7 @@ export default function LandingMission(): JSX.Element {
       </div>
       <div className="container max-w-screen-lg px-5 pt-12 mx-auto">
         <div className="flex flex-wrap -mx-4 -mt-4 -mb-10 sm:-m-4">
-          <div className="flex flex-col items-center p-4 mb-6 text-center md:w-1/3 md:mb-0">
+          <div className="flex flex-col items-center w-full p-4 mb-6 text-center md:w-1/3 md:mb-0">
             <div className="inline-flex items-center justify-center flex-shrink-0 w-20 h-20 mb-5 text-pink-500 bg-pink-100 rounded-full">
               <svg
                 className="w-9 h-9"
@@ -44,7 +44,7 @@ export default function LandingMission(): JSX.Element {
               </p>
             </div>
           </div>
-          <div className="flex flex-col items-center p-4 mb-6 text-center md:w-1/3 md:mb-0">
+          <div className="flex flex-col items-center w-full p-4 mb-6 text-center md:w-1/3 md:mb-0">
             <div className="inline-flex items-center justify-center flex-shrink-0 w-20 h-20 mb-5 text-pink-500 bg-pink-100 rounded-full">
               <svg
                 className="w-9 h-9"
@@ -70,7 +70,7 @@ export default function LandingMission(): JSX.Element {
               </p>
             </div>
           </div>
-          <div className="flex flex-col items-center p-4 mb-6 text-center md:w-1/3 md:mb-0">
+          <div className="flex flex-col items-center w-full p-4 mb-6 text-center md:w-1/3 md:mb-0">
             <div className="inline-flex items-center justify-center flex-shrink-0 w-20 h-20 mb-5 text-pink-500 bg-pink-100 rounded-full">
               <svg
                 className="w-9 h-9"
