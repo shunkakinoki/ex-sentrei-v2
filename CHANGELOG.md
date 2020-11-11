@@ -1,3 +1,14 @@
+# [1.106.0](https://github.com/sentrei/sentrei/compare/v1.105.1...v1.106.0) (2020-11-11)
+
+### Bug Fixes
+
+- 🐛 dashboard demo link ([2b72e9e](https://github.com/sentrei/sentrei/commit/2b72e9e750bee66fb52a668c7ebdcaa067615892))
+
+### Features
+
+- 🎸 ini subscribe screen ([37e8f5d](https://github.com/sentrei/sentrei/commit/37e8f5d28a0f782d3857899bb0ec9f27aa0f12db))
+- 🎸 ini unoptimized demo next images prop ([3d15f9b](https://github.com/sentrei/sentrei/commit/3d15f9b76977c23b5c7aa4e2f8a08cdd6150656f))
+
 ## [1.105.1](https://github.com/sentrei/sentrei/compare/v1.105.0...v1.105.1) (2020-11-10)
 
 ### Performance Improvements
