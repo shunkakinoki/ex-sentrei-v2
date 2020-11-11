@@ -9,10 +9,10 @@ const db = admin.firestore();
 /**
  * Set latest rooms on update
  */
-const latestRoomSet = functions.firestore
-  .document("spaces/{spaceId}/article/{articleId}/admin/{adminId}")
+const latestArticleSet = functions.firestore
+  .document("articles/{articleId}/admin/{adminId}")
   .onUpdate(async (change, context) => {
-    const {spaceId, articleId, adminId} = context.params;
+    const {articleId, adminId} = context.params;
 
     const analyticsData = setLatestAnalytics(adminId, "article", change);
 
@@ -21,8 +21,8 @@ const latestRoomSet = functions.firestore
     }
 
     return db
-      .doc(`spaces/${spaceId}/articles/${articleId}/analytics/latest`)
+      .doc(`articles/${articleId}/analytics/latest`)
       .set(analyticsData, {merge: true});
   });
 
-export default latestRoomSet;
+export default latestArticleSet;
