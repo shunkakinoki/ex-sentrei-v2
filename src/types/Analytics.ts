@@ -4,7 +4,7 @@ import Stats from "@/types/Stats";
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace Analytics {
-  export type Models = "root" | "member" | "room" | "space" | "user";
+  export type Models = "root" | "article" | "member" | "space" | "user";
   export type Period = "latest" | "hour" | "day" | "week";
 
   interface InitialFields {
