@@ -7,7 +7,7 @@ import setLatestAnalytics from "../../helpers/analytics/setLatestAnalytics";
 const db = admin.firestore();
 
 /**
- * Set latest rooms on update
+ * Set latest articles on update
  */
 const latestArticleSet = functions.firestore
   .document("articles/{articleId}/admin/{adminId}")
