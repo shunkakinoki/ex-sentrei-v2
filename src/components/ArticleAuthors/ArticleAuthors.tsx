@@ -6,6 +6,7 @@ import Profile from "@/types/Profile";
 
 export interface Props {
   authors: Profile.Get[];
+  namespaceId: string;
 }
 
 // TODO: Convert to next/image
@@ -13,10 +14,12 @@ export function ArticleAuthorsImage({
   src,
   name,
   rear,
+  unoptimized,
 }: {
   name: string;
   rear: boolean;
   src: string;
+  unoptimized: boolean;
 }): JSX.Element {
   return (
     <Image
@@ -29,11 +32,15 @@ export function ArticleAuthorsImage({
       )}
       src={src}
       alt={`Author ${name}`}
+      unoptimized={unoptimized}
     />
   );
 }
 
-export default function ArticleAuthors({authors}: Props): JSX.Element {
+export default function ArticleAuthors({
+  authors,
+  namespaceId,
+}: Props): JSX.Element {
   return (
     <div className="z-30 flex">
       <Listbox as="div" className="space-y-1" value="" onChange={() => {}}>
@@ -48,6 +55,7 @@ export default function ArticleAuthors({authors}: Props): JSX.Element {
                       src={author.image as string}
                       name={author.name}
                       rear={index === 0}
+                      unoptimized={namespaceId === "demo"}
                     />
                   );
                 })}
@@ -98,6 +106,7 @@ export default function ArticleAuthors({authors}: Props): JSX.Element {
                                 src={author.image as string}
                                 name={author.name}
                                 rear={false}
+                                unoptimized={namespaceId === "demo"}
                               />
                               <span
                                 className={`${

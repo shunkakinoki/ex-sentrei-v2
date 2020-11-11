@@ -9,6 +9,7 @@ export interface Props
     "createdAt" | "pricing" | "time" | "title" | "subtitle"
   > {
   authors: Profile.Get[];
+  namespaceId: string;
 }
 
 export default function ArticleHero({
@@ -18,6 +19,7 @@ export default function ArticleHero({
   time,
   title,
   subtitle,
+  namespaceId,
 }: Props): JSX.Element {
   return (
     <section>
@@ -39,9 +41,13 @@ export default function ArticleHero({
         <div className="px-4 py-2 mt-2">
           <div className="flex items-center space-x-2 justify-left">
             {authors.length === 1 ? (
-              <ArticleAuthor image={authors[0].image} name={authors[0].name} />
+              <ArticleAuthor
+                image={authors[0].image}
+                name={authors[0].name}
+                namespaceId={namespaceId}
+              />
             ) : (
-              <ArticleAuthors authors={authors} />
+              <ArticleAuthors authors={authors} namespaceId={namespaceId} />
             )}
             <p className="flex items-center mt-1 font-medium text-center text-gray-500">
               {authors.length === 1 && authors[0].name}

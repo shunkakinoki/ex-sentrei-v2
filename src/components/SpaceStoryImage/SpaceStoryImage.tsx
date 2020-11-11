@@ -5,12 +5,14 @@ import useStory from "@/hooks/useStory";
 import Article from "@/types/Article";
 
 export interface Props extends Pick<Article.Fields, "image" | "title"> {
+  namespaceId: string;
   noSwitch: boolean;
 }
 
 export default function SpaceStoryImage({
   image,
   title,
+  namespaceId,
   noSwitch,
 }: Props): JSX.Element {
   const {storySwitch} = useStory();
@@ -32,6 +34,7 @@ export default function SpaceStoryImage({
             className="object-cover"
             alt={`Story Cover for ${title}`}
             src={image ?? "/assets/logo.png"}
+            unoptimized={namespaceId === "demo"}
           />
         </div>
       </div>
