@@ -12,6 +12,10 @@ import "@/styles/index.css";
 import "@/styles/nprogress.css";
 import "@/utils/nprogress";
 
+const GlobalAnalytics = dynamic(() => import("@/components/GlobalAnalytics"), {
+  ssr: false,
+});
+
 const GlobalAuth = dynamic(() => import("@/components/GlobalAuth"), {
   ssr: false,
 });
@@ -46,6 +50,7 @@ const CustomApp = ({Component, pageProps}: AppProps): JSX.Element => {
           }}
         >
           <GlobalRoot>
+            <GlobalAnalytics />
             <GlobalAuth />
             <GlobalToast />
             <Component {...pageProps} />
