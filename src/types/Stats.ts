@@ -8,7 +8,7 @@ export type StatsCollection =
   | "spaces"
   | "users";
 
-export const rootCollection: StatsCollection[] = [
+export const statsCollection: StatsCollection[] = [
   "activity",
   "analytics",
   "feedback",
