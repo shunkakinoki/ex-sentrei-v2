@@ -1,7 +1,7 @@
 import {ChatPostMessageArguments} from "@slack/web-api";
 import * as functions from "firebase-functions";
 
-import createContextElements from "@/helpers/slack/createContextElements";
+import createContextElements from "./createContextElements";
 
 export default function createMessageArgs(
   context: functions.EventContext,
