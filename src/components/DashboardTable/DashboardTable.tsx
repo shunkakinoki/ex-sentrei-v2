@@ -68,7 +68,7 @@ export default function DashboardTable({
       {namespaceId === "demo" && total > 1 && (
         <PaginationBase
           current={current}
-          pathname="/dashboard/demo"
+          pathname="/demo/dashboard"
           total={total}
         />
       )}

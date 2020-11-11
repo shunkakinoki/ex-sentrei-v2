@@ -40,6 +40,7 @@ export default function ArticleScreen({
         time={article.time}
         title={article.title}
         subtitle={article?.subtitle}
+        namespaceId={namespaceId}
       />
       {article.image && (
         <ArticleImage title={article.title} image={article.image} />

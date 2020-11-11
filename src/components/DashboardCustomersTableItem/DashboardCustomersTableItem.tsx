@@ -2,7 +2,9 @@ import Image from "next/image";
 
 import Customer from "@/types/Customer";
 
-export type Props = Customer;
+export interface Props extends Customer {
+  namespaceId: string;
+}
 
 export default function DashboardCustomersTableItem({
   email,
@@ -10,6 +12,7 @@ export default function DashboardCustomersTableItem({
   image,
   name,
   status,
+  namespaceId,
 }: Props): JSX.Element {
   return (
     <tr key={name}>
@@ -24,6 +27,7 @@ export default function DashboardCustomersTableItem({
               layout="fixed"
               src={image as string}
               alt={`Customer ${name}`}
+              unoptimized={namespaceId === "demo"}
             />
           </div>
           <div className="ml-4 truncate">

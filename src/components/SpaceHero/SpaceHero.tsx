@@ -37,7 +37,9 @@ export default function SpaceHero({
         </div>
         <div className="mt-10 sm:mt-15 sm:flex sm:justify-center md:w-1/2 lg:w-1/3 lg:flex-shrink-0 lg:mt-0">
           <div className="rounded-md shadow">
-            <Link href={`/${namespaceId}/subscribe`}>
+            <Link
+              href={`${namespaceId !== "" ? "/" : ""}${namespaceId}/subscribe`}
+            >
               <a className="flex items-center justify-center w-full px-8 py-3 font-medium text-white rounded-md hover:from-purple-300 hover:via-pink-400 hover:to-red-400 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 md:py-4 md:text-lg md:px-20">
                 Subscribe now.
               </a>

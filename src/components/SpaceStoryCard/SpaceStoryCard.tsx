@@ -62,7 +62,12 @@ export default function SpaceStoryCard({
             "md:flex md:flex-row items-center": !noSwitch && !storySwitch,
           })}
         >
-          <SpaceStoryImage image={image} title={title} noSwitch={noSwitch} />
+          <SpaceStoryImage
+            image={image}
+            title={title}
+            noSwitch={noSwitch}
+            namespaceId={namespaceId}
+          />
           <SpaceStoryHero
             time={time}
             title={title}

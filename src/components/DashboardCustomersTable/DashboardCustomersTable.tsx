@@ -44,6 +44,7 @@ export default function DashboardCustomersTable({
                       image={customer.image}
                       name={customer.name}
                       status={customer.status}
+                      namespaceId={namespaceId}
                     />
                   );
                 })}
