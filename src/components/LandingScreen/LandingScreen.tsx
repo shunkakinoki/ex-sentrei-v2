@@ -23,7 +23,7 @@ export default function LandingScreen(): JSX.Element {
   return (
     <>
       <SeoLanding title="Sentrei" />
-      <OneTap />
+      <OneTap delay />
       <HeaderRoot />
       <PapercupsWidget />
       <LandingHero />
