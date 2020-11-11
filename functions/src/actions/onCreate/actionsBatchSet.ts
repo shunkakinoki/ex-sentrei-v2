@@ -24,15 +24,9 @@ const actionsBatchSet = functions.firestore
 
     const actionsRef = db.doc(`users/${data.createdByUid}/admin/actions`);
     const spaceRef = db.doc(`spaces/${data.spaceId}/admin/actions`);
-    const spaceActionsRef = db.doc(
-      `spaces/${data.spaceId}/members/${data.createdByUid}/admin/actions`,
-    );
 
     batch.set(actionsRef, actionsData, {merge: true});
     batch.set(spaceRef, actionsData, {
-      merge: true,
-    });
-    batch.set(spaceActionsRef, actionsData, {
       merge: true,
     });
 
