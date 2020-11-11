@@ -1,3 +1,9 @@
+# [1.107.0](https://github.com/sentrei/sentrei/compare/v1.106.0...v1.107.0) (2020-11-11)
+
+### Features
+
+- 🎸 ini global analytics ([646ab33](https://github.com/sentrei/sentrei/commit/646ab33bd43cf3f2dcb9032975f065d2cec5751d))
+
 # [1.106.0](https://github.com/sentrei/sentrei/compare/v1.105.1...v1.106.0) (2020-11-11)
 
 ### Bug Fixes
