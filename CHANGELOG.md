@@ -1,3 +1,9 @@
+## [1.107.1](https://github.com/sentrei/sentrei/compare/v1.107.0...v1.107.1) (2020-11-12)
+
+### Performance Improvements
+
+- ⚡️ makefile set env ([1568944](https://github.com/sentrei/sentrei/commit/15689441c93e7080a8d42df205703074827d8a95))
+
 # [1.107.0](https://github.com/sentrei/sentrei/compare/v1.106.0...v1.107.0) (2020-11-11)
 
 ### Features
