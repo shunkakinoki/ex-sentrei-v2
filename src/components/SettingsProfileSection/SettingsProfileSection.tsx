@@ -7,7 +7,7 @@ import {toast} from "react-toastify";
 import {mutate} from "swr";
 
 import uploadImage from "@/callable/uploadImage";
-import ImageAuthor from "@/components/ImageAuthor";
+import ImageProfile from "@/components/ImageProfile";
 import useAuth from "@/hooks/useAuth";
 import useProfile from "@/hooks/useProfile";
 import {updateProfile} from "@/services/Profile";
@@ -206,7 +206,7 @@ export default function SettingsProfileSection(): JSX.Element {
                   Photo
                 </label>
                 <div className="flex items-center mt-2">
-                  <ImageAuthor
+                  <ImageProfile
                     image={profile?.image ?? null}
                     name={profile?.name ?? ""}
                   />

@@ -4,7 +4,7 @@ import Profile from "@/types/Profile";
 
 export type Props = Pick<Profile.Get, "image" | "name">;
 
-export default function ImageAuthor({image, name}: Props): JSX.Element {
+export default function ImageProfile({image, name}: Props): JSX.Element {
   return (
     <>
       {image ? (
