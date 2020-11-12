@@ -14,7 +14,7 @@ const db = admin.firestore();
  */
 const statsMinus = functions.firestore
   .document("{collection}/{docId}")
-  .onCreate((_, context) => {
+  .onDelete((_, context) => {
     const {collection} = context.params;
 
     if (!statsCollection.includes(collection)) {
