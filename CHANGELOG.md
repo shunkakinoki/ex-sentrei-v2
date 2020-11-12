@@ -1,3 +1,9 @@
+## [1.108.1](https://github.com/sentrei/sentrei/compare/v1.108.0...v1.108.1) (2020-11-12)
+
+### Performance Improvements
+
+- ⚡️ ini cloudinary loader ([bbf0bad](https://github.com/sentrei/sentrei/commit/bbf0bad8944052b4942620ec6db13490c15cbb92))
+
 # [1.108.0](https://github.com/sentrei/sentrei/compare/v1.107.1...v1.108.0) (2020-11-12)
 
 ### Features
