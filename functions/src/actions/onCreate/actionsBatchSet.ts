@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
+
 import * as admin from "firebase-admin";
 import * as functions from "firebase-functions";
 
