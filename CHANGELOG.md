@@ -1,3 +1,16 @@
+# [1.109.0](https://github.com/sentrei/sentrei/compare/v1.108.1...v1.109.0) (2020-11-12)
+
+### Features
+
+- 🎸 ini header image ([24e2189](https://github.com/sentrei/sentrei/commit/24e218930f6bbf768d2044ae2fd08c26de3cb847))
+- 🎸 ini image upload ([7d62947](https://github.com/sentrei/sentrei/commit/7d629470eecc7d1bfb2899d1a9ee60acb3f16fd4))
+- 🎸 ini image upload ([d145442](https://github.com/sentrei/sentrei/commit/d1454424f3f8f6f90accbb48d51239c8ee9b78ac))
+
+### Performance Improvements
+
+- ⚡️ ini image profile for article hero ([55aa475](https://github.com/sentrei/sentrei/commit/55aa4750c84ea7de76e9a0234edd7dabde5f0213))
+- ⚡️ migrate image profile ([ca6b932](https://github.com/sentrei/sentrei/commit/ca6b932139c3563f579a563fe36119cf73531e7d))
+
 ## [1.108.1](https://github.com/sentrei/sentrei/compare/v1.108.0...v1.108.1) (2020-11-12)
 
 ### Performance Improvements
