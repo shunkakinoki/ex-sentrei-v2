@@ -8,16 +8,6 @@ export type StatsCollection =
   | "spaces"
   | "users";
 
-export const statsCollection: StatsCollection[] = [
-  "activity",
-  "analytics",
-  "feedback",
-  "namespaces",
-  "profiles",
-  "spaces",
-  "users",
-];
-
 // eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace Stats {
   export type Fields = {

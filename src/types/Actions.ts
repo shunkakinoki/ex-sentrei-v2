@@ -7,16 +7,6 @@ export type ActionsCollection =
   | "deleted_articles"
   | "deleted_spaces";
 
-export const actionsCollection: ActionsCollection[] = [
-  "created_articles",
-  "created_spaces",
-  "updated_articles",
-  "updated_profiles",
-  "updated_spaces",
-  "deleted_articles",
-  "deleted_spaces",
-];
-
 // eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace Actions {
   export type Fields = {

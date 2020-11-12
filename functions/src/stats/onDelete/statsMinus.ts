@@ -4,7 +4,8 @@
 import * as admin from "firebase-admin";
 import * as functions from "firebase-functions";
 
-import Stats, {statsCollection} from "@/types/Stats";
+import Stats from "@/types/Stats";
+import statsCollection from "../../helpers/stats/statsCollection";
 
 const db = admin.firestore();
 
