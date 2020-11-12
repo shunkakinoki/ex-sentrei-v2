@@ -1,24 +1,48 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
-import {useEffect} from "react";
+import Image from "next/image";
+import {useEffect, useRef} from "react";
 import {useForm} from "react-hook-form";
 import {useSetRecoilState} from "recoil";
 
 import useEditor, {
   editorDeleteAtom,
+  editorImageAtom,
   editorPricingAtom,
   editorToolkitAtom,
   editorSubtitleAtom,
 } from "@/hooks/useEditor";
 import Article from "@/types/Article";
+import {getImageUrl} from "@/utils/image";
 
-export default function EditorToolkitSection(): JSX.Element {
-  const {editorPricing, editorSubtitle} = useEditor();
+export type Props = Pick<Article.Get, "image">;
+
+export default function EditorToolkitSection({image}: Props): JSX.Element {
+  const {editorImage, editorPricing, editorSubtitle} = useEditor();
 
   const setEditorDelete = useSetRecoilState(editorDeleteAtom);
+  const setEditorImage = useSetRecoilState(editorImageAtom);
   const setEditorToolkit = useSetRecoilState(editorToolkitAtom);
   const setEditorPricing = useSetRecoilState(editorPricingAtom);
   const setEditorSubtitle = useSetRecoilState(editorSubtitleAtom);
+
+  const hiddenFileInput = useRef(null);
+
+  const handleClick = (): void => {
+    if (!hiddenFileInput.current) {
+      return;
+    }
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    hiddenFileInput.current.click();
+  };
+
+  const handleFile = async (file: File) => {
+    const imageUrl = await getImageUrl(file);
+    setEditorImage(imageUrl);
+    return null;
+  };
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
   const {register, handleSubmit, reset, formState} = useForm<
@@ -29,6 +53,10 @@ export default function EditorToolkitSection(): JSX.Element {
       subtitle: editorSubtitle,
     },
   });
+
+  useEffect(() => {
+    setEditorImage(image);
+  }, [setEditorImage, image]);
 
   useEffect(() => {
     if (!formState.isDirty) {
@@ -112,31 +140,59 @@ export default function EditorToolkitSection(): JSX.Element {
               </label>
               <div className="flex justify-center px-6 pt-5 pb-6 mt-2 border-2 border-gray-300 border-dashed rounded-md">
                 <div className="text-center">
-                  <svg
-                    className="w-12 h-12 mx-auto text-gray-400"
-                    stroke="currentColor"
-                    fill="none"
-                    viewBox="0 0 48 48"
-                  >
-                    <path
-                      d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                  <input
+                    ref={hiddenFileInput}
+                    type="file"
+                    accept="image/*"
+                    style={{display: "none"}}
+                    onChange={e => {
+                      if (!e.target.files) {
+                        return;
+                      }
+                      // eslint-disable-next-line no-void
+                      void handleFile(e.target.files[0]);
+                    }}
+                  />
+                  {editorImage ? (
+                    <Image
+                      priority
+                      height={50}
+                      width={50}
+                      layout="fixed"
+                      className="inline object-cover w-12 h-12 p-1 mr-2 border rounded-full"
+                      src={editorImage}
+                      alt="Editor image"
                     />
-                  </svg>
-                  <p className="mt-1 text-sm text-gray-600">
-                    <button
-                      type="button"
-                      className="font-medium text-indigo-600 transition duration-150 ease-in-out hover:text-indigo-500 focus:outline-none focus:underline"
-                    >
-                      Upload a file
-                    </button>{" "}
-                    or drag and drop
-                  </p>
-                  <p className="mt-1 text-xs text-gray-500">
-                    PNG, JPG, GIF up to 10MB
-                  </p>
+                  ) : (
+                    <>
+                      <svg
+                        className="w-12 h-12 mx-auto text-gray-400"
+                        stroke="currentColor"
+                        fill="none"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      <p className="mt-1 text-sm text-gray-600">
+                        <button
+                          type="button"
+                          className="font-medium text-indigo-600 transition duration-150 ease-in-out hover:text-indigo-500 focus:outline-none focus:underline"
+                          onClick={handleClick}
+                        >
+                          Upload a file
+                        </button>{" "}
+                        or drag and drop
+                      </p>
+                      <p className="mt-1 text-xs text-gray-500">
+                        PNG, JPG, GIF up to 10MB
+                      </p>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
