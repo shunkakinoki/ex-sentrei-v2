@@ -21,7 +21,7 @@ var nextConfig = {
       loader: "cloudinary",
       path: "https://res.cloudinary.com/deykjzeqg/",
     },
-    domains: ["placeimg.com", "s3.amazonaws.com"],
+    domains: ["placeimg.com", "res.cloudinary.com", "s3.amazonaws.com"],
   },
 };
 

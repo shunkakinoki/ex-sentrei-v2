@@ -1,10 +1,13 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
-import {useEffect} from "react";
+import imageCompression from "browser-image-compression";
+import {useEffect, useRef, useState} from "react";
 import {useForm} from "react-hook-form";
 import {toast} from "react-toastify";
 import {mutate} from "swr";
 
+import uploadImage from "@/callable/uploadImage";
+import ImageAuthor from "@/components/ImageAuthor";
 import useAuth from "@/hooks/useAuth";
 import useProfile from "@/hooks/useProfile";
 import {updateProfile} from "@/services/Profile";
@@ -12,8 +15,71 @@ import Profile from "@/types/Profile";
 
 export default function SettingsProfileSection(): JSX.Element {
   const {authState} = useAuth();
+  const [filename, setFilename] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
 
   const {profile} = useProfile();
+
+  const hiddenFileInput = useRef(null);
+
+  const handleClick = (): void => {
+    if (!hiddenFileInput.current) {
+      return;
+    }
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    hiddenFileInput.current.click();
+  };
+
+  useEffect(() => {
+    // eslint-disable-next-line no-console
+    console.log(filename);
+    // eslint-disable-next-line no-console
+    console.log(imageUrl);
+  }, [filename, imageUrl]);
+
+  const handleFile = async (file: File) => {
+    if (!authState?.uid) {
+      return null;
+    }
+
+    const output = await imageCompression(file, {
+      maxSizeMB: 1,
+    });
+    const reader = new FileReader();
+
+    reader.readAsDataURL(output);
+    reader.onloadend = async (): Promise<void> => {
+      setFilename(file.name);
+      if (!reader.result || typeof reader.result !== "string") {
+        return;
+      }
+      const secureUrl = await uploadImage(reader.result);
+      setImageUrl(secureUrl);
+
+      await mutate(
+        `profiles/${authState.uid}`,
+        {...profile, image: secureUrl},
+        false,
+      );
+
+      await updateProfile(authState?.uid, {image: secureUrl})
+        .then(() =>
+          toast.success("Success", {
+            autoClose: 1500,
+            draggable: false,
+            hideProgressBar: true,
+          }),
+        )
+        .catch((err: Error) => {
+          toast.error(err.message);
+        });
+
+      await mutate(`profiles/${authState.uid}`);
+    };
+    return null;
+  };
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
   const {register, handleSubmit, reset, formState} = useForm<
@@ -140,19 +206,28 @@ export default function SettingsProfileSection(): JSX.Element {
                   Photo
                 </label>
                 <div className="flex items-center mt-2">
-                  <span className="inline-block w-12 h-12 overflow-hidden bg-gray-100 rounded-full">
-                    <svg
-                      className="w-full h-full text-gray-300"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                  </span>
+                  <ImageAuthor
+                    image={profile?.image ?? null}
+                    name={profile?.name ?? ""}
+                  />
                   <span className="ml-5 rounded-md shadow-sm">
+                    <input
+                      ref={hiddenFileInput}
+                      type="file"
+                      accept="image/*"
+                      style={{display: "none"}}
+                      onChange={e => {
+                        if (!e.target.files) {
+                          return;
+                        }
+                        // eslint-disable-next-line no-void
+                        void handleFile(e.target.files[0]);
+                      }}
+                    />
                     <button
                       type="button"
                       className="px-3 py-2 text-sm font-medium leading-4 text-gray-700 transition duration-150 ease-in-out border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-pink-300 focus:shadow-outline-pink active:bg-gray-50 active:text-gray-800"
+                      onClick={handleClick}
                     >
                       Change
                     </button>
