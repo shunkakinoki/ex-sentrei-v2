@@ -1,5 +1,5 @@
-import ArticleAuthor from "@/components/ArticleAuthor";
 import ArticleAuthors from "@/components/ArticleAuthors";
+import ImageProfile from "@/components/ImageProfile";
 import Article from "@/types/Article";
 import Profile from "@/types/Profile";
 
@@ -41,11 +41,7 @@ export default function ArticleHero({
         <div className="px-4 py-2 mt-2">
           <div className="flex items-center space-x-2 justify-left">
             {authors.length === 1 ? (
-              <ArticleAuthor
-                image={authors[0].image}
-                name={authors[0].name}
-                namespaceId={namespaceId}
-              />
+              <ImageProfile image={authors[0].image} name={authors[0].name} />
             ) : (
               <ArticleAuthors authors={authors} namespaceId={namespaceId} />
             )}

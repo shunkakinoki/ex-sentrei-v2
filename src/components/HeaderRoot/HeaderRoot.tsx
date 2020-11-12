@@ -10,6 +10,13 @@ const HeaderDemoMenu = dynamic(() => import("@/components/HeaderDemoMenu"), {
   ssr: false,
 });
 
+const HeaderImageProfile = dynamic(
+  () => import("@/components/HeaderImageProfile"),
+  {
+    ssr: false,
+  },
+);
+
 const HeaderMobileMenu = dynamic(
   () => import("@/components/HeaderMobileMenu"),
   {
@@ -140,15 +147,7 @@ export default function HeaderRoot(): JSX.Element {
                         aria-label="Profile menu"
                         aria-haspopup="true"
                       >
-                        <Image
-                          priority
-                          src="/assets/logo.png"
-                          height={40}
-                          width={40}
-                          layout="fixed"
-                          alt="Profile"
-                          className="w-8 h-8 rounded-full"
-                        />
+                        <HeaderImageProfile />
                       </Menu.Button>
                       <span className="z-30 ">
                         <HeaderProfileMenu open={open} />
