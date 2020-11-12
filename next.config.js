@@ -17,6 +17,10 @@ var nextConfig = {
     FIREBASE_PRIVATE_KEY: process.env.FIREBASE_PRIVATE_KEY,
   },
   images: {
+    images: {
+      loader: "cloudinary",
+      path: "https://res.cloudinary.com/deykjzeqg/",
+    },
     domains: ["placeimg.com", "s3.amazonaws.com"],
   },
 };
