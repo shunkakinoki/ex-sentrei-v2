@@ -1,3 +1,23 @@
+# [1.108.0](https://github.com/sentrei/sentrei/compare/v1.107.1...v1.108.0) (2020-11-12)
+
+### Features
+
+- 🎸 ini actions functions ([0e39e2b](https://github.com/sentrei/sentrei/commit/0e39e2b906fafd4e61523af2f05f54fe504604c2))
+- 🎸 ini analytics functions ([56f86f0](https://github.com/sentrei/sentrei/commit/56f86f0a4636113c61899f1cf325c7dbb4561293))
+- 🎸 ini analytics types ([aaf6d9c](https://github.com/sentrei/sentrei/commit/aaf6d9c74f4f0cf2233ee813297d77448271748e))
+- 🎸 ini cloudinary function ([5a88bbb](https://github.com/sentrei/sentrei/commit/5a88bbb5ce3ea1d0a7eed2e6f8032fdeacf5e1be))
+- 🎸 ini metrics functions ([fcdde3b](https://github.com/sentrei/sentrei/commit/fcdde3bb8512627e1ecaa5cca52b6e972352a1ea))
+- 🎸 ini slack functions ([6428bd2](https://github.com/sentrei/sentrei/commit/6428bd24a2d480900e45b0546542ad05bd296758))
+- 🎸 ini stats functions ([78ed417](https://github.com/sentrei/sentrei/commit/78ed417d7cdc2d6492370db24597b55afbb2ea91))
+
+### Performance Improvements
+
+- ⚡️ delay one tap ([a939491](https://github.com/sentrei/sentrei/commit/a93949108352694e9e5f97599ab3dfb347db5a4a))
+- ⚡️ deprecate member type ([eea3ed9](https://github.com/sentrei/sentrei/commit/eea3ed97d67d3e978d4224888592d98f82b1b65f))
+- ⚡️ ini create main ([a6cee3e](https://github.com/sentrei/sentrei/commit/a6cee3eb06384bc86b750862f153bde96edd6dd2))
+- ⚡️ ini new functions ([79acb35](https://github.com/sentrei/sentrei/commit/79acb35b2e5f3d28724f4e11b3e4b2745ccaa4a5))
+- ⚡️ ini stats helpers ([fc36456](https://github.com/sentrei/sentrei/commit/fc36456c773e24687846091cd6a46b86458e23c2))
+
 ## [1.107.1](https://github.com/sentrei/sentrei/compare/v1.107.0...v1.107.1) (2020-11-12)
 
 ### Performance Improvements
