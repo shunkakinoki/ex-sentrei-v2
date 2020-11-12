@@ -13,6 +13,7 @@ export const reservedNamepages = [
   "rooms",
   "sitemap.xml",
   "settings",
+  "subscribe",
   "support",
 ];
 
