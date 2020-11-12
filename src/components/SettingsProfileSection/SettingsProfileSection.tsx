@@ -1,22 +1,19 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
-import imageCompression from "browser-image-compression";
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useRef} from "react";
 import {useForm} from "react-hook-form";
 import {toast} from "react-toastify";
 import {mutate} from "swr";
 
-import uploadImage from "@/callable/uploadImage";
 import ImageProfile from "@/components/ImageProfile";
 import useAuth from "@/hooks/useAuth";
 import useProfile from "@/hooks/useProfile";
 import {updateProfile} from "@/services/Profile";
 import Profile from "@/types/Profile";
+import {getImageUrl} from "@/utils/image";
 
 export default function SettingsProfileSection(): JSX.Element {
   const {authState} = useAuth();
-  const [filename, setFilename] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
 
   const {profile} = useProfile();
 
@@ -32,52 +29,33 @@ export default function SettingsProfileSection(): JSX.Element {
     hiddenFileInput.current.click();
   };
 
-  useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.log(filename);
-    // eslint-disable-next-line no-console
-    console.log(imageUrl);
-  }, [filename, imageUrl]);
-
   const handleFile = async (file: File) => {
     if (!authState?.uid) {
       return null;
     }
 
-    const output = await imageCompression(file, {
-      maxSizeMB: 1,
-    });
-    const reader = new FileReader();
+    const imageUrl = await getImageUrl(file);
 
-    reader.readAsDataURL(output);
-    reader.onloadend = async (): Promise<void> => {
-      setFilename(file.name);
-      if (!reader.result || typeof reader.result !== "string") {
-        return;
-      }
-      const secureUrl = await uploadImage(reader.result);
-      setImageUrl(secureUrl);
+    await mutate(
+      `profiles/${authState.uid}`,
+      {...profile, image: imageUrl},
+      false,
+    );
 
-      await mutate(
-        `profiles/${authState.uid}`,
-        {...profile, image: secureUrl},
-        false,
-      );
+    await updateProfile(authState?.uid, {image: imageUrl})
+      .then(() =>
+        toast.success("Success", {
+          autoClose: 1500,
+          draggable: false,
+          hideProgressBar: true,
+        }),
+      )
+      .catch((err: Error) => {
+        toast.error(err.message);
+      });
 
-      await updateProfile(authState?.uid, {image: secureUrl})
-        .then(() =>
-          toast.success("Success", {
-            autoClose: 1500,
-            draggable: false,
-            hideProgressBar: true,
-          }),
-        )
-        .catch((err: Error) => {
-          toast.error(err.message);
-        });
+    await mutate(`profiles/${authState.uid}`);
 
-      await mutate(`profiles/${authState.uid}`);
-    };
     return null;
   };
 
