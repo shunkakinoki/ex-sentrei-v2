@@ -8,6 +8,9 @@ secrets-create-alpha:
 secrets-create-beta:
 	gcloud secrets create functions_beta_env --data-file="beta.env.json" --locations=us-central1 --replication-policy="user-managed"
 
+secrets-create-main:
+	gcloud secrets create functions_main_env --data-file="main.env.json" --locations=us-central1 --replication-policy="user-managed"
+
 secrets-create-local:
 	gcloud secrets create web_local_env --data-file=".env.local" --locations=us-central1 --replication-policy="user-managed"
 
