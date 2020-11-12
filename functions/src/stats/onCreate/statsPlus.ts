@@ -13,7 +13,7 @@ const db = admin.firestore();
  */
 const statsPlus = functions.firestore
   .document("{collection}/{docId}")
-  .onCreate((snap, context) => {
+  .onCreate((_, context) => {
     const {collection} = context.params;
 
     if (!statsCollection.includes(collection)) {
