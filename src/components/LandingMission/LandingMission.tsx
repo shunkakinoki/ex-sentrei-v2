@@ -11,8 +11,18 @@ export default function LandingMission(): JSX.Element {
           </h3>
           <p className="max-w-3xl mt-4 text-xl leading-7 text-gray-500 lg:mx-auto">
             We just want to be fair to both readers and writers. We feel that
-            popular publishing tools are somewhat evil and being dishonest. We
-            just want to do better. Built in Tokyo.
+            popular publishing tools are somewhat evil and being dishonest.
+            Popups and high commissions should exist in 2020. We just want to do
+            better. Built in Tokyo by a{" "}
+            <a
+              href="https://pioneer.app/winners/shun-kakinoki"
+              className="underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              pioneer
+            </a>
+            .
           </p>
         </div>
       </div>
