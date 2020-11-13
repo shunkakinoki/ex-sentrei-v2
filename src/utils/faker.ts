@@ -133,10 +133,9 @@ export const createArticle = (): Article.Get => {
     createdByUid: faker.random.uuid(),
     excerpt: createMarkdown(1),
     id: faker.random.uuid(),
-    image: `${faker.image.image()}?random=${Date.now()}`.replace(
-      "http",
-      "https",
-    ),
+    image: `https://picsum.photos/900/1200?random=${Math.floor(
+      Math.random() * 10,
+    )}`,
     pricing: createPricing(),
     slugId: "demo",
     spaceId: faker.random.uuid(),
@@ -163,10 +162,9 @@ export const createSpace = (): Space.Get => {
     customerCount: 300,
     description: faker.lorem.sentences(Math.floor(Math.random() * 3) + 1),
     id: faker.random.uuid(),
-    image: `${faker.image.image()}?random=${Date.now()}`.replace(
-      "http",
-      "https",
-    ),
+    image: `https://picsum.photos/900/1200?random=${Math.floor(
+      Math.random() * 10,
+    )}`,
     memberCount: 30,
     namespaceId: faker.lorem.slug(),
     plan: "free",
@@ -181,10 +179,7 @@ export const createCustomer = (): Customer => {
   return {
     date: faker.date.past(Math.floor(Math.random() * 30)),
     email: faker.internet.email(),
-    image: `${faker.image.image()}?random=${Date.now()}`.replace(
-      "http",
-      "https",
-    ),
+    image: faker.image.avatar(),
     name: faker.name.findName(),
     status: "active",
   };

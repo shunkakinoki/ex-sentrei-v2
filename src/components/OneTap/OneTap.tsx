@@ -53,7 +53,7 @@ const OneTap = ({delay = false}: Props): JSX.Element => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (delay) {
+      if (delay && !authState) {
         oneTap(callback);
       }
     }, 3000);

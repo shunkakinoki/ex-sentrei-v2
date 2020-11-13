@@ -63,6 +63,7 @@ export default function SpaceStoryCard({
           })}
         >
           <SpaceStoryImage
+            id={id}
             image={image}
             title={title}
             noSwitch={noSwitch}

@@ -15,6 +15,11 @@ export const editorDeleteAtom = atom<boolean>({
   key: "editorDelete",
 });
 
+export const editorImageAtom = atom<string | null | undefined>({
+  default: undefined,
+  key: "editorImage",
+});
+
 export const editorPricingAtom = atom<
   "free" | "paid" | "subscription" | undefined
 >({
@@ -46,6 +51,7 @@ export default function useEditor(): {
   editorArticleId: string | undefined;
   editorBody: string | undefined;
   editorDelete: boolean;
+  editorImage: string | null | undefined;
   editorPricing: "free" | "paid" | "subscription" | undefined;
   editorSubtitle: string | undefined;
   editorSwitch: boolean;
@@ -55,6 +61,7 @@ export default function useEditor(): {
   const editorArticleId = useRecoilValue(editorArticleIdAtom);
   const editorBody = useRecoilValue(editorBodyAtom);
   const editorDelete = useRecoilValue(editorDeleteAtom);
+  const editorImage = useRecoilValue(editorImageAtom);
   const editorPricing = useRecoilValue(editorPricingAtom);
   const editorSubtitle = useRecoilValue(editorSubtitleAtom);
   const editorSwitch = useRecoilValue(editorSwitchAtom);
@@ -65,6 +72,7 @@ export default function useEditor(): {
     editorArticleId,
     editorBody,
     editorDelete,
+    editorImage,
     editorPricing,
     editorSubtitle,
     editorSwitch,
