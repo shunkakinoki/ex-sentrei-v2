@@ -172,7 +172,7 @@ export default function DashboardBrandingBasicSection({
               </div>
               <div className="mt-6">
                 <label className="block text-sm font-medium leading-5 text-gray-700">
-                  Photo
+                  Logo
                 </label>
                 <div className="flex items-center mt-2">
                   <ImageProfile
