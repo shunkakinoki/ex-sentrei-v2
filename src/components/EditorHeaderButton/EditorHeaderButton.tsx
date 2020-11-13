@@ -18,7 +18,13 @@ export default function EditorHeaderButton({articleId}: Props): JSX.Element {
   const router = useRouter();
   const {authState} = useAuth();
   const {profile} = useProfile();
-  const {editorBody, editorImage, editorTitle, editorSwitch} = useEditor();
+  const {
+    editorBody,
+    editorImage,
+    editorPricing,
+    editorTitle,
+    editorSwitch,
+  } = useEditor();
 
   const setEditorArticleId = useSetRecoilState(editorArticleIdAtom);
 
@@ -50,7 +56,7 @@ export default function EditorHeaderButton({articleId}: Props): JSX.Element {
           createdBy: profile,
           createdByUid: authState?.uid,
           image: editorImage ?? null,
-          pricing: "free",
+          pricing: editorPricing ?? "free",
           spaceId: authState?.uid,
           status: editorSwitch ? "published" : "preview",
           time: 3,
@@ -67,7 +73,7 @@ export default function EditorHeaderButton({articleId}: Props): JSX.Element {
           authorUids: [authState?.uid],
           body: editorBody,
           image: editorImage ?? null,
-          pricing: "free",
+          pricing: editorPricing ?? "free",
           status: editorSwitch ? "published" : "preview",
           title: editorTitle,
           updatedAt: timestamp,
