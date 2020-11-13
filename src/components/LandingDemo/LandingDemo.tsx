@@ -13,10 +13,10 @@ export default function LandingDemo(): JSX.Element {
         setUrlInput("https://demo.sentrei.com");
         break;
       case "dashboard":
-        setUrlInput("https://demo.sentrei.com/dashboard");
+        setUrlInput("https://demo.sentrei.com/demo/dashboard");
         break;
       case "sales":
-        setUrlInput("https://demo.sentrei.com/dashboard/sales");
+        setUrlInput("https://demo.sentrei.com/demo/dashboard/sales");
         break;
       default:
         break;
