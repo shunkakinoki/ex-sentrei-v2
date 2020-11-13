@@ -1,3 +1,20 @@
+# [1.110.0](https://github.com/sentrei/sentrei/compare/v1.109.0...v1.110.0) (2020-11-13)
+
+### Bug Fixes
+
+- 🐛 onetap delay callback ([cca8d72](https://github.com/sentrei/sentrei/commit/cca8d724610896f294bfcca32e8149c1490fd9f9))
+
+### Features
+
+- 🎸 ini editor image ([784656c](https://github.com/sentrei/sentrei/commit/784656c33243da00f8dfa3a7f4f7734a19c2b5be))
+- 🎸 ini picsum photos ([06c33e1](https://github.com/sentrei/sentrei/commit/06c33e18651cdd7b076921ce5140a605d991c1f8))
+
+### Performance Improvements
+
+- ⚡️ ini editor image ([6a973eb](https://github.com/sentrei/sentrei/commit/6a973eb541cd9700cf8c18ef62b4c41d1412e922))
+- ⚡️ ini toolkit image ([75e223b](https://github.com/sentrei/sentrei/commit/75e223b9f6180c6341b980ef96d40f6fb058b311))
+- ⚡️ refactor image profile ([10ead65](https://github.com/sentrei/sentrei/commit/10ead65800d41fe8458edafcf1c9d9b0c87e42c8))
+
 # [1.109.0](https://github.com/sentrei/sentrei/compare/v1.108.1...v1.109.0) (2020-11-12)
 
 ### Features
