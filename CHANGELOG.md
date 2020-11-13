@@ -1,3 +1,13 @@
+# [1.112.0](https://github.com/sentrei/sentrei/compare/v1.111.0...v1.112.0) (2020-11-13)
+
+### Features
+
+- 🎸 ini image logo ([b0b3027](https://github.com/sentrei/sentrei/commit/b0b3027d6aaa5c6c51412fda4a767e7a768dd2d8))
+
+### Performance Improvements
+
+- ⚡️ migrate photo logo ([91eba64](https://github.com/sentrei/sentrei/commit/91eba64b2a3d3e0bbeaddfc8cde71f8f3399137c))
+
 # [1.111.0](https://github.com/sentrei/sentrei/compare/v1.110.0...v1.111.0) (2020-11-13)
 
 ### Features
