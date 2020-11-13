@@ -1,8 +1,22 @@
 import dynamic from "next/dynamic";
 
+const DashboardStatsCard = dynamic(
+  () => import("@/components/DashboardStatsCard"),
+  {
+    ssr: false,
+  },
+);
+
 const EditorRich = dynamic(() => import("@/components/EditorRich"), {
   ssr: false,
 });
+
+const UpgradeTableCard = dynamic(
+  () => import("@/components/UpgradeTableCard"),
+  {
+    ssr: false,
+  },
+);
 
 export default function LandingJourney(): JSX.Element {
   return (
@@ -103,7 +117,7 @@ export default function LandingJourney(): JSX.Element {
             </p>
           </div>
           <div className="p-4 overflow-hidden transition duration-300 ease-in-out transform border border-gray-300 rounded-lg shadow-2xl hover:-translate-y-3">
-            <div className="h-32 p-4 overflow-auto overscroll-none" />
+            <DashboardStatsCard />
           </div>
         </div>
         <div className="grid items-center grid-cols-1 mt-10 mb-16 md:grid-cols-2 gap-y-10 md:gap-y-32 gap-x-10 md:gap-x-24">
@@ -142,8 +156,8 @@ export default function LandingJourney(): JSX.Element {
               Stripe fees) We believe writers deserve more.
             </p>
           </div>
-          <div className="p-4 overflow-hidden transition duration-300 ease-in-out transform border border-gray-300 rounded-lg shadow-2xl hover:-translate-y-3">
-            <div className="h-32 p-4 overflow-auto overscroll-none" />
+          <div className="overflow-hidden transition duration-300 ease-in-out transform rounded-lg shadow-2xl hover:-translate-y-3">
+            <UpgradeTableCard plan="pro" />
           </div>
         </div>
       </div>

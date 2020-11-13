@@ -1,8 +1,27 @@
 import clsx from "clsx";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 export default function LandingDemo(): JSX.Element {
-  const [tabType, setTabType] = useState<"website" | "dashboard">("website");
+  const [tabType, setTabType] = useState<"website" | "dashboard" | "sales">(
+    "website",
+  );
+  const [urlInput, setUrlInput] = useState("https://demo.sentrei.com");
+
+  useEffect(() => {
+    switch (tabType) {
+      case "website":
+        setUrlInput("https://demo.sentrei.com");
+        break;
+      case "dashboard":
+        setUrlInput("https://demo.sentrei.com/demo/dashboard");
+        break;
+      case "sales":
+        setUrlInput("https://demo.sentrei.com/demo/dashboard/sales");
+        break;
+      default:
+        break;
+    }
+  }, [tabType]);
 
   return (
     <section className="relative">
@@ -89,6 +108,28 @@ export default function LandingDemo(): JSX.Element {
                   </svg>
                 </div>
               </button>
+              <button
+                type="button"
+                className={clsx(
+                  "flex items-end justify-between w-24 py-2 text-sm rounded-t-lg sm:w-48",
+                  tabType === "sales" && "bg-gray-100",
+                  tabType !== "sales" && "bg-gray-400 opacity-75",
+                )}
+                onClick={() => setTabType("sales")}
+              >
+                <div className="px-2 overflow-x-hidden text-xs text-left text-gray-700 truncate whitespace-no-wrap sm:px-4 sm:text-md">
+                  Demo Sales
+                </div>
+                <div className="self-center flex-shrink-0 w-2 h-2 mx-1 sm:w-3 sm:h-3 sm:mx-3 focus:outline-none">
+                  <svg
+                    className="w-full h-full text-gray-500 fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 320 512"
+                  >
+                    <path d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z" />
+                  </svg>
+                </div>
+              </button>
             </div>
             <div className="flex items-center justify-between bg-gray-100">
               <div className="flex flex-grow mx-2 my-1">
@@ -132,11 +173,7 @@ export default function LandingDemo(): JSX.Element {
                   <input
                     type="text"
                     className="w-full py-1 text-sm font-light leading-3 text-gray-600 bg-gray-300 rounded-full shadow pl-9"
-                    defaultValue={
-                      tabType === "website"
-                        ? "https://demo.sentrei.com"
-                        : "https://demo.sentrei.com/demo/dashboard"
-                    }
+                    value={urlInput}
                   />
                 </div>
               </div>
@@ -146,7 +183,7 @@ export default function LandingDemo(): JSX.Element {
                 "w-full h-80 overflow-hidden bg-white sm:h-96 md:h-128",
                 tabType !== "website" && "hidden",
               )}
-              src="/demo"
+              src="https://demo.sentrei.com"
               title="Demo website"
             />
             <iframe
@@ -154,8 +191,16 @@ export default function LandingDemo(): JSX.Element {
                 "w-full h-80 overflow-hidden bg-white sm:h-96 md:h-128",
                 tabType !== "dashboard" && "hidden",
               )}
-              src="/demo/dashboard"
+              src="https://demo.sentrei.com/demo/dashboard"
               title="Demo dashboard"
+            />
+            <iframe
+              className={clsx(
+                "w-full h-80 overflow-hidden bg-white sm:h-96 md:h-128",
+                tabType !== "sales" && "hidden",
+              )}
+              src="https://demo.sentrei.com/demo/dashboard/sales"
+              title="Demo sales"
             />
           </div>
         </div>

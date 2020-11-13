@@ -35,9 +35,9 @@ export function CheckIconItem({
       </div>
       <p
         className={clsx(
-          "ml-3 text-base font-medium leading-6",
+          "ml-3 text-lg font-medium leading-6",
           highlight &&
-            "text-transparent text-md font-extrabold bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ",
+            "text-transparent text-lg font-extrabold bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ",
           !highlight && " text-gray-500",
         )}
       >
@@ -47,7 +47,7 @@ export function CheckIconItem({
   );
 }
 
-export default function PricingTableCard({plan}: Props): JSX.Element {
+export default function UpgradeTableCard({plan}: Props): JSX.Element {
   return (
     <div
       className={clsx(
@@ -74,7 +74,7 @@ export default function PricingTableCard({plan}: Props): JSX.Element {
             <div className="absolute inset-x-0 top-0 transform translate-y-px">
               <div className="flex justify-center transform -translate-y-1/2">
                 <span className="inline-flex px-4 py-1 text-sm font-semibold leading-5 tracking-wider text-white uppercase bg-pink-400 rounded-full">
-                  Early Access
+                  Most popular
                 </span>
               </div>
             </div>
@@ -94,30 +94,24 @@ export default function PricingTableCard({plan}: Props): JSX.Element {
                   <span>
                     {plan === "free" && "0"}
                     {plan === "pro" && "12"}
-                    {plan === "premium" && "25"}
+                    {plan === "premium" && "150"}
                   </span>
                 </span>
                 <span className="text-xl font-semibold leading-8 tracking-wide text-gray-400 sm:text-3xl sm:leading-9">
-                  /mo
+                  {plan === "free" && "/mo"}
+                  {plan === "pro" && "/mo"}
+                  {plan === "premium" && "/year"}
                 </span>
               </div>
             </div>
           </div>
           <div className="px-6 pt-10 pb-8 border-t-2 border-gray-200 rounded-b-lg bg-gray-50 sm:px-10 sm:py-10">
             <ul>
-              <CheckIconItem>Built-in newsletter</CheckIconItem>
-              <CheckIconItem>Custom analytics</CheckIconItem>
-              <CheckIconItem highlight>
-                Zero commissions on purchases
-              </CheckIconItem>
+              <CheckIconItem>All free articles</CheckIconItem>
+              <CheckIconItem>Invitation to private group</CheckIconItem>
+
               {(plan === "pro" || plan === "premium") && (
-                <CheckIconItem highlight>Custom domains</CheckIconItem>
-              )}
-              {(plan === "pro" || plan === "premium") && (
-                <CheckIconItem highlight>Unlimited theming</CheckIconItem>
-              )}
-              {plan === "premium" && (
-                <CheckIconItem highlight>3rd party integrations</CheckIconItem>
+                <CheckIconItem highlight>All premium articles</CheckIconItem>
               )}
             </ul>
             <div className="mt-8 md:mt-10 lg:mt-12">
