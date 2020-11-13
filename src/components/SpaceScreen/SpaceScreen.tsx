@@ -28,7 +28,7 @@ export default function SpaceScreen({
         title={space.title}
         description={space.description ?? space.title}
       />
-      <HeaderRoot />
+      <HeaderRoot image={space.image} />
       <ContainerRoot>
         <SpaceHero
           description={space.description}
