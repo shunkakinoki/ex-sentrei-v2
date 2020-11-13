@@ -75,10 +75,10 @@ export default function EditorToolkitSection({image}: Props): JSX.Element {
   };
 
   return (
-    <div className="mt-5 md:mt-0 md:col-span-2 sm:w-96 md:w-128 xl:w-192">
+    <div className="md:col-span-2 sm:w-96 md:w-128 xl:w-192">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="shadow-2xl sm:rounded-md sm:overflow-hidden">
-          <div className="px-4 pt-1 pb-3 bg-white ">
+          <div className="px-4 pb-3 bg-white ">
             <fieldset>
               <legend className="block text-sm font-medium leading-5 text-gray-700">
                 Pricing

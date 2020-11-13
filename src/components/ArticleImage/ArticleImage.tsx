@@ -10,6 +10,7 @@ export default function ArticleImage({image, title}: Props): JSX.Element {
       <div className="relative">
         <div className="w-full h-64 bg-gray-300 md:h-96 lg:h-128 xl:h-192">
           <Image
+            objectFit="cover"
             layout="fill"
             alt={`Story Cover for ${title}`}
             src={image as string}
