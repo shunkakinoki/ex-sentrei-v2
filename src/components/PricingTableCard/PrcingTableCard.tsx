@@ -37,7 +37,7 @@ export function CheckIconItem({
         className={clsx(
           "ml-3 text-base font-medium leading-6",
           highlight &&
-            "text-transparent text-lg font-extrabold bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ",
+            "text-transparent text-md font-extrabold bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ",
           !highlight && " text-gray-500",
         )}
       >
