@@ -1,10 +1,27 @@
 import clsx from "clsx";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 export default function LandingDemo(): JSX.Element {
   const [tabType, setTabType] = useState<"website" | "dashboard" | "sales">(
     "website",
   );
+  const [urlInput, setUrlInput] = useState("https://demo.sentrei.com");
+
+  useEffect(() => {
+    switch (tabType) {
+      case "website":
+        setUrlInput("https://demo.sentrei.com");
+        break;
+      case "dashboard":
+        setUrlInput("https://demo.sentrei.com/dashboard");
+        break;
+      case "sales":
+        setUrlInput("https://demo.sentrei.com/dashboard/sales");
+        break;
+      default:
+        break;
+    }
+  }, [tabType]);
 
   return (
     <section className="relative">
@@ -156,11 +173,7 @@ export default function LandingDemo(): JSX.Element {
                   <input
                     type="text"
                     className="w-full py-1 text-sm font-light leading-3 text-gray-600 bg-gray-300 rounded-full shadow pl-9"
-                    defaultValue={
-                      tabType === "website"
-                        ? "https://demo.sentrei.com"
-                        : "https://demo.sentrei.com/demo/dashboard"
-                    }
+                    value={urlInput}
                   />
                 </div>
               </div>
