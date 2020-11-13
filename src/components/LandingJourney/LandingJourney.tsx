@@ -11,6 +11,13 @@ const EditorRich = dynamic(() => import("@/components/EditorRich"), {
   ssr: false,
 });
 
+const UpgradeTableCard = dynamic(
+  () => import("@/components/UpgradeTableCard"),
+  {
+    ssr: false,
+  },
+);
+
 export default function LandingJourney(): JSX.Element {
   return (
     <section className="w-full max-w-screen-xl py-12 mx-auto">
@@ -149,8 +156,8 @@ export default function LandingJourney(): JSX.Element {
               Stripe fees) We believe writers deserve more.
             </p>
           </div>
-          <div className="p-4 overflow-hidden transition duration-300 ease-in-out transform border border-gray-300 rounded-lg shadow-2xl hover:-translate-y-3">
-            <div className="h-32 p-4 overflow-auto overscroll-none" />
+          <div className="overflow-hidden transition duration-300 ease-in-out transform rounded-lg shadow-2xl hover:-translate-y-3">
+            <UpgradeTableCard plan="pro" />
           </div>
         </div>
       </div>
