@@ -1,3 +1,15 @@
+# [1.111.0](https://github.com/sentrei/sentrei/compare/v1.110.0...v1.111.0) (2020-11-13)
+
+### Features
+
+- 🎸 ini branding image ([73f77cf](https://github.com/sentrei/sentrei/commit/73f77cfdba65595b160b886f6114c5da5c435632))
+- 🎸 ini pricing toolkit ([2b80e5a](https://github.com/sentrei/sentrei/commit/2b80e5af368202a0123d21f8edc563e640717719))
+- 🎸 ini space logo ([d1a7463](https://github.com/sentrei/sentrei/commit/d1a74635d8c2e2d7759a0ba0464602178463b934))
+
+### Performance Improvements
+
+- ⚡️ ini nocache faker ([7701289](https://github.com/sentrei/sentrei/commit/7701289c3577c945fb568cb284628713e05daf75))
+
 # [1.110.0](https://github.com/sentrei/sentrei/compare/v1.109.0...v1.110.0) (2020-11-13)
 
 ### Bug Fixes
