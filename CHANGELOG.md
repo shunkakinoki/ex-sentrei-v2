@@ -1,3 +1,18 @@
+# [1.113.0](https://github.com/sentrei/sentrei/compare/v1.112.0...v1.113.0) (2020-11-13)
+
+### Features
+
+- 🎸 ini dashboard stats ([afb1929](https://github.com/sentrei/sentrei/commit/afb19296385cebbaf6bcebca5ce7712a76d7b705))
+- 🎸 ini upgrade screen ([a87eb76](https://github.com/sentrei/sentrei/commit/a87eb76da1bd5cbe6fa56cf0cedda93c2d9c03d9))
+
+### Performance Improvements
+
+- ⚡️ ini demo upgrade ([676b5b9](https://github.com/sentrei/sentrei/commit/676b5b9f96b56ef06a6ede588c04ba533baedde1))
+- ⚡️ ini pioneer mission ([037d418](https://github.com/sentrei/sentrei/commit/037d418b2a65fd39a5dc68d8dc3d99908c9dbca5))
+- ⚡️ ini sales demo ([d13b1c3](https://github.com/sentrei/sentrei/commit/d13b1c3759013421dbf176ec7110aa0d213526c9))
+- ⚡️ ini url input ([49599d0](https://github.com/sentrei/sentrei/commit/49599d0a4d165682e6884f11586e9b5ce3a28881))
+- ⚡️ pricing text md ([bf68ab9](https://github.com/sentrei/sentrei/commit/bf68ab926d780e1b715864fc660978b6cc8f80cb))
+
 # [1.112.0](https://github.com/sentrei/sentrei/compare/v1.111.0...v1.112.0) (2020-11-13)
 
 ### Features
