@@ -2,16 +2,22 @@ import Image from "next/image";
 
 import Profile from "@/types/Profile";
 
-export type Props = Pick<Profile.Get, "image" | "name">;
+export interface Props extends Pick<Profile.Get, "image" | "name"> {
+  size?: number;
+}
 
-export default function ImageProfile({image, name}: Props): JSX.Element {
+export default function ImageProfile({
+  image,
+  name,
+  size = 40,
+}: Props): JSX.Element {
   return (
     <>
       {image ? (
         <Image
           priority
-          height={50}
-          width={50}
+          height={size}
+          width={size}
           layout="fixed"
           className="inline object-cover w-12 h-12 p-1 mr-2 border rounded-full"
           src={image ?? "/assets/logo.png"}
