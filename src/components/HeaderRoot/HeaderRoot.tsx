@@ -1,6 +1,5 @@
 import {Menu} from "@headlessui/react";
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import Link from "next/link";
 import {useRouter} from "next/router";
 
@@ -32,6 +31,10 @@ const HeaderProfileMenu = dynamic(
   },
 );
 
+const ImageLogo = dynamic(() => import("@/components/ImageLogo"), {
+  ssr: false,
+});
+
 export type Props = Partial<Pick<Space.Get, "image">>;
 
 export default function HeaderRoot({image}: Props): JSX.Element {
@@ -43,31 +46,7 @@ export default function HeaderRoot({image}: Props): JSX.Element {
       <div className="px-4 sm:px-6">
         <div className="flex items-center justify-between py-6 border-b-2 border-gray-100 md:justify-start md:space-x-10">
           <div className="lg:w-0 lg:flex-1">
-            <Link href="/">
-              <a className="inline-block">
-                {image ? (
-                  <Image
-                    priority
-                    src={image}
-                    height={50}
-                    width={50}
-                    layout="fixed"
-                    alt="Logo"
-                    className="w-auto h-12 sm:h-10"
-                  />
-                ) : (
-                  <Image
-                    priority
-                    src="/assets/logo.png"
-                    height={50}
-                    width={50}
-                    layout="fixed"
-                    alt="Logo"
-                    className="w-auto h-12 sm:h-10"
-                  />
-                )}
-              </a>
-            </Link>
+            <ImageLogo image={image ?? null} />
           </div>
           {(!isLoggedIn ||
             pathname === "/" ||
