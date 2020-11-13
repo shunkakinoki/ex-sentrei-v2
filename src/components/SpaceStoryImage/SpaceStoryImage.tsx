@@ -4,12 +4,13 @@ import Image from "next/image";
 import useStory from "@/hooks/useStory";
 import Article from "@/types/Article";
 
-export interface Props extends Pick<Article.Fields, "image" | "title"> {
+export interface Props extends Pick<Article.Get, "id" | "image" | "title"> {
   namespaceId: string;
   noSwitch: boolean;
 }
 
 export default function SpaceStoryImage({
+  id,
   image,
   title,
   namespaceId,
@@ -33,8 +34,8 @@ export default function SpaceStoryImage({
             layout="fill"
             className="object-cover"
             alt={`Story Cover for ${title}`}
-            src={image ?? "/assets/logo.png"}
-            unoptimized={namespaceId === "demo"}
+            src={image ?? `https://picsum.photos/900/1200?nocache=${id}`}
+            unoptimized={!image || namespaceId === "demo"}
           />
         </div>
       </div>
