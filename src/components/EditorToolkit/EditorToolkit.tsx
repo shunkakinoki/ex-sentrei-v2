@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import Modal from "react-modal";
 
+import {Props as EditorToolkitSectionProps} from "@/components/EditorToolkitSection";
 import useEditor from "@/hooks/useEditor";
 
 const EditorToolkitDelete = dynamic(
@@ -17,7 +18,9 @@ const EditorToolkitSection = dynamic(
   },
 );
 
-export default function EditorToolkit(): JSX.Element {
+export type Props = EditorToolkitSectionProps;
+
+export default function EditorToolkit({image}: Props): JSX.Element {
   const {editorDelete, editorToolkit} = useEditor();
 
   const customStyles = {
@@ -45,7 +48,11 @@ export default function EditorToolkit(): JSX.Element {
           aria-modal="true"
           aria-labelledby="modal-headline"
         />
-        {!editorDelete ? <EditorToolkitSection /> : <EditorToolkitDelete />}
+        {!editorDelete ? (
+          <EditorToolkitSection image={image} />
+        ) : (
+          <EditorToolkitDelete />
+        )}
       </div>
     </Modal>
   );

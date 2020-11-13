@@ -19,7 +19,7 @@ declare namespace Article {
     authorUids: string[];
     body: string;
     excerpt?: string;
-    image?: string;
+    image?: string | null;
     pricing: Pricing;
     status: "preview" | "published";
     subtitle?: string;

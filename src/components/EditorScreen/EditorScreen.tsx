@@ -38,7 +38,7 @@ export default function EditorScreen({
         <div className="relative px-3 py-3 my-12 mx-9 md:mx-12 lg:mx-18">
           <EditorRich body={article?.body ?? ""} />
         </div>
-        <EditorToolkit />
+        <EditorToolkit image={article?.image} />
       </ContainerRoot>
     </>
   );

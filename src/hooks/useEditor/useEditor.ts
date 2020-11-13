@@ -15,7 +15,7 @@ export const editorDeleteAtom = atom<boolean>({
   key: "editorDelete",
 });
 
-export const editorImageAtom = atom<string | undefined>({
+export const editorImageAtom = atom<string | null | undefined>({
   default: undefined,
   key: "editorImage",
 });
@@ -51,7 +51,7 @@ export default function useEditor(): {
   editorArticleId: string | undefined;
   editorBody: string | undefined;
   editorDelete: boolean;
-  editorImage: string | undefined;
+  editorImage: string | null | undefined;
   editorPricing: "free" | "paid" | "subscription" | undefined;
   editorSubtitle: string | undefined;
   editorSwitch: boolean;
