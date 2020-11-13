@@ -133,7 +133,7 @@ export const createArticle = (): Article.Get => {
     createdByUid: faker.random.uuid(),
     excerpt: createMarkdown(1),
     id: faker.random.uuid(),
-    image: `https://picsum.photos/900/1200?random=${Math.floor(
+    image: `https://picsum.photos/900/1200?nocache=${Math.floor(
       Math.random() * 10,
     )}`,
     pricing: createPricing(),
@@ -162,7 +162,7 @@ export const createSpace = (): Space.Get => {
     customerCount: 300,
     description: faker.lorem.sentences(Math.floor(Math.random() * 3) + 1),
     id: faker.random.uuid(),
-    image: `https://picsum.photos/900/1200?random=${Math.floor(
+    image: `https://picsum.photos/900/1200?nocache=${Math.floor(
       Math.random() * 10,
     )}`,
     memberCount: 30,

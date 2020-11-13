@@ -15,9 +15,12 @@ import useEditor, {
 import Article from "@/types/Article";
 import {getImageUrl} from "@/utils/image";
 
-export type Props = Pick<Article.Get, "image">;
+export type Props = Pick<Article.Get, "image" | "pricing">;
 
-export default function EditorToolkitSection({image}: Props): JSX.Element {
+export default function EditorToolkitSection({
+  image,
+  pricing,
+}: Props): JSX.Element {
   const {editorImage, editorPricing, editorSubtitle} = useEditor();
 
   const setEditorDelete = useSetRecoilState(editorDeleteAtom);
@@ -57,6 +60,10 @@ export default function EditorToolkitSection({image}: Props): JSX.Element {
   useEffect(() => {
     setEditorImage(image);
   }, [setEditorImage, image]);
+
+  useEffect(() => {
+    setEditorPricing(pricing);
+  }, [setEditorPricing, pricing]);
 
   useEffect(() => {
     if (!formState.isDirty) {

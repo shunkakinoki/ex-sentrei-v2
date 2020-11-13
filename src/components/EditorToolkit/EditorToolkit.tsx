@@ -20,7 +20,7 @@ const EditorToolkitSection = dynamic(
 
 export type Props = EditorToolkitSectionProps;
 
-export default function EditorToolkit({image}: Props): JSX.Element {
+export default function EditorToolkit({image, pricing}: Props): JSX.Element {
   const {editorDelete, editorToolkit} = useEditor();
 
   const customStyles = {
@@ -49,7 +49,7 @@ export default function EditorToolkit({image}: Props): JSX.Element {
           aria-labelledby="modal-headline"
         />
         {!editorDelete ? (
-          <EditorToolkitSection image={image} />
+          <EditorToolkitSection image={image} pricing={pricing} />
         ) : (
           <EditorToolkitDelete />
         )}

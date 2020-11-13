@@ -5,6 +5,7 @@ import Link from "next/link";
 import {useRouter} from "next/router";
 
 import useAuth from "@/hooks/useAuth";
+import Space from "@/types/Space";
 
 const HeaderDemoMenu = dynamic(() => import("@/components/HeaderDemoMenu"), {
   ssr: false,
@@ -31,7 +32,9 @@ const HeaderProfileMenu = dynamic(
   },
 );
 
-export default function HeaderRoot(): JSX.Element {
+export type Props = Partial<Pick<Space.Get, "image">>;
+
+export default function HeaderRoot({image}: Props): JSX.Element {
   const {isLoggedIn} = useAuth();
   const {pathname} = useRouter();
 
@@ -42,15 +45,27 @@ export default function HeaderRoot(): JSX.Element {
           <div className="lg:w-0 lg:flex-1">
             <Link href="/">
               <a className="inline-block">
-                <Image
-                  priority
-                  src="/assets/logo.png"
-                  height={50}
-                  width={50}
-                  layout="fixed"
-                  alt="Logo"
-                  className="w-auto h-12 sm:h-10"
-                />
+                {image ? (
+                  <Image
+                    priority
+                    src={image}
+                    height={50}
+                    width={50}
+                    layout="fixed"
+                    alt="Logo"
+                    className="w-auto h-12 sm:h-10"
+                  />
+                ) : (
+                  <Image
+                    priority
+                    src="/assets/logo.png"
+                    height={50}
+                    width={50}
+                    layout="fixed"
+                    alt="Logo"
+                    className="w-auto h-12 sm:h-10"
+                  />
+                )}
               </a>
             </Link>
           </div>

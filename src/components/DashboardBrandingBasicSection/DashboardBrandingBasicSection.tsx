@@ -1,16 +1,18 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
-import {useEffect} from "react";
+import {useEffect, useRef} from "react";
 import {useForm} from "react-hook-form";
 import {toast} from "react-toastify";
 import {mutate} from "swr";
 
+import ImageProfile from "@/components/ImageProfile";
 import {timestamp} from "@/firebase/db";
 import useAuth from "@/hooks/useAuth";
 import useProfile from "@/hooks/useProfile";
 import useSpace from "@/hooks/useSpace";
 import {updateSpace} from "@/services/Space";
 import Space from "@/types/Space";
+import {getImageUrl} from "@/utils/image";
 
 export interface Props {
   namespaceId: string;
@@ -22,6 +24,49 @@ export default function DashboardBrandingBasicSection({
   const {authState} = useAuth();
   const {profile} = useProfile();
   const {space} = useSpace(namespaceId);
+
+  const hiddenFileInput = useRef(null);
+
+  const handleClick = (): void => {
+    if (!hiddenFileInput.current) {
+      return;
+    }
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    hiddenFileInput.current.click();
+  };
+
+  const handleFile = async (file: File) => {
+    if (!authState?.uid || !profile) {
+      return null;
+    }
+
+    const imageUrl = await getImageUrl(file);
+
+    await mutate(`spaces/${authState.uid}`, {...space, image: imageUrl}, false);
+
+    await updateSpace(authState?.uid, {
+      image: imageUrl,
+      updatedAt: timestamp,
+      updatedBy: profile,
+      updatedByUid: authState?.uid,
+    })
+      .then(() =>
+        toast.success("Success", {
+          autoClose: 1500,
+          draggable: false,
+          hideProgressBar: true,
+        }),
+      )
+      .catch((err: Error) => {
+        toast.error(err.message);
+      });
+
+    await mutate(`spaces/${authState.uid}`);
+
+    return null;
+  };
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
   const {register, handleSubmit, reset, formState} = useForm<
@@ -130,19 +175,28 @@ export default function DashboardBrandingBasicSection({
                   Photo
                 </label>
                 <div className="flex items-center mt-2">
-                  <span className="inline-block w-12 h-12 overflow-hidden bg-gray-100 rounded-full">
-                    <svg
-                      className="w-full h-full text-gray-300"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                  </span>
+                  <ImageProfile
+                    image={space?.image ?? null}
+                    name={space?.title ?? ""}
+                  />
                   <span className="ml-5 rounded-md shadow-sm">
+                    <input
+                      ref={hiddenFileInput}
+                      type="file"
+                      accept="image/*"
+                      style={{display: "none"}}
+                      onChange={e => {
+                        if (!e.target.files) {
+                          return;
+                        }
+                        // eslint-disable-next-line no-void
+                        void handleFile(e.target.files[0]);
+                      }}
+                    />
                     <button
                       type="button"
                       className="px-3 py-2 text-sm font-medium leading-4 text-gray-700 transition duration-150 ease-in-out border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-pink-300 focus:shadow-outline-pink active:bg-gray-50 active:text-gray-800"
+                      onClick={handleClick}
                     >
                       Change
                     </button>
