@@ -1,8 +1,8 @@
-import ContainerCenter from "@/components/ContainerCenter";
 import ContainerRoot from "@/components/ContainerRoot";
 import HeaderRoot from "@/components/HeaderRoot";
 import SeoSpace from "@/components/SeoSpace";
 import SubscribeForm from "@/components/SubscribeForm";
+import SubscribeHero from "@/components/SubscribeHero";
 
 export default function SubscribeScreen(): JSX.Element {
   return (
@@ -10,9 +10,8 @@ export default function SubscribeScreen(): JSX.Element {
       <SeoSpace title="Subscribe" description="Subscribe to the publication" />
       <HeaderRoot />
       <ContainerRoot>
-        <ContainerCenter>
-          <SubscribeForm />
-        </ContainerCenter>
+        <SubscribeHero />
+        <SubscribeForm />
       </ContainerRoot>
     </>
   );
