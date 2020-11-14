@@ -1,3 +1,20 @@
+# [1.114.0](https://github.com/sentrei/sentrei/compare/v1.113.1...v1.114.0) (2020-11-14)
+
+### Features
+
+- 🎸 ini subscribe space ([f00968d](https://github.com/sentrei/sentrei/commit/f00968da71065d576f46f633dd7a709e587e8605))
+- 🎸 upgrade customer model ([62fd0ef](https://github.com/sentrei/sentrei/commit/62fd0ef43cdc59ecfc6aa11cabd1b26fd2c7a5e7))
+- 🎸 upgrade customer model ([4ede513](https://github.com/sentrei/sentrei/commit/4ede5132ad1b9c8fb96623db7c21568f34b981e5))
+
+### Performance Improvements
+
+- ⚡️ ini article space ([2ea6613](https://github.com/sentrei/sentrei/commit/2ea6613d0ac5e1e5f7994256ff188c7b15b0802c))
+- ⚡️ ini auth state for subscribe form ([ef5a168](https://github.com/sentrei/sentrei/commit/ef5a168b97461bede94bd5f43c59f7d8b75a016b))
+- ⚡️ ini customer type ([021fb96](https://github.com/sentrei/sentrei/commit/021fb96a3d222952bd359ccb5a90956402c34c14))
+- ⚡️ ini demo subscribe ([aba9a30](https://github.com/sentrei/sentrei/commit/aba9a30a871ef723a4dc8fabff66e01b935971f2))
+- ⚡️ ini subscribe hero ([975cf3e](https://github.com/sentrei/sentrei/commit/975cf3e941ddc153e94e43b2217e7d27598c8b6f))
+- ⚡️ ini support header ([420935f](https://github.com/sentrei/sentrei/commit/420935f5cdd4d4f2fbf5cccd266c00368c710c37))
+
 ## [1.113.1](https://github.com/sentrei/sentrei/compare/v1.113.0...v1.113.1) (2020-11-14)
 
 ### Bug Fixes
