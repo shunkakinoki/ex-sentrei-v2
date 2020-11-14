@@ -31,7 +31,7 @@ const Index = ({
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <DashboardCustomersScreen
-      customers={JSON.parse(customers) as Customer[]}
+      customers={JSON.parse(customers) as Customer.Get[]}
       current={1}
       total={totalCustomerPages}
       namespaceId=""

@@ -1,34 +1,42 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+
 import Image from "next/image";
 
 import Customer from "@/types/Customer";
 
-export interface Props extends Customer {
+export interface Props
+  extends Pick<
+    Customer.Get,
+    "createdAt" | "email" | "image" | "name" | "status"
+  > {
   namespaceId: string;
 }
 
 export default function DashboardCustomersTableItem({
+  createdAt,
   email,
-  date,
   image,
   name,
   status,
   namespaceId,
 }: Props): JSX.Element {
   return (
-    <tr key={name}>
+    <tr key={email}>
       <td className="px-6 py-4 whitespace-no-wrap">
         <div className="flex items-center">
           <div className="flex-shrink-0 w-10 h-10">
-            <Image
-              className="w-10 h-10 rounded-full"
-              loading="lazy"
-              height={40}
-              width={40}
-              layout="fixed"
-              src={image as string}
-              alt={`Customer ${name}`}
-              unoptimized={namespaceId === "demo"}
-            />
+            {image && (
+              <Image
+                className="w-10 h-10 rounded-full"
+                loading="lazy"
+                height={40}
+                width={40}
+                layout="fixed"
+                src={image}
+                alt={`Customer ${name}`}
+                unoptimized={namespaceId === "demo"}
+              />
+            )}
           </div>
           <div className="ml-4 truncate">
             <div className="text-sm font-medium leading-3 text-gray-900 md:leading-5">
@@ -46,7 +54,7 @@ export default function DashboardCustomersTableItem({
         </span>
       </td>
       <td className="px-6 py-4 text-sm leading-3 text-gray-500 whitespace-no-wrap md:leading-5">
-        {new Date(date).toDateString()}
+        {new Date(createdAt).toDateString()}
       </td>
     </tr>
   );

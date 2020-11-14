@@ -108,8 +108,11 @@ export default function UpgradeTableCard({plan}: Props): JSX.Element {
           <div className="px-6 pt-10 pb-8 border-t-2 border-gray-200 rounded-b-lg bg-gray-50 sm:px-10 sm:py-10">
             <ul>
               <CheckIconItem>All free articles</CheckIconItem>
-              <CheckIconItem>Invitation to private group</CheckIconItem>
-
+              {(plan === "pro" || plan === "premium") && (
+                <CheckIconItem highlight>
+                  Invitation to private group
+                </CheckIconItem>
+              )}
               {(plan === "pro" || plan === "premium") && (
                 <CheckIconItem highlight>All premium articles</CheckIconItem>
               )}

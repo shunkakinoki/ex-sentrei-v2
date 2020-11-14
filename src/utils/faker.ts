@@ -175,17 +175,24 @@ export const createSpace = (): Space.Get => {
   };
 };
 
-export const createCustomer = (): Customer => {
+export const createCustomer = (): Customer.Get => {
   return {
-    date: faker.date.past(Math.floor(Math.random() * 30)),
+    createdAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
+    createdBy: createAuthor(),
+    createdByUid: faker.random.uuid(),
     email: faker.internet.email(),
+    id: faker.random.uuid(),
     image: faker.image.avatar(),
     name: faker.name.findName(),
     status: "active",
+    type: "user",
+    updatedAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
+    updatedBy: createAuthor(),
+    updatedByUid: faker.random.uuid(),
   };
 };
 
-export const createCustomers = (num = 10): Customer[] => {
+export const createCustomers = (num = 10): Customer.Get[] => {
   return new Array(num).fill(undefined).map(createCustomer);
 };
 

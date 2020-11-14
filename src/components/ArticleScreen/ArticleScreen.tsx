@@ -9,6 +9,7 @@ import FooterRoot from "@/components/FooterRoot";
 import HeaderRoot from "@/components/HeaderRoot";
 import SeoArticle from "@/components/SeoArticle";
 import Article from "@/types/Article";
+import Space from "@/types/Space";
 
 const ArticleBody = dynamic(() => import("@/components/ArticleBody"), {
   // eslint-disable-next-line react/display-name
@@ -20,19 +21,21 @@ export interface Props extends Pick<ArticleHeroProps, "authors"> {
   article: Article.Get;
   moreArticles: Article.Get[];
   namespaceId: string;
+  space?: Space.Get;
 }
 
 export default function ArticleScreen({
   authors,
   article,
   moreArticles,
+  space,
   namespaceId,
 }: Props): JSX.Element {
   return (
     <>
       {article.status === "preview" && <ArticlePreviewBanner />}
       <SeoArticle title={article.title} description={article.excerpt ?? ""} />
-      <HeaderRoot />
+      <HeaderRoot image={space?.image} />
       <ArticleHero
         authors={authors}
         createdAt={article.createdAt}

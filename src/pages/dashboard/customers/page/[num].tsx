@@ -51,7 +51,7 @@ const Num = ({
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <DashboardCustomersScreen
-      customers={JSON.parse(customers) as Customer[]}
+      customers={JSON.parse(customers) as Customer.Get[]}
       current={
         /* Multiply one to convert to integer */
         (JSON.parse(current) as number) * 1
