@@ -69,7 +69,7 @@ export default function EditorHeader({
           </div>
           <EditorHeaderToolkit />
           <EditorHeaderSwitch status={status} />
-          <EditorHeaderButton articleId={articleId} />
+          <EditorHeaderButton articleId={articleId} status={status} />
         </div>
       </div>
     </div>
