@@ -58,7 +58,7 @@ export default function ArticleScreen({
         <ArticleStoryGrid
           articles={moreArticles}
           namespaceId={namespaceId}
-          title={article.title}
+          updatedBy={article.updatedBy}
         />
       )}
       <FooterRoot />
