@@ -8,6 +8,7 @@ declare namespace Customer {
   export type EditableFields = {
     email: string;
     status: "active";
+    type: "email" | "user";
   };
 
   type Fields = EditableFields;
