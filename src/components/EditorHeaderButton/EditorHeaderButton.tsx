@@ -9,12 +9,16 @@ import useAuth from "@/hooks/useAuth";
 import useEditor, {editorArticleIdAtom} from "@/hooks/useEditor";
 import useProfile from "@/hooks/useProfile";
 import {createArticle, updateArticle} from "@/services/Article";
+import Article from "@/types/Article";
 
-export interface Props {
+export interface Props extends Pick<Article.Get, "status"> {
   articleId?: string;
 }
 
-export default function EditorHeaderButton({articleId}: Props): JSX.Element {
+export default function EditorHeaderButton({
+  articleId,
+  status,
+}: Props): JSX.Element {
   const router = useRouter();
   const {authState} = useAuth();
   const {profile} = useProfile();
@@ -45,7 +49,14 @@ export default function EditorHeaderButton({articleId}: Props): JSX.Element {
       return;
     }
 
-    toast.info(editorSwitch ? "Publishing..." : "Saving...");
+    toast.info(
+      // eslint-disable-next-line no-nested-ternary
+      editorSwitch && status === "preview"
+        ? "Publishing..."
+        : editorSwitch && status === "published"
+        ? "Updating..."
+        : "Saving...",
+    );
 
     try {
       if (articleId === "") {
@@ -104,7 +115,8 @@ export default function EditorHeaderButton({articleId}: Props): JSX.Element {
         )}
         onClick={handleClick}
       >
-        {editorSwitch && "Publish"}
+        {editorSwitch && status === "preview" && "Publish"}
+        {editorSwitch && status === "published" && "Update"}
         {!editorSwitch && "Save"}
       </button>
     </span>
