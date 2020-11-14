@@ -1,3 +1,16 @@
+## [1.113.1](https://github.com/sentrei/sentrei/compare/v1.113.0...v1.113.1) (2020-11-14)
+
+### Bug Fixes
+
+- 🐛 correct linkedin link ([8e9df4f](https://github.com/sentrei/sentrei/commit/8e9df4fc38ff03985da4953485011d6cfd371aaa))
+
+### Performance Improvements
+
+- ⚡️ ini padding body ([0b124c9](https://github.com/sentrei/sentrei/commit/0b124c9d16a4c34056de42e6c8ee0b3d482aa532))
+- ⚡️ ini update button ([f823a38](https://github.com/sentrei/sentrei/commit/f823a3865ca5b48b9a32c3ff6827fbda308d1f2e))
+- ⚡️ ini updated by ([2d57b26](https://github.com/sentrei/sentrei/commit/2d57b261500ddb671993cc9ff7fef27671337b08))
+- ⚡️ upgrade with ncu ([2b67f24](https://github.com/sentrei/sentrei/commit/2b67f24fc5d4e40197f71872fb52db9e14492521))
+
 # [1.113.0](https://github.com/sentrei/sentrei/compare/v1.112.0...v1.113.0) (2020-11-13)
 
 ### Features
