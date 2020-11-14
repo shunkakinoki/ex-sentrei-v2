@@ -5,11 +5,19 @@ import {toast} from "react-toastify";
 
 import auth from "@/firebase/auth";
 import useAuth from "@/hooks/useAuth";
+import Space from "@/types/Space";
 
 export interface Props {
   namespaceId: string;
+  space: Space.Get;
+  spaceId?: string;
 }
-export default function SubscribeForm(): JSX.Element {
+
+export default function SubscribeForm({
+  namespaceId,
+  space,
+  spaceId,
+}: Props): JSX.Element {
   const {authState} = useAuth();
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
@@ -21,6 +29,10 @@ export default function SubscribeForm(): JSX.Element {
 
   // eslint-disable-next-line @typescript-eslint/require-await
   const onSubmit = async (data: {email: string}) => {
+    if (namespaceId === "demo") {
+      toast.success("Subscribed!");
+    }
+
     toast.info("Loading...");
     if (!authState?.uid) {
       // eslint-disable-next-line no-void
@@ -35,7 +47,7 @@ export default function SubscribeForm(): JSX.Element {
           toast.error(err);
         });
     } else {
-      toast.success("Subscribed!");
+      toast.success(`Subscribed! ${space.title} ${spaceId || ""}`);
     }
     return null;
   };
