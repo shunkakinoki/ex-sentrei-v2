@@ -7,21 +7,24 @@ import Profile from "@/types/Profile";
 declare namespace Customer {
   export type EditableFields = {
     email: string;
-    status: "active";
-    type: "email" | "user";
   };
 
-  type Fields = EditableFields;
+  export interface Fields
+    extends EditableFields,
+      Pick<Profile.Get, "name" | "image"> {
+    status: "active";
+    type: "anonymous" | "user";
+  }
 
   export type AdminUpdate = Partial<Fields>;
 
-  export interface Response extends Fields, Profile.Get, Metadata.Response {}
+  export interface Response extends Fields, Metadata.Response {}
 
-  export interface Create extends Fields, Profile.Get, Metadata.Create {}
+  export interface Create extends Fields, Metadata.Create {}
 
   export interface Update extends Partial<EditableFields>, Metadata.Update {}
 
-  export interface Get extends Fields, Profile.Get, Metadata.Get {
+  export interface Get extends Fields, Metadata.Get {
     id: string;
   }
 

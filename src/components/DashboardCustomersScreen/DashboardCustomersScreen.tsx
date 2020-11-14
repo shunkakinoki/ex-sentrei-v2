@@ -12,7 +12,7 @@ import Customer from "@/types/Customer";
 export interface Props
   extends Pick<ContainerDashboardProps, "namespaceId">,
     DashboardCustomersTableProps {
-  customers: Customer[];
+  customers: Customer.Get[];
 }
 
 export default function DashboardCustomersScreen({

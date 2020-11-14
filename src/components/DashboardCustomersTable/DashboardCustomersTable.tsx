@@ -5,7 +5,7 @@ import PaginationBase, {
 import Customer from "@/types/Customer";
 
 export interface Props extends Omit<PaginationBaseProps, "pathname"> {
-  customers: Customer[];
+  customers: Customer.Get[];
   namespaceId: string;
 }
 
@@ -39,7 +39,7 @@ export default function DashboardCustomersTable({
                   return (
                     <DashboardCustomersTableItem
                       key={customer.name}
-                      date={customer.date}
+                      createdAt={customer.createdAt}
                       email={customer.email}
                       image={customer.image}
                       name={customer.name}
