@@ -21,25 +21,22 @@ export default function SubscribeForm(): JSX.Element {
 
   // eslint-disable-next-line @typescript-eslint/require-await
   const onSubmit = async (data: {email: string}) => {
-    if (!authState?.uid) {
-      return null;
-    }
-
     toast.info("Loading...");
-
-    // eslint-disable-next-line no-void
-    void auth
-      .signInAnonymously()
-      .then(() => {
-        auth.onAuthStateChanged(user => {
-          // eslint-disable-next-line no-console
-          console.log(user?.uid, data.email);
+    if (!authState?.uid) {
+      // eslint-disable-next-line no-void
+      void auth
+        .signInAnonymously()
+        .then(() => {
+          auth.onAuthStateChanged(user => {
+            toast.success(`${user?.uid || ""}, ${data.email}`);
+          });
+        })
+        .catch(err => {
+          toast.error(err);
         });
-      })
-      .catch(err => {
-        toast.error(err);
-      });
-
+    } else {
+      toast.success("Subscribed!");
+    }
     return null;
   };
 
@@ -47,17 +44,19 @@ export default function SubscribeForm(): JSX.Element {
     <div className="flex justify-center">
       <div className="w-full max-w-md">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="mt-6 rounded-md shadow-sm md:mt-8 lg:mt-10 xl:mt-12">
-            <input
-              ref={register}
-              required
-              aria-label="Email address"
-              name="email"
-              type="email"
-              className="relative block w-full px-3 py-3 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-md appearance-none focus:outline-none focus:shadow-outline-blue focus:border-pink-300 focus:z-10 sm:text-sm sm:leading-5"
-              placeholder="Your email address"
-            />
-          </div>
+          {!authState?.uid && (
+            <div className="mt-6 rounded-md shadow-sm md:mt-8 lg:mt-10 xl:mt-12">
+              <input
+                ref={register}
+                required
+                aria-label="Email address"
+                name="email"
+                type="email"
+                className="relative block w-full px-3 py-3 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-md appearance-none focus:outline-none focus:shadow-outline-blue focus:border-pink-300 focus:z-10 sm:text-sm sm:leading-5"
+                placeholder="Your email address"
+              />
+            </div>
+          )}
           <div className="mt-6 rounded-md shadow md:mt-5 lg:mt-6 xl:mt-8">
             <button
               type="submit"
