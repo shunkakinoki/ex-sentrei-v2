@@ -20,7 +20,7 @@ export default function SubscribeScreen({
   return (
     <>
       <SeoSpace title="Subscribe" description="Subscribe to the publication" />
-      <HeaderRoot />
+      <HeaderRoot image={space?.image} />
       <ContainerRoot>
         <SubscribeHero />
         <SubscribeForm
