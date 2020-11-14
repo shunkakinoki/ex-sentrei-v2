@@ -54,6 +54,7 @@ export default function HeaderRoot({image}: Props): JSX.Element {
             pathname === "/landing" ||
             pathname === "/pricing" ||
             pathname === "/demo" ||
+            pathname === "/support" ||
             pathname.startsWith("/demo/")) && (
             <>
               <div className="-my-2 -mr-2 md:hidden">
