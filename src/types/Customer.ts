@@ -11,20 +11,26 @@ declare namespace Customer {
 
   export interface Fields
     extends EditableFields,
-      Pick<Profile.Get, "name" | "image"> {
+      Partial<Pick<Profile.Get, "name" | "image">> {
     status: "active";
     type: "anonymous" | "user";
   }
 
   export type AdminUpdate = Partial<Fields>;
 
-  export interface Response extends Fields, Metadata.Response {}
+  export interface Response
+    extends Fields,
+      Pick<Metadata.Response, "createdAt" | "updatedAt"> {}
 
-  export interface Create extends Fields, Metadata.Create {}
+  export interface Create
+    extends Fields,
+      Pick<Metadata.Create, "createdAt" | "updatedAt"> {}
 
-  export interface Update extends Partial<EditableFields>, Metadata.Update {}
+  export interface Update
+    extends Partial<EditableFields>,
+      Pick<Metadata.Update, "updatedAt"> {}
 
-  export interface Get extends Fields, Metadata.Get {
+  export interface Get extends Fields, Pick<Metadata.Get, "createdAt"> {
     id: string;
   }
 
