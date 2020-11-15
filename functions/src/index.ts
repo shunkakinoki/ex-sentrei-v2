@@ -6,6 +6,7 @@ export * as actions from "./actions";
 export * as activity from "./activity";
 export * as analytics from "./analytics";
 export * as articles from "./articles";
+export * as customers from "./customers";
 export * as cloudinary from "./cloudinary";
 export * as metrics from "./metrics";
 export * as namespaces from "./namespaces";

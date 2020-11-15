@@ -1,10 +1,14 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
+import Router from "next/router";
+import {useEffect} from "react";
 import {useForm} from "react-hook-form";
 import {toast} from "react-toastify";
 
+import spaceCustomerCreate from "@/callable/spaceCustomerCreate";
 import auth from "@/firebase/auth";
 import useAuth from "@/hooks/useAuth";
+import {validateCustomer} from "@/services/Customer";
 import Space from "@/types/Space";
 
 export interface Props {
@@ -15,10 +19,25 @@ export interface Props {
 
 export default function SubscribeForm({
   namespaceId,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   space,
   spaceId,
 }: Props): JSX.Element {
   const {authState} = useAuth();
+
+  useEffect(() => {
+    async function replaceUpgrade() {
+      if (authState && spaceId) {
+        if (!(await validateCustomer(spaceId, authState.uid)))
+          // eslint-disable-next-line no-void
+          void Router.replace("/upgrade");
+      }
+    }
+    if (namespaceId !== "demo") {
+      // eslint-disable-next-line no-void
+      void replaceUpgrade();
+    }
+  }, [authState, spaceId, namespaceId]);
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
   const {register, handleSubmit} = useForm({
@@ -28,9 +47,14 @@ export default function SubscribeForm({
   });
 
   // eslint-disable-next-line @typescript-eslint/require-await
-  const onSubmit = async (data: {email: string}) => {
+  const onSubmit = async (data: {email: string}): Promise<void> => {
     if (namespaceId === "demo") {
       toast.success("Subscribed!");
+      return;
+    }
+
+    if (!spaceId) {
+      return;
     }
 
     toast.info("Loading...");
@@ -39,17 +63,26 @@ export default function SubscribeForm({
       void auth
         .signInAnonymously()
         .then(() => {
-          auth.onAuthStateChanged(user => {
-            toast.success(`${user?.uid || ""}, ${data.email}`);
+          auth.onAuthStateChanged(() => {
+            // eslint-disable-next-line no-void
+            void spaceCustomerCreate(data.email, spaceId);
+            setTimeout(() => {
+              // eslint-disable-next-line no-void
+              void Router.replace("/upgrade");
+            }, 1000);
           });
         })
         .catch(err => {
           toast.error(err);
         });
-    } else {
-      toast.success(`Subscribed! ${space.title} ${spaceId || ""}`);
+    } else if (authState.email) {
+      // eslint-disable-next-line no-void
+      void spaceCustomerCreate(authState.email, spaceId);
+      setTimeout(() => {
+        // eslint-disable-next-line no-void
+        void Router.replace("/upgrade");
+      }, 1000);
     }
-    return null;
   };
 
   return (

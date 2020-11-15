@@ -33,7 +33,7 @@ export default function DashboardCustomersTableItem({
                 width={40}
                 layout="fixed"
                 src={image}
-                alt={`Customer ${name}`}
+                alt={`Customer ${name || ""}`}
                 unoptimized={namespaceId === "demo"}
               />
             )}
