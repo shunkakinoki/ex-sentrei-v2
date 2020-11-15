@@ -12,6 +12,8 @@ declare namespace Customer {
   export interface Fields
     extends EditableFields,
       Partial<Pick<Profile.Get, "name" | "image">> {
+    spaceId: string;
+    spaceNum?: number;
     status: "active";
     type: "anonymous" | "user";
   }
