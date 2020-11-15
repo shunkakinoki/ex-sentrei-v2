@@ -64,7 +64,7 @@ export default function ArticleScreen({
           title={space?.title || article.updatedBy.name}
         />
       )}
-      <FooterRoot />
+      <FooterRoot social={space?.social} />
     </>
   );
 }
