@@ -28,7 +28,7 @@ export default function SubscribeForm({
   useEffect(() => {
     async function replaceUpgrade() {
       if (authState && spaceId) {
-        if (await validateCustomer(spaceId, authState.uid))
+        if (!(await validateCustomer(spaceId, authState.uid)))
           // eslint-disable-next-line no-void
           void Router.replace("/upgrade");
       }
