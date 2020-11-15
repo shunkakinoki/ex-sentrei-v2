@@ -12,6 +12,7 @@ export const serializeCustomer = (
     ...data,
     createdAt: serializeFirebaseDate(data.createdAt),
     id: snap.id,
+    updatedAt: serializeFirebaseDate(data.updatedAt),
   };
 };
 
@@ -24,5 +25,6 @@ export const serializeAdminCustomer = (
     ...data,
     createdAt: serializeFirebaseDate(data.createdAt),
     id: snap.id,
+    updatedAt: serializeFirebaseDate(data.updatedAt),
   };
 };

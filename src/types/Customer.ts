@@ -30,7 +30,10 @@ declare namespace Customer {
     extends Partial<EditableFields>,
       Pick<Metadata.Update, "updatedAt"> {}
 
-  export interface Get extends Fields, Pick<Metadata.Get, "createdAt"> {
+  export interface Get
+    extends Fields,
+      Pick<Metadata.Get, "createdAt" | "updatedAt"> {
+    createdAt: string;
     id: string;
   }
 

@@ -178,8 +178,6 @@ export const createSpace = (): Space.Get => {
 export const createCustomer = (): Customer.Get => {
   return {
     createdAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
-    createdBy: createAuthor(),
-    createdByUid: faker.random.uuid(),
     email: faker.internet.email(),
     id: faker.random.uuid(),
     image: faker.image.avatar(),
@@ -187,8 +185,6 @@ export const createCustomer = (): Customer.Get => {
     status: "active",
     type: "user",
     updatedAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
-    updatedBy: createAuthor(),
-    updatedByUid: faker.random.uuid(),
   };
 };
 
