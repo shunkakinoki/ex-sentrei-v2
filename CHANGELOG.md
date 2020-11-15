@@ -1,3 +1,22 @@
+# [1.115.0](https://github.com/sentrei/sentrei/compare/v1.114.0...v1.115.0) (2020-11-15)
+
+### Features
+
+- 🎸 ini customer create ([a322e30](https://github.com/sentrei/sentrei/commit/a322e30e5e6cd48b89446139211dedd1e55a7ddb))
+- 🎸 ini demo banner for article screen ([9fcd3b2](https://github.com/sentrei/sentrei/commit/9fcd3b20435fa7bcc99fe2a0e4fefeb563cbd23e))
+
+### Performance Improvements
+
+- ⚡️ ini customer serializer ([635ad3c](https://github.com/sentrei/sentrei/commit/635ad3cb387c235b1b86747146363123f7aa6983))
+- ⚡️ ini customer update ([70693a7](https://github.com/sentrei/sentrei/commit/70693a75541e6f5eff53df2367a40064bae8df13))
+- ⚡️ ini mt subscribe ([a482f76](https://github.com/sentrei/sentrei/commit/a482f76cea002c6a5d56aac0cfd81cfd96366b2d))
+- ⚡️ ini social article ([001b0d4](https://github.com/sentrei/sentrei/commit/001b0d414cf690b08d9c2b05a79cf60695e52610))
+- ⚡️ ini story grid space updated title ([e95a91d](https://github.com/sentrei/sentrei/commit/e95a91dc99ff78abf7d01eb901ec814b0a168a26))
+- ⚡️ ini subscribe image ([0af36f3](https://github.com/sentrei/sentrei/commit/0af36f33e51aea218ed96f5382f2c2a243d71fd8))
+- ⚡️ ini validate customer ([2526221](https://github.com/sentrei/sentrei/commit/2526221eb2e47fcda973625fab8f737572a7a78b))
+- ⚡️ remove mb more ([cbb8590](https://github.com/sentrei/sentrei/commit/cbb8590eefdb1cb40c2ad0327bf0d9c8284c61f4))
+- ⚡️ update firestore rules ([79830a6](https://github.com/sentrei/sentrei/commit/79830a6b7dcf137663c8c51d62291563d290434d))
+
 # [1.114.0](https://github.com/sentrei/sentrei/compare/v1.113.1...v1.114.0) (2020-11-14)
 
 ### Features
