@@ -71,6 +71,12 @@ service cloud.firestore {
         && (request.resource.data.image == null || request.resource.data.image is string);
       allow create, delete, list:
         if false;
+      match /customers/{customerId} {
+        allow get:
+          if request.auth.uid != null;
+        allow create, delete, update, list:
+          if false;
+      }
     }
   }
 }
