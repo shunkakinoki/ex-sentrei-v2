@@ -73,7 +73,7 @@ export default function LandingHero(): JSX.Element {
           </svg>
         </div>
       </div>
-      <div className="px-4 mx-auto mt-10 sm:px-6">
+      <div className="relative px-4 mx-auto mt-10 sm:px-6">
         <div className="sm:text-left md:text-center">
           <h2 className="text-4xl font-extrabold leading-10 tracking-tight text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
             The most{" "}
