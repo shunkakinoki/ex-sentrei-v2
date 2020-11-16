@@ -1,3 +1,9 @@
+## [1.118.1](https://github.com/sentrei/sentrei/compare/v1.118.0...v1.118.1) (2020-11-16)
+
+### Performance Improvements
+
+- ⚡️ ini relative hero ([5f9e82d](https://github.com/sentrei/sentrei/commit/5f9e82dfdf276ce7177deaeb99bf1df94226daa0))
+
 # [1.118.0](https://github.com/sentrei/sentrei/compare/v1.117.0...v1.118.0) (2020-11-16)
 
 ### Features
