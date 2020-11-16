@@ -1,3 +1,14 @@
+# [1.117.0](https://github.com/sentrei/sentrei/compare/v1.116.0...v1.117.0) (2020-11-16)
+
+### Features
+
+- 🎸 complete migrate id custom type field ([5312367](https://github.com/sentrei/sentrei/commit/5312367199dc041d8c443340f17ba659e0d23795))
+
+### Performance Improvements
+
+- ⚡️ refactor activity batch ([ab1b35d](https://github.com/sentrei/sentrei/commit/ab1b35d18974fd9d2d9609691046234d181ecc05))
+- ⚡️ remove actions functions ([46fc0e2](https://github.com/sentrei/sentrei/commit/46fc0e2ac421534ec5a05a4bca3e6df69fde4799))
+
 # [1.116.0](https://github.com/sentrei/sentrei/compare/v1.115.0...v1.116.0) (2020-11-16)
 
 ### Features
