@@ -46,7 +46,7 @@ export default function DashboardSettingsSocialSection({
       social: data,
       updatedAt: timestamp,
       updatedBy: profile,
-      updatedByUid: authState.uid,
+      updatedById: authState.uid,
     })
       .then(() =>
         toast.success("Success", {

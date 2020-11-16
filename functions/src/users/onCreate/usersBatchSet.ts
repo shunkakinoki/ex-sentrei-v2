@@ -51,7 +51,7 @@ const userBatchSet = functions.auth.user().onCreate(async user => {
     customerCount: 0,
     createdAt: timestamp,
     createdBy: profileData,
-    createdByUid: user.uid,
+    createdById: user.uid,
     description: null,
     plan: "free",
     memberCount: 1,
@@ -61,7 +61,7 @@ const userBatchSet = functions.auth.user().onCreate(async user => {
     namespaceId: user.uid,
     updatedAt: timestamp,
     updatedBy: profileData,
-    updatedByUid: user.uid,
+    updatedById: user.uid,
   };
 
   const profileNamespaceRef = db.doc(`namespaces/@${user.uid}`);

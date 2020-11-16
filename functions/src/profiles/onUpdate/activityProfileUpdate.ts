@@ -35,7 +35,7 @@ const activityProfileUpdate = functions.firestore
       before,
       category: "profiles",
       categoryId: profileId,
-      createdByUid: profileId,
+      createdById: profileId,
       fullItemPath: `profiles/${profileId as string}`,
       itemPath: `profiles/${profileId as string}`,
       updatedAt: timestamp,

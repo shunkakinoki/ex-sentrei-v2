@@ -11,7 +11,7 @@ service cloud.firestore {
         && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.name == request.resource.data.createdBy.name
         && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.image == request.resource.data.createdBy.image
         && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.namespaceId == request.resource.data.createdBy.namespaceId
-        && request.resource.data.createdByUid == request.auth.uid
+        && request.resource.data.createdById == request.auth.uid
         && request.resource.data.title is string
         && request.resource.data.title.size() <= 1000
         && request.resource.data.updatedAt == request.time
@@ -19,7 +19,7 @@ service cloud.firestore {
         && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.name == request.resource.data.updatedBy.name
         && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.image == request.resource.data.updatedBy.image
         && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.namespaceId == request.resource.data.updatedBy.namespaceId
-        && request.resource.data.updatedByUid == request.auth.uid;
+        && request.resource.data.updatedById == request.auth.uid;
       allow update:
         if request.auth.uid != null
         && request.resource.data.body is string
@@ -30,7 +30,7 @@ service cloud.firestore {
         && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.name == request.resource.data.updatedBy.name
         && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.image == request.resource.data.updatedBy.image
         && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.namespaceId == request.resource.data.updatedBy.namespaceId
-        && request.resource.data.updatedByUid == request.auth.uid;
+        && request.resource.data.updatedById == request.auth.uid;
       allow list;
       allow delete:
         if request.auth.uid != null;
@@ -64,7 +64,7 @@ service cloud.firestore {
         if request.auth.uid != null;
       allow update:
         if request.auth.uid != null
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(["description", "title", "namespaceId", "image", "settings", "social", "updatedAt", "updatedBy", "updatedByUid"])
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(["description", "title", "namespaceId", "image", "settings", "social", "updatedAt", "updatedBy", "updatedById"])
         && (request.resource.data.description == null || request.resource.data.description is string)
         && (request.resource.data.description == null || request.resource.data.description.size() <= 1000)
         && (request.resource.data.title != null && request.resource.data.title is string)

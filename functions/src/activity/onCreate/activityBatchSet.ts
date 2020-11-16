@@ -25,7 +25,7 @@ const activityBatchSet = functions.firestore
     const updateData: Metadata.Update = {
       updatedAt: data.updatedAt,
       updatedBy: data.user,
-      updatedByUid: data.createdByUid,
+      updatedById: data.createdById,
     };
 
     if (data.spaceId) {

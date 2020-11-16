@@ -9,13 +9,13 @@ import Article from "@/types/Article";
 export interface Props
   extends Omit<
     Article.Get,
-    | "authorUids"
+    | "profileIds"
     | "body"
     | "updatedBy"
-    | "updatedByUid"
+    | "updatedById"
     | "createdAt"
     | "createdBy"
-    | "createdByUid"
+    | "createdById"
     | "spaceId"
   > {
   namespaceId: string;

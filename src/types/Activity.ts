@@ -21,7 +21,7 @@ declare namespace Activity {
     before: T | null;
     category: C;
     categoryId: string;
-    createdByUid: string;
+    createdById: string;
     fullItemPath: string;
     itemPath: string;
     spaceId?: string;

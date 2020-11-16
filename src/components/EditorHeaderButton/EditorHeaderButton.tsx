@@ -61,11 +61,11 @@ export default function EditorHeaderButton({
     try {
       if (articleId === "") {
         await createArticle({
-          authorUids: [authState?.uid],
+          profileIds: [authState?.uid],
           body: editorBody,
           createdAt: timestamp,
           createdBy: profile,
-          createdByUid: authState?.uid,
+          createdById: authState?.uid,
           image: editorImage ?? null,
           pricing: editorPricing ?? "free",
           spaceId: authState?.uid,
@@ -74,14 +74,14 @@ export default function EditorHeaderButton({
           title: editorTitle,
           updatedAt: timestamp,
           updatedBy: profile,
-          updatedByUid: authState?.uid,
+          updatedById: authState?.uid,
         })?.then(() => {
           toast.success(editorSwitch ? "Published!" : "Saved!");
           return router.push("/dashboard");
         });
       } else if (articleId) {
         await updateArticle(articleId, {
-          authorUids: [authState?.uid],
+          profileIds: [authState?.uid],
           body: editorBody,
           image: editorImage ?? null,
           pricing: editorPricing ?? "free",
@@ -89,7 +89,7 @@ export default function EditorHeaderButton({
           title: editorTitle,
           updatedAt: timestamp,
           updatedBy: profile,
-          updatedByUid: authState?.uid,
+          updatedById: authState?.uid,
         })?.then(() => {
           toast.success(editorSwitch ? "Updated!" : "Saved!");
           return router.push("/dashboard");

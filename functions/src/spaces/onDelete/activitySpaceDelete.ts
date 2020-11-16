@@ -28,13 +28,13 @@ const activitySpaceDelete = functions.firestore
       before: data,
       category: "spaces",
       categoryId: spaceId,
-      createdByUid: data.updatedByUid,
+      createdById: data.updatedById,
       fullItemPath: `spaces/${spaceId as string}`,
       itemPath: `spaces/${spaceId as string}`,
       spaceId,
       updatedAt: data.updatedAt,
       user: data.updatedBy,
-      userId: data.updatedByUid,
+      userId: data.updatedById,
       userNotification: [],
     };
 

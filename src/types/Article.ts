@@ -16,11 +16,11 @@ export type Pricing = "free" | "paid" | "subscription";
 // eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace Article {
   export type EditableFields = {
-    authorUids: string[];
     body: string;
     excerpt?: string;
     image?: string | null;
     pricing: Pricing;
+    profileIds: string[];
     status: "preview" | "published";
     subtitle?: string;
     title: string;
