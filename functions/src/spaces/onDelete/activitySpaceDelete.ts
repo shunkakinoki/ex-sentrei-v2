@@ -18,6 +18,10 @@ const activitySpaceDelete = functions.firestore
 
     const data = snap.data() as Space.Response;
 
+    if (data.title === "") {
+      return false;
+    }
+
     const activity: Activity.DeleteSpace = {
       action: "deleted",
       after: null,
