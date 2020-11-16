@@ -44,6 +44,7 @@ const spaceCustomerCreate = functions.https.onCall(async (data, context) => {
       createdAt: timestamp,
       updatedAt: timestamp,
       email,
+      spaceId,
       type: "anonymous",
       status: "active",
     };

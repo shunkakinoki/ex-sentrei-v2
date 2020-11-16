@@ -182,6 +182,7 @@ export const createCustomer = (): Customer.Get => {
     id: faker.random.uuid(),
     image: faker.image.avatar(),
     name: faker.name.findName(),
+    spaceId: faker.random.uuid(),
     status: "active",
     type: "user",
     updatedAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
