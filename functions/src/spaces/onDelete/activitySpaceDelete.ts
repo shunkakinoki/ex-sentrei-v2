@@ -18,7 +18,7 @@ const activitySpaceDelete = functions.firestore
 
     const data = snap.data() as Space.Response;
 
-    if (data.title !== "") {
+    if (data.type === "personal") {
       return false;
     }
 

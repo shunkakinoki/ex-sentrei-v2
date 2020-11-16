@@ -171,6 +171,7 @@ export default function LandingDemo(): JSX.Element {
                     </span>
                   </div>
                   <input
+                    readOnly
                     type="text"
                     className="w-full py-1 text-sm font-light leading-3 text-gray-600 bg-gray-300 rounded-full shadow pl-9"
                     value={urlInput}
