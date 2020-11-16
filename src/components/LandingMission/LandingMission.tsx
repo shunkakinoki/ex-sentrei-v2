@@ -1,6 +1,6 @@
 export default function LandingMission(): JSX.Element {
   return (
-    <section className="w-full py-16 bg-gray-200">
+    <section className="w-full py-16 bg-gray-100">
       <div className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <p className="text-base font-semibold leading-6 tracking-wide text-pink-600 uppercase">
@@ -11,8 +11,8 @@ export default function LandingMission(): JSX.Element {
           </h3>
           <p className="max-w-3xl mt-4 text-xl leading-7 text-gray-500 lg:mx-auto">
             We just want to be fair to both readers and writers. We feel that
-            popular publishing tools are somewhat evil and being dishonest.
-            Popups and high commissions should exist in 2020. We just want to do
+            popular publishing tools are somewhat evil and being dishonest. Ads,
+            commissions, and popups should not exist in 2020. We just want to do
             better. Built in Tokyo by a{" "}
             <a
               href="https://pioneer.app/winners/shun-kakinoki"
