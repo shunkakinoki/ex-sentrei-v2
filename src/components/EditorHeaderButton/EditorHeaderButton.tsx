@@ -61,13 +61,13 @@ export default function EditorHeaderButton({
     try {
       if (articleId === "") {
         await createArticle({
-          profileIds: [authState?.uid],
           body: editorBody,
           createdAt: timestamp,
           createdBy: profile,
           createdById: authState?.uid,
           image: editorImage ?? null,
           pricing: editorPricing ?? "free",
+          profileIds: [authState?.uid],
           spaceId: authState?.uid,
           status: editorSwitch ? "published" : "preview",
           time: 3,
@@ -81,10 +81,10 @@ export default function EditorHeaderButton({
         });
       } else if (articleId) {
         await updateArticle(articleId, {
-          profileIds: [authState?.uid],
           body: editorBody,
           image: editorImage ?? null,
           pricing: editorPricing ?? "free",
+          profileIds: [authState?.uid],
           status: editorSwitch ? "published" : "preview",
           title: editorTitle,
           updatedAt: timestamp,
