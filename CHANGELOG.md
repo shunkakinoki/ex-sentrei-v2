@@ -1,3 +1,14 @@
+# [1.118.0](https://github.com/sentrei/sentrei/compare/v1.117.0...v1.118.0) (2020-11-16)
+
+### Features
+
+- 🎸 ini hero svg ([f92fd8e](https://github.com/sentrei/sentrei/commit/f92fd8e5dd47682b515e7c2aba8ce354fba48afc))
+- 🎸 ini landing logo ([de31f2d](https://github.com/sentrei/sentrei/commit/de31f2d179a46eb2f7e8ffcdcc5cddb9fc73b06e))
+
+### Performance Improvements
+
+- ⚡️ ini read only for demo input ([215f3f9](https://github.com/sentrei/sentrei/commit/215f3f9f2c68c56b230366dbcb459d1a918e0a48))
+
 # [1.117.0](https://github.com/sentrei/sentrei/compare/v1.116.0...v1.117.0) (2020-11-16)
 
 ### Features
