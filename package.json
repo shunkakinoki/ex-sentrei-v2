@@ -130,7 +130,7 @@
     "rich-markdown-editor": "^10.6.7",
     "sharp": "^0.26.2",
     "swr": "^0.3.8",
-    "tailwindcss": "^2.0.0-alpha.21",
+    "tailwindcss": "^2.0.0-alpha.18",
     "tailwindcss-truncate-multiline": "^1.0.3",
     "typed.js": "^2.0.11"
   },
