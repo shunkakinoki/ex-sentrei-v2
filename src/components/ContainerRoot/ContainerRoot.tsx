@@ -6,7 +6,7 @@ export interface Props {
 
 export default function ContainerRoot({children}: Props): JSX.Element {
   return (
-    <div className="container px-3 mx-auto sm:px-4 md:px-5 lg:px-6">
+    <div className="w-full max-w-screen-xl px-3 mx-auto sm:px-4 md:px-5 lg:px-6">
       {children}
     </div>
   );
