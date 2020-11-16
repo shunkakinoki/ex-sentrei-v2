@@ -56,6 +56,7 @@ const userBatchSet = functions.auth.user().onCreate(async user => {
     plan: "free",
     memberCount: 1,
     title: `${profileData.name}'s Publication`,
+    type: "personal",
     image: user.photoURL || null,
     namespaceId: user.uid,
     updatedAt: timestamp,
