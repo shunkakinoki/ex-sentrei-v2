@@ -39,13 +39,13 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   try {
     const article = await getAdminArticle(String(params?.slug));
 
-    if (!article?.authorUids) {
+    if (!article?.profileIds) {
       return {
         notFound: true,
       };
     }
 
-    const authorReq = getAdminProfile(article?.authorUids[0]);
+    const authorReq = getAdminProfile(article?.profileIds[0]);
     const articlesReq = getAdminArticles({
       limit: 2,
       spaceId: article.spaceId,

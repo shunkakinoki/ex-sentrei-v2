@@ -116,27 +116,27 @@ export const createAuthors = (num = 3): Profile.Get[] => {
   return new Array(num).fill(undefined).map(createAuthor);
 };
 
-export const createProfileUid = (): string => {
+export const createProfileId = (): string => {
   return faker.random.uuid();
 };
 
-export const createAuthorUids = (num = 3): string[] => {
-  return new Array(num).fill(undefined).map(createProfileUid);
+export const createProfileIds = (num = 3): string[] => {
+  return new Array(num).fill(undefined).map(createProfileId);
 };
 
 export const createArticle = (): Article.Get => {
   return {
-    authorUids: createAuthorUids(),
     body: createMarkdown(30),
     createdAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
     createdBy: createAuthor(),
-    createdByUid: faker.random.uuid(),
+    createdById: faker.random.uuid(),
     excerpt: createMarkdown(1),
     id: faker.random.uuid(),
     image: `https://picsum.photos/900/1200?nocache=${Math.floor(
       Math.random() * 10,
     )}`,
     pricing: createPricing(),
+    profileIds: createProfileIds(),
     slugId: "demo",
     spaceId: faker.random.uuid(),
     status: "published",
@@ -145,7 +145,7 @@ export const createArticle = (): Article.Get => {
     title: faker.lorem.lines(Math.floor(Math.random() * 1 + 1)),
     updatedAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
     updatedBy: createAuthor(),
-    updatedByUid: faker.random.uuid(),
+    updatedById: faker.random.uuid(),
   };
 };
 
@@ -158,7 +158,7 @@ export const createSpace = (): Space.Get => {
     articleCount: 180,
     createdAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
     createdBy: createAuthor(),
-    createdByUid: faker.random.uuid(),
+    createdById: faker.random.uuid(),
     customerCount: 300,
     description: faker.lorem.sentences(Math.floor(Math.random() * 3) + 1),
     id: faker.random.uuid(),
@@ -169,9 +169,10 @@ export const createSpace = (): Space.Get => {
     namespaceId: faker.lorem.slug(),
     plan: "free",
     title: faker.lorem.sentences(Math.floor(Math.random() * 3) + 1),
+    type: "personal",
     updatedAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
     updatedBy: createAuthor(),
-    updatedByUid: faker.random.uuid(),
+    updatedById: faker.random.uuid(),
   };
 };
 

@@ -50,7 +50,7 @@ export default function DashboardBrandingBasicSection({
       image: imageUrl,
       updatedAt: timestamp,
       updatedBy: profile,
-      updatedByUid: authState?.uid,
+      updatedById: authState?.uid,
     })
       .then(() =>
         toast.success("Success", {
@@ -89,7 +89,7 @@ export default function DashboardBrandingBasicSection({
       ...data,
       updatedAt: timestamp,
       updatedBy: profile,
-      updatedByUid: authState?.uid,
+      updatedById: authState?.uid,
     })
       .then(() =>
         toast.success("Success", {

@@ -18,7 +18,7 @@ const activitySpaceCreate = functions.firestore
 
     const data = snap.data() as Space.Response;
 
-    if (!data.createdByUid || !data.updatedBy || !data.updatedByUid) {
+    if (!data.createdById || !data.updatedBy || !data.updatedById) {
       return false;
     }
 
@@ -28,13 +28,13 @@ const activitySpaceCreate = functions.firestore
       before: null,
       category: "spaces",
       categoryId: spaceId,
-      createdByUid: data.updatedByUid,
+      createdById: data.updatedById,
       fullItemPath: `spaces/${spaceId as string}`,
       itemPath: `spaces/${spaceId as string}`,
       spaceId,
       updatedAt: data.updatedAt,
       user: data.updatedBy,
-      userId: data.updatedByUid,
+      userId: data.updatedById,
       userNotification: [],
     };
 

@@ -34,13 +34,13 @@ const activityArticleUpdate = functions.firestore
       before,
       category: "articles",
       categoryId: articleId,
-      createdByUid: after.updatedByUid,
+      createdById: after.updatedById,
       fullItemPath: `articles/${articleId as string}`,
       itemPath: `articles/${articleId as string}`,
       spaceId: after.spaceId,
       updatedAt: after.updatedAt,
       user: after.updatedBy,
-      userId: after.updatedByUid,
+      userId: after.updatedById,
       userNotification: [],
     };
 

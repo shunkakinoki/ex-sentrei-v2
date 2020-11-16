@@ -61,35 +61,35 @@ export default function EditorHeaderButton({
     try {
       if (articleId === "") {
         await createArticle({
-          authorUids: [authState?.uid],
           body: editorBody,
           createdAt: timestamp,
           createdBy: profile,
-          createdByUid: authState?.uid,
+          createdById: authState?.uid,
           image: editorImage ?? null,
           pricing: editorPricing ?? "free",
+          profileIds: [authState?.uid],
           spaceId: authState?.uid,
           status: editorSwitch ? "published" : "preview",
           time: 3,
           title: editorTitle,
           updatedAt: timestamp,
           updatedBy: profile,
-          updatedByUid: authState?.uid,
+          updatedById: authState?.uid,
         })?.then(() => {
           toast.success(editorSwitch ? "Published!" : "Saved!");
           return router.push("/dashboard");
         });
       } else if (articleId) {
         await updateArticle(articleId, {
-          authorUids: [authState?.uid],
           body: editorBody,
           image: editorImage ?? null,
           pricing: editorPricing ?? "free",
+          profileIds: [authState?.uid],
           status: editorSwitch ? "published" : "preview",
           title: editorTitle,
           updatedAt: timestamp,
           updatedBy: profile,
-          updatedByUid: authState?.uid,
+          updatedById: authState?.uid,
         })?.then(() => {
           toast.success(editorSwitch ? "Updated!" : "Saved!");
           return router.push("/dashboard");

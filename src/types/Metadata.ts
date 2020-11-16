@@ -5,13 +5,13 @@ declare namespace Metadata {
   export type Update = {
     updatedAt: firebase.default.firestore.FieldValue;
     updatedBy: Profile.Response;
-    updatedByUid: string;
+    updatedById: string;
   };
 
   export interface Create extends Update {
     createdAt: firebase.default.firestore.FieldValue;
     createdBy: Profile.Response;
-    createdByUid: string;
+    createdById: string;
   }
 
   export interface Get extends Omit<Response, "createdAt" | "updatedAt"> {

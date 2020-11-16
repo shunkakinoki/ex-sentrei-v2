@@ -24,13 +24,13 @@ const activityArticleCreate = functions.firestore
       before: null,
       category: "articles",
       categoryId: articleId,
-      createdByUid: data.updatedByUid,
+      createdById: data.updatedById,
       fullItemPath: `articles/${articleId as string}`,
       itemPath: `articles/${articleId as string}`,
       spaceId: data.spaceId,
       updatedAt: data.updatedAt,
       user: data.updatedBy,
-      userId: data.updatedByUid,
+      userId: data.updatedById,
       userNotification: [],
     };
 

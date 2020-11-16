@@ -29,6 +29,7 @@ declare namespace Space {
     customerCount: firebase.default.firestore.FieldValue | number;
     memberCount: firebase.default.firestore.FieldValue | number;
     namespaceId: string;
+    type: "personal";
   }
 
   export type AdminUpdate = Partial<Fields>;

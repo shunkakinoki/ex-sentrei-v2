@@ -16,12 +16,16 @@ const activityBatchSet = functions.firestore
   .onCreate(snap => {
     const data = snap.data() as Activity.Response;
 
+    if (data.action === "deleted" && data.category === "spaces") {
+      return false;
+    }
+
     const batch = db.batch();
 
     const updateData: Metadata.Update = {
       updatedAt: data.updatedAt,
       updatedBy: data.user,
-      updatedByUid: data.createdByUid,
+      updatedById: data.createdById,
     };
 
     if (data.spaceId) {
