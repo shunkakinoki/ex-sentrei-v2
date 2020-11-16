@@ -1,3 +1,14 @@
+# [1.116.0](https://github.com/sentrei/sentrei/compare/v1.115.0...v1.116.0) (2020-11-16)
+
+### Features
+
+- 🎸 ini customer functions ([c06f200](https://github.com/sentrei/sentrei/commit/c06f20056c788875ae2250a0ceb7bd13a0112f32))
+
+### Performance Improvements
+
+- ⚡️ upgrade canary packages ([b0a49c4](https://github.com/sentrei/sentrei/commit/b0a49c4c00c425810ff92519d933c01da8b004ca))
+- ⚡️ upgrade with ncu ([aebfe52](https://github.com/sentrei/sentrei/commit/aebfe529826c308f99b6c42a0ae6bbb58ac070ab))
+
 # [1.115.0](https://github.com/sentrei/sentrei/compare/v1.114.0...v1.115.0) (2020-11-15)
 
 ### Features
