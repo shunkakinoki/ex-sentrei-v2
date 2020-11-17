@@ -30,7 +30,7 @@ const customerCountMinus = functions.firestore
 
       return db
         .collection("customers")
-        .where("spaceNum", ">", number)
+        .where("spaceNum", ">", data.spaceNum)
         .get()
         .then(snapshot => {
           snapshot.forEach(doc => {
