@@ -10,7 +10,7 @@ const auth = admin.auth();
  */
 const disableUserSignup = functions.auth.user().onCreate(user => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  if (config.environment !== "main") {
+  if (config.environment === "main") {
     return null;
   }
   return (

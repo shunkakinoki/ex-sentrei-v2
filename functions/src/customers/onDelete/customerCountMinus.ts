@@ -12,7 +12,7 @@ const db = admin.firestore();
  * Decrease customer count to arbitrary collection
  */
 const customerCountMinus = functions.firestore
-  .document("customers/{customerId}")
+  .document("spaces/{spaceId}/customers/{customerId}")
   .onDelete(snap => {
     return db.runTransaction(async transaction => {
       const data = snap.data() as Customer.Response;
@@ -30,7 +30,7 @@ const customerCountMinus = functions.firestore
 
       return db
         .collection("customers")
-        .where("spaceNum", ">", number)
+        .where("spaceNum", ">", data.spaceNum)
         .get()
         .then(snapshot => {
           snapshot.forEach(doc => {

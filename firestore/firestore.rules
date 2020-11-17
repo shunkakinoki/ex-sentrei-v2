@@ -74,7 +74,10 @@ service cloud.firestore {
       match /customers/{customerId} {
         allow get:
           if request.auth.uid != null;
-        allow create, delete, update, list:
+        allow list:
+          if request.auth.uid != null
+          && request.query.limit == 10;
+        allow create, delete, update:
           if false;
       }
     }
