@@ -1,6 +1,13 @@
 import DashboardSalesTableItem from "@/components/DashboardSalesTableItem";
+import PaginationBase, {
+  Props as PaginationBaseProps,
+} from "@/components/PaginationBase";
 
-export default function DashboardSalesTable(): JSX.Element {
+export interface Props extends Omit<PaginationBaseProps, "pathname"> {
+  namespaceId: string;
+}
+
+export default function DashboardSalesTable({namespaceId}: Props): JSX.Element {
   return (
     <div className="container max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
       <h2 className="mt-8 text-lg font-medium leading-6 text-gray-900">
@@ -33,6 +40,11 @@ export default function DashboardSalesTable(): JSX.Element {
           </div>
         </div>
       </div>
+      <PaginationBase
+        current={1}
+        pathname={`/dashboard${namespaceId === "" ? "" : "/"}${namespaceId}`}
+        total={1}
+      />
     </div>
   );
 }
