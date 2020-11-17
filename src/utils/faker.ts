@@ -168,7 +168,7 @@ export const createSpace = (): Space.Get => {
     memberCount: 30,
     namespaceId: faker.lorem.slug(),
     plan: "free",
-    title: faker.lorem.sentences(Math.floor(Math.random() * 3) + 1),
+    title: faker.lorem.sentences(1),
     type: "personal",
     updatedAt: faker.date.past(Math.floor(Math.random() * 30)).toDateString(),
     updatedBy: createAuthor(),
