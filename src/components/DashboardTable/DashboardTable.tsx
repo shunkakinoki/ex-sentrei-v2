@@ -1,5 +1,7 @@
 import dynamic from "next/dynamic";
 
+import ContainerEmpty from "@/components/ContainerEmpty";
+import DashboardTableEmpty from "@/components/DashboardTableEmpty";
 import PaginationBase, {
   Props as PaginationBaseProps,
 } from "@/components/PaginationBase";
@@ -58,12 +60,16 @@ export default function DashboardTable({
             updatedAt={article.updatedAt}
           />
         ))}
-      {space?.articleCount && space.articleCount > 10 && (
+      {space?.articleCount && space?.articleCount > 10 ? (
         <PaginationBase
           current={current}
           pathname={`/dashboard${namespaceId === "" ? "" : "/"}${namespaceId}`}
-          total={Math.floor(space.articleCount / 10) + 1}
+          total={Math.floor(space?.articleCount / 10) + 1}
         />
+      ) : (
+        <ContainerEmpty>
+          <DashboardTableEmpty />
+        </ContainerEmpty>
       )}
       {namespaceId === "demo" && total > 1 && (
         <PaginationBase
