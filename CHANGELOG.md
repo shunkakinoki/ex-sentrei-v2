@@ -1,3 +1,29 @@
+# [1.119.0](https://github.com/sentrei/sentrei/compare/v1.118.1...v1.119.0) (2020-11-17)
+
+### Bug Fixes
+
+- 🐛 use auth effect ([9879f3a](https://github.com/sentrei/sentrei/commit/9879f3ae3e23579121c3b3cfa8d73b5db88d327a))
+
+### Features
+
+- 🎸 ini dashboard table empty ([a28a083](https://github.com/sentrei/sentrei/commit/a28a0837d86ea2bd97015e3fd4f923f506cab0e3))
+- 🎸 ini landing stats ([d005e57](https://github.com/sentrei/sentrei/commit/d005e578f14b300270a2ff80082d59d1892af247))
+- 🎸 ini sales table ([bdcc6ee](https://github.com/sentrei/sentrei/commit/bdcc6ee9111e72fdbbbf241d360d68a6b16a6d78))
+- 🎸 refactor header menu ([605f20a](https://github.com/sentrei/sentrei/commit/605f20aeb6061b88d3c6c1e93d7d6bb183256166))
+- 🎸 refactor sales hero ([2554713](https://github.com/sentrei/sentrei/commit/255471387550fb0467e3e1b7727e8f04c1daaf56))
+
+### Performance Improvements
+
+- ⚡️ complete refactor subscribe ([e44d4ea](https://github.com/sentrei/sentrei/commit/e44d4ea8a55586fd5dcf47d5b73c90a8abbe9b35))
+- ⚡️ faker title one ([f387431](https://github.com/sentrei/sentrei/commit/f387431f00c34343ba211ad3cdea8fcea3c7f1e1))
+- ⚡️ fix gha release ([00b2fd6](https://github.com/sentrei/sentrei/commit/00b2fd681bea2be5e6ae50c14338763fee73224a))
+- ⚡️ ini pagination customers ([35e018c](https://github.com/sentrei/sentrei/commit/35e018ca6875e86ff875ad488a2012f30533295c))
+- ⚡️ ini pagination sales ([4059bfc](https://github.com/sentrei/sentrei/commit/4059bfc3384872a0d12958fcd7146f86ebcfb902))
+- ⚡️ ini release gha ([081eb75](https://github.com/sentrei/sentrei/commit/081eb75dd84e2b2d487866dfef4fe901a4908017))
+- ⚡️ ini story grid last path function ([68be0ae](https://github.com/sentrei/sentrei/commit/68be0ae5ec39b29faa44ac4359386fa033d215e0))
+- ⚡️ refactor container root ([ed0501d](https://github.com/sentrei/sentrei/commit/ed0501d58e9643ee9e5e8b638a350311dded6be3))
+- ⚡️ update yarn gha ([f08c46b](https://github.com/sentrei/sentrei/commit/f08c46b0d855064d28d1abd8cb7bbaf7a91671f0))
+
 ## [1.118.1](https://github.com/sentrei/sentrei/compare/v1.118.0...v1.118.1) (2020-11-16)
 
 ### Performance Improvements
