@@ -28,12 +28,13 @@ export default function useAuth(): {
       (Router.pathname === "/profile" ||
         Router.pathname === "/settings" ||
         Router.pathname.startsWith("/dashboard")) &&
+      isAuthInitialized &&
       !isLoggedIn
     ) {
       // eslint-disable-next-line no-void
       void Router.replace("/login");
     }
-  }, [isLoggedIn]);
+  }, [isAuthInitialized, isLoggedIn]);
 
   return {
     authState,
