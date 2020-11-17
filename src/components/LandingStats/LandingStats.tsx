@@ -1,6 +1,6 @@
 export default function LandingStats(): JSX.Element {
   return (
-    <section className="pt-12 bg-gray-50 sm:pt-16">
+    <section className="pt-12 bg-white sm:pt-16">
       <div className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-extrabold leading-9 text-gray-900 sm:text-4xl sm:leading-10">
@@ -14,7 +14,6 @@ export default function LandingStats(): JSX.Element {
       </div>
       <div className="pb-12 mt-10 bg-white sm:pb-16">
         <div className="relative">
-          <div className="absolute inset-0 h-1/2 bg-gray-50" />
           <div className="relative max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <dl className="bg-white rounded-lg shadow-lg sm:grid sm:grid-cols-3">
