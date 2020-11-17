@@ -10,7 +10,6 @@ jobs:
     if: github.actor != 'sentrei-bot'
     runs-on: ubuntu-latest
     steps:
-      - uses: nelonoel/branch-name@v1
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.BOT_TOKEN }}
