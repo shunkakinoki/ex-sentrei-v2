@@ -11,6 +11,7 @@ import LandingHero from "@/components/LandingHero";
 import LandingJourney from "@/components/LandingJourney";
 import LandingLogo from "@/components/LandingLogo";
 import LandingMission from "@/components/LandingMission";
+import LandingStats from "@/components/LandingStats";
 import LandingTestimonial from "@/components/LandingTestimonial";
 import SeoLanding from "@/components/SeoLanding";
 
@@ -36,6 +37,7 @@ export default function LandingScreen(): JSX.Element {
       <LandingFeature />
       <LandingGlobe />
       <LandingFaq />
+      <LandingStats />
       <LandingCta />
       <FooterRoot />
     </>
