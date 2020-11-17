@@ -66,7 +66,8 @@ export default function DashboardTable({
           pathname={`/dashboard${namespaceId === "" ? "" : "/"}${namespaceId}`}
           total={Math.floor(space?.articleCount / 10) + 1}
         />
-      ) : (
+      ) : null}
+      {space?.articleCount === 0 && (
         <ContainerEmpty>
           <DashboardTableEmpty />
         </ContainerEmpty>
