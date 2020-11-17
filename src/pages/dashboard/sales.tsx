@@ -6,7 +6,10 @@ import DashboardSalesScreen, {
 import Sales from "@/types/Sales";
 import {createSales} from "@/utils/faker";
 
-export type Props = Omit<DashboardSalesScreenProps, "namespaceId" | "sales"> & {
+export type Props = Omit<
+  DashboardSalesScreenProps,
+  "current" | "namespaceId" | "sales" | "total"
+> & {
   sales: string;
 };
 
@@ -26,7 +29,12 @@ const Dashboard = ({
   sales,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
-    <DashboardSalesScreen sales={JSON.parse(sales) as Sales} namespaceId="" />
+    <DashboardSalesScreen
+      current={1}
+      total={1}
+      sales={JSON.parse(sales) as Sales}
+      namespaceId=""
+    />
   );
 };
 
