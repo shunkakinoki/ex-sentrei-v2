@@ -21,11 +21,11 @@ export default function DashboardTableEmpty(): JSX.Element {
           </svg>
         </div>
         <div className="mt-3 text-center sm:mt-5">
-          <h3 className="text-lg font-medium leading-6 text-gray-900">
-            You have no articles
+          <h3 className="text-2xl font-medium leading-6 text-gray-900">
+            You have no articles yet.
           </h3>
-          <div className="mt-2">
-            <p className="text-sm leading-5 text-gray-500">
+          <div className="mt-4">
+            <p className="leading-5 text-gray-500 text-md">
               Let&apos;s get the party started!
             </p>
           </div>
