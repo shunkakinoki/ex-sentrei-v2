@@ -52,7 +52,7 @@ export default function DashboardSalesHero({
             <div className="text-sm leading-5">
               <a
                 href="#"
-                className="font-medium text-teal-600 transition duration-150 ease-in-out hover:text-teal-900"
+                className="font-medium text-pink-600 transition duration-150 ease-in-out hover:text-pink-900"
               >
                 View all
               </a>
@@ -97,7 +97,7 @@ export default function DashboardSalesHero({
             <div className="text-sm leading-5">
               <a
                 href="#"
-                className="font-medium text-teal-600 transition duration-150 ease-in-out hover:text-teal-900"
+                className="font-medium text-pink-600 transition duration-150 ease-in-out hover:text-pink-900"
               >
                 View all
               </a>
@@ -142,7 +142,7 @@ export default function DashboardSalesHero({
             <div className="text-sm leading-5">
               <a
                 href="#"
-                className="font-medium text-teal-600 transition duration-150 ease-in-out hover:text-teal-900"
+                className="font-medium text-pink-600 transition duration-150 ease-in-out hover:text-pink-900"
               >
                 View all
               </a>
