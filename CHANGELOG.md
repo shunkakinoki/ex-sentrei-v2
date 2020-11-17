@@ -1,3 +1,24 @@
+# [1.120.0](https://github.com/sentrei/sentrei/compare/v1.119.0...v1.120.0) (2020-11-17)
+
+### Bug Fixes
+
+- 🐛 complete artiicle space num field functions ([371c27d](https://github.com/sentrei/sentrei/commit/371c27d5db159a3e58926717d7fb93c2db68674a))
+- 🐛 enable main signup ([af26a18](https://github.com/sentrei/sentrei/commit/af26a18a0bfa73daed55861c320962c597464e30))
+- 🐛 ini working customer space num functions ([0a0a7fd](https://github.com/sentrei/sentrei/commit/0a0a7fd2f27b6379fd9a4266e6123c869dd12955))
+
+### Features
+
+- 🎸 ini customer subcollection ([397d2dc](https://github.com/sentrei/sentrei/commit/397d2dcf872be27bb591248f321212773b7dd942))
+- 🎸 ini customer table ([a7bba7b](https://github.com/sentrei/sentrei/commit/a7bba7be2a50ed6679e4ccc39a1d0886b575c61a))
+- 🎸 refactor header logo size and image ([959db88](https://github.com/sentrei/sentrei/commit/959db887427a4e60e83c635345fe0264682e611b))
+
+### Performance Improvements
+
+- ⚡️ ini customers avatar ([3e55aa7](https://github.com/sentrei/sentrei/commit/3e55aa74b575825f9144e5b5c956bc90ace11e3a))
+- ⚡️ refactor customer table empty hero icon ([e506a4a](https://github.com/sentrei/sentrei/commit/e506a4a05f56acad1eae9d898d62bb12d698b720))
+- ⚡️ refactor empty font ([7e2723c](https://github.com/sentrei/sentrei/commit/7e2723cc91cfcace6b5d17119b425b6f5ab1ba00))
+- ⚡️ remove table divider ([c67c161](https://github.com/sentrei/sentrei/commit/c67c1618ce19aa3b7701b2e973d46ffe890fac30))
+
 # [1.119.0](https://github.com/sentrei/sentrei/compare/v1.118.1...v1.119.0) (2020-11-17)
 
 ### Bug Fixes
