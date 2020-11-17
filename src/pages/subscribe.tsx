@@ -105,8 +105,8 @@ const Subscribe = ({
 }: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element => {
   return (
     <SubscribeScreen
-      namespaceId={namespaceId}
-      spaceId={spaceId}
+      namespaceId={JSON.parse(namespaceId) as string}
+      spaceId={JSON.parse(spaceId) as string}
       space={JSON.parse(space) as Space.Get}
     />
   );

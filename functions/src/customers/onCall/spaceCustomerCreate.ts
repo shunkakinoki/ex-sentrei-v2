@@ -19,7 +19,7 @@ const spaceCustomerCreate = functions.https.onCall(async (data, context) => {
     );
   }
 
-  const {email} = data;
+  const {email, spaceId} = data;
   if (!email) {
     throw new functions.https.HttpsError(
       "invalid-argument",
@@ -27,7 +27,6 @@ const spaceCustomerCreate = functions.https.onCall(async (data, context) => {
     );
   }
 
-  const {spaceId} = data;
   if (!spaceId) {
     throw new functions.https.HttpsError(
       "invalid-argument",
