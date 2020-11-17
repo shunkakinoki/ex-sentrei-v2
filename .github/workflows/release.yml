@@ -47,5 +47,4 @@ jobs:
         env:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           SENTRY_ORG: ${{ github.repository_owner }}
-          SENTRY_ENVIRONMENT: ${{ env.BRANCH_NAME }}
           SENTRY_RELEASE: ${{ steps.release.outputs.release }}
