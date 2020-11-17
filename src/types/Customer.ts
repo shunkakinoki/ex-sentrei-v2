@@ -3,6 +3,15 @@
 import Metadata from "@/types/Metadata";
 import Profile from "@/types/Profile";
 
+export interface CustomerQuery {
+  end?: number;
+  limit?: number;
+  spaceId: string;
+  start?: number;
+  startAfter?: firebase.default.firestore.DocumentSnapshot;
+  status?: string;
+}
+
 // eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace Customer {
   export type EditableFields = {

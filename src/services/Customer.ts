@@ -1,6 +1,6 @@
 import db from "@/firebase/db";
 import {serializeCustomer} from "@/serializers/Customer";
-import Customer from "@/types/Customer";
+import Customer, {CustomerQuery} from "@/types/Customer";
 
 export const customerConverter: firebase.default.firestore.FirestoreDataConverter<Customer.Get> = {
   fromFirestore(
@@ -15,6 +15,35 @@ export const customerConverter: firebase.default.firestore.FirestoreDataConverte
   },
 };
 
+export const customerQuery = ({
+  limit = 10,
+  end,
+  spaceId,
+  start,
+  status,
+  startAfter,
+}: CustomerQuery): firebase.default.firestore.Query<Customer.Get> => {
+  let ref = db
+    .collection(`spaces/${spaceId}/customers`)
+    .withConverter(customerConverter)
+    .limit(limit);
+
+  if (status) {
+    ref = ref.where("status", "==", status).orderBy("createdAt", "desc");
+  }
+  if (start) {
+    ref = ref.where("spaceNum", "<=", start).orderBy("spaceNum", "desc");
+  }
+  if (end) {
+    ref = ref.where("spaceNum", ">", end);
+  }
+  if (startAfter) {
+    ref = ref.startAfter(startAfter);
+  }
+
+  return ref;
+};
+
 export const getCustomer = async (
   spaceId: string,
   customerId: string,
@@ -25,6 +54,13 @@ export const getCustomer = async (
     .get();
 
   return snap.data() || null;
+};
+
+export const getCustomers = async (
+  query: CustomerQuery,
+): Promise<Customer.Get[]> => {
+  const snap = await customerQuery(query).get();
+  return snap.docs.map(doc => doc.data());
 };
 
 export const validateCustomer = async (
