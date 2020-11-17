@@ -30,7 +30,7 @@ const articleCountMinus = functions.firestore
 
       return db
         .collection("articles")
-        .where("spaceNum", ">", number)
+        .where("spaceNum", ">", data.spaceNum)
         .get()
         .then(snapshot => {
           snapshot.forEach(doc => {
