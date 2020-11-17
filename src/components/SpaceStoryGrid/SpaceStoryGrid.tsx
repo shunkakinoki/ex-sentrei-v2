@@ -30,9 +30,13 @@ export default function SpaceStoryGrid({
 
   const [articles, setArticles] = useState<Article.Get[]>(initialArticles);
   const [isPageBottom, setIsPageBottom] = useState(false);
-  const [lastPath] = useState<string>(
-    `articles/${articles[articles.length - 1].id}`,
-  );
+  const [lastPath] = useState<string | null>(() => {
+    if (articles && articles.length > 0) {
+      return `articles/${articles[articles.length - 1].id}`;
+    }
+    return null;
+  });
+
   const [lastItem, setLastItem] = useState<
     firebase.default.firestore.DocumentSnapshot
   >();
@@ -60,8 +64,10 @@ export default function SpaceStoryGrid({
   }, []);
 
   useEffect(() => {
-    // eslint-disable-next-line no-void
-    void db.doc(lastPath).get().then(setLastItem);
+    if (lastPath) {
+      // eslint-disable-next-line no-void
+      void db.doc(lastPath).get().then(setLastItem);
+    }
   }, [lastPath]);
 
   useEffect(() => {

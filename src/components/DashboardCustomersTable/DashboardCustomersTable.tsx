@@ -53,7 +53,22 @@ export default function DashboardCustomersTable({
           </div>
         </div>
       </div>
-      <PaginationBase current={current} pathname={namespaceId} total={total} />
+      {customers && (
+        <PaginationBase
+          current={current}
+          pathname={`/dashboard${
+            namespaceId === "" ? "" : "/"
+          }${namespaceId}/customers`}
+          total={3}
+        />
+      )}
+      {namespaceId === "demo" && total > 1 && (
+        <PaginationBase
+          current={current}
+          pathname="/demo/dashboard/customers"
+          total={total}
+        />
+      )}
     </div>
   );
 }

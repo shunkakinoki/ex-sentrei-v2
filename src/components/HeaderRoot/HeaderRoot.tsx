@@ -48,14 +48,14 @@ export default function HeaderRoot({image}: Props): JSX.Element {
           <div className="lg:w-0 lg:flex-1">
             <ImageLogo image={image ?? null} />
           </div>
-          {(!isLoggedIn ||
-            pathname === "/" ||
-            pathname === "/home" ||
+          {(pathname === "/home" ||
             pathname === "/landing" ||
             pathname === "/pricing" ||
             pathname === "/demo" ||
             pathname === "/support" ||
-            pathname.startsWith("/demo/")) && (
+            pathname.startsWith("/demo/") ||
+            (typeof window !== "undefined" &&
+              window.location.hostname === "sentrei.com")) && (
             <>
               <div className="-my-2 -mr-2 md:hidden">
                 <Menu>
