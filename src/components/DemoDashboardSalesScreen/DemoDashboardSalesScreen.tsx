@@ -9,7 +9,12 @@ export default function DemoDashboardSalesScreen({sales}: Props): JSX.Element {
   return (
     <>
       <DemoBanner />
-      <DashboardSalesScreen sales={sales} namespaceId="demo" />
+      <DashboardSalesScreen
+        current={1}
+        total={1}
+        sales={sales}
+        namespaceId="demo"
+      />
     </>
   );
 }

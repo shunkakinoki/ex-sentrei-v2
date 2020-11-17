@@ -7,7 +7,11 @@ export interface Props extends Omit<PaginationBaseProps, "pathname"> {
   namespaceId: string;
 }
 
-export default function DashboardSalesTable({namespaceId}: Props): JSX.Element {
+export default function DashboardSalesTable({
+  current,
+  namespaceId,
+  total,
+}: Props): JSX.Element {
   return (
     <div className="container max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
       <h2 className="mt-8 text-lg font-medium leading-6 text-gray-900">
@@ -41,9 +45,9 @@ export default function DashboardSalesTable({namespaceId}: Props): JSX.Element {
         </div>
       </div>
       <PaginationBase
-        current={1}
+        current={current}
         pathname={`/dashboard${namespaceId === "" ? "" : "/"}${namespaceId}`}
-        total={1}
+        total={total}
       />
     </div>
   );

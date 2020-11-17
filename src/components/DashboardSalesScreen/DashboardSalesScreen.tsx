@@ -5,6 +5,7 @@ import ContainerDashboard, {
 } from "@/components/ContainerDashboard";
 import ContainerRoot from "@/components/ContainerRoot";
 import DashboardSalesHero from "@/components/DashboardSalesHero";
+import {Props as DashboardSalesTableProps} from "@/components/DashboardSalesTable";
 import HeaderRoot from "@/components/HeaderRoot";
 import SeoApp from "@/components/SeoApp";
 import Sales from "@/types/Sales";
@@ -16,7 +17,9 @@ const DashboardSalesTable = dynamic(
   },
 );
 
-export interface Props extends Pick<ContainerDashboardProps, "namespaceId"> {
+export interface Props
+  extends Pick<ContainerDashboardProps, "namespaceId">,
+    DashboardSalesTableProps {
   sales: Sales;
 }
 
@@ -37,7 +40,11 @@ export default function DashboardSalesScreen({
             monthConfirmed={sales.monthConfirmed}
             confirmed={sales.confirmed}
           />
-          <DashboardSalesTable />
+          <DashboardSalesTable
+            current={1}
+            total={1}
+            namespaceId={namespaceId}
+          />
         </ContainerDashboard>
       </ContainerRoot>
     </>
