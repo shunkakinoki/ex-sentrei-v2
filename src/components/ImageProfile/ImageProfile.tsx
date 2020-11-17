@@ -9,7 +9,7 @@ export interface Props extends Pick<Profile.Get, "image" | "name"> {
 export default function ImageProfile({
   image,
   name,
-  size = 40,
+  size = 39,
 }: Props): JSX.Element {
   return (
     <>
@@ -19,12 +19,12 @@ export default function ImageProfile({
           height={size}
           width={size}
           layout="fixed"
-          className="inline object-cover w-12 h-12 p-1 mr-2 border rounded-full"
+          className="inline object-cover w-10 h-10 p-1 mr-2 border rounded-full"
           src={image ?? "/assets/logo.png"}
           alt={`Author ${name}`}
         />
       ) : (
-        <span className="inline-block w-12 h-12 overflow-hidden bg-gray-100 rounded-full">
+        <span className="inline-block w-10 h-10 overflow-hidden bg-gray-100 rounded-full">
           <svg
             className="w-full h-full text-gray-300"
             fill="currentColor"

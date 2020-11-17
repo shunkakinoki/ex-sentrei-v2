@@ -7,7 +7,7 @@ export interface Props extends Pick<Space.Get, "image"> {
   size?: number;
 }
 
-export default function ImageLogo({image, size = 50}: Props): JSX.Element {
+export default function ImageLogo({image, size = 39}: Props): JSX.Element {
   return (
     <Link href="/">
       <a className="inline-block">
