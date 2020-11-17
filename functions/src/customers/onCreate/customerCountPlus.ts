@@ -10,7 +10,7 @@ const db = admin.firestore();
  * Increase customer count to arbitrary collection
  */
 const customerCountPlus = functions.firestore
-  .document("customers/{customerId}")
+  .document("spaces/{spaceId}/customers/{customerId}")
   .onCreate(snap => {
     return db.runTransaction(async transaction => {
       const data = snap.data() as Customer.Response;
