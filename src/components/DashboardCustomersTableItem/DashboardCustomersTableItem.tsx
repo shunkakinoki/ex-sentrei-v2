@@ -22,7 +22,7 @@ export default function DashboardCustomersTableItem({
 }: Props): JSX.Element {
   return (
     <tr key={email}>
-      <td className="px-6 py-4 whitespace-no-wrap">
+      <td className="px-6 py-4 whitespace-nowrap">
         <div className="flex items-center">
           <div className="flex-shrink-0 w-10 h-10">
             {image ? (
@@ -58,12 +58,12 @@ export default function DashboardCustomersTableItem({
           </div>
         </div>
       </td>
-      <td className="px-6 py-4 whitespace-no-wrap">
+      <td className="px-6 py-4 whitespace-nowrap">
         <span className="inline-flex px-2 text-xs font-semibold leading-3 text-green-800 bg-green-100 rounded-full md:leading-5">
           {status}
         </span>
       </td>
-      <td className="px-6 py-4 text-sm leading-3 text-gray-500 whitespace-no-wrap md:leading-5">
+      <td className="px-6 py-4 text-sm leading-3 text-gray-500 whitespace-nowrap md:leading-5">
         {new Date(createdAt).toDateString()}
       </td>
     </tr>

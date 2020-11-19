@@ -31,5 +31,10 @@ module.exports = {
     boxShadow: ["responsive", "hover", "focus", "active", "group-hover"],
     textColor: ["responsive", "hover", "focus", "active", "group-hover"],
   },
-  plugins: [require("tailwindcss-truncate-multiline")()],
+  plugins: [
+    require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
+    require("tailwindcss-truncate-multiline")(),
+  ],
 };
