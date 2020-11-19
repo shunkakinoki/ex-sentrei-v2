@@ -126,7 +126,7 @@ export default function HeaderRoot({image}: Props): JSX.Element {
             {isLoggedIn && (
               <span className="inline-flex rounded-md shadow-sm">
                 <Link href="/dashboard/editor">
-                  <a className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap transition duration-150 ease-in-out bg-pink-400 border border-transparent rounded-md hover:bg-pink-500 focus:outline-none focus:border-pink-800 focus:shadow-outline-pink active:bg-pink-700">
+                  <a className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-nowrap transition duration-150 ease-in-out bg-pink-400 border border-transparent rounded-md hover:bg-pink-500 focus:outline-none focus:border-pink-800 focus:shadow-outline-pink active:bg-pink-700">
                     Create New
                   </a>
                 </Link>
@@ -155,13 +155,13 @@ export default function HeaderRoot({image}: Props): JSX.Element {
             {!isLoggedIn && (
               <>
                 <Link href="/login">
-                  <a className="text-base font-medium leading-6 text-gray-600 whitespace-no-wrap hover:text-pink-400">
+                  <a className="text-base font-medium leading-6 text-gray-600 whitespace-nowrap hover:text-pink-400">
                     Log in
                   </a>
                 </Link>
                 <span className="inline-flex rounded-md shadow-sm">
                   <Link href="/signup">
-                    <a className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap transition duration-150 ease-in-out bg-pink-400 border border-transparent rounded-md hover:bg-pink-500 focus:outline-none focus:border-pink-800 focus:shadow-outline-pink active:bg-pink-700">
+                    <a className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-nowrap transition duration-150 ease-in-out bg-pink-400 border border-transparent rounded-md hover:bg-pink-500 focus:outline-none focus:border-pink-800 focus:shadow-outline-pink active:bg-pink-700">
                       Sign up
                     </a>
                   </Link>

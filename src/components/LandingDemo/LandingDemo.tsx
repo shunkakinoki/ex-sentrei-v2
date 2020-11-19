@@ -73,7 +73,7 @@ export default function LandingDemo(): JSX.Element {
                 type="button"
                 onClick={() => setTabType("website")}
               >
-                <div className="px-2 overflow-x-hidden text-xs text-left text-gray-700 truncate whitespace-no-wrap sm:px-4 sm:text-md">
+                <div className="px-2 overflow-x-hidden text-xs text-left text-gray-700 truncate whitespace-nowrap sm:px-4 sm:text-md">
                   Demo Website
                 </div>
                 <div className="self-center flex-shrink-0 w-2 h-2 mx-1 sm:w-3 sm:h-3 sm:mx-3 focus:outline-none">
@@ -95,7 +95,7 @@ export default function LandingDemo(): JSX.Element {
                 )}
                 onClick={() => setTabType("dashboard")}
               >
-                <div className="px-2 overflow-x-hidden text-xs text-left text-gray-700 truncate whitespace-no-wrap sm:px-4 sm:text-md">
+                <div className="px-2 overflow-x-hidden text-xs text-left text-gray-700 truncate whitespace-nowrap sm:px-4 sm:text-md">
                   Demo Dashboard
                 </div>
                 <div className="self-center flex-shrink-0 w-2 h-2 mx-1 sm:w-3 sm:h-3 sm:mx-3 focus:outline-none">
@@ -117,7 +117,7 @@ export default function LandingDemo(): JSX.Element {
                 )}
                 onClick={() => setTabType("sales")}
               >
-                <div className="px-2 overflow-x-hidden text-xs text-left text-gray-700 truncate whitespace-no-wrap sm:px-4 sm:text-md">
+                <div className="px-2 overflow-x-hidden text-xs text-left text-gray-700 truncate whitespace-nowrap sm:px-4 sm:text-md">
                   Demo Sales
                 </div>
                 <div className="self-center flex-shrink-0 w-2 h-2 mx-1 sm:w-3 sm:h-3 sm:mx-3 focus:outline-none">
