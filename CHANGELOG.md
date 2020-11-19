@@ -1,3 +1,14 @@
+# [1.121.0](https://github.com/sentrei/sentrei/compare/v1.120.0...v1.121.0) (2020-11-19)
+
+### Features
+
+- 🎸 upgrade packages ncu ([2e167c8](https://github.com/sentrei/sentrei/commit/2e167c8c5ac13243d0920b196c0bd9b06b1de043))
+- 🎸 upgrade tailwind plugins ([08bb492](https://github.com/sentrei/sentrei/commit/08bb492125e2ded1a7530267fe253ae004c46e5b))
+
+### Performance Improvements
+
+- ⚡️ whitespace no wrap ([4f31ceb](https://github.com/sentrei/sentrei/commit/4f31ceb4c0043b2a5ac7b673c2539a1079552e9f))
+
 # [1.120.0](https://github.com/sentrei/sentrei/compare/v1.119.0...v1.120.0) (2020-11-17)
 
 ### Bug Fixes
